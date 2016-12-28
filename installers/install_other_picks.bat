@@ -123,6 +123,7 @@ if exist quoth (
 ) else (
   echo Failed to install required base mod "quoth". Skipping "apsp3" install.
 )
+echo Make sure to specify Quoth as the base game when playing "apsp3".
 goto :menu
 
 :8
