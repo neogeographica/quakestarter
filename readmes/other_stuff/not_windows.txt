@@ -1,0 +1,9 @@
+If you would rather play Quake on macOS or some Linux distro, you can do that! The same Quake pak files and custom content will work on any OS.
+
+Mark V does have a macOS version available at http://quakeone.com/markv/ but no Linux version (as of December). You may also want to investigate other Quake engines as described in "quake_engines.txt"; Quakespasm for example has both macOS and Linux builds, as do others.
+
+You can get soundtrack music files from this guide: http://steamcommunity.com/sharedfiles/filedetails/?id=119489135
+
+The "readmes\maps_and_mods\3_explore_more.txt" file describes other ways to get custom content if you can't use the batch files in this package; it also describes a crossplatform alternative to the Simple Quake Launcher (Quake Injector).
+
+The "no_launcher.txt" file describes how to run custom Quake content if you don't use a launcher.

@@ -1,0 +1,14 @@
+**** Using the menus
+
+Once Mark V is running, make sure to poke around in the menus to set things up the way you like. Along with usual FPS game things like keybinding and video options and mouse sensitivity, you'll find some other preferences that you can set to behave like the original Quake or like other Quake engines.
+
+If you are running mark_v_winquake.exe, also note that the video options allow you to make the rendered pixels larger than your screen-resolution pixels. If you select a resolution for the "Stretch" option, that will be the rendered pixel size. So for example if you want that old 320x240 experience, you could use a video resolution of 640x480 (probably the smallest that your video card will allow) and then pick 320x240 for the stretch option.
+
+
+*** Using the console and config files
+
+Quake engines support other configuration options that aren't exposed in the in-game menus. In this package I'm just going to point out a few things you might want to change if you are interested in making your Quake visuals look more nostalgic.
+
+Open the "autoexec.cfg" file inside the "id1" folder and have a look at some of the example settings described there; you can edit that file to set and change those options. Personally I like to set the options that make mark_v.exe render pixel-y textures, so that it looks more like WinQuake (just without the color palette restrictions).
+
+Several other settings are available, and you can also keybind other actions beyond what the menus allow -- for example if you want to have a special key for selecting the rocket launcher. There's a few ways you can edit these other options, including changing them interactively using the Quake console or by editing config files. This readme won't get into a lot of detail about that process; if you're interested you can check out the introductory sections of this Steam guide: http://steamcommunity.com/sharedfiles/filedetails/?id=120426294

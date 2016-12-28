@@ -1,0 +1,55 @@
+**** Launching without a launcher
+
+If you don't have or want to use a launcher, the main things you'll need to know are the name of the game folder that you want to activate (if any), the name of the map you want to play, and whether the map/mod requires a base game like Quoth or a missionpack. The maps_and_mods readmes describe how to find out if there is a base game requirement.
+
+When you know those things, you can handle all launcher-type activities from within the Quake menus and console, at least on some Quake engines. To keep it somewhat simple, this readme will mainly talk about the Mark V engine, but Quakespasm is very similar (only lacking the Levels menu). Other Quake engines may have similar capabilities.
+
+You can always fall back to using command-line options, but I won't get into that here. You can get some info about command-line options from the section "The Command Line" in this guide: http://steamcommunity.com/sharedfiles/filedetails/?id=120426294 and also some of this guide: http://steamcommunity.com/sharedfiles/filedetails/?id=166554615
+
+
+**** The Quake console
+
+To open the Quake console, use the key under the ESC key on your keyboard (for typical US keyboards this is the backtick/tilde key). You can close the Quake console by hitting that key again or by hitting ESC. While the console is open you can type commands to cause stuff to happen, or type in new values for various settings.
+
+This readme will just mention a few console commands. If you're curious to learn more, much of this guide is relevant: http://steamcommunity.com/sharedfiles/filedetails/?id=120426294
+
+
+**** Setting the Base Game and Game
+
+If the map you want to run is just a .bsp file in the "id1\maps" folder, skip this section. That's the normal/default map location and doesn't involve any mod code.
+
+Otherwise though, you'll need to specify the game folder to activate. The map/mod may also have a Base Game requirement (as specified in its readme).
+
+You specify these things using the "game" command in the Quake console.
+
+If the game folder is named "foo" and doesn't require a special Base Game, then you would activate it with this command:
+    game foo; exec quake.rc
+
+If the game folder is named "foo" and requires Quoth as a Base Game, then you would activate it with this command:
+    game foo -quoth; exec quake.rc
+
+If the game folder is named "foo" and requires missionpack 1 as a Base Game, then you would activate it with this command:
+    game foo -hipnotic; exec quake.rc
+
+If the game folder is named "foo" and requires missionpack 2 as a Base Game, then you would activate it with this command:
+    game foo -rogue; exec quake.rc
+
+
+**** Setting difficulty
+
+If you know that you almost always want to play at the same difficulty, you should add a line with a "skill" setting to your "id1\autoexec.cfg" file. The legal values for skill are from 0 to 3, which corresponds to difficulty levels Easy to Nightmare. For example if you pretty much always want to play Nightmare difficulty you could add a line to your autoexec.cfg that says:
+    skill 3
+
+(Note that if you do use a launcher, the skill setting from the launcher will override this.)
+
+If you don't have this setting in your autoexec.cfg, or if you do but you want to make an exception this time and play at a different difficulty level, then you can use the Quake console to choose the difficulty. Just enter a skill setting in the console AFTER switching the game setting as above (if necessary) and before starting a map.
+
+
+**** Launching a map
+
+Mark V has an in-game menu that you can use to choose the map. Press ESC if necessary to get to the main Quake menu, then choose Single Player, then choose Levels.
+
+This menu shows all maps that can be played with your currently active game folder (if any). This includes any maps in the game folder as well as the maps from the Base Game. Scroll through the list, find the map you want, and press Enter/Return to launch the map.
+
+If you're using Quakespasm or some other engine that doesn't have a Levels menu, you can use the Quake console. You'll need to know the map filename. If for example the filename of the map you want to play is "whatsit.bsp", you would use the console command:
+    map whatsit

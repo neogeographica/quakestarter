@@ -1,0 +1,37 @@
+**** Using the launcher
+
+The Simple Quake Launcher is a great way to start up Quake, especially when you want to do anything besides just starting the original campaign.
+
+When you run "SQLauncher.exe", you'll get a dialog window with a few settings to choose.
+
+Pick "mark_v.exe" in the "Engine" dropdown if you want a GLQuake look; or pick "mark_v_winquake.exe" for a more original-Quake-ish WinQuake look. (See "3_configuration.txt" for ways to tweak things further.)
+
+Don't worry about the "Resolution" setting; you can pick your video settings in the Mark V in-game menus.
+
+Leave the "Base Game" set to "Quake" for now.
+
+For "Game", choose "[Default]" if you want to play the original Quake campaign. You may want to at least launch the original Quake campaign once before trying anything else, because any settings that you configure in the default Quake game will be copied when you later launch custom content.
+
+If you have other content installed, there will be additional choices available for "Game". E.g. you could choose "dopa" for "Dimension of the Past", or "ad_v1_50final" for "Arcane Dimensions", if you have those installed.
+
+When you've picked what you want to play, click the big "Launch" button at the bottom, and away you go!
+
+The launcher has other options that allow you to jump directly into individual maps using a specified skill (difficulty) setting. You don't need to worry about that if you're starting the Quake campaign from the beginning, since that campaign allows skill selection inside the startmap. The official missionpacks and some custom episodes also have startmaps with in-game skill selection.
+
+(But it never hurts to specify your desired skill when launching custom content, just in case.)
+
+
+**** Other base games
+
+If you have an official missionpack installed and want to play that, you would choose that missionpack as the "Base Game" and choose "[Default]" for the "Game".
+
+There may also be other occasions when you will need to choose special base game settings when playing custom content, as described in the maps_and_mods readmes.
+
+If you ever have a problem where the launcher doesn't allow you to change the "Base Game" to what you want: change the Game to "[Default]" and hit the refresh button to the left.
+
+
+**** If Mark V isn't working for you...
+
+See the "readmes\other_stuff\quake_engines.txt" file to learn about other programs that can play Quake.
+
+Note that if the installer batch files are working for you, you may want to leave "mark_v.exe" in place even if you end up using some other Quake engine to actually play. The installer batch files make use of Mark V to perform downloads.

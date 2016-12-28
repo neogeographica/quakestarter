@@ -1,0 +1,10 @@
+// load the base configuration
+exec default.cfg
+// load the last saved configuration
+exec config.cfg
+// run a user script file if present
+exec autoexec.cfg
+// stuff command line statements
+stuffcmds
+// Soul of Evil: Indian Summer has two demos, so run them!
+startdemos demo1 demo2

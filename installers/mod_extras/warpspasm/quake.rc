@@ -1,0 +1,21 @@
+// load the base configuration
+exec default.cfg
+// load the last saved configuration
+exec config.cfg
+
+// settings that came with this mod
+// you can of course modify these if you need to
+gl_exttex 1
+r_wateralpha 0.4
+r_shadows 0.2
+gl_texquality 2
+gl_max_size 2048
+
+// run a user script file if present
+exec autoexec.cfg
+
+// stuff command line statements
+stuffcmds
+
+// Warp Spasm has its own demos, so run them!
+startdemos demo1 demo2 demo3

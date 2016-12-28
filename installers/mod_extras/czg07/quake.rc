@@ -1,0 +1,21 @@
+// load the base configuration
+exec default.cfg
+// load the last saved configuration
+exec config.cfg
+
+// settings that came with this mod
+// you can of course modify these if you need to
+gl_flashblend 0
+r_shadows 0
+gl_subdivide_size 1024
+r_maxsurfs 900
+r_maxedges 2800
+
+// run a user script file if present
+exec autoexec.cfg
+
+// stuff command line statements
+stuffcmds
+
+// no special demos to run
+//startdemos demo1 demo2 demo3
