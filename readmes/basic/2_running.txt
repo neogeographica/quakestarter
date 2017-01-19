@@ -4,9 +4,12 @@ The Simple Quake Launcher is a great way to start up Quake, especially when you 
 
 When you run "SQLauncher.exe", you'll get a dialog window with a few settings to choose.
 
-Pick "mark_v.exe" in the "Engine" dropdown if you want a GLQuake look; or pick "mark_v_winquake.exe" for a more original-Quake-ish WinQuake look. (See "3_configuration.txt" for ways to tweak things further.)
+The first thing to choose is the "Engine":
+- Pick "mark_v.exe" if you want a GLQuake look.
+- Or you could pick "dx9_mark_v.exe" (also a GLQuake look). This program uses the DirectX graphics interface instead of OpenGL. Depending on your video card and drivers, it may perform better than "mark_v.exe".
+- Pick "mark_v_winquake.exe" if you want a more original-Quake-ish WinQuake look, instead of GLQuake-ish.
 
-Don't worry about the "Resolution" setting; you can pick your video settings in the Mark V in-game menus.
+Don't worry about the "Resolution" setting; you can pick your video settings in the Mark V in-game menus. Also check out the "3_configuration.txt" file for ways to tweak things further.
 
 Leave the "Base Game" set to "Quake" for now.
 
@@ -28,6 +31,18 @@ If you have an official missionpack installed and want to play that, you would c
 There may also be other occasions when you will need to choose special base game settings when playing custom content, as described in the maps_and_mods readmes.
 
 If you ever have a problem where the launcher doesn't allow you to change the "Base Game" to what you want: change the Game to "[Default]" and hit the refresh button to the left.
+
+
+**** Mark V autosaves
+
+The Mark V engine has several cool usability features, but maybe the most important one to mention here is autosaves. Next time you die in a nightmare-skill run through some hardcore map, don't get frustrated if you forgot to save your game; instead just load up an autosave.
+
+Some key things about Mark V autosaves:
+- Autosaving starts 2 minutes after a map begins, then saves again every 1.5 minutes.
+- There are three rotating autosave files: auto_save_0, auto_save_1, and auto_save_2. auto_save_0 is the most recent.
+- Autosaves do NOT show up in the normal load-game menu.
+- You can load an autosave easily by opening the Quake console, typing "load a", and hitting Tab to autocomplete the command to "load auto_save_0". You can keep hitting Tab if you need to cycle to some earlier autosave. Then hit Enter to load the selected autosave.
+- You also might want to bind a key to load an autosave. For example this console command would make the P key load the most recent autosave: bind p "load auto_save_0"
 
 
 **** If Mark V isn't working for you...
