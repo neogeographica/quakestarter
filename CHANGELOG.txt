@@ -1,0 +1,16 @@
+**** v1.1 (Jan 2016)
+
+- Packaged build 1032 of the Mark V engines. This also includes the new DirectX 9 version.
+
+- Changed the basic/2_running.txt readme to mention the DirectX 9 Mark V.
+
+- Changed the basic/2_running.txt readme to describe Mark V autosaves.
+
+- Changed the maps_and_mods/3_explore_more.txt readme to describe how to make Quake Injector and Mark V share the same downloaded-zipfiles folder.
+
+- Changed the other_stuff/no_launcher.txt readme to add discussion of quake.rc.
+
+- Changed a couple of installer batch files (install_modern_episodes.bat and install_other_picks.bat) to print messages about required basegames.
+
+
+*** v1.0 (Dec 2015)
