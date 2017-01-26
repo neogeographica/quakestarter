@@ -30,4 +30,4 @@ If you want more discussion about running Quake addons, see this Steam guide: ht
 
 **** Mark V install
 
-The Mark V Quake engine supports an "install" command in the Quake console that will automatically download and install content. This is pretty neat, but as of December 2016, there are still some pieces of content that Mark V does not install correctly. So I won't go into a lot of details about the "install" command in this readme. The installer batch files in this package do make use of that command though.
+The Mark V Quake engine supports an "install" command in the Quake console that will automatically download and install content. This is pretty neat, but as of January 2017, there are still some pieces of content that Mark V does not install correctly. So I won't go into a lot of details about the "install" command in this readme. The installer batch files in this package do make use of that command though.
