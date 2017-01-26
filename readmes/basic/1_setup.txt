@@ -10,6 +10,11 @@ Similarly, if you own and want to play the official Quake missionpacks, each of 
 Once you have these pak files in place, the easiest way to play is often by using the Simple Quake Launcher, "SQLauncher.exe". This program has a requirement for Microsoft .Net Framework 3.5. If you don't have .Net 3.5 installed, Windows may ask to install it the first time you run the Simple Quake Launcher; otherwise you'll need to get it from http://www.microsoft.com/download/en/details.aspx?id=25150
 
 
+**** DirectX 9 Runtime
+
+Mark V, the Quake engine included in this package, has a few variants that cover different rendering styles and graphics APIs. Some of these variants are described in the "2_running.txt" readme. FYI if you want to use the dx9_mark_v.exe variant, you will need an up-to-date version of the DirectX 9 runtime package installed. If you play other games on this system then you may already have this installed. If not though, you can get it from https://www.microsoft.com/en-ie/download/details.aspx?id=35
+
+
 **** Soundtrack
 
 Mark V (and several other Quake engines) can play the soundtrack from mp3 files if the physical Quake CD is not in your CD drive. To get these files installed, assuming you're on Windows, go into the "installers" folder and double click on the "install_music" batch file. This will give you the option to install soundtrack mp3 files for the original Quake campaign, and also for the official missionpacks if you have those.
