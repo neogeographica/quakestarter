@@ -82,7 +82,7 @@
 //sv_aim 2
 
 
-// texture filtering (these don't apply to the winquake engine)
+// texture filtering (these don't apply to the winquake variant)
 //-------------------------------------------------------------------
 
 // In Quake engines with GPU-accelerated renderers, you have some choices
@@ -120,7 +120,7 @@
 //gl_texture_anisotropy 8
 
 
-// particle shape (this doesn't apply to the winquake engine)
+// particle shape (this doesn't apply to the winquake variant)
 //-------------------------------------------------------------------
 
 // Set r_particles to 2 for square particles, 1 for round.
@@ -144,6 +144,22 @@
 //r_mirroralpha 1
 //r_slimealpha 1
 //r_wateralpha 1
+
+
+// water warp
+//-------------------------------------------------------------------
+
+// All variants of Mark V support a "water warp" effect when underwater,
+// like the original WinQuake. For the GL and DX9 variants, you can play
+// with some settings that control the strength of this effect. At high
+// screen resolutions the effect may be too strong by default. Both
+// r_waterwarp_amp and r_waterwarp_cycle may be worth modifying, although
+// I typically only change r_waterwarp_amp.
+// Default is 150. Uncomment the following line to set some other value.
+// Larger values decrease the strength of the warp effect, althouhg the
+// exact effect depends upon your chosen video resolution.
+
+//r_waterwarp_amp 500
 
 
 // animations
