@@ -83,6 +83,8 @@ if exist chapters (
 ) else (
   call "%~dp0\_mod_install.cmd" chapters
 )
+echo Make sure to specify missionpack 1 as the base game when playing "chapters".
+echo This is necessary even if you don't have missionpack 1 currently installed.
 goto :menu
 
 :5
@@ -124,6 +126,7 @@ if exist quoth (
 ) else (
   echo Failed to install required base mod "quoth". Skipping "warpspasm" install.
 )
+echo Make sure to specify Quoth as the base game when playing "warpspasm".
 goto :menu
 
 :7

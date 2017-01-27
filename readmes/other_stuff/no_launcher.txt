@@ -34,6 +34,8 @@ If the game folder is named "foo" and requires missionpack 1 as a Base Game, the
 If the game folder is named "foo" and requires missionpack 2 as a Base Game, then you would activate it with this command:
     game foo -rogue; exec quake.rc
 
+If you're curious about "quake.rc" and why you usually want to exec that config file (but sometimes might not), see the last section of this readme below.
+
 
 **** Setting difficulty
 
@@ -53,3 +55,22 @@ This menu shows all maps that can be played with your currently active game fold
 
 If you're using Quakespasm or some other engine that doesn't have a Levels menu, you can use the Quake console. You'll need to know the map filename. If for example the filename of the map you want to play is "whatsit.bsp", you would use the console command:
     map whatsit
+
+
+**** What's this about "quake.rc" then?
+
+Here we get into more esoteric stuff that hopefully you won't need to know about. But if you're seeing odd behaviors like config files not working as expected when using mods, this might be good to know.
+
+"quake.rc" is sort of a master config file included among the original Quake gamedata. It executes some other config files, including "autoexec.cfg" if that exists, and also starts playing the attract-mode demos.
+
+The files in a mod release may contain a new different "quake.rc" that sets some console values, creates new console commands, or does other things. Or the mod might not have a new "quake.rc", but it might have new versions of the OTHER config scripts that get executed when you execute "quake.rc".
+
+(If you want a lot more discussion about "quake.rc", see https://tomeofpreach.wordpress.com/2013/09/05/quake-rc-and-being-a-good-citizen/ )
+
+When you start up Quake, it will execute "quake.rc". This includes the case of starting up Quake with the "-game" command-line argument to make it immediately switch to a particular game folder. So in original Quake (before the "game" console command was added) mods were created under the expectation that "quake.rc" would be run when a mod was activated. Some mods rely on this behavior. Not many, but some.
+
+So why doesn't the "game" console command execute "quake.rc"? This is something people have argued about, but the winning argument currently, as I understand it, is that some mods do rude things with their config files. For example a mod might contain an "autoexec.cfg" that overrides your own "id1\autoexec.cfg" file. So if you're using the "game" console command to activate a mod, the choice is left up to you as to whether or not you want to execute "quake.rc" (and the other config files that it runs).
+
+Usually IMO executing "quake.rc" after activating a mod is the right thing to do, which is why I recommended that above.
+
+The installer batch files in this package will occasionally put customized "quake.rc" files in mod folders, to apply mod-recommended settings in a way that does not override anything you might have in "id1\autoexec.cfg". They will also rename any "autoexec.cfg" file included in a mod so that it does not disturb whatever you have set up in "id1\autoexec.cfg".

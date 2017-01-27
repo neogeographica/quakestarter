@@ -2,14 +2,22 @@
 
 Quake Injector (https://www.quaddicted.com/tools/quake_injector) is worth a look when you're ready to really dig into Quake addons. It has a bit of a learning curve, but it runs on any OS (as a Java app) and it understands how to install and launch every bit of content from Quaddicted.
 
-The only gotcha to look out for is that if a mod has a separate patch, Quake Injector won't automatically install the patch for you... you'll need to read the mod description and download the mod patch yourself. This rarely comes up though.
+Note that both Quake Injector and also the Mark V install feature (see below) like to keep around the zipfiles that they download, even if you uninstall a mod, until you explicitly delete the zipfile. If you're going to be using both of these downloaders then you probably want to configure Quake Injector to use the same directory as Mark V for storing downloaded zipfiles. To do this:
+
+* Open the "Engine Configuration" dialog in Quake Injector.
+
+* Set the "Download Directory" to point to the "id1\_library" folder in your Quake installation. If you haven't installed anything using Mark V yet, that folder won't exist yet; in that case, you can use the file selector to choose the "id1" folder, and then finish typing the "\_library" part of the path yourself.
+
+* Click "OK" to close the dialog and apply the settings.
+
+One thing to look out for though is that the Mark V install feature (and therefore these batch scripts that use it) doesn't work exactly the same as Quake Injector when it comes to choosing the name for a mod folder. For example Mark V will install Arcane Dimensions 1.5 in the "ad_v1_50final" folder, while Quake Injector will store it in the "ad" folder. So to avoid confusion and wasted disk space on duplicate stuff, it's best to settle on using only one of these install methods.
 
 
 **** DIY
 
 Once you're familiar with how Quake maps and mods work, it's not rocket science to install them yourself. The main things to be aware of are:
 
-The main place to find singleplayer Quake content is at https://www.quaddicted.com/reviews/
+The best place to find singleplayer Quake content is at https://www.quaddicted.com/reviews/
 
 You can also watch for new releases at http://www.celephais.net/board/forum.php
 
@@ -22,4 +30,4 @@ If you want more discussion about running Quake addons, see this Steam guide: ht
 
 **** Mark V install
 
-Interestingly, the Mark V Quake engine supports an "install" command in the Quake console that will automatically download and install content. This is pretty neat, but as of December 2016, there are still some pieces of content that Mark V does not install correctly. So I won't go into a lot of details about the "install" command in this readme. The installer batch files in this package do make use of that command though.
+The Mark V Quake engine supports an "install" command in the Quake console that will automatically download and install content. This is pretty neat, but as of January 2017, there are still some pieces of content that Mark V does not install correctly. So I won't go into a lot of details about the "install" command in this readme. The installer batch files in this package do make use of that command though.

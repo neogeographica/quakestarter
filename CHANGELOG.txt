@@ -1,0 +1,26 @@
+**** v1.1 (Jan 2017)
+
+- Included build 1036 of the Mark V engines. This also includes the new DirectX 9 variant.
+
+- Moved autoexec.cfg to autoexec.cfg.example. Don't want to stomp on any existing autoexec.cfg file when this package is unzipped. This also required a few changes to the basic/3_configuration.txt readme.
+
+- Removed the included config.cfg. Moved the sv_aim setting to autoexec.cfg.example.
+
+- Added more discussion of config files/settings in autoexec.cfg.example, and a few other additions and corrections to comments about specific settings.
+
+- Added example setting for water warp effect strength.
+
+- Changed a couple of installer batch files (install_modern_episodes.bat and install_other_picks.bat) to print messages about required basegames.
+
+- Added a comment about DX9 runtime requirement (for DX9 engine variant) in the basic/1_setup.txt readme.
+
+- Changed the basic/2_running.txt readme to mention autosaves and the DX9 engine variant.
+
+- Changed the maps_and_mods/3_explore_more.txt readme to describe how to make Quake Injector and Mark V share the same downloaded-zipfiles folder.
+
+- Changed the other_stuff/no_launcher.txt readme to add discussion of quake.rc.
+
+- Added mention of the Linux Mark V build to the other_stuff/not_windows.txt readme.
+
+
+*** v1.0 (Dec 2016)

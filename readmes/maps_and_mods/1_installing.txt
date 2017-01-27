@@ -27,7 +27,7 @@ A few of these mods do require using special "Base Game" settings in the Simple 
 
 **** Installer issues
 
-Mark V (at least up through the December 2016 build) will incorrectly install a few of the maps/mods covered by these batch files: "arcanum", "apsp3", "func_mapjam2", and "mapjam6".
+Mark V (at least up through the January 2017 build) will incorrectly install a few of the maps/mods covered by these batch files: "arcanum", "apsp3", "func_mapjam2", and "mapjam6".
 
 The installer batch file will detect that problem, and it will automatically correct it if you have .Net 4.5 installed to enable some unzip operations. (If you are on Windows 8 or 10 then you do have .Net 4.5 already.)
 
