@@ -1,6 +1,6 @@
 **** v1.1 (Jan 2017)
 
-- Packaged build 1036 of the Mark V engines. This also includes the new DirectX 9 version.
+- Included build 1036 of the Mark V engines. This also includes the new DirectX 9 variant.
 
 - Moved autoexec.cfg to autoexec.cfg.example. Don't want to stomp on any existing autoexec.cfg file when this package is unzipped. This also required a few changes to the basic/3_configuration.txt readme.
 
