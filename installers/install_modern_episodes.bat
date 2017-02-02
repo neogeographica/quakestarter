@@ -188,7 +188,7 @@ if exist arcanum\maps\arcstart.bsp (
 )
 md arcanum 2> nul
 echo Mark V has issues installing "arcanum".
-echo You can get "arcanum.zip" from the "id1\_library" folder and\
+echo You can get "arcanum.zip" from the "id1\_library" folder and
 echo extract it manually into the "id1\arcanum" folder.
 goto :eof
 
@@ -197,10 +197,10 @@ del /q warpspasm\dll 2> nul
 goto :eof
 
 :net45_check
-reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" /v Release > nul
-if errorlevel 1 (
-  set net45_installed=false
-) else (
+reg query "HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" /v Release > nul 2>&1
+if %errorlevel% equ 0 (
   set net45_installed=true
+) else (
+  set net45_installed=false
 )
 goto :eof

@@ -1,6 +1,7 @@
 @echo off
 
 REM Installer for maps that fit the following criteria:
+REM * released in 2016 or earlier
 REM * it (or a variant) is NOT included in Arcane Dimensions
 REM * it (or a variant) is NOT included in other selected episodes
 REM * Quaddicted editor rating "Excellent"
@@ -239,10 +240,10 @@ echo extract it manually into the "id1\mapjam6" folder.
 goto :eof
 
 :net45_check
-reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" /v Release > nul
-if errorlevel 1 (
-  set net45_installed=false
-) else (
+reg query "HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" /v Release > nul 2>&1
+if %errorlevel% equ 0 (
   set net45_installed=true
+) else (
+  set net45_installed=false
 )
 goto :eof

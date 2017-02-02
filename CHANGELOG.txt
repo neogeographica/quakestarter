@@ -1,3 +1,10 @@
+**** v1.2 (Jan 2017)
+
+- Fixed files in the release zip to have Windows-style line endings again.
+
+- Added install_pakfiles.bat installer to find pak files on the local computer and copy them.
+
+
 **** v1.1 (Jan 2017)
 
 - Included build 1036 of the Mark V engines. This also includes the new DirectX 9 variant.
