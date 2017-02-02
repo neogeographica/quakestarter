@@ -9,10 +9,10 @@ if "%1"=="" (
   echo batch files.
   goto :exit
 )
-set install_arg=%1
+set install_arg=%~1
 set temp_gamedir=%~n1
 set %temp_gamedir%_success=false
-set target_gamedir=%2
+set target_gamedir=%~2
 set skipfiles=
 set has_skipfiles=false
 shift
@@ -21,7 +21,7 @@ shift
 if "%1"=="" (
   goto skipfiles_loop_done
 )
-set skipfiles=%skipfiles% "%temp_gamedir%\%1"
+set skipfiles=%skipfiles% "%temp_gamedir%\%~1"
 set has_skipfiles=true
 shift
 goto skipfiles_loop
@@ -42,10 +42,12 @@ if not exist "%markv_exe%" (
 )
 if not exist "id1\pak0.pak" (
   echo Couldn't find "id1\pak0.pak".
+  echo You can run "install_pakfiles.bat" to look for pak0.pak on this computer.
   goto :exit
 )
 if not exist "id1\pak1.pak" (
   echo Couldn't find "id1\pak1.pak".
+  echo You can run "install_pakfiles.bat" to look for pak1.pak on this computer.
   goto :exit
 )
 if not exist "%target_gamedir%" (

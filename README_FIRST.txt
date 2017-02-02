@@ -26,7 +26,7 @@ You can also just use this package as a new Quake installation starting from scr
 
 Things to do:
 
-- If you're starting a new Quake installation from scratch here, you need to move or copy your "pak0.pak" and "pak1.pak" files (Quake game data) into the "id1" folder.
+- If you're starting a new Quake installation from scratch here, you need to move or copy your "pak0.pak" and "pak1.pak" files (Quake game data) into the "id1" folder. If you already have another Quake installation on your computer somewhere, you can try running the "install_pakfiles" batch file (in the "installers" folder) to automatically find and copy those files for you.
 
 - Run the "install_music" batch file (in the "installers" folder) to install the soundtrack.
 

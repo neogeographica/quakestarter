@@ -4,6 +4,8 @@ First you need two game data files from Quake: "pak0.pak" and "pak1.pak". Put th
 
 Similarly, if you own and want to play the official Quake missionpacks, each of those also has its own "pak0.pak" file that goes into its own unique game folder (next to the "id1" folder): "hipnotic" for missionpack 1, or "rogue" for missionpack 2.
 
+If you already have another Quake installation on your computer somewhere, you can try running the "install_pakfiles" batch file (in the "installers" folder) to automatically find and copy the necessary pak files for you.
+
 
 **** Simple Quake Launcher
 
