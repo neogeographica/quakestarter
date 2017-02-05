@@ -1,10 +1,10 @@
 **** Game data
 
-First you need two game data files from Quake: "pak0.pak" and "pak1.pak". Put these files inside the "id1" folder, and you're ready to play Quake. If you don't have these files handy and you don't know how to get them, see "readmes\other_stuff\pak_files.txt".
+First you need two game data files from Quake: "pak0.pak" and "pak1.pak". Put these files inside the "id1" folder, and you're ready to play Quake.
 
-Similarly, if you own and want to play the official Quake missionpacks, each of those also has its own "pak0.pak" file that goes into its own unique game folder (next to the "id1" folder): "hipnotic" for missionpack 1, or "rogue" for missionpack 2.
+Similarly, if you own and want to play the official Quake missionpacks, each of those also has its own "pak0.pak" file that goes into its own unique game folder (next to the "id1" folder): the "hipnotic" folder for missionpack 1, or "rogue" for missionpack 2.
 
-If you already have another Quake installation on your computer somewhere, you can try running the "install_pakfiles" batch file (in the "installers" folder) to automatically find and copy the necessary pak files for you.
+The first option in the menu of the "installer" batch file can usually locate and copy the necessary pak files if you already have Quake installed somewhere else on this same computer. If you're having difficulties finding your pak files, see "readmes\other_stuff\pak_files.txt".
 
 
 **** Simple Quake Launcher
@@ -19,16 +19,16 @@ Mark V, the Quake engine included in this package, has a few variants that cover
 
 **** Soundtrack
 
-Mark V (and several other Quake engines) can play the soundtrack from mp3 files if the physical Quake CD is not in your CD drive. To get these files installed, assuming you're on Windows, go into the "installers" folder and double click on the "install_music" batch file. This will give you the option to install soundtrack mp3 files for the original Quake campaign, and also for the official missionpacks if you have those.
+Mark V (and several other Quake engines) can play the soundtrack from mp3 files if the physical Quake CD is not in your CD drive. To get the soundtrack files installed, run the "installer" batch file and choose the second menu option; this will give you the option to install soundtrack mp3 files for the original Quake campaign, and also for the official missionpacks if you have those.
 
-FYI the "install_music" batch file (and the other installer batch files) will run the Mark V engine in order to perform a download; you can follow the download progress bar at the top of the Mark V console window. Once a download is finished and files extracted then the Mark V window will close.
+FYI the installer will run the Mark V engine in order to perform a download. You can follow the download progress bar at the top of the Mark V console window. Once a download is finished and files extracted then the Mark V window will close.
 
 
 **** Additional singleplayer content
 
-The "installers" folder has other batch files that can be used to download some of the many community-created singleplayer adventures. These batch files, and ways to find all the rest of the available Quake singleplayer content, are discussed in the maps_and_mods readmes.
+Other choices in the installer menu can be used to download some of the many community-created singleplayer adventures. These choices, and ways to find all the rest of the available Quake singleplayer content, are discussed in the maps_and_mods readmes.
 
-For starters you might want to download two new episodes released in 2016: "Dimension of the Past" and "Arcane Dimensions 1.5". You can use the "install_2016_episodes" batch file to download and install either or both of these.
+For starters you might want to download a couple of recent releases: "Dimension of the Past" and "Arcane Dimensions 1.5". The "Episodes released in 2016" installer option will let you download and install either or both of these.
 
 "Dimension of the Past" is the "fifth Quake episode" created by J.F. Gustafsson and released by Machine Games in honor of Quake's 20th anniversary. It's a polished release but has an old-school look and feel with classic Quake gameplay.
 

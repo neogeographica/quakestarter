@@ -1,37 +1,37 @@
-**** Installer batch files
+**** Installer
 
-This package includes some batch files in the "installers" directory, to make it as easy as possible to download and install a sampler of good user-created Quake content. These installers will also apply any essential patches to a downloaded mod, and sometimes make other fixes to a mod so that it can use mod-recommended settings without nuking settings that you have in your own "autoexec.cfg" file.
+This package includes an "installer" batch file to make it as easy as possible to download and install a sampler of good user-created Quake content. This process will also apply any essential patches to a downloaded mod, and sometimes make other fixes to a mod so that it can use mod-recommended settings without nuking settings that you have in your own "autoexec.cfg" file.
 
-Note that these installers make use of Mark V. So if you are not on Windows or don't have Mark V available, they won't work. They also require the quaddicted.com website to be up, since that's where the files come from.
+Note that this install process makes use of Mark V ("mark_v.exe"). So if you are not on Windows or don't have Mark V available, it won't work. It also requires the quaddicted.com website to be up, since that's where the files come from.
 
-The installer batch files are:
+The installer choices are:
 
-* install_2016_episodes - Covers installing "Dimension of the Past" and/or "Arcane Dimensions".
+* Episodes released in 2016 - Covers installing "Dimension of the Past" and/or "Arcane Dimensions".
 
-* install_modern_episodes - Covers highly-rated episodes released after "Nehahra".
+* "Modern" episodes from pre-2016 - Covers highly-rated episodes released after "Nehahra".
 
-* install_classic_episodes - Covers highly-rated episodes up through "Nehahra".
+* Classic episodes - Covers highly-rated episodes up through "Nehahra".
 
-* install_other_picks - Other highly-rated content not covered by the other installers.
+* Other highly-rated maps up thru 2016 - Other highly-rated content not covered by the other choices above.
 
-This is NOT all the worthwhile Quake singleplayer content, not by a long shot. Even many of my personal favorites are not covered by these installers. If you enjoy Quake SP I really recommend checking out other things at quaddicted.com, as described in the "3_explore_more.txt" file.
+This is NOT all the worthwhile Quake singleplayer content, not by a long shot. Even many of my personal favorites are not covered by these choices. If you enjoy Quake SP I really recommend checking out other things at quaddicted.com, as described in the "3_explore_more.txt" file.
 
 A few of these mods do require using special "Base Game" settings in the Simple Quake Launcher. Specifically:
 
-- apsp3 and warpspasm each require using the "Quoth" base game. (Installing through these batch files will also install Quoth if necessary.)
+- apsp3 and warpspasm each require using the "Quoth" base game. (Installing these using the "installer" batch file will also get Quoth for you if necessary.)
 
-- chapters requires specifying the "EP1: Scourge of Armagon" base game. This is true even if you do not have that missionpack installed!
+- chapters requires specifying the "EP1: Scourge of Armagon" base game. This is true even if you do not have that missionpack currently installed!
 
 - nehahra requires using the "Nehahra" base game (and also "nehahra" as the game setting).
 
 
 **** Installer issues
 
-Mark V (at least up through the January 2017 build) will incorrectly install a few of the maps/mods covered by these batch files: "arcanum", "apsp3", "func_mapjam2", and "mapjam6".
+Mark V (at least up through the January 2017 build) will incorrectly install a few of the maps/mods covered by this installer: "arcanum", "apsp3", "func_mapjam2", and "mapjam6".
 
-The installer batch file will detect that problem, and it will automatically correct it if you have .Net 4.5 installed to enable some unzip operations. (If you are on Windows 8 or 10 then you do have .Net 4.5 already.)
+The installer script will detect that problem, and it will automatically correct it if you have .Net 4.5 installed to enable some unzip operations. (If you are on Windows 8 or 10 then you do have .Net 4.5 already.)
 
-If the batch file can't automatically correct the problem, it will tell you where the downloaded zipfile is so that you can extract the mod manually if you like.
+If the installer can't automatically correct the problem, it will tell you where the downloaded zipfile is so that you can extract the mod manually if you like.
 
 
 **** Uninstalling

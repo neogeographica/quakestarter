@@ -22,6 +22,8 @@ if not exist "%markv_exe%" (
 )
 set basedir=%cd%
 
+cls
+
 echo This script will look for pak files (Quake game data) that are already
 echo on this computer's disks, and copy them into this Quake installation.
 echo(

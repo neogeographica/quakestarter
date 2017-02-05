@@ -18,6 +18,7 @@ if not exist "%markv_exe%" (
 )
 
 :menu
+cls
 call :installed_check dopa
 call :installed_check ad_v1_50final
 echo(
@@ -36,6 +37,7 @@ if exist dopa (
 ) else (
   call "%~dp0\_mod_install.cmd" dopa
 )
+pause
 goto :menu
 
 :2
@@ -55,10 +57,10 @@ if "%ad_v1_50patch1_success%"=="false" (
   echo If you really want to install just the unpatched mod, you can enter
   echo "install ad_v1_50final" in the Mark V console.
 )
+pause
 goto :menu
 
 :menu_exit
-pause
 popd
 goto :eof
 

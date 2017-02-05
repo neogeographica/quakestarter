@@ -7,13 +7,13 @@ When you run "SQLauncher.exe", you'll get a dialog window with a few settings to
 The first thing to choose is the "Engine":
 - Pick "mark_v.exe" if you want a GLQuake look.
 - Or you could pick "dx9_mark_v.exe" (also a GLQuake look). This program uses the DirectX graphics interface instead of OpenGL. Depending on your video card and drivers, it may perform better than "mark_v.exe".
-- Pick "mark_v_winquake.exe" if you want a more original-Quake-ish WinQuake look, instead of GLQuake-ish.
+- Pick "mark_v_winquake.exe" if you want a more original-Quake-ish WinQuake look, instead of a GLQuake-ish look.
 
-Don't worry about the "Resolution" setting; you can pick your video settings in the Mark V in-game menus. Also check out the "3_configuration.txt" file for ways to tweak things further.
+Don't worry about the "Resolution" setting; you can pick your video settings in the Mark V in-game menus.
 
 Leave the "Base Game" set to "Quake" for now.
 
-For "Game", choose "[Default]" if you want to play the original Quake campaign. You may want to at least launch the original Quake campaign once before trying anything else, because any settings that you configure in the default Quake game will be copied when you later launch custom content.
+For "Game", choose "[Default]" if you want to play the original Quake campaign. You may want to at least launch the original Quake campaign once before trying anything else, because any settings that you configure in the default Quake game will be used as a starting point when you later launch custom content.
 
 If you have other content installed, there will be additional choices available for "Game". E.g. you could choose "dopa" for "Dimension of the Past", or "ad_v1_50final" for "Arcane Dimensions", if you have those installed.
 

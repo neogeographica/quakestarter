@@ -22,6 +22,7 @@ if not exist "%markv_exe%" (
 )
 
 :menu
+cls
 call :installed_check oum
 call :installed_check contract
 call :installed_check terra
@@ -54,6 +55,7 @@ if exist oum (
 ) else (
   call "%~dp0\_mod_install.cmd" oum
 )
+pause
 goto :menu
 
 :2
@@ -62,6 +64,7 @@ if exist contract (
 ) else (
   call "%~dp0\_mod_install.cmd" contract
 )
+pause
 goto :menu
 
 :3
@@ -75,6 +78,7 @@ if exist terra (
   move id1\maps\terra?.bsp terra\maps > nul
   move id1\maps\terra.txt terra > nul
 )
+pause
 goto :menu
 
 :4
@@ -85,6 +89,7 @@ if exist chapters (
 )
 echo Make sure to specify missionpack 1 as the base game when playing "chapters".
 echo This is necessary even if you don't have missionpack 1 currently installed.
+pause
 goto :menu
 
 :5
@@ -104,6 +109,7 @@ if "%quake_travail_soundtrack_markv_fix_success%"=="false" (
   echo If you want to install just the mod without its soundtrack, you can enter
   echo "install travail" in the Mark V console.
 )
+pause
 goto :menu
 
 :6
@@ -127,6 +133,7 @@ if exist quoth (
   echo Failed to install required base mod "quoth". Skipping "warpspasm" install.
 )
 echo Make sure to specify Quoth as the base game when playing "warpspasm".
+pause
 goto :menu
 
 :7
@@ -135,6 +142,7 @@ if exist nsoe2 (
 ) else (
   call "%~dp0\_mod_install.cmd" nsoe2
 )
+pause
 goto :menu
 
 :8
@@ -144,6 +152,7 @@ if exist arcanum (
   call "%~dp0\_mod_install.cmd" arcanum
   call :arcanum_fix
 )
+pause
 goto :menu
 
 :9
@@ -152,10 +161,10 @@ if exist rrp (
 ) else (
   call "%~dp0\_mod_install.cmd" rrp
 )
+pause
 goto :menu
 
 :menu_exit
-pause
 popd
 goto :eof
 

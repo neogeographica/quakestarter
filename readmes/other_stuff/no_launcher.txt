@@ -56,6 +56,8 @@ This menu shows all maps that can be played with your currently active game fold
 If you're using Quakespasm or some other engine that doesn't have a Levels menu, you can use the Quake console. You'll need to know the map filename. If for example the filename of the map you want to play is "whatsit.bsp", you would use the console command:
     map whatsit
 
+Note that if you are playing a mod that replaces the in-game menu graphics, the Levels menu may be missing in Mark V. In that case then you can use the Quake console to launch a map, as above.
+
 
 **** What's this about "quake.rc" then?
 

@@ -1,12 +1,12 @@
 **** What's this then?
 
-This package is one way to get started with the 2016 "state of the art" in Quake singleplayer. It's meant to be a convenient bundle of useful tools and explanations. The tools included in here are:
+This package is one way to get going with the "state of the art" in Quake singleplayer. It's meant to be a convenient bundle of useful tools and explanations. The tools included in here are:
 
 - The Simple Quake Launcher by "MaxEd", from https://sourceforge.net/projects/simplequakelauncher/ .
 
-- The Mark V "Quake engine" (Quake-playing program) by "Baker", from http://quakeone.com/markv/ . The Mark V website has additional info about the engine, more credits for other contributors, and links to other stuff you might want to download. Also note that there are several other Quake engines out there; see the "quake_engines.txt" file in the "readmes\other_stuff" folder if you're curious.
+- The Mark V "Quake engine" (Quake-playing program) by "Baker" and other contributors, from http://quakeone.com/markv/ . The Mark V website has additional info about the engine, more credits info, and links to other stuff you might want to download. Also note that there are several other Quake engines out there; see the "quake_engines.txt" file in the "readmes\other_stuff" folder if you're curious.
 
-- Batch files to download and install a few of the many custom singleplayer addons for Quake.
+- An installer to help set up the Quake game data files and soundtrack, and a few of the many custom singleplayer addons for Quake.
 
 You might want to keep an eye out in the future for a newer release of Mark V. You can just drop new Mark V files in here and replace the older versions.
 
@@ -15,7 +15,7 @@ You might want to keep an eye out in the future for a newer release of Mark V. Y
 
 The included version of Mark V is build 1036 from January 2017.
 
-As for this whole package of stuff, it's version 1.1. If you want to see what has changed since the original release, see CHANGELOG.txt. If you've been using the original version of this package, you can overwrite those files with the ones from this new release; that won't hurt whatever Quake configuration you've set up.
+As for this whole package of stuff, it's version 1.3. If you want to see what has changed since the previous releases, see CHANGELOG.txt. If you've been using a previous version of this package, you can overwrite those files with the ones from this new release; that won't hurt whatever Quake configuration you've set up.
 
 
 *** How to use this
@@ -26,15 +26,15 @@ You can also just use this package as a new Quake installation starting from scr
 
 Things to do:
 
-- If you're starting a new Quake installation from scratch here, you need to move or copy your "pak0.pak" and "pak1.pak" files (Quake game data) into the "id1" folder. If you already have another Quake installation on your computer somewhere, you can try running the "install_pakfiles" batch file (in the "installers" folder) to automatically find and copy those files for you.
+- If you're starting a new Quake installation from scratch here, you need to move or copy your "pak0.pak" and "pak1.pak" files (Quake game data) into the "id1" folder. If you already have another Quake installation on your computer somewhere, you can try running the "installer" batch file and choosing the first menu option; this can usually automatically find and copy those pak files for you.
 
-- Run the "install_music" batch file (in the "installers" folder) to install the soundtrack.
+- Also in the "installer" menu, you can pick the second option to install the Quake soundtrack.
 
-- Run other installers if you want to grab some selected custom content. The "install_2016_episodes" batch file is a good way to get started with some recent stuff.
+- Explore other options in the "installer" menu for some selected user-created addons. The "Episodes released in 2016" option is a good way to get started with some recent stuff.
 
-- Run Quake, using "mark_v_winquake.exe" (acts like WinQuake), or "mark_v.exe" (acts like GLQuake), or "dx9_mark_v.exe" (like "mark_v.exe", but uses DirectX instead of OpenGL). If you want to play custom content, it's easier if you use "SQLauncher.exe", the Simple Quake Launcher (which requires .Net 3.5 to be installed).
+- Run Quake, using "mark_v_winquake.exe" (acts like WinQuake), or "mark_v.exe" (acts like GLQuake), or "dx9_mark_v.exe" (like "mark_v.exe", but uses DirectX instead of OpenGL). If you want to play missionpacks or other addons, it's easier if you use "SQLauncher.exe", the Simple Quake Launcher (which requires .Net 3.5 to be installed).
 
-- Use the Mark V menus and/or config files to configure Quake the way you like it.
+- Once you're in-game, use the Mark V menus to configure Quake the way you like it. The menus are sufficient for normal setup, but you can also get more "hands-on" and manually modify config files if you like.
 
 
 If you're a Quake veteran that's probably all you need to know.

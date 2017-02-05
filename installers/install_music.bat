@@ -18,6 +18,7 @@ if not exist "%markv_exe%" (
 )
 
 :menu
+cls
 call :music_installed_check id1
 call :music_installed_check hipnotic
 call :music_installed_check rogue
@@ -51,6 +52,7 @@ if not exist id1 (
     call "%~dp0\_mod_patch_install.cmd" http://www.eclecticmenagerie.com/jl/quake/quake_campaign_soundtrack_markv.zip id1 music_placeholder_delete_me.pak
   )
 )
+pause
 goto :menu
 
 :2
@@ -64,6 +66,7 @@ if not exist hipnotic (
     call "%~dp0\_mod_patch_install.cmd" http://www.eclecticmenagerie.com/jl/quake/quake_mp1_soundtrack_markv.zip hipnotic music_placeholder_delete_me.pak
   )
 )
+pause
 goto :menu
 
 :3
@@ -77,10 +80,10 @@ if not exist rogue (
     call "%~dp0\_mod_patch_install.cmd" http://www.eclecticmenagerie.com/jl/quake/quake_mp2_soundtrack_markv.zip rogue music_placeholder_delete_me.pak
   )
 )
+pause
 goto :menu
 
 :menu_exit
-pause
 popd
 goto :eof
 
