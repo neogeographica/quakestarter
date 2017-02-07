@@ -101,12 +101,17 @@ if exist "%target_pakfile%" goto :eof
 call :reg_query_and_copy "HKLM\SOFTWARE\WOW6432Node\GOG.com\Games\1435828198" PATH
 if exist "%target_pakfile%" goto :eof
 
+REM handle older Steam installs
+call :reg_query_path_root_and_copy "HKCU\SOFTWARE\Valve\Steam" SteamPath "steamapps\common\Quake"
+if exist "%target_pakfile%" goto :eof
+
 REM no luck there, so let's look in the usual locations
 
+setlocal EnableDelayedExpansion
 set drives=
 for /f "delims=: tokens=1,*" %%a in ('fsutil fsinfo drives') do (
   for %%c in (%%b) do (
-    if exist "%%c" set drives=%drives% %%c
+    if exist "%%c" set drives=!drives! %%c
   )
 )
 call :find_and_copy_from "Quake"
@@ -127,6 +132,7 @@ call :find_and_copy_from "Steam\steamapps\common\Quake"
 if exist "%target_pakfile%" goto :eof
 call :find_and_copy_from "GOG Games\Quake"
 if exist "%target_pakfile%" goto :eof
+endlocal
 
 if "%found_file%"=="false" (
   echo Couldn't find "%gamedir%\%pak_file%" in the usual locations.
@@ -141,12 +147,25 @@ REM subroutines used by find_pakfile
 reg query "%~1" /v "%~2" > nul 2>&1
 if %errorlevel% equ 0 (
   for /f "tokens=2,* skip=2" %%a in ('reg query "%~1" /v "%~2"') do (
-    set dirs_checked=%dirs_checked% "%%b"
-    if exist "%%b\%gamedir%\%pak_file%" (
-      call :copy_to_target "%%b\%gamedir%\%pak_file%"
-    )
+    call :handle_reg_query_copy "%%b"
   )
 )
+goto :eof
+
+:reg_query_path_root_and_copy
+reg query "%~1" /v "%~2" > nul 2>&1
+if %errorlevel% equ 0 (
+  for /f "tokens=2,* skip=2" %%a in ('reg query "%~1" /v "%~2"') do (
+    call :handle_reg_query_copy "%%b\%~3"
+  )
+)
+goto :eof
+
+:handle_reg_query_copy
+set fullpath=%~1
+set backslashed=%fullpath:/=\%
+call :conditional_copy "%backslashed%"
+set dirs_checked=%dirs_checked% "%backslashed%"
 goto :eof
 
 :find_and_copy_from

@@ -1,3 +1,8 @@
+**** v1.4 (Feb 2017)
+
+- Fixed issues in the pak-finder script affecting multi-disk systems and older Steam installs.
+
+
 **** v1.3 (Feb 2017)
 
 - Unified the batch files under an "uber-installer" so you only need to run one script.
