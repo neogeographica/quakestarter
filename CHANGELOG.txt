@@ -1,3 +1,10 @@
+**** v1.3 (Feb 2017)
+
+- Unified the batch files under an "uber-installer" so you only need to run one script.
+
+- Did an editing/tweaking pass through the readmes.
+
+
 **** v1.2 (Jan 2017)
 
 - Fixed files in the release zip to have Windows-style line endings again.

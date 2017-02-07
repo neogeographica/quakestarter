@@ -22,6 +22,7 @@ if not exist "%markv_exe%" (
 )
 
 :menu
+cls
 call :installed_check bbelief
 call :installed_check mexx9
 call :installed_check zer
@@ -55,6 +56,7 @@ if "%bbelief6_fix_success%"=="false" (
   echo If you really want to install just the unpatched mod, you can enter
   echo "install bbelief" in the Mark V console.
 )
+pause
 goto :menu
 
 :2
@@ -63,6 +65,7 @@ if exist mexx9 (
 ) else (
   call "%~dp0\_mod_install.cmd" mexx9
 )
+pause
 goto :menu
 
 :3
@@ -91,6 +94,7 @@ if "%good_zer_patches%"=="false" (
   echo If you really want to install just the unpatched mod, you can enter
   echo "install zer" in the Mark V console.
 )
+pause
 goto :menu
 
 :4
@@ -100,10 +104,10 @@ if exist nehahra (
   call "%~dp0\_mod_install.cmd" nehahra
   call :nehahra_fix
 )
+pause
 goto :menu
 
 :menu_exit
-pause
 popd
 goto :eof
 

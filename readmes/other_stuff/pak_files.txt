@@ -13,7 +13,7 @@ If you already have your pak files and are ready to go, you don't need to read t
 
 **** Getting the pak files from a Quake installation
 
-If you already have Quake installed somewhere, or if you are able to install Quake now (e.g. from GOG or Steam), then that will be the easiest way to get these files. The "install_pakfiles" batch file will be able to find that Quake installation and copy the necessary files from it.
+If you already have Quake installed somewhere on this computer, or if you are able to install Quake now (e.g. from GOG or Steam), then that will be the easiest way to get these files. The first menu option in the "installer" batch file will find that Quake installation and copy the necessary files from it.
 
 If "install_pakfiles" can't find your Quake installation, you can go look for the pak files yourself. They will be inside a folder named "id1", which itself is inside your Quake install directory. So find and open up the "id1" folder, then make the copies you need of "pak0.pak" and "pak1.pak". Similarly if you have one or both of the missionpacks installed, you can get the "pak0.pak" file out of the "hipnotic" and/or "rogue" folder inside an existing Quake installation.
 

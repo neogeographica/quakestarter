@@ -161,14 +161,15 @@ SET quothengine=
   REM was compiled from
 FOR %%G IN (tyr-quake.exe
             tyr-glquake.exe
-			darkplaces.exe
-			RMQEngine-Win32.exe
+            darkplaces.exe
+            RMQEngine-Win32.exe
             glquakebjp.exe
-			directq.exe
-			mark_v.exe
-			mark_v_winquake.exe
-			fitzquake5.exe
-			quakespasm.exe
+            directq.exe
+            mark_v_winquake.exe
+            dx9_mark_v.exe
+            mark_v.exe
+            fitzquake5.exe
+            quakespasm.exe
             fitzquake085.exe) DO (
 			   IF EXIST %%G (
 			   SET quothengine=%%G

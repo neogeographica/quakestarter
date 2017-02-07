@@ -23,6 +23,7 @@ if not exist "%markv_exe%" (
 )
 
 :menu
+cls
 call :installed_check czg07
 call :installed_check gmsp3
 call :installed_check kinn_marcher
@@ -57,6 +58,7 @@ if exist czg07 (
 ) else (
   call "%~dp0\_mod_install.cmd" czg07
 )
+pause
 goto :menu
 
 :2
@@ -70,6 +72,7 @@ if exist gmsp3 (
   move id1\maps\gmsp3v2.bsp gmsp3\maps > nul
   move id1\maps\gmsp3.txt gmsp3 > nul
 )
+pause
 goto :menu
 
 :3
@@ -78,6 +81,7 @@ if exist kinn_marcher (
 ) else (
   call "%~dp0\_mod_install.cmd" kinn_marcher
 )
+pause
 goto :menu
 
 :4
@@ -86,6 +90,7 @@ if exist rubicon2 (
 ) else (
   call "%~dp0\_mod_install.cmd" rubicon2
 )
+pause
 goto :menu
 
 :5
@@ -94,6 +99,7 @@ if exist ne_ruins (
 ) else (
   call "%~dp0\_mod_install.cmd" ne_ruins
 )
+pause
 goto :menu
 
 :6
@@ -102,6 +108,7 @@ if exist honey (
 ) else (
   call "%~dp0\_mod_install.cmd" honey
 )
+pause
 goto :menu
 
 :7
@@ -125,6 +132,7 @@ if exist quoth (
   echo Failed to install required base mod "quoth". Skipping "apsp3" install.
 )
 echo Make sure to specify Quoth as the base game when playing "apsp3".
+pause
 goto :menu
 
 :8
@@ -133,6 +141,7 @@ if exist ivory1b (
 ) else (
   call "%~dp0\_mod_install.cmd" ivory1b
 )
+pause
 goto :menu
 
 :9
@@ -142,6 +151,7 @@ if exist func_mapjam2 (
   call "%~dp0\_mod_install.cmd" func_mapjam2
   call :func_mapjam2_fix
 )
+pause
 goto :menu
 
 :10
@@ -151,10 +161,10 @@ if exist mapjam6 (
   call "%~dp0\_mod_install.cmd" mapjam6
   call :mapjam6_fix
 )
+pause
 goto :menu
 
 :menu_exit
-pause
 popd
 goto :eof
 
