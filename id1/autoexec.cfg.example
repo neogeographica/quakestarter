@@ -24,7 +24,7 @@
 // which settings get stored varies among Quake engines. If you have a
 // particular setting that you want to make sure is applied every time you run
 // Quake, you may have to put it in autoexec.cfg. The autoexec.cfg file is
-// sort of a collection of "overrides" for settings; any setting you put in
+// sort of a collection of "overrides" for settings. Any setting you put in
 // autoexec.cfg will always be applied every time Quake runs.
 
 // Settings in autoexec.cfg will take precedence over anything in the config.cfg
@@ -42,7 +42,7 @@
 // that mod's autoexec.cfg will be the one that is applied, rather than your
 // own file from the id1 folder. Usually you don't want this behavior... it's
 // kind of rude for a mod to do this, but some do. There are various ways to
-// deal with this if it happens; for example you could copy all the settings
+// deal with this if it happens. For example you could copy all the settings
 // from your autoexec.cfg and add them into to the mod's autoexec.cfg file.
 
 
