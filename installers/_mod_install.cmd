@@ -28,12 +28,12 @@ if not exist "%markv_exe%" (
 )
 if not exist "id1\pak0.pak" (
   echo Couldn't find "id1\pak0.pak".
-  echo You can run "install_pakfiles.bat" to look for pak0.pak on this computer.
+  echo You could use the first option of the main installer to look for pak files on this computer.
   goto :exit
 )
 if not exist "id1\pak1.pak" (
   echo Couldn't find "id1\pak1.pak".
-  echo You can run "install_pakfiles.bat" to look for pak1.pak on this computer.
+  echo You could use the first option of the main installer to look for pak files on this computer.
   goto :exit
 )
 
