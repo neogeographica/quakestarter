@@ -5,45 +5,9 @@
 
 // Any line that starts with doubleslash is a comment and has no effect.
 
-// Let's start here with a bit of talk about how Quake config files work. If
-// you already understand that stuff, you can skip this part and look at the
-// example settings below it (starting with the "autoaim" section).
-
-
-// about Quake config files
-//-------------------------------------------------------------------
-
-// Config management in Quake is kind of a mess. The short explanation though
-// is: Your config.cfg file (in the id1 folder) is the file that stores most
-// settings for Quake. If you mess around with the Quake settings menus,
-// config.cfg is where your changes get stored. If you change settings using
-// the Quake console, some (but not all) of those changes will also get stored
-// in config.cfg.
-
-// There are some settings that DO NOT get stored in config.cfg though, and
-// which settings get stored varies among Quake engines. If you have a
-// particular setting that you want to make sure is applied every time you run
-// Quake, you may have to put it in autoexec.cfg. The autoexec.cfg file is
-// sort of a collection of "overrides" for settings. Any setting you put in
-// autoexec.cfg will always be applied every time Quake runs.
-
-// Settings in autoexec.cfg will take precedence over anything in the config.cfg
-// file, but can themselves be overridden by settings from the command line.
-
-// I'm presenting the settings below as examples of "things to put in
-// autoexec.cfg" just so that you can be SURE that these settings will be
-// applied, each time you start Quake, regardless of what Quake engine you are
-// using. Keep in mind that if a setting is exposed through a nice in-game menu,
-// you may want to use that menu to deal with it rather than manually editing
-// the setting in a config file.
-
-// The last gotcha to be aware of: If you are running a mod, check to see
-// whether that mod folder has its own autoexec.cfg in it. If it does, then
-// that mod's autoexec.cfg will be the one that is applied, rather than your
-// own file from the id1 folder. Usually you don't want this behavior... it's
-// kind of rude for a mod to do this, but some do. There are various ways to
-// deal with this if it happens. For example you could copy all the settings
-// from your autoexec.cfg and add them into to the mod's autoexec.cfg file.
+// For more discussion, see autoexec-cfg-example-annotated.txt. Detailed
+// comments have been moved to that file because of Quake limits on config
+// file size.
 
 
 // about the settings in this file
@@ -59,21 +23,15 @@
 // setting's value if you like... you don't have to use the example value
 // shown below.
 
+// Some of these values correspond to settings that are also exposed through
+// menus in Mark V or other modern Quake engines. If you set them in the
+// autoexec.cfg file instead of through the menus, then the value in
+// autoexec.cfg will be applied whenever Quake starts, regardless of what you
+// previously set in the menus.
+
 
 // autoaim
 //-------------------------------------------------------------------
-
-// Quake originally expected people to mostly play keyboard-only, and it
-// had a mild "vertical autoaim" effect by default. But if you're using
-// mouselook then you don't want this effect.
-
-// Note that the autoaim setting below is also exposed in the Mark V menus, as
-// the "Server Aim" setting in the "Preferences" menu. Setting "Server Aim" to
-// "Aim Help Off" will set this value to 2.
-
-// If you set this value in the autoexec.cfg file instead of through the
-// menus, then the value in autoexec.cfg will be applied whenever Quake starts,
-// regardless of what you previously set in the menus.
 
 // Set sv_aim to a value of 1 or more for no autoaim, or a value less than 1
 // for some vertical autoaim.
@@ -84,19 +42,6 @@
 
 // texture filtering (these don't apply to the winquake variant)
 //-------------------------------------------------------------------
-
-// In Quake engines with GPU-accelerated renderers, you have some choices
-// about what kind of filtering to apply to the original Quake environment
-// textures.
-
-// Note that the texturemode setting below is also exposed in the Mark V menus,
-// as the "Pixelation" setting in the "Video Options" menu. Only some of the
-// below values are presented as choices however (excluding my personal
-// recommended/favorite value GL_NEAREST_MIPMAP_LINEAR).
-
-// If you set this value in the autoexec.cfg file instead of through the
-// menus, then the value in autoexec.cfg will be applied whenever Quake starts,
-// regardless of what you previously set in the menus.
 
 // Set gl_texturemode for amount of texture filtering and "pixely-ness".
 // There are several values for this, but a few interesting ones are:
@@ -112,9 +57,6 @@
 //gl_texturemode GL_NEAREST_MIPMAP_LINEAR
 
 // Increase gl_texture_anisotropy for more texture clarity in some situations.
-// Note that if you're using the Mark V DX9 engine then this setting only takes
-// effect for the various GL_LINEAR_* texturemodes. In the GL engine though, it
-// also works with the GL_NEAREST_* texturemodes (and can help improve them).
 // Default is 1. Uncomment the following line to set some other value.
 
 //gl_texture_anisotropy 8
@@ -129,14 +71,10 @@
 //r_particles 2
 
 
-// transparency & mirrors
+// transparency & mirrors (other than r_wateralpha, Mark V engines only)
 //-------------------------------------------------------------------
 
-// Original Quake didn't have transparent liquids or mirrors. If you prefer
-// that, you can set all of these values to 1. Lower values are more
-// transparent (or mirror-y). Note that if you are NOT using Mark V,
-// then r_wateralpha applies to all liquids and the other variables don't
-// do anything.
+// 1 = no transparency/reflection, 0 = full transparency/reflection
 // Defaults are 1, 0.2, 0.7, and 0.5 respectively. Uncomment the following
 // lines to set some other value.
 
@@ -146,15 +84,9 @@
 //r_wateralpha 1
 
 
-// water warp
+// water warp (Mark V engines only)
 //-------------------------------------------------------------------
 
-// All variants of Mark V support a "water warp" effect when underwater,
-// like the original WinQuake. For the GL and DX9 variants, you can play
-// with some settings that control the strength of this effect. At high
-// screen resolutions the effect may be too strong by default. Both
-// r_waterwarp_amp and r_waterwarp_cycle may be worth modifying, although
-// I typically only change r_waterwarp_amp.
 // Default is 150. Uncomment the following line to set some other value.
 // Larger values decrease the strength of the warp effect, althouhg the
 // exact effect depends upon your chosen video resolution.
@@ -164,14 +96,6 @@
 
 // animations
 //-------------------------------------------------------------------
-
-// Note that the two settings below are also exposed in the Mark V menus,
-// as the "Effects" setting in the "Preferences" menu. Setting "Effects" to
-// "Normal + Jerky" will set both of these values to zero.
-
-// If you set these values in the autoexec.cfg file instead of through the
-// menus, then the values in autoexec.cfg will be applied whenever Quake starts,
-// regardless of what you previously set in the menus.
 
 // Set r_lerpmove to 0 for old jerky enemy animations, 1 for smoothed.
 // Default is 1. Uncomment the following line to set some other value.
