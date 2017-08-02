@@ -1,3 +1,14 @@
+**** v1.5 (Aug 2017)
+
+- Moved a lot of autoexec.cfg commentary into a separate file autoexec-cfg-example-annotated.txt, because of traditional engine limits on cfg file sizes.
+
+- Tweaks to some messages that the installer prints and to readme file content.
+
+- Fixed bug where installer would not look across multiple disk drives for pak files.
+
+- Fixed issue of a dialog window sometimes popping up during installer run if a CD drive had been recently used but is now empty.
+
+
 **** v1.4 (Feb 2017)
 
 - Fixed issues in the pak-finder script affecting multi-disk systems and older Steam installs.

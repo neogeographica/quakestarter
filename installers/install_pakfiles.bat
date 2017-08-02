@@ -111,7 +111,8 @@ setlocal EnableDelayedExpansion
 set drives=
 for /f "delims=: tokens=1,*" %%a in ('fsutil fsinfo drives') do (
   for %%c in (%%b) do (
-    if exist "%%c" set drives=!drives! %%c
+    set drive=%%c
+    >nul 2>&1 vol !drive:\=! && set drives=!drives! %%c
   )
 )
 call :find_and_copy_from "Quake"
@@ -169,7 +170,7 @@ set dirs_checked=%dirs_checked% "%backslashed%"
 goto :eof
 
 :find_and_copy_from
-for /f %%a in ("%drives%") do (
+for %%a in (%drives%) do (
   call :conditional_copy "%%a%~1"
   if exist "%target_pakfile%" goto :eof
 )
