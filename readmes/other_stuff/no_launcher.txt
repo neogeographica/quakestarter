@@ -71,8 +71,12 @@ The files in a mod release may contain a new different "quake.rc" that sets some
 
 When you start up Quake, it will execute "quake.rc". This includes the case of starting up Quake with the "-game" command-line argument to make it immediately switch to a particular game folder. So in original Quake (before the "game" console command was added) mods were created under the expectation that "quake.rc" would be run when a mod was activated. Some mods rely on this behavior. Not many, but some.
 
-So why doesn't the "game" console command execute "quake.rc"? This is something people have argued about, but the winning argument currently, as I understand it, is that some mods do rude things with their config files. For example a mod might contain an "autoexec.cfg" that overrides your own "id1\autoexec.cfg" file. So if you're using the "game" console command to activate a mod, the choice is left up to you as to whether or not you want to execute "quake.rc" (and the other config files that it runs).
+So why doesn't the "game" console command execute "quake.rc"? **
 
-Usually IMO executing "quake.rc" after activating a mod is the right thing to do, which is why I recommended that above.
+This is something that Quake developers have talked about for quite a while. One argument has to do with the fact that some mods do rude things with their config files. For example a mod might contain an "autoexec.cfg" that overrides your own "id1\autoexec.cfg" file. So if you're using the "game" console command to activate a mod, you might want to still have the choice as to whether or not you want to execute "quake.rc" (and the other config files that it runs).
+
+But usually IMO executing "quake.rc" after activating a mod is the right thing to do, which is why I recommended that above.
 
 The installer batch files in this package will occasionally put customized "quake.rc" files in mod folders, to apply mod-recommended settings in a way that does not override anything you might have in "id1\autoexec.cfg". They will also rename any "autoexec.cfg" file included in a mod so that it does not disturb whatever you have set up in "id1\autoexec.cfg".
+
+** Recently the 0.93.0 release of Quakespasm changed the behavior of the "game" command, so that it DOES now automatically execute "quake.rc" after switching game folders. So for Quakespasm 0.93.0 (and presumably later versions) it's no longer necessary to do "exec quake.rc" yourself. I'll keep an eye out to see if Mark V follows suit.

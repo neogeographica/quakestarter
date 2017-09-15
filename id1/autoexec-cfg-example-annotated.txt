@@ -1,7 +1,10 @@
 // This file is an EXAMPLE of the settings you could put in your autoexec.cfg
-// file. To use settings in this file, either copy them into your autoexec.cfg
-// file (if you already have one) or else just rename this whole file to
-// autoexec.cfg.
+// file. To use settings in this file, you could copy them into your
+// autoexec.cfg file (if you already have one). Or you could rename the
+// autoexec.cfg.example file to autoexec.cfg and then start editing that.
+
+// (Don't use THIS file with all its comments as your autoexec.cfg file.
+// This file is too big for some Quake engines to load as a config file.)
 
 // Any line that starts with doubleslash is a comment and has no effect. If
 // copying stuff to your autoexec.cfg file, you might want to leave out most

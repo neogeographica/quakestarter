@@ -20,7 +20,7 @@ If that installer can't find your Quake pak files, you can go look for them your
 
 **** Getting the pak files from a Quake CD
 
-If all you have is a Quake CD, and the installer no longer works on your version of Windows, then you can try to get the pak files directly from the CD.
+If all you have is a Quake CD, and the CD's installer no longer works on your version of Windows, then you can try to get the pak files directly from the CD.
 
 There were several different kinds of Quake CDs produced. In some cases you may be able to search through the CD's files and find the necessary pak files ready for you to copy.
 
