@@ -2,6 +2,8 @@
 
 - Install Arcane Dimensions 1.7 rather than 1.5. Note that 1.7 will go into a different folder than 1.5, so if you want to clean up a 1.5 install you will have to handle that manually.
 
+- Included Simple Quake Launcher 2, and changed discussion of Simple Quake Launcher to be appropriate for SQL2. Note that this version now requires the .Net Framework 4.5 instead of 3.5.
+
 
 **** v1.6 (Sep 2017)
 

@@ -2,7 +2,7 @@
 
 This package is one way to get going with the "state of the art" in Quake singleplayer. It's meant to be a convenient bundle of useful tools and explanations. The tools included in here are:
 
-- The Simple Quake Launcher by "MaxEd", from https://sourceforge.net/projects/simplequakelauncher/ .
+- Simple Quake Launcher 2 by "MaxEd", from https://github.com/m-x-d/Simple-Quake-Launcher-2/releases/latest
 
 - The Mark V "Quake engine" (Quake-playing program) by "Baker" and other contributors, from http://quakeone.com/markv/ . The Mark V website has additional info about the engine, more credits info, and links to other stuff you might want to download. Also note that there are several other Quake engines out there; see the "quake_engines.txt" file in the "readmes\other_stuff" folder if you're curious.
 
@@ -15,7 +15,7 @@ You might want to keep an eye out in the future for a newer release of Mark V. Y
 
 The included version of Mark V is build 1036 from January 2017.
 
-As for this whole package of stuff, it's version 1.6. If you want to see what has changed since the previous releases, see CHANGELOG.txt. If you've been using a previous version of this package, you can overwrite those files with the ones from this new release; that won't hurt whatever Quake configuration you've set up.
+As for this whole package of stuff, it's version 1.7. If you want to see what has changed since the previous releases, see CHANGELOG.txt. If you've been using a previous version of this package, you can overwrite those files with the ones from this new release; that won't hurt whatever Quake configuration you've set up.
 
 
 *** How to use this
@@ -32,7 +32,7 @@ Things to do:
 
 - Explore other options in the "installer" menu for some selected user-created addons. The "Episodes released in 2016" option is a good way to get started with some recent stuff.
 
-- Run Quake, using "mark_v_winquake.exe" (acts like WinQuake), or "mark_v.exe" (acts like GLQuake), or "dx9_mark_v.exe" (like "mark_v.exe", but uses DirectX instead of OpenGL). If you want to play missionpacks or other addons, it's easier if you use "SQLauncher.exe", the Simple Quake Launcher (which requires .Net 3.5 to be installed).
+- Run Quake, using "mark_v_winquake.exe" (acts like WinQuake), or "mark_v.exe" (acts like GLQuake), or "dx9_mark_v.exe" (like "mark_v.exe", but uses DirectX instead of OpenGL). If you want to play missionpacks or other addons, it's easier if you use "SQLauncher2.exe", the Simple Quake Launcher 2 (which requires .Net 4.5 to be installed).
 
 - Once you're in-game, use the Mark V menus to configure Quake the way you like it. The menus are sufficient for normal setup, but you can also get more "hands-on" and manually modify config files if you like.
 

@@ -1,21 +1,21 @@
+**** Mod
+
+If the content is in its own game folder, use Simple Quake Launcher 2 to select that game folder as the "Mod" to launch. This will always be the case for content installed through these batch files!
+
+Otherwise select the "[Default]" mod.
+
+
 **** Game
 
-If the content is in its own game folder, use the Simple Quake Launcher to select that game folder as the "Game" to launch. This will always be the case for content installed through these batch files!
+Most addons just use "Quake" for the "Game" setting, but in some cases an included readme file may tell you differently.
 
-Otherwise select the "[Default]" game.
+A readme that mentions the "-hipnotic" command-line argument is an indicator that you should specify "MP1: Scourge of Armagon" as the "Game" in the launcher. A mention of "-rogue" is an indicator to specify "MP2: Dissolution of Eternity" as the "Game".
 
-
-**** Base Game
-
-Most addons just use "Quake" for the "Base Game" setting, but in some cases an included readme file may tell you differently.
-
-A readme that mentions the "-hipnotic" command-line argument is an indicator that you should specify "EP1: Scourge of Armagon" as the "Base Game" in the launcher. A mention of "-rogue" is an indicator to specify "EP2: Dissolution of Eternity" as the "Base Game".
-
-Some addons may ask that you specify missionpack 1 as the base game even if you don't have that missionpack installed. In that case, the mod doesn't use any assets from the missionpack, but it does use some missionpack-specific code inside your Quake engine.
+Some addons may ask that you use missionpack 1 even if you don't have that missionpack installed. In that case, the mod doesn't use any assets from the missionpack, but it does use some missionpack-specific code inside your Quake engine.
 
 Some addons require using the mod Quoth as the base game. If you don't have Quoth you can get it from https://tomeofpreach.wordpress.com/quoth/ and install it into a game folder named "quoth".
 
-Quoth is the base game if a readme mentions using the "-quoth" command-line argument or generally talks about having a Quoth requirement. Even if the readme mentions both "-quoth" and "-hipnotic", then specifying just "Quoth" as the base game in the launcher is still the thing to do.
+Quoth is the "Game" to specify if a readme mentions using the "-quoth" command-line argument or generally talks about having a Quoth requirement. Even if the readme mentions both "-quoth" and "-hipnotic", then specifying just "Quoth" as the "Game" in the launcher is still the thing to do.
 
 
 **** Requirements
@@ -29,8 +29,8 @@ However if you're playing content that was installed in some other way, and you'
 
 **** Launching
 
-Once you have the "Base Game" and "Game" set, pick the map and skill setting you want to play, and launch.
+Once you have the "Game" and "Mod" set, pick the map and skill setting you want to play, and launch.
 
-For custom episodes, the Simple Quake Launcher will often figure out the first map of the episode and select it by default. You can also check any included readme file to see what the first map should be.
+For custom episodes, Simple Quake Launcher 2 will often figure out the first map of the episode and select it by default. You can also check any included readme file to see what the first map should be.
 
 Some addons do not have a startmap or hub map, and are just a collection of individual maps. In that case you'll need to select and launch each map individually to play it.

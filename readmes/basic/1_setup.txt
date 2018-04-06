@@ -7,9 +7,9 @@ Similarly, if you own and want to play the official Quake missionpacks, each of 
 The first option in the menu of the "installer" batch file can usually locate and copy the necessary pak files if you already have Quake installed somewhere else on this same computer. If you're having difficulties finding your pak files, see "readmes\other_stuff\pak_files.txt".
 
 
-**** Simple Quake Launcher
+**** Simple Quake Launcher 2
 
-Once you have these pak files in place, the easiest way to play is often by using the Simple Quake Launcher, "SQLauncher.exe". This program has a requirement for Microsoft .Net Framework 3.5. If you don't have .Net 3.5 installed, Windows may ask to install it the first time you run the Simple Quake Launcher; otherwise you'll need to get it from http://www.microsoft.com/download/en/details.aspx?id=25150
+Once you have these pak files in place, the easiest way to play is often by using Simple Quake Launcher 2, "SQLauncher2.exe". This program has a requirement for Microsoft .Net Framework 4.5. If you don't have .Net 4.5 installed, Windows may ask to install it the first time you run the Simple Quake Launcher; otherwise you'll need to get it from https://www.microsoft.com/net/download/dotnet-framework-runtime/net452
 
 
 **** DirectX 9 Runtime
