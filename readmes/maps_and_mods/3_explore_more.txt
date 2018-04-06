@@ -10,7 +10,7 @@ Note that both Quake Injector and also the Mark V install feature (see below) li
 
 * Click "OK" to close the dialog and apply the settings.
 
-One thing to look out for though is that the Mark V install feature (and therefore these batch scripts that use it) doesn't work exactly the same as Quake Injector when it comes to choosing the name for a mod folder. For example Mark V will install Arcane Dimensions 1.5 in the "ad_v1_50final" folder, while Quake Injector will store it in the "ad" folder. So to avoid confusion and wasted disk space on duplicate stuff, it's best to settle on using only one of these install methods.
+One thing to look out for though is that the Mark V install feature (and therefore these batch scripts that use it) doesn't work exactly the same as Quake Injector when it comes to choosing the name for a mod folder. For example Mark V will install Arcane Dimensions 1.7 in the "ad_v1_70final" folder, while Quake Injector will store it in the "ad" folder. So to avoid confusion and wasted disk space on duplicate stuff, it's best to settle on using only one of these install methods.
 
 
 **** DIY

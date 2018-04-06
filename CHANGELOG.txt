@@ -1,3 +1,8 @@
+**** v1.7 (Apr 2018)
+
+- Install Arcane Dimensions 1.7 rather than 1.5. Note that 1.7 will go into a different folder than 1.5, so if you want to clean up a 1.5 install you will have to handle that manually.
+
+
 **** v1.6 (Sep 2017)
 
 - Updated some minor comments here and there.

@@ -15,7 +15,7 @@ Leave the "Base Game" set to "Quake" for now.
 
 For "Game", choose "[Default]" if you want to play the original Quake campaign. You may want to at least launch the original Quake campaign once before trying anything else, because any settings that you configure in the default Quake game will be used as a starting point when you later launch custom content.
 
-If you have other content installed, there will be additional choices available for "Game". E.g. you could choose "dopa" for "Dimension of the Past", or "ad_v1_50final" for "Arcane Dimensions", if you have those installed.
+If you have other content installed, there will be additional choices available for "Game". E.g. you could choose "dopa" for "Dimension of the Past", or "ad_v1_70final" for "Arcane Dimensions", if you have those installed.
 
 When you've picked what you want to play, click the big "Launch" button at the bottom, and away you go!
 

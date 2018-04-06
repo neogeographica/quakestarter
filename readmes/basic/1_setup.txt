@@ -28,8 +28,8 @@ FYI the installer will run the Mark V engine in order to perform a download. You
 
 Other choices in the installer menu can be used to download some of the many community-created singleplayer adventures. These choices, and ways to find all the rest of the available Quake singleplayer content, are discussed in the maps_and_mods readmes.
 
-For starters you might want to download a couple of recent releases: "Dimension of the Past" and "Arcane Dimensions 1.5". The "Episodes released in 2016" installer option will let you download and install either or both of these.
+For starters you might want to download a couple of recent releases: "Dimension of the Past" and "Arcane Dimensions 1.7". The "Episodes released in 2016" installer option will let you download and install either or both of these.
 
 "Dimension of the Past" is the "fifth Quake episode" created by J.F. Gustafsson and released by Machine Games in honor of Quake's 20th anniversary. It's a polished release but has an old-school look and feel with classic Quake gameplay.
 
-"Arcane Dimensions" is a map collection and partial-conversion mod from Simon O'Callaghan ("sock") and several more of the Quake community's current mappers and coders. Check the readme included in the "ad_v1_50final" folder for complete credits. It features large detailed environments along with new monsters and weapons, pushing the envelope of Quake-ish-ness.
+"Arcane Dimensions" is a map collection and partial-conversion mod from Simon O'Callaghan ("sock") and several more of the Quake community's current mappers and coders. Check the readme included in the "ad_v1_70final" folder for complete credits. It features large detailed environments along with new monsters and weapons, pushing the envelope of Quake-ish-ness.
