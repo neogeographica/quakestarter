@@ -176,13 +176,30 @@ goto :menu
 
 :26
 REM for Func Map Jam 3 also install the patch
+REM can't use normal patch installer tho since it only includes bsp/lit files
 set jam3_mfx_fix_success=
 if exist func_mapjam3 (
   echo The "func_mapjam3" gamedir already exists.
 ) else (
   call "%~dp0\_mod_install.cmd" func_mapjam3
   if exist func_mapjam3 (
-    call "%~dp0\_mod_patch_install.cmd" jam3_mfx_fix func_mapjam3
+    set jam3_mfx_fix_success=false
+    echo Installing patch "jam3_mfx_fix" for "func_mapjam3"...
+    call "%~dp0\_mod_install.cmd" jam3_mfx_fix
+    if exist id1\maps\jam3_mfx.bsp (
+      echo Adding/patching files:
+      echo func_mapjam3\maps
+      echo   jam3_mfx.bsp
+      move id1\maps\jam3_mfx.bsp func_mapjam3\maps > nul
+      echo   jam3_mfx.lit
+      move id1\maps\jam3_mfx.lit func_mapjam3\maps > nul
+      del /q id1\_library\jam3_mfx_fix.zip
+      echo Patched.
+      set jam3_mfx_fix_success=true
+    ) else (
+      echo Failed to extract patch files from: "id1\_library\jam3_mfx_fix.zip"
+      echo Leaving that zipfile in place for investigation.
+    )
   )
 )
 if "%jam3_mfx_fix_success%"=="false" (
@@ -190,7 +207,12 @@ if "%jam3_mfx_fix_success%"=="false" (
   echo Failed to apply patch; rolled back the mod install. Maybe try again?
   echo If you really want to install just the unpatched mod, you can enter
   echo "install func_mapjam3" in the Mark V console.
+  pause
+  goto :menu
 )
+echo Note that you do NOT normally want to choose the "start" map when playing
+echo this mod, as that will start the original Zerstoerer campaign. Instead
+echo choose a specific jam3_* map to play.
 pause
 goto :menu
 
