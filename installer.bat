@@ -10,7 +10,7 @@ echo 1: Find ^& copy pak files ^(game data^) on this computer
 echo 2: Install soundtrack music files
 echo(
 echo Additional content:
-echo 3: Episodes released in 2016
+echo 3: Latest episodes (released in 2016 or later)
 echo 4: "Modern" episodes from pre-2016
 echo 5: Classic episodes
 echo 6: Other highly-rated maps up thru 2016

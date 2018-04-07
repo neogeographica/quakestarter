@@ -30,7 +30,7 @@ Things to do:
 
 - Also in the "installer" menu, you can pick the second option to install the Quake soundtrack.
 
-- Explore other options in the "installer" menu for some selected user-created addons. The "Episodes released in 2016" option is a good way to get started with some recent stuff.
+- Explore other options in the "installer" menu for some selected user-created addons.
 
 - Run Quake, using "mark_v_winquake.exe" (acts like WinQuake), or "mark_v.exe" (acts like GLQuake), or "dx9_mark_v.exe" (like "mark_v.exe", but uses DirectX instead of OpenGL). If you want to play missionpacks or other addons, it's easier if you use "SQLauncher2.exe", the Simple Quake Launcher 2 (which requires .Net 4.5 to be installed).
 
