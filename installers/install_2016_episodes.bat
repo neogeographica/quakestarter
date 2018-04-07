@@ -2,7 +2,7 @@
 
 REM Installer for mapsets that fit the following criteria:
 REM * released in 2016 or later
-REM * at least four non-startmaps
+REM * a start map and at least four non-startmaps
 REM * Quaddicted editor rating "Excellent"
 REM * Quaddicted user rating 4.0 or better (normalized Bayesian average)
 
@@ -33,7 +33,7 @@ echo(
 echo Custom episodes released in 2016 or later:
 echo 1: dopa - Dimension of the Past (2016)%dopa_installed%
 echo 2: gotshun-never-released_levels - The "lost" levels (2016)%gotshun-never-released_levels_installed%
-echo 3: func_mapjam9_2 - Func Map Jam 9 (2017)%func_mapjam9_2_installed%
+echo 3: func_mapjam9_2 - Func Map Jam 9 - Contract Revoked / Knave theme (2017)%func_mapjam9_2_installed%
 echo 4: qump - Quake Upstart Mapping Project (2017)%qump_installed%
 echo 5: ad_v1_70final - Arcane Dimensions 1.7 (2017)%ad_v1_70final_installed%
 echo 6: dm4jam - DM4 Jam (2018)%dm4jam_installed%

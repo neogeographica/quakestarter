@@ -2,9 +2,9 @@
 
 REM Installer for mapsets that fit the following criteria:
 REM * released after Nehahra and before Arcane Dimensions
-REM * at least four non-startmaps
+REM * a start map and at least four non-startmaps
 REM * Quaddicted editor rating "Excellent"
-REM * Quaddicted user rating 4.0 or better
+REM * Quaddicted user rating 4.0 or better (normalized Bayesian average)
 
 REM save working dir and change to dir that holds this script
 pushd "%~dp0"
@@ -38,6 +38,7 @@ call :installed_check dmc3
 call :installed_check unforgiven
 call :installed_check rrp
 call :installed_check func_mapjam5
+call :installed_check mapjam6
 echo(
 echo "Modern" custom episodes to install:
 echo 1: oum - Operation: Urth Majik (2001)%oum_installed%
@@ -54,7 +55,8 @@ echo 11: arcanum - Arcanum (2011)%arcanum_installed%
 echo 12: dmc3 - Deathmatch Classics Vol. 3 (2011)%dmc3_installed%
 echo 13: unforgiven - Unforgiven (2011)%unforgiven_installed%
 echo 14: rrp - Rubicon Rumble Pack (2014)%rrp_installed%
-echo 15: func_mapjam5 - Func Map Jam 5 (2015)%func_mapjam5_installed%
+echo 15: func_mapjam5 - Func Map Jam 5 - The Qonquer Map Jam (2015)%func_mapjam5_installed%
+echo 16: mapjam6 - Func Map Jam 6 - Fire and Brimstone (2015)%mapjam6_installed%
 echo(
 set menu_choice=menu_exit
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -268,6 +270,15 @@ if "%QuickerQonquer_success%"=="false" (
 pause
 goto :menu
 
+:16
+if exist mapjam6 (
+  echo The "mapjam6" gamedir already exists.
+) else (
+  call "%~dp0\_mod_install.cmd" mapjam6
+  call :mapjam6_fix
+)
+pause
+goto :menu
 
 :menu_exit
 popd
@@ -308,6 +319,29 @@ goto :eof
 
 :warpspasm_fix
 del /q warpspasm\dll 2> nul
+goto :eof
+
+REM Mark V does not correctly extract mapjam6
+REM so we'll do it from this batch file if possible.
+:mapjam6_fix
+if exist mapjam6\maps\start.bsp (
+  goto :eof
+)
+del /q id1\maps\jam6_*.* 2> nul
+del /q id1\maps\start.bsp 2> nul
+del /q id1\maps\start.lit 2> nul
+call :net45_check
+if "%net45_installed%"=="true" (
+  echo Fixing some install issues...
+  powershell.exe -nologo -noprofile -command "& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('id1\_library\mapjam6.zip', 'mapjam6'); }"
+)
+if exist mapjam6\maps\start.bsp (
+  goto :eof
+)
+md mapjam6 2> nul
+echo Mark V has issues installing "mapjam6".
+echo You can get "mapjam6.zip" from the "id1\_library folder" and
+echo extract it manually into the "mapjam6" folder.
 goto :eof
 
 :net45_check

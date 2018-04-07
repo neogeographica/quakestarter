@@ -1,11 +1,9 @@
 @echo off
 
 REM Installer for maps that fit the following criteria:
-REM * released in 2016 or earlier
-REM * it (or a variant) is NOT included in Arcane Dimensions
 REM * it (or a variant) is NOT included in other selected episodes
 REM * Quaddicted editor rating "Excellent"
-REM * Quaddicted user rating 4.5 or better
+REM * Quaddicted user rating 4.5 or better (normalized Bayesian average)
 
 REM save working dir and change to dir that holds this script
 pushd "%~dp0"
@@ -33,7 +31,6 @@ call :installed_check honey
 call :installed_check apsp3
 call :installed_check ivory1b
 call :installed_check func_mapjam2
-call :installed_check mapjam6
 echo(
 echo A selection of other maps to install:
 echo 1: czg07 - Insomnia (2000)%czg07_installed%
@@ -44,8 +41,7 @@ echo 5: ne_ruins - The Altar of Storms (2011)%ne_ruins_installed%
 echo 6: honey - Honey (2012)%honey_installed%
 echo 7: apsp3 - Subterranean Library (2012)%apsp3_installed%
 echo 8: ivory1b - The Ivory Tower (2013)%ivory1b_installed%
-echo 9: func_mapjam2 - Func Map Jam 2 (2014)%func_mapjam2_installed%
-echo 10: mapjam6 - Func Map Jam 6 (2015)%mapjam6_installed%
+echo 9: func_mapjam2 - Func Map Jam 2 - IKblue/ IKwhite Theme (2014)%func_mapjam2_installed%
 echo(
 set menu_choice=menu_exit
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -156,16 +152,6 @@ if exist func_mapjam2 (
 pause
 goto :menu
 
-:10
-if exist mapjam6 (
-  echo The "mapjam6" gamedir already exists.
-) else (
-  call "%~dp0\_mod_install.cmd" mapjam6
-  call :mapjam6_fix
-)
-pause
-goto :menu
-
 :menu_exit
 popd
 goto :eof
@@ -226,29 +212,6 @@ md func_mapjam2 2> nul
 echo Mark V has issues installing "func_mapjam2".
 echo You can get "func_mapjam2.zip" from the "id1\_library folder" and
 echo extract it manually into the "func_mapjam2" folder.
-goto :eof
-
-REM Mark V does not correctly extract mapjam6
-REM so we'll do it from this batch file if possible.
-:mapjam6_fix
-if exist mapjam6\maps\start.bsp (
-  goto :eof
-)
-del /q id1\maps\jam6_*.* 2> nul
-del /q id1\maps\start.bsp 2> nul
-del /q id1\maps\start.lit 2> nul
-call :net45_check
-if "%net45_installed%"=="true" (
-  echo Fixing some install issues...
-  powershell.exe -nologo -noprofile -command "& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('id1\_library\mapjam6.zip', 'mapjam6'); }"
-)
-if exist mapjam6\maps\start.bsp (
-  goto :eof
-)
-md mapjam6 2> nul
-echo Mark V has issues installing "mapjam6".
-echo You can get "mapjam6.zip" from the "id1\_library folder" and
-echo extract it manually into the "mapjam6" folder.
 goto :eof
 
 :net45_check

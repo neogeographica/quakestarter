@@ -2,9 +2,9 @@
 
 REM Installer for mapsets that fit the following criteria:
 REM * Nehahra and previous releases
-REM * at least four non-startmaps
+REM * a start map and at least four non-startmaps
 REM * Quaddicted editor rating "Excellent"
-REM * Quaddicted user rating 4.0 or better
+REM * Quaddicted user rating 4.0 or better (normalized Bayesian average)
 
 REM save working dir and change to dir that holds this script
 pushd "%~dp0"
