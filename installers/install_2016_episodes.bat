@@ -188,6 +188,7 @@ if exist dm4jam\demo1.dem (
   goto :eof
 )
 del /q id1\maps\dm4jam_*.* 2> nul
+del /q id1\maps\start.* 2> nul
 call :net45_check
 if "%net45_installed%"=="true" (
   echo Fixing some install issues...
