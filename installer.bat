@@ -13,7 +13,8 @@ echo Additional content:
 echo 3: Latest episodes (released in 2016 or later)
 echo 4: "Modern" episodes from pre-2016
 echo 5: Classic episodes
-echo 6: Other highly-rated maps up thru 2016
+echo 6: Other highly-rated maps (part 1)
+echo 6: Other highly-rated maps (part 2)
 echo(
 set menu_choice=eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -42,4 +43,8 @@ goto :menu
 
 :6
 call "installers/install_other_picks.bat"
+goto :menu
+
+:7
+call "installers/install_other_picks_2.bat"
 goto :menu
