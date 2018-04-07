@@ -213,13 +213,29 @@ pause
 goto :menu
 
 :12
-echo TODO
-echo maybe patch from http://quaddicted.com/filebase/dmc3m67qw.zip
+REM Deathmatch Classics Vol. 3 doesn't normally have its own gamedir, but let's give it one
+if exist dmc3 (
+  echo The "dmc3" gamedir already exists.
+) else (
+  call "%~dp0\_mod_install.cmd" dmc3
+  md dmc3 2> nul
+  md dmc3\maps 2> nul
+  md dmc3\maps\src 2> nul
+  move id1\maps\dmc3.txt dmc3 > nul
+  move id1\maps\dmc3*.bsp dmc3\maps > nul
+  move id1\maps\src\dmc3*.map dmc3\maps\src > nul
+  REM delete these uncommon dirs if empty
+  rd id1\maps\src 2> nul
+)
 pause
 goto :menu
 
 :13
-echo TODO
+if exist unforgiven (
+  echo The "unforgiven" gamedir already exists.
+) else (
+  call "%~dp0\_mod_install.cmd" unforgiven
+)
 pause
 goto :menu
 
@@ -233,10 +249,25 @@ pause
 goto :menu
 
 :15
-echo TODO
-echo patch from http://www.quaddicted.com/files/mods/QuickerQonquer.zip
+REM for Func Map Jam 5 also install the Quicker Qonquer mod
+set QuickerQonquer_success=
+if exist func_mapjam5 (
+  echo The "func_mapjam5" gamedir already exists.
+) else (
+  call "%~dp0\_mod_install.cmd" func_mapjam5
+  if exist func_mapjam5 (
+    call "%~dp0\_mod_patch_install.cmd" http://www.quaddicted.com/files/mods/QuickerQonquer.zip func_mapjam5 maps\QArena.bsp maps\QStart.bsp
+  )
+)
+if "%QuickerQonquer_success%"=="false" (
+  rd /q /s func_mapjam5
+  echo Failed to apply the "Quicker Qonquer" patch; rolled back the mod install. Maybe try again?
+  echo If you really want to install just the unpatched mod, you can enter
+  echo "install func_mapjam5" in the Mark V console.
+)
 pause
 goto :menu
+
 
 :menu_exit
 popd
