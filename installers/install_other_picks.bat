@@ -130,6 +130,8 @@ if exist quoth (
   )
 ) else (
   echo Failed to install required base mod "quoth". Skipping "apsp3" install.
+  pause
+  goto :menu
 )
 echo Make sure to specify Quoth as the base game when playing "apsp3".
 pause
@@ -179,7 +181,7 @@ if exist "%1" (
 )
 goto :eof
 
-REM Mark V as of build 1020 does not correctly extract apsp3
+REM Mark V does not correctly extract apsp3
 REM so we'll do it from this batch file if possible.
 :apsp3_fix
 if exist apsp3\maps\apsp3.bsp (
@@ -202,10 +204,10 @@ if exist apsp3\maps\apsp3.bsp (
 md apsp3 2> nul
 echo Mark V has issues installing "apsp3".
 echo You can get "apsp3.zip" from the "id1\_library folder" and
-echo extract it manually into the "id1\apsp3" folder.
+echo extract it manually into the "apsp3" folder.
 goto :eof
 
-REM Mark V as of build 1020 does not correctly extract func_mapjam2
+REM Mark V does not correctly extract func_mapjam2
 REM so we'll do it from this batch file if possible.
 :func_mapjam2_fix
 if exist func_mapjam2\maps\jam2_cocerello.bsp (
@@ -223,10 +225,10 @@ if exist func_mapjam2\maps\jam2_cocerello.bsp (
 md func_mapjam2 2> nul
 echo Mark V has issues installing "func_mapjam2".
 echo You can get "func_mapjam2.zip" from the "id1\_library folder" and
-echo extract it manually into the "id1\func_mapjam2" folder.
+echo extract it manually into the "func_mapjam2" folder.
 goto :eof
 
-REM Mark V as of build 1020 does not correctly extract mapjam6
+REM Mark V does not correctly extract mapjam6
 REM so we'll do it from this batch file if possible.
 :mapjam6_fix
 if exist mapjam6\maps\start.bsp (
@@ -246,7 +248,7 @@ if exist mapjam6\maps\start.bsp (
 md mapjam6 2> nul
 echo Mark V has issues installing "mapjam6".
 echo You can get "mapjam6.zip" from the "id1\_library folder" and
-echo extract it manually into the "id1\mapjam6" folder.
+echo extract it manually into the "mapjam6" folder.
 goto :eof
 
 :net45_check

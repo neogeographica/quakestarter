@@ -131,6 +131,8 @@ if exist quoth (
   )
 ) else (
   echo Failed to install required base mod "quoth". Skipping "warpspasm" install.
+  pause
+  goto :menu
 )
 echo Make sure to specify Quoth as the base game when playing "warpspasm".
 pause
@@ -179,7 +181,7 @@ if exist "%1" (
 )
 goto :eof
 
-REM Mark V as of build 1020 does not correctly extract arcanum
+REM Mark V does not correctly extract arcanum
 REM so we'll do it from this batch file if possible.
 :arcanum_fix
 if exist arcanum\maps\arcstart.bsp (
@@ -198,7 +200,7 @@ if exist arcanum\maps\arcstart.bsp (
 md arcanum 2> nul
 echo Mark V has issues installing "arcanum".
 echo You can get "arcanum.zip" from the "id1\_library" folder and
-echo extract it manually into the "id1\arcanum" folder.
+echo extract it manually into the "arcanum" folder.
 goto :eof
 
 :warpspasm_fix
