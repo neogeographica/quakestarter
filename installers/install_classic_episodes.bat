@@ -34,7 +34,7 @@ echo "Classic" custom episodes to install:
 echo 1: prodigy_se - Prodigy Special Edition (1997)%prodigy_se_installed%
 echo 2: bbelief - Beyond Belief (1997)%bbelief_installed%
 echo 3: mexx9 - Penumbra of Domination (1997)%mexx9_installed%
-echo 4: zer - Zerstorer (1997)%zer_installed%
+echo 4: zer - Zerstoerer (1997)%zer_installed%
 echo 5: descent - (The Final) Descent (2000)%descent_installed%
 echo 6: nehahra - Nehahra (2000)%nehahra_installed%
 echo(
@@ -82,7 +82,7 @@ pause
 goto :menu
 
 :4
-REM for Zerstorer also install the patches
+REM for Zerstoerer also install the patches
 set zer11_success=
 set zerend_fix_success=
 if exist zer (

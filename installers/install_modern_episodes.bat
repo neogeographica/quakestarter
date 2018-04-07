@@ -40,7 +40,7 @@ call :installed_check rrp
 call :installed_check func_mapjam5
 call :installed_check mapjam6
 echo(
-echo "Modern" custom episodes to install:
+echo Modern (pre-2016) custom episodes to install:
 echo 1: oum - Operation: Urth Majik (2001)%oum_installed%
 echo 2: rapture - Rapture (2001)%rapture_installed%
 echo 3: soe_full - Soul of Evil (2002)%soe_full_installed%

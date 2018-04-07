@@ -43,8 +43,8 @@ echo 21: fmb_bdg2 - For My Babies - Bin Dunne Gorne 2 (2013)%fmb_bdg2_installed%
 echo 22: mstalk1c - Midnight Stalker (2013)%mstalk1c_installed%
 echo 23: ivory1b - The Ivory Tower (2013)%ivory1b_installed%
 echo 24: func_mapjam1 - Func Map Jam 1 - Honey Theme (2014)%func_mapjam1_installed%
-echo 25: func_mapjam2 - Func Map Jam 2 - IKblue/ IKwhite Theme (2014)%func_mapjam2_installed%
-echo 26: func_mapjam3 - Func Map Jam 3 - Zerstörer theme (2014)%func_mapjam3_installed%
+echo 25: func_mapjam2 - Func Map Jam 2 - IKblue/IKwhite Theme (2014)%func_mapjam2_installed%
+echo 26: func_mapjam3 - Func Map Jam 3 - Zerstoerer theme (2014)%func_mapjam3_installed%
 echo 27: retrojam6 - Retro Jam 6 - Egyptian theme (2017)%retrojam6_installed%
 echo(
 set menu_choice=menu_exit
