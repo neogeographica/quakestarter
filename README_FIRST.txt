@@ -13,9 +13,11 @@ You might want to keep an eye out in the future for a newer release of Mark V. Y
 
 **** Version info
 
+THIS IS A PRE-RELEASE OF 1.7 TO GET SOME ADDITIONAL TESTING
+
 The included version of Mark V is build 1036 from January 2017.
 
-As for this whole package of stuff, it's version 1.7. If you want to see what has changed since the previous releases, see CHANGELOG.txt. If you've been using a previous version of this package, you can overwrite those files with the ones from this new release; that won't hurt whatever Quake configuration you've set up.
+As for this whole package of stuff, it's version 1.7-beta. If you want to see what has changed since the previous releases, see CHANGELOG.txt. If you've been using a previous version of this package, you can overwrite those files with the ones from this new release; that won't hurt whatever Quake configuration you've set up.
 
 
 *** How to use this
