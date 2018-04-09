@@ -1,6 +1,35 @@
+**** Before you run any addons
+
+It's good to run mark_v.exe at least once before playing any custom content, and set up your desired configuration. Any settings that you configure in the default Quake game will be used as a starting point when you later launch custom content.
+
+
+**** Running addons through the installer
+
+The "installer" batch file not only provides options for installing selected addons, but it also is an easy way to launch Quake.
+
+After you have installed an item, or if you select an already-installed item, the installer will give you the option to play it, with a menu that looks like this:
+
+Launch options:
+y: launch without explicitly setting a skill
+n: do not launch
+0-3: launch and set a default initial skill
+
+If you choose "y" or just press Enter, the addon will be launched using a default skill value. Usually the default skill is 1 ("Normal"), but you may want to set up a different default skill for yourself as described in the other_stuff/no_launcher.txt file. Then you can always just hammer the Enter key to quickly launch stuff without needing to specifically enter a skill value. (If the addon comes with its own "start" map, it may also provide a way to select the skill value in-game.)
+
+If the addon is a multi-map collection that doesn't have its own startmap, you will need to select the map you want to play after Quake has launched. Mark V's "Single Player" menu includes a "Levels" menu you can use to do this.
+
+Using the installer is the easiest way to correctly launch one of these addons, but it has limitations:
+
+- It can only launch the same addons that it knows how to install. Once you branch out into playing other stuff, you'll need to use Simple Quake Launcher 2 or other methods.
+
+- It will always run mark_v.exe as the Quake engine. If you would rather it use a different Quake engine, that's possible if you are familiar with editing batch files or setting Windows environment variables, but you might just want to use Simple Quake Launcher 2 instead.
+
+(If you do want to mess around with how the installer chooses the Quake engine to run, see the installers\_mod_launch.cmd file and how it uses the quake_exe variable.)
+
+
 **** Using the launcher
 
-The Simple Quake Launcher 2 is a great way to start up Quake, especially when you want to do anything besides just starting the original campaign.
+The Simple Quake Launcher 2 is another great way to start up Quake. It's not quite as easy as the installer, but it's more powerful.
 
 When you run "SQLauncher2.exe", you'll get a dialog window with a few settings to choose.
 
@@ -13,18 +42,13 @@ Don't worry about the "Resolution" setting; you can pick your video settings in 
 
 Leave the "Game" set to "Quake" for now.
 
-For "Mod", choose "[Default]" if you want to play the original Quake campaign. You may want to at least launch the original Quake campaign once before trying anything else, because any settings that you configure in the default Quake game will be used as a starting point when you later launch custom content.
-
-If you have other content installed, there will be additional choices available for "Mod". E.g. you could choose "dopa" for "Dimension of the Past", or "ad_v1_70final" for "Arcane Dimensions", if you have those installed.
+For "Mod", choose "[Default]" if you want to play the original Quake campaign. If you have other content installed, there will be additional choices available for "Mod". E.g. you could choose "dopa" for "Dimension of the Past", or "ad_v1_70final" for "Arcane Dimensions", if you have those installed.
 
 When you've picked what you want to play, click the big "Launch" button at the bottom, and away you go!
 
 The launcher has other options that allow you to jump directly into individual maps using a specified skill (difficulty) setting. You don't need to worry about that if you're starting the Quake campaign from the beginning, since that campaign allows skill selection inside the startmap. The official missionpacks and some custom episodes also have startmaps with in-game skill selection.
 
 (But it never hurts to specify your desired skill when launching custom content, just in case.)
-
-
-**** Other base games
 
 If you have an official missionpack installed and want to play that, you would choose that missionpack as the "Game" and choose "[Default]" for the "Mod".
 

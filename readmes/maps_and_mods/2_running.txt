@@ -1,8 +1,6 @@
-**** Mod
+This file is strictly about considerations when using Simple Quake Launcher 2 (or a similar launcher).
 
-If the content is in its own game folder, use Simple Quake Launcher 2 to select that game folder as the "Mod" to launch. This will always be the case for content installed through these batch files!
-
-Otherwise select the "[Default]" mod.
+If you're using the installer as your launcher, then all of this stuff is taken care of for you. The installer will also show you the Quake command line it is using for the launch, so you can get a feel of how these settings work. Simple Quake Launcher 2 isn't as automatic, but it will come in handy when you try out other addons beyond the ones covered by the installer.
 
 
 **** Game
@@ -17,8 +15,25 @@ Some addons require using the mod Quoth as the base game. If you don't have Quot
 
 Quoth is the "Game" to specify if a readme mentions using the "-quoth" command-line argument or generally talks about having a Quoth requirement. Even if the readme mentions both "-quoth" and "-hipnotic", then specifying just "Quoth" as the "Game" in the launcher is still the thing to do.
 
+For the maps and episodes covered by this installer, FYI these are the ones that have special base game requirements:
 
-**** Requirements
+- apsp2, apsp3, e1m5quotha, func_mapjam9_2, red777, and warpspasm require specifying "Quoth" as the "Game". Installing these using the "installer" batch file will also get and install Quoth for you if necessary, and tell you that Quoth is required when playing that content.
+
+- gotshun-never-released_levels requires specifying "MP1: Scourge of Armagon" as the "Game". That missionpack must also currently be installed.
+
+- chapters requires specifying "MP1: Scourge of Armagon" as the "Game". This is true even if you do not have that missionpack currently installed!
+
+- nehahra requires specifying "Nehahra" as the "Game".
+
+
+**** Mod
+
+If the content is in its own game folder -- which will always be the case for content installed through these batch files! -- then use Simple Quake Launcher 2 to select that game folder as the "Mod" to launch. 
+
+Otherwise select the "[Default]" mod.
+
+
+**** Other requirements
 
 Check the addon's readme file to see if there are any special requirements for running it, or anything that you should know about new weapons or monsters.
 

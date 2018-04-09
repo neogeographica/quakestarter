@@ -18,7 +18,7 @@ This readme will just mention a few console commands. If you're curious to learn
 
 If the map you want to run is just a .bsp file in the "id1\maps" folder, skip this section. That's the normal/default map location and doesn't involve any mod code.
 
-Otherwise though, you'll need to specify the game (mod) folder to activate. The map/mod may also have a base game requirement (as specified in its readme).
+Otherwise though, you'll need to specify the mod folder to activate. The map/mod may also have a base game requirement (as specified in its readme).
 
 You specify these things using the "game" command in the Quake console.
 

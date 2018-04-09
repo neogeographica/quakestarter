@@ -13,6 +13,6 @@ For this little package I've chosen to include only the Mark V engine, from http
 
 For singleplayer, Mark V is in a good spot on the spectrum of authenticity, compatibility, and usability. Its native support for downloading and installing mods also comes in handy.
 
-Note that while it's been tested well, Mark V is still relatively new and there's a chance that some custom Quake content might not work with it for some quirky reason. If you run across any problems using Mark V for playing singleplayer content, I would recommend Quakespasm as an alternative (http://quakespasm.sourceforge.net/download.htm).
+Note that while it's been tested well, Mark V is still relatively new. If you run across any problems using Mark V for playing singleplayer content, I would recommend Quakespasm as an alternative (http://quakespasm.sourceforge.net/download.htm).
 
 Quakespasm has long been the go-to Quake engine for singleplayer content, and I didn't include it in this package mainly because its defaults and menu options aren't quite as friendly as those in Mark V. For running Quakespasm on Windows, I recommend getting the latest 64-bit download for Quakespasm and then using "quakespasm.exe" as the Quake engine; you can run it using Simple Quake Launcher 2 or any other launcher just like you do with Mark V.

@@ -1,6 +1,6 @@
 **** Installer
 
-This package includes an "installer" batch file to make it as easy as possible to download and install a sampler of good user-created Quake content. This process will also apply any essential patches to a downloaded mod, and sometimes make other fixes to a mod so that it can use mod-recommended settings without nuking settings that you have in your own "autoexec.cfg" file.
+This package includes an "installer" batch file to make it as easy as possible to download, install, and run a sampler of good user-created Quake content. This process will also apply any essential patches to a downloaded mod, and sometimes make other fixes to a mod so that it can use mod-recommended settings without nuking settings that you have in your own "autoexec.cfg" file.
 
 Note that this install process makes use of Mark V ("mark_v.exe"). So if you are not on Windows or don't have Mark V available, it won't work. It also requires the quaddicted.com website to be up, since that's where the files come from.
 
@@ -14,17 +14,7 @@ The installer choices are:
 
 * Other highly-rated maps - Other content not covered by the other choices above.
 
-This is NOT all the worthwhile Quake singleplayer content, not by a long shot. Even many of my personal favorites are not covered by these choices. If you enjoy Quake SP I really recommend checking out other things at quaddicted.com, as described in the "3_explore_more.txt" file.
-
-A few of these maps or episodes do require using special "Game" settings in Simple Quake Launcher 2. Specifically:
-
-- Some require specifying "Quoth" as the "Game": apsp2, apsp3, e1m5quotha, func_mapjam9_2, red777, and warpspasm. Installing these using the "installer" batch file will also get and install Quoth for you if necessary, and tell you that Quoth is required when playing that content.
-
-- gotshun-never-released_levels requires specifying "MP1: Scourge of Armagon" as the "Game". That missionpack must also currently be installed.
-
-- chapters requires specifying "MP1: Scourge of Armagon" as the "Game". This is true even if you do not have that missionpack currently installed!
-
-- nehahra requires specifying "Nehahra" as the "Game".
+This is NOT all the worthwhile Quake singleplayer content, not by a long shot. If you enjoy Quake SP I really recommend checking out other things at quaddicted.com, as described in the "3_explore_more.txt" file.
 
 
 **** Installer issues

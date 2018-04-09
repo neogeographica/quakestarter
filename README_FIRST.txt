@@ -6,7 +6,7 @@ This package is one way to get going with the "state of the art" in Quake single
 
 - The Mark V "Quake engine" (Quake-playing program) by "Baker" and other contributors, from http://quakeone.com/markv/ . The Mark V website has additional info about the engine, more credits info, and links to other stuff you might want to download. Also note that there are several other Quake engines out there; see the "quake_engines.txt" file in the "readmes\other_stuff" folder if you're curious.
 
-- An installer to help set up the Quake game data files and soundtrack, and a few of the many custom singleplayer addons for Quake.
+- An installer to help set up the Quake game data files and soundtrack, and some of the many custom singleplayer addons for Quake. The installer can also help launch and play those addons once they are installed.
 
 You might want to keep an eye out in the future for a newer release of Mark V. You can just drop new Mark V files in here and replace the older versions.
 
@@ -26,15 +26,17 @@ You can also just use this package as a new Quake installation starting from scr
 
 Things to do:
 
+- Note that Simple Quake Launcher 2 and some aspects of the installer make use of Microsoft .Net Framework 4.5. If you are on Windows 8 or 10, you have that already. If not, you may need to get it from https://www.microsoft.com/net/download/dotnet-framework-runtime/net452 
+
 - If you're starting a new Quake installation from scratch here, you need to move or copy your "pak0.pak" and "pak1.pak" files (Quake game data) into the "id1" folder. If you already have another Quake installation on your computer somewhere, you can try running the "installer" batch file and choosing the first menu option; this can usually automatically find and copy those pak files for you.
 
-- Also in the "installer" menu, you can pick the second option to install the Quake soundtrack.
+- Also in the installer menu, you can pick the second option to install the Quake soundtrack.
 
-- Explore other options in the "installer" menu for some selected user-created addons.
+- Quit out of the installer and run mark_v.exe just to make sure stuff works, and get your desired configuration set up. The menus are sufficient for normal setup, but you can also get more "hands-on" and manually modify config files if you like. These readme files will provide more details about that if you want them.
 
-- Run Quake, using "mark_v_winquake.exe" (acts like WinQuake), or "mark_v.exe" (acts like GLQuake), or "dx9_mark_v.exe" (like "mark_v.exe", but uses DirectX instead of OpenGL). If you want to play missionpacks or other addons, it's easier if you use "SQLauncher2.exe", the Simple Quake Launcher 2 (which requires .Net 4.5 to be installed).
+- Quit out of Quake and launch the installer again. Explore the options in the installer menu to install and play some user-created addons.
 
-- Once you're in-game, use the Mark V menus to configure Quake the way you like it. The menus are sufficient for normal setup, but you can also get more "hands-on" and manually modify config files if you like.
+- Alternately you can use "SQLauncher2.exe", the Simple Quake Launcher 2, as another great way to manage launching Quake to play custom addons or official missionpacks or the original campaign.
 
 
 If you're a Quake veteran that's probably all you need to know.
