@@ -34,18 +34,18 @@ call :installed_check func_mapjam2
 call :installed_check func_mapjam3
 call :installed_check retrojam6
 echo(
-echo A selection of other maps to install (part 2):
-echo 17: honey - Honey (2012)%honey_installed%
-echo 18: e1m5quotha - Gloomier Keep (2012)%e1m5quotha_installed%
-echo 19: apsp3 - Subterranean Library (2012)%apsp3_installed%
-echo 20: something_wicked - Something Wicked This Way Comes (2012)%something_wicked_installed%
-echo 21: fmb_bdg2 - For My Babies - Bin Dunne Gorne 2 (2013)%fmb_bdg2_installed%
-echo 22: mstalk1c - Midnight Stalker (2013)%mstalk1c_installed%
-echo 23: ivory1b - The Ivory Tower (2013)%ivory1b_installed%
-echo 24: func_mapjam1 - Func Map Jam 1 - Honey Theme (2014)%func_mapjam1_installed%
-echo 25: func_mapjam2 - Func Map Jam 2 - IKblue/IKwhite Theme (2014)%func_mapjam2_installed%
-echo 26: func_mapjam3 - Func Map Jam 3 - Zerstoerer theme (2014)%func_mapjam3_installed%
-echo 27: retrojam6 - Retro Jam 6 - Egyptian theme (2017)%retrojam6_installed%
+echo A selection of other maps to install ^(part 2^):
+echo 17: honey - Honey ^(2012^)%honey_installed%
+echo 18: e1m5quotha - Gloomier Keep ^(2012^)%e1m5quotha_installed%
+echo 19: apsp3 - Subterranean Library ^(2012^)%apsp3_installed%
+echo 20: something_wicked - Something Wicked This Way Comes ^(2012^)%something_wicked_installed%
+echo 21: fmb_bdg2 - For My Babies - Bin Dunne Gorne 2 ^(2013^)%fmb_bdg2_installed%
+echo 22: mstalk1c - Midnight Stalker ^(2013^)%mstalk1c_installed%
+echo 23: ivory1b - The Ivory Tower ^(2013^)%ivory1b_installed%
+echo 24: func_mapjam1 - Func Map Jam 1 - Honey Theme ^(2014^)%func_mapjam1_installed%
+echo 25: func_mapjam2 - Func Map Jam 2 - IKblue/IKwhite Theme ^(2014^)%func_mapjam2_installed%
+echo 26: func_mapjam3 - Func Map Jam 3 - Zerstoerer theme ^(2014^)%func_mapjam3_installed%
+echo 27: retrojam6 - Retro Jam 6 - Egyptian theme ^(2017^)%retrojam6_installed%
 echo(
 set menu_choice=menu_exit
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -53,10 +53,11 @@ echo(
 goto %menu_choice%
 
 :17
-if exist honey (
-  echo The "honey" gamedir already exists.
-) else (
+if not exist honey (
   call "%~dp0\_mod_install.cmd" honey
+)
+if exist honey (
+  call "%~dp0\_mod_launch.cmd" honey start
 )
 pause
 goto :menu
@@ -73,9 +74,7 @@ if not exist quoth (
 )
 REM Gloomier Keep doesn't normally have its own gamedir, but let's give it one
 if exist quoth (
-  if exist e1m5quotha (
-    echo The "e1m5quotha" gamedir already exists.
-  ) else (
+  if not exist e1m5quotha (
     call "%~dp0\_mod_install.cmd" e1m5quotha
     md e1m5quotha 2> nul
     md e1m5quotha\maps 2> nul
@@ -84,10 +83,16 @@ if exist quoth (
   )
 ) else (
   echo Failed to install required base mod "quoth". Skipping "e1m5quotha" install.
+  echo(
   pause
   goto :menu
 )
-echo Make sure to specify Quoth as the base game when playing "e1m5quotha".
+if exist e1m5quotha (
+  call "%~dp0\_mod_launch.cmd" e1m5quotha e1m5quotha quoth
+  echo If you launch "e1m5quotha" outside of this installer, make sure to specify
+  echo Quoth as the base game.
+  echo(
+)
 pause
 goto :menu
 
@@ -102,74 +107,84 @@ if not exist quoth (
   )
 )
 if exist quoth (
-  if exist apsp3 (
-    echo The "apsp3" gamedir already exists.
-  ) else (
+  if not exist apsp3 (
     call "%~dp0\_mod_install.cmd" apsp3
     call :apsp3_fix
   )
 ) else (
   echo Failed to install required base mod "quoth". Skipping "apsp3" install.
+  echo(
   pause
   goto :menu
 )
-echo Make sure to specify Quoth as the base game when playing "apsp3".
+if exist apsp3 (
+  call "%~dp0\_mod_launch.cmd" apsp3 apsp3 quoth
+  echo If you launch "apsp3" outside of this installer, make sure to specify
+  echo Quoth as the base game.
+  echo(
+)
 pause
 goto :menu
 
 :20
-if exist something_wicked (
-  echo The "something_wicked" gamedir already exists.
-) else (
+if not exist something_wicked (
   call "%~dp0\_mod_install.cmd" something_wicked
+)
+if exist something_wicked (
+  call "%~dp0\_mod_launch.cmd" something_wicked wickedstart
 )
 pause
 goto :menu
 
 :21
-if exist fmb_bdg2 (
-  echo The "fmb_bdg2" gamedir already exists.
-) else (
+if not exist fmb_bdg2 (
   call "%~dp0\_mod_install.cmd" fmb_bdg2
   del /q fmb_bdg2\bat
+)
+if exist fmb_bdg2 (
+  call "%~dp0\_mod_launch.cmd" fmb_bdg2 start_____
 )
 pause
 goto :menu
 
 :22
-if exist mstalk1c (
-  echo The "mstalk1c" gamedir already exists.
-) else (
+if not exist mstalk1c (
   call "%~dp0\_mod_install.cmd" mstalk1c
+)
+if exist mstalk1c (
+  call "%~dp0\_mod_launch.cmd" mstalk1c mstalk
 )
 pause
 goto :menu
 
 :23
-if exist ivory1b (
-  echo The "ivory1b" gamedir already exists.
-) else (
+if not exist ivory1b (
   call "%~dp0\_mod_install.cmd" ivory1b
+)
+if exist ivory1b (
+  call "%~dp0\_mod_launch.cmd" ivory1b ivory
 )
 pause
 goto :menu
 
 :24
-if exist func_mapjam1 (
-  echo The "func_mapjam1" gamedir already exists.
-) else (
+if not exist func_mapjam1 (
   call "%~dp0\_mod_install.cmd" func_mapjam1
   call :func_mapjam1_fix
+)
+if exist func_mapjam1 (
+  call "%~dp0\_mod_launch.cmd" func_mapjam1
 )
 pause
 goto :menu
 
 :25
-if exist func_mapjam2 (
-  echo The "func_mapjam2" gamedir already exists.
-) else (
+if not exist func_mapjam2 (
   call "%~dp0\_mod_install.cmd" func_mapjam2
   call :func_mapjam2_fix
+)
+if exist func_mapjam2 (
+  call "%~dp0\_mod_launch.cmd" func_mapjam2
 )
 pause
 goto :menu
@@ -178,9 +193,7 @@ goto :menu
 REM for Func Map Jam 3 also install the patch
 REM can't use normal patch installer tho since it only includes bsp/lit files
 set jam3_mfx_fix_success=
-if exist func_mapjam3 (
-  echo The "func_mapjam3" gamedir already exists.
-) else (
+if not exist func_mapjam3 (
   call "%~dp0\_mod_install.cmd" func_mapjam3
   if exist func_mapjam3 (
     set jam3_mfx_fix_success=false
@@ -195,10 +208,12 @@ if exist func_mapjam3 (
       move id1\maps\jam3_mfx.lit func_mapjam3\maps > nul
       del /q id1\_library\jam3_mfx_fix.zip
       echo Patched.
+      echo(
       set jam3_mfx_fix_success=true
     ) else (
       echo Failed to extract patch files from: "id1\_library\jam3_mfx_fix.zip"
       echo Leaving that zipfile in place for investigation.
+      echo(
     )
   )
 )
@@ -207,20 +222,26 @@ if "%jam3_mfx_fix_success%"=="false" (
   echo Failed to apply patch; rolled back the mod install. Maybe try again?
   echo If you really want to install just the unpatched mod, you can enter
   echo "install func_mapjam3" in the Mark V console.
+  echo(
   pause
   goto :menu
 )
-echo Note that you do NOT normally want to choose the "start" map when playing
-echo this mod, as that will start the original Zerstoerer campaign. Instead
-echo choose a specific jam3_* map to play.
+if exist func_mapjam3 (
+  echo Note that this mod happens to include the original Zerstoerer campaign
+  echo maps, but for the Func Jam 3 maps you will want to pick maps with names
+  echo that begin with "jam3_".
+  echo(
+  call "%~dp0\_mod_launch.cmd" func_mapjam3
+)
 pause
 goto :menu
 
 :27
-if exist retrojam6 (
-  echo The "retrojam6" gamedir already exists.
-) else (
+if not exist retrojam6 (
   call "%~dp0\_mod_install.cmd" retrojam6
+)
+if exist retrojam6 (
+  call "%~dp0\_mod_launch.cmd" retrojam6
 )
 pause
 goto :menu
@@ -234,7 +255,7 @@ REM functions used above
 
 :installed_check
 if exist "%1" (
-  set %1_installed= - already installed
+  set %1_installed= - ready to play
 ) else (
   set %1_installed=
 )

@@ -40,23 +40,23 @@ call :installed_check rrp
 call :installed_check func_mapjam5
 call :installed_check mapjam6
 echo(
-echo Modern (pre-2016) custom episodes to install:
-echo 1: oum - Operation: Urth Majik (2001)%oum_installed%
-echo 2: rapture - Rapture (2001)%rapture_installed%
-echo 3: soe_full - Soul of Evil (2002)%soe_full_installed%
-echo 4: contract - Contract Revoked (2002)%contract_installed%
-echo 5: terra - Terra (2005)%terra_installed%
-echo 6: chapters - Contract Revoked: The Lost Chapters (2005)%chapters_installed%
-echo 7: travail - Travail (2007)%travail_installed%
-echo 8: warpspasm - Warp Spasm (2007)%warpspasm_installed%
-echo 9: rmx-pack - Remix Map Pack (2008)%rmx-pack_installed%
-echo 10: nsoe2 - Soul of Evil: Indian Summer (2008)%nsoe2_installed%
-echo 11: arcanum - Arcanum (2011)%arcanum_installed%
-echo 12: dmc3 - Deathmatch Classics Vol. 3 (2011)%dmc3_installed%
-echo 13: unforgiven - Unforgiven (2011)%unforgiven_installed%
-echo 14: rrp - Rubicon Rumble Pack (2014)%rrp_installed%
-echo 15: func_mapjam5 - Func Map Jam 5 - The Qonquer Map Jam (2015)%func_mapjam5_installed%
-echo 16: mapjam6 - Func Map Jam 6 - Fire and Brimstone (2015)%mapjam6_installed%
+echo Modern ^(pre-2016^) custom episodes to install:
+echo 1: oum - Operation: Urth Majik ^(2001^)%oum_installed%
+echo 2: rapture - Rapture ^(2001^)%rapture_installed%
+echo 3: soe_full - Soul of Evil ^(2002^)%soe_full_installed%
+echo 4: contract - Contract Revoked ^(2002^)%contract_installed%
+echo 5: terra - Terra ^(2005^)%terra_installed%
+echo 6: chapters - Contract Revoked: The Lost Chapters ^(2005^)%chapters_installed%
+echo 7: travail - Travail ^(2007^)%travail_installed%
+echo 8: warpspasm - Warp Spasm ^(2007^)%warpspasm_installed%
+echo 9: rmx-pack - Remix Map Pack ^(2008^)%rmx-pack_installed%
+echo 10: nsoe2 - Soul of Evil: Indian Summer ^(2008^)%nsoe2_installed%
+echo 11: arcanum - Arcanum ^(2011^)%arcanum_installed%
+echo 12: dmc3 - Deathmatch Classics Vol. 3 ^(2011^)%dmc3_installed%
+echo 13: unforgiven - Unforgiven ^(2011^)%unforgiven_installed%
+echo 14: rrp - Rubicon Rumble Pack ^(2014^)%rrp_installed%
+echo 15: func_mapjam5 - Func Map Jam 5 - The Qonquer Map Jam ^(2015^)%func_mapjam5_installed%
+echo 16: mapjam6 - Func Map Jam 6 - Fire and Brimstone ^(2015^)%mapjam6_installed%
 echo(
 set menu_choice=menu_exit
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -64,72 +64,78 @@ echo(
 goto %menu_choice%
 
 :1
-if exist oum (
-  echo The "oum" gamedir already exists.
-) else (
+if not exist oum (
   call "%~dp0\_mod_install.cmd" oum
+)
+if exist oum (
+  call "%~dp0\_mod_launch.cmd" oum start
 )
 pause
 goto :menu
 
 :2
-if exist rapture (
-  echo The "rapture" gamedir already exists.
-) else (
+if not exist rapture (
   call "%~dp0\_mod_install.cmd" rapture
+)
+if exist rapture (
+  call "%~dp0\_mod_launch.cmd" rapture start
 )
 pause
 goto :menu
 
 :3
-if exist soe_full (
-  echo The "soe_full" gamedir already exists.
-) else (
+if not exist soe_full (
   call "%~dp0\_mod_install.cmd" soe_full
+)
+if exist soe_full (
+  call "%~dp0\_mod_launch.cmd" soe_full start
 )
 pause
 goto :menu
 
 :4
-if exist contract (
-  echo The "contract" gamedir already exists.
-) else (
+if not exist contract (
   call "%~dp0\_mod_install.cmd" contract
+)
+if exist contract (
+  call "%~dp0\_mod_launch.cmd" contract start
 )
 pause
 goto :menu
 
 :5
 REM Terra doesn't normally have its own gamedir, but let's give it one
-if exist terra (
-  echo The "terra" gamedir already exists.
-) else (
+if not exist terra (
   call "%~dp0\_mod_install.cmd" terra
   md terra 2> nul
   md terra\maps 2> nul
   move id1\maps\terra?.bsp terra\maps > nul
   move id1\maps\terra.txt terra > nul
 )
+if exist terra (
+  call "%~dp0\_mod_launch.cmd" terra terra1
+)
 pause
 goto :menu
 
 :6
-if exist chapters (
-  echo The "chapters" gamedir already exists.
-) else (
+if not exist chapters (
   call "%~dp0\_mod_install.cmd" chapters
 )
-echo Make sure to specify missionpack 1 as the base game when playing "chapters".
-echo This is necessary even if you don't have missionpack 1 currently installed.
+if exist chapters (
+  call "%~dp0\_mod_launch.cmd" chapters start hipnotic
+  echo If you launch "chapters" outside of this installer, make sure to specify
+  echo missionpack 1 as the base game. In this case, that base game is necessary
+  echo even if you don't have missionpack 1 currently installed.
+  echo(
+)
 pause
 goto :menu
 
 :7
 REM for Travail also install the soundtrack
 set quake_travail_soundtrack_markv_fix_success=
-if exist travail (
-  echo The "travail" gamedir already exists.
-) else (
+if not exist travail (
   call "%~dp0\_mod_install.cmd" travail
   if exist travail (
     call "%~dp0\_mod_patch_install.cmd" http://www.eclecticmenagerie.com/jl/quake/quake_travail_soundtrack_markv.zip travail music_placeholder_delete_me.pak
@@ -140,6 +146,12 @@ if "%quake_travail_soundtrack_markv_fix_success%"=="false" (
   echo Failed to get mod soundtrack; rolled back the mod install. Maybe try again?
   echo If you want to install just the mod without its soundtrack, you can enter
   echo "install travail" in the Mark V console.
+  echo(
+  pause
+  goto :menu
+)
+if exist travail (
+  call "%~dp0\_mod_launch.cmd" travail start
 )
 pause
 goto :menu
@@ -155,26 +167,28 @@ if not exist quoth (
   )
 )
 if exist quoth (
-  if exist warpspasm (
-    echo The "warpspasm" gamedir already exists.
-  ) else (
+  if not exist warpspasm (
     call "%~dp0\_mod_install.cmd" warpspasm
     call :warpspasm_fix
   )
 ) else (
   echo Failed to install required base mod "quoth". Skipping "warpspasm" install.
+  echo(
   pause
   goto :menu
 )
-echo Make sure to specify Quoth as the base game when playing "warpspasm".
+if exist warpspasm (
+  call "%~dp0\_mod_launch.cmd" warpspasm start quoth
+  echo If you launch "warpspasm" outside of this installer, make sure to specify
+  echo Quoth as the base game.
+  echo(
+)
 pause
 goto :menu
 
 :9
 REM Remix Map Pack doesn't normally have its own gamedir, but let's give it one
-if exist rmx-pack (
-  echo The "rmx-pack" gamedir already exists.
-) else (
+if not exist rmx-pack (
   call "%~dp0\_mod_install.cmd" rmx-pack
   md rmx-pack 2> nul
   md rmx-pack\gfx 2> nul
@@ -192,33 +206,49 @@ if exist rmx-pack (
   rd id1\gfx\env 2> nul
   rd id1\gfx 2> nul
 )
+if exist rmx-pack (
+  call "%~dp0\_mod_launch.cmd" rmx-pack start
+)
 pause
 goto :menu
 
 :10
-if exist nsoe2 (
-  echo The "nsoe2" gamedir already exists.
-) else (
+if not exist nsoe2 (
   call "%~dp0\_mod_install.cmd" nsoe2
+)
+if exist nsoe2 (
+  call "%~dp0\_mod_launch.cmd" nsoe2 start
 )
 pause
 goto :menu
 
 :11
-if exist arcanum (
-  echo The "arcanum" gamedir already exists.
-) else (
+REM for Arcanum also install the Drake mod
+set drake290111_success=
+if not exist arcanum (
   call "%~dp0\_mod_install.cmd" arcanum
   call :arcanum_fix
+  if exist arcanum (
+    call "%~dp0\_mod_patch_install.cmd" http://www.quaddicted.com/filebase/drake290111.zip arcanum
+  )
+)
+if "%drake290111_success%"=="false" (
+  rd /q /s arcanum
+  echo Failed to install the required "Drake" mod; rolled back the mod install.
+  echo Maybe try again?
+  echo(
+  pause
+  goto :menu
+)
+if exist arcanum (
+  call "%~dp0\_mod_launch.cmd" arcanum arcstart
 )
 pause
 goto :menu
 
 :12
 REM Deathmatch Classics Vol. 3 doesn't normally have its own gamedir, but let's give it one
-if exist dmc3 (
-  echo The "dmc3" gamedir already exists.
-) else (
+if not exist dmc3 (
   call "%~dp0\_mod_install.cmd" dmc3
   md dmc3 2> nul
   md dmc3\maps 2> nul
@@ -229,23 +259,28 @@ if exist dmc3 (
   REM delete these uncommon dirs if empty
   rd id1\maps\src 2> nul
 )
+if exist dmc3 (
+  call "%~dp0\_mod_launch.cmd" dmc3 dmc3
+)
 pause
 goto :menu
 
 :13
-if exist unforgiven (
-  echo The "unforgiven" gamedir already exists.
-) else (
+if not exist unforgiven (
   call "%~dp0\_mod_install.cmd" unforgiven
+)
+if exist unforgiven (
+  call "%~dp0\_mod_launch.cmd" unforgiven unfstart
 )
 pause
 goto :menu
 
 :14
-if exist rrp (
-  echo The "rrp" gamedir already exists.
-) else (
+if not exist rrp (
   call "%~dp0\_mod_install.cmd" rrp
+)
+if exist rrp (
+  call "%~dp0\_mod_launch.cmd" rrp start
 )
 pause
 goto :menu
@@ -253,9 +288,7 @@ goto :menu
 :15
 REM for Func Map Jam 5 also install the Quicker Qonquer mod
 set QuickerQonquer_success=
-if exist func_mapjam5 (
-  echo The "func_mapjam5" gamedir already exists.
-) else (
+if not exist func_mapjam5 (
   call "%~dp0\_mod_install.cmd" func_mapjam5
   if exist func_mapjam5 (
     call "%~dp0\_mod_patch_install.cmd" http://www.quaddicted.com/files/mods/QuickerQonquer.zip func_mapjam5 maps\QArena.bsp maps\QStart.bsp
@@ -266,16 +299,23 @@ if "%QuickerQonquer_success%"=="false" (
   echo Failed to apply the "Quicker Qonquer" patch; rolled back the mod install. Maybe try again?
   echo If you really want to install just the unpatched mod, you can enter
   echo "install func_mapjam5" in the Mark V console.
+  echo(
+  pause
+  goto :menu
+)
+if exist func_mapjam5 (
+  call "%~dp0\_mod_launch.cmd" func_mapjam5 start
 )
 pause
 goto :menu
 
 :16
-if exist mapjam6 (
-  echo The "mapjam6" gamedir already exists.
-) else (
+if not exist mapjam6 (
   call "%~dp0\_mod_install.cmd" mapjam6
   call :mapjam6_fix
+)
+if exist mapjam6 (
+  call "%~dp0\_mod_launch.cmd" mapjam6 start
 )
 pause
 goto :menu
@@ -289,7 +329,7 @@ REM functions used above
 
 :installed_check
 if exist "%1" (
-  set %1_installed= - already installed
+  set %1_installed= - ready to play
 ) else (
   set %1_installed=
 )
@@ -315,6 +355,8 @@ md arcanum 2> nul
 echo Mark V has issues installing "arcanum".
 echo You can get "arcanum.zip" from the "id1\_library" folder and
 echo extract it manually into the "arcanum" folder.
+echo You will also need to manually download and install the Drake mod into
+echo the same folder, from: http://www.quaddicted.com/filebase/drake290111.zip
 goto :eof
 
 :warpspasm_fix

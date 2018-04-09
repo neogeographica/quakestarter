@@ -31,12 +31,12 @@ call :installed_check ad_v1_70final
 call :installed_check dm4jam
 echo(
 echo Custom episodes released in 2016 or later:
-echo 1: dopa - Dimension of the Past (2016)%dopa_installed%
-echo 2: gotshun-never-released_levels - The "lost" levels (2016)%gotshun-never-released_levels_installed%
-echo 3: func_mapjam9_2 - Func Map Jam 9 - Contract Revoked / Knave theme (2017)%func_mapjam9_2_installed%
-echo 4: qump - Quake Upstart Mapping Project (2017)%qump_installed%
-echo 5: ad_v1_70final - Arcane Dimensions 1.7 (2017)%ad_v1_70final_installed%
-echo 6: dm4jam - DM4 Jam (2018)%dm4jam_installed%
+echo 1: dopa - Dimension of the Past ^(2016^)%dopa_installed%
+echo 2: gotshun-never-released_levels - The "lost" levels ^(2016^)%gotshun-never-released_levels_installed%
+echo 3: func_mapjam9_2 - Func Map Jam 9 - Contract Revoked / Knave theme ^(2017^)%func_mapjam9_2_installed%
+echo 4: qump - Quake Upstart Mapping Project ^(2017^)%qump_installed%
+echo 5: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)%ad_v1_70final_installed%
+echo 6: dm4jam - DM4 Jam ^(2018^)%dm4jam_installed%
 echo(
 set menu_choice=menu_exit
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -44,21 +44,21 @@ echo(
 goto %menu_choice%
 
 :1
-if exist dopa (
-  echo The "dopa" gamedir already exists.
-) else (
+if not exist dopa (
   call "%~dp0\_mod_install.cmd" dopa
+)
+if exist dopa (
+  call "%~dp0\_mod_launch.cmd" dopa start
 )
 pause
 goto :menu
 
 :2
 REM The "lost" levels doesn't normally have its own gamedir, but let's give it one
-if exist gotshun-never-released_levels (
-  echo The "gotshun-never-released_levels" gamedir already exists.
-) else (
+if not exist gotshun-never-released_levels (
   if not exist "hipnotic\pak0.pak" (
     echo This content requires missionpack 1 to currently be installed.
+    echo(
     pause
     goto :menu
   ) else (
@@ -74,8 +74,12 @@ if exist gotshun-never-released_levels (
     move id1\maps\readme.txt gotshun-never-released_levels > nul
   )
 )
-echo Make sure to specify missionpack 1 as the base game when playing "gotshun-never-released_levels".
-echo The start map will be q1map1.
+if exist gotshun-never-released_levels (
+  call "%~dp0\_mod_launch.cmd" gotshun-never-released_levels q1map1 hipnotic
+  echo If you launch "gotshun-never-released_levels" outside of this installer, make sure to specify
+  echo missionpack 1 as the base game.
+  echo(
+)
 pause
 goto :menu
 
@@ -90,25 +94,26 @@ if not exist quoth (
   )
 )
 if exist quoth (
-  if exist func_mapjam9_2 (
-    echo The "func_mapjam9_2" gamedir already exists.
-  ) else (
+  if not exist func_mapjam9_2 (
     call "%~dp0\_mod_install.cmd" func_mapjam9_2
   )
 ) else (
   echo Failed to install required base mod "quoth". Skipping "func_mapjam9_2" install.
+  echo(
   pause
   goto :menu
 )
-echo Make sure to specify Quoth as the base game when playing "func_mapjam9_2".
-pause
+if exist func_mapjam9_2 (
+  call "%~dp0\_mod_launch.cmd" func_mapjam9_2 start quoth
+  echo If you launch "func_mapjam9_2" outside of this installer, make sure to specify
+  echo Quoth as the base game.
+  echo(
+)
 goto :menu
 
 :4
 REM Quake Upstart Mapping Project doesn't normally have its own gamedir, but let's give it one
-if exist qump (
-  echo The "qump" gamedir already exists.
-) else (
+if not exist qump (
   call "%~dp0\_mod_install.cmd" qump
   md qump 2> nul
   md qump\gfx 2> nul
@@ -131,15 +136,16 @@ if exist qump (
   rd id1\gfx 2> nul
   rd id1\maps\source 2> nul
 )
+if exist qump (
+  call "%~dp0\_mod_launch.cmd" qump start
+)
 pause
 goto :menu
 
 :5
 REM for Arcane Dimensions 1.7 also install the patch
 set ad_v1_70patch1_success=
-if exist ad_v1_70final (
-  echo The "ad_v1_70final" gamedir already exists.
-) else (
+if not exist ad_v1_70final (
   call "%~dp0\_mod_install.cmd" ad_v1_70final
   if exist ad_v1_70final (
     call "%~dp0\_mod_patch_install.cmd" http://www.quaddicted.com/filebase/ad_v1_70patch1.zip ad_v1_70final
@@ -150,18 +156,27 @@ if "%ad_v1_70patch1_success%"=="false" (
   echo Failed to apply patch; rolled back the mod install. Maybe try again?
   echo If you really want to install just the unpatched mod, you can enter
   echo "install ad_v1_70final" in the Mark V console.
+  echo(
+  pause
+  goto :menu
 )
-echo Note that the included map ad_sepulcher is not playable with the Mark V engine, at the time of writing this.
-echo The latest version of the Quakespasm engine is recommended for that particular map.
+if exist ad_v1_70final (
+  echo Note that the included map ad_sepulcher is not playable with the
+  echo Mark V engine, at the time of writing this.
+  echo The latest version of the Quakespasm engine is recommended for that map.
+  echo(
+  call "%~dp0\_mod_launch.cmd" ad_v1_70final start
+)
 pause
 goto :menu
 
 :6
-if exist dm4jam (
-  echo The "dm4jam" gamedir already exists.
-) else (
+if not exist dm4jam (
   call "%~dp0\_mod_install.cmd" dm4jam
   call :dm4jam_fix
+)
+if exist dm4jam (
+  call "%~dp0\_mod_launch.cmd" dm4jam start
 )
 pause
 goto :menu
@@ -175,7 +190,7 @@ REM functions used above
 
 :installed_check
 if exist "%1" (
-  set %1_installed= - already installed
+  set %1_installed= - ready to play
 ) else (
   set %1_installed=
 )

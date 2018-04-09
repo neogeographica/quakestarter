@@ -31,12 +31,12 @@ call :installed_check descent
 call :installed_check nehahra
 echo(
 echo "Classic" custom episodes to install:
-echo 1: prodigy_se - Prodigy Special Edition (1997)%prodigy_se_installed%
-echo 2: bbelief - Beyond Belief (1997)%bbelief_installed%
-echo 3: mexx9 - Penumbra of Domination (1997)%mexx9_installed%
-echo 4: zer - Zerstoerer (1997)%zer_installed%
-echo 5: descent - (The Final) Descent (2000)%descent_installed%
-echo 6: nehahra - Nehahra (2000)%nehahra_installed%
+echo 1: prodigy_se - Prodigy Special Edition ^(1997^)%prodigy_se_installed%
+echo 2: bbelief - Beyond Belief ^(1997^)%bbelief_installed%
+echo 3: mexx9 - Penumbra of Domination ^(1997^)%mexx9_installed%
+echo 4: zer - Zerstoerer ^(1997^)%zer_installed%
+echo 5: descent - ^(The Final^) Descent ^(2000^)%descent_installed%
+echo 6: nehahra - Nehahra ^(2000^)%nehahra_installed%
 echo(
 set menu_choice=menu_exit
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -44,10 +44,11 @@ echo(
 goto %menu_choice%
 
 :1
-if exist prodigy_se (
-  echo The "prodigy_se" gamedir already exists.
-) else (
+if not exist prodigy_se (
   call "%~dp0\_mod_install.cmd" prodigy_se
+)
+if exist prodigy_se (
+  call "%~dp0\_mod_launch.cmd" prodigy_se start
 )
 pause
 goto :menu
@@ -55,9 +56,7 @@ goto :menu
 :2
 REM for Beyond Belief also install the patch
 set bbelief6_fix_success=
-if exist bbelief (
-  echo The "bbelief" gamedir already exists.
-) else (
+if not exist bbelief (
   call "%~dp0\_mod_install.cmd" bbelief
   if exist bbelief (
     call "%~dp0\_mod_patch_install.cmd" bbelief6_fix bbelief
@@ -68,15 +67,22 @@ if "%bbelief6_fix_success%"=="false" (
   echo Failed to apply patch; rolled back the mod install. Maybe try again?
   echo If you really want to install just the unpatched mod, you can enter
   echo "install bbelief" in the Mark V console.
+  echo(
+  pause
+  goto :menu
+)
+if exist bbelief (
+  call "%~dp0\_mod_launch.cmd" bbelief bbstart
 )
 pause
 goto :menu
 
 :3
-if exist mexx9 (
-  echo The "mexx9" gamedir already exists.
-) else (
+if not exist mexx9 (
   call "%~dp0\_mod_install.cmd" mexx9
+)
+if exist mexx9 (
+  call "%~dp0\_mod_launch.cmd" mexx9 mexx9
 )
 pause
 goto :menu
@@ -85,9 +91,7 @@ goto :menu
 REM for Zerstoerer also install the patches
 set zer11_success=
 set zerend_fix_success=
-if exist zer (
-  echo The "zer" gamedir already exists.
-) else (
+if not exist zer (
   call "%~dp0\_mod_install.cmd" zer
   if exist zer (
     call "%~dp0\_mod_patch_install.cmd" zer11 zer
@@ -106,25 +110,33 @@ if "%good_zer_patches%"=="false" (
   echo Failed to apply patch; rolled back the mod install. Maybe try again?
   echo If you really want to install just the unpatched mod, you can enter
   echo "install zer" in the Mark V console.
+  echo(
+  pause
+  goto :menu
+)
+if exist zer (
+  call "%~dp0\_mod_launch.cmd" zer start
 )
 pause
 goto :menu
 
 :5
-if exist descent (
-  echo The "descent" gamedir already exists.
-) else (
+if not exist descent (
   call "%~dp0\_mod_install.cmd" descent
+)
+if exist descent (
+  call "%~dp0\_mod_launch.cmd" descent start
 )
 pause
 goto :menu
 
 :6
-if exist nehahra (
-  echo The "nehahra" gamedir already exists.
-) else (
+if not exist nehahra (
   call "%~dp0\_mod_install.cmd" nehahra
   call :nehahra_fix
+)
+if exist nehahra (
+  call "%~dp0\_mod_launch.cmd" nehahra nehstart nehahra
 )
 pause
 goto :menu
@@ -138,7 +150,7 @@ REM functions used above
 
 :installed_check
 if exist "%1" (
-  set %1_installed= - already installed
+  set %1_installed= - ready to play
 ) else (
   set %1_installed=
 )

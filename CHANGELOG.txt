@@ -4,7 +4,11 @@
 
 - Changed the installer to do Arcane Dimensions 1.7 rather than 1.5. Note that 1.7 will go into a different folder than 1.5, so if you want to clean up an existing 1.5 install you will have to handle that manually.
 
+- Fixed the installation of the Arcanum mod to also include the required Drake mod in the same folder.
+
 - Added 30 or so additional things to install, as a result of re-interpreting "highly rated" and also picking up newer releases.
+
+- Added the ability to launch into Quake directly from the installer.
 
 
 **** v1.6 (Sep 2017)
