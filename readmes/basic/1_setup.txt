@@ -1,6 +1,6 @@
 **** .Net 4.5
 
-Simple Quake Launcher 2 and some aspects of the installer make use of Microsoft .Net Framework 4.5. If you are on Windows 8 or 10, you have that already. If not, you may need to get it from https://www.microsoft.com/net/download/dotnet-framework-runtime/net452
+Simple Quake Launcher 2 and some aspects of the installer make use of Microsoft .Net Framework 4.5. If you are on Windows 8 or 10, you have that already. If you are on Windows 7 or Vista, you may need to get it from https://www.microsoft.com/net/download/dotnet-framework-runtime/net452
 
 
 **** Game data
