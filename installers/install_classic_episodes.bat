@@ -137,6 +137,9 @@ if not exist nehahra (
 )
 if exist nehahra (
   call "%~dp0\_mod_launch.cmd" nehahra nehstart nehahra
+  echo If you launch "nehahra" outside of this installer, make sure to specify
+  echo Nehahra as the base game.
+  echo(
 )
 pause
 goto :menu
