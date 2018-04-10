@@ -10,6 +10,8 @@
 
 - Added the ability to launch into Quake directly from the installer.
 
+- Documented r_viewmodel_quake in autoexec.cfg.example. Works for both Mark V and Quakespasm.
+
 
 **** v1.6 (Sep 2017)
 
