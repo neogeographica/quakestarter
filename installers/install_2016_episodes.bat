@@ -212,17 +212,22 @@ if "%net45_installed%"=="true" (
 if exist dm4jam\demo1.dem (
   goto :eof
 )
-md dm4jam 2> nul
-echo Mark V has issues installing "dm4jam".
+rd /s /q dm4jam 2> nul
+echo Mark V has issues installing "dm4jam"; unable to fix.
 echo You can get "dm4jam.zip" from the "id1\_library" folder and
-echo extract it manually into the "dm4jam" folder.
+echo extract it manually into a "dm4jam" mod folder.
+echo(
 goto :eof
 
 :net45_check
-reg query "HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" /v Release > nul 2>&1
+powershell.exe -nologo -noprofile -command "& { trap { exit 1; } Add-Type -A 'System.IO.Compression.FileSystem'; }" > nul 2>&1
 if %errorlevel% equ 0 (
   set net45_installed=true
 ) else (
+  echo The installed version of the .Net Framework ^(and/or of PowerShell^) prevents
+  echo the automatic fixing of some install issues. See the basic\1_setup.txt file
+  echo for more details.
+  echo(
   set net45_installed=false
 )
 goto :eof

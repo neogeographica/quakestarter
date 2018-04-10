@@ -351,12 +351,13 @@ if "%net45_installed%"=="true" (
 if exist arcanum\maps\arcstart.bsp (
   goto :eof
 )
-md arcanum 2> nul
-echo Mark V has issues installing "arcanum".
+rd /s /q arcanum 2> nul
+echo Mark V has issues installing "arcanum"; unable to fix.
 echo You can get "arcanum.zip" from the "id1\_library" folder and
-echo extract it manually into the "arcanum" folder.
+echo extract it manually into an "arcanum" mod folder.
 echo You will also need to manually download and install the Drake mod into
 echo the same folder, from: http://www.quaddicted.com/filebase/drake290111.zip
+echo(
 goto :eof
 
 :warpspasm_fix
@@ -380,17 +381,22 @@ if "%net45_installed%"=="true" (
 if exist mapjam6\maps\start.bsp (
   goto :eof
 )
-md mapjam6 2> nul
-echo Mark V has issues installing "mapjam6".
+rd /s /q mapjam6 2> nul
+echo Mark V has issues installing "mapjam6"; unable to fix.
 echo You can get "mapjam6.zip" from the "id1\_library folder" and
-echo extract it manually into the "mapjam6" folder.
+echo extract it manually into a "mapjam6" mod folder.
+echo(
 goto :eof
 
 :net45_check
-reg query "HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" /v Release > nul 2>&1
+powershell.exe -nologo -noprofile -command "& { trap { exit 1; } Add-Type -A 'System.IO.Compression.FileSystem'; }" > nul 2>&1
 if %errorlevel% equ 0 (
   set net45_installed=true
 ) else (
+  echo The installed version of the .Net Framework ^(and/or of PowerShell^) prevents
+  echo the automatic fixing of some install issues. See the basic\1_setup.txt file
+  echo for more details.
+  echo(
   set net45_installed=false
 )
 goto :eof

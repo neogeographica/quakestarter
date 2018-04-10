@@ -281,10 +281,11 @@ if "%net45_installed%"=="true" (
 if exist apsp3\maps\apsp3.bsp (
   goto :eof
 )
-md apsp3 2> nul
-echo Mark V has issues installing "apsp3".
+rd /s /q apsp3 2> nul
+echo Mark V has issues installing "apsp3"; unable to fix.
 echo You can get "apsp3.zip" from the "id1\_library folder" and
-echo extract it manually into the "apsp3" folder.
+echo extract it manually into an "apsp3" mod folder.
+echo(
 goto :eof
 
 REM Mark V does not correctly extract func_mapjam1
@@ -302,10 +303,11 @@ if "%net45_installed%"=="true" (
 if exist func_mapjam1\maps\jam1_arrrcee.bsp (
   goto :eof
 )
-md func_mapjam1 2> nul
-echo Mark V has issues installing "func_mapjam1".
+rd /s /q func_mapjam1 2> nul
+echo Mark V has issues installing "func_mapjam1"; unable to fix.
 echo You can get "func_mapjam1.zip" from the "id1\_library folder" and
-echo extract it manually into the "func_mapjam1" folder.
+echo extract it manually into a "func_mapjam1" mod folder.
+echo(
 goto :eof
 
 REM Mark V does not correctly extract func_mapjam2
@@ -323,17 +325,22 @@ if "%net45_installed%"=="true" (
 if exist func_mapjam2\maps\jam2_cocerello.bsp (
   goto :eof
 )
-md func_mapjam2 2> nul
-echo Mark V has issues installing "func_mapjam2".
+rd /s /q func_mapjam2 2> nul
+echo Mark V has issues installing "func_mapjam2"; unable to fix.
 echo You can get "func_mapjam2.zip" from the "id1\_library folder" and
-echo extract it manually into the "func_mapjam2" folder.
+echo extract it manually into a "func_mapjam2" mod folder.
+echo(
 goto :eof
 
 :net45_check
-reg query "HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" /v Release > nul 2>&1
+powershell.exe -nologo -noprofile -command "& { trap { exit 1; } Add-Type -A 'System.IO.Compression.FileSystem'; }" > nul 2>&1
 if %errorlevel% equ 0 (
   set net45_installed=true
 ) else (
+  echo The installed version of the .Net Framework ^(and/or of PowerShell^) prevents
+  echo the automatic fixing of some install issues. See the basic\1_setup.txt file
+  echo for more details.
+  echo(
   set net45_installed=false
 )
 goto :eof

@@ -28,7 +28,7 @@ You can also just use this package as a new Quake installation starting from scr
 
 Things to do:
 
-- Note that Simple Quake Launcher 2 and some aspects of the installer make use of Microsoft .Net Framework 4.5. If you are on Windows 8 or 10, you have that already. If you are on Windows 7 or Vista, you may need to get it from https://www.microsoft.com/net/download/dotnet-framework-runtime/net452
+- Note that Simple Quake Launcher 2 and some aspects of the installer make use of Microsoft .Net Framework version 4.5 or later. If you are on Windows 8 or 10, you are probably fine. For more details, especially if you are on Windows 7 or Vista, see the basic\1_setup.txt file.
 
 - If you're starting a new Quake installation from scratch here, you need to move or copy your "pak0.pak" and "pak1.pak" files (Quake game data) into the "id1" folder. If you already have another Quake installation on your computer somewhere, you can try running the "installer" batch file and choosing the first menu option; this can usually automatically find and copy those pak files for you.
 
