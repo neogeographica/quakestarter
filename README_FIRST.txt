@@ -17,7 +17,7 @@ THIS IS A PRE-RELEASE OF 1.7 TO GET SOME ADDITIONAL TESTING
 
 The included version of Mark V is build 1036 from January 2017.
 
-As for this whole package of stuff, it's version 1.7-beta. If you want to see what has changed since the previous releases, see CHANGELOG.txt. If you've been using a previous version of this package, you can overwrite those files with the ones from this new release; that won't hurt whatever Quake configuration you've set up.
+As for this whole package of stuff, it's version 1.7-beta. If you want to see what has changed since the previous releases, see "CHANGELOG.txt". If you've been using a previous version of this package, you can overwrite those files with the ones from this new release; that won't hurt whatever Quake configuration you've set up.
 
 
 *** How to use this
@@ -28,7 +28,7 @@ You can also just use this package as a new Quake installation starting from scr
 
 Things to do:
 
-- Note that Simple Quake Launcher 2 and some aspects of the installer make use of Microsoft .Net Framework version 4.5 or later. If you are on Windows 8 or 10, you are probably fine. For more details, especially if you are on Windows 7 or Vista, see the basic\1_setup.txt file.
+- Note that Simple Quake Launcher 2 and some aspects of the installer make use of Microsoft .Net Framework version 4.5 or later. If you are on Windows 8 or 10, you are probably fine. For more details, especially if you are on Windows 7 or Vista, see the "1_setup.txt" file in the "readmes\basic" folder.
 
 - If you're starting a new Quake installation from scratch here, you need to move or copy your "pak0.pak" and "pak1.pak" files (Quake game data) into the "id1" folder. If you already have another Quake installation on your computer somewhere, you can try running the "installer" batch file and choosing the first menu option; this can usually automatically find and copy those pak files for you.
 

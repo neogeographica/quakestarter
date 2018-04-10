@@ -394,7 +394,7 @@ if %errorlevel% equ 0 (
   set net45_installed=true
 ) else (
   echo The installed version of the .Net Framework ^(and/or of PowerShell^) prevents
-  echo the automatic fixing of some install issues. See the basic\1_setup.txt file
+  echo the automatic fixing of some install issues. See "readmes\basic\1_setup.txt"
   echo for more details.
   echo(
   set net45_installed=false

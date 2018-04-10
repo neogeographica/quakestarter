@@ -14,7 +14,7 @@ y: launch without explicitly setting a skill
 n: do not launch
 0-3: launch and set a default initial skill
 
-If you choose "y" or just press Enter, the addon will be launched using a default skill value. Usually the default skill is 1 ("Normal"), but you may want to set up a different default skill for yourself as described in the other_stuff/no_launcher.txt file. Then you can always just hammer the Enter key to quickly launch stuff without needing to specifically enter a skill value. (If the addon comes with its own "start" map, it may also provide a way to select the skill value in-game.)
+If you choose "y" or just press Enter, the addon will be launched using a default skill value. Usually the default skill is 1 ("Normal"), but you may want to set up a different default skill for yourself as described in the "readmes\other_stuff\no_launcher.txt" file. Then you can always just hammer the Enter key to quickly launch stuff without needing to specifically enter a skill value. (If the addon comes with its own "start" map, it may also provide a way to select the skill value in-game.)
 
 If the addon is a multi-map collection that doesn't have its own startmap, you will need to select the map you want to play after Quake has launched. Mark V's "Single Player" menu includes a "Levels" menu you can use to do this.
 

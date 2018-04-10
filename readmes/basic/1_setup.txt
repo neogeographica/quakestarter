@@ -2,7 +2,7 @@
 
 Simple Quake Launcher 2 and some aspects of the installer make use of Microsoft .Net Framework version 4.5 or later. If you are on Windows 8 or 10, you should be good to go.
 
-If you are on Windows 7 or Vista, you may need to get a recent version of the .Net Framework from from https://www.microsoft.com/net/download/all
+If you are on Windows 7 or Vista, you may need to get a recent version of the .Net Framework from from https://www.microsoft.com/net/download/all ... make sure that you get a ".Net Framework" runtime package, not anything else like ".Net Core" or a developer pack or etc.
 
 FYI, unfortunately there is a problem with the combination of .Net Framework 4.7.1 (and maybe later versions) and pre-5.1 versions of PowerShell. If you have that combo of software on your system then some things here will not work. If you're choosing which version of .Net to install, you may want to stick with .Net 4.7 or earlier. Or, you could get PowerShell 5.1 from https://www.microsoft.com/en-us/download/details.aspx?id=54616
 
