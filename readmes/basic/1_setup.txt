@@ -20,7 +20,7 @@ The first option in the menu of the "installer" batch file can usually locate an
 
 **** Simple Quake Launcher 2
 
-Once you have these pak files in place, one easy way to play Quake is by using Simple Quake Launcher 2, "SQLauncher2.exe". This program has a requirement for Microsoft .Net Framework 4.5 as mentioned above.
+Once you have these pak files in place, one easy way to play Quake is by using Simple Quake Launcher 2, "SQLauncher2.exe". This program has a requirement for Microsoft .Net Framework 4.5 or later, as mentioned above.
 
 
 **** DirectX 9 Runtime
