@@ -21,9 +21,22 @@ This is NOT all the worthwhile Quake singleplayer content, not by a long shot. I
 
 Mark V (at least up through the January 2017 build) will incorrectly install a few of the maps/mods covered by this installer: arcanum, apsp3, dm4jam, func_mapjam1, func_mapjam2, and mapjam6.
 
-The installer script will detect that problem, and it will automatically correct it if you have .Net 4.5 (or later) installed to enable some unzip operations. If you are on Windows 8 or 10 then you should have that requirement already. Otherwise the installer may tell you that you need to install/update stuff. For more details about that, see the ".Net Framework" part at the beginning of the "1_setup.txt" file in the "readmes\basic" folder.
+The installer script will detect that problem, and it will automatically correct it if you have .Net 4.5 (or later) installed to enable some unzip operations. If the installer tells you that you need to install/update your .Net stuff, see the ".Net Framework" part at the beginning of the "1_setup.txt" file in the "readmes\basic" folder.
 
 If the installer can't automatically correct the problem, it will tell you where the downloaded zipfile is so that you can extract the mod manually if you like.
+
+
+**** Mod folders
+
+This installer will put any downloadable thing into its own folder, even if it is purely new content that doesn't override any original content and isn't actually a "mod". Even a single map .bsp file will get stashed under its own dedicated mod folder, when it could also have worked perfectly well if placed into the "id1\maps" folder.
+
+If you're curious about why it's handled that way here, there's a few reasons, including:
+- There's no chance of accidental conflicts with other downloaded stuff.
+- If it's a multi-map set, it's easy to come back at some later time and find which maps belong to it.
+- It's easy to have config settings that are specific to the maps.
+- It's easy to correctly uninstall it later (see below), including all related config and savegames etc.
+
+This does potentially result in a lot of folders in your Quake directory; oh well. Everything's a tradeoff!
 
 
 **** Uninstalling
