@@ -15,6 +15,7 @@ if not exist "%markv_exe%" (
     if not exist "%markv_exe%" (
       if not exist "id1" (
         echo Couldn't find "%markv_exe%" or "id1" in this folder or parent folder.
+        pause
         goto :exit
       )
     )
