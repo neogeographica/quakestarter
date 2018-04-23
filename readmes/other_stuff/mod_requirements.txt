@@ -10,8 +10,8 @@ If the readme says that it requires an engine that supports the "bsp2" map forma
 
 Also with Mark V you shouldn't have to worry about any recommendations for increasing "heapsize", "zone", "winmem", or "max_edicts". Mark V defaults to sufficiently large values already for these (and many other) settings.
 
-If other settings or Quake command-line arguments are recommended in the readme, there are various ways to handle those. The simplest way, without making any config files, is to use the "Extra Args" box in the Simple Quake Launcher. Command-line arguments can be placed in there verbatim, and console settings can be placed there with a "+" in front of them. For example a recommended setting of 0.3 for r_wateralpha can be handled with "+r_wateralpha 0.3" in that "Extra Args" box. Just make sure you leave a space between each thing you add into this box.
+If other settings or Quake command-line arguments are recommended in the readme, there are various ways to handle those. The simplest way, without making any config files, is to use the "Command Line" box in the Simple Quake Launcher. Command-line arguments can be placed in there verbatim, and console settings can be placed there with a "+" in front of them. For example a recommended setting of 0.3 for r_wateralpha can be handled by adding "+r_wateralpha 0.3" into that box. You should add any such settings before the final "+map" portion of the command line, so that they will get applied before that first map is loaded.
 
-Anything you add to the "Extra Args" box will be remembered for future uses of the launcher, so delete those extra args when you no longer need them.
+Changes you make to the "Command Line" box will be remembered for future uses of the launcher.
 
 Other Quake launcher programs (like Quake Injector) will have similar means of specifying command-line arguments.

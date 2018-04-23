@@ -62,6 +62,16 @@
 //gl_texture_anisotropy 8
 
 
+// weapon rendering
+//-------------------------------------------------------------------
+
+// Set r_viewmodel_quake to a value of 1 to make the position of the held
+// weapon's model be more like it is in WinQuake.
+// Default is 0. Uncomment the following line to set some other value.
+
+//r_viewmodel_quake 1
+
+
 // particle shape (this doesn't apply to the winquake variant)
 //-------------------------------------------------------------------
 
