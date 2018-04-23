@@ -80,4 +80,5 @@ set %gamedir%_success=true
 
 REM finally restore original working dir to be nice
 :exit
+echo(
 popd

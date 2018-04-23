@@ -1,6 +1,6 @@
 **** Launching without a launcher
 
-If you don't have or want to use a launcher, the main things you'll need to know are the name of the game folder that you want to activate (if any), the name of the map you want to play, and whether the map/mod requires a base game like Quoth or a missionpack. The maps_and_mods readmes describe how to find out if there is a base game requirement.
+If you don't have or want to use a launcher, the main things you'll need to know are the name of the game (mod) folder that you want to activate (if any), the name of the map you want to play, and whether the map/mod requires a base game like Quoth or a missionpack. The maps_and_mods readmes describe how to find out if there is a base game requirement.
 
 When you know those things, you can handle all launcher-type activities from within the Quake menus and console, at least on some Quake engines. To keep it somewhat simple, this readme will mainly talk about the Mark V engine, but Quakespasm is very similar (only lacking the Levels menu). Other Quake engines may have similar capabilities.
 
@@ -14,24 +14,24 @@ To open the Quake console, use the key under the ESC key on your keyboard (for t
 This readme will just mention a few console commands. If you're curious to learn more, much of this guide is relevant: http://steamcommunity.com/sharedfiles/filedetails/?id=120426294
 
 
-**** Setting the Base Game and Game
+**** Setting the Base Game and Mod
 
 If the map you want to run is just a .bsp file in the "id1\maps" folder, skip this section. That's the normal/default map location and doesn't involve any mod code.
 
-Otherwise though, you'll need to specify the game folder to activate. The map/mod may also have a Base Game requirement (as specified in its readme).
+Otherwise though, you'll need to specify the mod folder to activate. The map/mod may also have a base game requirement (as specified in its readme).
 
 You specify these things using the "game" command in the Quake console.
 
-If the game folder is named "foo" and doesn't require a special Base Game, then you would activate it with this command:
+If the folder containing the addon content is named "foo" and doesn't require a special base game, then you would activate it with this command:
     game foo; exec quake.rc
 
-If the game folder is named "foo" and requires Quoth as a Base Game, then you would activate it with this command:
+If the folder is named "foo" and requires Quoth as a base game, then you would activate it with this command:
     game foo -quoth; exec quake.rc
 
-If the game folder is named "foo" and requires missionpack 1 as a Base Game, then you would activate it with this command:
+If the folder is named "foo" and requires missionpack 1 as a base game, then you would activate it with this command:
     game foo -hipnotic; exec quake.rc
 
-If the game folder is named "foo" and requires missionpack 2 as a Base Game, then you would activate it with this command:
+If the folder is named "foo" and requires missionpack 2 as a base game, then you would activate it with this command:
     game foo -rogue; exec quake.rc
 
 If you're curious about "quake.rc" and why you usually want to exec that config file (but sometimes might not), see the last section of this readme below.
@@ -51,7 +51,7 @@ If you don't have this setting in your autoexec.cfg, or if you do but you want t
 
 Mark V has an in-game menu that you can use to choose the map. Press ESC if necessary to get to the main Quake menu, then choose Single Player, then choose Levels.
 
-This menu shows all maps that can be played with your currently active game folder (if any). This includes any maps in the game folder as well as the maps from the Base Game. Scroll through the list, find the map you want, and press Enter/Return to launch the map.
+This menu shows all maps that can be played with your currently active mod (if any). This includes any maps under the mod's folder as well as the maps from the base game. Scroll through the list, find the map you want, and press Enter/Return to launch the map.
 
 If you're using Quakespasm or some other engine that doesn't have a Levels menu, you can use the Quake console. You'll need to know the map filename. If for example the filename of the map you want to play is "whatsit.bsp", you would use the console command:
     map whatsit
@@ -69,11 +69,11 @@ The files in a mod release may contain a new different "quake.rc" that sets some
 
 (If you want a lot more discussion about "quake.rc", see https://tomeofpreach.wordpress.com/2013/09/05/quake-rc-and-being-a-good-citizen/ )
 
-When you start up Quake, it will execute "quake.rc". This includes the case of starting up Quake with the "-game" command-line argument to make it immediately switch to a particular game folder. So in original Quake (before the "game" console command was added) mods were created under the expectation that "quake.rc" would be run when a mod was activated. Some mods rely on this behavior. Not many, but some.
+When you start up Quake, it will execute "quake.rc". This includes the case of starting up Quake with the "-game" command-line argument to make it immediately switch to a particular mod folder. So in original Quake (before the "game" console command was added) mods were created under the expectation that "quake.rc" would be run when a mod was activated. Some mods rely on this behavior. Not many, but some.
 
 So why doesn't the "game" console command execute "quake.rc"? **
 
-This is something that Quake developers have talked about for quite a while. One argument has to do with the fact that some mods do rude things with their config files. For example a mod might contain an "autoexec.cfg" that overrides your own "id1\autoexec.cfg" file. So if you're using the "game" console command to activate a mod, you might want to still have the choice as to whether or not you want to execute "quake.rc" (and the other config files that it runs).
+This is something that Quake community developers have talked about for quite a while. One argument has to do with the fact that some mods do rude things with their config files. For example a mod might contain an "autoexec.cfg" that overrides your own "id1\autoexec.cfg" file. So if you're using the "game" console command to activate a mod, you might want to still have the choice as to whether or not you want to execute "quake.rc" (and the other config files that it runs).
 
 But usually IMO executing "quake.rc" after activating a mod is the right thing to do, which is why I recommended that above.
 

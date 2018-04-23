@@ -1,15 +1,26 @@
+**** .Net Framework
+
+Simple Quake Launcher 2 and some aspects of the installer make use of Microsoft .Net Framework version 4.5 or later. If you are on Windows 8 or 10, you should be good to go.
+
+If you are on Windows 7 or Vista, you may need to get a recent version of the .Net Framework from from https://www.microsoft.com/net/download/all ... make sure that you get a ".Net Framework" runtime package, not anything else like ".Net Core" or a developer pack or etc.
+
+FYI, unfortunately there is a problem with the combination of .Net Framework 4.7.1 (and maybe later versions) and pre-5.1 versions of PowerShell. If you have that combo of software on your system then some things here will not work. If you're choosing which version of .Net to install, you may want to stick with .Net 4.7 or earlier. Or, you could get PowerShell 5.1 from https://www.microsoft.com/en-us/download/details.aspx?id=54616
+
+(Sorry about that potential hassle.)
+
+
 **** Game data
 
-First you need two game data files from Quake: "pak0.pak" and "pak1.pak". Put these files inside the "id1" folder, and you're ready to play Quake.
+You need two game data files from Quake: "pak0.pak" and "pak1.pak". Put these files inside the "id1" folder, and you're ready to play Quake.
 
 Similarly, if you own and want to play the official Quake missionpacks, each of those also has its own "pak0.pak" file that goes into its own unique game folder (next to the "id1" folder): the "hipnotic" folder for missionpack 1, or "rogue" for missionpack 2.
 
 The first option in the menu of the "installer" batch file can usually locate and copy the necessary pak files if you already have Quake installed somewhere else on this same computer. If you're having difficulties finding your pak files, see "readmes\other_stuff\pak_files.txt".
 
 
-**** Simple Quake Launcher
+**** Simple Quake Launcher 2
 
-Once you have these pak files in place, the easiest way to play is often by using the Simple Quake Launcher, "SQLauncher.exe". This program has a requirement for Microsoft .Net Framework 3.5. If you don't have .Net 3.5 installed, Windows may ask to install it the first time you run the Simple Quake Launcher; otherwise you'll need to get it from http://www.microsoft.com/download/en/details.aspx?id=25150
+Once you have these pak files in place, one easy way to play Quake is by using Simple Quake Launcher 2, "SQLauncher2.exe". This program has a requirement for Microsoft .Net Framework 4.5 or later, as mentioned above.
 
 
 **** DirectX 9 Runtime
@@ -26,10 +37,10 @@ FYI the installer will run the Mark V engine in order to perform a download. You
 
 **** Additional singleplayer content
 
-Other choices in the installer menu can be used to download some of the many community-created singleplayer adventures. These choices, and ways to find all the rest of the available Quake singleplayer content, are discussed in the maps_and_mods readmes.
+Other choices in the installer menu can be used to download and play some of the many community-created singleplayer adventures. These choices, and ways to find all the rest of the available Quake singleplayer content, are discussed in the maps_and_mods readmes.
 
-For starters you might want to download a couple of recent releases: "Dimension of the Past" and "Arcane Dimensions 1.5". The "Episodes released in 2016" installer option will let you download and install either or both of these.
+For starters you might want to download a couple of recent releases: "Dimension of the Past" and "Arcane Dimensions 1.7". The "Latest episodes" installer option will let you download and install these (among other things). You can then use the installer to launch directly into Quake to play that new content.
 
 "Dimension of the Past" is the "fifth Quake episode" created by J.F. Gustafsson and released by Machine Games in honor of Quake's 20th anniversary. It's a polished release but has an old-school look and feel with classic Quake gameplay.
 
-"Arcane Dimensions" is a map collection and partial-conversion mod from Simon O'Callaghan ("sock") and several more of the Quake community's current mappers and coders. Check the readme included in the "ad_v1_50final" folder for complete credits. It features large detailed environments along with new monsters and weapons, pushing the envelope of Quake-ish-ness.
+"Arcane Dimensions" is a map collection and partial-conversion mod from Simon O'Callaghan ("sock") and several more of the Quake community's current mappers and coders. Check the readme included in the "ad_v1_70final" folder for complete credits. It features large detailed environments along with new monsters and weapons, pushing the envelope of Quake-ish-ness.
