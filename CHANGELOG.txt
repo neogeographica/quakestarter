@@ -1,3 +1,8 @@
+**** v1.8 (??? 2018)
+
+- Added mod uninstall support in the installer.
+
+
 **** v1.7 (Apr 2018)
 
 - Included Simple Quake Launcher 2 instead of the original Simple Quake Launcher 1.x, and changed the readme-files discussion to be appropriate for SQL2. Note that this new version now requires the .Net Framework 4.5 instead of 3.5.

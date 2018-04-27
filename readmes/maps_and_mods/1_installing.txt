@@ -45,7 +45,9 @@ Any Quake mod can be uninstalled by just deleting its folder.
 
 For content downloaded through Mark V, its original zipfile is also saved inside the "id1\_library" folder. You can delete that zipfile if you don't think you'll want it again any time soon.
 
-For convenience there's an "uninstall" console command in Mark V. You could for example do:
+For convenience the installer batch files will give you an uninstall option once a mod has been installed.
+
+There's also an "uninstall" console command in Mark V. You could for example do:
     uninstall travail
 to remove the "travail" game folder and its contents, or you could do:
     uninstall travail full
