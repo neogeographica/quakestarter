@@ -32,12 +32,12 @@ call :installed_check ad_v1_70final
 call :installed_check dm4jam
 echo(
 echo Custom episodes released in 2016 or later:
-echo 1: dopa - Dimension of the Past ^(2016^)%dopa_installed%
-echo 2: gotshun-never-released_levels - The "lost" levels ^(2016^)%gotshun-never-released_levels_installed%
-echo 3: func_mapjam9_2 - Func Map Jam 9 - Contract Revoked / Knave theme ^(2017^)%func_mapjam9_2_installed%
-echo 4: qump - Quake Upstart Mapping Project ^(2017^)%qump_installed%
-echo 5: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)%ad_v1_70final_installed%
-echo 6: dm4jam - DM4 Jam ^(2018^)%dm4jam_installed%
+echo %dopa_installed%  1: dopa - Dimension of the Past ^(2016^)
+echo %gotshun-never-released_levels_installed%  2: gotshun-never-released_levels - The "lost" levels ^(2016^)
+echo %func_mapjam9_2_installed%  3: func_mapjam9_2 - Func Map Jam 9 - Contract Revoked / Knave theme ^(2017^)
+echo %qump_installed%  4: qump - Quake Upstart Mapping Project ^(2017^)
+echo %ad_v1_70final_installed%  5: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
+echo %dm4jam_installed%  6: dm4jam - DM4 Jam ^(2018^)
 echo(
 set menu_choice=menu_exit
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -191,9 +191,9 @@ REM functions used above
 
 :installed_check
 if exist "%1" (
-  set %1_installed= - ready to play
+  set %1_installed=*
 ) else (
-  set %1_installed=
+  set %1_installed= 
 )
 goto :eof
 

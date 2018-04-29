@@ -31,13 +31,13 @@ call :installed_check zer
 call :installed_check descent
 call :installed_check nehahra
 echo(
-echo "Classic" custom episodes to install:
-echo 1: prodigy_se - Prodigy Special Edition ^(1997^)%prodigy_se_installed%
-echo 2: bbelief - Beyond Belief ^(1997^)%bbelief_installed%
-echo 3: mexx9 - Penumbra of Domination ^(1997^)%mexx9_installed%
-echo 4: zer - Zerstoerer ^(1997^)%zer_installed%
-echo 5: descent - ^(The Final^) Descent ^(2000^)%descent_installed%
-echo 6: nehahra - Nehahra ^(2000^)%nehahra_installed%
+echo "Classic" custom episodes:
+echo %prodigy_se_installed%  1: prodigy_se - Prodigy Special Edition ^(1997^)
+echo %bbelief_installed%  2: bbelief - Beyond Belief ^(1997^)
+echo %mexx9_installed%  3: mexx9 - Penumbra of Domination ^(1997^)
+echo %zer_installed%  4: zer - Zerstoerer ^(1997^)
+echo %descent_installed%  5: descent - ^(The Final^) Descent ^(2000^)
+echo %nehahra_installed%  6: nehahra - Nehahra ^(2000^)
 echo(
 set menu_choice=menu_exit
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -154,9 +154,9 @@ REM functions used above
 
 :installed_check
 if exist "%1" (
-  set %1_installed= - ready to play
+  set %1_installed=*
 ) else (
-  set %1_installed=
+  set %1_installed= 
 )
 goto :eof
 

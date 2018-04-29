@@ -40,23 +40,23 @@ call :installed_check mappi
 call :installed_check rubicon2
 call :installed_check ne_ruins
 echo(
-echo A selection of other maps to install ^(part 1^):
-echo 1: czg07 - Insomnia ^(2000^)%czg07_installed%
-echo 2: koohoo - The Castle of Koohoo ^(2001^)%koohoo_installed%
-echo 3: czg03 - Ceremonial Circles ^(2001^)%czg03_installed%
-echo 4: gmsp3 - Day of the Lords ^(2003^)%gmsp3_installed%
-echo 5: ac - Adamantine Cruelty ^(2004^)%ac_installed%
-echo 6: e1m1rmx - The Slipgate Duplex ^(2004^)%e1m1rmx_installed%
-echo 7: menk - Menkalinan ^(2004^)%menk_installed%
-echo 8: kinn_marcher - The Marcher Fortress ^(2005^)%kinn_marcher_installed%
-echo 9: lunsp1 - Concentric Devastation ^(2005^)%lunsp1_installed%
-echo 10: red777 - Red 777 ^(2005^)%red777_installed%
-echo 11: fmb_bdg - This Onion ^(2007^)%fmb_bdg_installed%
-echo 12: apsp2 - Plumbers Don't Wear Ties ^(2009^)%apsp2_installed%
-echo 13: arwop - A Roman Wilderness Of Pain ^(2009^)%arwop_installed%
-echo 14: mappi - Red Slammer ^(2010^)%mappi_installed%
-echo 15: rubicon2 - Rubicon 2 ^(2011^)%rubicon2_installed%
-echo 16: ne_ruins - The Altar of Storms ^(2011^)%ne_ruins_installed%
+echo A selection of other maps ^(part 1^):
+echo %czg07_installed%  1: czg07 - Insomnia ^(2000^)
+echo %koohoo_installed%  2: koohoo - The Castle of Koohoo ^(2001^)
+echo %czg03_installed%  3: czg03 - Ceremonial Circles ^(2001^)
+echo %gmsp3_installed%  4: gmsp3 - Day of the Lords ^(2003^)
+echo %ac_installed%  5: ac - Adamantine Cruelty ^(2004^)
+echo %e1m1rmx_installed%  6: e1m1rmx - The Slipgate Duplex ^(2004^)
+echo %menk_installed%  7: menk - Menkalinan ^(2004^)
+echo %kinn_marcher_installed%  8: kinn_marcher - The Marcher Fortress ^(2005^)
+echo %lunsp1_installed%  9: lunsp1 - Concentric Devastation ^(2005^)
+echo %red777_installed% 10: red777 - Red 777 ^(2005^)
+echo %fmb_bdg_installed% 11: fmb_bdg - This Onion ^(2007^)
+echo %apsp2_installed% 12: apsp2 - Plumbers Don't Wear Ties ^(2009^)
+echo %arwop_installed% 13: arwop - A Roman Wilderness Of Pain ^(2009^)
+echo %mappi_installed% 14: mappi - Red Slammer ^(2010^)
+echo %rubicon2_installed% 15: rubicon2 - Rubicon 2 ^(2011^)
+echo %ne_ruins_installed% 16: ne_ruins - The Altar of Storms ^(2011^)
 echo(
 set menu_choice=menu_exit
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -316,8 +316,8 @@ REM functions used above
 
 :installed_check
 if exist "%1" (
-  set %1_installed= - ready to play
+  set %1_installed=*
 ) else (
-  set %1_installed=
+  set %1_installed= 
 )
 goto :eof

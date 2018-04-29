@@ -35,18 +35,18 @@ call :installed_check func_mapjam2
 call :installed_check func_mapjam3
 call :installed_check retrojam6
 echo(
-echo A selection of other maps to install ^(part 2^):
-echo 17: honey - Honey ^(2012^)%honey_installed%
-echo 18: e1m5quotha - Gloomier Keep ^(2012^)%e1m5quotha_installed%
-echo 19: apsp3 - Subterranean Library ^(2012^)%apsp3_installed%
-echo 20: something_wicked - Something Wicked This Way Comes ^(2012^)%something_wicked_installed%
-echo 21: fmb_bdg2 - For My Babies - Bin Dunne Gorne 2 ^(2013^)%fmb_bdg2_installed%
-echo 22: mstalk1c - Midnight Stalker ^(2013^)%mstalk1c_installed%
-echo 23: ivory1b - The Ivory Tower ^(2013^)%ivory1b_installed%
-echo 24: func_mapjam1 - Func Map Jam 1 - Honey Theme ^(2014^)%func_mapjam1_installed%
-echo 25: func_mapjam2 - Func Map Jam 2 - IKblue/IKwhite Theme ^(2014^)%func_mapjam2_installed%
-echo 26: func_mapjam3 - Func Map Jam 3 - Zerstoerer theme ^(2014^)%func_mapjam3_installed%
-echo 27: retrojam6 - Retro Jam 6 - Egyptian theme ^(2017^)%retrojam6_installed%
+echo A selection of other maps ^(part 2^):
+echo %honey_installed% 17: honey - Honey ^(2012^)
+echo %e1m5quotha_installed% 18: e1m5quotha - Gloomier Keep ^(2012^)
+echo %apsp3_installed% 19: apsp3 - Subterranean Library ^(2012^)
+echo %something_wicked_installed% 20: something_wicked - Something Wicked This Way Comes ^(2012^)
+echo %fmb_bdg2_installed% 21: fmb_bdg2 - For My Babies - Bin Dunne Gorne 2 ^(2013^)
+echo %mstalk1c_installed% 22: mstalk1c - Midnight Stalker ^(2013^)
+echo %ivory1b_installed% 23: ivory1b - The Ivory Tower ^(2013^)
+echo %func_mapjam1_installed% 24: func_mapjam1 - Func Map Jam 1 - Honey Theme ^(2014^)
+echo %func_mapjam2_installed% 25: func_mapjam2 - Func Map Jam 2 - IKblue/IKwhite Theme ^(2014^)
+echo %func_mapjam3_installed% 26: func_mapjam3 - Func Map Jam 3 - Zerstoerer theme ^(2014^)
+echo %retrojam6_installed% 27: retrojam6 - Retro Jam 6 - Egyptian theme ^(2017^)
 echo(
 set menu_choice=menu_exit
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -256,9 +256,9 @@ REM functions used above
 
 :installed_check
 if exist "%1" (
-  set %1_installed= - ready to play
+  set %1_installed=*
 ) else (
-  set %1_installed=
+  set %1_installed= 
 )
 goto :eof
 
