@@ -73,15 +73,16 @@ if exist quoth (
     call "%~dp0\_mod_install.cmd" e1m5quotha
   )
 ) else (
-  echo Failed to install required base mod "quoth". Skipping "e1m5quotha" install.
+  echo Failed to install required base mod "quoth". Skipping "e1m5quotha"
+  echo install.
   echo(
   pause
   goto :menu
 )
 if exist e1m5quotha (
   call "%~dp0\_mod_launch.cmd" e1m5quotha e1m5quotha quoth
-  echo If you launch "e1m5quotha" outside of this installer, make sure to specify
-  echo Quoth as the base game.
+  echo If you launch "e1m5quotha" outside of this installer, make sure to
+  echo specify Quoth as the base game.
   echo(
 )
 pause

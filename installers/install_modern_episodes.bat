@@ -121,8 +121,8 @@ if not exist chapters (
 if exist chapters (
   call "%~dp0\_mod_launch.cmd" chapters start hipnotic
   echo If you launch "chapters" outside of this installer, make sure to specify
-  echo missionpack 1 as the base game. In this case, that base game is necessary
-  echo even if you don't have missionpack 1 currently installed.
+  echo missionpack 1 as the base game. In this case, that base game is
+  echo necessary even if you don't have missionpack 1 currently installed.
   echo(
 )
 pause
@@ -139,9 +139,9 @@ if not exist travail (
 )
 if "%quake_travail_soundtrack_markv_fix_success%"=="false" (
   rd /q /s travail
-  echo Failed to get mod soundtrack; rolled back the mod install. Maybe try again?
-  echo If you want to install just the mod without its soundtrack, you can enter
-  echo "install travail" in the Mark V console.
+  echo Failed to get mod soundtrack; rolled back the mod install. Maybe try
+  echo again? If you want to install just the mod without its soundtrack, you
+  echo can enter "install travail" in the Mark V console.
   echo(
   pause
   goto :menu
@@ -162,15 +162,16 @@ if exist quoth (
     call "%~dp0\_mod_install.cmd" warpspasm
   )
 ) else (
-  echo Failed to install required base mod "quoth". Skipping "warpspasm" install.
+  echo Failed to install required base mod "quoth". Skipping "warpspasm"
+  echo install.
   echo(
   pause
   goto :menu
 )
 if exist warpspasm (
   call "%~dp0\_mod_launch.cmd" warpspasm start quoth
-  echo If you launch "warpspasm" outside of this installer, make sure to specify
-  echo Quoth as the base game.
+  echo If you launch "warpspasm" outside of this installer, make sure to
+  echo specify Quoth as the base game.
   echo(
 )
 pause
@@ -260,9 +261,9 @@ if not exist func_mapjam5 (
 )
 if "%QuickerQonquer_success%"=="false" (
   rd /q /s func_mapjam5
-  echo Failed to apply the "Quicker Qonquer" patch; rolled back the mod install. Maybe try again?
-  echo If you really want to install just the unpatched mod, you can enter
-  echo "install func_mapjam5" in the Mark V console.
+  echo Failed to apply the "Quicker Qonquer" patch; rolled back the mod install.
+  echo Maybe try again? If you really want to install just the unpatched mod,
+  echo you can enter "install func_mapjam5" in the Mark V console.
   echo(
   pause
   goto :menu
