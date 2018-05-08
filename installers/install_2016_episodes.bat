@@ -55,7 +55,6 @@ pause
 goto :menu
 
 :2
-REM The "lost" levels doesn't normally have its own gamedir, but let's give it one
 if not exist gotshun-never-released_levels (
   if not exist "hipnotic\pak0.pak" (
     echo This content requires missionpack 1 to currently be installed.
@@ -64,15 +63,6 @@ if not exist gotshun-never-released_levels (
     goto :menu
   ) else (
     call "%~dp0\_mod_install.cmd" gotshun-never-released_levels
-    md gotshun-never-released_levels 2> nul
-    md gotshun-never-released_levels\maps 2> nul
-    move id1\maps\q1map1.bsp gotshun-never-released_levels\maps > nul
-    move id1\maps\e1u?.bsp gotshun-never-released_levels\maps > nul
-    move id1\maps\e1sl1.bsp gotshun-never-released_levels\maps > nul
-    move id1\maps\e2u?.bsp gotshun-never-released_levels\maps > nul
-    move id1\maps\e2sl1.bsp gotshun-never-released_levels\maps > nul
-    move id1\maps\finale.bsp gotshun-never-released_levels\maps > nul
-    move id1\maps\readme.txt gotshun-never-released_levels > nul
   )
 )
 if exist gotshun-never-released_levels (
@@ -86,13 +76,8 @@ goto :menu
 
 :3
 REM for Func Map Jam 9 also install Quoth if necessary
-REM note that the "quoth" folder name is required for Quoth
 if not exist quoth (
-  call "%~dp0\_mod_install.cmd" http://www.quaketastic.com/files/single_player/mods/quoth2pt2full.zip
-  if exist quoth2pt2full (
-    move quoth2pt2full quoth > nul
-    del /q id1\_library\quoth2pt2full.zip
-  )
+  call "%~dp0\_mod_install.cmd" http://www.quaketastic.com/files/single_player/mods/quoth2pt2full.zip quoth
 )
 if exist quoth (
   if not exist func_mapjam9_2 (
@@ -110,32 +95,12 @@ if exist func_mapjam9_2 (
   echo Quoth as the base game.
   echo(
 )
+pause
 goto :menu
 
 :4
-REM Quake Upstart Mapping Project doesn't normally have its own gamedir, but let's give it one
 if not exist qump (
   call "%~dp0\_mod_install.cmd" qump
-  md qump 2> nul
-  md qump\gfx 2> nul
-  md qump\gfx\env 2> nul
-  md qump\maps 2> nul
-  md qump\maps\source 2> nul
-  md qump\music 2> nul
-  move id1\gfx\env\moonhigh_*.tga qump\gfx\env > nul
-  move id1\gfx\env\stormydays_*.tga qump\gfx\env > nul
-  move id1\gfx\env\voidsmoke_*.tga qump\gfx\env > nul
-  move id1\maps\qump_*.* qump\maps > nul
-  move id1\maps\start.bsp qump\maps > nul
-  move id1\maps\start.lit qump\maps > nul
-  move id1\maps\source\qump_*.* qump\maps\source > nul
-  move id1\maps\source\start.map qump\maps\source > nul
-  move id1\music\track12.ogg qump\music > nul
-  move "id1\qump read me.txt" qump > nul
-  REM delete these uncommon dirs if empty
-  rd id1\gfx\env 2> nul
-  rd id1\gfx 2> nul
-  rd id1\maps\source 2> nul
 )
 if exist qump (
   call "%~dp0\_mod_launch.cmd" qump start
@@ -162,10 +127,6 @@ if "%ad_v1_70patch1_success%"=="false" (
   goto :menu
 )
 if exist ad_v1_70final (
-  echo Note that the included map ad_sepulcher is not playable with the
-  echo Mark V engine, at the time of writing this.
-  echo The latest version of the Quakespasm engine is recommended for that map.
-  echo(
   call "%~dp0\_mod_launch.cmd" ad_v1_70final start
 )
 pause
@@ -174,7 +135,6 @@ goto :menu
 :6
 if not exist dm4jam (
   call "%~dp0\_mod_install.cmd" dm4jam
-  call :dm4jam_fix
 )
 if exist dm4jam (
   call "%~dp0\_mod_launch.cmd" dm4jam start
@@ -194,41 +154,5 @@ if exist "%1" (
   set %1_installed=*
 ) else (
   set %1_installed= 
-)
-goto :eof
-
-REM Mark V does not correctly extract dm4jam
-REM so we'll do it from this batch file if possible.
-:dm4jam_fix
-if exist dm4jam\demo1.dem (
-  goto :eof
-)
-del /q id1\maps\dm4jam_*.* 2> nul
-del /q id1\maps\start.* 2> nul
-call :net45_check
-if "%net45_installed%"=="true" (
-  echo Fixing some install issues...
-  powershell.exe -nologo -noprofile -command "& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('id1\_library\dm4jam.zip', 'dm4jam'); }"
-)
-if exist dm4jam\demo1.dem (
-  goto :eof
-)
-rd /s /q dm4jam 2> nul
-echo Mark V has issues installing "dm4jam"; unable to fix.
-echo You can get "dm4jam.zip" from the "id1\_library" folder and
-echo extract it manually into a "dm4jam" mod folder.
-echo(
-goto :eof
-
-:net45_check
-powershell.exe -nologo -noprofile -command "& { trap { exit 1; } Add-Type -A 'System.IO.Compression.FileSystem'; }" > nul 2>&1
-if %errorlevel% equ 0 (
-  set net45_installed=true
-) else (
-  echo The installed version of the .Net Framework ^(and/or of PowerShell^) prevents
-  echo the automatic fixing of some install issues. See "readmes\basic\1_setup.txt"
-  echo for more details.
-  echo(
-  set net45_installed=false
 )
 goto :eof

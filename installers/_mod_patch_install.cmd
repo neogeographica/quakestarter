@@ -61,14 +61,14 @@ if exist "%temp_gamedir%" (
 )
 
 REM download the patch
-start "" /b /wait ".\%markv_exe%" +install "%install_arg%" +quit
+start "" /b /wait ".\%markv_exe%" +install "%install_arg%" "%temp_gamedir%" +quit
 
 REM verify that download worked
 if not exist "id1\_library\%temp_gamedir%.zip" (
   echo Attempting download again...
   REM short retry delay (don't use "timeout" since not available on XP)
   ping 127.0.0.1 -n 4 >nul 2>&1 || ping ::1 -n 4 >nul 2>&1
-  start "" /b /wait ".\%markv_exe%" +install "%install_arg%" +quit
+  start "" /b /wait ".\%markv_exe%" +install "%install_arg%" "%temp_gamedir%" +quit
   if not exist "id1\_library\%temp_gamedir%.zip" (
     echo Download failed. This might be a temporary issue with the server;
     echo if you try again the download may succeed.
@@ -81,18 +81,18 @@ if exist "%temp_gamedir%" (
   if "%has_skipfiles%"=="true" (
     del /q%skipfiles% 2> nul
   )
-  echo Adding/patching files:
+REM  echo Adding/patching files:
   for /r "%cd%\%temp_gamedir%" %%d in (.) do (
     setlocal EnableDelayedExpansion
     set patch_subdir=%%d
     set patch_rel_subdir=!patch_subdir:%cd%\%temp_gamedir%=!
     set target_subdir=%target_gamedir%!patch_rel_subdir:\.=!
-    echo !target_subdir!
+REM    echo !target_subdir!
     if not exist "!target_subdir!" (
       md "!target_subdir!"
     )
     for %%f in ("%%d\*") do (
-      echo   %%~nxf
+REM      echo   %%~nxf
       move /y "%%f" "!target_subdir!" > nul
     )
     endlocal

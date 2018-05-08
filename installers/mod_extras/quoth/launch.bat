@@ -166,7 +166,6 @@ FOR %%G IN (tyr-quake.exe
             glquakebjp.exe
             directq.exe
             mark_v_winquake.exe
-            dx9_mark_v.exe
             mark_v.exe
             fitzquake5.exe
             quakespasm.exe

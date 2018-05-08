@@ -105,13 +105,8 @@ pause
 goto :menu
 
 :5
-REM Terra doesn't normally have its own gamedir, but let's give it one
 if not exist terra (
   call "%~dp0\_mod_install.cmd" terra
-  md terra 2> nul
-  md terra\maps 2> nul
-  move id1\maps\terra?.bsp terra\maps > nul
-  move id1\maps\terra.txt terra > nul
 )
 if exist terra (
   call "%~dp0\_mod_launch.cmd" terra terra1
@@ -159,18 +154,12 @@ goto :menu
 
 :8
 REM for Warp Spasm also install Quoth if necessary
-REM note that the "quoth" folder name is required for Quoth
 if not exist quoth (
-  call "%~dp0\_mod_install.cmd" http://www.quaketastic.com/files/single_player/mods/quoth2pt2full.zip
-  if exist quoth2pt2full (
-    move quoth2pt2full quoth > nul
-    del /q id1\_library\quoth2pt2full.zip
-  )
+  call "%~dp0\_mod_install.cmd" http://www.quaketastic.com/files/single_player/mods/quoth2pt2full.zip quoth
 )
 if exist quoth (
   if not exist warpspasm (
     call "%~dp0\_mod_install.cmd" warpspasm
-    call :warpspasm_fix
   )
 ) else (
   echo Failed to install required base mod "quoth". Skipping "warpspasm" install.
@@ -188,24 +177,8 @@ pause
 goto :menu
 
 :9
-REM Remix Map Pack doesn't normally have its own gamedir, but let's give it one
 if not exist rmx-pack (
   call "%~dp0\_mod_install.cmd" rmx-pack
-  md rmx-pack 2> nul
-  md rmx-pack\gfx 2> nul
-  md rmx-pack\gfx\env 2> nul
-  md rmx-pack\maps 2> nul
-  move id1\*rmx*.txt rmx-pack > nul
-  move id1\gfx\env\elbrus256*.tga rmx-pack\gfx\env > nul
-  move id1\maps\*rmx*.* rmx-pack\maps > nul
-  move id1\maps\start.bsp rmx-pack\maps > nul
-  REM delete these unneeded files
-  del /q id1\fitz-rmx.bat
-  del /q id1\gnu.txt
-  del /q id1\mx.txt
-  REM delete these uncommon dirs if empty
-  rd id1\gfx\env 2> nul
-  rd id1\gfx 2> nul
 )
 if exist rmx-pack (
   call "%~dp0\_mod_launch.cmd" rmx-pack start
@@ -228,7 +201,6 @@ REM for Arcanum also install the Drake mod
 set drake290111_success=
 if not exist arcanum (
   call "%~dp0\_mod_install.cmd" arcanum
-  call :arcanum_fix
   if exist arcanum (
     call "%~dp0\_mod_patch_install.cmd" http://www.quaddicted.com/filebase/drake290111.zip arcanum
   )
@@ -248,17 +220,8 @@ pause
 goto :menu
 
 :12
-REM Deathmatch Classics Vol. 3 doesn't normally have its own gamedir, but let's give it one
 if not exist dmc3 (
   call "%~dp0\_mod_install.cmd" dmc3
-  md dmc3 2> nul
-  md dmc3\maps 2> nul
-  md dmc3\maps\src 2> nul
-  move id1\maps\dmc3.txt dmc3 > nul
-  move id1\maps\dmc3*.bsp dmc3\maps > nul
-  move id1\maps\src\dmc3*.map dmc3\maps\src > nul
-  REM delete these uncommon dirs if empty
-  rd id1\maps\src 2> nul
 )
 if exist dmc3 (
   call "%~dp0\_mod_launch.cmd" dmc3 dmc3
@@ -313,7 +276,6 @@ goto :menu
 :16
 if not exist mapjam6 (
   call "%~dp0\_mod_install.cmd" mapjam6
-  call :mapjam6_fix
 )
 if exist mapjam6 (
   call "%~dp0\_mod_launch.cmd" mapjam6 start
@@ -333,71 +295,5 @@ if exist "%1" (
   set %1_installed=*
 ) else (
   set %1_installed= 
-)
-goto :eof
-
-REM Mark V does not correctly extract arcanum
-REM so we'll do it from this batch file if possible.
-:arcanum_fix
-if exist arcanum\maps\arcstart.bsp (
-  goto :eof
-)
-del /q id1\maps\arcanum?.bsp 2> nul
-del /q id1\maps\arcstart.* 2> nul
-call :net45_check
-if "%net45_installed%"=="true" (
-  echo Fixing some install issues...
-  powershell.exe -nologo -noprofile -command "& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('id1\_library\arcanum.zip', 'arcanum'); }"
-)
-if exist arcanum\maps\arcstart.bsp (
-  goto :eof
-)
-rd /s /q arcanum 2> nul
-echo Mark V has issues installing "arcanum"; unable to fix.
-echo You can get "arcanum.zip" from the "id1\_library" folder and
-echo extract it manually into an "arcanum" mod folder.
-echo You will also need to manually download and install the Drake mod into
-echo the same folder, from: http://www.quaddicted.com/filebase/drake290111.zip
-echo(
-goto :eof
-
-:warpspasm_fix
-del /q warpspasm\dll 2> nul
-goto :eof
-
-REM Mark V does not correctly extract mapjam6
-REM so we'll do it from this batch file if possible.
-:mapjam6_fix
-if exist mapjam6\maps\start.bsp (
-  goto :eof
-)
-del /q id1\maps\jam6_*.* 2> nul
-del /q id1\maps\start.bsp 2> nul
-del /q id1\maps\start.lit 2> nul
-call :net45_check
-if "%net45_installed%"=="true" (
-  echo Fixing some install issues...
-  powershell.exe -nologo -noprofile -command "& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('id1\_library\mapjam6.zip', 'mapjam6'); }"
-)
-if exist mapjam6\maps\start.bsp (
-  goto :eof
-)
-rd /s /q mapjam6 2> nul
-echo Mark V has issues installing "mapjam6"; unable to fix.
-echo You can get "mapjam6.zip" from the "id1\_library folder" and
-echo extract it manually into a "mapjam6" mod folder.
-echo(
-goto :eof
-
-:net45_check
-powershell.exe -nologo -noprofile -command "& { trap { exit 1; } Add-Type -A 'System.IO.Compression.FileSystem'; }" > nul 2>&1
-if %errorlevel% equ 0 (
-  set net45_installed=true
-) else (
-  echo The installed version of the .Net Framework ^(and/or of PowerShell^) prevents
-  echo the automatic fixing of some install issues. See "readmes\basic\1_setup.txt"
-  echo for more details.
-  echo(
-  set net45_installed=false
 )
 goto :eof

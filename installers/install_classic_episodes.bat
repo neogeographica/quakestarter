@@ -134,7 +134,6 @@ goto :menu
 :6
 if not exist nehahra (
   call "%~dp0\_mod_install.cmd" nehahra
-  call :nehahra_fix
 )
 if exist nehahra (
   call "%~dp0\_mod_launch.cmd" nehahra nehstart nehahra
@@ -158,8 +157,4 @@ if exist "%1" (
 ) else (
   set %1_installed= 
 )
-goto :eof
-
-:nehahra_fix
-move nehahra\pirit.txt nehahra\readme_spirit.txt > nul 2>&1
 goto :eof
