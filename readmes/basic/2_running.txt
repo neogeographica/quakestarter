@@ -5,14 +5,13 @@ It's good to run mark_v.exe at least once before playing any custom content, and
 
 **** Running addons through the installer
 
-The "installer" batch file not only provides options for installing selected addons, but it also is an easy way to launch Quake.
+The "installer" batch file not only provides options for installing/uninstalling selected addons, but it also is an easy way to launch Quake.
 
-After you have installed an item, or if you select an already-installed item, the installer will give you the option to play it, with a menu that looks like this:
+After you have installed an item, or if you select an already-installed item, the installer will give you the option to play or uninstall it. The choices for playing look like this:
 
-Launch options:
-y: launch without explicitly setting a skill
-n: do not launch
-0-3: launch and set a default initial skill
+  y: launch without explicitly setting a skill
+  n: do not launch
+  0-3: launch and set a default initial skill
 
 If you choose "y" or just press Enter, the addon will be launched using a default skill value. Usually the default skill is 1 ("Normal"), but you may want to set up a different default skill for yourself as described in the "readmes\other_stuff\no_launcher.txt" file. Then you can always just hammer the Enter key to quickly launch stuff without needing to specifically enter a skill value. (If the addon comes with its own "start" map, it may also provide a way to select the skill value in-game.)
 
@@ -35,8 +34,7 @@ When you run "SQLauncher2.exe", you'll get a dialog window with a few settings t
 
 The first thing to choose is the "Engine":
 - Pick "mark_v" if you want a GLQuake look.
-- Or you could pick "dx9_mark_v" (also a GLQuake look). This program uses the DirectX graphics interface instead of OpenGL. Depending on your video card and drivers, it may perform better than "mark_v".
-- Pick "mark_v_winquake" if you want a more original-Quake-ish WinQuake look, instead of a GLQuake-ish look.
+- Pick "mark_v_winquake" if you want a more original-Quake-ish WinQuake look, instead of a GLQuake look.
 
 Don't worry about the "Resolution" setting; you can pick your video settings in the Mark V in-game menus.
 

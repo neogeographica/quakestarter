@@ -96,9 +96,8 @@
 // textures.
 
 // Note that the texturemode setting below is also exposed in the Mark V menus,
-// as the "Pixelation" setting in the "Video Options" menu. Only some of the
-// below values are presented as choices however (excluding my personal
-// recommended/favorite value GL_NEAREST_MIPMAP_LINEAR).
+// as the "Pixelation" setting in the "Video Options" menu. Not all of the
+// below values may be presented as choices however.
 
 // If you set this value in the autoexec.cfg file instead of through the
 // menus, then the value in autoexec.cfg will be applied whenever Quake starts,
@@ -106,21 +105,24 @@
 
 // Set gl_texturemode for amount of texture filtering and "pixely-ness".
 // There are several values for this, but a few interesting ones are:
+//   GL_NEAREST for pixely textures and no mipmaps (so, loss of quality on
+//   far objects)
 //   GL_NEAREST_MIPMAP_NEAREST for pixely textures and abrupt mipmap level
 //   transitions as the textured object gets farther away.
 //   GL_NEAREST_MIPMAP_LINEAR for pixely textures but smooth transitions
 //   between mipmap levels.
 //   GL_LINEAR_MIPMAP_LINEAR for smoothed textures and smooth transitions
 //   between mipmap levels.
+
 // Default is GL_LINEAR_MIPMAP_LINEAR. Uncomment the following line to set
 // some other value.
 
 //gl_texturemode GL_NEAREST_MIPMAP_LINEAR
 
 // Increase gl_texture_anisotropy for more texture clarity in some situations.
-// Note that if you're using the Mark V DX9 engine then this setting only takes
-// effect for the various GL_LINEAR_* texturemodes. In the GL engine though, it
-// also works with the GL_NEAREST_* texturemodes (and can help improve them).
+// Note that if you're using Mark V then this setting only takes effect for the
+// various GL_LINEAR_* texturemodes. In some OpenGL engines though, it also
+// works with the GL_NEAREST_* texturemodes (and can help improve them).
 // Default is 1. Uncomment the following line to set some other value.
 
 //gl_texture_anisotropy 8
@@ -165,14 +167,14 @@
 // water warp
 //-------------------------------------------------------------------
 
-// All variants of Mark V support a "water warp" effect when underwater,
-// like the original WinQuake. For the GL and DX9 variants, you can play
-// with some settings that control the strength of this effect. At high
-// screen resolutions the effect may be too strong by default. Both
-// r_waterwarp_amp and r_waterwarp_cycle may be worth modifying, although
-// I typically only change r_waterwarp_amp.
+// Both variants of Mark V support a "water warp" effect when underwater,
+// like the original WinQuake. For the DX9 variant, you can play with some
+// settings that control the strength of this effect. At high screen
+// resolutions the effect may be too strong by default. Both r_waterwarp_amp
+// and r_waterwarp_cycle may be worth modifying, although I typically only
+// change r_waterwarp_amp.
 // Default is 150. Uncomment the following line to set some other value.
-// Larger values decrease the strength of the warp effect, althouhg the
+// Larger values decrease the strength of the warp effect, although the
 // exact effect depends upon your chosen video resolution.
 
 //r_waterwarp_amp 500

@@ -1,14 +1,3 @@
-**** .Net Framework
-
-Simple Quake Launcher 2 and some aspects of the installer make use of Microsoft .Net Framework version 4.5 or later. If you are on Windows 8 or 10, you should be good to go.
-
-If you are on Windows 7 or Vista, you may need to get a recent version of the .Net Framework from from https://www.microsoft.com/net/download/all ... make sure that you get a ".Net Framework" runtime package, not anything else like ".Net Core" or a developer pack or etc.
-
-FYI, unfortunately there is a problem with the combination of .Net Framework 4.7.1 (and maybe later versions) and pre-5.1 versions of PowerShell. If you have that combo of software on your system then some things here will not work. If you're choosing which version of .Net to install, you may want to stick with .Net 4.7 or earlier. Or, you could get PowerShell 5.1 from https://www.microsoft.com/en-us/download/details.aspx?id=54616
-
-(Sorry about that potential hassle.)
-
-
 **** Game data
 
 You need two game data files from Quake: "pak0.pak" and "pak1.pak". Put these files inside the "id1" folder, and you're ready to play Quake.
@@ -18,14 +7,20 @@ Similarly, if you own and want to play the official Quake missionpacks, each of 
 The first option in the menu of the "installer" batch file can usually locate and copy the necessary pak files if you already have Quake installed somewhere else on this same computer. If you're having difficulties finding your pak files, see "readmes\other_stuff\pak_files.txt".
 
 
-**** Simple Quake Launcher 2
+**** DirectX 9 Runtime for Mark V
 
-Once you have these pak files in place, one easy way to play Quake is by using Simple Quake Launcher 2, "SQLauncher2.exe". This program has a requirement for Microsoft .Net Framework 4.5 or later, as mentioned above.
+Mark V, the Quake engine included in this package, has two variants (further described in the "2_running.txt" readme). The mark_v.exe variant requires an up-to-date version of the DirectX 9 runtime package installed. If you play other games on this system then you may already have this installed. If not though, you can get it from https://www.microsoft.com/en-ie/download/details.aspx?id=35
+
+Note that the "installer" batch files also make use of mark_v.exe for many things, and so they also require the DirectX 9 runtime.
 
 
-**** DirectX 9 Runtime
+**** .Net Framework for Simple Quake Launcher 2
 
-Mark V, the Quake engine included in this package, has a few variants that cover different rendering styles and graphics APIs. Some of these variants are described in the "2_running.txt" readme. FYI if you want to use the dx9_mark_v.exe variant, you will need an up-to-date version of the DirectX 9 runtime package installed. If you play other games on this system then you may already have this installed. If not though, you can get it from https://www.microsoft.com/en-ie/download/details.aspx?id=35
+One easy way to play Quake is by using Simple Quake Launcher 2, "SQLauncher2.exe". This program has a requirement for Microsoft .Net Framework 4.5 or later.
+
+If you are on Windows 8 or 10, you should be good to go. If you are on Windows 7 or Vista, you may need to get a recent version of the .Net Framework from from https://www.microsoft.com/net/download/all ... make sure that you get a ".Net Framework" runtime package, not anything else like ".Net Core" or a developer pack or etc.
+
+If you're on Windows XP you're out of luck for this particular thing. In that case you might want to look into getting the original Simple Quake Launcher from https://sourceforge.net/projects/simplequakelauncher/ which can work with .Net Framework 3.5 or later.
 
 
 **** Soundtrack

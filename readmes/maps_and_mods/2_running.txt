@@ -28,7 +28,7 @@ For the maps and episodes covered by this installer, FYI these are the ones that
 
 **** Mod
 
-If the content is in its own game folder -- which will always be the case for content installed through these batch files! -- then use Simple Quake Launcher 2 to select that game folder as the "Mod" to launch. 
+If the content is in its own game folder -- which will always be the case for content installed through these batch files -- then use Simple Quake Launcher 2 to select that game folder as the "Mod" to launch. 
 
 Otherwise select the "[Default]" mod.
 
