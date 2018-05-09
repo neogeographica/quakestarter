@@ -30,4 +30,16 @@ If you want more discussion about running Quake addons, see this Steam guide: ht
 
 **** Mark V install
 
-The Mark V Quake engine supports an "install" command in the Quake console that will automatically download and install content. This is pretty neat, but there some pieces of content that Mark V does not install correctly. So I won't go into a lot of details about the "install" command in this readme. The installer batch files in this package do make use of that command though.
+The Mark V Quake engine supports an "install" command in the Quake console that will automatically download and install zipfiles that contain maps/mods, either from Quaddicted or from a complete web URL that you supply.
+
+For example you could do
+    install travail
+to install the "travail" mod from Quaddicted. Or if you wanted to install a mod from some other source, you could do something like
+    install http://some.other.weberver/some_mod.zip
+
+Quake mods can be packaged in lots of quirky ways. Mark V tries to figure out how best to unpack the downloaded archive, and whether or not its contents should be placed under id1 or in its own mod directory. You can give it some guidance; let's say for example that you want to make sure that the "terra" mapset will be installed in its own "terra" directory. You could do that with the console command
+    install terra self
+or you could even force it to be installed in a mod directory named "cheese" with the console command
+    install terra cheese
+
+Since Mark V tries to figure out how to install a mod just by examining the zipfile contents, it's possible that it could make mistakes (although it works correctly for all of the maps/mods covered here). Mark V also won't know to apply any patches that were later released for the mod. But it's the quickest & easiest way to install a mod if you know the mod's identifier and you are already running Mark V.

@@ -34,7 +34,7 @@ If the folder is named "foo" and requires missionpack 1 as a base game, then you
 If the folder is named "foo" and requires missionpack 2 as a base game, then you would activate it with this command:
     game foo -rogue; exec quake.rc
 
-If you're curious about "quake.rc" and why you usually want to exec that config file (but sometimes might not), see the last section of this readme below.
+If you're curious about "quake.rc" and why you usually want to exec that config file (but sometimes might not), see the last section of this readme below. TLDR: it should be fine to exec quake.rc, but you should probably only use the "game" command to switch from "normal" Quake to some mod. Don't use it to switch back and forth. If you want to change mods, restart Quake.
 
 
 **** Setting difficulty
@@ -75,7 +75,9 @@ So why doesn't the "game" console command execute "quake.rc"? **
 
 This is something that Quake community developers have talked about for quite a while. One argument has to do with the fact that some mods do rude things with their config files. For example a mod might contain an "autoexec.cfg" that overrides your own "id1\autoexec.cfg" file. So if you're using the "game" console command to activate a mod, you might want to still have the choice as to whether or not you want to execute "quake.rc" (and the other config files that it runs).
 
-But usually IMO executing "quake.rc" after activating a mod is the right thing to do, which is why I recommended that above.
+Also if there are any weird options set by the mod folder's config files, and you switch back to id1 or some other mod folder later in the same Quake session, then those weird settings can be carried over into those other configs.
+
+But usually IMO executing "quake.rc" after activating a mod is the right thing to do, which is why I recommended that above. If you're worried about this mod's config "escaping" into other configs, then just don't use the "game" command again after you have switched to a mod. If you want to play some other mod, restart Quake.
 
 The installer batch files in this package will occasionally put customized "quake.rc" files in mod folders, to apply mod-recommended settings in a way that does not override anything you might have in "id1\autoexec.cfg". They will also rename any "autoexec.cfg" file included in a mod so that it does not disturb whatever you have set up in "id1\autoexec.cfg".
 

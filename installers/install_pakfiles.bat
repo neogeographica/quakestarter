@@ -46,24 +46,26 @@ if not exist "id1\pak0.pak" set missing_id1pak=true
 if not exist "id1\pak1.pak" set missing_id1pak=true
 if "%missing_id1pak%"=="true" (
   set missing_anypak=true
-  echo To play Quake, you will need both "pak0.pak" and "pak1.pak" from the original
-  echo Quake game data to be placed inside this folder:
+  echo To play Quake, you will need both "pak0.pak" and "pak1.pak" from the
+  echo original Quake game data to be placed inside this folder:
   echo   "%basedir%\id1"
   echo One or both of those pak files are currently missing.
   echo(
 )
 if not exist "hipnotic\pak0.pak" (
   set missing_anypak=true
-  echo To play missionpack 1, you will need to put its "pak0.pak" file inside this folder:
+  echo To play missionpack 1, you will need to put its "pak0.pak" file inside
+  echo this folder:
   echo   "%basedir%\hipnotic"
-  echo It is fine to not have that pak file if you don't want to play that missionpack.
+  echo You don't need that file if you don't want to play that missionpack.
   echo(
 )
 if not exist "rogue\pak0.pak" (
   set missing_anypak=true
-  echo To play missionpack 2, you will need to put its "pak0.pak" file inside this folder:
+  echo To play missionpack 2, you will need to put its "pak0.pak" file inside
+  echo this folder:
   echo   "%basedir%\rogue"
-  echo It is fine to not have that pak file if you don't want to play that missionpack.
+  echo You don't need that file if you don't want to play that missionpack.
   echo(
 )
 if "%missing_anypak%"=="true" (
