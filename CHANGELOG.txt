@@ -1,3 +1,16 @@
+**** v1.8 (May 2018)
+
+- Added mod uninstall support in the installer utility.
+
+- Cosmetic improvements to the installer menus.
+
+- Included version 1.99 of Mark V. This new version has expanded limits to allow playing ad_sepulcher, XInput gamepad support (with the -joystick argument), touchscreen support, co-op savegames, and other goodies. Updated docs where necessary.
+
+- Note that mark_v.exe is now the DirectX variant; the OpenGL variant is gone. This means you will need the DirectX 9 Runtime (see "readmes\basic\1_setup.txt"). And if you have an older version of dx9_mark_v.exe laying around you can delete it.
+
+- The installer utility has been rewritten to take advantage of improvements in Mark V's "install" feature. One side effect of this change is that you do not need .Net Framework 4.5 for the installer functionality now. (It is still required if you use Simple Quake Launcher 2.) This does however also mean that the new installer WILL NOT work with the older versions of Mark V.
+
+
 **** v1.7 (Apr 2018)
 
 - Included Simple Quake Launcher 2 instead of the original Simple Quake Launcher 1.x, and changed the readme-files discussion to be appropriate for SQL2. Note that this new version now requires the .Net Framework 4.5 instead of 3.5.

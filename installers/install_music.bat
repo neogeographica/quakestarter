@@ -24,17 +24,17 @@ call :music_installed_check id1
 call :music_installed_check hipnotic
 call :music_installed_check rogue
 echo(
-echo Soundtrack files to install for main campaign or missionpacks:
-echo 1: id1\music - original campaign%id1_music_installed%
+echo Soundtrack files for main campaign or missionpacks:
+echo %id1_music_installed%  1: id1\music - original campaign
 if exist hipnotic (
-  echo 2: hipnotic\music - Scourge of Armagon%hipnotic_music_installed%
+  echo %hipnotic_music_installed%  2: hipnotic\music - Scourge of Armagon
 ) else (
-  echo    ^(missionpack 1 not present^)
+  echo       ^(missionpack 1 not present^)
 )
 if exist rogue (
-  echo 3: rogue\music - Dissolution of Eternity%rogue_music_installed%
+  echo %rogue_music_installed%  3: rogue\music - Dissolution of Eternity
 ) else (
-  echo    ^(missionpack 2 not present^)
+  echo       ^(missionpack 2 not present^)
 )
 echo(
 set menu_choice=menu_exit
@@ -92,7 +92,7 @@ goto :eof
 REM function used above
 :music_installed_check
 if exist "%1\music" (
-  set %1_music_installed= - already installed
+  set %1_music_installed=*
 ) else (
-  set %1_music_installed=
+  set %1_music_installed= 
 )

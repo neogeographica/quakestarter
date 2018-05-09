@@ -16,7 +16,7 @@ echo 5: Classic episodes
 echo 6: Other highly-rated maps ^(part 1^)
 echo 7: Other highly-rated maps ^(part 2^)
 echo(
-set menu_choice=eof
+set menu_choice=menu_exit
 set /p menu_choice=choose a number or just press Enter to exit:
 echo(
 goto %menu_choice%
@@ -48,3 +48,5 @@ goto :menu
 :7
 call "installers/install_other_picks_2.bat"
 goto :menu
+
+:menu_exit

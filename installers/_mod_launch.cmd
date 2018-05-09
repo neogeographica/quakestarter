@@ -51,10 +51,22 @@ echo y: launch without explicitly setting a skill
 echo n: do not launch
 echo 0-3: launch and set a default initial skill
 echo(
+echo ^(x to uninstall, xx to also delete the cached download^)
+echo(
 set skill_arg=
 set launch_choice=y
 set /p launch_choice=choose an option, or just press Enter to launch:
 goto %launch_choice%
+
+:Xx
+:xX
+:xx
+:XX
+del /q "id1\_library\%~1.zip"
+:x
+:X
+rd /s /q "%~1" 2> nul
+goto :N
 
 :0
 :1

@@ -81,7 +81,7 @@
 //r_particles 2
 
 
-// transparency & mirrors (other than r_wateralpha, Mark V engines only)
+// transparency & mirrors (other than r_wateralpha, Mark V only)
 //-------------------------------------------------------------------
 
 // 1 = no transparency/reflection, 0 = full transparency/reflection
@@ -94,11 +94,11 @@
 //r_wateralpha 1
 
 
-// water warp (Mark V engines only)
+// water warp (Mark V only; this doesn't apply to the winquake variant)
 //-------------------------------------------------------------------
 
 // Default is 150. Uncomment the following line to set some other value.
-// Larger values decrease the strength of the warp effect, althouhg the
+// Larger values decrease the strength of the warp effect, although the
 // exact effect depends upon your chosen video resolution.
 
 //r_waterwarp_amp 500
