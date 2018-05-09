@@ -81,9 +81,11 @@ if exist quoth (
 )
 if exist e1m5quotha (
   call "%~dp0\_mod_launch.cmd" e1m5quotha e1m5quotha quoth
-  echo If you launch "e1m5quotha" outside of this installer, make sure to
-  echo specify Quoth as the base game.
-  echo(
+  if exist e1m5quotha (
+    echo If you launch "e1m5quotha" outside of this installer, make sure to
+    echo specify Quoth as the base game.
+    echo(
+  )
 )
 pause
 goto :menu
@@ -105,9 +107,11 @@ if exist quoth (
 )
 if exist apsp3 (
   call "%~dp0\_mod_launch.cmd" apsp3 apsp3 quoth
-  echo If you launch "apsp3" outside of this installer, make sure to specify
-  echo Quoth as the base game.
-  echo(
+  if exist apsp3 (
+    echo If you launch "apsp3" outside of this installer, make sure to specify
+    echo Quoth as the base game.
+    echo(
+  )
 )
 pause
 goto :menu

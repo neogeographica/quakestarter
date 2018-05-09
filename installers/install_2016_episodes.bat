@@ -67,9 +67,11 @@ if not exist gotshun-never-released_levels (
 )
 if exist gotshun-never-released_levels (
   call "%~dp0\_mod_launch.cmd" gotshun-never-released_levels q1map1 hipnotic
-  echo If you launch "gotshun-never-released_levels" outside of this installer,
-  echo make sure to specify missionpack 1 as the base game.
-  echo(
+  if exist gotshun-never-released_levels (
+    echo If you launch "gotshun-never-released_levels" outside of this installer,
+    echo make sure to specify missionpack 1 as the base game.
+    echo(
+  )
 )
 pause
 goto :menu
@@ -92,9 +94,11 @@ if exist quoth (
 )
 if exist func_mapjam9_2 (
   call "%~dp0\_mod_launch.cmd" func_mapjam9_2 start quoth
-  echo If you launch "func_mapjam9_2" outside of this installer, make sure to
-  echo specify Quoth as the base game.
-  echo(
+  if exist func_mapjam9_2 (
+    echo If you launch "func_mapjam9_2" outside of this installer, make sure to
+    echo specify Quoth as the base game.
+    echo(
+  )
 )
 pause
 goto :menu

@@ -120,10 +120,12 @@ if not exist chapters (
 )
 if exist chapters (
   call "%~dp0\_mod_launch.cmd" chapters start hipnotic
-  echo If you launch "chapters" outside of this installer, make sure to specify
-  echo missionpack 1 as the base game. In this case, that base game is
-  echo necessary even if you don't have missionpack 1 currently installed.
-  echo(
+  if exist chapters (
+    echo If you launch "chapters" outside of this installer, make sure to specify
+    echo missionpack 1 as the base game. In this case, that base game is
+    echo necessary even if you don't have missionpack 1 currently installed.
+    echo(
+  )
 )
 pause
 goto :menu
@@ -170,9 +172,11 @@ if exist quoth (
 )
 if exist warpspasm (
   call "%~dp0\_mod_launch.cmd" warpspasm start quoth
-  echo If you launch "warpspasm" outside of this installer, make sure to
-  echo specify Quoth as the base game.
-  echo(
+  if exist warpspasm (
+    echo If you launch "warpspasm" outside of this installer, make sure to
+    echo specify Quoth as the base game.
+    echo(
+  )
 )
 pause
 goto :menu

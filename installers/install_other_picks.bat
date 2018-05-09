@@ -170,9 +170,11 @@ if exist quoth (
 )
 if exist red777 (
   call "%~dp0\_mod_launch.cmd" red777 red777 quoth
-  echo If you launch "red777" outside of this installer, make sure to specify
-  echo Quoth as the base game.
-  echo(
+  if exist red777 (
+    echo If you launch "red777" outside of this installer, make sure to specify
+    echo Quoth as the base game.
+    echo(
+  )
 )
 pause
 goto :menu
@@ -204,9 +206,11 @@ if exist quoth (
 )
 if exist apsp2 (
   call "%~dp0\_mod_launch.cmd" apsp2 apsp2 quoth
-  echo If you launch "apsp2" outside of this installer, make sure to specify
-  echo Quoth as the base game.
-  echo(
+  if exist apsp2 (
+    echo If you launch "apsp2" outside of this installer, make sure to specify
+    echo Quoth as the base game.
+    echo(
+  )
 )
 pause
 goto :menu
