@@ -36,6 +36,8 @@ The first thing to choose is the "Engine":
 - Pick "mark_v" if you want a GLQuake look.
 - Pick "mark_v_winquake" if you want a more original-Quake-ish WinQuake look, instead of a GLQuake look.
 
+(Note that the winquake version can't properly render a few modern Quake map elements, like partially transparent fence or vine textures. However it takes a pretty good shot at playing modern content with the original presentation.)
+
 Don't worry about the "Resolution" setting; you can pick your video settings in the Mark V in-game menus.
 
 Leave the "Game" set to "Quake" for now.

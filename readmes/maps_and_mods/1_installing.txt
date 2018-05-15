@@ -25,6 +25,7 @@ If you're curious about why it's handled that way here, there's a few reasons, i
 - There's no chance of accidental conflicts with other downloaded stuff.
 - If it's a multi-map set, it's easy to come back at some later time and find which maps belong to it.
 - It's easy to have config settings that are specific to the maps.
+- It's easy to keep track of which savegames are for which maps.
 - It's easy to correctly uninstall it later (see below), including all related config and savegames etc.
 
 This does potentially result in a lot of folders in your Quake directory; oh well. Everything's a tradeoff!
