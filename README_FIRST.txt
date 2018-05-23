@@ -15,7 +15,9 @@ You might want to keep an eye out in the future for a newer release of Mark V. Y
 
 The included version of Mark V is 1.99 from May 2018.
 
-As for this whole package of stuff, it's version 1.8. If you want to see what has changed since the previous releases, see "CHANGELOG.txt". If you've been using a previous version of this package, you can overwrite those files with the ones from this new release; that won't hurt whatever Quake configuration you've set up. (This version in particular does have some notes in the changelog that you should read if you are overwriting a previous version of this package.)
+As for this whole package of stuff, it's version 1.8.1. If you want to see what has changed since the previous releases, see "CHANGELOG.txt".
+
+If you've been using a previous version of this package, you can overwrite those files with the ones from this new release; that won't hurt whatever Quake configuration you've set up. Do check the changelog though to see if there's anything in particular you need to know about changes between this and previous versions.
 
 
 *** How to use this
