@@ -1,3 +1,10 @@
+**** v1.8.1 (May 2018)
+
+- Included a refresh release for Mark V 1.99 with various fixes.
+
+- Minor tweaks to readme files. Mentioned that the winquake Mark V variant can't handle alpha-masked textures.
+
+
 **** v1.8 (May 2018)
 
 - Added mod uninstall support in the installer utility.
