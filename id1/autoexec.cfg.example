@@ -94,7 +94,7 @@
 //r_wateralpha 1
 
 
-// water warp (Mark V only; this doesn't apply to the winquake variant)
+// water warp (Mark V only - this doesn't apply to the winquake variant)
 //-------------------------------------------------------------------
 
 // Default is 150. Uncomment the following line to set some other value.
