@@ -62,21 +62,28 @@ if exist "%temp_gamedir%" (
   goto :exit 
 )
 
+REM set up windowed-video config for installer run
+md markv_installer_tmp 2> nul
+copy /y installers\installer_autoexec.cfg markv_installer_tmp\autoexec.cfg > nul
+
 REM download the patch
-start "" /b /wait ".\%markv_exe%" +install "%install_arg%" "%temp_gamedir%" +quit
+start "" /b /wait ".\%markv_exe%" -game markv_installer_tmp +install "%install_arg%" "%temp_gamedir%" +quit
 
 REM verify that download worked
 if not exist "id1\_library\%temp_gamedir%.zip" (
   echo Attempting download again...
   REM short retry delay (don't use "timeout" since not available on XP)
   ping 127.0.0.1 -n 4 >nul 2>&1 || ping ::1 -n 4 >nul 2>&1
-  start "" /b /wait ".\%markv_exe%" +install "%install_arg%" "%temp_gamedir%" +quit
+  start "" /b /wait ".\%markv_exe%" -game markv_installer_tmp +install "%install_arg%" "%temp_gamedir%" +quit
   if not exist "id1\_library\%temp_gamedir%.zip" (
     echo Download failed. This might be a temporary issue with the server;
     echo if you try again the download may succeed.
     goto :exit
   )
 )
+
+REM remove our temp gamedir
+rd /q /s markv_installer_tmp
 
 REM move the patch files to the desired gamedir
 if exist "%temp_gamedir%" (
