@@ -1,3 +1,10 @@
+**** v1.8.2 (Jul 2018)
+
+- Launch Mark V in windowed mode for downloads. This has some extra importance currently because fullscreen Mark V has slow startup on latest version of Windows. Will still be a nice thing though even once that is fixed.
+
+- Fixed a typo in autoexec.cfg.example that could cause a console warning message.
+
+
 **** v1.8.1 (May 2018)
 
 - Included a refresh release for Mark V 1.99 with various fixes.
