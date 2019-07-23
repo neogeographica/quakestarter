@@ -136,7 +136,7 @@ set quake_travail_soundtrack_markv_fix_success=
 if not exist travail (
   call "%~dp0\_mod_install.cmd" travail
   if exist travail (
-    call "%~dp0\_mod_patch_install.cmd" http://www.eclecticmenagerie.com/jl/quake/quake_travail_soundtrack_markv.zip travail music_placeholder_delete_me.pak
+    call "%~dp0\_mod_patch_install.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_travail_soundtrack_markv.zip travail music_placeholder_delete_me.pak
   )
 )
 if "%quake_travail_soundtrack_markv_fix_success%"=="false" (

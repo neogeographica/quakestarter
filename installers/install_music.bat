@@ -50,7 +50,7 @@ if not exist id1 (
   if exist id1\music (
     echo The "id1\music" folder already exists.
   ) else (
-    call "%~dp0\_mod_patch_install.cmd" http://www.eclecticmenagerie.com/jl/quake/quake_campaign_soundtrack_markv.zip id1 music_placeholder_delete_me.pak
+    call "%~dp0\_mod_patch_install.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_campaign_soundtrack_markv.zip id1 music_placeholder_delete_me.pak
   )
 )
 pause
@@ -64,7 +64,7 @@ if not exist hipnotic (
   if exist hipnotic\music (
     echo The "hipnotic\music" folder already exists.
   ) else (
-    call "%~dp0\_mod_patch_install.cmd" http://www.eclecticmenagerie.com/jl/quake/quake_mp1_soundtrack_markv.zip hipnotic music_placeholder_delete_me.pak
+    call "%~dp0\_mod_patch_install.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_mp1_soundtrack_markv.zip hipnotic music_placeholder_delete_me.pak
   )
 )
 pause
@@ -78,7 +78,7 @@ if not exist rogue (
   if exist rogue\music (
     echo The "rogue\music" folder already exists.
   ) else (
-    call "%~dp0\_mod_patch_install.cmd" http://www.eclecticmenagerie.com/jl/quake/quake_mp2_soundtrack_markv.zip rogue music_placeholder_delete_me.pak
+    call "%~dp0\_mod_patch_install.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_mp2_soundtrack_markv.zip rogue music_placeholder_delete_me.pak
   )
 )
 pause
