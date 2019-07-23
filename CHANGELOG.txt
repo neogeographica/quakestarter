@@ -1,3 +1,8 @@
+**** v1.9 (Jul 2019)
+
+- Replaced broken soundtrack links.
+
+
 **** v1.8.2 (Jul 2018)
 
 - Launch Mark V in windowed mode for downloads. This has some extra importance currently because fullscreen Mark V has slow startup on latest version of Windows. Will still be a nice thing though even once that is fixed.
