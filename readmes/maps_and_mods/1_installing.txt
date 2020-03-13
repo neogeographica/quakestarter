@@ -14,7 +14,7 @@ The installer choices are:
 
 * Other highly-rated maps - Other content not covered by the other choices above.
 
-This is NOT all the worthwhile Quake singleplayer content, not by a long shot. If you enjoy Quake SP I really recommend checking out other things at quaddicted.com, as described in the "3_explore_more.txt" file.
+This is NOT all the worthwhile Quake singleplayer content, not by a long shot. If you enjoy Quake SP I really recommend checking out other things at quaddicted.com, as described in the "3_explore_more.txt" file. Especially if you want to get the most recent releases, as the list of top-rated stuff here is updated infrequently.
 
 
 **** Mod folders
