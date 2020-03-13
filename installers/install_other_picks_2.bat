@@ -34,6 +34,7 @@ call :installed_check func_mapjam1
 call :installed_check func_mapjam2
 call :installed_check func_mapjam3
 call :installed_check retrojam6
+call :installed_check grim_rezipped
 echo(
 echo A selection of other maps ^(part 2^):
 echo %honey_installed% 17: honey - Honey ^(2012^)
@@ -47,6 +48,7 @@ echo %func_mapjam1_installed% 24: func_mapjam1 - Func Map Jam 1 - Honey Theme ^(
 echo %func_mapjam2_installed% 25: func_mapjam2 - Func Map Jam 2 - IKblue/IKwhite Theme ^(2014^)
 echo %func_mapjam3_installed% 26: func_mapjam3 - Func Map Jam 3 - Zerstoerer theme ^(2014^)
 echo %retrojam6_installed% 27: retrojam6 - Retro Jam 6 - Egyptian theme ^(2017^)
+echo %grim_rezipped_installed% 28: grim_rezipped - The Grim Outpost ^(2018^)
 echo(
 set menu_choice=menu_exit
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -211,6 +213,16 @@ if not exist retrojam6 (
 )
 if exist retrojam6 (
   call "%~dp0\_mod_launch.cmd" retrojam6
+)
+pause
+goto :menu
+
+:28
+if not exist grim_rezipped (
+  call "%~dp0\_mod_install.cmd" grim_rezipped
+)
+if exist grim_rezipped (
+  call "%~dp0\_mod_launch.cmd" grim_rezipped grim
 )
 pause
 goto :menu

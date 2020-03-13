@@ -30,6 +30,8 @@ call :installed_check func_mapjam9_2
 call :installed_check qump
 call :installed_check ad_v1_70final
 call :installed_check dm4jam
+call :installed_check hwjam
+call :installed_check xmasjam2018
 echo(
 echo Custom episodes released in 2016 or later:
 echo %dopa_installed%  1: dopa - Dimension of the Past ^(2016^)
@@ -38,6 +40,8 @@ echo %func_mapjam9_2_installed%  3: func_mapjam9_2 - Func Map Jam 9 - Contract R
 echo %qump_installed%  4: qump - Quake Upstart Mapping Project ^(2017^)
 echo %ad_v1_70final_installed%  5: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
 echo %dm4jam_installed%  6: dm4jam - DM4 Jam ^(2018^)
+echo %hwjam_installed%  7: hwjam - Halloween Jam 2018 ^(2018^)
+echo %xmasjam2018_installed%  8: xmasjam2018 - Xmas Jam 2018 - 1024^^3 theme ^(2018^)
 echo(
 set menu_choice=menu_exit
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -138,11 +142,59 @@ pause
 goto :menu
 
 :6
+REM for DM4 Jam also install the "DLC"
+set dm4jam_dlc_patch_success=
 if not exist dm4jam (
   call "%~dp0\_mod_install.cmd" dm4jam
+  if exist dm4jam (
+    call "%~dp0\_mod_patch_install.cmd" http://www.quaddicted.com/filebase/dm4jam_dlc_patch.zip dm4jam
+  )
+)
+if "%dm4jam_dlc_patch_success%"=="false" (
+  rd /q /s dm4jam
+  echo Failed to apply the "DLC" patch; rolled back the mod install. Maybe try
+  echo again? If you really want to install just the unpatched mod, you can
+  echo enter "install dm4jam" in the Mark V console.
+  echo(
+  pause
+  goto :menu
 )
 if exist dm4jam (
   call "%~dp0\_mod_launch.cmd" dm4jam start
+)
+pause
+goto :menu
+
+:7
+if not exist hwjam (
+  call "%~dp0\_mod_install.cmd" hwjam
+)
+if exist hwjam (
+  call "%~dp0\_mod_launch.cmd" hwjam start
+)
+pause
+goto :menu
+
+:8
+REM for Xmas Jam 2018 also install the patch for Shotro's map
+set xmasjam2_shotro_success=
+if not exist xmasjam2018 (
+  call "%~dp0\_mod_install.cmd" xmasjam2018
+  if exist xmasjam2018 (
+    call "%~dp0\_mod_patch_install.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/xmasjam2_shotro.zip xmasjam2018
+  )
+)
+if "%xmasjam2_shotro_success%"=="false" (
+  rd /q /s xmasjam2018
+  echo Failed to apply patch; rolled back the mod install. Maybe try again?
+  echo If you really want to install just the unpatched mod, you can enter
+  echo "install xmasjam2018" in the Mark V console.
+  echo(
+  pause
+  goto :menu
+)
+if exist xmasjam2018 (
+  call "%~dp0\_mod_launch.cmd" xmasjam2018 start
 )
 pause
 goto :menu
