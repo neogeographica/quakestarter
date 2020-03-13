@@ -1,3 +1,8 @@
+**** v1.10 (Mar 2020)
+
+- Updated with the rest of the qualifying releases from 2018. Among "Latest episodes", added: the DLC patch for DM4 Jam, Halloween Jam, and Xmas Jam. Among "Other highly-rated maps", added The Grim Outpost. Will probably add 2019 releases soon-ish but I want to make sure scores have had time to settle.
+
+
 **** v1.9 (Jul 2019)
 
 - Replaced broken soundtrack links.
