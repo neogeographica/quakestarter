@@ -5,23 +5,42 @@ REM * it (or a variant) is NOT included in other selected episodes
 REM * Quaddicted editor rating "Excellent"
 REM * Quaddicted user rating 4.5 or better (normalized Bayesian average)
 
-REM save working dir and change to dir that holds this script
+setlocal
+
+REM remember dir where this script lives
+set scriptsdir=%~dp0
+
+REM find the basedir by looking for id1 folder here or above one level
+set basedir=
 pushd "%~dp0"
-
-REM set the Mark V executable to use
-set markv_exe=mark_v.exe
-
-REM CD up to Mark V dir if necessary
-if not exist "%markv_exe%" (
+dir id1 /ad >nul 2>&1
+if not %errorlevel% equ 0 (
   cd ..
-  if not exist "%markv_exe%" (
-    echo Couldn't find "%markv_exe%" in this folder or parent folder.
-    pause
-    goto :exit
-  )
+  dir id1 /ad >nul 2>&1
+)
+if %errorlevel% equ 0 (
+  set basedir=%cd%
+)
+popd
+if "%basedir%"=="" (
+  echo Couldn't find the id1 folder in this script's folder or parent folder.
+  pause
+  goto :eof
 )
 
 :menu
+set renamed_gamedir=
+set base_game=
+set patch_url=
+set patch_required=false
+set patch_skipfiles=
+set patch2_url=
+set patch2_required=false
+set patch2_skipfiles=
+set start_map=
+set extra_launch_args=
+set prelaunch_msg[0]=
+set postlaunch_msg[0]=
 cls
 call :installed_check czg07
 call :installed_check koohoo
@@ -39,7 +58,7 @@ call :installed_check arwop
 call :installed_check mappi
 call :installed_check rubicon2
 call :installed_check ne_ruins
-echo(
+echo.
 echo A selection of other maps ^(part 1^):
 echo %czg07_installed%  1: czg07 - Insomnia ^(2000^)
 echo %koohoo_installed%  2: koohoo - The Castle of Koohoo ^(2001^)
@@ -57,213 +76,115 @@ echo %arwop_installed% 13: arwop - A Roman Wilderness Of Pain ^(2009^)
 echo %mappi_installed% 14: mappi - Red Slammer ^(2010^)
 echo %rubicon2_installed% 15: rubicon2 - Rubicon 2 ^(2011^)
 echo %ne_ruins_installed% 16: ne_ruins - The Altar of Storms ^(2011^)
-echo(
-set menu_choice=menu_exit
+echo.
+set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
-echo(
+echo.
 goto %menu_choice%
 
 :1
-if not exist czg07 (
-  call "%~dp0\_mod_install.cmd" czg07
-)
-if exist czg07 (
-  call "%~dp0\_mod_launch.cmd" czg07 czg07
-)
+set start_map=czg07
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/czg07.zip
 pause
 goto :menu
 
 :2
-if not exist koohoo (
-  call "%~dp0\_mod_install.cmd" koohoo
-)
-if exist koohoo (
-  call "%~dp0\_mod_launch.cmd" koohoo start
-)
+set start_map=start
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/koohoo.zip
 pause
 goto :menu
 
 :3
-if not exist czg03 (
-  call "%~dp0\_mod_install.cmd" czg03
-)
-if exist czg03 (
-  call "%~dp0\_mod_launch.cmd" czg03 czg03
-)
+set start_map=czg03
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/czg03.zip
 pause
 goto :menu
 
 :4
-if not exist gmsp3 (
-  call "%~dp0\_mod_install.cmd" gmsp3
-)
-if exist gmsp3 (
-  call "%~dp0\_mod_launch.cmd" gmsp3 gmsp3v2
-)
+set start_map=gmsp3v2
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/gmsp3.zip
 pause
 goto :menu
 
 :5
-if not exist ac (
-  call "%~dp0\_mod_install.cmd" ac
-)
-if exist ac (
-  call "%~dp0\_mod_launch.cmd" ac acstart
-)
+set start_map=acstart
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ac.zip
 pause
 goto :menu
 
 :6
-if not exist e1m1rmx (
-  call "%~dp0\_mod_install.cmd" e1m1rmx
-)
-if exist e1m1rmx (
-  call "%~dp0\_mod_launch.cmd" e1m1rmx e1m1rmx
-)
+set start_map=e1m1rmx
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/e1m1rmx.zip
 pause
 goto :menu
 
 :7
-if not exist menk (
-  call "%~dp0\_mod_install.cmd" menk
-)
-if exist menk (
-  call "%~dp0\_mod_launch.cmd" menk menkstart
-)
+set start_map=menkstart
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/menk.zip
 pause
 goto :menu
 
 :8
-if not exist kinn_marcher (
-  call "%~dp0\_mod_install.cmd" kinn_marcher
-)
-if exist kinn_marcher (
-  call "%~dp0\_mod_launch.cmd" kinn_marcher marcher
-)
+set start_map=marcher
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/kinn_marcher.zip
 pause
 goto :menu
 
 :9
-if not exist lunsp1 (
-  call "%~dp0\_mod_install.cmd" lunsp1
-)
-if exist lunsp1 (
-  call "%~dp0\_mod_launch.cmd" lunsp1 lunsp1
-)
+set start_map=lunsp1
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/lunsp1.zip
 pause
 goto :menu
 
 :10
-REM for Red 777 also install Quoth if necessary
-if not exist quoth (
-  call "%~dp0\_mod_install.cmd" http://www.quaketastic.com/files/single_player/mods/quoth2pt2full.zip quoth
-)
-if exist quoth (
-  if not exist red777 (
-    call "%~dp0\_mod_install.cmd" red777
-  )
-) else (
-  echo Failed to install required base mod "quoth". Skipping "red777" install.
-  echo(
-  pause
-  goto :menu
-)
-if exist red777 (
-  call "%~dp0\_mod_launch.cmd" red777 red777 quoth
-  if exist red777 (
-    echo If you launch "red777" outside of this installer, make sure to specify
-    echo Quoth as the base game.
-    echo(
-  )
-)
+set base_game=quoth
+set start_map=red777
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/red777.zip
 pause
 goto :menu
 
 :11
-if not exist fmb_bdg (
-  call "%~dp0\_mod_install.cmd" fmb_bdg
-)
-if exist fmb_bdg (
-  call "%~dp0\_mod_launch.cmd" fmb_bdg fmb_bdg1
-)
+set start_map=fmb_bdg1
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/fmb_bdg.zip
 pause
 goto :menu
 
 :12
-REM for Plumbers Don't Wear Ties also install Quoth if necessary
-if not exist quoth (
-  call "%~dp0\_mod_install.cmd" http://www.quaketastic.com/files/single_player/mods/quoth2pt2full.zip quoth
-)
-if exist quoth (
-  if not exist apsp2 (
-    call "%~dp0\_mod_install.cmd" apsp2
-  )
-) else (
-  echo Failed to install required base mod "quoth". Skipping "apsp2" install.
-  echo(
-  pause
-  goto :menu
-)
-if exist apsp2 (
-  call "%~dp0\_mod_launch.cmd" apsp2 apsp2 quoth
-  if exist apsp2 (
-    echo If you launch "apsp2" outside of this installer, make sure to specify
-    echo Quoth as the base game.
-    echo(
-  )
-)
+set base_game=quoth
+set start_map=apsp2
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/apsp2.zip
 pause
 goto :menu
 
 :13
-if not exist arwop (
-  call "%~dp0\_mod_install.cmd" arwop
-)
-if exist arwop (
-  call "%~dp0\_mod_launch.cmd" arwop start
-)
+set start_map=start
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/arwop.zip
 pause
 goto :menu
 
 :14
-if not exist mappi (
-  call "%~dp0\_mod_install.cmd" mappi
-)
-if exist mappi (
-  call "%~dp0\_mod_launch.cmd" mappi mappi
-)
+set start_map=mappi
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mappi.zip
 pause
 goto :menu
 
 :15
-if not exist rubicon2 (
-  call "%~dp0\_mod_install.cmd" rubicon2
-)
-if exist rubicon2 (
-  call "%~dp0\_mod_launch.cmd" rubicon2 start
-)
+set start_map=start
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rubicon2.zip
 pause
 goto :menu
 
 :16
-if not exist ne_ruins (
-  call "%~dp0\_mod_install.cmd" ne_ruins
-)
-if exist ne_ruins (
-  call "%~dp0\_mod_launch.cmd" ne_ruins start
-)
+set start_map=start
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ne_ruins.zip
 pause
 goto :menu
-
-:menu_exit
-popd
-goto :eof
 
 
 REM functions used above
 
 :installed_check
-if exist "%1" (
+if exist "%basedir%\%1" (
   set %1_installed=*
 ) else (
   set %1_installed= 

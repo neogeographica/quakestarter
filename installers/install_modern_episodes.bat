@@ -6,23 +6,42 @@ REM * a start map and at least four non-startmaps
 REM * Quaddicted editor rating "Excellent"
 REM * Quaddicted user rating 4.0 or better (normalized Bayesian average)
 
-REM save working dir and change to dir that holds this script
+setlocal
+
+REM remember dir where this script lives
+set scriptsdir=%~dp0
+
+REM find the basedir by looking for id1 folder here or above one level
+set basedir=
 pushd "%~dp0"
-
-REM set the Mark V executable to use
-set markv_exe=mark_v.exe
-
-REM CD up to Mark V dir if necessary
-if not exist "%markv_exe%" (
+dir id1 /ad >nul 2>&1
+if not %errorlevel% equ 0 (
   cd ..
-  if not exist "%markv_exe%" (
-    echo Couldn't find "%markv_exe%" in this folder or parent folder.
-    pause
-    goto :exit
-  )
+  dir id1 /ad >nul 2>&1
+)
+if %errorlevel% equ 0 (
+  set basedir=%cd%
+)
+popd
+if "%basedir%"=="" (
+  echo Couldn't find the id1 folder in this script's folder or parent folder.
+  pause
+  goto :eof
 )
 
 :menu
+set renamed_gamedir=
+set base_game=
+set patch_url=
+set patch_required=false
+set patch_skipfiles=
+set patch2_url=
+set patch2_required=false
+set patch2_skipfiles=
+set start_map=
+set extra_launch_args=
+set prelaunch_msg[0]=
+set postlaunch_msg[0]=
 cls
 call :installed_check oum
 call :installed_check rapture
@@ -40,7 +59,7 @@ call :installed_check unforgiven
 call :installed_check rrp
 call :installed_check func_mapjam5
 call :installed_check mapjam6
-echo(
+echo.
 echo Modern ^(pre-2016^) custom episodes:
 echo %oum_installed%  1: oum - Operation: Urth Majik ^(2001^)
 echo %rapture_installed%  2: rapture - Rapture ^(2001^)
@@ -58,245 +77,126 @@ echo %unforgiven_installed% 13: unforgiven - Unforgiven ^(2011^)
 echo %rrp_installed% 14: rrp - Rubicon Rumble Pack ^(2014^)
 echo %func_mapjam5_installed% 15: func_mapjam5 - Func Map Jam 5 - The Qonquer Map Jam ^(2015^)
 echo %mapjam6_installed% 16: mapjam6 - Func Map Jam 6 - Fire and Brimstone ^(2015^)
-echo(
-set menu_choice=menu_exit
+echo.
+set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
-echo(
+echo.
 goto %menu_choice%
 
 :1
-if not exist oum (
-  call "%~dp0\_mod_install.cmd" oum
-)
-if exist oum (
-  call "%~dp0\_mod_launch.cmd" oum start
-)
+set start_map=start
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/oum.zip
 pause
 goto :menu
 
 :2
-if not exist rapture (
-  call "%~dp0\_mod_install.cmd" rapture
-)
-if exist rapture (
-  call "%~dp0\_mod_launch.cmd" rapture start
-)
+set start_map=start
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rapture.zip
 pause
 goto :menu
 
 :3
-if not exist soe_full (
-  call "%~dp0\_mod_install.cmd" soe_full
-)
-if exist soe_full (
-  call "%~dp0\_mod_launch.cmd" soe_full start
-)
+set start_map=start
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/soe_full.zip
 pause
 goto :menu
 
 :4
-if not exist contract (
-  call "%~dp0\_mod_install.cmd" contract
-)
-if exist contract (
-  call "%~dp0\_mod_launch.cmd" contract start
-)
+set start_map=start
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/contract.zip
 pause
 goto :menu
 
 :5
-if not exist terra (
-  call "%~dp0\_mod_install.cmd" terra
-)
-if exist terra (
-  call "%~dp0\_mod_launch.cmd" terra terra1
-)
+set start_map=terra1
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/terra.zip
 pause
 goto :menu
 
 :6
-if not exist chapters (
-  call "%~dp0\_mod_install.cmd" chapters
-)
-if exist chapters (
-  call "%~dp0\_mod_launch.cmd" chapters start hipnotic
-  if exist chapters (
-    echo If you launch "chapters" outside of this installer, make sure to specify
-    echo missionpack 1 as the base game. In this case, that base game is
-    echo necessary even if you don't have missionpack 1 currently installed.
-    echo(
-  )
-)
+set start_map=start
+set extra_launch_args=-hipnotic
+set postlaunch_msg[0]=If you launch "chapters" outside of this installer, make sure to specify
+set postlaunch_msg[1]=missionpack 1 as the base game ^("-hipnotic" arg^). In this case, that base
+set postlaunch_msg[2]=game is necessary even if you don't have missionpack 1 currently installed.
+set postlaunch_msg[3]=
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/chapters.zip
 pause
 goto :menu
 
 :7
-REM for Travail also install the soundtrack
-set quake_travail_soundtrack_markv_fix_success=
-if not exist travail (
-  call "%~dp0\_mod_install.cmd" travail
-  if exist travail (
-    call "%~dp0\_mod_patch_install.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_travail_soundtrack_markv.zip travail music_placeholder_delete_me.pak
-  )
-)
-if "%quake_travail_soundtrack_markv_fix_success%"=="false" (
-  rd /q /s travail
-  echo Failed to get mod soundtrack; rolled back the mod install. Maybe try
-  echo again? If you want to install just the mod without its soundtrack, you
-  echo can enter "install travail" in the Mark V console.
-  echo(
-  pause
-  goto :menu
-)
-if exist travail (
-  call "%~dp0\_mod_launch.cmd" travail start
-)
+set patch_url=http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_travail_soundtrack_markv.zip
+set patch_skipfiles=music_placeholder_delete_me.pak
+set start_map=start
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/travail.zip
 pause
 goto :menu
 
 :8
-REM for Warp Spasm also install Quoth if necessary
-if not exist quoth (
-  call "%~dp0\_mod_install.cmd" http://www.quaketastic.com/files/single_player/mods/quoth2pt2full.zip quoth
-)
-if exist quoth (
-  if not exist warpspasm (
-    call "%~dp0\_mod_install.cmd" warpspasm
-  )
-) else (
-  echo Failed to install required base mod "quoth". Skipping "warpspasm"
-  echo install.
-  echo(
-  pause
-  goto :menu
-)
-if exist warpspasm (
-  call "%~dp0\_mod_launch.cmd" warpspasm start quoth
-  if exist warpspasm (
-    echo If you launch "warpspasm" outside of this installer, make sure to
-    echo specify Quoth as the base game.
-    echo(
-  )
-)
+set base_game=quoth
+set start_map=start
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/warpspasm.zip
 pause
 goto :menu
 
 :9
-if not exist rmx-pack (
-  call "%~dp0\_mod_install.cmd" rmx-pack
-)
-if exist rmx-pack (
-  call "%~dp0\_mod_launch.cmd" rmx-pack start
-)
+set start_map=start
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rmx-pack.zip
 pause
 goto :menu
 
 :10
-if not exist nsoe2 (
-  call "%~dp0\_mod_install.cmd" nsoe2
-)
-if exist nsoe2 (
-  call "%~dp0\_mod_launch.cmd" nsoe2 start
-)
+set start_map=start
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/nsoe2.zip
 pause
 goto :menu
 
 :11
-REM for Arcanum also install the Drake mod
-set drake290111_success=
-if not exist arcanum (
-  call "%~dp0\_mod_install.cmd" arcanum
-  if exist arcanum (
-    call "%~dp0\_mod_patch_install.cmd" http://www.quaddicted.com/filebase/drake290111.zip arcanum
-  )
-)
-if "%drake290111_success%"=="false" (
-  rd /q /s arcanum
-  echo Failed to install the required "Drake" mod; rolled back the mod install.
-  echo Maybe try again?
-  echo(
-  pause
-  goto :menu
-)
-if exist arcanum (
-  call "%~dp0\_mod_launch.cmd" arcanum arcstart
-)
+set patch_url=https://www.quaddicted.com/filebase/drake290111.zip
+REM unlike other patches the Drake mod is really truly always required here
+set patch_required=true
+set start_map=arcstart
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/arcanum.zip
 pause
 goto :menu
 
 :12
-if not exist dmc3 (
-  call "%~dp0\_mod_install.cmd" dmc3
-)
-if exist dmc3 (
-  call "%~dp0\_mod_launch.cmd" dmc3 dmc3
-)
+set start_map=dmc3
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/dmc3.zip
 pause
 goto :menu
 
 :13
-if not exist unforgiven (
-  call "%~dp0\_mod_install.cmd" unforgiven
-)
-if exist unforgiven (
-  call "%~dp0\_mod_launch.cmd" unforgiven unfstart
-)
+set start_map=unfstart
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/unforgiven.zip
 pause
 goto :menu
 
 :14
-if not exist rrp (
-  call "%~dp0\_mod_install.cmd" rrp
-)
-if exist rrp (
-  call "%~dp0\_mod_launch.cmd" rrp start
-)
+set start_map=start
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rrp.zip
 pause
 goto :menu
 
 :15
-REM for Func Map Jam 5 also install the Quicker Qonquer mod
-set QuickerQonquer_success=
-if not exist func_mapjam5 (
-  call "%~dp0\_mod_install.cmd" func_mapjam5
-  if exist func_mapjam5 (
-    call "%~dp0\_mod_patch_install.cmd" http://www.quaddicted.com/files/mods/QuickerQonquer.zip func_mapjam5 maps\QArena.bsp maps\QStart.bsp
-  )
-)
-if "%QuickerQonquer_success%"=="false" (
-  rd /q /s func_mapjam5
-  echo Failed to apply the "Quicker Qonquer" patch; rolled back the mod install.
-  echo Maybe try again? If you really want to install just the unpatched mod,
-  echo you can enter "install func_mapjam5" in the Mark V console.
-  echo(
-  pause
-  goto :menu
-)
-if exist func_mapjam5 (
-  call "%~dp0\_mod_launch.cmd" func_mapjam5 start
-)
+set patch_url=https://www.quaddicted.com/files/mods/QuickerQonquer.zip
+set patch_skipfiles=maps\QArena.bsp maps\QStart.bsp
+set start_map=start
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam5.zip
 pause
 goto :menu
 
 :16
-if not exist mapjam6 (
-  call "%~dp0\_mod_install.cmd" mapjam6
-)
-if exist mapjam6 (
-  call "%~dp0\_mod_launch.cmd" mapjam6 start
-)
+set start_map=start
+call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mapjam6.zip
 pause
 goto :menu
-
-:menu_exit
-popd
-goto :eof
 
 
 REM functions used above
 
 :installed_check
-if exist "%1" (
+if exist "%basedir%\%1" (
   set %1_installed=*
 ) else (
   set %1_installed= 

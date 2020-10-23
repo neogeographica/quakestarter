@@ -2,81 +2,80 @@
 
 REM Try to find pak files on this computer and copy them here.
 
-REM save working dir and change to dir that holds this script
-pushd "%~dp0"
+setlocal
 
-REM We're not going to use Mark V to download anything in this script, but
-REM let's try our standard approach of using mark_v.exe to find the Quake
-REM basedir. If that doesn't work then also look for the id1 folder.
-set markv_exe=mark_v.exe
-if not exist "%markv_exe%" (
-  if not exist "id1" (
-    cd ..
-    if not exist "%markv_exe%" (
-      if not exist "id1" (
-        echo Couldn't find "%markv_exe%" or "id1" in this folder or parent folder.
-        pause
-        goto :exit
-      )
-    )
-  )
+REM find the basedir by looking for id1 folder here or above one level
+set basedir=
+pushd "%~dp0"
+dir id1 /ad >nul 2>&1
+if not %errorlevel% equ 0 (
+  cd ..
+  dir id1 /ad >nul 2>&1
 )
-set basedir=%cd%
+if %errorlevel% equ 0 (
+  set basedir=%cd%
+)
+popd
+if "%basedir%"=="" (
+  echo Couldn't find the id1 folder in this script's folder or parent folder.
+  pause
+  goto :eof
+)
 
 cls
 
 echo This script will look for pak files ^(Quake game data^) that are already
 echo on this computer's disks, and copy them into this Quake installation.
-echo(
+echo.
 
 echo For the original Quake campaign:
 call :find_pakfile id1 pak0.pak
 call :find_pakfile id1 pak1.pak
-echo(
+echo.
 echo For missionpack 1:
 call :find_pakfile hipnotic pak0.pak
-echo(
+echo.
 echo For missionpack 2:
 call :find_pakfile rogue pak0.pak
-echo(
+echo.
 
 set missing_anypak=false
 set missing_id1pak=false
-if not exist "id1\pak0.pak" set missing_id1pak=true
-if not exist "id1\pak1.pak" set missing_id1pak=true
+if not exist "%basedir%\id1\pak0.pak" set missing_id1pak=true
+if not exist "%basedir%\id1\pak1.pak" set missing_id1pak=true
 if "%missing_id1pak%"=="true" (
   set missing_anypak=true
   echo To play Quake, you will need both "pak0.pak" and "pak1.pak" from the
   echo original Quake game data to be placed inside this folder:
-  echo   "%basedir%\id1"
+  echo   %basedir%\id1
   echo One or both of those pak files are currently missing.
-  echo(
+  echo.
 )
-if not exist "hipnotic\pak0.pak" (
+if not exist "%basedir%\hipnotic\pak0.pak" (
   set missing_anypak=true
   echo To play missionpack 1, you will need to put its "pak0.pak" file inside
   echo this folder:
-  echo   "%basedir%\hipnotic"
-  echo You don't need that file if you don't want to play that missionpack.
-  echo(
+  echo   %basedir%\hipnotic
+  echo You don't need that file if you don't want to play that missionpack
+  echo or content that depends on it.
+  echo.
 )
-if not exist "rogue\pak0.pak" (
+if not exist "%basedir%\rogue\pak0.pak" (
   set missing_anypak=true
   echo To play missionpack 2, you will need to put its "pak0.pak" file inside
   echo this folder:
-  echo   "%basedir%\rogue"
-  echo You don't need that file if you don't want to play that missionpack.
-  echo(
+  echo   %basedir%\rogue
+  echo You don't need that file if you don't want to play that missionpack
+  echo or content that depends on it.
+  echo.
 )
 if "%missing_anypak%"=="true" (
   echo See the "readmes\other_stuff\pak_files.txt" file for more info about
   echo pak files and how to get them.
-  echo(
+  echo.
 )
 
-:exit
 pause
-popd
 goto :eof
 
 
@@ -86,7 +85,7 @@ REM function used above
 set gamedir=%~1
 set pak_file=%~2
 set target_gamedir=%basedir%\%gamedir%
-set target_pakfile=%basedir%\%gamedir%\%pak_file%
+set target_pakfile=%target_gamedir%\%pak_file%
 
 if exist "%target_pakfile%" (
   echo "%gamedir%\%pak_file%" already exists.

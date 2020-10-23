@@ -1,37 +1,44 @@
-REM save working dir and change to dir that holds this script
-pushd "%~dp0"
+REM Helper "subroutine" script to work with an installed mod.
+REM Used by _handle_mod_choice.cmd.
 
-REM capture map and other commandline args
+setlocal
+
+REM capture/calculate our parameters
 if "%1"=="" (
-  echo Missing the command-line args for base game, gamedir, and startmap.
+  echo Missing arguments.
   echo FYI:
   echo Usually you wouldn't run this file directly; it's used by other
   echo batch files.
-  goto :N
+  goto :eof
 )
-set game_arg= -game "%~1"
-set start_map=%~2
-set base_game=%~3
-
-REM CD up to Quake engine dir if necessary
 if "%quake_exe%"=="" (
-  set quake_exe=mark_v.exe
+  echo The required variable quake_exe is unset.
+  echo FYI:
+  echo Usually you wouldn't run this file directly; it's used by other
+  echo batch files.
+  goto :eof
 )
-if not exist "%quake_exe%" (
-  cd ..
-  if not exist "%quake_exe%" (
-    echo Couldn't find "%quake_exe%" in this folder or parent folder.
-    goto :N
-  )
+if "%basedir%"=="" (
+  echo The required variable basedir is unset.
+  echo FYI:
+  echo Usually you wouldn't run this file directly; it's used by other
+  echo batch files.
+  goto :eof
 )
+set archive=%~1
+set gamedir=%~2
+set game_arg= -game "%gamedir%"
+set start_map=%~3
+set base_game=%~4
+set extra_launch_args=%~5
 
-echo Do you want to launch Quake now with "%~1" loaded?
+echo Do you want to launch Quake now with "%gamedir%" loaded?
 
 if "%start_map%"=="" (
   set start_map_arg=
   echo Since there is no specific "start map" for this mod, you will have to
-  echo handle map selection on your own ^(through the console, or through the
-  echo Single Player Levels menu of Mark V^).
+  echo handle map selection on your own ^(with the console "map" command,
+  echo unless your Quake engine provides a map selection menu^).
   echo Do NOT just start a New Game through the Single Player menu.
 ) else (
   set start_map_arg= +map "%start_map%"
@@ -45,14 +52,14 @@ if "%base_game%"=="" (
   set base_game_arg= -%base_game%
 )
 
-echo(
+echo.
 echo Launch options:
 echo y: launch without explicitly setting a skill
 echo n: do not launch
 echo 0-3: launch and set a default initial skill
-echo(
+echo.
 echo ^(x to uninstall, xx to also delete the cached download^)
-echo(
+echo.
 set skill_arg=
 set launch_choice=y
 set /p launch_choice=choose an option, or just press Enter to launch:
@@ -62,10 +69,10 @@ goto %launch_choice%
 :xX
 :xx
 :XX
-del /q "id1\_library\%~1.zip"
+del /q "%basedir%\%download_subdir%\%archive%" >nul
 :x
 :X
-rd /s /q "%~1" 2> nul
+rd /s /q "%basedir%\%gamedir%" >nul
 goto :N
 
 :0
@@ -76,13 +83,11 @@ set skill_arg= +skill %launch_choice%
 
 :y
 :Y
-set quake_command=".\%quake_exe%"%base_game_arg%%game_arg%%skill_arg%%start_map_arg%
-echo(
-echo running: %quake_command%
-start "" /b /wait %quake_command%
+set quake_args=%extra_launch_args%%base_game_arg%%game_arg%%skill_arg%%start_map_arg%
+echo.
+echo running: %quake_exe% %quake_args%
+start "" /b /wait "%basedir%\%quake_exe%" %quake_args%
 
 :n
 :N
-REM finally restore original working dir to be nice
-echo(
-popd
+echo.
