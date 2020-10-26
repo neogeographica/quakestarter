@@ -1,18 +1,23 @@
 REM Helper "subroutine" script to work with an installed mod.
 REM Used by _handle_mod_choice.cmd.
 
+REM On the commandline, the archive and gamedir args are required.
+
+REM The caller is also required to set the bsaedir, quake_exe,
+REM download_subdir, and patch_download_subdir variables.
+
+REM Optional args will be specified through these variables:
+REM   base_game
+REM   patch_url
+REM   patch2_url
+REM   start_map
+REM   extra_launch_args
+
 setlocal
 
 REM capture/calculate our parameters
 if "%1"=="" (
   echo Missing arguments.
-  echo FYI:
-  echo Usually you wouldn't run this file directly; it's used by other
-  echo batch files.
-  goto :eof
-)
-if "%quake_exe%"=="" (
-  echo The required variable quake_exe is unset.
   echo FYI:
   echo Usually you wouldn't run this file directly; it's used by other
   echo batch files.
@@ -25,12 +30,30 @@ if "%basedir%"=="" (
   echo batch files.
   goto :eof
 )
+if "%quake_exe%"=="" (
+  echo The required variable quake_exe is unset.
+  echo FYI:
+  echo Usually you wouldn't run this file directly; it's used by other
+  echo batch files. quake_exe is set in your installer config.
+  goto :eof
+)
+if "%download_subdir%"=="" (
+  echo The required variable download_subdir is unset.
+  echo FYI:
+  echo Usually you wouldn't run this file directly; it's used by other
+  echo batch files. download_subdir is set in your installer config.
+  goto :eof
+)
+if "%patch_download_subdir%"=="" (
+  echo The required variable patch_download_subdir is unset.
+  echo FYI:
+  echo Usually you wouldn't run this file directly; it's used by other
+  echo batch files. patch_download_subdir is set in your installer config.
+  goto :eof
+)
 set archive=%~1
 set gamedir=%~2
 set game_arg= -game "%gamedir%"
-set start_map=%~3
-set base_game=%~4
-set extra_launch_args=%~5
 
 echo Do you want to launch Quake now with "%gamedir%" loaded?
 
@@ -70,6 +93,16 @@ goto %launch_choice%
 :xx
 :XX
 del /q "%basedir%\%download_subdir%\%archive%" >nul
+if not "%patch_url%"=="" (
+  for /f %%p in ("%patch_url%") do (
+    del /q "%basedir%\%patch_download_subdir%\%%~nxp" >nul
+  )
+)
+if not "%patch2_url%"=="" (
+  for /f %%p in ("%patch2_url%") do (
+    del /q "%basedir%\%patch_download_subdir%\%%~nxp" >nul
+  )
+)
 :x
 :X
 rd /s /q "%basedir%\%gamedir%" >nul

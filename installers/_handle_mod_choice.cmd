@@ -1,12 +1,10 @@
 REM Helper "subroutine" script to process a mod-installer menu choice.
 
-setlocal
+REM On the commandline, the url arg is required.
 
-REM remember dir where this script lives
-set scriptsdir=%~dp0
+REM The caller is also required to set the basedir variable.
 
-REM For clarity in the caller, optional args will be specified through
-REM variables. These are:
+REM Optional args will be specified through these variables:
 REM   renamed_gamedir
 REM   base_game
 REM   patch_url
@@ -20,7 +18,10 @@ REM   extra_launch_args
 REM   prelaunch_msg (array of msg lines, must end with blank line)
 REM   postlaunch_msg (array of msg lines, must end with blank line)
 
-REM The caller is also required to set the basedir variable.
+setlocal
+
+REM remember dir where this script lives
+set scriptsdir=%~dp0
 
 REM capture/calculate our parameters
 if "%1"=="" (
@@ -80,13 +81,15 @@ if not exist "%basedir%\%gamedir%" (
   call "%scriptsdir%\_mod_install.cmd" "%url%" "%gamedir%"
   if exist "%basedir%\%gamedir%" (
     if not "%patch_url%"=="" (
-      set patch_is_required=%patch_required%
-      call "%scriptsdir%\_mod_patch_install.cmd" "%patch_url%" "%gamedir%" "%patch_skipfiles%"
+      set required=%patch_required%
+      set skipfiles=%patch_skipfiles%
+      call "%scriptsdir%\_mod_patch_install.cmd" "%patch_url%" "%gamedir%"
     )
     if not "%patch2_url%"=="" (
       if exist "%basedir%\%gamedir%" (
-        set patch_is_required=%patch2_required%
-        call "%scriptsdir%\_mod_patch_install.cmd" "%patch2_url%" "%gamedir%" "%patch2_skipfiles%"
+        set required=%patch2_required%
+        set skipfiles=%patch2_skipfiles%
+        call "%scriptsdir%\_mod_patch_install.cmd" "%patch2_url%" "%gamedir%"
       )
     )
   )
@@ -112,7 +115,7 @@ endlocal
 echo.
 
 :launch
-call "%scriptsdir%\_mod_launch.cmd" "%archive%" "%gamedir%" "%start_map%" "%base_game%" "%extra_launch_args%"
+call "%scriptsdir%\_mod_launch.cmd" "%archive%" "%gamedir%"
 if not "%base_game%"=="" (
   if exist "%basedir%\%gamedir%" (
     echo If you launch "%gamedir%" outside of this installer,

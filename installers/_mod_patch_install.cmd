@@ -3,6 +3,16 @@ REM Used by _handle_mod_choice.cmd and (special case) install_music.bat.
 
 set patch_success=false
 
+REM On the commandline, the url and target_gamedir args are required.
+
+REM The caller is also required to set the basedir and patch_download_subdir
+REM variables.
+
+REM Optional args will be specified through these variables:
+REM   required
+REM   skipfiles
+REM   no_cleanup
+
 setlocal
 
 REM remember dir where this script lives
@@ -23,10 +33,16 @@ if "%basedir%"=="" (
   echo batch files.
   goto :eof
 )
+if "%patch_download_subdir%"=="" (
+  echo The required variable patch_download_subdir is unset.
+  echo FYI:
+  echo Usually you wouldn't run this file directly; it's used by other
+  echo batch files. patch_download_subdir is set in your installer config.
+  goto :eof
+)
 set url=%~1
 set temp_gamedir=%~n1
 set target_gamedir=%~2
-set skipfiles=%~3
 set patch_acquired=false
 set success=false
 
@@ -44,14 +60,17 @@ if exist "%basedir%\%temp_gamedir%" (
 )
 
 REM first, install as if it were a standalone mod
-if "%patch_is_required%"=="true" (
+if "%required%"=="true" (
   echo Installing required component "%temp_gamedir%" for "%target_gamedir%"...
 ) else (
   echo Installing patch "%temp_gamedir%" for "%target_gamedir%"...
 )
 set less_chatty_install=true
+set saved_download_subdir=%download_subdir%
+set download_subdir=%patch_download_subdir%
 call "%scriptsdir%\_mod_install.cmd" "%url%" "%temp_gamedir%"
 set less_chatty_install=false
+set download_subdir=%saved_download_subdir%
 if not exist "%basedir%\%temp_gamedir%" goto :exit
 set patch_acquired=true
 
@@ -87,11 +106,9 @@ for /r "%basedir%\%temp_gamedir%" %%d in (.) do (
   endlocal
 )
 
-REM delete the patch zip and temp dir since it shouldn't have its own gamedir
-del /q "%basedir%\%download_subdir%\%temp_gamedir%.zip" >nul 2>&1
+REM delete the patch's temp dir and roll on into cleanup/exit
 rd /q /s "%basedir%\%temp_gamedir%" >nul
-
-if "%patch_is_required%"=="true" (
+if "%required%"=="true" (
   echo Component installed.
 ) else (
   echo Patch installed.
@@ -102,14 +119,14 @@ set success=true
 :exit
 echo.
 if "%success%"=="false" (
-  if "%no_patch_cleanup%"=="true" (
-    if "%patch_is_required%"=="true" (
+  if "%no_cleanup%"=="true" (
+    if "%required%"=="true" (
       echo Failed to install required component.
     ) else (
       echo Failed to apply patch.
     )
   ) else (
-    if "%patch_is_required%"=="true" (
+    if "%required%"=="true" (
       rd /q /s "%basedir%\%target_gamedir%" >nul
       echo Failed to install required component; rolled back the mod install.
     ) else (

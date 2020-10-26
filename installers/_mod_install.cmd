@@ -1,6 +1,11 @@
 REM Helper "subroutine" script to install a mod.
 REM Used by _handle_mod_choice.cmd and _mod_patch_install.cmd.
 
+REM On the commandline, the url and gamedir args are required.
+
+REM The caller is also required to set the basedir and download_subdir
+REM variables.
+
 setlocal
 
 REM remember dir where this script lives
@@ -19,6 +24,13 @@ if "%basedir%"=="" (
   echo FYI:
   echo Usually you wouldn't run this file directly; it's used by other
   echo batch files.
+  goto :eof
+)
+if "%download_subdir%"=="" (
+  echo The required variable download_subdir is unset.
+  echo FYI:
+  echo Usually you wouldn't run this file directly; it's used by other
+  echo batch files. download_subdir is set in your installer config.
   goto :eof
 )
 set url=%~1
