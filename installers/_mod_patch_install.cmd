@@ -43,8 +43,11 @@ if "%patch_download_subdir%"=="" (
 set url=%~1
 set temp_gamedir=%~n1
 set target_gamedir=%~2
-set patch_acquired=false
 set success=false
+
+REM change some mod install vars for the scope of this setlocal
+set less_chatty_install=true
+set download_subdir=%patch_download_subdir%
 
 REM sanity checks
 if not exist "%basedir%\%target_gamedir%" (
@@ -65,26 +68,8 @@ if "%required%"=="true" (
 ) else (
   echo Installing patch "%temp_gamedir%" for "%target_gamedir%"...
 )
-set less_chatty_install=true
-set saved_download_subdir=%download_subdir%
-set download_subdir=%patch_download_subdir%
 call "%scriptsdir%\_mod_install.cmd" "%url%" "%temp_gamedir%"
-set less_chatty_install=false
-set download_subdir=%saved_download_subdir%
 if not exist "%basedir%\%temp_gamedir%" goto :exit
-set patch_acquired=true
-
-REM if we might need to leave the gamedir pristine after a failed patch, make
-REM a copy of it before we start patching
-set bailout=false
-if "%rollback_on_failed_patch%"=="false" (
-  xcopy "%basedir%\%target_gamedir%" "%basedir%\%target_gamedir%.bak" /s /e /i /r /k /q
-  if not %errorlevel% equ 0 (
-    rd /q /s "%basedir%\%target_gamedir%.bak" >nul 2>&1
-    set bailout=true
-  )
-)
-if "%bailout%"=="true" goto :exit
 
 REM move the patch files to the desired gamedir
 if not "%skipfiles%"=="" (
@@ -117,7 +102,9 @@ if "%required%"=="true" (
 set success=true
 
 :exit
+
 echo.
+
 if "%success%"=="false" (
   if "%no_cleanup%"=="true" (
     if "%required%"=="true" (
@@ -132,35 +119,16 @@ if "%success%"=="false" (
     ) else (
       if "%rollback_on_failed_patch%"=="true" (
         rd /q /s "%basedir%\%target_gamedir%" >nul
-        echo Failed to apply patch; rolled back the mod install.
-        echo If you really want to install just the unpatched mod, you can set the
-        echo rollback_on_failed_patch option to false in your installer config.
+        echo Failed to apply patch; rolled back the mod install. If you really want to
+        echo install just the unpatched mod, you can set the rollback_on_failed_patch
+        echo option to false in your installer config.
       ) else (
-        if "%patch_acquired%"=="true" (
-          if exist "%basedir%\%target_gamedir%.bak" (
-            rd /q /s "%basedir%\%target_gamedir%" >nul
-            move "%basedir%\%target_gamedir%.bak" "%basedir%\%target_gamedir%"
-            echo Failed to apply patch. Since the rollback_on_failed_patch option is
-            echo set to false in your installer config, the unpatched mod is still
-            echo left installed.
-          ) else (
-            echo Failed to back up "%target_gamedir%" before patching, so didn't
-            echo patch the mod. Since the rollback_on_failed_patch option is set to
-            echo false in your installer config, the unpatched mod is still left
-            echo installed.
-          )
-        ) else (
-          echo Failed to get the patch. Since the rollback_on_failed_patch option
-          echo is set to false in your installer config, the unpatched mod is still
-          echo left installed.
-        )
+        echo Failed to download/extract the patch. Since the rollback_on_failed_patch option
+        echo is set to false in your installer config, the unpatched mod is still in place.
       )
     )
   )
   echo.
-)
-if exist "%basedir%\%target_gamedir%.bak" (
-  rd /q /s "%basedir%\%target_gamedir%.bak" >nul
 )
 
 endlocal & set patch_success=%success%
