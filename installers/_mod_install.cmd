@@ -115,6 +115,11 @@ if "%good_extraction%"=="false" (
   goto :eof
 )
 
+REM remove the zipfile now if config says to
+if "%cleanup_archive%"=="true" (
+  del /q "%destfile%" >nul 2>&1
+)
+
 REM now get in that dir and clean it up
 echo ... organizing ...
 pushd "%basedir%\%gamedir%"

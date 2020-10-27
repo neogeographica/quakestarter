@@ -9,18 +9,25 @@ REM The name of the Quake engine executable that will be used to play when
 REM launching stuff through the installer scripts.
 set quake_exe=quakespasm-spiked-win64.exe
 
-REM This is the subdirectory (within your Quake folder) where the primary
+REM This is the subfolder path (within your Quake folder) where the primary
 REM mod/map zipfiles will be downloaded and cached. If you already have a
 REM bunch of zips downloaded somewhere by Mark V or Quake Injector, you might
 REM want to set this path to that location. Otherwise this is a nice place for
 REM the zips to live:
 set download_subdir=installers\downloads_cache
 
-REM This is the subdirectory (within your Quake folder) where patch zipfiles
+REM This is the subfolder path (within your Quake folder) where patch zipfiles
 REM will be downloaded and cached. If your download_subdir is being shared
 REM with Mark V or Quake Injector then you probably want to point this to a
-REM different directory. Otherwise it can be the same as download_subdir.
+REM different subfolder. Otherwise it can be the same as for download_subdir.
 set patch_download_subdir=installers\downloads_cache
+
+REM Whether to delete zipfiles after downloading them. If you set this to
+REM false, they will take up disk space, but then you can quickly reinstall
+REM something without having to download it again. You may also want to set
+REM this false if you're sharing the downloads cache with Mark V or Quake
+REM Injector.
+set cleanup_archive=true
 
 REM Whether your Quake engine of choice supports multiple "-game" arguments
 REM on the command line. This is required for the way the install script

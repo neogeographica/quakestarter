@@ -75,13 +75,35 @@ if "%base_game%"=="" (
   set base_game_arg= -%base_game%
 )
 
+set zips_exist=false
+if exist "%basedir%\%download_subdir%\%archive%" (
+  set zips_exist=true
+)
+if not "%patch_url%"=="" (
+  for /f %%p in ("%patch_url%") do (
+    if exist "%basedir%\%patch_download_subdir%\%%~nxp" (
+      set zips_exist=true
+    )
+  )
+)
+if not "%patch2_url%"=="" (
+  for /f %%p in ("%patch2_url%") do (
+    if exist "%basedir%\%patch_download_subdir%\%%~nxp" (
+      set zips_exist=true
+    )
+  )
+)
 echo.
 echo Launch options:
 echo y: launch without explicitly setting a skill
 echo n: do not launch
 echo 0-3: launch and set a default initial skill
 echo.
-echo ^(x to uninstall, xx to also delete the cached download^)
+if "%zips_exist%"=="true" (
+  echo ^(x to uninstall, xx to also delete cached zipfile downloads^)
+) else (
+  echo ^(x to uninstall^)
+)
 echo.
 set skill_arg=
 set launch_choice=y
