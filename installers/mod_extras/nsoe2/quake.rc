@@ -8,3 +8,4 @@ exec autoexec.cfg
 stuffcmds
 // Soul of Evil: Indian Summer has two demos, so run them!
 startdemos demo1 demo2
+demos

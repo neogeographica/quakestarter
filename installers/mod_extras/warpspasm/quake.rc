@@ -19,3 +19,4 @@ stuffcmds
 
 // Warp Spasm has its own demos, so run them!
 startdemos demo1 demo2 demo3
+demos
