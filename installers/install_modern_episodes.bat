@@ -42,6 +42,7 @@ set start_map=
 set extra_launch_args=
 set prelaunch_msg[0]=
 set postlaunch_msg[0]=
+set has_startdemos=false
 cls
 call :installed_check oum
 call :installed_check rapture
@@ -135,6 +136,7 @@ goto :menu
 :8
 set base_game=quoth
 set start_map=start
+set has_startdemos=true
 call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/warpspasm.zip
 pause
 goto :menu
@@ -147,6 +149,7 @@ goto :menu
 
 :10
 set start_map=start
+set has_startdemos=true
 call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/nsoe2.zip
 pause
 goto :menu

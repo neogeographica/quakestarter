@@ -42,6 +42,7 @@ set start_map=
 set extra_launch_args=
 set prelaunch_msg[0]=
 set postlaunch_msg[0]=
+set has_startdemos=false
 cls
 call :installed_check dopa
 call :installed_check gotshun-never-released_levels
@@ -69,6 +70,7 @@ goto %menu_choice%
 
 :1
 set start_map=start
+set has_startdemos=true
 call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/dopa.zip
 pause
 goto :menu
@@ -103,6 +105,7 @@ goto :menu
 :6
 set patch_url=https://www.quaddicted.com/filebase/dm4jam_dlc_patch.zip
 set start_map=start
+set has_startdemos=true
 call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/dm4jam.zip
 pause
 goto :menu

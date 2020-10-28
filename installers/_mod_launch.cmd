@@ -12,6 +12,7 @@ REM   patch_url
 REM   patch2_url
 REM   start_map
 REM   extra_launch_args
+REM   has_startdemos
 
 setlocal
 
@@ -67,6 +68,19 @@ if "%start_map%"=="" (
   set start_map_arg= +map "%start_map%"
   echo You will begin in its map "%start_map%" ^(which may or may not provide
   echo for in-map skill selection^).
+)
+
+if "%has_startdemos%"=="true" (
+  echo.
+  if "%start_map%"=="start" (
+    echo This mod comes with a unique set of demo films that may initially play in
+    echo an "attract mode" when the mod launches. If so, you can press ESC then
+    echo select Single Player and New Game to begin play.
+  ) else (
+    echo This mod comes with a unique set of demo films that may initially play in
+    echo an "attract mode" when the mod launches. If so, you can still open the
+    echo console whenever you want, or press ESC if you need to access menus.
+  )
 )
 
 if "%base_game%"=="" (

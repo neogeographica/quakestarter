@@ -41,6 +41,7 @@ set start_map=
 set extra_launch_args=
 set prelaunch_msg[0]=
 set postlaunch_msg[0]=
+set has_startdemos=false
 cls
 call :installed_check czg07
 call :installed_check koohoo

@@ -17,6 +17,7 @@ REM   start_map
 REM   extra_launch_args
 REM   prelaunch_msg (array of msg lines, must end with blank line)
 REM   postlaunch_msg (array of msg lines, must end with blank line)
+REM   has_startdemos
 
 setlocal
 
