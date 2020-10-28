@@ -75,6 +75,10 @@ if "%base_game%"=="" (
   set base_game_arg= -%base_game%
 )
 
+if not "%extra_launch_args%"=="" (
+  set extra_launch_args= %extra_launch_args%
+)
+
 set zips_exist=false
 if exist "%basedir%\%download_subdir%\%archive%" (
   set zips_exist=true
@@ -140,8 +144,8 @@ set skill_arg= +skill %launch_choice%
 :Y
 set quake_args=%extra_launch_args%%base_game_arg%%game_arg%%skill_arg%%start_map_arg%
 echo.
-echo running: %quake_exe% %quake_args%
-start "" /b /wait "%basedir%\%quake_exe%" %quake_args%
+echo running: %quake_exe%%quake_args%
+start "" /b /wait "%basedir%\%quake_exe%"%quake_args%
 
 :n
 :N
