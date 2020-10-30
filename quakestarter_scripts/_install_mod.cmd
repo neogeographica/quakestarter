@@ -1,5 +1,5 @@
 REM Helper "subroutine" script to install a mod.
-REM Used by _handle_mod_choice.cmd and _mod_patch_install.cmd.
+REM Used by _handle_mod_choice.cmd and _install_patch.cmd.
 
 REM On the commandline, the url and gamedir args are required.
 
@@ -125,7 +125,7 @@ echo ... organizing ...
 pushd "%basedir%\%gamedir%"
 :organizedirs
 REM Delete any configs and old custom-engine stuff.
-del /q *.bat *.exe *.dll config.cfg >nul 2>&1
+del /q *.bat *.cmd *.exe *.dll config.cfg >nul 2>&1
 REM If pak or progs is here, assume everything is already organized and we're
 REM done.
 dir *.pak *progs.dat /a-d >nul 2>&1

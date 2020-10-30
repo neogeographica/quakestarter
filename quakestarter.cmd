@@ -6,6 +6,7 @@ setlocal
 
 REM remember dir where this script lives
 set maindir=%~dp0
+set scriptsdir=%maindir%\quakestarter_scripts
 
 REM see if .Net/PowerShell are ok, and check for curl
 call :dependencies_check
@@ -13,9 +14,20 @@ call :dependencies_check
 :menu
 
 REM re-read config each time we come back to menu in case it was edited
-call "%maindir%\installers\_install_cfg_defaults.cmd"
-if exist "%maindir%\installers\_install_cfg.cmd" (
-  call "%maindir%\installers\_install_cfg.cmd"
+call "%scriptsdir%\_quakestarter_cfg_defaults.cmd"
+if exist "%scriptsdir%\_quakestarter_cfg.cmd" (
+  echo A _quakestarter_cfg.cmd file was found in the quakestarter_scripts folder.
+  echo That's not the right place for it! The _quakestarter_cfg_defaults.cmd file
+  echo does live in the quakestarter_scripts folder, but if you want to define
+  echo custom settings then your own personalized _quakestarter_cfg.cmd file must
+  echo be in the same folder as quakestarter.cmd. I.e. you should put it at:
+  echo   %maindir%\_quakestarter_cfg.cmd
+  echo.
+  pause
+  goto :eof
+)
+if exist "%maindir%\_quakestarter_cfg.cmd" (
+  call "%maindir%\_quakestarter_cfg.cmd"
 )
 
 cls
@@ -37,31 +49,31 @@ echo.
 goto %menu_choice%
 
 :1
-call "%maindir%\installers\install_pakfiles.bat"
+call "%scriptsdir%\install_pakfiles.cmd"
 goto :menu
 
 :2
-call "%maindir%\installers\install_music.bat"
+call "%scriptsdir%\install_music.cmd"
 goto :menu
 
 :3
-call "%maindir%\installers\install_2016_episodes.bat"
+call "%scriptsdir%\install_latest_episodes.cmd"
 goto :menu
 
 :4
-call "%maindir%\installers\install_modern_episodes.bat"
+call "%scriptsdir%\install_modern_episodes.cmd"
 goto :menu
 
 :5
-call "%maindir%\installers\install_classic_episodes.bat"
+call "%scriptsdir%\install_classic_episodes.cmd"
 goto :menu
 
 :6
-call "%maindir%\installers\install_other_picks.bat"
+call "%scriptsdir%\install_other_picks.cmd"
 goto :menu
 
 :7
-call "%maindir%\installers\install_other_picks_2.bat"
+call "%scriptsdir%\install_other_picks_2.cmd"
 goto :menu
 
 

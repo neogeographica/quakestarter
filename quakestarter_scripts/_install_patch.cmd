@@ -1,5 +1,5 @@
 REM Helper "subroutine" script to install a patch for a mod.
-REM Used by _handle_mod_choice.cmd and (special case) install_music.bat.
+REM Used by _handle_mod_choice.cmd and (special case) install_music.cmd.
 
 set patch_success=false
 
@@ -68,7 +68,7 @@ if "%required%"=="true" (
 ) else (
   echo Installing patch "%temp_gamedir%" for "%target_gamedir%"...
 )
-call "%scriptsdir%\_mod_install.cmd" "%url%" "%temp_gamedir%"
+call "%scriptsdir%\_install_mod.cmd" "%url%" "%temp_gamedir%"
 if not exist "%basedir%\%temp_gamedir%" goto :exit
 
 REM move the patch files to the desired gamedir

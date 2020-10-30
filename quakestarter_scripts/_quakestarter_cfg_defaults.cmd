@@ -1,6 +1,7 @@
 REM These are the default settings used by the installer scripts. If you want
-REM to change any of these values, create another file called _install_cfg.cmd
-REM and put your custom settings in there.
+REM to change any of these values, create another file called
+REM "_quakestarter_cfg.cmd" IN THE SAME FOLDER AS QUAKESTARTER.CMD and put your
+REM custom settings in that file.
 
 REM Changing this file here is not recommended, since changes to this file
 REM might get lost when unzipping a later release of the package.
@@ -14,13 +15,13 @@ REM mod/map zipfiles will be downloaded and cached. If you already have a
 REM bunch of zips downloaded somewhere by Mark V or Quake Injector, you might
 REM want to set this path to that location. Otherwise this is a nice place for
 REM the zips to live:
-set download_subdir=installers\downloads_cache
+set download_subdir=quakestarter_downloads
 
 REM This is the subfolder path (within your Quake folder) where patch zipfiles
 REM will be downloaded and cached. If your download_subdir is being shared
 REM with Mark V or Quake Injector then you probably want to point this to a
 REM different subfolder. Otherwise it can be the same as for download_subdir.
-set patch_download_subdir=installers\downloads_cache
+set patch_download_subdir=quakestarter_downloads
 
 REM Whether to delete zipfiles after downloading them. If you set this to
 REM false, they will take up disk space, but then you can quickly reinstall

@@ -25,7 +25,7 @@ if "%basedir%"=="" (
   goto :eof
 )
 
-REM set common vars used for _mod_patch_install.cmd
+REM set common vars used for _install_patch.cmd
 set skipfiles=music_placeholder_delete_me.pak
 set no_cleanup=true
 
@@ -61,7 +61,7 @@ if not exist "%basedir%\id1" (
   if exist "%basedir%\id1\music" (
     echo The "id1\music" folder already exists.
   ) else (
-    call "%scriptsdir%\_mod_patch_install.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_campaign_soundtrack_markv.zip id1
+    call "%scriptsdir%\_install_patch.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_campaign_soundtrack_markv.zip id1
     if "%patch_success%"=="false" (
       rd /q /s "%basedir%\id1\music" >nul 2>&1
     )
@@ -78,7 +78,7 @@ if not exist "%basedir%\hipnotic" (
   if exist "%basedir%\hipnotic\music" (
     echo The "hipnotic\music" folder already exists.
   ) else (
-    call "%scriptsdir%\_mod_patch_install.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_mp1_soundtrack_markv.zip hipnotic
+    call "%scriptsdir%\_install_patch.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_mp1_soundtrack_markv.zip hipnotic
     if "%patch_success%"=="false" (
       rd /q /s "%basedir%\hipnotic\music" >nul 2>&1
     )
@@ -95,7 +95,7 @@ if not exist "%basedir%\rogue" (
   if exist "%basedir%\rogue\music" (
     echo The "rogue\music" folder already exists.
   ) else (
-    call "%scriptsdir%\_mod_patch_install.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_mp2_soundtrack_markv.zip rogue
+    call "%scriptsdir%\_install_patch.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_mp2_soundtrack_markv.zip rogue
     if "%patch_success%"=="false" (
       rd /q /s "%basedir%\rogue\music" >nul 2>&1
     )
