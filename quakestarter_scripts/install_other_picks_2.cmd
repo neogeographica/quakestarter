@@ -8,7 +8,7 @@ REM * Quaddicted user rating 4.5 or better (normalized Bayesian average)
 setlocal
 
 REM remember dir where this script lives
-set scriptsdir=%~dp0
+set scriptspath=%~dp0
 
 REM find the basedir by looking for id1 folder here or above one level
 set basedir=
@@ -77,55 +77,55 @@ goto %menu_choice%
 
 :17
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/honey.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/honey.zip
 pause
 goto :menu
 
 :18
 set base_game=quoth
 set start_map=e1m5quotha
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/e1m5quotha.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/e1m5quotha.zip
 pause
 goto :menu
 
 :19
 set base_game=quoth
 set start_map=apsp3
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/apsp3.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/apsp3.zip
 pause
 goto :menu
 
 :20
 set start_map=wickedstart
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/something_wicked.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/something_wicked.zip
 pause
 goto :menu
 
 :21
 set start_map=start_____
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/fmb_bdg2.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/fmb_bdg2.zip
 pause
 goto :menu
 
 :22
 set start_map=mstalk
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mstalk1c.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mstalk1c.zip
 pause
 goto :menu
 
 :23
 set start_map=ivory
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ivory1b.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ivory1b.zip
 pause
 goto :menu
 
 :24
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam1.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam1.zip
 pause
 goto :menu
 
 :25
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam2.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam2.zip
 pause
 goto :menu
 
@@ -135,18 +135,18 @@ set prelaunch_msg[0]=Note that this mod happens to include the original Zerstoer
 set prelaunch_msg[1]=maps, but for the Func Jam 3 maps you will want to pick maps with names
 set prelaunch_msg[2]=that begin with "jam3_".
 set prelaunch_msg[3]=
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam3.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam3.zip
 pause
 goto :menu
 
 :27
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/retrojam6.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/retrojam6.zip
 pause
 goto :menu
 
 :28
 set start_map=grim
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/grim_rezipped.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/grim_rezipped.zip
 pause
 goto :menu
 

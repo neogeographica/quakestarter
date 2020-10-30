@@ -8,7 +8,7 @@ REM * Quaddicted user rating 4.5 or better (normalized Bayesian average)
 setlocal
 
 REM remember dir where this script lives
-set scriptsdir=%~dp0
+set scriptspath=%~dp0
 
 REM find the basedir by looking for id1 folder here or above one level
 set basedir=
@@ -85,99 +85,99 @@ goto %menu_choice%
 
 :1
 set start_map=czg07
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/czg07.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/czg07.zip
 pause
 goto :menu
 
 :2
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/koohoo.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/koohoo.zip
 pause
 goto :menu
 
 :3
 set start_map=czg03
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/czg03.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/czg03.zip
 pause
 goto :menu
 
 :4
 set start_map=gmsp3v2
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/gmsp3.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/gmsp3.zip
 pause
 goto :menu
 
 :5
 set start_map=acstart
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ac.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ac.zip
 pause
 goto :menu
 
 :6
 set start_map=e1m1rmx
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/e1m1rmx.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/e1m1rmx.zip
 pause
 goto :menu
 
 :7
 set start_map=menkstart
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/menk.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/menk.zip
 pause
 goto :menu
 
 :8
 set start_map=marcher
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/kinn_marcher.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/kinn_marcher.zip
 pause
 goto :menu
 
 :9
 set start_map=lunsp1
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/lunsp1.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/lunsp1.zip
 pause
 goto :menu
 
 :10
 set base_game=quoth
 set start_map=red777
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/red777.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/red777.zip
 pause
 goto :menu
 
 :11
 set start_map=fmb_bdg1
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/fmb_bdg.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/fmb_bdg.zip
 pause
 goto :menu
 
 :12
 set base_game=quoth
 set start_map=apsp2
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/apsp2.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/apsp2.zip
 pause
 goto :menu
 
 :13
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/arwop.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/arwop.zip
 pause
 goto :menu
 
 :14
 set start_map=mappi
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mappi.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mappi.zip
 pause
 goto :menu
 
 :15
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rubicon2.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rubicon2.zip
 pause
 goto :menu
 
 :16
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ne_ruins.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ne_ruins.zip
 pause
 goto :menu
 

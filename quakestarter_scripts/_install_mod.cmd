@@ -9,7 +9,7 @@ REM variables.
 setlocal
 
 REM remember dir where this script lives
-set scriptsdir=%~dp0
+set scriptspath=%~dp0
 
 REM capture/calculate our parameters
 if "%1"=="" (
@@ -199,12 +199,12 @@ if exist "%basedir%\%gamedir%\autoexec.cfg" (
 
 REM add custom files if any
 REM (this only handles single files, not nested folders)
-if exist "%scriptsdir%\mod_extras\%gamedir%" (
+if exist "%scriptspath%mod_extras\%gamedir%" (
   if not exist "%basedir%\%gamedir%" (
     md "%basedir%\%gamedir%"
   )
   echo Adding some files to the mod folder:
-  for %%f in ("%scriptsdir%\mod_extras\%gamedir%\*") do (
+  for %%f in ("%scriptspath%mod_extras\%gamedir%\*") do (
     echo   %%~nxf
     copy /y "%%f" "%basedir%\%gamedir%" > nul
   )

@@ -16,7 +16,7 @@ REM   no_cleanup
 setlocal
 
 REM remember dir where this script lives
-set scriptsdir=%~dp0
+set scriptspath=%~dp0
 
 REM capture/calculate our parameters
 if "%1"=="" (
@@ -68,7 +68,7 @@ if "%required%"=="true" (
 ) else (
   echo Installing patch "%temp_gamedir%" for "%target_gamedir%"...
 )
-call "%scriptsdir%\_install_mod.cmd" "%url%" "%temp_gamedir%"
+call "%scriptspath%_install_mod.cmd" "%url%" "%temp_gamedir%"
 if not exist "%basedir%\%temp_gamedir%" goto :exit
 
 REM move the patch files to the desired gamedir

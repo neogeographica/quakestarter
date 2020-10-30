@@ -12,7 +12,7 @@ REM run it. See https://www.quaddicted.com/reviews/nehahra.html
 setlocal
 
 REM remember dir where this script lives
-set scriptsdir=%~dp0
+set scriptspath=%~dp0
 
 REM find the basedir by looking for id1 folder here or above one level
 set basedir=
@@ -67,20 +67,20 @@ goto %menu_choice%
 
 :1
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/prodigy_se.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/prodigy_se.zip
 pause
 goto :menu
 
 :2
 set patch_url=https://www.quaddicted.com/filebase/bbelief6_fix.zip
 set start_map=bbstart
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/bbelief.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/bbelief.zip
 pause
 goto :menu
 
 :3
 set start_map=mexx9
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mexx9.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mexx9.zip
 pause
 goto :menu
 
@@ -88,13 +88,13 @@ goto :menu
 set patch_url=https://www.quaddicted.com/filebase/zer11.zip
 set patch2_url=https://www.quaddicted.com/filebase/zerend_fix.zip
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/zer.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/zer.zip
 pause
 goto :menu
 
 :5
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/descent.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/descent.zip
 pause
 goto :menu
 

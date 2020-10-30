@@ -5,7 +5,7 @@ REM Installer for campaign/missionpack soundtrack files.
 setlocal
 
 REM remember dir where this script lives
-set scriptsdir=%~dp0
+set scriptspath=%~dp0
 
 REM find the basedir by looking for id1 folder here or above one level
 set basedir=
@@ -61,7 +61,7 @@ if not exist "%basedir%\id1" (
   if exist "%basedir%\id1\music" (
     echo The "id1\music" folder already exists.
   ) else (
-    call "%scriptsdir%\_install_patch.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_campaign_soundtrack_markv.zip id1
+    call "%scriptspath%_install_patch.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_campaign_soundtrack_markv.zip id1
     if "%patch_success%"=="false" (
       rd /q /s "%basedir%\id1\music" >nul 2>&1
     )
@@ -78,7 +78,7 @@ if not exist "%basedir%\hipnotic" (
   if exist "%basedir%\hipnotic\music" (
     echo The "hipnotic\music" folder already exists.
   ) else (
-    call "%scriptsdir%\_install_patch.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_mp1_soundtrack_markv.zip hipnotic
+    call "%scriptspath%_install_patch.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_mp1_soundtrack_markv.zip hipnotic
     if "%patch_success%"=="false" (
       rd /q /s "%basedir%\hipnotic\music" >nul 2>&1
     )
@@ -95,7 +95,7 @@ if not exist "%basedir%\rogue" (
   if exist "%basedir%\rogue\music" (
     echo The "rogue\music" folder already exists.
   ) else (
-    call "%scriptsdir%\_install_patch.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_mp2_soundtrack_markv.zip rogue
+    call "%scriptspath%_install_patch.cmd" http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_mp2_soundtrack_markv.zip rogue
     if "%patch_success%"=="false" (
       rd /q /s "%basedir%\rogue\music" >nul 2>&1
     )

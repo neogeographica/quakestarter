@@ -9,7 +9,7 @@ REM * Quaddicted user rating 4.0 or better (normalized Bayesian average)
 setlocal
 
 REM remember dir where this script lives
-set scriptsdir=%~dp0
+set scriptspath=%~dp0
 
 REM find the basedir by looking for id1 folder here or above one level
 set basedir=
@@ -71,34 +71,34 @@ goto %menu_choice%
 :1
 set start_map=start
 set has_startdemos=true
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/dopa.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/dopa.zip
 pause
 goto :menu
 
 :2
 set base_game=hipnotic
 set start_map=q1map1
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/gotshun-never-released_levels.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/gotshun-never-released_levels.zip
 pause
 goto :menu
 
 :3
 set base_game=quoth
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam9_2.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam9_2.zip
 pause
 goto :menu
 
 :4
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/qump.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/qump.zip
 pause
 goto :menu
 
 :5
 set patch_url=https://www.quaddicted.com/filebase/ad_v1_70patch1.zip
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ad_v1_70final.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ad_v1_70final.zip
 pause
 goto :menu
 
@@ -106,20 +106,20 @@ goto :menu
 set patch_url=https://www.quaddicted.com/filebase/dm4jam_dlc_patch.zip
 set start_map=start
 set has_startdemos=true
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/dm4jam.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/dm4jam.zip
 pause
 goto :menu
 
 :7
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/hwjam.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/hwjam.zip
 pause
 goto :menu
 
 :8
 set patch_url=http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/xmasjam2_shotro.zip
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/xmasjam2018.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/xmasjam2018.zip
 pause
 goto :menu
 

@@ -22,7 +22,7 @@ REM   has_startdemos
 setlocal
 
 REM remember dir where this script lives
-set scriptsdir=%~dp0
+set scriptspath=%~dp0
 
 REM capture/calculate our parameters
 if "%1"=="" (
@@ -53,7 +53,7 @@ REM base game check and (in some cases) install
 if not "%base_game%"=="" (
   if "%base_game%"=="quoth" (
     if not exist "%basedir%\quoth" (
-      call "%scriptsdir%\_install_mod.cmd" http://www.quaketastic.com/files/single_player/mods/quoth2pt2full.zip quoth
+      call "%scriptspath%_install_mod.cmd" http://www.quaketastic.com/files/single_player/mods/quoth2pt2full.zip quoth
       if not exist "%basedir%\quoth" (
         echo Failed to install "quoth" which is required by "%gamedir%".
         echo.
@@ -79,18 +79,18 @@ if not "%base_game%"=="" (
 
 REM mod install and possibly patch(es)
 if not exist "%basedir%\%gamedir%" (
-  call "%scriptsdir%\_install_mod.cmd" "%url%" "%gamedir%"
+  call "%scriptspath%_install_mod.cmd" "%url%" "%gamedir%"
   if exist "%basedir%\%gamedir%" (
     if not "%patch_url%"=="" (
       set required=%patch_required%
       set skipfiles=%patch_skipfiles%
-      call "%scriptsdir%\_install_patch.cmd" "%patch_url%" "%gamedir%"
+      call "%scriptspath%_install_patch.cmd" "%patch_url%" "%gamedir%"
     )
     if not "%patch2_url%"=="" (
       if exist "%basedir%\%gamedir%" (
         set required=%patch2_required%
         set skipfiles=%patch2_skipfiles%
-        call "%scriptsdir%\_install_patch.cmd" "%patch2_url%" "%gamedir%"
+        call "%scriptspath%_install_patch.cmd" "%patch2_url%" "%gamedir%"
       )
     )
   )
@@ -116,7 +116,7 @@ endlocal
 echo.
 
 :launch
-call "%scriptsdir%\_manage_mod.cmd" "%archive%" "%gamedir%"
+call "%scriptspath%_manage_mod.cmd" "%archive%" "%gamedir%"
 if not "%base_game%"=="" (
   if exist "%basedir%\%gamedir%" (
     echo If you launch "%gamedir%" outside of this installer,

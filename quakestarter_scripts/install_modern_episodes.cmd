@@ -9,7 +9,7 @@ REM * Quaddicted user rating 4.0 or better (normalized Bayesian average)
 setlocal
 
 REM remember dir where this script lives
-set scriptsdir=%~dp0
+set scriptspath=%~dp0
 
 REM find the basedir by looking for id1 folder here or above one level
 set basedir=
@@ -86,31 +86,31 @@ goto %menu_choice%
 
 :1
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/oum.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/oum.zip
 pause
 goto :menu
 
 :2
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rapture.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rapture.zip
 pause
 goto :menu
 
 :3
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/soe_full.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/soe_full.zip
 pause
 goto :menu
 
 :4
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/contract.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/contract.zip
 pause
 goto :menu
 
 :5
 set start_map=terra1
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/terra.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/terra.zip
 pause
 goto :menu
 
@@ -121,7 +121,7 @@ set postlaunch_msg[0]=If you launch "chapters" outside of this installer, make s
 set postlaunch_msg[1]=missionpack 1 as the base game ^("-hipnotic" arg^). In this case, that base
 set postlaunch_msg[2]=game is necessary even if you don't have missionpack 1 currently installed.
 set postlaunch_msg[3]=
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/chapters.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/chapters.zip
 pause
 goto :menu
 
@@ -129,7 +129,7 @@ goto :menu
 set patch_url=http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_travail_soundtrack_markv.zip
 set patch_skipfiles=music_placeholder_delete_me.pak
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/travail.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/travail.zip
 pause
 goto :menu
 
@@ -137,20 +137,20 @@ goto :menu
 set base_game=quoth
 set start_map=start
 set has_startdemos=true
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/warpspasm.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/warpspasm.zip
 pause
 goto :menu
 
 :9
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rmx-pack.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rmx-pack.zip
 pause
 goto :menu
 
 :10
 set start_map=start
 set has_startdemos=true
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/nsoe2.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/nsoe2.zip
 pause
 goto :menu
 
@@ -159,25 +159,25 @@ set patch_url=https://www.quaddicted.com/filebase/drake290111.zip
 REM unlike other patches the Drake mod is really truly always required here
 set patch_required=true
 set start_map=arcstart
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/arcanum.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/arcanum.zip
 pause
 goto :menu
 
 :12
 set start_map=dmc3
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/dmc3.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/dmc3.zip
 pause
 goto :menu
 
 :13
 set start_map=unfstart
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/unforgiven.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/unforgiven.zip
 pause
 goto :menu
 
 :14
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rrp.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rrp.zip
 pause
 goto :menu
 
@@ -185,13 +185,13 @@ goto :menu
 set patch_url=https://www.quaddicted.com/files/mods/QuickerQonquer.zip
 set patch_skipfiles=maps\QArena.bsp maps\QStart.bsp
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam5.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam5.zip
 pause
 goto :menu
 
 :16
 set start_map=start
-call "%scriptsdir%\_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mapjam6.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mapjam6.zip
 pause
 goto :menu
 

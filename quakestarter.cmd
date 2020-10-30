@@ -5,8 +5,8 @@ REM Top-level installer-picker.
 setlocal
 
 REM remember dir where this script lives
-set maindir=%~dp0
-set scriptsdir=%maindir%\quakestarter_scripts
+set mainpath=%~dp0
+set scriptspath=%mainpath%quakestarter_scripts\
 
 REM see if .Net/PowerShell are ok, and check for curl
 call :dependencies_check
@@ -14,20 +14,20 @@ call :dependencies_check
 :menu
 
 REM re-read config each time we come back to menu in case it was edited
-call "%scriptsdir%\_quakestarter_cfg_defaults.cmd"
-if exist "%scriptsdir%\_quakestarter_cfg.cmd" (
+call "%scriptspath%_quakestarter_cfg_defaults.cmd"
+if exist "%scriptspath%_quakestarter_cfg.cmd" (
   echo A _quakestarter_cfg.cmd file was found in the quakestarter_scripts folder.
   echo That's not the right place for it! The _quakestarter_cfg_defaults.cmd file
   echo does live in the quakestarter_scripts folder, but if you want to define
   echo custom settings then your own personalized _quakestarter_cfg.cmd file must
   echo be in the same folder as quakestarter.cmd. I.e. you should put it at:
-  echo   %maindir%\_quakestarter_cfg.cmd
+  echo   %mainpath%_quakestarter_cfg.cmd
   echo.
   pause
   goto :eof
 )
-if exist "%maindir%\_quakestarter_cfg.cmd" (
-  call "%maindir%\_quakestarter_cfg.cmd"
+if exist "%mainpath%_quakestarter_cfg.cmd" (
+  call "%mainpath%_quakestarter_cfg.cmd"
 )
 
 cls
@@ -49,31 +49,31 @@ echo.
 goto %menu_choice%
 
 :1
-call "%scriptsdir%\install_pakfiles.cmd"
+call "%scriptspath%install_pakfiles.cmd"
 goto :menu
 
 :2
-call "%scriptsdir%\install_music.cmd"
+call "%scriptspath%install_music.cmd"
 goto :menu
 
 :3
-call "%scriptsdir%\install_latest_episodes.cmd"
+call "%scriptspath%install_latest_episodes.cmd"
 goto :menu
 
 :4
-call "%scriptsdir%\install_modern_episodes.cmd"
+call "%scriptspath%install_modern_episodes.cmd"
 goto :menu
 
 :5
-call "%scriptsdir%\install_classic_episodes.cmd"
+call "%scriptspath%install_classic_episodes.cmd"
 goto :menu
 
 :6
-call "%scriptsdir%\install_other_picks.cmd"
+call "%scriptspath%install_other_picks.cmd"
 goto :menu
 
 :7
-call "%scriptsdir%\install_other_picks_2.cmd"
+call "%scriptspath%install_other_picks_2.cmd"
 goto :menu
 
 
