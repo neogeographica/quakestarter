@@ -42,7 +42,9 @@ set start_map=
 set extra_launch_args=
 set prelaunch_msg[0]=
 set postlaunch_msg[0]=
-set has_startdemos=false
+set skip_quakerc_gen=false
+set modsettings[0]=
+set startdemos=
 cls
 call :installed_check dopa
 call :installed_check gotshun-never-released_levels
@@ -70,7 +72,7 @@ goto %menu_choice%
 
 :1
 set start_map=start
-set has_startdemos=true
+set startdemos=demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/dopa.zip
 pause
 goto :menu
@@ -98,6 +100,7 @@ goto :menu
 :5
 set patch_url=https://www.quaddicted.com/filebase/ad_v1_70patch1.zip
 set start_map=start
+set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ad_v1_70final.zip
 pause
 goto :menu
@@ -105,7 +108,7 @@ goto :menu
 :6
 set patch_url=https://www.quaddicted.com/filebase/dm4jam_dlc_patch.zip
 set start_map=start
-set has_startdemos=true
+set startdemos=demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/dm4jam.zip
 pause
 goto :menu
@@ -119,6 +122,7 @@ goto :menu
 :8
 set patch_url=http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/xmasjam2_shotro.zip
 set start_map=start
+set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/xmasjam2018.zip
 pause
 goto :menu

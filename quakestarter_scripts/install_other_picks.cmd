@@ -41,7 +41,9 @@ set start_map=
 set extra_launch_args=
 set prelaunch_msg[0]=
 set postlaunch_msg[0]=
-set has_startdemos=false
+set skip_quakerc_gen=false
+set modsettings[0]=
+set startdemos=
 cls
 call :installed_check czg07
 call :installed_check koohoo
@@ -85,30 +87,54 @@ goto %menu_choice%
 
 :1
 set start_map=czg07
+set modsettings[0]=r_wateralpha 1
+set modsettings[1]=gl_flashblend 0
+set modsettings[2]=r_shadows 0
+set modsettings[3]=gl_subdivide_size 1024
+set modsettings[4]=r_maxsurfs 900
+set modsettings[5]=r_maxedges 2800
+set modsettings[6]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/czg07.zip
 pause
 goto :menu
 
 :2
 set start_map=start
+set modsettings[0]=r_wateralpha 0.6
+set modsettings[1]=r_shadows 0
+set modsettings[2]=gl_flashblend 0
+set modsettings[3]=gl_ztrick 0
+set modsettings[4]=gl_keeptjunctions 1
+set modsettings[5]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/koohoo.zip
 pause
 goto :menu
 
 :3
 set start_map=czg03
+set modsettings[0]=r_wateralpha 1
+set modsettings[1]=r_shadows 0
+set modsettings[2]=gl_flashblend 0
+set modsettings[3]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/czg03.zip
 pause
 goto :menu
 
 :4
 set start_map=gmsp3v2
+set modsettings[0]=r_maxsurfs 1200
+set modsettings[1]=r_maxedges 4000
+set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/gmsp3.zip
 pause
 goto :menu
 
 :5
 set start_map=acstart
+set modsettings[0]=r_wateralpha 0.3
+set modsettings[1]=r_maxedges 4000
+set modsettings[2]=r_maxsurfs 4000
+set modsettings[3]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ac.zip
 pause
 goto :menu
@@ -121,12 +147,23 @@ goto :menu
 
 :7
 set start_map=menkstart
+set modsettings[0]=r_maxedges 10000
+set modsettings[1]=r_maxsurfs 10000
+set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/menk.zip
 pause
 goto :menu
 
 :8
 set start_map=marcher
+set modsettings[0]=r_maxedges 100000
+set modsettings[1]=r_maxsurfs 100000
+set modsettings[2]=r_waterwarp 0
+set modsettings[3]=gl_clear 1
+set modsettings[4]=r_clearcolor 2
+set modsettings[5]=gl_farclip 16384
+set modsettings[6]=r_farclip 16384
+set modsettings[7]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/kinn_marcher.zip
 pause
 goto :menu
@@ -159,6 +196,7 @@ goto :menu
 
 :13
 set start_map=start
+set startdemos=demo1
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/arwop.zip
 pause
 goto :menu
@@ -171,12 +209,14 @@ goto :menu
 
 :15
 set start_map=start
+set startdemos=demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rubicon2.zip
 pause
 goto :menu
 
 :16
 set start_map=start
+set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ne_ruins.zip
 pause
 goto :menu

@@ -41,7 +41,9 @@ set start_map=
 set extra_launch_args=
 set prelaunch_msg[0]=
 set postlaunch_msg[0]=
-set has_startdemos=false
+set skip_quakerc_gen=false
+set modsettings[0]=
+set startdemos=
 cls
 call :installed_check honey
 call :installed_check e1m5quotha
@@ -109,22 +111,31 @@ goto :menu
 
 :22
 set start_map=mstalk
+set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mstalk1c.zip
 pause
 goto :menu
 
 :23
 set start_map=ivory
+set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ivory1b.zip
 pause
 goto :menu
 
 :24
+set modsettings[0]=scr_conspeed 1000
+set modsettings[1]=r_wateralpha 0.65
+set modsettings[2]=r_oldwater 1
+set modsettings[3]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam1.zip
 pause
 goto :menu
 
 :25
+set modsettings[0]=scr_conspeed 1000
+set modsettings[1]=r_wateralpha 0.65
+set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam2.zip
 pause
 goto :menu
@@ -135,6 +146,10 @@ set prelaunch_msg[0]=Note that this mod happens to include the original Zerstoer
 set prelaunch_msg[1]=maps, but for the Func Jam 3 maps you will want to pick maps with names
 set prelaunch_msg[2]=that begin with "jam3_".
 set prelaunch_msg[3]=
+set modsettings[0]=scr_conspeed 1000
+set modsettings[1]=r_wateralpha 0.65
+set modsettings[2]=max_edicts 4096
+set modsettings[3]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam3.zip
 pause
 goto :menu

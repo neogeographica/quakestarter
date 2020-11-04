@@ -6,6 +6,11 @@ REM On the commandline, the url and gamedir args are required.
 REM The caller is also required to set the basedir and download_subdir
 REM variables.
 
+REM Optional args will be specified through these variables:
+REM   skip_quakerc_gen
+REM   modsettings (array of cfg lines, must end with blank line)
+REM   startdemos
+
 setlocal
 
 REM remember dir where this script lives
@@ -193,12 +198,45 @@ popd
 
 REM nuke the mod's autoexec.cfg if necessary
 if exist "%basedir%\%gamedir%\autoexec.cfg" (
-  echo Archiving mod's "autoexec.cfg" as "autoexec.cfg.orig".
-  move "%basedir%\%gamedir%\autoexec.cfg" "%basedir%\%gamedir%\autoexec.cfg.orig" >nul
+  echo Removing mod's original "autoexec.cfg".
+  del /q "%basedir%\%gamedir%\autoexec.cfg" >nul
 )
 
+REM generate quake.rc and modsettings.cfg if appropriate
+if "%skip_quakerc_gen%"=="true" (
+  set modsettings[0]=
+) else (
+  echo Adding quake.rc and modsettings.cfg.
+  copy /y "%scriptspath%templates\quake.rc" "%basedir%\%gamedir%" > nul
+  if "%startdemos%"=="" (
+    echo // We don't define startdemos since this mod does not come with unique demos. >> "%basedir%\%gamedir%\quake.rc"
+  ) else (
+    echo // The startdemos defined here are unique demos that come with this mod. >> "%basedir%\%gamedir%\quake.rc"
+  )
+  if not "%startdemos%"=="" (
+    echo startdemos %startdemos% >> "%basedir%\%gamedir%\quake.rc"
+  )
+  copy /y "%scriptspath%templates\modsettings.cfg" "%basedir%\%gamedir%" > nul
+  if "%modsettings[0]%"=="" (
+    echo // Nothing here at the moment! >> "%basedir%\%gamedir%\modsettings.cfg"
+  )
+)
+if "%modsettings[0]%"=="" goto :extras
+setlocal enabledelayedexpansion
+set idx=0
+:modsettingsloop
+set loop=false
+if not "!modsettings[%idx%]!"=="" (
+  echo !modsettings[%idx%]! >> "%basedir%\%gamedir%\modsettings.cfg"
+  set /a idx+=1
+  set loop=true
+)
+if "%loop%"=="true" goto :modsettingsloop
+endlocal
+echo.
+
+:extras
 REM add custom files if any
-REM (this only handles single files, not nested folders)
 if exist "%scriptspath%mod_extras\%gamedir%" (
   if not exist "%basedir%\%gamedir%" (
     md "%basedir%\%gamedir%"
@@ -208,6 +246,9 @@ if exist "%scriptspath%mod_extras\%gamedir%" (
     echo   %%~nxf
     copy /y "%%f" "%basedir%\%gamedir%" > nul
   )
+  for /d %%d in ("%scriptspath%mod_extras\%gamedir%\*") do (
+    call :customize_subdirs "%%~nxd"
+  )
 )
 
 if not "%less_chatty_install%"=="true" (
@@ -215,3 +256,22 @@ if not "%less_chatty_install%"=="true" (
 )
 
 echo.
+
+goto :eof
+
+
+REM functions used above
+
+:customize_subdirs
+set subdirpath=%~1
+if not exist "%basedir%\%gamedir%\%subdirpath%" (
+  md "%basedir%\%gamedir%\%subdirpath%"
+)
+for %%f in ("%scriptspath%mod_extras\%gamedir%\%subdirpath%\*") do (
+  echo   %subdirpath%\%%~nxf
+  copy /y "%%f" "%basedir%\%gamedir%\%subdirpath%" > nul
+)
+for /d %%d in ("%scriptspath%mod_extras\%gamedir%\%subdirpath%\*") do (
+  call :customize_subdirs "%subdirpath%\%%~nxd"
+)
+goto :eof

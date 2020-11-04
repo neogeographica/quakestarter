@@ -45,7 +45,9 @@ set start_map=
 set extra_launch_args=
 set prelaunch_msg[0]=
 set postlaunch_msg[0]=
-set has_startdemos=false
+set skip_quakerc_gen=false
+set modsettings[0]=
+set startdemos=
 cls
 call :installed_check prodigy_se
 call :installed_check bbelief
@@ -73,13 +75,19 @@ goto :menu
 
 :2
 set patch_url=https://www.quaddicted.com/filebase/bbelief6_fix.zip
-set start_map=bbstart
+REM The map "start" here is just a copy of bbstart, so that we can run the
+REM startdemos and then just break out by using the Single Player menu to
+REM start a game.
+set start_map=start
+set startdemos=demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/bbelief.zip
 pause
 goto :menu
 
 :3
 set start_map=mexx9
+set modsettings[0]=r_wateralpha 0.3
+set modsettings[1]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mexx9.zip
 pause
 goto :menu
@@ -94,6 +102,8 @@ goto :menu
 
 :5
 set start_map=start
+set skip_quakerc_gen=true
+set startdemos=intro demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/descent.zip
 pause
 goto :menu

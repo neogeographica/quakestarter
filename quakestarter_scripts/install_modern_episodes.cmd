@@ -42,7 +42,9 @@ set start_map=
 set extra_launch_args=
 set prelaunch_msg[0]=
 set postlaunch_msg[0]=
-set has_startdemos=false
+set skip_quakerc_gen=false
+set modsettings[0]=
+set startdemos=
 cls
 call :installed_check oum
 call :installed_check rapture
@@ -92,18 +94,25 @@ goto :menu
 
 :2
 set start_map=start
+set startdemos=demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rapture.zip
 pause
 goto :menu
 
 :3
 set start_map=start
+set startdemos=demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/soe_full.zip
 pause
 goto :menu
 
 :4
 set start_map=start
+REM This demo1 is just a game against reaperbots? Not sure it's really meant
+REM to be used for startdemos.
+REM set startdemos=demo1
+set modsettings[0]=r_wateralpha 0.5
+set modsettings[1]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/contract.zip
 pause
 goto :menu
@@ -129,6 +138,10 @@ goto :menu
 set patch_url=http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_travail_soundtrack_markv.zip
 set patch_skipfiles=music_placeholder_delete_me.pak
 set start_map=start
+set startdemos=demo1 demo2 demo3
+set modsettings[0]=r_oldwater 0
+set modsettings[1]=r_waterquality 32
+set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/travail.zip
 pause
 goto :menu
@@ -136,7 +149,13 @@ goto :menu
 :8
 set base_game=quoth
 set start_map=start
-set has_startdemos=true
+set startdemos=demo1 demo2 demo3
+set modsettings[0]=gl_exttex 1
+set modsettings[1]=r_wateralpha 0.4
+set modsettings[2]=r_shadows 0.2
+set modsettings[3]=gl_texquality 2
+set modsettings[4]=gl_max_size 2048
+set modsettings[5]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/warpspasm.zip
 pause
 goto :menu
@@ -149,7 +168,7 @@ goto :menu
 
 :10
 set start_map=start
-set has_startdemos=true
+set startdemos=demo1 demo2
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/nsoe2.zip
 pause
 goto :menu
@@ -177,6 +196,7 @@ goto :menu
 
 :14
 set start_map=start
+set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rrp.zip
 pause
 goto :menu
@@ -185,12 +205,19 @@ goto :menu
 set patch_url=https://www.quaddicted.com/files/mods/QuickerQonquer.zip
 set patch_skipfiles=maps\QArena.bsp maps\QStart.bsp
 set start_map=start
+set startdemos=demo1
+set modsettings[0]=scr_conspeed 1000
+set modsettings[1]=r_wateralpha 0.65
+set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam5.zip
 pause
 goto :menu
 
 :16
 set start_map=start
+set startdemos=demo1
+set modsettings[0]=r_wateralpha 1
+set modsettings[1]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mapjam6.zip
 pause
 goto :menu

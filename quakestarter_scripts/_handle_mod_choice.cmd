@@ -17,7 +17,9 @@ REM   start_map
 REM   extra_launch_args
 REM   prelaunch_msg (array of msg lines, must end with blank line)
 REM   postlaunch_msg (array of msg lines, must end with blank line)
-REM   has_startdemos
+REM   skip_quakerc_gen
+REM   modsettings (array of cfg lines, must end with blank line)
+REM   startdemos
 
 setlocal
 
@@ -50,9 +52,11 @@ if "%renamed_gamedir%"=="" (
 cls
 
 REM base game check and (in some cases) install
+set saved_skip_quakerc_gen=%skip_quakerc_gen%
 if not "%base_game%"=="" (
   if "%base_game%"=="quoth" (
     if not exist "%basedir%\quoth" (
+      set skip_quakerc_gen=true
       call "%scriptspath%_install_mod.cmd" http://www.quaketastic.com/files/single_player/mods/quoth2pt2full.zip quoth
       if not exist "%basedir%\quoth" (
         echo Failed to install "quoth" which is required by "%gamedir%".
@@ -76,6 +80,7 @@ if not "%base_game%"=="" (
     )
   )
 )
+set skip_quakerc_gen=%saved_skip_quakerc_gen%
 
 REM mod install and possibly patch(es)
 if not exist "%basedir%\%gamedir%" (
@@ -134,6 +139,8 @@ if not "%base_game%"=="" (
     )
   )
 )
+
+if not exist "%basedir%\%gamedir%" goto :eof
 
 if "%postlaunch_msg[0]%"=="" goto :eof
 
