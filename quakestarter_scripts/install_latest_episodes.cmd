@@ -120,7 +120,7 @@ pause
 goto :menu
 
 :8
-set patch_url=http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/xmasjam2_shotro.zip
+set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/xmasjam2_shotro.zip
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/xmasjam2018.zip

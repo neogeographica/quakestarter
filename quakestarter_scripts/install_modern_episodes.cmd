@@ -135,8 +135,7 @@ pause
 goto :menu
 
 :7
-set patch_url=http://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_travail_soundtrack_markv.zip
-set patch_skipfiles=music_placeholder_delete_me.pak
+set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_travail_soundtrack.zip
 set start_map=start
 set startdemos=demo1 demo2 demo3
 set modsettings[0]=r_oldwater 0
