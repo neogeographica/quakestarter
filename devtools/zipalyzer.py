@@ -189,7 +189,7 @@ def process_zip(zip):
                 all_success = False
             continue
         if fl.endswith('.dem'):
-            demos.append(f[:-4])
+            demos.append(f.split('/')[-1][:-4])
         elif fl.endswith('.pak'):
             pak_success, this_has_pak_autoexec, this_has_pak_quakerc = process_pak(
                 zf, f, results_dir, demos, configs, errors)
