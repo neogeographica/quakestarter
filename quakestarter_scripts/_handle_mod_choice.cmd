@@ -65,6 +65,42 @@ if not "%base_game%"=="" (
       )
     )
   )
+  if "%base_game%"=="ad_v1_80p1final" (
+    if not "%multigame_support%"=="true" (
+      echo Installing "%gamedir%" (which depends on "ad_v1_80p1final") is not
+      echo possible through quakestarter since multigame_support is false in
+      echo your config.
+      echo.
+      goto :eof
+    )
+    if not exist "%basedir%\ad_v1_80p1final" (
+      set skip_quakerc_gen=true
+      call "%scriptspath%_install_mod.cmd" https://www.quaddicted.com/filebase/ad_v1_80p1final.zip ad_v1_80p1final
+      if not exist "%basedir%\ad_v1_80p1final" (
+        echo Failed to install "ad_v1_80p1final" which is required by "%gamedir%".
+        echo.
+        goto :eof
+      )
+    )
+  )
+  if "%base_game%"=="copper_v1_11" (
+    if not "%multigame_support%"=="true" (
+      echo Installing "%gamedir%" (which depends on "copper_v1_11") is not
+      echo possible through quakestarter since multigame_support is false in
+      echo your config.
+      echo.
+      goto :eof
+    )
+    if not exist "%basedir%\copper_v1_11" (
+      set skip_quakerc_gen=true
+      call "%scriptspath%_install_mod.cmd" https://www.quaddicted.com/filebase/copper_v1_11.zip copper_v1_11
+      if not exist "%basedir%\copper_v1_11" (
+        echo Failed to install "copper_v1_11" which is required by "%gamedir%".
+        echo.
+        goto :eof
+      )
+    )
+  )
   if "%base_game%"=="hipnotic" (
     if not exist "%basedir%\hipnotic\pak0.pak" (
       echo "%gamedir%" requires missionpack 1 to currently be installed.
