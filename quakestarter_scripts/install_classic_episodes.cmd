@@ -62,6 +62,9 @@ echo %mexx9_installed%  3: mexx9 - Penumbra of Domination ^(1997^)
 echo %zer_installed%  4: zer - Zerstoerer ^(1997^)
 echo %descent_installed%  5: descent - ^(The Final^) Descent ^(2000^)
 echo.
+echo Note that Nehahra is not included here because many Quake engines cannot
+echo run it. See https://www.quaddicted.com/reviews/nehahra.html
+echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
 echo.
