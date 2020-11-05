@@ -58,9 +58,9 @@ call :installed_check red777
 call :installed_check fmb_bdg
 call :installed_check apsp2
 call :installed_check arwop
-call :installed_check mappi
 call :installed_check rubicon2
 call :installed_check ne_ruins
+call :installed_check honey
 echo.
 echo A selection of other maps ^(part 1^):
 echo %czg07_installed%  1: czg07 - Insomnia ^(2000^)
@@ -76,9 +76,9 @@ echo %red777_installed% 10: red777 - Red 777 ^(2005^)
 echo %fmb_bdg_installed% 11: fmb_bdg - This Onion ^(2007^)
 echo %apsp2_installed% 12: apsp2 - Plumbers Don't Wear Ties ^(2009^)
 echo %arwop_installed% 13: arwop - A Roman Wilderness Of Pain ^(2009^)
-echo %mappi_installed% 14: mappi - Red Slammer ^(2010^)
-echo %rubicon2_installed% 15: rubicon2 - Rubicon 2 ^(2011^)
-echo %ne_ruins_installed% 16: ne_ruins - The Altar of Storms ^(2011^)
+echo %rubicon2_installed% 14: rubicon2 - Rubicon 2 ^(2011^)
+echo %ne_ruins_installed% 15: ne_ruins - The Altar of Storms ^(2011^)
+echo %honey_installed% 16: honey - Honey ^(2012^)
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -202,22 +202,22 @@ pause
 goto :menu
 
 :14
-set start_map=mappi
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mappi.zip
-pause
-goto :menu
-
-:15
 set start_map=start
 set startdemos=demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rubicon2.zip
 pause
 goto :menu
 
-:16
+:15
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ne_ruins.zip
+pause
+goto :menu
+
+:16
+set start_map=start
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/honey.zip
 pause
 goto :menu
 
