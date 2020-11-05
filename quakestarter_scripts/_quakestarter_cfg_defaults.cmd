@@ -79,7 +79,7 @@ REM           and begin playing the mod.
 REM
 REM Note 1: The true setting will work even with Quakespasm-style engines
 REM         that normally don't play the startdemos loop.
-REM Note 2: This setting may be ignored for a mod that was installed manually
-REM         or using a pre-2.0 version of quakestarter.
+REM Note 2: The false setting may be ignored for a mod that was installed
+REM         manually or using a pre-2.0 version of quakestarter.
 
 set play_unique_startdemos=true
