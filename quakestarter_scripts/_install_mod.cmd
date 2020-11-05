@@ -157,7 +157,7 @@ for %%k in (gfx locs maps music particles progs skins sound textures) do (
 if "%dirknown%"=="true" goto :dirsorganized
 REM If we reach this point the directory is probably packaging cruft. Move its
 REM contents up and keep looping.
-move "%dirname%\*" . >nul
+move "%dirname%\*" . >nul 2>&1
 for /d %%s in ("%dirname%\*") do (
   move "%%s" . >nul
 )
