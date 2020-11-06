@@ -99,6 +99,7 @@ goto :menu
 :3
 set base_game=quoth
 set start_map=start
+set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam9_2.zip
 pause
 goto :menu
@@ -141,6 +142,7 @@ goto :menu
 :9
 set base_game=copper_v1_11
 set start_map=start
+set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" http://lunaran.com/files/udob_v1_1.zip
 pause
 goto :menu

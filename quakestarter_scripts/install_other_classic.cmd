@@ -45,24 +45,30 @@ set skip_quakerc_gen=false
 set modsettings[0]=
 set startdemos=
 cls
+call :installed_check mexx10
 call :installed_check czg07
 call :installed_check koohoo
 call :installed_check czg03
+call :installed_check could
 call :installed_check gmsp3
 call :installed_check ac
 call :installed_check e1m1rmx
 call :installed_check menk
 call :installed_check kinn_marcher
+call :installed_check sm82
 echo.
 echo Selected other custom maps released through 2005:
-echo %czg07_installed%  1: czg07 - Insomnia ^(2000^)
-echo %koohoo_installed%  2: koohoo - The Castle of Koohoo ^(2001^)
-echo %czg03_installed%  3: czg03 - Ceremonial Circles ^(2001^)
-echo %gmsp3_installed%  4: gmsp3 - Day of the Lords ^(2003^)
-echo %ac_installed%  5: ac - Adamantine Cruelty ^(2004^)
-echo %e1m1rmx_installed%  6: e1m1rmx - The Slipgate Duplex ^(2004^)
-echo %menk_installed%  7: menk - Menkalinan ^(2004^)
-echo %kinn_marcher_installed%  8: kinn_marcher - The Marcher Fortress ^(2005^)
+echo %mexx10_installed%  1: mexx10 - The Cassandra Calamity ^(1997^)
+echo %czg07_installed%  2: czg07 - Insomnia ^(2000^)
+echo %koohoo_installed%  3: koohoo - The Castle of Koohoo ^(2001^)
+echo %czg03_installed%  4: czg03 - Ceremonial Circles ^(2001^)
+echo %could_installed%  5: could - And All That Could Have Been ^(2003^)
+echo %gmsp3_installed%  6: gmsp3 - Day of the Lords ^(2003^)
+echo %ac_installed%  7: ac - Adamantine Cruelty ^(2004^)
+echo %e1m1rmx_installed%  8: e1m1rmx - The Slipgate Duplex ^(2004^)
+echo %menk_installed%  9: menk - Menkalinan ^(2004^)
+echo %kinn_marcher_installed% 10: kinn_marcher - The Marcher Fortress ^(2005^)
+echo %sm82_installed% 11: sm82 - Rubicondom ^(2005^)
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -70,6 +76,14 @@ echo.
 goto %menu_choice%
 
 :1
+set start_map=mexx10
+set modsettings[0]=r_wateralpha 0.3
+set modsettings[1]=
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mexx10.zip
+pause
+goto :menu
+
+:2
 set start_map=czg07
 set modsettings[0]=r_wateralpha 1
 set modsettings[1]=gl_flashblend 0
@@ -82,7 +96,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/c
 pause
 goto :menu
 
-:2
+:3
 set start_map=start
 set modsettings[0]=r_wateralpha 0.6
 set modsettings[1]=r_shadows 0
@@ -94,7 +108,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/k
 pause
 goto :menu
 
-:3
+:4
 set start_map=czg03
 set modsettings[0]=r_wateralpha 1
 set modsettings[1]=r_shadows 0
@@ -104,7 +118,13 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/c
 pause
 goto :menu
 
-:4
+:5
+set start_map=could
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/could.zip
+pause
+goto :menu
+
+:6
 set start_map=gmsp3v2
 set modsettings[0]=r_maxsurfs 1200
 set modsettings[1]=r_maxedges 4000
@@ -113,7 +133,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/g
 pause
 goto :menu
 
-:5
+:7
 set start_map=acstart
 set modsettings[0]=r_wateralpha 0.3
 set modsettings[1]=r_maxedges 4000
@@ -123,13 +143,13 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/a
 pause
 goto :menu
 
-:6
+:8
 set start_map=e1m1rmx
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/e1m1rmx.zip
 pause
 goto :menu
 
-:7
+:9
 set start_map=menkstart
 set modsettings[0]=r_maxedges 10000
 set modsettings[1]=r_maxsurfs 10000
@@ -138,7 +158,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/m
 pause
 goto :menu
 
-:8
+:10
 set start_map=marcher
 set modsettings[0]=r_maxedges 100000
 set modsettings[1]=r_maxsurfs 100000
@@ -149,6 +169,12 @@ set modsettings[5]=gl_farclip 16384
 set modsettings[6]=r_farclip 16384
 set modsettings[7]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/kinn_marcher.zip
+pause
+goto :menu
+
+:11
+set start_map=sm82
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/sm82.zip
 pause
 goto :menu
 

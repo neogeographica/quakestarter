@@ -148,13 +148,8 @@ goto :menu
 :8
 set base_game=quoth
 set start_map=start
+set skip_quakerc_gen=true
 set startdemos=demo1 demo2 demo3
-set modsettings[0]=gl_exttex 1
-set modsettings[1]=r_wateralpha 0.4
-set modsettings[2]=r_shadows 0.2
-set modsettings[3]=gl_texquality 2
-set modsettings[4]=gl_max_size 2048
-set modsettings[5]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/warpspasm.zip
 pause
 goto :menu
