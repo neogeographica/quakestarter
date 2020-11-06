@@ -30,13 +30,24 @@ REM different subfolder. Otherwise it can be the same as for download_subdir.
 set patch_download_subdir=quakestarter_downloads
 
 
-REM Whether to delete zipfiles after downloading them. If you set this to
+REM Whether to delete zipfiles for mods and mod patches after downloading them.
+REM (Does not apply to soundtrack zipfiles; see below.) If you set this to
 REM false, they will take up disk space, but then you can quickly reinstall
 REM something without having to download it again. You may also want to set
 REM this false if you're sharing the downloads cache with Mark V or Quake
 REM Injector.
 
 set cleanup_archive=true
+
+
+REM Whether to delete downloaded zipfiles for id1/hipnotic/rogue soundtracks.
+REM Since the menus don't provide any option to "uninstall" (delete) the
+REM id1/hipnotic/rogue gamedirs, the only way to get automated cleanup of
+REM soundtrack zipfiles is to set this to true. If you set this to false then
+REM these zipfiles will hang around in your patch_download_subdir folder until
+REM manually deleted.
+
+set cleanup_soundtrack_archive=true
 
 
 REM Whether your Quake engine of choice supports multiple "-game" arguments

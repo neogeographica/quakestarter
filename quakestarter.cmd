@@ -34,7 +34,7 @@ cls
 echo.
 echo Basic setup:
 echo  1: Find ^& copy pak files ^(game data^) on this computer
-echo  2: Install soundtrack music files
+echo  2: Find soundtrack music files on this computer or download
 echo.
 echo Additional episodes/hubs:
 echo  3: The New Hotness ^(2020; ratings in flux^)

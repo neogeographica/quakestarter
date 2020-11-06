@@ -25,8 +25,13 @@ if "%basedir%"=="" (
   goto :eof
 )
 
-REM set common var used for _install_patch.cmd
+REM set common vars used for _install_patch.cmd and _install_mod.cmd.
 set no_cleanup=true
+set cleanup_archive=%cleanup_soundtrack_archive%
+REM Stuff outside the music directory in the downloaded patch zips can be
+REM interesting, but for consistency with the find-and-copy behavior we'll
+REM only deal with the music directory.
+set skipfiles=tracklist.cfg quake_campaign_soundtrack_readme.txt quake_mp1_soundtrack_readme.txt  quake_mp2_soundtrack_readme.txt
 
 :menu
 cls
@@ -53,61 +58,53 @@ echo.
 goto %menu_choice%
 
 :1
-if not exist "%basedir%\id1" (
-  echo The "id1" gamedir does not exist.
-  echo Check your Quake files setup!
-) else (
-  if exist "%basedir%\id1\music" (
-    echo The "id1\music" folder already exists.
-  ) else (
-    call "%scriptspath%_install_patch.cmd" https://www.quaddicted.com/files/music/quake_campaign_soundtrack.zip id1
-    if "%patch_success%"=="false" (
-      rd /q /s "%basedir%\id1\music" >nul 2>&1
-    )
-  )
-)
+call :handle_choice id1 https://www.quaddicted.com/files/music/quake_campaign_soundtrack.zip
 pause
 goto :menu
 
 :2
-if not exist "%basedir%\hipnotic" (
-  echo The "hipnotic" gamedir does not exist.
-  echo Do you have that missionpack installed?
-) else (
-  if exist "%basedir%\hipnotic\music" (
-    echo The "hipnotic\music" folder already exists.
-  ) else (
-    call "%scriptspath%_install_patch.cmd" https://www.quaddicted.com/files/music/quake_mp1_soundtrack.zip hipnotic
-    if "%patch_success%"=="false" (
-      rd /q /s "%basedir%\hipnotic\music" >nul 2>&1
-    )
-  )
-)
+call :handle_choice hipnotic https://www.quaddicted.com/files/music/quake_mp1_soundtrack.zip
 pause
 goto :menu
 
 :3
-if not exist "%basedir%\rogue" (
-  echo The "rogue" gamedir does not exist.
-  echo Do you have that missionpack installed?
-) else (
-  if exist "%basedir%\rogue\music" (
-    echo The "rogue\music" folder already exists.
-  ) else (
-    call "%scriptspath%_install_patch.cmd" https://www.quaddicted.com/files/music/quake_mp2_soundtrack.zip rogue
-    if "%patch_success%"=="false" (
-      rd /q /s "%basedir%\rogue\music" >nul 2>&1
-    )
-  )
-)
+call :handle_choice rogue https://www.quaddicted.com/files/music/quake_mp2_soundtrack.zip
 pause
 goto :menu
 
 
-REM function used above
+REM functions used above
+
 :music_installed_check
 if exist "%basedir%\%1\music" (
   set %1_music_installed=*
 ) else (
   set %1_music_installed= 
 )
+goto :eof
+
+:handle_choice
+set gamedir=%~1
+set url=%~2
+if not exist "%basedir%\%gamedir%" (
+  echo The "%gamedir%" gamedir does not exist.
+  echo Check your Quake files setup!
+  echo.
+  goto :eof
+)
+if exist "%basedir%\%gamedir%\music" (
+  echo The "%gamedir%\music" folder already exists.
+  echo.
+  goto :eof
+)
+call "%scriptspath%_install_quakefiles.cmd" "%gamedir%" music
+echo.
+if exist "%basedir%\%gamedir%\music" goto :eof
+set /p choice=Would you like to download it? ([y]/n):
+if "%choice%"=="n" goto :eof
+if "%choice%"=="N" goto :eof
+call "%scriptspath%_install_patch.cmd" "%url%" "%gamedir%"
+if "%patch_success%"=="false" (
+  rd /q /s "%basedir%\%gamedir%\music" >nul 2>&1
+)
+goto :eof
