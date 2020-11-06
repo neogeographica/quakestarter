@@ -1,7 +1,7 @@
 @echo off
 
 REM Installer for mapsets that fit the following criteria:
-REM * released after Nehahra and before Arcane Dimensions
+REM * released after Nehahra (in 2000) and before Arcane Dimensions
 REM * a start map and at least four non-startmaps
 REM * Quaddicted editor rating "Excellent"
 REM * Quaddicted user rating 4.0 or better (normalized Bayesian average)
@@ -63,7 +63,7 @@ call :installed_check rrp
 call :installed_check func_mapjam5
 call :installed_check mapjam6
 echo.
-echo Modern ^(pre-2016^) custom episodes:
+echo Selected custom episodes/hubs released from mid-2000 through 2015:
 echo %oum_installed%  1: oum - Operation: Urth Majik ^(2001^)
 echo %rapture_installed%  2: rapture - Rapture ^(2001^)
 echo %soe_full_installed%  3: soe_full - Soul of Evil ^(2002^)

@@ -33,15 +33,20 @@ if exist "%mainpath%_quakestarter_cfg.cmd" (
 cls
 echo.
 echo Basic setup:
-echo 1: Find ^& copy pak files ^(game data^) on this computer
-echo 2: Install soundtrack music files
+echo  1: Find ^& copy pak files ^(game data^) on this computer
+echo  2: Install soundtrack music files
 echo.
-echo Additional content:
-echo 3: Latest episodes ^(released in 2016 or later^)
-echo 4: Modern episodes from pre-2016
-echo 5: Classic episodes
-echo 6: Other highly-rated maps ^(part 1^)
-echo 7: Other highly-rated maps ^(part 2^)
+echo Additional episodes/hubs:
+echo  3: The New Hotness ^(2020; ratings in flux^)
+echo  4: Post-AD ^(after the first Arcane Dimensions release; 2016-2019^)
+echo  5: Modern ^(after Nehahra; 2000-2015^)
+echo  6: Classic
+echo.
+echo Other highly-rated releases:
+echo  7: The New Hotness ^(2020; ratings in flux^)
+echo  8: The Age of Jams ^(2014-2019^)
+echo  9: Post-Quoth ^(after the first Quoth release; 2006-2013^)
+echo 10: Classic
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -61,19 +66,31 @@ call "%scriptspath%install_latest_episodes.cmd"
 goto :menu
 
 :4
-call "%scriptspath%install_modern_episodes.cmd"
+call "%scriptspath%install_post_ad_episodes.cmd"
 goto :menu
 
 :5
-call "%scriptspath%install_classic_episodes.cmd"
+call "%scriptspath%install_modern_episodes.cmd"
 goto :menu
 
 :6
-call "%scriptspath%install_other_picks.cmd"
+call "%scriptspath%install_classic_episodes.cmd"
 goto :menu
 
 :7
-call "%scriptspath%install_other_picks_2.cmd"
+call "%scriptspath%install_other_latest.cmd"
+goto :menu
+
+:8
+call "%scriptspath%install_other_aoj.cmd"
+goto :menu
+
+:9
+call "%scriptspath%install_other_post_quoth.cmd"
+goto :menu
+
+:10
+call "%scriptspath%install_other_classic.cmd"
 goto :menu
 
 

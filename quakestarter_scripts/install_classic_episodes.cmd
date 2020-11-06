@@ -1,7 +1,7 @@
 @echo off
 
 REM Installer for mapsets that fit the following criteria:
-REM * Released before Nehahra
+REM * released before Nehahra (in 2000)
 REM * a start map and at least four non-startmaps
 REM * Quaddicted editor rating "Excellent"
 REM * Quaddicted user rating 4.0 or better (normalized Bayesian average)
@@ -55,7 +55,7 @@ call :installed_check mexx9
 call :installed_check zer
 call :installed_check descent
 echo.
-echo "Classic" custom episodes:
+echo Selected custom episodes/hubs released before mid-2000:
 echo %prodigy_se_installed%  1: prodigy_se - Prodigy Special Edition ^(1997^)
 echo %bbelief_installed%  2: bbelief - Beyond Belief ^(1997^)
 echo %mexx9_installed%  3: mexx9 - Penumbra of Domination ^(1997^)

@@ -1,7 +1,7 @@
 @echo off
 
 REM Installer for mapsets that fit the following criteria:
-REM * released in 2016 or later
+REM * released from 2016 through 2019
 REM * a start map and at least four non-startmaps
 REM * Quaddicted editor rating "Excellent"
 REM * Quaddicted user rating 4.0 or better (normalized Bayesian average)
@@ -61,7 +61,7 @@ call :installed_check hwjam2
 call :installed_check xmasjam2019
 call :installed_check smej_1.13
 echo.
-echo Custom episodes released in 2016 or later:
+echo Selected custom episodes/hubs released from 2016 through 2019:
 echo %dopa_installed%  1: dopa - Dimension of the Past ^(2016^)
 echo %gotshun-never-released_levels_installed%  2: gotshun-never-released_levels - The "lost" levels ^(2016^)
 echo %func_mapjam9_2_installed%  3: func_mapjam9_2 - Func Map Jam 9 - Contract Revoked / Knave theme ^(2017^)

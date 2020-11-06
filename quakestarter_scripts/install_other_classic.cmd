@@ -1,7 +1,7 @@
 @echo off
 
 REM Installer for maps that fit the following criteria:
-REM * it (or a variant) is NOT included in other selected episodes
+REM * released through 2005
 REM * Quaddicted editor rating "Excellent"
 REM * Quaddicted user rating 4.5 or better (normalized Bayesian average)
 
@@ -53,16 +53,8 @@ call :installed_check ac
 call :installed_check e1m1rmx
 call :installed_check menk
 call :installed_check kinn_marcher
-call :installed_check lunsp1
-call :installed_check red777
-call :installed_check fmb_bdg
-call :installed_check apsp2
-call :installed_check arwop
-call :installed_check rubicon2
-call :installed_check ne_ruins
-call :installed_check honey
 echo.
-echo A selection of other maps ^(part 1^):
+echo Selected other custom maps released through 2005:
 echo %czg07_installed%  1: czg07 - Insomnia ^(2000^)
 echo %koohoo_installed%  2: koohoo - The Castle of Koohoo ^(2001^)
 echo %czg03_installed%  3: czg03 - Ceremonial Circles ^(2001^)
@@ -71,14 +63,6 @@ echo %ac_installed%  5: ac - Adamantine Cruelty ^(2004^)
 echo %e1m1rmx_installed%  6: e1m1rmx - The Slipgate Duplex ^(2004^)
 echo %menk_installed%  7: menk - Menkalinan ^(2004^)
 echo %kinn_marcher_installed%  8: kinn_marcher - The Marcher Fortress ^(2005^)
-echo %lunsp1_installed%  9: lunsp1 - Concentric Devastation ^(2005^)
-echo %red777_installed% 10: red777 - Red 777 ^(2005^)
-echo %fmb_bdg_installed% 11: fmb_bdg - This Onion ^(2007^)
-echo %apsp2_installed% 12: apsp2 - Plumbers Don't Wear Ties ^(2009^)
-echo %arwop_installed% 13: arwop - A Roman Wilderness Of Pain ^(2009^)
-echo %rubicon2_installed% 14: rubicon2 - Rubicon 2 ^(2011^)
-echo %ne_ruins_installed% 15: ne_ruins - The Altar of Storms ^(2011^)
-echo %honey_installed% 16: honey - Honey ^(2012^)
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -165,59 +149,6 @@ set modsettings[5]=gl_farclip 16384
 set modsettings[6]=r_farclip 16384
 set modsettings[7]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/kinn_marcher.zip
-pause
-goto :menu
-
-:9
-set start_map=lunsp1
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/lunsp1.zip
-pause
-goto :menu
-
-:10
-set base_game=quoth
-set start_map=red777
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/red777.zip
-pause
-goto :menu
-
-:11
-set start_map=fmb_bdg1
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/fmb_bdg.zip
-pause
-goto :menu
-
-:12
-set base_game=quoth
-set start_map=apsp2
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/apsp2.zip
-pause
-goto :menu
-
-:13
-set start_map=start
-set startdemos=demo1
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/arwop.zip
-pause
-goto :menu
-
-:14
-set start_map=start
-set startdemos=demo1 demo2 demo3
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rubicon2.zip
-pause
-goto :menu
-
-:15
-set start_map=start
-set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ne_ruins.zip
-pause
-goto :menu
-
-:16
-set start_map=start
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/honey.zip
 pause
 goto :menu
 
