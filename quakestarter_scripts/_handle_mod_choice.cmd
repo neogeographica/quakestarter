@@ -67,7 +67,7 @@ if not "%base_game%"=="" (
   )
   if "%base_game%"=="ad_v1_80p1final" (
     if not "%multigame_support%"=="true" (
-      echo Installing "%gamedir%" (which depends on "ad_v1_80p1final") is not
+      echo Managing"%gamedir%" ^(which depends on "ad_v1_80p1final"^) is not
       echo possible through quakestarter since multigame_support is false in
       echo your config.
       echo.
@@ -85,7 +85,7 @@ if not "%base_game%"=="" (
   )
   if "%base_game%"=="copper_v1_11" (
     if not "%multigame_support%"=="true" (
-      echo Installing "%gamedir%" (which depends on "copper_v1_11") is not
+      echo Managing "%gamedir%" ^(which depends on "copper_v1_11"^) is not
       echo possible through quakestarter since multigame_support is false in
       echo your config.
       echo.
@@ -162,15 +162,30 @@ if not "%base_game%"=="" (
   if exist "%basedir%\%gamedir%" (
     echo If you launch "%gamedir%" outside of this installer,
     if "%base_game%"=="quoth" (
-      echo make sure to specify Quoth as the base game ^("-quoth" arg^).
+      echo make sure to specify Quoth as the base game. On the command line that means
+      echo using -quoth as shown above.
+      echo.
+    )
+    if "%base_game%"=="ad_v1_80p1final" (
+      echo make sure to specify ad_v1_80p1final as the base game. On the command line
+      echo that means putting -game "ad_v1_80p1final" BEFORE -game "%gamedir%"
+      echo as shown above.
+      echo.
+    )
+    if "%base_game%"=="copper_v1_11" (
+      echo make sure to specify copper_v1_11 as the base game. On the command line
+      echo that means putting -game "copper_v1_11" BEFORE -game "%gamedir%"
+      echo as shown above.
       echo.
     )
     if "%base_game%"=="hipnotic" (
-      echo make sure to specify missionpack 1 as the base game ^("-hipnotic" arg^).
+      echo make sure to specify missionpack 1 as the base game. On the command line
+      echo that means using -hipnotic as shown above.
       echo.
     )
     if "%base_game%"=="rogue" (
-      echo make sure to specify missionpack 2 as the base game ^("-rogue" arg^).
+      echo make sure to specify missionpack 2 as the base game. On the command line
+      echo that means using -rogue as shown above.
       echo.
     )
   )
