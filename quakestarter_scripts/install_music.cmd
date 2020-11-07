@@ -40,14 +40,14 @@ call :music_installed_check hipnotic
 call :music_installed_check rogue
 echo.
 echo Soundtrack files for main campaign or missionpacks:
-echo %id1_music_installed%  1: id1\music - original campaign
+echo %is_id1_music_installed%  1: id1\music - original campaign
 if exist "%basedir%\hipnotic" (
-  echo %hipnotic_music_installed%  2: hipnotic\music - Scourge of Armagon
+  echo %is_hipnotic_music_installed%  2: hipnotic\music - Scourge of Armagon
 ) else (
   echo       ^(missionpack 1 not present^)
 )
 if exist "%basedir%\rogue" (
-  echo %rogue_music_installed%  3: rogue\music - Dissolution of Eternity
+  echo %is_rogue_music_installed%  3: rogue\music - Dissolution of Eternity
 ) else (
   echo       ^(missionpack 2 not present^)
 )
@@ -77,9 +77,9 @@ REM functions used above
 
 :music_installed_check
 if exist "%basedir%\%1\music" (
-  set %1_music_installed=*
+  set is_%1_music_installed=*
 ) else (
-  set %1_music_installed= 
+  set is_%1_music_installed= 
 )
 goto :eof
 

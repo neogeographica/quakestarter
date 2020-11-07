@@ -62,20 +62,20 @@ call :installed_check xmasjam2019
 call :installed_check smej_1.13
 echo.
 echo Selected custom episodes/hubs released from 2016 through 2019:
-echo %dopa_installed%  1: dopa - Dimension of the Past ^(2016^)
-echo %gotshun-never-released_levels_installed%  2: gotshun-never-released_levels - The "lost" levels ^(2016^)
-echo %func_mapjam9_2_installed%  3: func_mapjam9_2 - Func Map Jam 9 - Contract Revoked / Knave theme ^(2017^)
-echo %qump_installed%  4: qump - Quake Upstart Mapping Project ^(2017^)
-echo %dm4jam_installed%  5: dm4jam - DM4 Jam ^(2018^)
-echo %hwjam_installed%  6: hwjam - Halloween Jam 2018 ^(2018^)
-echo %xmasjam2018_installed%  7: xmasjam2018 - Xmas Jam 2018 - 1024^^3 theme ^(2018^)
-echo %func_mapjamx_installed%  8: func_mapjamx - Func Map Jam X - Insomnia Theme ^(2019^)
-echo %udob_v1_1_installed%  9: udob_v1_1 - Underdark Overbright ^(2019^)
-echo %quoffee_installed% 10: quoffee - Coffee Quake ^(2019^)
-echo %sewerjam_installed% 11: sewerjam - Quake Sewer Jam ^(2019^)
-echo %hwjam2_installed% 12: hwjam2 - Halloween Jam 2 ^(2019^)
-echo %xmasjam2019_installed% 13: xmasjam2019 - Xmas Jam 2019 ^(2019^)
-echo %smej_1.13_installed% 14: smej_1.13 - Menetettyjen Valtakunta ^(Realm of the Lost^) ^(2019^)
+echo %is_dopa_installed%  1: dopa - Dimension of the Past ^(2016^)
+echo %is_gotshun-never-released_levels_installed%  2: gotshun-never-released_levels - The "lost" levels ^(2016^)
+echo %is_func_mapjam9_2_installed%  3: func_mapjam9_2 - Func Map Jam 9 - Contract Revoked / Knave theme ^(2017^)
+echo %is_qump_installed%  4: qump - Quake Upstart Mapping Project ^(2017^)
+echo %is_dm4jam_installed%  5: dm4jam - DM4 Jam ^(2018^)
+echo %is_hwjam_installed%  6: hwjam - Halloween Jam 2018 ^(2018^)
+echo %is_xmasjam2018_installed%  7: xmasjam2018 - Xmas Jam 2018 - 1024^^3 theme ^(2018^)
+echo %is_func_mapjamx_installed%  8: func_mapjamx - Func Map Jam X - Insomnia Theme ^(2019^)
+echo %is_udob_v1_1_installed%  9: udob_v1_1 - Underdark Overbright ^(2019^)
+echo %is_quoffee_installed% 10: quoffee - Coffee Quake ^(2019^)
+echo %is_sewerjam_installed% 11: sewerjam - Quake Sewer Jam ^(2019^)
+echo %is_hwjam2_installed% 12: hwjam2 - Halloween Jam 2 ^(2019^)
+echo %is_xmasjam2019_installed% 13: xmasjam2019 - Xmas Jam 2019 ^(2019^)
+echo %is_smej_1.13_installed% 14: smej_1.13 - Menetettyjen Valtakunta ^(Realm of the Lost^) ^(2019^)
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -188,8 +188,8 @@ REM functions used above
 
 :installed_check
 if exist "%basedir%\%1" (
-  set %1_installed=*
+  set is_%1_installed=*
 ) else (
-  set %1_installed= 
+  set is_%1_installed= 
 )
 goto :eof

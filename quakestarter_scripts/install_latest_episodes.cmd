@@ -53,11 +53,11 @@ call :installed_check eoe
 call :installed_check hwjam3
 echo.
 echo Selected custom episodes/hubs released in 2020:
-echo %ctsj_installed%  1: ctsj - Coppertone Summer Jam
-echo %dwellv1p2_installed%  2: dwellv1p2 - Dwell - Episode 1
-echo %ad_v1_80p1final_installed%  3: ad_v1_80p1final - Arcane Dimensions 1.81
-echo %eoe_installed%  4: eoe - Epochs of Enmity
-echo %hwjam3_installed%  5: hwjam3 - Halloween Jam 3
+echo %is_ctsj_installed%  1: ctsj - Coppertone Summer Jam
+echo %is_dwellv1p2_installed%  2: dwellv1p2 - Dwell - Episode 1
+echo %is_ad_v1_80p1final_installed%  3: ad_v1_80p1final - Arcane Dimensions 1.81
+echo %is_eoe_installed%  4: eoe - Epochs of Enmity
+echo %is_hwjam3_installed%  5: hwjam3 - Halloween Jam 3
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -105,8 +105,8 @@ REM functions used above
 
 :installed_check
 if exist "%basedir%\%1" (
-  set %1_installed=*
+  set is_%1_installed=*
 ) else (
-  set %1_installed= 
+  set is_%1_installed= 
 )
 goto :eof

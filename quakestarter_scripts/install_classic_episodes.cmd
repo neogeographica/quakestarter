@@ -56,11 +56,11 @@ call :installed_check zer
 call :installed_check descent
 echo.
 echo Selected custom episodes/hubs released before mid-2000:
-echo %prodigy_se_installed%  1: prodigy_se - Prodigy Special Edition ^(1997^)
-echo %bbelief_installed%  2: bbelief - Beyond Belief ^(1997^)
-echo %mexx9_installed%  3: mexx9 - Penumbra of Domination ^(1997^)
-echo %zer_installed%  4: zer - Zerstoerer ^(1997^)
-echo %descent_installed%  5: descent - ^(The Final^) Descent ^(2000^)
+echo %is_prodigy_se_installed%  1: prodigy_se - Prodigy Special Edition ^(1997^)
+echo %is_bbelief_installed%  2: bbelief - Beyond Belief ^(1997^)
+echo %is_mexx9_installed%  3: mexx9 - Penumbra of Domination ^(1997^)
+echo %is_zer_installed%  4: zer - Zerstoerer ^(1997^)
+echo %is_descent_installed%  5: descent - ^(The Final^) Descent ^(2000^)
 echo.
 echo Note that Nehahra is not included here because many Quake engines cannot
 echo run it. See https://www.quaddicted.com/reviews/nehahra.html
@@ -116,8 +116,8 @@ REM functions used above
 
 :installed_check
 if exist "%basedir%\%1" (
-  set %1_installed=*
+  set is_%1_installed=*
 ) else (
-  set %1_installed= 
+  set is_%1_installed= 
 )
 goto :eof

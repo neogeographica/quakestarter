@@ -60,7 +60,7 @@ echo %is_ad_paradise_installed%  3: ad_paradise - Paradise Sickness ^(2017^)
 echo %is_retrojam6_installed%  4: retrojam6 - Retro Jam 6 - Egyptian theme ^(2017^)
 echo %is_grim_rezipped_installed%  5: grim_rezipped - The Grim Outpost ^(2018^)
 echo %is_dm6rmx_installed%  6: dm6rmx - The Dark Portal ^(2018^)
-echo %is_x37_hcm1_installed%  7: 37_hcm1 - 37th Relic Retrieval ^(2019^)
+echo %is_37_hcm1_installed%  7: 37_hcm1 - 37th Relic Retrieval ^(2019^)
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:

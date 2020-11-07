@@ -64,22 +64,22 @@ call :installed_check func_mapjam5
 call :installed_check mapjam6
 echo.
 echo Selected custom episodes/hubs released from mid-2000 through 2015:
-echo %oum_installed%  1: oum - Operation: Urth Majik ^(2001^)
-echo %rapture_installed%  2: rapture - Rapture ^(2001^)
-echo %soe_full_installed%  3: soe_full - Soul of Evil ^(2002^)
-echo %contract_installed%  4: contract - Contract Revoked ^(2002^)
-echo %terra_installed%  5: terra - Terra ^(2005^)
-echo %chapters_installed%  6: chapters - Contract Revoked: The Lost Chapters ^(2005^)
-echo %travail_installed%  7: travail - Travail ^(2007^)
-echo %warpspasm_installed%  8: warpspasm - Warp Spasm ^(2007^)
-echo %rmx-pack_installed%  9: rmx-pack - Remix Map Pack ^(2008^)
-echo %nsoe2_installed% 10: nsoe2 - Soul of Evil: Indian Summer ^(2008^)
-echo %arcanum_installed% 11: arcanum - Arcanum ^(2011^)
-echo %dmc3_installed% 12: dmc3 - Deathmatch Classics Vol. 3 ^(2011^)
-echo %unforgiven_installed% 13: unforgiven - Unforgiven ^(2011^)
-echo %rrp_installed% 14: rrp - Rubicon Rumble Pack ^(2014^)
-echo %func_mapjam5_installed% 15: func_mapjam5 - Func Map Jam 5 - The Qonquer Map Jam ^(2015^)
-echo %mapjam6_installed% 16: mapjam6 - Func Map Jam 6 - Fire and Brimstone ^(2015^)
+echo %is_oum_installed%  1: oum - Operation: Urth Majik ^(2001^)
+echo %is_rapture_installed%  2: rapture - Rapture ^(2001^)
+echo %is_soe_full_installed%  3: soe_full - Soul of Evil ^(2002^)
+echo %is_contract_installed%  4: contract - Contract Revoked ^(2002^)
+echo %is_terra_installed%  5: terra - Terra ^(2005^)
+echo %is_chapters_installed%  6: chapters - Contract Revoked: The Lost Chapters ^(2005^)
+echo %is_travail_installed%  7: travail - Travail ^(2007^)
+echo %is_warpspasm_installed%  8: warpspasm - Warp Spasm ^(2007^)
+echo %is_rmx-pack_installed%  9: rmx-pack - Remix Map Pack ^(2008^)
+echo %is_nsoe2_installed% 10: nsoe2 - Soul of Evil: Indian Summer ^(2008^)
+echo %is_arcanum_installed% 11: arcanum - Arcanum ^(2011^)
+echo %is_dmc3_installed% 12: dmc3 - Deathmatch Classics Vol. 3 ^(2011^)
+echo %is_unforgiven_installed% 13: unforgiven - Unforgiven ^(2011^)
+echo %is_rrp_installed% 14: rrp - Rubicon Rumble Pack ^(2014^)
+echo %is_func_mapjam5_installed% 15: func_mapjam5 - Func Map Jam 5 - The Qonquer Map Jam ^(2015^)
+echo %is_mapjam6_installed% 16: mapjam6 - Func Map Jam 6 - Fire and Brimstone ^(2015^)
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -221,8 +221,8 @@ REM functions used above
 
 :installed_check
 if exist "%basedir%\%1" (
-  set %1_installed=*
+  set is_%1_installed=*
 ) else (
-  set %1_installed= 
+  set is_%1_installed= 
 )
 goto :eof

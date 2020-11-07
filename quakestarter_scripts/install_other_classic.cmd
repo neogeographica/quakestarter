@@ -58,17 +58,17 @@ call :installed_check kinn_marcher
 call :installed_check sm82
 echo.
 echo Selected other custom maps released through 2005:
-echo %mexx10_installed%  1: mexx10 - The Cassandra Calamity ^(1997^)
-echo %czg07_installed%  2: czg07 - Insomnia ^(2000^)
-echo %koohoo_installed%  3: koohoo - The Castle of Koohoo ^(2001^)
-echo %czg03_installed%  4: czg03 - Ceremonial Circles ^(2001^)
-echo %could_installed%  5: could - And All That Could Have Been ^(2003^)
-echo %gmsp3_installed%  6: gmsp3 - Day of the Lords ^(2003^)
-echo %ac_installed%  7: ac - Adamantine Cruelty ^(2004^)
-echo %e1m1rmx_installed%  8: e1m1rmx - The Slipgate Duplex ^(2004^)
-echo %menk_installed%  9: menk - Menkalinan ^(2004^)
-echo %kinn_marcher_installed% 10: kinn_marcher - The Marcher Fortress ^(2005^)
-echo %sm82_installed% 11: sm82 - Rubicondom ^(2005^)
+echo %is_mexx10_installed%  1: mexx10 - The Cassandra Calamity ^(1997^)
+echo %is_czg07_installed%  2: czg07 - Insomnia ^(2000^)
+echo %is_koohoo_installed%  3: koohoo - The Castle of Koohoo ^(2001^)
+echo %is_czg03_installed%  4: czg03 - Ceremonial Circles ^(2001^)
+echo %is_could_installed%  5: could - And All That Could Have Been ^(2003^)
+echo %is_gmsp3_installed%  6: gmsp3 - Day of the Lords ^(2003^)
+echo %is_ac_installed%  7: ac - Adamantine Cruelty ^(2004^)
+echo %is_e1m1rmx_installed%  8: e1m1rmx - The Slipgate Duplex ^(2004^)
+echo %is_menk_installed%  9: menk - Menkalinan ^(2004^)
+echo %is_kinn_marcher_installed% 10: kinn_marcher - The Marcher Fortress ^(2005^)
+echo %is_sm82_installed% 11: sm82 - Rubicondom ^(2005^)
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -183,8 +183,8 @@ REM functions used above
 
 :installed_check
 if exist "%basedir%\%1" (
-  set %1_installed=*
+  set is_%1_installed=*
 ) else (
-  set %1_installed= 
+  set is_%1_installed= 
 )
 goto :eof
