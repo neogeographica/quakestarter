@@ -65,6 +65,16 @@ REM then the whole mod will be uninstalled in that case.
 set rollback_on_failed_patch=true
 
 
+REM Sometimes releases can be removed from installer menus when a newer
+REM quakestarter release comes out -- because their rating has changed, or
+REM the inclusion criteria has changed, or the release has been superceded by
+REM a new version. Normally these releases are hidden from the menus if they
+REM are not currently installed, but setting force_show_legacies to true will
+REM show them all.
+
+set force_show_legacies=false
+
+
 REM This last option is rarely used, but it takes a bit of explaining. Most
 REM mods don't come with their own unique set of demo films for running an
 REM attract-mode loop at start time. However, a few mods do. So when

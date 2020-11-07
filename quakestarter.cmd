@@ -30,6 +30,9 @@ if exist "%mainpath%_quakestarter_cfg.cmd" (
   call "%mainpath%_quakestarter_cfg.cmd"
 )
 
+REM see if we want to show the "legacies" menu
+call "%scriptspath%install_legacies.cmd" check
+
 cls
 echo.
 echo Basic setup:
@@ -48,6 +51,11 @@ echo  8: The Age of Jams ^(2014-2019^)
 echo  9: Post-Quoth ^(after the first Quoth release; 2006-2013^)
 echo 10: Classic
 echo.
+if "%show_legacies_menu%"=="true" (
+  echo Select 99 to manage "legacy" releases that were in the installer menus of
+  echo previous versions of quakestarter but are no longer in this release.
+  echo.
+)
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
 echo.
@@ -91,6 +99,13 @@ goto :menu
 
 :10
 call "%scriptspath%install_other_classic.cmd"
+goto :menu
+
+:99
+if not "%show_legacies_menu%"=="true" (
+  goto :eof
+)
+call "%scriptspath%install_legacies.cmd"
 goto :menu
 
 
