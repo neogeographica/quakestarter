@@ -1,7 +1,7 @@
 @echo off
 
 REM Installer for maps that fit the following criteria:
-REM * released through 2005
+REM * released through late 2005 (until the first Quoth release)
 REM * Quaddicted editor rating "Excellent"
 REM * Quaddicted user rating 4.5 or better (normalized Bayesian average)
 
@@ -55,9 +55,10 @@ call :installed_check ac
 call :installed_check e1m1rmx
 call :installed_check menk
 call :installed_check kinn_marcher
+call :installed_check lunsp1
 call :installed_check sm82
 echo.
-echo Selected other custom maps released through 2005:
+echo Selected other custom maps released through late 2005:
 echo %is_mexx10_installed%  1: mexx10 - The Cassandra Calamity ^(1997^)
 echo %is_czg07_installed%  2: czg07 - Insomnia ^(2000^)
 echo %is_koohoo_installed%  3: koohoo - The Castle of Koohoo ^(2001^)
@@ -68,7 +69,8 @@ echo %is_ac_installed%  7: ac - Adamantine Cruelty ^(2004^)
 echo %is_e1m1rmx_installed%  8: e1m1rmx - The Slipgate Duplex ^(2004^)
 echo %is_menk_installed%  9: menk - Menkalinan ^(2004^)
 echo %is_kinn_marcher_installed% 10: kinn_marcher - The Marcher Fortress ^(2005^)
-echo %is_sm82_installed% 11: sm82 - Rubicondom ^(2005^)
+echo %is_lunsp1_installed% 11: lunsp1 - Concentric Devastation ^(2005^)
+echo %is_sm82_installed% 12: sm82 - Rubicondom ^(2005^)
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -173,6 +175,12 @@ pause
 goto :menu
 
 :11
+set start_map=lunsp1
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/lunsp1.zip
+pause
+goto :menu
+
+:12
 set start_map=sm82
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/sm82.zip
 pause
