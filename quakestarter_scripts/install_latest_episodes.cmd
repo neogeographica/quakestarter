@@ -87,6 +87,7 @@ pause
 goto :menu
 
 :4
+set patch_url=http://www.quaketastic.com/files/single_player/maps/eoem7_fix.zip
 set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/eoe.zip
 pause
