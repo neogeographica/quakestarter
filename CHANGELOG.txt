@@ -1,3 +1,46 @@
+**** v2.0.0 (Nov 2020)
+
+Before we get into the bullet-point changelist, a general note:
+
+[Quakespasm-Spiked](https://fte.triptohell.info/moodles/qss/) (QSS) is now the bundled Quake engine, rather than Mark V.
+
+Mark V is no longer in development and has issues on some new maps with performance or even being able to run the map at all. QSS is better on those fronts, and has added bonuses like multi-gamedir support, unlocked-framerates support, and no dependence on an old DirectX runtime. Plus optional particle and HUD features for Arcane Dimensions.
+
+One downside of QSS compared to Mark V is that its in-game menus are not as nice/useful. Another downside is that QSS is not compatible with some of the truly quirky older releases that Mark V supports; however the only one of those releases that was included in the Quakestarter menus was Nehahra. Losing Nehahra support is unfortunate, but on balance QSS is still the right choice for bundling with Quakestarter now.
+
+Of course even though QSS is now the bundled Quake engine, you will still be able to use Mark V or vkQuake or any other engine you prefer -- you'll just have to download and install that other Quake engine yourself. More about that below and in the docs.
+
+Because we can't depend on Mark V any longer, we can't use its features for downloading and installing mods. So that functionality has been moved into the installer scripts. One consequence of this: previously only the bundled Simple Quake Launcher 2 had a dependence on Microsoft .Net Framework version 4.5 or later, but now the installer scripts also depend on that. So we have well and truly left behind any support for Windows XP. (Another consequence is that downloads are now faster!)
+
+OK, let's get to the changelist.
+
+- As mentioned above, QSS is now bundled instead of Mark V. QSS is made up of several files; see qss-manifest.txt for a list.
+
+- The main script to run is now named "quakestarter.cmd" rather than "installer.bat".
+
+- Other files and folders have had name changes too, so if you are replacing an older version of Quakestarter you should generally just delete its files entirely (while leaving the rest of your Quake installation intact) and then put these new files in place. The docs about upgrading between Quakestarter versions have more details.
+
+- The soundtrack installer can now find and copy existing files from other Quake installations on your computer, much like the pak installer does. It can still also download soundtrack files from the net, as before.
+
+- The number of installable mods has increased from 58 to 75. This comes from adding 23 new installables and dropping 6 that no longer qualify or have been superceded.
+
+- Previously, recent releases had not been included in the installer menus because their ratings are still in flux. However that's now changed, with "The New Hotness" menus for recent highly-rated releases (with the understanding that they may later be dropped).
+
+- Mods dropped from the main installer menus can now still be accessed/played/managed if you like. See the docs about "legacy" installables. Behind the scenes I've also made several changes that will make it easier for me to put out updated versions of Quakestarter more quickly, and also make it easier for end-users to update from version to version. So it should be more acceptable to have more frequent changes to the set of installables.
+
+- The default configurations for many mods have been improved slightly. If you have one of these mods already installed, you probably don't need to worry about this if it is working fine for you, but the docs about upgrading between Quakestarter versions have more details.
+
+- You can create a config file to customize a few behaviors of Quakestarter now. One such customization is the name of the Quake program to run, if you don't want to use the bundled Quakespasm-Spiked.
+
+- You can also customize whether mods that include a unique "startdemos" loop will run that demo loop when the mod is launched. This will work regardless of whether your Quake engine typically plays a startdemos loop (as Quakespasm variants do not, by default).
+
+- See the docs for other behaviors you can customize.
+
+- autoexec.cfg.example (and the annotated version) have been rewritten to be less Mark V - centric, and to include discussion of host_maxfps.
+
+- In general the docs have been expanded, improved, and corrected.
+
+
 **** v1.10 (Mar 2020)
 
 - Updated with the rest of the qualifying releases from 2018. Among "Latest episodes", added: the DLC patch for DM4 Jam, Halloween Jam, and Xmas Jam. Among "Other highly-rated maps", added The Grim Outpost. Will probably add 2019 releases soon-ish but I want to make sure scores have had time to settle.
