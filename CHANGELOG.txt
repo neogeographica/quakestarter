@@ -18,6 +18,8 @@ OK, let's get to the changelist.
 
 - The main script to run is now named "quakestarter.cmd" rather than "installer.bat".
 
+- The "readmes" folder is now named "quakestarter_docs".
+
 - Other files and folders have had name changes too, so if you are replacing an older version of Quakestarter you should generally just delete its files entirely (while leaving the rest of your Quake installation intact) and then put these new files in place. The docs about upgrading between Quakestarter versions have more details.
 
 - The soundtrack installer can now find and copy existing files from other Quake installations on your computer, much like the pak installer does. It can still also download soundtrack files from the net, as before.

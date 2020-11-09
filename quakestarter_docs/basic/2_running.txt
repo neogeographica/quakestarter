@@ -13,7 +13,7 @@ After you have installed an item, or if you select an already-installed item, th
   n: do not launch
   0-3: launch and set a default initial skill
 
-If you choose "y" or just press Enter, the addon will be launched using a default skill value. Usually the default skill is 1 ("Normal"), but you may want to set up a different default skill for yourself as described in the "readmes\other_stuff\no_launcher.txt" file. Then you can always just hammer the Enter key to quickly launch stuff without needing to specifically enter a skill value. (If the addon comes with its own "start" map, it may also provide a way to select the skill value in-game.)
+If you choose "y" or just press Enter, the addon will be launched using a default skill value. Usually the default skill is 1 ("Normal"), but you may want to set up a different default skill for yourself as described in the "quakestarter_docs\other_stuff\no_launcher.txt" file. Then you can always just hammer the Enter key to quickly launch stuff without needing to specifically enter a skill value. (If the addon comes with its own "start" map, it may also provide a way to select the skill value in-game.)
 
 If the addon is a multi-map collection that doesn't have its own startmap, you will need to select the map you want to play after Quake has launched. Mark V's "Single Player" menu includes a "Levels" menu you can use to do this.
 
@@ -52,7 +52,7 @@ The launcher has other options that allow you to jump directly into individual m
 
 If you have an official missionpack installed and want to play that, you would choose that missionpack as the "Game" and choose "[Default]" for the "Mod".
 
-There may also be other occasions when you will need to choose special base game settings when playing custom content, as described in the maps_and_mods readmes.
+There may also be other occasions when you will need to choose special base game settings when playing custom content, as described in the maps_and_mods docs.
 
 
 **** Mark V autosaves
@@ -69,6 +69,6 @@ Some key things about Mark V autosaves:
 
 **** If Mark V isn't working for you...
 
-See the "readmes\other_stuff\quake_engines.txt" file to learn about other programs that can play Quake.
+See the "quakestarter_docs\other_stuff\quake_engines.txt" file to learn about other programs that can play Quake.
 
 Note that if the installer batch files are working for you, you may want to leave "mark_v.exe" in place even if you end up using some other Quake engine to actually play. The installer batch files make use of Mark V to perform downloads.

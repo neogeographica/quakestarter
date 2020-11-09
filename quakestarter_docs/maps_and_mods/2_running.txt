@@ -39,7 +39,7 @@ Check the addon's readme file to see if there are any special requirements for r
 
 Note that any of the content downloaded through the installer batch files in this package should be good to go with Mark V, without any additional work from you.
 
-However if you're playing content that was installed in some other way, and you're wondering what to do with any mod-recommended settings, see the "readmes\other_stuff\mod_requirements.txt" file.
+However if you're playing content that was installed in some other way, and you're wondering what to do with any mod-recommended settings, see the "quakestarter_docs\other_stuff\mod_requirements.txt" file.
 
 
 **** Launching

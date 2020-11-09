@@ -4,7 +4,7 @@ You need two game data files from Quake: "pak0.pak" and "pak1.pak". Put these fi
 
 Similarly, if you own and want to play the official Quake missionpacks, each of those also has its own "pak0.pak" file that goes into its own unique game folder (next to the "id1" folder): the "hipnotic" folder for missionpack 1, or "rogue" for missionpack 2.
 
-The first option in the menu of the "installer" batch file can usually locate and copy the necessary pak files if you already have Quake installed somewhere else on this same computer. If you're having difficulties finding your pak files, see "readmes\other_stuff\pak_files.txt".
+The first option in the menu of the "installer" batch file can usually locate and copy the necessary pak files if you already have Quake installed somewhere else on this same computer. If you're having difficulties finding your pak files, see "quakestarter_docs\other_stuff\pak_files.txt".
 
 
 **** DirectX 9 Runtime for Mark V
@@ -32,7 +32,7 @@ FYI the installer will run the Mark V engine in order to perform a download. You
 
 **** Additional singleplayer content
 
-Other choices in the installer menu can be used to download and play some of the many community-created singleplayer adventures. These choices, and ways to find all the rest of the available Quake singleplayer content, are discussed in the maps_and_mods readmes.
+Other choices in the installer menu can be used to download and play some of the many community-created singleplayer adventures. These choices, and ways to find all the rest of the available Quake singleplayer content, are discussed in the maps_and_mods docs.
 
 For starters you might want to download a couple of recent releases: "Dimension of the Past" and "Arcane Dimensions 1.7". The "Latest episodes" installer option will let you download and install these (among other things). You can then use the installer to launch directly into Quake to play that new content.
 

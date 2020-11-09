@@ -73,7 +73,7 @@ if not exist "%basedir%\rogue\pak0.pak" (
   echo.
 )
 if "%missing_anypak%"=="true" (
-  echo See the "readmes\other_stuff\pak_files.txt" file for more info about
+  echo See the "quakestarter_docs\other_stuff\pak_files.txt" file for more info about
   echo pak files and how to get them.
   echo.
 )
