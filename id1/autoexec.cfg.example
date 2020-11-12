@@ -34,17 +34,30 @@
 // 0 for uncapped framerate. Note that this is not advised in Mark V or the
 // original Quakespasm as physics issues will pop up at framerates over 72.
 // For Quakespasm-Spiked and several other Quake engines this is OK though.
-// Default depends on the Quake engine but is usually 72. Uncomment the
-// following line to set some other value.
 
+//   Default depends on the Quake engine but is usually 72. Uncomment the
+//   following line to set some other value.
 //host_maxfps 144
 
 
 // Set sv_aim to a value of 1 or more for no autoaim, or a value less than 1
 // for some vertical autoaim.
-// Default is 0.93. Uncomment the following line to set some other value.
 
+//   Default is 0.93. Uncomment the following line to set some other value.
 //sv_aim 1
+
+
+// Set crosshair to 1 to enable the crosshair and 0 to disable it.
+
+//   Default is 0. Uncomment the following line to set some other value.
+//crosshair 1
+
+
+// Set a scr_crosshairscale value from 1 to 10 to control the size of the
+// crosshair, including decimal values like 3.5.
+
+//   Default is 1. Uncomment the following line to set some other value.
+//scr_crosshairscale 2
 
 
 // Set gl_texturemode for amount of texture filtering and "pixely-ness".
@@ -57,46 +70,46 @@
 //   between mipmap levels.
 //   GL_LINEAR_MIPMAP_LINEAR for smoothed textures and smooth transitions
 //   between mipmap levels.
-// Default is GL_LINEAR_MIPMAP_LINEAR. Uncomment the following line to set
-// some other value.
 
+//   Default is GL_LINEAR_MIPMAP_LINEAR. Uncomment the following line to set
+//   some other value.
 //gl_texturemode GL_NEAREST_MIPMAP_LINEAR
 
 
 // Increase gl_texture_anisotropy for more texture clarity in some situations.
-// Default is 1. Uncomment the following line to set some other value.
 
+//   Default is 1. Uncomment the following line to set some other value.
 //gl_texture_anisotropy 8
 
 
 // Set r_viewmodel_quake to a value of 1 to make the position of the held
 // weapon's model be more like it is in WinQuake.
-// Default is 0. Uncomment the following line to set some other value.
 
+//   Default is 0. Uncomment the following line to set some other value.
 //r_viewmodel_quake 1
 
 
 // Set r_particles to 2 for square particles, 1 for round.
-// Default is 1. Uncomment the following line to set some other value.
 
+//   Default is 1. Uncomment the following line to set some other value.
 //r_particles 2
 
 
 // Set r_wateralpha to 1 for no liquids transparency, 0 for full liquids
 // transparency, or some decimal value in between. Note that the map itself
 // may force some other value.
-// Default is 0.5. Uncomment the following line to set some other value.
 
-//r_wateralpha 1
+//   Default is 0.5. Uncomment the following line to set some other value.
+//r_wateralpha 0.75
 
 
 // Set r_lerpmove to 0 for old jerky enemy animations, 1 for smoothed.
-// Default is 1. Uncomment the following line to set some other value.
 
+//   Default is 1. Uncomment the following line to set some other value.
 //r_lerpmove 0
 
 
 // Set r_lerpmodels to 0 for old jerky weapon animations, 1 for smoothed.
-// Default is 1. Uncomment the following line to set some other value.
 
+//   Default is 1. Uncomment the following line to set some other value.
 //r_lerpmodels 0

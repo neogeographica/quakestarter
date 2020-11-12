@@ -68,7 +68,7 @@ if not "%base_game%"=="" (
   if "%base_game%"=="ad_v1_80p1final" (
     if not "%multigame_support%"=="true" (
       echo Managing"%gamedir%" ^(which depends on "ad_v1_80p1final"^) is not
-      echo possible through quakestarter since multigame_support is false in
+      echo possible through Quakestarter since multigame_support is false in
       echo your config.
       echo.
       goto :eof
@@ -86,7 +86,7 @@ if not "%base_game%"=="" (
   if "%base_game%"=="copper_v1_11" (
     if not "%multigame_support%"=="true" (
       echo Managing "%gamedir%" ^(which depends on "copper_v1_11"^) is not
-      echo possible through quakestarter since multigame_support is false in
+      echo possible through Quakestarter since multigame_support is false in
       echo your config.
       echo.
       goto :eof

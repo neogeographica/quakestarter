@@ -1,0 +1,26 @@
+Launching addons with Quakestarter is as easy as selecting a choice from a menu, with as much of the complexity hidden as possible. However a few topics deserve more explanation:
+
+
+**** Skill selection
+
+After you have installed an addon from the Quakestarter menus, or if you select an already-installed item, Quakestarter will give you the option to play or uninstall it. The choices for playing look like this:
+
+  y: launch without explicitly setting a skill
+  n: do not launch
+  0-3: launch and set a default initial skill
+
+If you choose "y" or just press Enter, the addon will be launched using a default skill value. Usually the default skill is 1 ("Normal"), but you may want to set up a different default skill for yourself as described in the "quakestarter_docs\other_stuff\no_launcher.txt" doc. Then you can always just hammer the Enter key to quickly launch stuff without needing to specifically enter a skill value. (If the addon comes with its own "start" map, it may also provide a way to select the skill value in-game.)
+
+
+**** Example command line
+
+When you launch your choice, Quakestarter will print the command line arguments used to launch Quake in order to run that addon correctly. This can be a helpful example if you want to launch things outside of Quakestarter in the future.
+
+
+**** Collections with no startmap
+
+If an addon is a multi-map collection that doesn't have its own startmap, you will need to select the map you want to play after Quake has launched. Some Quake engines provide an in-game menu for map selection, but others do not (like Quakespasm-Spiked at the time of writing this doc), and in that case you'll need to use the Quake console.
+
+Once Quake is running, open the console with the "~" key, or on international keyboards typically whatever key is under ESC. Then use the "map" command to start a map, e.g. you would type "map jam2_mfx" and press Enter to run the jam2_mfx map.
+
+In most Quake engines you can use autocomplete to see what maps are available. Just type "map" followed by a space and then press the Tab key. You can also use the autocomplete feature to avoid having to type the entire name of the map.

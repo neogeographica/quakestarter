@@ -1,14 +1,14 @@
 The readme that comes with an addon may describe some required settings for successfully playing its content.
 
-Note that any of content downloaded through the installer batch files in this package should be good to go with Mark V. If you're just playing content installed in that way, then you can skip this file.
+Note that any of content installed through Quakestarter should be good to go. If you're just playing content installed in that way, then you can skip this file.
 
 If you're downloading and installing other stuff on your own though, keep a few things in mind:
 
-First, if the readme says that it requires Fitzquake or Quakespasm, the content should also work with Mark V.
+First, if the readme says that it requires Fitzquake, the content should also work with Quakespasm and Quakespasm-variant engines, as well as Mark V (and probably several other Quake engines too).
 
-If the readme says that it requires an engine that supports the "bsp2" map format, Mark V is OK with that too.
+If the readme says that it requires an engine that supports the "bsp2" map format, Quakespasm-ish engines are OK with that too, as are most currently-maintained Quake engines.
 
-Also with Mark V you shouldn't have to worry about any recommendations for increasing "heapsize", "zone", "winmem", or "max_edicts". Mark V defaults to sufficiently large values already for these (and many other) settings.
+Also with modern Quakespasm-ish engines you shouldn't have to worry about any recommendations for increasing "heapsize", "zone", "winmem", or "max_edicts". They now default to sufficiently large values already for these (and many other) settings.
 
 If other settings or Quake command-line arguments are recommended in the readme, there are various ways to handle those. The simplest way, without making any config files, is to use the "Command Line" box in the Simple Quake Launcher. Command-line arguments can be placed in there verbatim, and console settings can be placed there with a "+" in front of them. For example a recommended setting of 0.3 for r_wateralpha can be handled by adding "+r_wateralpha 0.3" into that box. You should add any such settings before the final "+map" portion of the command line, so that they will get applied before that first map is loaded.
 

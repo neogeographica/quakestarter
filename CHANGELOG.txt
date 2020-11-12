@@ -10,7 +10,7 @@ One downside of QSS compared to Mark V is that its in-game menus are not as nice
 
 Of course even though QSS is now the bundled Quake engine, you will still be able to use Mark V or vkQuake or any other engine you prefer -- you'll just have to download and install that other Quake engine yourself. More about that below and in the docs.
 
-Because we can't depend on Mark V any longer, we can't use its features for downloading and installing mods. So that functionality has been moved into the installer scripts. One consequence of this: previously only the bundled Simple Quake Launcher 2 had a dependence on Microsoft .Net Framework version 4.5 or later, but now the installer scripts also depend on that. So we have well and truly left behind any support for Windows XP. (Another consequence is that downloads are now faster!)
+Because we can't depend on Mark V any longer, we can't use its features for downloading and installing mods. So that functionality has been moved into the installer scripts. One consequence of this: previously only the bundled Simple Quake Launcher 2 had a dependence on Microsoft .Net Framework version 4.5 or later, but now the installer scripts also have that dependence. So we have well and truly left behind any support for Windows XP. (Another consequence is that downloads are now faster!)
 
 OK, let's get to the changelist.
 
@@ -20,7 +20,7 @@ OK, let's get to the changelist.
 
 - The "readmes" folder is now named "quakestarter_docs".
 
-- Other files and folders have had name changes too, so if you are replacing an older version of Quakestarter you should generally just delete its files entirely (while leaving the rest of your Quake installation intact) and then put these new files in place. The docs about upgrading between Quakestarter versions have more details.
+- Other files and folders have had name changes too, so if you are replacing an older version of Quakestarter you should generally just delete its files entirely (while leaving the rest of your Quake installation intact) and then put these new files in place. The doc about upgrading between Quakestarter versions (other_stuff\upgrading_quakestarter.txt) has more details.
 
 - The soundtrack installer can now find and copy existing files from other Quake installations on your computer, much like the pak installer does. It can still also download soundtrack files from the net, as before.
 
@@ -28,11 +28,11 @@ OK, let's get to the changelist.
 
 - Previously, recent releases had not been included in the installer menus because their ratings are still in flux. However that's now changed, with "The New Hotness" menus for recent highly-rated releases (with the understanding that they may later be dropped).
 
-- Mods dropped from the main installer menus can now still be accessed/played/managed if you like. See the docs about "legacy" installables. Behind the scenes I've also made several changes that will make it easier for me to put out updated versions of Quakestarter more quickly, and also make it easier for end-users to update from version to version. So it should be more acceptable to have more frequent changes to the set of installables.
+- Mods dropped from the main installer menus can now still be accessed/played/managed if you like. See the docs about "legacy" installables. Behind the scenes I've also made several changes that will make it easier for me to put out updated versions of Quakestarter more quickly, and also make it easier for users to update from version to version. So it should be more acceptable to have more frequent changes to the set of installables.
 
-- The default configurations for many mods have been improved slightly. If you have one of these mods already installed, you probably don't need to worry about this if it is working fine for you, but the docs about upgrading between Quakestarter versions have more details.
+- The default configurations for many mods have been improved slightly. If you have one of these mods already installed, you probably don't need to worry about this if it is working fine for you, but the doc about upgrading between Quakestarter versions (other_stuff\upgrading_quakestarter.txt) has more details.
 
-- You can create a config file to customize a few behaviors of Quakestarter now. One such customization is the name of the Quake program to run, if you don't want to use the bundled Quakespasm-Spiked.
+- You can create a config file to customize a few behaviors of Quakestarter now, as described in the other_stuff/advanced_quakestarter_cfg.txt doc. One such customization is the name of the Quake program to run, if you don't want to use the bundled Quakespasm-Spiked.
 
 - You can also customize whether mods that include a unique "startdemos" loop will run that demo loop when the mod is launched. This will work regardless of whether your Quake engine typically plays a startdemos loop (as Quakespasm variants do not, by default).
 
@@ -40,7 +40,7 @@ OK, let's get to the changelist.
 
 - autoexec.cfg.example (and the annotated version) have been rewritten to be less Mark V - centric, and to include discussion of host_maxfps.
 
-- In general the docs have been expanded, improved, and corrected.
+- In general the docs have been improved and corrected.
 
 
 **** v1.10 (Mar 2020)

@@ -1,0 +1,41 @@
+This doc is strictly about considerations for using Simple Quake Launcher 2 or a similar launcher.
+
+
+**** Game
+
+The "Game" label for this setting in Simple Quake Launcher 2 might be somewhat confusing because it does NOT refer to the "game directory" (mod folder), but rather to the basic set of content that any mod will then build on.
+
+Most addons just use "Quake" for the "Game" setting, indicating that they build on the original Quake campaign content. But in some cases an included readme file may tell you differently.
+
+A readme that mentions the "-hipnotic" command-line argument is an indicator that you should specify "MP1: Scourge of Armagon" as the "Game" in the launcher. A mention of "-rogue" is an indicator to specify "MP2: Dissolution of Eternity" as the "Game".
+
+Some addons may ask that you use missionpack 1 even if you don't have that missionpack installed. In that case, the mod doesn't use any assets from the missionpack, but it does use some missionpack-specific code inside your Quake engine.
+
+Some addons require using the mod Quoth as the base game. If you don't have Quoth you can get it from https://tomeofpreach.wordpress.com/quoth/ and install it into a mod folder named "quoth".
+
+Quoth is the "Game" to specify if a readme mentions using the "-quoth" command-line argument or generally talks about having a Quoth requirement. Even if the readme mentions both "-quoth" and "-hipnotic", then specifying just "Quoth" as the "Game" in the launcher is still the thing to do.
+
+
+**** Mod
+
+If the content is in its own separate mod folder -- which will always be the case for content installed through Quakestarter -- then use Simple Quake Launcher 2 to select that game folder as the "Mod" to launch. 
+
+Otherwise select the "[Default]" mod.
+
+
+**** Other requirements
+
+Check the addon's readme file to see if there are any special requirements for running it, or anything that you should know about new weapons or monsters.
+
+Note that any of the content downloaded through Quakestarter should be good to go, without any additional work from you.
+
+However if you're playing content that was installed in some other way, and you're wondering what to do with any mod-recommended settings, see the "quakestarter_docs\other_stuff\mod_requirements.txt" file.
+
+
+**** Launching
+
+Once you have the "Game" and "Mod" set, pick the map and skill setting you want to play, and launch.
+
+For custom episodes, Simple Quake Launcher 2 will often figure out the first map of the episode and select it by default. You can also check any included readme file to see what the first map should be.
+
+Some addons do not have a startmap or hub map, and are just a collection of individual maps. In that case you'll need to select and launch each map individually to play it.

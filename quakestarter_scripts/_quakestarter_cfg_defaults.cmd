@@ -53,7 +53,7 @@ set cleanup_soundtrack_archive=true
 REM Whether your Quake engine of choice supports multiple "-game" arguments
 REM on the command line. This is required for the way the install script
 REM handles some Arcane Dimensions and Copper releases. See the
-REM basic/3_configuration.txt readme file for more details.
+REM other_stuff/advanced_quakestarter_cfg.txt doc for more details.
 
 set multigame_support=true
 
@@ -66,7 +66,7 @@ set rollback_on_failed_patch=true
 
 
 REM Sometimes releases can be removed from installer menus when a newer
-REM quakestarter release comes out -- because their rating has changed, or
+REM Quakestarter release comes out -- because their rating has changed, or
 REM the inclusion criteria has changed, or the release has been superceded by
 REM a new version. Normally these releases are hidden from the menus if they
 REM are not currently installed, but setting force_show_legacies to true will
@@ -78,7 +78,7 @@ set force_show_legacies=false
 REM This last option is rarely used, but it takes a bit of explaining. Most
 REM mods don't come with their own unique set of demo films for running an
 REM attract-mode loop at start time. However, a few mods do. So when
-REM quakestarter installs a mod it follows these guidelines:
+REM Quakestarter installs a mod it follows these guidelines:
 REM
 REM  * If a mod doesn't come with its own unique demos, then don't configure a
 REM    startdemos loop. We don't want to see the same initial Quake demos that

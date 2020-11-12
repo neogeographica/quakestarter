@@ -53,7 +53,7 @@ echo 10: Classic
 echo.
 if "%show_legacies_menu%"=="true" (
   echo Select 99 to manage "legacy" releases that were in the installer menus of
-  echo previous versions of quakestarter but are no longer in this release.
+  echo previous versions of Quakestarter but are no longer in this release.
   echo.
 )
 set menu_choice=:eof
