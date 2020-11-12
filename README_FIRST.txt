@@ -17,7 +17,7 @@ The included version of Quakespasm-Spiked is the "0.93.2ish" version, 64-bit exe
 
 The included version of Simple Quake Launcher 2 is 2.4 from February 2018.
 
-As for this whole package of stuff, it's version 2.0.0 from November 2020. If you want to see what has changed since the previous releases, see "CHANGELOG.txt".
+As for this whole package of stuff, it's version 2.0.0 from November 2020. If you want to see what has changed since the previous releases, see "changelog.txt" in the "quakestarter_docs\other_stuff" folder.
 
 If you've been using a previous version of this package, see the "upgrading_quakestarter.txt" doc in the "quakestarter_docs\other_stuff" folder.
 
