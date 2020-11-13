@@ -68,7 +68,7 @@ def gen_release():
     qss_manifest = [ l + '\r\n' for l in qss_zip_contents ]
     qss_manifest.insert(0, "\r\n")
     qss_manifest.insert(0, "manifest of Quakespasm-Spiked files:\r\n")
-    with open(os.path.join(ROOT_FOLDER, "qss-manifest.txt"), 'w') as f:
+    with open(os.path.join(ROOT_FOLDER, "qss_manifest.txt"), 'w') as f:
         f.writelines(qss_manifest)
     timestamp = time.strftime("%B %Y")
     print("Quakestarter version: {}".format(VERSION))

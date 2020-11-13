@@ -14,7 +14,7 @@ Because we can't depend on Mark V any longer, we can't use its features for down
 
 OK, let's get to the changelist.
 
-- As mentioned above, QSS is now bundled instead of Mark V. QSS is made up of several files; see qss-manifest.txt for a list.
+- As mentioned above, QSS is now bundled instead of Mark V. QSS is made up of several files; see "qss_manifest.txt" for a list.
 
 - The main script to run is now named "quakestarter.cmd" rather than "installer.bat".
 

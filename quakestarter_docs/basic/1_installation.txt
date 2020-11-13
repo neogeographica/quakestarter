@@ -6,7 +6,7 @@ Another option however is to take the folders and files from inside this "Quake"
 
 If the existing Quake installation already contains an older version of Quakestarter, please see the "upgrading_quakestarter.txt" doc in the "quakestarter_docs\other_stuff" folder.
 
-If you are moving these items into some other already-customized Quake installation that contains a modern Quake engine, especially an existing Quakespasm or Quakespasm-Spiked, then the Quakespasm-Spiked files bundled in this package can conflict with those. This is a "power user" situation for people already familiar with modern Quake engines, so I won't try to make detailed recommendations here. One thing to note however is that the "qss-manifest.txt" file lists all of the Quakespasm-Spiked files in this package, which is helpful if you want to discard them.
+If you are moving these items into some other already-customized Quake installation that contains a modern Quake engine, especially an existing Quakespasm or Quakespasm-Spiked, then the Quakespasm-Spiked files bundled in this package can conflict with those. This is a "power user" situation for people already familiar with modern Quake engines, so I won't try to make detailed recommendations here. One thing to note however is that the "qss_manifest.txt" file lists all of the Quakespasm-Spiked files in this package, which is helpful if you want to discard them.
 
 
 **** .Net Framework
