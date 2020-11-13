@@ -162,9 +162,7 @@ goto :menu
 
 :12
 set start_map=start
-REM XXX Not sure what is up with quake.rc. Should we generate one, or put the
-REM usual AD one in mod_extras?
-REM XXX Also missing effectinfo.txt? ... anything else?
+set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/hwjam2.zip
 pause
 goto :menu
