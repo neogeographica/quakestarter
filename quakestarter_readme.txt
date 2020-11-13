@@ -13,11 +13,11 @@ You might want to keep an eye out in the future for newer releases of Quakespasm
 
 **** Version info
 
-The included version of Quakespasm-Spiked is the "0.93.2ish" version, 64-bit executable, from August 2020.
+The included version of Quakespasm-Spiked is ###QSS_VERSION###, 64-bit executable, from ###QSS_TIMESTAMP###.
 
-The included version of Simple Quake Launcher 2 is 2.4 from February 2018.
+The included version of Simple Quake Launcher 2 is ###SQL_VERSION### from ###SQL_TIMESTAMP###.
 
-As for this whole package of stuff, it's version 2.0.0 from November 2020. If you want to see what has changed since the previous releases, see "changelog.txt" in the "quakestarter_docs\other_stuff" folder.
+As for this whole package of stuff, it's version ###VERSION### from ###TIMESTAMP###. If you want to see what has changed since the previous releases, see "changelog.txt" in the "quakestarter_docs\other_stuff" folder.
 
 If you've been using a previous version of this package, see the "upgrading_quakestarter.txt" doc in the "quakestarter_docs\other_stuff" folder.
 
