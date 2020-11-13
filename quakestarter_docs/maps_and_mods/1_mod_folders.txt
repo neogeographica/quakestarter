@@ -1,11 +1,11 @@
 **** Installing
 
-Quake mods are "installed" by putting them into a folder next to the id1 folder. This folder can be called a game directory, or a mod folder, or something similar. Content in a mod folder can add to and even override/replace the original game content.
+Quake mods are "installed" by putting them into a folder next to the "id1" folder. This folder can be called a game directory, or a mod folder, or something similar. Content in a mod folder can add to and even override/replace the original game content.
 
 Addons that don't override any original content don't necessarily need to be put into their own mod folder. They can instead just have their files placed into the appropriate subfolders of "id1", or of the mod folder that they are intended for.
 
 Quakestarter however will always install an addon into its own folder, essentially making any addon a "mod". If you're curious about why it's handled that way here, there's a few reasons, including:
-- There's no chance of accidental conflicts with other downloaded stuff.
+- There's no chance of accidental conflicts with other addons.
 - If it's a multi-map set, it's easy to come back at some later time and find which maps belong to it.
 - It's easy to have config settings that are specific to the maps.
 - It's easy to keep track of which savegames are for which maps.

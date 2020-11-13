@@ -8,6 +8,8 @@ Other than the "Basic setup" section of the main menu (whose options were alread
 
   * Each choice in "Other highly-rated releases" leads to a list of single map releases or map collections that don't qualify as an episode or hub.
 
+(If you want to learn more about how these list items were selected, see the "selection_criteria.txt" doc in the "quakestarter_docs\other_stuff" folder.)
+
 Once you get to a page that shows a list of addons, each item in the list will have an asterisk in front of it if it is already installed. If you select an item that is not currently installed, Quakestarter will: install any missing dependencies, install the addon itself, add any necessary patches/fixes that have been released for the addon, and perhaps apply an initial recommended configuration for it.
 
 After that sequence has finished (or if you select an already-installed addon from the menu), Quakestarter will give you options that allow you to launch or uninstall the addon, or return to the previous menu. These options should be pretty self-explanatory, but they're covered in more detail in the "2_running_with_quakestarter.txt" doc in the "quakestarter_docs\maps_and_mods" folder.

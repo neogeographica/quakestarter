@@ -19,9 +19,11 @@ As mentioned in the "1_mod_folders.txt" doc in the "quakestarter_docs\maps_and_m
 
 For addons that only build on the original Quake campaign content, that's simple enough to deal with. For addons that depend on the official missionpacks, Quake has always supported command-line options for expressing those dependencies (i.e. "-hipnotic" or "-rogue" for missionpack 1 or 2 respectively). And for addons that build on the Quoth mod, modern Quake engines have long supported the "-quoth" argument to express that dependency.
 
-For addons that build on mods other than Quoth... it's not always been quite as easy to represent that situation. Fortunately, modern Quake engines like FTE, Quakespasm-Spiked, vkQuake (version 1.05.0 and later), and DarkPlaces support activating a list of mod folders rather than just one, with each folder in the list building on the previous.
+For addons that build on mods other than Quoth... it's not always been quite as easy to represent that situation. Fortunately, modern Quake engines like Quakespasm-Spiked, vkQuake (version 1.05.0 and later), FTE, and DarkPlaces support activating a list of mod folders rather than just one, with each folder in the list building on the previous.
 
-Quakestarter relies on this feature to support installing and launching addons that depend on the Arcane Dimensions or Copper mods. If you are using a Quake engine that does NOT have this feature, like original Quakespasm or Mark V, then your "_quakestarter_cfg.cmd" file needs to have this line in it:
+Quakestarter relies on this feature to support installing and launching addons that depend on the Arcane Dimensions or Copper mods. (This doesn't include mods that carry their own copy of the AD or Copper mod; it means simple map releases that are meant to be played with AD or Copper.)
+
+If you are using a Quake engine that does NOT have this feature, like original Quakespasm or Mark V, then your "_quakestarter_cfg.cmd" file needs to have this line in it:
     set multigame_support=false
 
 This will let Quakestarter know which addons it cannot work with.

@@ -1,5 +1,7 @@
 This doc is strictly about considerations for using Simple Quake Launcher 2 or a similar launcher.
 
+One general thing to keep in mind is that the box at the bottom of the launcher shows the Quake-launching command line that is being constructed by the various choices you make. You can compare this against the command line shown when Quakestarter launches the same mod, to see if the right thing is being done.
+
 
 **** Game
 
@@ -11,16 +13,35 @@ A readme that mentions the "-hipnotic" command-line argument is an indicator tha
 
 Some addons may ask that you use missionpack 1 even if you don't have that missionpack installed. In that case, the mod doesn't use any assets from the missionpack, but it does use some missionpack-specific code inside your Quake engine.
 
-Some addons require using the mod Quoth as the base game. If you don't have Quoth you can get it from https://tomeofpreach.wordpress.com/quoth/ and install it into a mod folder named "quoth".
+Some addons require using the mod Quoth as the base game. If you don't have Quoth you can get it from https://tomeofpreach.wordpress.com/quoth/ and install it into a mod folder named "quoth". Quoth is the "Game" to specify in the launcher if a readme mentions using the "-quoth" command-line argument or generally talks about having a Quoth requirement.
 
-Quoth is the "Game" to specify if a readme mentions using the "-quoth" command-line argument or generally talks about having a Quoth requirement. Even if the readme mentions both "-quoth" and "-hipnotic", then specifying just "Quoth" as the "Game" in the launcher is still the thing to do.
+Even if the readme mentions both "-quoth" and "-hipnotic", then specifying just "Quoth" as the "Game" in the launcher is still the thing to do.
 
 
 **** Mod
 
-If the content is in its own separate mod folder -- which will always be the case for content installed through Quakestarter -- then use Simple Quake Launcher 2 to select that game folder as the "Mod" to launch. 
+If the content is in its own separate mod folder -- which will always be the case for content installed through Quakestarter -- then use Simple Quake Launcher 2 to select that game folder as the "Mod" to launch.
 
 Otherwise select the "[Default]" mod.
+
+
+**** Mod dependencies
+
+If the mod is in its own folder but it builds on another mod, for example a map release that depends on Arcane Dimensions or Copper, then you will need to do one more thing. This doesn't include maps/mods that depend on Quoth or an official missionpack; those cases were already covered by the Game setting. This also doesn't include mods that carry their own copy of the AD or Copper mod; it means pure map releases that are meant to be played with AD or Copper. 
+
+So for example let's look at the Underdark Overbright episode, which must be run using Copper. If this is installed into its own mod folder "udob_v1_1", seperate from the Copper folder, how do you correctly launch it?
+
+Unfortunately the launcher doesn't have a nice simple button or dropdown for this part. In the box at the bottom of the launcher that shows the Quake command line that is being built, there are some gray sections. Click inside the first of these gray sections so you can type a "-game" argument that specifies the other mod that this depends on.
+
+    - If this mod depends on Arcane Dimensions, and Arcane Dimensions is installed into the "ad_v1_80p1final" folder, then you would type the following into that first gray box: -game ad_v1_80p1final
+
+    - If this mod depends on Copper, and Copper is installed into the "copper_v1_11" folder, then you would type the following into that first gray box: -game copper_v1_11
+
+Back to our example then: for launching the "udob_v1_1" mod which depends on Copper, after you have typed in the necessary additional "-game" argument then the entire displayed Quake command line would look like this: quakespasm-spiked-win64.exe -game copper_v1_11 -game udob_v1_1 +map start
+
+Note that this arrangement only works with Quake engines that support multiple "-game" arguments on the command line; this includes Quakespasm-Spiked, vkQuake (version 1.05.0 and later), FTE, and DarkPlaces. It will not for example work with the original Quakespasm or with Mark V. If you are using an engine that doesn't support multiple "-game" arguments, then to play such content you will need to just dump it into the Arcane Dimensions or Copper mod folder, so that you can then load that folder as the single mod.
+
+One reason it's necessary to mention this here is because addons installed by Quakestarter will always follow the every-release-in-its-own-folder method. The reasons for that are covered in the "1_mod_folders.txt" doc.
 
 
 **** Other requirements
