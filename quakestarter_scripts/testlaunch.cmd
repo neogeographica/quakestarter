@@ -19,7 +19,7 @@ if %errorlevel% equ 0 (
 )
 popd
 if "%basedir%"=="" (
-  echo Couldn't find the id1 folder in this script's folder or parent folder.
+  echo Couldn't find the id1 folder.
   pause
   goto :eof
 )

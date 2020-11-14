@@ -167,13 +167,13 @@ if not "%base_game%"=="" (
       echo.
     )
     if "%base_game%"=="ad_v1_80p1final" (
-      echo make sure to specify ad_v1_80p1final as the base game. On the command line
+      echo make sure to specify ad_v1_80p1final as a base mod. On the command line
       echo that means putting -game "ad_v1_80p1final" BEFORE -game "%gamedir%"
       echo as shown above.
       echo.
     )
     if "%base_game%"=="copper_v1_11" (
-      echo make sure to specify copper_v1_11 as the base game. On the command line
+      echo make sure to specify copper_v1_11 as a base mod. On the command line
       echo that means putting -game "copper_v1_11" BEFORE -game "%gamedir%"
       echo as shown above.
       echo.
