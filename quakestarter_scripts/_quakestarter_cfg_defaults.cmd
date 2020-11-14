@@ -1,10 +1,10 @@
-REM These are the default settings used by the installer scripts. If you want
-REM to change any of these values, create another file called
-REM "_quakestarter_cfg.cmd" IN THE SAME FOLDER AS QUAKESTARTER.CMD and put your
-REM custom settings in that file.
+REM These are the default settings used by the Quakestarter scripts. If you
+REM want to change any of these values, create another file called
+REM "_quakestarter_cfg.cmd" IN THE SAME FOLDER AS QUAKESTARTER.CMD and put
+REM your custom settings in that file.
 
 REM Changing this file here is not recommended, since changes to this file
-REM might get lost when unzipping a later release of the package.
+REM might get lost when upgrading to a later release of the package.
 
 
 REM The name of the Quake engine executable that will be used to play when
@@ -24,13 +24,13 @@ set download_subdir=quakestarter_downloads
 
 REM This is the subfolder path (within your Quake folder) where patch zipfiles
 REM will be downloaded and cached. If your download_subdir is being shared
-REM with Mark V or Quake Injector then you probably want to point this to a
+REM with Mark V or Quake Injector then you might want to point this to a
 REM different subfolder. Otherwise it can be the same as for download_subdir.
 
 set patch_download_subdir=quakestarter_downloads
 
 
-REM Whether to delete zipfiles for mods and mod patches after downloading them.
+REM Whether to delete zipfiles for mods and patches after downloading them.
 REM (Does not apply to soundtrack zipfiles; see below.) If you set this to
 REM false, they will take up disk space, but then you can quickly reinstall
 REM something without having to download it again. You may also want to set
@@ -52,8 +52,9 @@ set cleanup_soundtrack_archive=true
 
 REM Whether your Quake engine of choice supports multiple "-game" arguments
 REM on the command line. This is required for the way the install script
-REM handles some Arcane Dimensions and Copper releases. See the
-REM other_stuff/advanced_quakestarter_cfg.txt doc for more details.
+REM handles some Arcane Dimensions and Copper releases. For details, see the
+REM mod_requirements.txt and advanced_quakestarter_cfg.txt docs in the
+REM quakestarter_docs\other_stuff folder.
 
 set multigame_support=true
 
@@ -68,9 +69,9 @@ set rollback_on_failed_patch=true
 REM Sometimes releases can be removed from installer menus when a newer
 REM Quakestarter release comes out -- because their rating has changed, or
 REM the inclusion criteria has changed, or the release has been superceded by
-REM a new version. Normally these releases are hidden from the menus if they
-REM are not currently installed, but setting force_show_legacies to true will
-REM show them all.
+REM a new version. Normally these "legacy" releases are hidden from the menus
+REM if they are not currently installed, but setting force_show_legacies to
+REM true will show them all.
 
 set force_show_legacies=false
 
@@ -92,15 +93,15 @@ REM startdemos and IF it begins with a map named "start", then this option
 REM comes into play. You can set play_unique_startdemos true or false, with
 REM the following results:
 REM
-REM   true  : Always play the startdemos loop when such a mod is launched. To
+REM   true  : Always run the startdemos loop when such a mod is launched. To
 REM           start playing you will need to start a new singleplayer game
 REM           from the menu (or load a savegame).
-REM   false : Never play a startdemos loop; immediately load the start map
+REM   false : Never run a startdemos loop; immediately load the start map
 REM           and begin playing the mod.
 REM
 REM Note 1: The true setting will work even with Quakespasm-style engines
-REM         that normally don't play the startdemos loop.
+REM         that normally don't run the startdemos loop.
 REM Note 2: The false setting may be ignored for a mod that was installed
-REM         manually or using a pre-2.0 version of quakestarter.
+REM         manually or using a pre-2.0 version of Quakestarter.
 
 set play_unique_startdemos=true

@@ -1,4 +1,4 @@
-**** v2.0.0 (Nov 2020)
+**** v2.0.0-RC1 (Nov 2020)
 
 Before we get into the bullet-point changelist, a general note:
 
@@ -8,7 +8,7 @@ Mark V is no longer in development and has issues on some new maps with performa
 
 One downside of QSS compared to Mark V is that its in-game menus are not as nice/useful. Another downside is that QSS is not compatible with some of the truly quirky older releases that Mark V supports; however the only one of those releases that was included in the Quakestarter menus was Nehahra. Losing Nehahra support is unfortunate, but on balance QSS is still the right choice for bundling with Quakestarter now.
 
-Of course even though QSS is now the bundled Quake engine, you will still be able to use Mark V or vkQuake or any other engine you prefer -- you'll just have to download and install that other Quake engine yourself. More about that below and in the docs.
+Of course even though QSS is now the bundled Quake engine, you will still be able to use Mark V or vkQuake or any other engine you prefer -- you'll just have to download and install that other Quake engine yourself, then configure Quakestarter to use it. More about that below and in the docs.
 
 Because we can't depend on Mark V any longer, we can't use its features for downloading and installing mods. So that functionality has been moved into the installer scripts. One consequence of this: previously only the bundled Simple Quake Launcher 2 had a dependence on Microsoft .Net Framework version 4.5 or later, but now the installer scripts also have that dependence. So we have well and truly left behind any support for Windows XP. (Another consequence is that downloads are now faster!)
 

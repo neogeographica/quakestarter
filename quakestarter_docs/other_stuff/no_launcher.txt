@@ -1,6 +1,6 @@
 **** Launching without a launcher
 
-If you don't have or want to use a launcher, the main things you'll need to know are the name of the game (mod) folder that you want to activate (if any), the name of the map you want to play, and whether the map/mod requires a base game like Quoth or a missionpack. The maps_and_mods docs describe how to find out if there is a base game requirement.
+If you don't have or want to use a launcher, the main things you'll need to know are the name of the game (mod) folder that you want to activate (if any), the name of the map you want to play, and whether the map/mod requires Quoth or a missionpack. The "3_running_with_sql2.txt" doc in the "quakestarter_docs\maps_and_mods" folder goes into more detail about how to interpret what a readme says about such dependencies.
 
 When you know those things, you can handle all launcher-type activities from within the Quake menus and console, in most Quake engines.
 
@@ -14,27 +14,32 @@ To open the Quake console, use the key under the ESC key on your keyboard (for t
 This readme will just mention a few console commands. If you're curious to learn more, much of this guide is relevant: http://steamcommunity.com/sharedfiles/filedetails/?id=120426294
 
 
-**** Setting the Base Game and Mod
+**** Setting the mod folder(s) and/or missionpack
 
 If the map you want to run is just a .bsp file in the "id1\maps" folder, skip this section. That's the normal/default map location and doesn't involve any mod code.
 
-Otherwise though, you'll need to specify the mod folder to activate. The map/mod may also have a base game requirement (as specified in its readme).
+Otherwise though, you'll need to specify the mod folder(s) to activate. The map/mod may also have a dependency on Quoth or an official missionpack.
 
 You specify these things using the "game" command in the Quake console.
 
-If the folder containing the addon content is named "foo" and doesn't require a special base game, then you would activate it with this command:
+If the folder containing the addon content is named "foo" and doesn't depend on any special game content, then you would just activate it with this command:
     game foo
 
-If the folder is named "foo" and requires Quoth as a base game, then you would activate it with this command:
+If the folder is named "foo" and requires Quoth, then you would activate it with this command:
     game foo -quoth
 
-If the folder is named "foo" and requires missionpack 1 as a base game, then you would activate it with this command:
+If the folder is named "foo" and requires missionpack 1, then you would activate it with this command:
     game foo -hipnotic
 
-If the folder is named "foo" and requires missionpack 2 as a base game, then you would activate it with this command:
+If the folder is named "foo" and requires missionpack 2, then you would activate it with this command:
     game foo -rogue
 
-(If you're using a Quakespasm-variant engine, that's all there is to it. Otherwise see the section about quake.rc at the end of this doc.)
+If the folder depends on another non-Quoth non-missionpack mod folder, as describe in the "3_running_with_sql2.txt" doc in the "quakestarter_docs\maps_and_mods" folder, you can add that dependency as the first argument. For example to run "udob_v1_1" that depends on "copper_v1_11", you would use the command:
+    game copper_v1_11 udob_v1_1
+
+If you get an error from that last form of the command, then your Quake engine does not support activating multiple mod folders.
+
+Once you've executed the "game" command, if you see the message "execing quake.rc" appear in the console, you're ready to play. (This should be the case with any recent Quakespasm-variant engine.) Otherwise see the "quake_rc.txt" doc for some more necessary details.
 
 
 **** Setting difficulty
@@ -52,19 +57,4 @@ If you don't have this setting in your autoexec.cfg, or if you do but you want t
 Some Quake engines provide an in-game menu that you can use to choose the map. However any Quake engine will also let you select a map using the console. You'll need to know the map filename. If for example the filename of the map you want to play is "whatsit.bsp", you would use the console command:
     map whatsit
 
-
-**** What's this about "quake.rc" then?
-
-Here we get into more esoteric stuff that you won't need to know about if using a reasonably recent version of Quakespasm or a variant (like Quakespasm-Spiked and vkQuake).
-
-"quake.rc" is sort of a master config file included among the original Quake gamedata. It executes some other config files, including "autoexec.cfg" if that exists, and also can start playing the attract-mode demos.
-
-The files in a mod release may contain a new different "quake.rc" that sets some console values, creates new console commands, or does other things. Or the mod might not have a new "quake.rc", but it might have new versions of the OTHER config scripts that get executed when you execute "quake.rc".
-
-(If you want a lot more discussion about "quake.rc", see https://tomeofpreach.wordpress.com/2013/09/05/quake-rc-and-being-a-good-citizen/ )
-
-When you start up Quake, it will execute "quake.rc". This includes the case of starting up Quake with the "-game" command-line argument to make it immediately switch to a particular mod folder. So in original Quake (before the "game" console command was added) mods were created under the expectation that "quake.rc" would be run when a mod was activated. Some mods rely on this behavior. Quakestarter also will in some cases put "quake.rc" files into mod folders, customized to help apply mod-recommended settings in a way that does not override anything you might have in your "id1\autoexec.cfg".
-
-So executing "quake.rc" when you activate a mod folder is generally good. Quakespasm-ish engines will indeed execute "quake.rc" when you switch to a mod folder using the "game" console command. For various reasons though, some other engines (such as Mark V) will not. You can see in the console whether this "exec quake.rc" command is being done automatically when the mod folder is activated.
-
-If your Quake engine doesn't execute "quake.rc" for you, you can do it yourself by just entering "exec quake.rc" in the console.
+In most Quake engines you can use autocomplete to see what maps are available. Just type "map" followed by a space and then press the Tab key. You can also use the autocomplete feature to avoid having to type the entire name of the map.

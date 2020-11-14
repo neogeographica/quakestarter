@@ -2,7 +2,7 @@
 
 This package is one way to get going with the "state of the art" in Quake singleplayer. It's meant to be a convenient bundle of useful tools and explanations. The tools included in here are:
 
-- A "quakestarter.cmd" script to help set up the Quake game data files and soundtrack, and to help install/play/manage some of the many custom singleplayer addons for Quake. If you don't show file extensions then it will just look like "quakestarter". We'll refer to this script as Quakestarter throughout these docs.
+- The "quakestarter.cmd" script. This provides a menu-driven experience to help set up the Quake game data files and soundtrack, and to help install/play/manage some of the many custom singleplayer addons for Quake. (If you don't show file extensions then it will just look like "quakestarter".) We'll refer to this script as Quakestarter throughout these docs.
 
 - Simple Quake Launcher 2 by "MaxEd", from https://github.com/m-x-d/Simple-Quake-Launcher-2/releases/latest . This is a front-end for running Quake which can be helpful when you explore beyond the set of addons that Quakestarter supports.
 
@@ -47,9 +47,9 @@ If you're a Quake veteran that's probably all you need to know.
 
 If those steps aren't clear, or if you just want more details, have a look at the docs in the "quakestarter_docs\basic" folder for explanations.
 
-When you want even more things to play, check out the docs in the "quakestarter_docs\maps_and_mods" folder.
+When you want even more things to play, and more details about how to play maps/mods outside of Quakestarter, check out the docs in the "quakestarter_docs\maps_and_mods" folder.
 
-The tools included in this package are for Windows users, but much of the info will also apply to playing Quake on macOS or Linux. See the "quakestarter_docs\other_stuff\not_windows.txt" doc for some specific pointers.
+The tools included in this package are for Windows users, but much of the info will also apply to playing Quake on macOS or Linux. See the "not_windows.txt" doc in the "quakestarter_docs\other_stuff" folder for some specific pointers.
 
 The other docs in the "quakestarter_docs\other_stuff" folder are a little more specialized and you might not need to bother with them. You'll see that they're referenced from other docs in a few spots, or you can just have a look at them if you're curious.
 

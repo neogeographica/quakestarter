@@ -13,6 +13,8 @@ Use a text editor to open the "autoexec-cfg-example-annotated.txt" file inside t
 
 (Don't just rename the "autoexec-cfg-example-annotated.txt" file for this purpose, as the extra comments in that file bring it close to the maximum config file size that the original Quake engines can handle.)
 
+A summary of what you can do with the settings shown in those files: unlock a higher framerate, disable autoaim, get a crosshair, configure "pixely textures", adjust weapon position to be more "authentic", configure old-style square particles, change the amount of water transparency, and/or revert to old-style jerky animations.
+
 When you're editing your "autoexec.cfg", remove the doubleslash from in front of a setting to "uncomment" that line and activate the setting. You can also change the value for the setting.
 
 Several other settings are available, beyond the ones described in that file. You can also keybind other actions beyond what the menus allow -- for example if you want to have a special key for selecting the rocket launcher. There's a few ways you can edit these other options, including changing them interactively using the Quake console or by editing config files. This readme won't get into a lot of detail about that process; if you're interested you can check out the introductory sections of this Steam guide: http://steamcommunity.com/sharedfiles/filedetails/?id=120426294
