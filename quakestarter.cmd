@@ -31,7 +31,7 @@ if exist "%mainpath%_quakestarter_cfg.cmd" (
 )
 
 REM see if we want to show the "legacies" menu
-call "%scriptspath%install_legacies.cmd" check
+call "%scriptspath%legacies.cmd" check
 
 cls
 echo.
@@ -63,11 +63,11 @@ echo.
 goto %menu_choice%
 
 :1
-call "%scriptspath%install_pakfiles.cmd"
+call "%scriptspath%pakfiles.cmd"
 goto :menu
 
 :2
-call "%scriptspath%install_music.cmd"
+call "%scriptspath%soundtrack.cmd"
 goto :menu
 
 :3
@@ -75,42 +75,42 @@ call "%scriptspath%testlaunch.cmd"
 goto :menu
 
 :4
-call "%scriptspath%install_latest_episodes.cmd"
+call "%scriptspath%episodes_latest.cmd"
 goto :menu
 
 :5
-call "%scriptspath%install_post_ad_episodes.cmd"
+call "%scriptspath%episodes_post_ad.cmd"
 goto :menu
 
 :6
-call "%scriptspath%install_modern_episodes.cmd"
+call "%scriptspath%episodes_modern.cmd"
 goto :menu
 
 :7
-call "%scriptspath%install_classic_episodes.cmd"
+call "%scriptspath%episodes_classic.cmd"
 goto :menu
 
 :8
-call "%scriptspath%install_other_latest.cmd"
+call "%scriptspath%other_latest.cmd"
 goto :menu
 
 :9
-call "%scriptspath%install_other_aoj.cmd"
+call "%scriptspath%other_aoj.cmd"
 goto :menu
 
 :10
-call "%scriptspath%install_other_post_quoth.cmd"
+call "%scriptspath%other_post_quoth.cmd"
 goto :menu
 
 :11
-call "%scriptspath%install_other_classic.cmd"
+call "%scriptspath%other_classic.cmd"
 goto :menu
 
 :99
 if not "%show_legacies_menu%"=="true" (
   goto :eof
 )
-call "%scriptspath%install_legacies.cmd"
+call "%scriptspath%legacies.cmd"
 goto :menu
 
 

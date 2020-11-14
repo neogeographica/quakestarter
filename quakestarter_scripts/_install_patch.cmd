@@ -1,5 +1,5 @@
 REM Helper "subroutine" script to install a patch for a mod.
-REM Used by _handle_mod_choice.cmd and (special case) install_music.cmd.
+REM Used by _handle_mod_choice.cmd and (special case) soundtrack.cmd.
 
 set patch_success=false
 
