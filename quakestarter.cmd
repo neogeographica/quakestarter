@@ -38,18 +38,19 @@ echo.
 echo Basic setup:
 echo  1: Find ^& copy pak files ^(game data^) on this computer
 echo  2: Find soundtrack music files on this computer or download
+echo  3: Test-launch unmodified Quake
 echo.
 echo Additional episodes/hubs:
-echo  3: The New Hotness ^(2020; ratings in flux^)
-echo  4: Post-AD ^(after the first Arcane Dimensions release; 2016-2019^)
-echo  5: Modern ^(after Nehahra; 2000-2015^)
-echo  6: Classic
+echo  4: The New Hotness ^(2020; ratings in flux^)
+echo  5: Post-AD ^(after the first Arcane Dimensions release; 2016-2019^)
+echo  6: Modern ^(after Nehahra; 2000-2015^)
+echo  7: Classic
 echo.
 echo Other highly-rated releases:
-echo  7: The New Hotness ^(2020; ratings in flux^)
-echo  8: The Age of Jams ^(2014-2019^)
-echo  9: Post-Quoth ^(after the first Quoth release; 2006-2013^)
-echo 10: Classic
+echo  8: The New Hotness ^(2020; ratings in flux^)
+echo  9: The Age of Jams ^(2014-2019^)
+echo 10: Post-Quoth ^(after the first Quoth release; 2006-2013^)
+echo 11: Classic
 echo.
 if "%show_legacies_menu%"=="true" (
   echo Select 99 to manage "legacy" releases that were in the installer menus of
@@ -70,34 +71,38 @@ call "%scriptspath%install_music.cmd"
 goto :menu
 
 :3
-call "%scriptspath%install_latest_episodes.cmd"
+call "%scriptspath%testlaunch.cmd"
 goto :menu
 
 :4
-call "%scriptspath%install_post_ad_episodes.cmd"
+call "%scriptspath%install_latest_episodes.cmd"
 goto :menu
 
 :5
-call "%scriptspath%install_modern_episodes.cmd"
+call "%scriptspath%install_post_ad_episodes.cmd"
 goto :menu
 
 :6
-call "%scriptspath%install_classic_episodes.cmd"
+call "%scriptspath%install_modern_episodes.cmd"
 goto :menu
 
 :7
-call "%scriptspath%install_other_latest.cmd"
+call "%scriptspath%install_classic_episodes.cmd"
 goto :menu
 
 :8
-call "%scriptspath%install_other_aoj.cmd"
+call "%scriptspath%install_other_latest.cmd"
 goto :menu
 
 :9
-call "%scriptspath%install_other_post_quoth.cmd"
+call "%scriptspath%install_other_aoj.cmd"
 goto :menu
 
 :10
+call "%scriptspath%install_other_post_quoth.cmd"
+goto :menu
+
+:11
 call "%scriptspath%install_other_classic.cmd"
 goto :menu
 

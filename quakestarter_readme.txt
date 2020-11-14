@@ -34,11 +34,11 @@ Things to do:
 
 - If you're starting a new Quake installation from scratch, you need to move or copy your "pak0.pak" and "pak1.pak" files (Quake game data) into the "id1" folder. If you already have another Quake installation on your computer somewhere, you can run Quakestarter and choose the first menu option; this can usually automatically find and copy those pak files for you.
 
-- While you're here, you can also use the second option in the main Quakestarter menu to get the Quake soundtrack files set up.
+- You can also use the second option in the main Quakestarter menu to get the Quake soundtrack files set up.
 
-- Exit out of Quakestarter for now, and try running quakespasm-spiked-win64.exe. By default this is what you will be using to play Quake. Hopefully it works! While you have it running, get your desired Quake configuration set up. The menus are sufficient for normal setup, but you can later get more "hands-on" and manually modify config files if you like. These docs will provide more details about that if you want them.
+- Now use the third option in the main menu to launch Quake. Hopefully it works! This would be a good time to get your desired Quake configuration set up. The Quake in-game menus are sufficient for normal setup, but you can later get more "hands-on" and manually modify config files if you like. These docs will provide more details about that if you want them.
 
-- Quit out of Quake and run Quakestarter again. At this point you should be able to freely explore the menus and try any addon that looks interesting. (If you want more info about an addon, you can look up its page on https://www.quaddicted.com/reviews/ )
+- Quit out of Quake and return to the Quakestarter menu. At this point you should be able to freely explore the remaining menu options and try any addon that looks interesting. (If you want more info about an addon, you can look up its page on https://www.quaddicted.com/reviews/ )
 
 - Alternately you can use "SQLauncher2.exe", the Simple Quake Launcher 2, as another great way to manage launching Quake to play custom addons or official missionpacks or the original campaign.
 
