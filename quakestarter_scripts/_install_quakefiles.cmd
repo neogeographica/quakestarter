@@ -49,7 +49,6 @@ call :reg_query_path_root_and_copy "HKCU\SOFTWARE\Valve\Steam" SteamPath "steama
 if exist "%dest%" goto :eof
 
 REM no luck there, so let's look in the usual locations
-
 setlocal EnableDelayedExpansion
 set drives=
 for /f "delims=: tokens=1,*" %%a in ('fsutil fsinfo drives') do (
@@ -58,23 +57,13 @@ for /f "delims=: tokens=1,*" %%a in ('fsutil fsinfo drives') do (
     >nul 2>&1 vol !drive:\=! && set drives=!drives! %%c
   )
 )
-call :find_and_copy_from "Quake"
+call :search_common_paths "Quake"
 if exist "%dest%" goto :eof
-call :find_and_copy_from "Games\Quake"
+call :search_common_paths "Steam\steamapps\common\Quake"
 if exist "%dest%" goto :eof
-set temp=Program Files (x86)\Quake
-call :find_and_copy_from "%temp%"
+call :search_common_paths "GOG Games\Quake"
 if exist "%dest%" goto :eof
-set temp=Program Files (x86)\Steam\steamapps\common\Quake
-call :find_and_copy_from "%temp%"
-if exist "%dest%" goto :eof
-call :find_and_copy_from "Program Files\Steam\steamapps\common\Quake"
-if exist "%dest%" goto :eof
-call :find_and_copy_from "Games\Steam\steamapps\common\Quake"
-if exist "%dest%" goto :eof
-call :find_and_copy_from "Steam\steamapps\common\Quake"
-if exist "%dest%" goto :eof
-call :find_and_copy_from "GOG Games\Quake"
+call :search_common_paths "GOG Galaxy\Games\Quake"
 if exist "%dest%" goto :eof
 endlocal
 
@@ -86,6 +75,18 @@ goto :eof
 
 
 REM functions used above
+
+:search_common_paths
+set subpath=%~1
+set temp=Program Files (x86)\%subpath%
+call :find_and_copy_from "%temp%"
+if exist "%dest%" goto :eof
+call :find_and_copy_from "Program Files\%subpath%"
+if exist "%dest%" goto :eof
+call :find_and_copy_from "Games\%subpath%"
+if exist "%dest%" goto :eof
+call :find_and_copy_from "%subpath%"
+goto :eof
 
 :reg_query_and_copy
 reg query "%~1" /v "%~2" > nul 2>&1
