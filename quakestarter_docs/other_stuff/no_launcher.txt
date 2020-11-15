@@ -9,7 +9,7 @@ You can also use command-line options when launching Quake, but this doc won't c
 
 **** The Quake console
 
-To open the Quake console, use the key under the ESC key on your keyboard (for typical US keyboards this is the backtick/tilde key). You can close the Quake console by hitting that key again or by hitting ESC. While the console is open you can type commands to cause stuff to happen, or type in new values for various settings.
+Once Quake has launched, if you are at the main menu with no game or demo running, then you can open the console with the ESC key. When a game or demo is running you can get to the console with the "~" key, or on international keyboards typically whatever key is under ESC. You can close the Quake console by hitting that key again or by hitting ESC. While the console is open you can type commands to cause stuff to happen, or type in new values for various settings.
 
 This readme will just mention a few console commands. If you're curious to learn more, much of this guide is relevant: http://steamcommunity.com/sharedfiles/filedetails/?id=120426294
 
