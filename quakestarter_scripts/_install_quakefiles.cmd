@@ -37,15 +37,17 @@ echo Looking for "%gamedir%\%target%" ...
 
 set found_target=false
 
-REM first check registry for Steam or GOG Quake installs
+REM first check registry for Steam, GOG, or Bethesda.net Quake installs
 set dirs_checked=
 call :reg_query_and_copy "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 2310" InstallLocation
 if exist "%dest%" goto :eof
+call :reg_query_path_root_and_copy "HKCU\SOFTWARE\Valve\Steam" SteamPath "steamapps\common\Quake"
+if exist "%dest%" goto :eof
 call :reg_query_and_copy "HKLM\SOFTWARE\WOW6432Node\GOG.com\Games\1435828198" PATH
 if exist "%dest%" goto :eof
-
-REM handle older Steam installs
-call :reg_query_path_root_and_copy "HKCU\SOFTWARE\Valve\Steam" SteamPath "steamapps\common\Quake"
+call :reg_query_and_copy "HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\1435828198_is1" InstallLocation
+if exist "%dest%" goto :eof
+call :reg_query_path_root_and_copy "HKLM\SOFTWARE\WOW6432Node\Bethesda Softworks\Bethesda.net" installLocation "games\Quake"
 if exist "%dest%" goto :eof
 
 REM no luck there, so let's look in the usual locations
@@ -64,6 +66,8 @@ if exist "%dest%" goto :eof
 call :search_common_paths "GOG Games\Quake"
 if exist "%dest%" goto :eof
 call :search_common_paths "GOG Galaxy\Games\Quake"
+if exist "%dest%" goto :eof
+call :search_common_paths "Bethesda.net Launcher\games\Quake"
 if exist "%dest%" goto :eof
 endlocal
 
@@ -109,8 +113,13 @@ goto :eof
 :handle_reg_query_copy
 set fullpath=%~1
 set backslashed=%fullpath:/=\%
-call :conditional_copy "%backslashed%"
-set dirs_checked=%dirs_checked% "%backslashed%"
+if "%backslashed:~-1%"=="\" (
+    set backslashedquoted="%backslashed:~0,-1%"
+) else (
+    set backslashedquoted="%backslashed%"
+)
+call :conditional_copy %backslashedquoted%
+set dirs_checked=%dirs_checked% %backslashedquoted%
 goto :eof
 
 :find_and_copy_from

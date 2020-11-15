@@ -2,7 +2,7 @@
 
 The top-level "Quake" folder for this package is meant to be usable as the basis for a new, fresh Quake installation. Once the "Game data" section below has been taken care of, it will be completely playable. If you're going with this approach, you can skip the remainder of this section.
 
-Another option however is to take the folders and files from inside this "Quake" folder and move them into some existing Quake installation that you have. If that's an installation of original Quake files such as you would get from Steam or GOG, this will work fine.
+Another option however is to take the folders and files from inside this "Quake" folder and move them into some existing Quake installation that you have. If that's an installation of original Quake files such as you would get from Steam/GOG/Bethesda, this will work fine.
 
 If the existing Quake installation already contains an older version of Quakestarter, please see the "upgrading_quakestarter.txt" doc in the "quakestarter_docs\other_stuff" folder.
 

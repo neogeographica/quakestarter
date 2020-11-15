@@ -42,6 +42,8 @@ OK, let's get to the changelist.
 
 - See "quakestarter_scripts\_quakestarter_cfg_defaults.cmd" for other behaviors you can customize.
 
+- Support finding Bethesda.net installs of Quake (when looking for pakfiles).
+
 - Slightly more robust search for GOG Galaxy installs of Quake (when looking for pakfiles).
 
 - "autoexec.cfg.example" and the annotated version have been rewritten to be less Mark V - centric, and to include discussion of host_maxfps.
