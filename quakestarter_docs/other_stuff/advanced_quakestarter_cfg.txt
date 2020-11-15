@@ -10,7 +10,7 @@ For example, in "_quakestarter_cfg_defaults.cmd" the following line specifies th
 Let's say you would rather use vkQuake, and that's the Quake engine that you have installed in your Quake folder instead of Quakespasm-Spiked. To make Quakestarter use vkQuake, you would put this line in your "_quakestarter_cfg.cmd" file:
     set quake_exe=vkQuake.exe
 
-The "_quakestarter_cfg_defaults.cmd" file describes these settings in detail, so most of them don't need extra description here. We'll make a couple of exceptions below.
+The "_quakestarter_cfg_defaults.cmd" file describes these settings in detail, so most of them don't need extra description here. We'll cover a couple of them below though.
 
 
 **** Engine choice
@@ -42,12 +42,12 @@ This will let Quakestarter know which addons it cannot work with.
 
 **** Download behavior
 
-Finally, one consideration that is outside of that configuration file:
+And finally, a consideration that is outside of that configuration file:
 
-Quakestarter will use "curl.exe" to download zipfiles, if that utility is in a directory included in the PATH environment variable. This will be the case in current versions of Windows 10.
+Quakestarter will use "curl.exe" to download zipfiles, if that utility is in a directory included in your Windows PATH environment variable. This will be the case in current versions of Windows 10.
 
-If Quakestarter can't find the curl utility, it will use a .Net assembly to do the download instead. This should work fine. One downside though is that this approach will not show a progress bar during the download.
+If Quakestarter can't find that curl utility, it will use a .Net assembly to do the download instead. This should work fine. One downside though is that this approach will not show a progress bar during the download.
 
-If you don't have "curl.exe" on your executables path and you really want that progress bar -- or if for some reason the .Net assembly isn't working and you want to try using curl instead -- then you could install curl yourself. You can get a perfectly good "curl.exe" from https://curl.se/windows/ . Then you can either place that utility into some directory that is already in your PATH, or edit your PATH value to include the directory where you put curl.
+If you don't have "curl.exe" in one of your PATH directories and you really do want that progress bar -- or if for some reason the .Net assembly isn't working and you want to try using curl instead -- then you could install curl yourself. You can get a perfectly good "curl.exe" from https://curl.se/windows/ . Then you can either place that utility into some directory that is already in your PATH, or edit your PATH value to include the directory where you put curl.
 
 (How to edit system environment variables like PATH is outside the scope of this doc, but is well-covered in Google results.)

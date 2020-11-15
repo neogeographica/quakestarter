@@ -47,7 +47,7 @@ If you're a Quake veteran that's probably all you need to know.
 
 If those steps aren't clear, or if you just want more details, have a look at the docs in the "quakestarter_docs\basic" folder for explanations.
 
-When you want even more things to play, and more details about how to play maps/mods outside of Quakestarter, check out the docs in the "quakestarter_docs\maps_and_mods" folder.
+When you want even more things to play, and in general more details about how to launch maps/mods outside of Quakestarter, check out the docs in the "quakestarter_docs\maps_and_mods" folder.
 
 The tools included in this package are for Windows users, but much of the info will also apply to playing Quake on macOS or Linux. See the "not_windows.txt" doc in the "quakestarter_docs\other_stuff" folder for some specific pointers.
 

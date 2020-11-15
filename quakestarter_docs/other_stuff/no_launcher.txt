@@ -4,7 +4,7 @@ If you don't have or want to use a launcher, the main things you'll need to know
 
 When you know those things, you can handle all launcher-type activities from within the Quake menus and console, in most Quake engines.
 
-You can always fall back to using command-line options, but I won't get into that here. You can get some info about command-line options from the section "The Command Line" in this guide: http://steamcommunity.com/sharedfiles/filedetails/?id=120426294 and also some of this guide: http://steamcommunity.com/sharedfiles/filedetails/?id=166554615
+You can also use command-line options when launching Quake, but this doc won't cover that. You can get some info about command-line options from the section "The Command Line" in this guide: http://steamcommunity.com/sharedfiles/filedetails/?id=120426294 and also some of this guide: http://steamcommunity.com/sharedfiles/filedetails/?id=166554615 . WHen using Quakestarter or Simple Quake Launcher 2 you will see examples of the command lines used to launch Quake with various mods.
 
 
 **** The Quake console
@@ -18,11 +18,11 @@ This readme will just mention a few console commands. If you're curious to learn
 
 If the map you want to run is just a .bsp file in the "id1\maps" folder, skip this section. That's the normal/default map location and doesn't involve any mod code.
 
-Otherwise though, you'll need to specify the mod folder(s) to activate. The map/mod may also have a dependency on Quoth or an official missionpack.
+Otherwise though, you'll need to specify the mod folder(s) to activate. The map/mod may also have a dependency on Quoth or an official missionpack, or even on some other mod.
 
 You specify these things using the "game" command in the Quake console.
 
-If the folder containing the addon content is named "foo" and doesn't depend on any special game content, then you would just activate it with this command:
+If the folder containing the addon content is named "foo" and doesn't depend on any other special game content, then you would just activate it with this command:
     game foo
 
 If the folder is named "foo" and requires Quoth, then you would activate it with this command:
@@ -34,7 +34,7 @@ If the folder is named "foo" and requires missionpack 1, then you would activate
 If the folder is named "foo" and requires missionpack 2, then you would activate it with this command:
     game foo -rogue
 
-If the folder depends on another non-Quoth non-missionpack mod folder, as describe in the "3_running_with_sql2.txt" doc in the "quakestarter_docs\maps_and_mods" folder, you can add that dependency as the first argument. For example to run "udob_v1_1" that depends on "copper_v1_11", you would use the command:
+If the folder depends on another non-Quoth non-missionpack mod folder (as described in the "mod_requirements.txt") you can add that dependency as the first argument. For example to run "udob_v1_1" that depends on "copper_v1_11", you would use the command:
     game copper_v1_11 udob_v1_1
 
 If you get an error from that last form of the command, then your Quake engine does not support activating multiple mod folders.
@@ -44,8 +44,8 @@ Once you've executed the "game" command, if you see the message "execing quake.r
 
 **** Setting difficulty
 
-If you know that you almost always want to play at the same difficulty, you should add a line with a "skill" setting to your "id1\autoexec.cfg" file. The legal values for skill are from 0 to 3, which corresponds to difficulty levels Easy to Nightmare. For example if you pretty much always want to play Nightmare difficulty you could add a line to your autoexec.cfg that says:
-    skill 3
+If you know that you almost always want to play at the same difficulty, you should add a line with a "skill" setting to your "id1\autoexec.cfg" file. The legal values for skill are from 0 to 3, which corresponds to difficulty levels Easy to Nightmare. For example if you pretty much always want to play Hard difficulty you could add a line to your autoexec.cfg that says:
+    skill 2
 
 (Note that if you do use a launcher, the skill setting from the launcher will override this.)
 
