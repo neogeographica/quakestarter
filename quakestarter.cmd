@@ -9,7 +9,20 @@ set mainpath=%~dp0
 set scriptspath=%mainpath%quakestarter_scripts\
 
 REM see if .Net/PowerShell are ok, and check for curl
-call :dependencies_check
+powershell.exe -nologo -noprofile -command "&{trap{exit 1;} Add-Type -A 'System.IO.Compression.FileSystem';}" >nul 2>&1
+if not %errorlevel% equ 0 (
+  echo The installed version of the .Net Framework ^(and/or of PowerShell^) must
+  echo be updated. See the basic\1_installation.txt readme file for more details.
+  echo.
+  pause
+  goto :eof
+)
+curl -V >nul 2>&1
+if %errorlevel% equ 0 (
+  set hascurl=true
+) else (
+  set hascurl=false
+)
 
 :menu
 
@@ -112,21 +125,3 @@ if not "%show_legacies_menu%"=="true" (
 )
 call "%scriptspath%legacies.cmd"
 goto :menu
-
-
-REM function used above to check for dependencies
-:dependencies_check
-powershell.exe -nologo -noprofile -command "&{trap{exit 1;} Add-Type -A 'System.IO.Compression.FileSystem';}" >nul 2>&1
-if not %errorlevel% equ 0 (
-  echo The installed version of the .Net Framework ^(and/or of PowerShell^) must
-  echo be updated. See the basic\1_setup.txt readme file for more details.
-  echo.
-  pause
-  goto :eof
-)
-curl -V >nul 2>&1
-if %errorlevel% equ 0 (
-  set hascurl=true
-) else (
-  set hascurl=false
-)

@@ -26,11 +26,11 @@ If you've been using a previous version of this package, see the "upgrading_quak
 
 You can use this package as a new Quake installation starting from scratch.
 
-Or if you already have a Quake installation, you can drop these files and folders into that existing Quake folder if you like. The "1_setup.txt" doc in the "quakestarter_docs\basic" folder goes into a bit more detail about that approach.
+Or if you already have a Quake installation, you can drop these files and folders into that existing Quake folder if you like. The "1_installation.txt" doc in the "quakestarter_docs\basic" folder goes into a bit more detail about that approach.
 
 Things to do:
 
-- You're going to need Microsoft .Net Framework version 4.5 or later. If you are on Windows 8 or 10, you are probably fine. For more details, especially if you are on Windows 7 or Vista, see the "1_setup.txt" doc in the "quakestarter_docs\basic" folder.
+- You're going to need Microsoft .Net Framework version 4.5 or later. If you are on Windows 8 or 10, you are probably fine. For more details, especially if you are on Windows 7 or Vista, see the "1_installation.txt" doc in the "quakestarter_docs\basic" folder.
 
 - If you're starting a new Quake installation from scratch, you need to move or copy your "pak0.pak" and "pak1.pak" files (Quake game data) into the "id1" folder. If you already have another Quake installation on your computer somewhere, you can run Quakestarter and choose the first menu option; this can usually automatically find and copy those pak files for you.
 
