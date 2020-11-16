@@ -82,7 +82,7 @@ if not exist "%destfile%" (
   if "%hascurl%"=="true" (
     curl -f -# -o "%destfile%" "%url%"
   ) else (
-    powershell.exe -nologo -noprofile -command "&{trap{exit 1;} (new-object System.Net.WebClient).DownloadFile(\"%url%\",\"%destfile%\");}"
+    powershell.exe -nologo -noprofile -command "&{trap{exit 1;} [System.Net.ServicePointManager]::SecurityProtocol=[System.Net.SecurityProtocolType]::Tls -bor [System.Net.SecurityProtocolType]::Tls11 -bor [System.Net.SecurityProtocolType]::Tls12;(new-object System.Net.WebClient).DownloadFile(\"%url%\",\"%destfile%\");}"
   )
   if not %errorlevel% equ 0 (
     set good_download=false
