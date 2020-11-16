@@ -26,3 +26,5 @@ if "%basedir%"=="" (
 
 REM OK do the thing
 start "" /b /wait "%basedir%\%quake_exe%"
+
+pause
