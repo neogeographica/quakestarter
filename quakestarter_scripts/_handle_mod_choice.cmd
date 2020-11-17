@@ -163,29 +163,27 @@ if not "%base_game%"=="" (
     echo If you launch "%gamedir%" outside of this installer,
     if "%base_game%"=="quoth" (
       echo make sure to specify Quoth as the base game. On the command line that means
-      echo using -quoth as shown above.
+      echo using the -quoth argument.
       echo.
     )
     if "%base_game%"=="ad_v1_80p1final" (
       echo make sure to specify ad_v1_80p1final as a base mod. On the command line
-      echo that means putting -game "ad_v1_80p1final" BEFORE -game "%gamedir%"
-      echo as shown above.
+      echo that means putting -game "ad_v1_80p1final" BEFORE -game "%gamedir%".
       echo.
     )
     if "%base_game%"=="copper_v1_11" (
       echo make sure to specify copper_v1_11 as a base mod. On the command line
-      echo that means putting -game "copper_v1_11" BEFORE -game "%gamedir%"
-      echo as shown above.
+      echo that means putting -game "copper_v1_11" BEFORE -game "%gamedir%".
       echo.
     )
     if "%base_game%"=="hipnotic" (
       echo make sure to specify missionpack 1 as the base game. On the command line
-      echo that means using -hipnotic as shown above.
+      echo that means using the -hipnotic argument.
       echo.
     )
     if "%base_game%"=="rogue" (
       echo make sure to specify missionpack 2 as the base game. On the command line
-      echo that means using -rogue as shown above.
+      echo that means using the -rogue argument.
       echo.
     )
   )
