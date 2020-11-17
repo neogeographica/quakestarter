@@ -1,4 +1,4 @@
-**** v2.0.0 (Nov 2020)
+**** v2.0.0-RC3 (Nov 2020)
 
 Before we get into the bullet-point changelist, a general note:
 
@@ -49,6 +49,8 @@ OK, let's get to the changelist.
 - "autoexec.cfg.example" and the annotated version have been rewritten to be less Mark V - centric, and to include discussion of host_maxfps.
 
 - In general the docs have been improved and corrected.
+
+- Support for Windows Vista has been officially dropped. It probably still works though?
 
 
 **** v1.10 (Mar 2020)
