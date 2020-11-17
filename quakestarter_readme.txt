@@ -10,6 +10,8 @@ This package is one way to get going with the "state of the art" in Quake single
 
 You might want to keep an eye out in the future for newer releases of Quakespasm-Spiked. You can just drop new Quakespasm-Spiked files in here and replace the older versions.
 
+Note that the programs in this package are meant to be used on Windows 7, 8, or 10. If you are using a different OS then the programs here won't be as useful, but the docs might be. See the "not_windows.txt" doc in the "quakestarter_docs\other_stuff" folder for some specific pointers.
+
 
 **** Version info
 
@@ -30,7 +32,7 @@ Or if you already have a Quake installation, you can drop these files and folder
 
 Things to do:
 
-- You're going to need Microsoft .Net Framework version 4.5 or later. If you are on Windows 8 or 10, you are probably fine. For more details, especially if you are on Windows 7 or Vista, see the "1_installation.txt" doc in the "quakestarter_docs\basic" folder.
+- You're going to need Microsoft .Net Framework version 4.5 or later. If you are on Windows 8 or 10, you are probably fine. For more details, especially if you are on Windows 7, see the "dot_net_version_dependency.txt" doc in the "quakestarter_docs\other_stuff" folder.
 
 - If you're starting a new Quake installation from scratch, you need to move or copy your "pak0.pak" and "pak1.pak" files (Quake game data) into the "id1" folder. If you already have another Quake installation on your computer somewhere, you can run Quakestarter and choose the first menu option; this can usually automatically find and copy those pak files for you.
 
@@ -49,8 +51,6 @@ If those steps aren't clear, or if you just want more details, have a look at th
 
 When you want even more things to play, and in general more details about how to launch maps/mods outside of Quakestarter, check out the docs in the "quakestarter_docs\maps_and_mods" folder.
 
-The tools included in this package are for Windows users, but much of the info will also apply to playing Quake on macOS or Linux. See the "not_windows.txt" doc in the "quakestarter_docs\other_stuff" folder for some specific pointers.
-
-The other docs in the "quakestarter_docs\other_stuff" folder are a little more specialized and you might not need to bother with them. You'll see that they're referenced from other docs in a few spots, or you can just have a look at them if you're curious.
+The docs in the "quakestarter_docs\other_stuff" folder are a little more specialized and you might not need to bother with them. You'll see that they're referenced from other docs in a few spots, or you can just have a look at them if you're curious.
 
 Have fun!

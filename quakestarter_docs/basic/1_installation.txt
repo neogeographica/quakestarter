@@ -11,11 +11,11 @@ If you are moving these items into some other already-customized Quake installat
 
 **** .Net Framework
 
-Several Quakestarter features, and also the Simple Quake Launcher 2 program ("SQLauncher2.exe") bundled in this package, have a requirement for Microsoft .Net Framework 4.5 or later.
+Several Quakestarter features, and also the Simple Quake Launcher 2 program ("SQLauncher2.exe") bundled in this package, have a requirement for Microsoft .Net Framework 4.5 or later. When you launch Quakestarter it will explicitly check for this dependency and show you an error message if there is a problem.
 
-If you are on Windows 8 or 10, you should be good to go. If you are on Windows 7 or Vista, you may need to get a recent version of the .Net Framework from from https://www.microsoft.com/net/download/all ... make sure that you get a ".Net Framework" runtime package, not anything else like ".Net Core" or a developer pack or etc.
+If you are on Windows 8 or 10, this shouldn't be a problem for you, especially if your OS is up-to-date. If you are on Windows 7 though, you'll probably get the error message from Quakestarter. The "dot_net_version_dependency.txt" doc in the "quakestarter_docs\other_stuff" folder describes how to get the necessary Windows components updated in that case.
 
-(If you don't know whether or not you have this version of .Net, don't worry; Quakestarter will check for it on startup.)
+If you're on Windows Vista (???) then likely you're in the same boat as Windows 7 users. However, I no longer test on Vista.
 
 If you're on Windows XP you're out of luck. In that case you might want to look into trying out the last 1.x release of Quakestarter, which (at the time of writing this doc) was version 1.10 at https://github.com/neogeographica/quakestarter/releases/tag/v1.10 .
 
