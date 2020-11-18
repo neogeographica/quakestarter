@@ -203,7 +203,7 @@
 // take effect unless the map itself forces some other value explicitly.
 
 //   Default is 0.5. Uncomment the following line to set some other value.
-//r_wateralpha 0.75
+//r_wateralpha 0.4
 
 
 // animations

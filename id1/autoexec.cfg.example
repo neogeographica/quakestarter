@@ -100,7 +100,7 @@
 // may force some other value.
 
 //   Default is 0.5. Uncomment the following line to set some other value.
-//r_wateralpha 0.75
+//r_wateralpha 0.4
 
 
 // Set r_lerpmove to 0 for old jerky enemy animations, 1 for smoothed.
