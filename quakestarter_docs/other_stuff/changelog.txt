@@ -1,4 +1,4 @@
-**** v2.0.0-RC3 (Nov 2020)
+**** v2.0.0 (Nov 2020)
 
 Before we get into the bullet-point changelist, a general note:
 
