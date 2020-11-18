@@ -42,6 +42,8 @@ OK, let's get to the changelist.
 
 - See "quakestarter_scripts\_quakestarter_cfg_defaults.cmd" for other behaviors you can customize.
 
+- When Quakestarter launches a mod, info about the Quake engine and launch args is now stored in "_last_launch.cmd" in the mod folder. Currently this is just informative, but it may be used by future Quakestarter versions.
+
 - Support finding Bethesda.net installs of Quake (when looking for pakfiles).
 
 - Slightly more robust search for GOG Galaxy installs of Quake (when looking for pakfiles).
