@@ -3,7 +3,7 @@ The readme that comes with an addon may describe some requirements for successfu
 
 **** Engine requirements
 
-If the readme says that the addon requires Fitzquake, the content will also work with Quakespasm and Quakespasm-variant engines, as well as almost certainly working fine with Mark V and other engines. The capabilities of the old popular Fitzquake engine have been adopted by basically every mainstream modern Quake engine.
+If the readme says that the addon requires Fitzquake, the content will also work with Quakespasm and Quakespasm-variant engines, as well as almost certainly working fine with Mark V and other engines. The capabilities of the old popular Fitzquake engine have been adopted by basically every mainstream modern Quake engine that has a singleplayer focus.
 
 If the readme says that it requires an engine that supports the "bsp2" map format, Quakespasm-ish engines are OK with that too, as are most currently-maintained Quake engines.
 
@@ -16,7 +16,7 @@ The section on customizing your choice of Quake engine in "advanced_quakestarter
 
 If the mod is in its own folder but it builds on another mod, for example a map release that depends on Arcane Dimensions (AD) or Copper, then you will need to account for that dependency when launching it.
 
-This does _not_ include maps/mods that depend on Quoth or an official missionpack. This also doesn't include mods that carry their own copy of the AD or Copper mod. This is about pure map releases that are meant to be played with AD or Copper, but which have been installed into their own separate mod folder (e.g. as Quakestart will install things).
+This does _not_ include maps/mods that depend on Quoth or an official missionpack. This also doesn't include mods that carry their own copy of the AD or Copper mod. This is about pure map releases that are meant to be played with AD or Copper, but which have been installed into their own separate mod folder (e.g. as Quakestarter will install things).
 
 To launch a mod that has been installed this way, you will need to use a Quake engine that supports activating multiple mod folders. This includes Quakespasm-Spiked, vkQuake (version 1.05.0 and later), FTE, and DarkPlaces. This will _not_ for example work with the original Quakespasm or with Mark V.
 
@@ -30,9 +30,9 @@ If you were composing a Quake command line to launch this, you would use these "
 If you were using the "game" command in the Quake console, it would look like this:
     game copper_v1_11 udob_v1_1
 
-If you're unsure about whether your Quake engine supports activating multiple mod folder, you can try a "game" console command in that format, and see if it works or if it gives you an error.
+If you're unsure about whether your Quake engine supports activating multiple mod folders, you can try a "game" console command in that format, and see if it works or if it gives you an error.
 
-If you are using an engine that doesn't support activating multiple mod folders, then you can't play things that has been installed in this way. To play such content you will need to just dump it into the Arcane Dimensions or Copper mod folder (as appropriate), so that you can then load that folder as the single mod.
+If you are using an engine that doesn't support activating multiple mod folders, then you can't play things that have been installed in this way. In that case, to play such content you will need to just dump it into the Arcane Dimensions or Copper mod folder (as appropriate), so that you can then load that folder as the single mod.
 
 
 **** Mod configurations

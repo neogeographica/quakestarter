@@ -2,7 +2,7 @@
 
 A program that plays Quake is often called a "Quake engine" or a "source port". Community members have been working on such things since soon after the original Quake source code was released back in the 90s.
 
-The following Steam guide had an overview of several Quake engines, although I've let it become outdated: http://steamcommunity.com/sharedfiles/filedetails/?id=118401000
+The following Steam guide had an overview of several Quake engines, although I've let it become outdated: http://steamcommunity.com/sharedfiles/filedetails/?id=118401000 . It still gives you an idea of the available variety.
 
 Different Quake engines have different goals. Some are focussed on singleplayer, some on multiplayer; some are mostly about fixing bugs or adding "quality of life" features, while others are about supporting new visual effects; etc.
 

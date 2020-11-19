@@ -4,7 +4,7 @@ If you don't have or want to use a launcher, the main things you'll need to know
 
 When you know those things, you can handle all launcher-type activities from within the Quake menus and console, in most Quake engines.
 
-You can also use command-line options when launching Quake, but this doc won't cover that. You can get some info about command-line options from the section "The Command Line" in this guide: http://steamcommunity.com/sharedfiles/filedetails/?id=120426294 and also some of this guide: http://steamcommunity.com/sharedfiles/filedetails/?id=166554615 . WHen using Quakestarter or Simple Quake Launcher 2 you will see examples of the command lines used to launch Quake with various mods.
+You can also use command-line options when launching Quake, but this doc won't cover that. You can get some info about command-line options from the section "The Command Line" in this guide: http://steamcommunity.com/sharedfiles/filedetails/?id=120426294 and also some of this guide: http://steamcommunity.com/sharedfiles/filedetails/?id=166554615 . When using Quakestarter or Simple Quake Launcher 2 you will see examples of the command lines used to launch Quake with various mods.
 
 
 **** The Quake console

@@ -1,6 +1,6 @@
 This doc is strictly about considerations for using Simple Quake Launcher 2 or a similar launcher.
 
-One general thing to keep in mind is that the box at the bottom of the launcher shows the Quake-launching command line that is being constructed by the various choices you make. You can compare this against the command line shown when Quakestarter launches the same mod, to see if the right thing is being done.
+One general thing to keep in mind is that the box at the bottom of the launcher shows the Quake-launching command line that is being constructed by the various choices you make. If you're unsure about your choices, you can compare this against the command line shown when Quakestarter launches the same mod, to see if the right thing is being done.
 
 
 **** Game
@@ -22,16 +22,16 @@ Even if the readme mentions both "-quoth" and "-hipnotic", then specifying just 
 
 If you're not playing a mod, but just running the content selected by the "Game" setting above, leave the "Mod" set to "[Default]".
 
-If you're playing mod content that is in its own separate folder -- which will always be the case for content installed through Quakestarter -- then use Simple Quake Launcher 2 to select that folder as the "Mod" to launch.
+If the content you want to play has been dumped into the folder for the original "Game", e.g. when a new map has just been placed into "id1\maps", then that is also a case where you would leave "Mod" set to "[Default]".
 
-If however the content you want to play has been dumped into the folder for the original "Game", e.g. when just putting a new map into "id1\maps", then leave "Mod" set to "[Default]".
+However if you're playing mod content that is in its own separate folder -- which will always be the case for content installed through Quakestarter -- then use Simple Quake Launcher 2 to select that folder as the "Mod" to launch.
 
 
 **** Mod dependencies
 
 If the mod you've chosen is a map release for Arcane Dimensions or Copper that has been installed into its own separate folder, there's one more thing to do here, and the launcher unfortunately doesn't provide a nice button or dropdown menu to do it. First, make sure that you understand the "mod_requirements.txt" doc in the "quakestarter_docs\other_stuff" folder, especially the part about mod dependencies. You'll see that what you need to do is get another "-game" argument placed into the Quake command line that the launcher is going to use.
 
-To do this, look at the box at the bottom of the launcher that shows the Quake command line that is being built. There are some gray sections that mark spots where you can insert stuff. Click inside the first of these gray sections so you can type a "-game" argument that specifies the other mod that this depends on.
+To do this, look at the box at the bottom of the launcher that shows the Quake command line that is being built. There are some gray sections that mark spots where you can insert stuff. Click inside the first of these gray sections so you can type a "-game" argument that specifies the other mod that this map release depends on.
 
     - If this mod depends on Arcane Dimensions, and Arcane Dimensions is installed into the "ad_v1_80p1final" folder, then you would type the following into that first gray box: -game ad_v1_80p1final
 

@@ -26,7 +26,7 @@ OK, let's get to the changelist.
 
 - The soundtrack installer can now find and copy existing files from other Quake installations on your computer, much like the pak installer does. It can still also download soundtrack files from the net, as before.
 
-- Soundtrack files now include both ogg and mp3 versions.
+- Downloaded soundtrack files now include both ogg and mp3 versions.
 
 - The number of installable mods has increased from 58 to 75. This comes from adding 23 new installables and dropping 6 that no longer qualify or have been superceded.
 

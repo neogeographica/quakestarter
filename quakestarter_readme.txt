@@ -1,14 +1,18 @@
 **** What's this then?
 
-This package is one way to get going with the "state of the art" in Quake singleplayer. It's meant to be a convenient bundle of useful tools and explanations. The tools included in here are:
+This package is one way to get going with the "state of the art" in Quake singleplayer. It's meant to be a convenient bundle of useful tools and explanations.
 
-- The "quakestarter.cmd" script. This provides a menu-driven experience to help set up the Quake game data files and soundtrack, and to help install/play/manage some of the many custom singleplayer addons for Quake. (If you don't show file extensions then it will just look like "quakestarter".) We'll refer to this script as Quakestarter throughout these docs.
+To be clear, you MUST own Quake already to take advantage of this package. In fact the easiest way to use this is if you already have the original Quake installed somewhere on your computer. Once you have Quake and are wondering "how do I play singleplayer Quake stuff in the 21st century?", you can answer that question here.
+
+The tools included in this package are:
+
+- The "quakestarter.cmd" script. (If you don't show file extensions then it will just look like "quakestarter".) This provides a menu-driven experience to help set up the Quake game data files and soundtrack, and to help install/play/manage some of the many custom singleplayer addons for Quake. We'll refer to this script as Quakestarter throughout these docs.
 
 - Simple Quake Launcher 2 by "MaxEd", from https://github.com/m-x-d/Simple-Quake-Launcher-2/releases/latest . This is a front-end for running Quake which can be helpful when you explore beyond the set of addons that Quakestarter supports.
 
 - The Quakespasm-Spiked "Quake engine" (Quake-playing program) from https://fte.triptohell.info/moodles/qss/ . Quakespasm-Spiked or "QSS" is an elaboration by "Spike" and other contributors on the original Quakespasm from http://quakespasm.sourceforge.net/ . Note that there are several other Quake engines out there; see the "quake_engines.txt" doc in the "quakestarter_docs\other_stuff" folder if you're curious.
 
-You might want to keep an eye out in the future for newer releases of Quakespasm-Spiked. You can just drop new Quakespasm-Spiked files in here and replace the older versions.
+You might want to keep an eye out in the future for newer releases of Simple Quake Launcher 2 or Quakespasm-Spiked. Unless something changes drastically, you can just drop their new files in here and replace the older versions.
 
 Note that the programs in this package are meant to be used on Windows 7, 8, or 10. If you are using a different OS then the programs here won't be as useful, but the docs might be. See the "not_windows.txt" doc in the "quakestarter_docs\other_stuff" folder for some specific pointers.
 
@@ -32,7 +36,7 @@ Or if you already have a Quake installation, you can drop these files and folder
 
 Things to do:
 
-- You're going to need Microsoft .Net Framework version 4.5 or later. If you are on Windows 8 or 10, you are probably fine. For more details, especially if you are on Windows 7, see the "dot_net_version_dependency.txt" doc in the "quakestarter_docs\other_stuff" folder.
+- You're going to need Microsoft .Net Framework version 4.5 or later. If you are on a normal Windows 8 or Windows 10 system, you're fine. For more details, especially if you are on Windows 7, see the "dot_net_version_dependency.txt" doc in the "quakestarter_docs\other_stuff" folder.
 
 - If you're starting a new Quake installation from scratch, you need to move or copy your "pak0.pak" and "pak1.pak" files (Quake game data) into the "id1" folder. If you already have another Quake installation on your computer somewhere, you can run Quakestarter and choose the first menu option; this can usually automatically find and copy those pak files for you.
 
