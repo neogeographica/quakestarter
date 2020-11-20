@@ -11,7 +11,7 @@ Broadly speaking you can just remove all the old Quakestarter files before dropp
     - readmes (folder)
 
 
-**** Mark V engine
+**** Mark V
 
 The Mark V engine is no longer required for doing downloads, and is no longer the default Quake engine for playing things. If you no longer want to use Mark V, you can remove these files:
     - gnu.txt
@@ -22,6 +22,11 @@ The Mark V engine is no longer required for doing downloads, and is no longer th
 **** Simple Quake Launcher 2
 
 You don't need to explicitly remove the old SQL2 files; you can simply overwrite those files with the ones from the new Quakestarter package. (They may in fact be exactly the same, unless SQL2 makes a newer release.)
+
+
+**** Environment variables
+
+If you had previously set your "quake_exe" Windows environment variable to some value, in order to force the use of your own selected Quake engine, FYI that variable is no longer relevant and you can remove it. In Quakestarter 2.x, selecting your own Quake engine is done through a config file as described in "advanced_quakestarter_cfg.txt".
 
 
 **** autoexec.cfg
