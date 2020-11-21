@@ -16,6 +16,15 @@ REM below is also set correctly for the Quake engine of your choice!
 set quake_exe=quakespasm-spiked-win64.exe
 
 
+REM Whether your Quake engine of choice supports multiple "-game" arguments
+REM on the command line. This is required for the way the install script
+REM handles some Arcane Dimensions and Copper releases. For details, see the
+REM mod_requirements.txt and advanced_quakestarter_cfg.txt docs in the
+REM quakestarter_docs\other_stuff folder.
+
+set multigame_support=true
+
+
 REM This is the subfolder path (within your Quake folder) where the primary
 REM mod/map zipfiles will be downloaded and cached. If you already have a
 REM bunch of zips downloaded somewhere by Mark V or Quake Injector, you might
@@ -51,15 +60,6 @@ REM these zipfiles will hang around in your patch_download_subdir folder until
 REM manually deleted.
 
 set cleanup_soundtrack_archive=true
-
-
-REM Whether your Quake engine of choice supports multiple "-game" arguments
-REM on the command line. This is required for the way the install script
-REM handles some Arcane Dimensions and Copper releases. For details, see the
-REM mod_requirements.txt and advanced_quakestarter_cfg.txt docs in the
-REM quakestarter_docs\other_stuff folder.
-
-set multigame_support=true
 
 
 REM How to handle the situation where a mod installs correctly but then an
