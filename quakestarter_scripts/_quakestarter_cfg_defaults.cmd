@@ -8,7 +8,10 @@ REM might get lost when upgrading to a later release of the package.
 
 
 REM The name of the Quake engine executable that will be used to play when
-REM launching stuff through the installer scripts.
+REM launching stuff through the Quakestarter. The quake_engines.txt doc
+REM in the quakestarter_docs\other_stuff folder has some comments about this.
+REM Note: If you change this, make sure that the value for multigame_support
+REM below is also set correctly for the Quake engine of your choice!
 
 set quake_exe=quakespasm-spiked-win64.exe
 
@@ -66,7 +69,7 @@ REM then the whole mod will be uninstalled in that case.
 set rollback_on_failed_patch=true
 
 
-REM Sometimes releases can be removed from installer menus when a newer
+REM Sometimes releases can be removed from Quakestarter menus when a newer
 REM Quakestarter release comes out -- because their rating has changed, or
 REM the inclusion criteria has changed, or the release has been superceded by
 REM a new version. Normally these "legacy" releases are hidden from the menus
