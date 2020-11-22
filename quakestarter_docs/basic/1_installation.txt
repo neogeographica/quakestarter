@@ -1,0 +1,46 @@
+**** Quakestarter installation
+
+The top-level "Quake" folder for this package is meant to be usable as the basis for a new, fresh Quake installation. Once the "Game data" section below has been taken care of, it will be completely playable. If you're going with this approach, you can skip the remainder of this section.
+
+Another option however is to take the folders and files from inside this "Quake" folder and move them into some existing Quake installation that you have. If that's an installation of original Quake files such as you would get from Steam/GOG/Bethesda, this will work fine.
+
+If the existing Quake installation already contains an older version of Quakestarter, please see the "upgrading_quakestarter.txt" doc in the "quakestarter_docs\other_stuff" folder!
+
+If you are moving these items into some other already-customized Quake installation that contains a modern Quake engine, especially an existing Quakespasm or Quakespasm-Spiked, then the Quakespasm-Spiked files bundled in this package can conflict with those. This is a "power user" situation for people already familiar with modern Quake engines, so I won't try to make detailed recommendations here. One thing to note however is that the "qss_manifest.txt" file lists all of the Quakespasm-Spiked files in this package, which is helpful if you want to discard them.
+
+
+**** .Net Framework
+
+The Quakestarter script and the Simple Quake Launcher 2 program ("SQLauncher2.exe") bundled in this package have a requirement for Microsoft .Net Framework 4.5 or later. When you launch Quakestarter it will explicitly check for this dependency and show you an error message if there is a problem.
+
+If you are on Windows 8 or 10, this shouldn't be a problem for you, especially if your OS is up-to-date. If you are on Windows 7 though, you'll probably get the error message from Quakestarter. The "dot_net_version_dependency.txt" doc in the "quakestarter_docs\other_stuff" folder describes how to get the necessary Windows components updated in that case.
+
+If you're on Windows Vista (???) then likely you're in the same boat as Windows 7 users. However, I no longer test on Vista.
+
+If you're on Windows XP you're out of luck. In that case you might want to look into trying out the last 1.x release of Quakestarter, which (at the time of writing this doc) was version 1.10 at https://github.com/neogeographica/quakestarter/releases/tag/v1.10 .
+
+
+**** Launching Quakestarter
+
+Quakestarter is a script named "quakestarter.cmd"; if you don't show file extensions then it will just look like "quakestarter". Normally you should just be able to double-click on this file to run it. Depending on your Windows security settings you may need to reassure Windows that it is indeed safe to run; it should only be necessary to do this the first time you run Quakestarter.
+
+
+**** Game data
+
+You need two game data files from Quake: "pak0.pak" and "pak1.pak". Put these files inside the "id1" folder, and you're ready to play Quake.
+
+Similarly, if you own and want to play the official Quake missionpacks, each of those also has its own "pak0.pak" file that goes into its own unique game folder (next to the "id1" folder): the "hipnotic" folder for missionpack 1, or "rogue" for missionpack 2.
+
+The first option in the main Quakestarter menu can usually locate and copy the necessary pak files if you already have Quake installed somewhere else on this same computer. If you're having difficulties finding your pak files, see "quakestarter_docs\other_stuff\pak_files.txt".
+
+
+**** Soundtrack
+
+The bundled Quakespasm-Spiked program (and several other Quake engines) can play the soundtrack from mp3 or ogg files if the physical Quake CD is not in your CD drive. To get the soundtrack files installed, run Quakestarter and choose the second menu option. This will give you the option to install soundtrack files for the original Quake campaign, and also for the official missionpacks if you have those.
+
+
+**** Additional singleplayer content
+
+The remaining choices in the Quakestarter menus can be used to download and play some of the many community-created singleplayer adventures. These choices, and ways to find all the rest of the available Quake singleplayer content, are discussed in the remaining docs.
+
+If you're seeking something that was recently released, it might be under "The New Hotness" menu selections. On the other hand if you want to start with the classics then (unsurprisingly) the "Classic" selections would be the place to look. And there's a lot of stuff in between!

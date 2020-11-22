@@ -1,0 +1,31 @@
+**** Using the Quake menus
+
+It's good to run Quake at least once before playing any custom content, to set up your desired Quake configuration. You can do this from the third option of the main Quakestarter menu. Or you can just run your Quake executable (e.g. "quakespasm-spiked-win64.exe") from Windows.
+
+(If this fails because you have a 32-bit OS, you're going to need to use a different, 32-bit Quake engine. Changing your Quake engine is covered in the "advanced_quakestarter_cfg.txt" doc in "quakestarter_docs\other_stuff" folder. Note that Quakespasm-Spiked does have a 32-bit version if you want to use that.)
+
+Any settings that you configure in the default Quake game will be used as a starting point when you later launch custom content.
+
+The menus in Quakespasm-Spiked and many other Quake engines are fairly bare-bones, but you can get your video settings, movement keys, mouse sensitivity, and a few other fundamental things configured there.
+
+
+*** Using the console and config files
+
+Quake engines support other configuration options that aren't often exposed in the in-game menus. It varies from engine to engine, but items omitted from the menus can include some pretty important things like autoaim, the framerate cap, and even whether you have a crosshair onscreen.
+
+Use a text editor to open the "autoexec-cfg-example-annotated.txt" file inside the "id1" folder and have a look at some of the example settings described there. You can copy interesting settings into your own "autoexec.cfg" file in the "id1" folder. Or if you don't already have your own "autoexec.cfg" file, you can rename the "autoexec.cfg.example" file to "autoexec.cfg" and use that as a starting point.
+
+(Don't just rename the "autoexec-cfg-example-annotated.txt" file for this purpose, as the extra comments in that file bring it close to the maximum config file size that the original Quake engines can handle.)
+
+A summary of what you can do with the settings shown in those files: unlock a higher framerate, disable autoaim, get a crosshair, configure "pixely textures", adjust weapon position to be more "authentic", configure old-style square particles, change the amount of water transparency, and/or revert to old-style jerky animations.
+
+When you're editing your "autoexec.cfg", remove the doubleslash from in front of a setting to "uncomment" that line and activate the setting. You can also change the value for the setting.
+
+Several other settings are available, beyond the ones described in that file. You can also keybind other actions beyond what the menus allow -- for example if you want to have a special key for selecting the rocket launcher. There's a few ways you can edit these other options, including changing them interactively using the Quake console or by editing config files. This readme won't get into a lot of detail about that process; if you're interested you can check out the introductory sections of this Steam guide: http://steamcommunity.com/sharedfiles/filedetails/?id=120426294
+
+
+*** Quakestarter configuration
+
+Besides configuring Quake itself, you may also want to change the behavior of Quakestarter. This includes changing what Quake engine you want to use (if you don't want to use Quakespasm-Spiked) and several other things about how addons are downloaded, installed, and launched.
+
+Quakestarter should work fine out-of-the-box without changing any of that configuration, but if you want to dig in, see the "advanced_quakestarter_cfg.txt" doc in "quakestarter_docs\other_stuff" folder.

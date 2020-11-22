@@ -13,10 +13,10 @@
 // about the settings in this file
 //-------------------------------------------------------------------
 
-// Some of the commented lines below are example settings (in these examples,
-// they are terms that start with "sv_" or gl_" or "r_"). They are currently
-// commented out with a doubleslash just so they won't immediately take effect
-// if you rename this file to autoexec.cfg.
+// The comment lines in the sections below describe a setting and then provide
+// an example of that setting. The example setting is currently commented out
+// with a doubleslash just so it won't immediately take effect if you rename
+// this file to autoexec.cfg.
 
 // If you want a setting to take effect in your autoexec.cfg, make sure to
 // remove the doubleslash from the beginning of the line. You can change the
@@ -24,95 +24,92 @@
 // shown below.
 
 // Some of these values correspond to settings that are also exposed through
-// menus in Mark V or other modern Quake engines. If you set them in the
-// autoexec.cfg file instead of through the menus, then the value in
-// autoexec.cfg will be applied whenever Quake starts, regardless of what you
-// previously set in the menus.
+// menus in some modern Quake engines. If you set them in the autoexec.cfg
+// file instead of through the menus, then the value in autoexec.cfg will be
+// applied whenever Quake starts, regardless of what you set in the menus.
 
 
-// autoaim
-//-------------------------------------------------------------------
+
+// Set host_maxfps to a higher value to raise the framerate cap, or set it to
+// 0 for uncapped framerate. Note that this is not advised in Mark V or the
+// original Quakespasm as physics issues will pop up at framerates over 72.
+// For Quakespasm-Spiked and several other Quake engines this is OK though.
+
+//   Default depends on the Quake engine but is usually 72. Uncomment the
+//   following line to set some other value.
+//host_maxfps 144
+
 
 // Set sv_aim to a value of 1 or more for no autoaim, or a value less than 1
 // for some vertical autoaim.
-// Default is 0.93. Uncomment the following line to set some other value.
 
-//sv_aim 2
+//   Default is 0.93. Uncomment the following line to set some other value.
+//sv_aim 1
 
 
-// texture filtering (these don't apply to the winquake variant)
-//-------------------------------------------------------------------
+// Set crosshair to 1 to enable the crosshair and 0 to disable it.
+
+//   Default is 0. Uncomment the following line to set some other value.
+//crosshair 1
+
+
+// Set a scr_crosshairscale value from 1 to 10 to control the size of the
+// crosshair, including decimal values like 3.5.
+
+//   Default is 1. Uncomment the following line to set some other value.
+//scr_crosshairscale 2
+
 
 // Set gl_texturemode for amount of texture filtering and "pixely-ness".
 // There are several values for this, but a few interesting ones are:
+//   GL_NEAREST for pixely textures and no mipmaps (so, loss of quality on
+//   far objects)
 //   GL_NEAREST_MIPMAP_NEAREST for pixely textures and abrupt mipmap level
 //   transitions as the textured object gets farther away.
 //   GL_NEAREST_MIPMAP_LINEAR for pixely textures but smooth transitions
 //   between mipmap levels.
 //   GL_LINEAR_MIPMAP_LINEAR for smoothed textures and smooth transitions
 //   between mipmap levels.
-// Default is GL_LINEAR_MIPMAP_LINEAR. Uncomment the following line to set
-// some other value.
 
+//   Default is GL_LINEAR_MIPMAP_LINEAR. Uncomment the following line to set
+//   some other value.
 //gl_texturemode GL_NEAREST_MIPMAP_LINEAR
 
-// Increase gl_texture_anisotropy for more texture clarity in some situations.
-// Default is 1. Uncomment the following line to set some other value.
 
+// Increase gl_texture_anisotropy for more texture clarity in some situations.
+
+//   Default is 1. Uncomment the following line to set some other value.
 //gl_texture_anisotropy 8
 
 
-// weapon rendering
-//-------------------------------------------------------------------
-
 // Set r_viewmodel_quake to a value of 1 to make the position of the held
 // weapon's model be more like it is in WinQuake.
-// Default is 0. Uncomment the following line to set some other value.
 
+//   Default is 0. Uncomment the following line to set some other value.
 //r_viewmodel_quake 1
 
 
-// particle shape (this doesn't apply to the winquake variant)
-//-------------------------------------------------------------------
-
 // Set r_particles to 2 for square particles, 1 for round.
-// Default is 1. Uncomment the following line to set some other value.
 
+//   Default is 1. Uncomment the following line to set some other value.
 //r_particles 2
 
 
-// transparency & mirrors (other than r_wateralpha, Mark V only)
-//-------------------------------------------------------------------
+// Set r_wateralpha to 1 for no liquids transparency, 0 for full liquids
+// transparency, or some decimal value in between. Note that the map itself
+// may force some other value.
 
-// 1 = no transparency/reflection, 0 = full transparency/reflection
-// Defaults are 1, 0.2, 0.7, and 0.5 respectively. Uncomment the following
-// lines to set some other value.
+//   Default is 0.5. Uncomment the following line to set some other value.
+//r_wateralpha 0.4
 
-//r_lavaalpha 1
-//r_mirroralpha 1
-//r_slimealpha 1
-//r_wateralpha 1
-
-
-// water warp (Mark V only - this doesn't apply to the winquake variant)
-//-------------------------------------------------------------------
-
-// Default is 150. Uncomment the following line to set some other value.
-// Larger values decrease the strength of the warp effect, although the
-// exact effect depends upon your chosen video resolution.
-
-//r_waterwarp_amp 500
-
-
-// animations
-//-------------------------------------------------------------------
 
 // Set r_lerpmove to 0 for old jerky enemy animations, 1 for smoothed.
-// Default is 1. Uncomment the following line to set some other value.
 
+//   Default is 1. Uncomment the following line to set some other value.
 //r_lerpmove 0
 
-// Set r_lerpmodels to 0 for old jerky weapon animations, 1 for smoothed.
-// Default is 1. Uncomment the following line to set some other value.
 
+// Set r_lerpmodels to 0 for old jerky weapon animations, 1 for smoothed.
+
+//   Default is 1. Uncomment the following line to set some other value.
 //r_lerpmodels 0

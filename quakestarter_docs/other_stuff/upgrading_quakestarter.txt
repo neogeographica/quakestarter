@@ -1,0 +1,54 @@
+If you already have a Quake installation that contains a 1.x version of Quakestarter, and you want to replace the 1.x Quakestarter with 2.x, here's the things you'll need to address:
+
+
+**** Quakestarter scripts and docs
+
+Broadly speaking you can just remove all the old Quakestarter files before dropping in the new ones. The old Quakestarter files to remove are:
+    - CHANGELOG.txt
+    - README_FIRST.txt
+    - installer.bat
+    - installers (folder)
+    - readmes (folder)
+
+
+**** Mark V
+
+The Mark V engine is no longer required for doing downloads, and is no longer the default Quake engine for playing things. If you no longer want to use Mark V, you can remove these files:
+    - gnu.txt
+    - mark_v_winquake.exe
+    - mark_v.exe
+
+
+**** Simple Quake Launcher 2
+
+You don't need to explicitly remove the old SQL2 files; you can simply overwrite those files with the ones from the new Quakestarter package. (They may in fact be exactly the same, unless SQL2 makes a newer release.)
+
+
+**** Environment variables
+
+If you had previously set your "quake_exe" Windows environment variable to some value, in order to force the use of your own selected Quake engine, FYI that variable is no longer relevant and you can remove it. In Quakestarter 2.x, selecting your own Quake engine is done through a config file as described in "advanced_quakestarter_cfg.txt".
+
+
+**** autoexec.cfg
+
+The "autoexec.cfg.example" and "autoexec-cfg-example-annotated.txt" files in the id1 folder will be overwritten by new ones from the new Quakestarter package.
+
+If you have an "autoexec.cfg" that was based on these files in some way, it will continue to work fine with Quakespasm-Spiked. However there are some settings specific to Mark V that will no longer have any effect. These settings include r_lavaalpha, r_mirroralpha, r_slimealpha, r_waterwarp_amp, and r_waterwarp_cycle.
+
+Also you may now want to consider setting a value for host_maxfps; see the discussion in "autoexec-cfg-example-annotated.txt".
+
+
+**** Downloads
+
+By default, Mark V and therefore the 1.x Quakestarter put the zipfile downloads in the "_library" subfolder of "id1". Quakestarter 2.x on the other hand now uses the "quakestarter_downloads" subfolder by default.
+
+If you have a bunch of zipfiles already in the "_library" subfolder that you want to keep, there's various ways to deal with this. For example you could just move them to the "quakestarter_downloads" subfolder (creating that folder if necessary).
+
+Or if you want to continue to also use Mark V and its download feature, you could configure Quakestarter to share that "_library" folder with Mark V. The "advanced_quakestarter_cfg.txt" doc in "quakestarter_docs\other_stuff" folder has info about configuring Quakestarter. In the default settings file mentioned there, you'll find more discussion about how to share the downloads folder with Mark V... look at the download_subdir, patch_download_subdir, and cleanup_archive settings.
+
+
+**** Mod configurations
+
+Quakestarter 2.x includes quite a few improvements to the initial configurations for a lot of the addons that were also provided by Quakestarter 1.x. These improvements are almost all minor things though, so if you have a mod already installed that seems to be working fine then you shouldn't worry about it.
+
+If you do however want to make sure that you have the latest greatest setup for some mod that is already installed, the only generally applicable way to do this is to uninstall and then reinstall the mod once you have Quakestarter 2.x in place. Keep in mind though that this process will delete your savegames for that mod and any changes you've made to that mod's configuration. It's probably not worth it! If you want to do it though, make sure to move away anything like savegames that you want to keep from that mod folder, and then move them back when the mod has been reinstalled.

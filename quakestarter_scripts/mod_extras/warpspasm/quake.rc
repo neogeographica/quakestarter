@@ -1,0 +1,70 @@
+// warpspasm comes with some recommended settings, originally in an autoexec.cfg
+// file. Providing an autoexec.cfg in a mod directory is kinda rude, but we can't
+// just use our normal generated quake.rc file here to take care of doing mod-
+// specific settings because Quoth has its own quake.rc. We don't want to just
+// override that, because it defines some stuff that folks might expect to be
+// defined. Our solution is to copy the Quoth quake.rc file here and insert an
+// exec of modsettings.cfg.
+
+
+//PREACH: Quoth specific aliases
+
+//regular cheats given names for completeness
+alias weaponcheat "impulse 9"
+alias runecheat "impulse 11"
+alias quadcheat "impulse 255"
+
+//flashlight toggle
+alias flashlight "impulse 13"
+alias flashlightcheat "impulse 202"
+
+//co-op bomb
+alias bombcheat "impulse 66"
+alias bomblots "impulse 65"
+alias bombhot "impulse 251;wait;+attack;wait;-attack"
+
+//quoth items etc
+alias hammercheat "impulse 99"
+alias lancecheat "impulse 249"
+alias genocide "impulse 205"
+alias keycheat "impulse 253"
+alias trinitycheat "impulse 111"
+alias crosscheat "impulse 222"
+
+//dev tools
+alias mapcheat "impulse 223"
+alias reveal "impulse 101"
+alias trigger "impulse 102"
+alias edictsby "impulse 103"
+
+
+
+
+
+// load the base configuration
+exec default.cfg
+
+// load the last saved configuration
+exec config.cfg
+
+// quoth needs gl_flashblend off in order for the flashlight to work
+// if you object, then you can override the setting in autoexec.cfg (not config.cfg)
+gl_flashblend 0
+
+// Load settings that came with this mod, either originally in autoexec.cfg
+// or recommended in the readme. These have been placed in modsettings.cfg
+// rather than autoexec.cfg because you might have your own autoexec.cfg that
+// you like to use. You can of course remove or modify the modsettings.cfg
+// file if you want to.
+exec modsettings.cfg
+
+// run a user script file if present
+exec autoexec.cfg
+
+//
+// stuff command line statements
+//
+stuffcmds
+
+// start demos if not allready running a server
+startdemos demo1 demo2 demo3
