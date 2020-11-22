@@ -83,19 +83,19 @@ if not "%base_game%"=="" (
       )
     )
   )
-  if "%base_game%"=="copper_v1_11" (
+  if "%base_game%"=="copper_v1_15" (
     if not "%multigame_support%"=="true" (
-      echo Managing "%gamedir%" ^(which depends on "copper_v1_11"^) is not
+      echo Managing "%gamedir%" ^(which depends on "copper_v1_15"^) is not
       echo possible through Quakestarter since multigame_support is false in
       echo your config.
       echo.
       goto :eof
     )
-    if not exist "%basedir%\copper_v1_11" (
+    if not exist "%basedir%\copper_v1_15" (
       set skip_quakerc_gen=true
-      call "%scriptspath%_install_mod.cmd" https://www.quaddicted.com/filebase/copper_v1_11.zip copper_v1_11
-      if not exist "%basedir%\copper_v1_11" (
-        echo Failed to install "copper_v1_11" which is required by "%gamedir%".
+      call "%scriptspath%_install_mod.cmd" http://lunaran.com/files/copper_v1_15.zip copper_v1_15
+      if not exist "%basedir%\copper_v1_15" (
+        echo Failed to install "copper_v1_15" which is required by "%gamedir%".
         echo.
         goto :eof
       )
@@ -171,9 +171,9 @@ if not "%base_game%"=="" (
       echo that means putting -game "ad_v1_80p1final" BEFORE -game "%gamedir%".
       echo.
     )
-    if "%base_game%"=="copper_v1_11" (
-      echo make sure to specify copper_v1_11 as a base mod. On the command line
-      echo that means putting -game "copper_v1_11" BEFORE -game "%gamedir%".
+    if "%base_game%"=="copper_v1_15" (
+      echo make sure to specify copper_v1_15 as a base mod. On the command line
+      echo that means putting -game "copper_v1_15" BEFORE -game "%gamedir%".
       echo.
     )
     if "%base_game%"=="hipnotic" (

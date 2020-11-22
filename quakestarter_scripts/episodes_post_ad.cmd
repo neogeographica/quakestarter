@@ -140,7 +140,7 @@ pause
 goto :menu
 
 :9
-set base_game=copper_v1_11
+set base_game=copper_v1_15
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" http://lunaran.com/files/udob_v1_1.zip

@@ -20,15 +20,15 @@ This does _not_ include maps/mods that depend on Quoth or an official missionpac
 
 To launch a mod that has been installed this way, you will need to use a Quake engine that supports activating multiple mod folders. This includes Quakespasm-Spiked, vkQuake (version 1.05.0 and later), FTE, and DarkPlaces. This will _not_ for example work with the original Quakespasm or with Mark V.
 
-To activate multiple mod folders, on an engine that supports it, you just need to list them in order of increasing precedence. Let's look at an example using the "udob_v1_1" folder, which depends on the Copper mod in the "copper_v1_11" folder.
+To activate multiple mod folders, on an engine that supports it, you just need to list them in order of increasing precedence. Let's look at an example using the "udob_v1_1" folder, which depends on the Copper mod in the "copper_v1_15" folder.
 
 If you were composing a Quake command line to launch this, you would use these "-game" arguments (along with whatever other Quake arguments you need):
-    -game copper_v1_11 -game udob_v1_1
+    -game copper_v1_15 -game udob_v1_1
 
 (And that's what you will see when Quakestarter shows you the command line it uses to launch "udob_v1_1".)
 
 If you were using the "game" command in the Quake console, it would look like this:
-    game copper_v1_11 udob_v1_1
+    game copper_v1_15 udob_v1_1
 
 If you're unsure about whether your Quake engine supports activating multiple mod folders, you can try a "game" console command in that format, and see if it works or if it gives you an error.
 

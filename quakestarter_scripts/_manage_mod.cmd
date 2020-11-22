@@ -130,8 +130,8 @@ if "%base_game%"=="" (
   if "%base_game%"=="ad_v1_80p1final" (
     set base_game_arg= -game "ad_v1_80p1final"
   ) else (
-    if "%base_game%"=="copper_v1_11" (
-      set base_game_arg= -game "copper_v1_11"
+    if "%base_game%"=="copper_v1_15" (
+      set base_game_arg= -game "copper_v1_15"
     ) else (
       set base_game_arg= -%base_game%
     )

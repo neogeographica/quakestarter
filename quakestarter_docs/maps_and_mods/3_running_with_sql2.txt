@@ -35,10 +35,10 @@ To do this, look at the box at the bottom of the launcher that shows the Quake c
 
     - If this mod depends on Arcane Dimensions, and Arcane Dimensions is installed into the "ad_v1_80p1final" folder, then you would type the following into that first gray box: -game ad_v1_80p1final
 
-    - If this mod depends on Copper, and Copper is installed into the "copper_v1_11" folder, then you would type the following into that first gray box: -game copper_v1_11
+    - If this mod depends on Copper, and Copper is installed into the "copper_v1_15" folder, then you would type the following into that first gray box: -game copper_v1_15
 
 The resulting Quake command line shown in the box should have your new argument inserted _before_ the "-game" argument that specifies the folder containing the map release. For example if the folder containing the map release is "udob_v1_1", and that depends on Copper, then the command line should end up looking like this:
-    quakespasm-spiked-win64.exe -game copper_v1_11 -game udob_v1_1 +map start
+    quakespasm-spiked-win64.exe -game copper_v1_15 -game udob_v1_1 +map start
 
 As mentioned in "mod_requirements.txt", this will only work with Quake engines that support multiple "-game" arguments on the command line.
 
