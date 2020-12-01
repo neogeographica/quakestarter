@@ -1,4 +1,8 @@
-If you already have a Quake installation that contains a 1.x version of Quakestarter, and you want to replace the 1.x Quakestarter with 2.x, here's the things you'll need to address:
+If you already have a Quake installation that contains a 2.x version of Quakestarter, and you want to replace the 2.x Quakestarter with a newer 2.x version, you can just overwrite the existing files with the new files. Nothing else you need to look at in this document!
+
+
+
+However if your Quake installation contains a 1.x version of Quakestarter, and you want to replace the 1.x Quakestarter with a 2.x version, here's the things you'll need to address:
 
 
 **** Quakestarter scripts and docs
