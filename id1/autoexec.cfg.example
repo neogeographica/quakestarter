@@ -99,8 +99,18 @@
 // transparency, or some decimal value in between. Note that the map itself
 // may force some other value.
 
-//   Default is 0.5. Uncomment the following line to set some other value.
-//r_wateralpha 0.4
+//   Default is 1. Uncomment the following line to set some other value.
+//r_wateralpha 0.5
+
+
+// Set these variables to determine other material transparencies. 0 means
+// to use whatever the r_wateralpha value is. Otherwise, values up to 1 will
+// set the amount of transparency with 1 being fully opaque.
+
+//   Default is 0. Uncomment the following line(s) to set some other value.
+//r_lavaalpha 0.5
+//r_slimealpha 0.5
+//r_telealpha 0.5
 
 
 // Set r_lerpmove to 0 for old jerky enemy animations, 1 for smoothed.
