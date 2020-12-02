@@ -42,7 +42,7 @@ Things to do:
 
 - You can also use the second option in the main Quakestarter menu to get the Quake soundtrack files set up.
 
-- Now use the third option in the main menu to launch Quake. Hopefully it works! This would be a good time to get your desired Quake configuration set up. The Quake in-game menus are sufficient for normal setup, but you can later get more "hands-on" and manually modify config files if you like. These docs will provide more details about that if you want them.
+- Now use the third option in the main menu to launch Quake. Hopefully it works! This would be a good time to get your desired Quake configuration set up. The Quake in-game menus are sufficient for normal setup, but you can later get more "hands-on" and manually modify config files if you like -- and with the way Quake works, you probably _will_ want to do that. When you're ready to get into config file stuff, see the "2_configuration.txt" doc in the "quakestarter_docs\basics" folder.
 
 - Quit out of Quake and return to the Quakestarter menu. At this point you should be able to freely explore the remaining menu options and try any addon that looks interesting. (If you want more info about an addon, you can look up its page on https://www.quaddicted.com/reviews/ )
 
