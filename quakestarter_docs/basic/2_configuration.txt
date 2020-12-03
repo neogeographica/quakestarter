@@ -2,7 +2,9 @@
 
 It's good to run Quake at least once before playing any custom content, to set up your desired Quake configuration. You can do this from the third option of the main Quakestarter menu. Or you can just run your Quake executable (e.g. "quakespasm-spiked-win64.exe") from Windows.
 
-(If this fails because you have a 32-bit OS, you're going to need to use a different, 32-bit Quake engine. Changing your Quake engine is covered in the "advanced_quakestarter_cfg.txt" doc in "quakestarter_docs\other_stuff" folder. Note that Quakespasm-Spiked does have a 32-bit version if you want to use that.)
+If this fails with an error dialog about "W_LoadWadFile: couldn't load gfx.wad" then your pak files (game data) are not present. You might need to go back to the "Game data" section of the "1_installation.txt" doc.
+
+(If this fails because you have a 32-bit OS, you're going to need to use a different, 32-bit Quake engine. Changing your Quake engine is covered in the "advanced_quakestarter_cfg.txt" doc in the "quakestarter_docs\other_stuff" folder. Note that Quakespasm-Spiked does have a 32-bit version if you want to use that.)
 
 Any settings that you configure in the default Quake game will be used as a starting point when you later launch custom content.
 
