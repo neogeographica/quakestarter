@@ -6,7 +6,18 @@ Another option however is to take the folders and files from inside this "Quake"
 
 If the existing Quake installation already contains an older version of Quakestarter, please see the "upgrading_quakestarter.txt" doc in the "quakestarter_docs\other_stuff" folder!
 
-If you are moving these items into some other already-customized Quake installation that contains a modern Quake engine, especially an existing Quakespasm or Quakespasm-Spiked, then the Quakespasm-Spiked files bundled in this package can conflict with those. This is a "power user" situation for people already familiar with modern Quake engines, so I won't try to make detailed recommendations here. One thing to note however is that the "qss_manifest.txt" file lists all of the Quakespasm-Spiked files in this package, which is helpful if you want to discard them.
+If you are moving these items into some other already-customized Quake installation that contains a modern Quake engine, especially an existing Quakespasm or Quakespasm-Spiked, then you might want to consider using the "noengine" version of this bundle if you aren't already doing that. Otherwise the Quakespasm-Spiked files bundled in this package can conflict with existing files in your Quake directory. One thing to note is that the "qss_manifest.txt" file lists all of the Quakespasm-Spiked files in this package, which is helpful if you need to discard them. (If you don't have "qss_manifest.txt", then you are using the "noengine" bundle already.)
+
+
+**** Quake engine
+
+If you're using the normal Quakestarter bundle, it already includes Quakespasm-Spiked. So you don't have anything else to do here & can skip to the next section!
+
+However if you decided to use the "noengine" bundle, you need to provide the Quake engine that Quakestarter will launch. This is a "power user" situation so the process of finding and installing a Quake engine won't be described here; we'll just cover the bits specific to Quakestarter.
+
+By default Quakestarter is configured to use Quakespasm-Spiked, specifically "quakespasm-spiked-win64.exe". So if that's what you have or plan to install, you're good to go.
+
+If you want Quakestarter to launch some other program for playing Quake, you'll need to configure it to do so. The process of configuring Quakestarter is described in the "advanced_quakestarter_cfg.txt" doc in the "quakestarter_docs\other_stuff" folder.
 
 
 **** .Net Framework
@@ -36,7 +47,7 @@ The first option in the main Quakestarter menu can usually locate and copy the n
 
 **** Soundtrack
 
-The bundled Quakespasm-Spiked program (and several other Quake engines) can play the soundtrack from mp3 or ogg files if the physical Quake CD is not in your CD drive. To get the soundtrack files installed, run Quakestarter and choose the second menu option. This will give you the option to install soundtrack files for the original Quake campaign, and also for the official missionpacks if you have those.
+Quakespasm-Spiked (and several other Quake engines) can play the soundtrack from mp3 or ogg files if the physical Quake CD is not in your CD drive. To get the soundtrack files installed, run Quakestarter and choose the second menu option. This will give you the option to install soundtrack files for the original Quake campaign, and also for the official missionpacks if you have those.
 
 
 **** Additional singleplayer content

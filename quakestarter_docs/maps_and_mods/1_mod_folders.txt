@@ -20,6 +20,6 @@ Any Quake mod folder can be "uninstalled" by just deleting it.
 
 The menu options presented by Quakestarter for an installed mod include a choice to "uninstall"; this choice will delete the relevant mod folder. It doesn't matter whether you uninstall a mod through Quakestarter or manually delete its folder using the Windows Explorer: the result is the same.
 
-If you haven't modified your Quakestarter configuration (see the "advanced_quakestarter_cfg.txt" doc in "quakestarter_docs\other_stuff" folder) then that's really all there is to it.
+If you haven't modified your Quakestarter configuration (see the "advanced_quakestarter_cfg.txt" doc in the "quakestarter_docs\other_stuff" folder) then that's really all there is to it.
 
 If however you have changed your Quakestarter configuration: you might have chosen to preserve the downloaded zipfile(s) that were used to install mods and/or patches. If this is the case, then at the time of uninstalling a mod you will be given the option to also delete those zipfiles. If you choose to delete a mod _without_ deleting its saved zipfiles, they will remain until either a) you manually delete them, or b) you reinstall the mod and then eventually delete it through the Quakestarter menus again, this time choosing to remove the zipfiles.

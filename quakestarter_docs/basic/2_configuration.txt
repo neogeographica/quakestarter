@@ -30,4 +30,4 @@ Several other settings are available, beyond the ones described in that file. Yo
 
 Besides configuring Quake itself, you may also want to change the behavior of Quakestarter. This includes changing what Quake engine you want to use (if you don't want to use Quakespasm-Spiked) and several other things about how addons are downloaded, installed, and launched.
 
-Quakestarter should work fine out-of-the-box without changing any of that configuration, but if you want to dig in, see the "advanced_quakestarter_cfg.txt" doc in "quakestarter_docs\other_stuff" folder.
+Quakestarter should work fine out-of-the-box without changing any of that configuration, but if you want to dig in, see the "advanced_quakestarter_cfg.txt" doc in the "quakestarter_docs\other_stuff" folder.

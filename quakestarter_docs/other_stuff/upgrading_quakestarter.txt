@@ -48,7 +48,7 @@ By default, Mark V and therefore the 1.x Quakestarter put the zipfile downloads 
 
 If you have a bunch of zipfiles already in the "_library" subfolder that you want to keep, there's various ways to deal with this. For example you could just move them to the "quakestarter_downloads" subfolder (creating that folder if necessary).
 
-Or if you want to continue to also use Mark V and its download feature, you could configure Quakestarter to share that "_library" folder with Mark V. The "advanced_quakestarter_cfg.txt" doc in "quakestarter_docs\other_stuff" folder has info about configuring Quakestarter. In the default settings file mentioned there, you'll find more discussion about how to share the downloads folder with Mark V... look at the download_subdir, patch_download_subdir, and cleanup_archive settings.
+Or if you want to continue to also use Mark V and its download feature, you could configure Quakestarter to share that "_library" folder with Mark V. The "advanced_quakestarter_cfg.txt" doc has info about configuring Quakestarter. In the default settings file mentioned there, you'll find more discussion about how to share the downloads folder with Mark V... look at the download_subdir, patch_download_subdir, and cleanup_archive settings.
 
 
 **** Mod configurations
