@@ -1,3 +1,10 @@
+**** v2.0.1 (Dec 2020)
+
+- Improve the documentation of transparency-related settings in the example autoexec.cfg files.
+
+- Provide a bundle WITHOUT Quakespasm-Spiked as an alternative download for power users.
+
+
 **** v2.0.0 (Nov 2020)
 
 Before we get into the bullet-point changelist, a general note:
