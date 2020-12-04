@@ -37,7 +37,7 @@ If you had previously set your "quake_exe" Windows environment variable to some 
 
 The "autoexec.cfg.example" and "autoexec-cfg-example-annotated.txt" files in the id1 folder will be overwritten by new ones from the new Quakestarter package.
 
-If you have an "autoexec.cfg" that was based on these files in some way, it will continue to work fine with Quakespasm-Spiked. However there are some settings specific to Mark V that will no longer have any effect. These settings include r_lavaalpha, r_mirroralpha, r_slimealpha, r_waterwarp_amp, and r_waterwarp_cycle.
+If you have an "autoexec.cfg" that was based on these files in some way, it will continue to work fine with Quakespasm-Spiked. However there are some settings specific to Mark V that will no longer have any effect. These settings include r_mirroralpha, r_waterwarp_amp, and r_waterwarp_cycle. (Some settings may also have different defaults as well, e.g. the alpha-related settings.)
 
 Also you may now want to consider setting a value for host_maxfps; see the discussion in "autoexec-cfg-example-annotated.txt".
 
