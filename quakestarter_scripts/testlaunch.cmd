@@ -23,6 +23,26 @@ if "%basedir%"=="" (
   pause
   goto :eof
 )
+if "%quake_exe%"=="" (
+  echo The required variable quake_exe is unset.
+  echo FYI:
+  echo Usually you wouldn't run this file directly; it's used by other
+  echo batch files. quake_exe is set in your installer config.
+  pause
+  goto :eof
+) else (
+  if not exist "%basedir%\%quake_exe%" (
+    echo The configured Quake engine: %quake_exe%
+    echo does not exist in the Quake folder: %basedir%
+    echo.
+    echo If you need to configure a different executable to use for Quake, see the
+    echo "advanced_quakestarter_cfg.txt" doc in the "quakestarter_docs\other_stuff"
+    echo folder.
+    echo.
+    pause
+    goto :eof
+  )
+)
 
 REM OK do the thing
 start "" /b /wait "%basedir%\%quake_exe%"

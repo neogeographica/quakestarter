@@ -10,7 +10,7 @@ The tools included in this package are:
 
 - Simple Quake Launcher 2 by "MaxEd", from https://github.com/m-x-d/Simple-Quake-Launcher-2/releases/latest . This is a front-end for running Quake which can be helpful when you explore beyond the set of addons that Quakestarter supports.
 
-- The Quakespasm-Spiked "Quake engine" (Quake-playing program) from https://fte.triptohell.info/moodles/qss/ . Quakespasm-Spiked or "QSS" is an elaboration by "Spike" and other contributors on the original Quakespasm from http://quakespasm.sourceforge.net/ . Note that there are several other Quake engines out there; see the "quake_engines.txt" doc in the "quakestarter_docs\other_stuff" folder if you're curious.
+- If you got the normal Quakestarter bundle (not the "noengine" bundle), then it also includes the Quakespasm-Spiked "Quake engine" (Quake-playing program) from https://fte.triptohell.info/moodles/qss/ . Quakespasm-Spiked or "QSS" is an elaboration by "Spike" and other contributors on the original Quakespasm from http://quakespasm.sourceforge.net/ . Note that there are several other Quake engines out there; see the "quake_engines.txt" doc in the "quakestarter_docs\other_stuff" folder if you're curious.
 
 You might want to keep an eye out in the future for newer releases of Simple Quake Launcher 2 or Quakespasm-Spiked. Unless something changes drastically, you can just drop their new files in here and replace the older versions.
 
@@ -42,7 +42,7 @@ Things to do:
 
 - You can also use the second option in the main Quakestarter menu to get the Quake soundtrack files set up.
 
-- Now use the third option in the main menu to launch Quake. Hopefully it works! This would be a good time to get your desired Quake configuration set up. The Quake in-game menus are sufficient for normal setup, but you can later get more "hands-on" and manually modify config files if you like. These docs will provide more details about that if you want them.
+- Now use the third option in the main menu to launch Quake. Hopefully it works! This would be a good time to get your desired Quake configuration set up. The Quake in-game menus are sufficient for normal setup, but you can later get more "hands-on" and manually modify config files if you like -- and with the way Quake works, you probably _will_ want to do that. When you're ready to get into config file stuff, see the "2_configuration.txt" doc in the "quakestarter_docs\basics" folder.
 
 - Quit out of Quake and return to the Quakestarter menu. At this point you should be able to freely explore the remaining menu options and try any addon that looks interesting. (If you want more info about an addon, you can look up its page on https://www.quaddicted.com/reviews/ )
 
@@ -51,7 +51,7 @@ Things to do:
 
 If you're a Quake veteran that's probably all you need to know.
 
-If those steps aren't clear, or if you just want more details, have a look at the docs in the "quakestarter_docs\basic" folder for explanations.
+If those steps aren't clear, or something goes wrong, or if you just want more details... have a look at the docs in the "quakestarter_docs\basic" folder for explanations.
 
 When you want even more things to play, and in general more details about how to launch maps/mods outside of Quakestarter, check out the docs in the "quakestarter_docs\maps_and_mods" folder.
 

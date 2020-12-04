@@ -11,7 +11,7 @@ Currently Quakespasm is a sort of "reference standard" for playing new singlepla
 
 **** Why Quakespasm-Spiked?
 
-For this package I've chosen to include only the Quakespasm-Spiked engine, from https://fte.triptohell.info/moodles/qss/
+By default Quakestarter uses the Quakespasm-Spiked engine, from https://fte.triptohell.info/moodles/qss/
 
 Quakespasm-Spiked essentially matches Quakespasm for compatibility, and it adds important usability improvements that can smooth out the experience of playing or managing many existing addons... like supporting higher framerates and the ability to load multiple mod folders. It also implements features like advanced particle systems and customizable HUD/menus that newer addons can take advantage of. Arcane Dimensions is one example of a recent mod that can make use of these QSS features.
 

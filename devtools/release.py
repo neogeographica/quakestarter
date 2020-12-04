@@ -8,7 +8,7 @@ import time
 import urllib.request
 import zipfile
 
-VERSION = "2.0.0"
+VERSION = "2.0.1"
 ROOT_FOLDER = "Quake"
 QSS_VERSION = "2020-10-17"
 QSS_URL = "https://fte.triptohell.info/moodles/qss/quakespasm_spiked_win64_dev.zip"
@@ -51,6 +51,27 @@ def handle_zip(url, localfile):
     os.remove(localfile)
     return zip_contents, timestamp
 
+def gen_readme(readme_contents, qss_timestamp, sql_timestamp, timestamp):
+    new_readme_contents= []
+    skip_next = False
+    for line in readme_contents:
+        if skip_next:
+            skip_next = False
+            continue
+        if (qss_timestamp == "") and ("###QSS_VERSION###" in line):
+            skip_next = True
+        else:
+            new_line = line.replace(
+                "###QSS_VERSION###", QSS_VERSION).replace(
+                "###QSS_TIMESTAMP###", qss_timestamp).replace(
+                "###SQL_VERSION###", SQL_VERSION).replace(
+                "###SQL_TIMESTAMP###", sql_timestamp).replace(
+                "###VERSION###", VERSION).replace(
+                "###TIMESTAMP###", timestamp)
+            new_readme_contents.append(new_line)
+    with open(os.path.join(ROOT_FOLDER, "quakestarter_readme.txt"), 'w') as f:
+        f.writelines(new_readme_contents)
+
 def gen_release():
     script_path = os.path.abspath(sys.argv[0])
     src = os.path.realpath(os.path.dirname(os.path.dirname(script_path)))
@@ -59,34 +80,26 @@ def gen_release():
             return []
         return EXCLUSIONS
     shutil.copytree(src, ROOT_FOLDER, ignore=exclusions_for_copy)
-    qss_zip_contents, qss_timestamp = handle_zip(QSS_URL, QSS_LOCALFILE)
-    print("QSS version: {}".format(QSS_VERSION))
-    print("QSS timestamp: {}".format(qss_timestamp))
     _, sql_timestamp = handle_zip(SQL_URL, SQL_LOCALFILE)
     print("SQL2 version: {}".format(SQL_VERSION))
     print("SQL2 timestamp: {}".format(sql_timestamp))
-    qss_manifest = [ l + '\r\n' for l in qss_zip_contents ]
-    qss_manifest.insert(0, "\r\n")
-    qss_manifest.insert(0, "manifest of Quakespasm-Spiked files:\r\n")
-    with open(os.path.join(ROOT_FOLDER, "qss_manifest.txt"), 'w') as f:
-        f.writelines(qss_manifest)
     timestamp = time.strftime("%B %Y")
     print("Quakestarter version: {}".format(VERSION))
     print("Quakestarter timestamp: {}".format(timestamp))
     with open(os.path.join(ROOT_FOLDER, "quakestarter_readme.txt"), 'r', newline='\r\n') as f:
         readme_contents = f.readlines()
-    new_readme_contents = []
-    for line in readme_contents:
-        new_line = line.replace(
-            "###QSS_VERSION###", QSS_VERSION).replace(
-            "###QSS_TIMESTAMP###", qss_timestamp).replace(
-            "###SQL_VERSION###", SQL_VERSION).replace(
-            "###SQL_TIMESTAMP###", sql_timestamp).replace(
-            "###VERSION###", VERSION).replace(
-            "###TIMESTAMP###", timestamp)
-        new_readme_contents.append(new_line)
-    with open(os.path.join(ROOT_FOLDER, "quakestarter_readme.txt"), 'w') as f:
-        f.writelines(new_readme_contents)
+    gen_readme(readme_contents, "", sql_timestamp, timestamp)
+    release_name = "quakestarter-noengine-" + VERSION
+    shutil.make_archive(release_name, "zip", base_dir=ROOT_FOLDER)
+    qss_zip_contents, qss_timestamp = handle_zip(QSS_URL, QSS_LOCALFILE)
+    print("QSS version: {}".format(QSS_VERSION))
+    print("QSS timestamp: {}".format(qss_timestamp))
+    gen_readme(readme_contents, qss_timestamp, sql_timestamp, timestamp)
+    qss_manifest = [ l + '\r\n' for l in qss_zip_contents ]
+    qss_manifest.insert(0, "\r\n")
+    qss_manifest.insert(0, "manifest of Quakespasm-Spiked files:\r\n")
+    with open(os.path.join(ROOT_FOLDER, "qss_manifest.txt"), 'w') as f:
+        f.writelines(qss_manifest)
     release_name = "quakestarter-" + VERSION
     shutil.make_archive(release_name, "zip", base_dir=ROOT_FOLDER)
     shutil.rmtree(ROOT_FOLDER)

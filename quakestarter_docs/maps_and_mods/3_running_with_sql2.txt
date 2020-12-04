@@ -5,9 +5,9 @@ One general thing to keep in mind is that the box at the bottom of the launcher 
 
 **** Game
 
-The "Game" label for this setting in Simple Quake Launcher 2 might be somewhat confusing because it does NOT refer to the "game directory" (mod folder), but rather to the basic set of content that any mod will then build on.
+The "Game" setting in Simple Quake Launcher 2 refers to the basic set of content that any mod will then build on.
 
-Most addons just use "Quake" for the "Game" setting, indicating that they build on the original Quake campaign content. But in some cases an included readme file may tell you differently.
+Most addons just use "Quake" for the "Game" setting, indicating that they build on the original Quake campaign content (from the "id1" folder). But in some cases an included readme file may tell you differently.
 
 A readme that mentions the "-hipnotic" command-line argument is an indicator that you should specify "MP1: Scourge of Armagon" as the "Game" in the launcher. A mention of "-rogue" is an indicator to specify "MP2: Dissolution of Eternity" as the "Game".
 

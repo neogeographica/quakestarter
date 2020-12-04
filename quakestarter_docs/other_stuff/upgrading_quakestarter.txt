@@ -1,4 +1,8 @@
-If you already have a Quake installation that contains a 1.x version of Quakestarter, and you want to replace the 1.x Quakestarter with 2.x, here's the things you'll need to address:
+If you already have a Quake installation that contains a 2.x version of Quakestarter, and you want to replace the 2.x Quakestarter with a newer 2.x version, you can just overwrite the existing files with the new files. You should probably check "changelog.txt" to see what has changed, in case there's some new thing you want to take advantage of. Nothing else you need to look at in this document!
+
+
+
+However if your Quake installation contains a 1.x version of Quakestarter, and you want to replace the 1.x Quakestarter with a 2.x version, here's the things you'll need to address:
 
 
 **** Quakestarter scripts and docs
@@ -33,7 +37,7 @@ If you had previously set your "quake_exe" Windows environment variable to some 
 
 The "autoexec.cfg.example" and "autoexec-cfg-example-annotated.txt" files in the id1 folder will be overwritten by new ones from the new Quakestarter package.
 
-If you have an "autoexec.cfg" that was based on these files in some way, it will continue to work fine with Quakespasm-Spiked. However there are some settings specific to Mark V that will no longer have any effect. These settings include r_lavaalpha, r_mirroralpha, r_slimealpha, r_waterwarp_amp, and r_waterwarp_cycle.
+If you have an "autoexec.cfg" that was based on these files in some way, it will continue to work fine with Quakespasm-Spiked. However there are some settings specific to Mark V that will no longer have any effect. These settings include r_mirroralpha, r_waterwarp_amp, and r_waterwarp_cycle. (Some settings may also have different defaults as well, e.g. the alpha-related settings.)
 
 Also you may now want to consider setting a value for host_maxfps; see the discussion in "autoexec-cfg-example-annotated.txt".
 
@@ -44,7 +48,7 @@ By default, Mark V and therefore the 1.x Quakestarter put the zipfile downloads 
 
 If you have a bunch of zipfiles already in the "_library" subfolder that you want to keep, there's various ways to deal with this. For example you could just move them to the "quakestarter_downloads" subfolder (creating that folder if necessary).
 
-Or if you want to continue to also use Mark V and its download feature, you could configure Quakestarter to share that "_library" folder with Mark V. The "advanced_quakestarter_cfg.txt" doc in "quakestarter_docs\other_stuff" folder has info about configuring Quakestarter. In the default settings file mentioned there, you'll find more discussion about how to share the downloads folder with Mark V... look at the download_subdir, patch_download_subdir, and cleanup_archive settings.
+Or if you want to continue to also use Mark V and its download feature, you could configure Quakestarter to share that "_library" folder with Mark V. The "advanced_quakestarter_cfg.txt" doc has info about configuring Quakestarter. In the default settings file mentioned there, you'll find more discussion about how to share the downloads folder with Mark V... look at the download_subdir, patch_download_subdir, and cleanup_archive settings.
 
 
 **** Mod configurations

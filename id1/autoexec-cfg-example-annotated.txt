@@ -198,12 +198,31 @@
 
 // Originally Quake didn't have transparent liquids. These days however,
 // most Quake engines do support transparent liquids, and maps can take
-// advantage of that. You can set r_wateralpha to your desired amount of
-// transparency (where 1 is opaque and 0 is completely clear) and that will
-// take effect unless the map itself forces some other value explicitly.
+// advantage of that. If a map was created with transparency enabled for its
+// liquids, then you can set r_wateralpha to your desired amount of
+// transparency (where 1 is opaque and 0 is completely clear). That will
+// take effect unless the map itself explicitly forces some other value.
 
-//   Default is 0.5. Uncomment the following line to set some other value.
-//r_wateralpha 0.4
+//   Default is 1. Uncomment the following line to set some other value.
+//r_wateralpha 0.5
+
+// Quakespasm and related engines also support the following variables for
+// individually setting transparency for lava, slime, and teleporters (unless
+// the map itself forces some other value). These values range from 1 to 0,
+// with 1 as opaque and smaller values being more transparent, except that a
+// value of zero is treated specially. A zero is interpreted as "take the same
+// value as r_wateralpha".
+
+//   Default is 0. Uncomment the following line(s) to set some other value.
+//r_lavaalpha 0.5
+//r_slimealpha 0.5
+//r_telealpha 0.5
+
+// Note that if a map was NOT created with transparent liquids enabled, then
+// setting values for these transparency variables won't matter, unless you
+// also set "r_novis 1" to disable the use of visibility tests in the renderer.
+// However doing this can hurt performance and may alter the gameplay of the
+// map (by letting you see things you weren't intended to see).
 
 
 // animations
