@@ -126,7 +126,7 @@
 // will in fact always be stored in config.cfg, but we'll discuss it here
 // as a chance to describe it and because it might not be in the menus.
 
-// While some engine (especially those that expose the choice in the menu)
+// While some engines (especially those that expose the choice in the menu)
 // may support several different values for this setting, in most other
 // engines like Quakespasm-Spiked the values are simply 1 to enable the
 // crosshair and 0 to disable it.
