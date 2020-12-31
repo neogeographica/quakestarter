@@ -99,7 +99,9 @@
 
 // Set r_wateralpha to 1 for no liquids transparency, 0 for full liquids
 // transparency, or some decimal value in between. Note that the map itself
-// may force some other value.
+// may force some other value. Also: in engines other than Quakespasm-Spiked
+// and Mark V, lowering this value on old maps that do NOT support transparent
+// liquids can cause visual glitches.
 
 //   Default is 1. Uncomment the following line to set some other value.
 //r_wateralpha 0.5
