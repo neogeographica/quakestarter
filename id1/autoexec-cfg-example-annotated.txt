@@ -147,6 +147,9 @@
 
 // In Quake engines with GPU-accelerated renderers, you have some choices
 // about what kind of filtering to apply to the environment textures.
+// Note: Some engines that do not use OpenGL do not support these settings.
+// For example in vkQuake you should just use the Video Options in-game menu
+// instead.
 
 // Set gl_texturemode for amount of texture filtering and "pixely-ness".
 // There are several values for this, but a few interesting ones are:

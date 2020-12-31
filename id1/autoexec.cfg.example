@@ -61,6 +61,7 @@
 
 
 // Set gl_texturemode for amount of texture filtering and "pixely-ness".
+// Does not apply to vkQuake (use the Video Options in-game menu instead).
 // There are several values for this, but a few interesting ones are:
 //   GL_NEAREST for pixely textures and no mipmaps (so, loss of quality on
 //   far objects)
@@ -77,6 +78,7 @@
 
 
 // Increase gl_texture_anisotropy for more texture clarity in some situations.
+// Does not apply to vkQuake (use the Video Options in-game menu instead).
 
 //   Default is 1. Uncomment the following line to set some other value.
 //gl_texture_anisotropy 8
