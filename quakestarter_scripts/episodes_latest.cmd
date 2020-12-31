@@ -51,6 +51,7 @@ call :installed_check dwellv1p2
 call :installed_check ad_v1_80p1final
 call :installed_check eoe
 call :installed_check hwjam3
+call :installed_check xmasjam2020
 echo.
 echo Selected custom episodes/hubs released in 2020:
 echo %is_ctsj_installed%  1: ctsj - Coppertone Summer Jam
@@ -58,6 +59,7 @@ echo %is_dwellv1p2_installed%  2: dwellv1p2 - Dwell - Episode 1
 echo %is_ad_v1_80p1final_installed%  3: ad_v1_80p1final - Arcane Dimensions 1.81
 echo %is_eoe_installed%  4: eoe - Epochs of Enmity
 echo %is_hwjam3_installed%  5: hwjam3 - Halloween Jam 3
+echo %is_xmasjam2020_installed%  6: xmasjam2020 - Xmas Jam 2020
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -98,6 +100,13 @@ set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestart
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/hwjam3.zip
+pause
+goto :menu
+
+:6
+set start_map=start
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/xmasjam2020.zip
 pause
 goto :menu
 

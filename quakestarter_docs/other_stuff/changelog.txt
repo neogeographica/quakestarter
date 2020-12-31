@@ -1,3 +1,14 @@
+**** v2.0.2 (Dec 2020)
+
+- Final pass through 2020 releases looking for installables. The only change is to add Xmas Jam 2020.
+
+- Improve (again) the documentation of transparency-related settings in the example autoexec.cfg files.
+
+- A little discussion about vkQuake not supporting the two described gl_ console vars.
+
+- Other minor docs/messages updates.
+
+
 **** v2.0.1 (Dec 2020)
 
 - Improve the documentation of transparency-related settings in the example autoexec.cfg files.
