@@ -69,6 +69,40 @@ if "%renamed_gamedir%"=="" (
 
 cls
 
+REM handle multigame_support, especially "auto" behavior
+set base_game_switch=game
+if "%multigame_support%"=="auto" (
+  if not "%quake_exe%"=="%quake_exe:quakespasm-spiked=%" (
+    set multigame_support=true
+  ) else (
+    if not "%quake_exe%"=="%quake_exe:vkQuake=%" (
+      set multigame_support=true
+    ) else (
+      if not "%quake_exe%"=="%quake_exe:fteqw=%" (
+        set multigame_support=true
+      ) else (
+        if not "%quake_exe%"=="%quake_exe:darkplaces=%" (
+          set multigame_support=true
+        ) else (
+          if not "%quake_exe%"=="%quake_exe:qbismS8=%" (
+            set multigame_support=true
+            set base_game_switch=game2
+          ) else (
+            set multigame_support=false
+          )
+        )
+      )
+    )
+  )
+) else (
+  if not "%multigame_support%"=="true" (
+    if not "%multigame_support%"=="false" (
+      set multigame_support=true
+      set base_game_switch=%multigame_support%
+    )
+  )
+)
+
 REM base game check and (in some cases) install
 set saved_skip_quakerc_gen=%skip_quakerc_gen%
 if not "%base_game%"=="" (
@@ -175,6 +209,19 @@ endlocal
 echo.
 
 :launch
+if "%base_game%"=="" (
+  set base_game_arg=
+) else (
+  if "%base_game%"=="ad_v1_80p1final" (
+    set base_game_arg=-%base_game_switch% "ad_v1_80p1final"
+  ) else (
+    if "%base_game%"=="copper_v1_15" (
+      set base_game_arg=-%base_game_switch% "copper_v1_15"
+    ) else (
+      set base_game_arg=-%base_game%
+    )
+  )
+)
 call "%scriptspath%_manage_mod.cmd" "%archive%" "%gamedir%"
 if not "%base_game%"=="" (
   if exist "%basedir%\%gamedir%" (
@@ -186,12 +233,12 @@ if not "%base_game%"=="" (
     )
     if "%base_game%"=="ad_v1_80p1final" (
       echo make sure to specify ad_v1_80p1final as a base mod. On the command line
-      echo that means putting -game "ad_v1_80p1final" BEFORE -game "%gamedir%".
+      echo that means putting %base_game_arg% before -game "%gamedir%".
       echo.
     )
     if "%base_game%"=="copper_v1_15" (
       echo make sure to specify copper_v1_15 as a base mod. On the command line
-      echo that means putting -game "copper_v1_15" BEFORE -game "%gamedir%".
+      echo that means putting %base_game_arg% before -game "%gamedir%".
       echo.
     )
     if "%base_game%"=="hipnotic" (

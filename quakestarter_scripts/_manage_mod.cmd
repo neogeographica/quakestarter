@@ -7,7 +7,7 @@ REM The caller is also required to set the basedir, quake_exe,
 REM download_subdir, and patch_download_subdir variables.
 
 REM Optional args will be specified through these variables:
-REM   base_game
+REM   base_game_arg
 REM   patch_url
 REM   patch2_url
 REM   start_map
@@ -124,18 +124,8 @@ if "%normal_start%"=="true" (
   echo for in-map skill selection^).
 )
 
-if "%base_game%"=="" (
-  set base_game_arg=
-) else (
-  if "%base_game%"=="ad_v1_80p1final" (
-    set base_game_arg= -game "ad_v1_80p1final"
-  ) else (
-    if "%base_game%"=="copper_v1_15" (
-      set base_game_arg= -game "copper_v1_15"
-    ) else (
-      set base_game_arg= -%base_game%
-    )
-  )
+if not "%base_game_arg%"=="" (
+  set base_game_arg= %base_game_arg%
 )
 
 if not "%extra_launch_args%"=="" (
