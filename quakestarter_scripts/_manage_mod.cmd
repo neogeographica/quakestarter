@@ -110,13 +110,29 @@ if "%start_map%"=="" (
   echo unless your Quake engine provides a map selection menu^).
   echo Do NOT just start a New Game through the Single Player menu.
 )
+REM Trying to handle some quirks with startdemos here...
+REM qbism Super8 has problems with specifying startdemos on the command line,
+REM and also has problems with the "demos" command. On the other hand, unlike
+REM Quakespasm it doesn't try to suppress startdemos by default. So let's
+REM special-case the handling of Super8 just to leave the startdemos behavior
+REM to whatever is in quake.rc.
+REM Also, if quake_exe is NOT Quakespasm-Spiked, warn that some demos might
+REM not play correctly.
 if "%run_startdemos%"=="true" (
   set normal_start=false
-  set start_map_arg= +startdemos %startdemos% +demos
+  if "%quake_exe%"=="%quake_exe:qbismS8=%" (
+    set start_map_arg= +startdemos %startdemos% +demos
+  ) else (
+    set start_map_arg=
+  )
   echo This mod comes with a unique set of demo films that will initially play in
   echo an "attract mode" when the mod launches. You can press ESC to get to the
   echo main menu, then select Single Player. From there you can begin a new game
   echo in this mod, or load a savegame.
+  if "%quake_exe%"=="%quake_exe:quakespasm-spiked=%" (
+    echo If your Quake engine of choice is unable to play the demo^(s^) then you will be
+    echo dropped into the console ... press ESC and proceed from there.
+  )
 )
 if "%normal_start%"=="true" (
   set start_map_arg= +map %start_map%
