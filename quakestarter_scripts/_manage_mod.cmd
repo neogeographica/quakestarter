@@ -54,7 +54,7 @@ if "%patch_download_subdir%"=="" (
 )
 set archive=%~1
 set gamedir=%~2
-set game_arg= -game "%gamedir%"
+set game_arg= -game %gamedir%
 set run_startdemos=false
 if "%start_map%"=="start" (
   if not "%startdemos%"=="" (
@@ -112,14 +112,14 @@ if "%start_map%"=="" (
 )
 if "%run_startdemos%"=="true" (
   set normal_start=false
-  set start_map_arg= +startdemos "%startdemos%" +demos
+  set start_map_arg= +startdemos %startdemos% +demos
   echo This mod comes with a unique set of demo films that will initially play in
   echo an "attract mode" when the mod launches. You can press ESC to get to the
   echo main menu, then select Single Player. From there you can begin a new game
   echo in this mod, or load a savegame.
 )
 if "%normal_start%"=="true" (
-  set start_map_arg= +map "%start_map%"
+  set start_map_arg= +map %start_map%
   echo You will begin in its map "%start_map%" ^(which may or may not provide
   echo for in-map skill selection^).
 )
