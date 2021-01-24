@@ -34,14 +34,28 @@ As mentioned in the "1_mod_folders.txt" doc in the "quakestarter_docs\maps_and_m
 
 For addons that only build on the original Quake campaign content, that's simple enough to deal with. For addons that depend on the official missionpacks, Quake has always supported command-line options for expressing those dependencies (i.e. "-hipnotic" or "-rogue" for missionpack 1 or 2 respectively). And for addons that build on the Quoth mod, modern Quake engines have long supported the "-quoth" argument to express that dependency.
 
-For addons that build on mods other than Quoth... it's not always been quite as easy to represent that situation. Fortunately, modern Quake engines like Quakespasm-Spiked, vkQuake (version 1.05.0 and later), FTE, and DarkPlaces support activating a list of mod folders rather than just one, with each folder in the list building on the previous. The "mod_requirements.txt" doc goes into more detail about how this feature is used.
+For addons that build on mods other than Quoth... it's not always been quite as easy to represent that situation. Fortunately, modern Quake engines like Quakespasm-Spiked, vkQuake (version 1.05.0 and later), FTE, DarkPlaces, and qbism Super8 support activating a list of mod folders rather than just one, with each folder in the list building on the previous. The "mod_requirements.txt" doc goes into more detail about how this feature is used.
 
 Quakestarter relies on this feature to support installing and launching addons that depend on the Arcane Dimensions or Copper mods. (This doesn't include mods that carry their own copy of the AD or Copper mod; it means simple map releases that are meant to be played with AD or Copper.)
 
-If you are using a Quake engine that does NOT have this feature, like original Quakespasm or Mark V, then your "_quakestarter_cfg.cmd" file needs to have this line in it:
+By default Quakestarter will try to automatically figure out whether your Quake engine supports this feature (by looking at the value of quake-exe), and determine what the correct commandline syntax is for invoking it. Hopefully this will work for you! It should work for all of the Quake engines mentioned above or elsewhere in these docs.
+
+But if for some reason this auto-detection is making the wrong choice, you can force the behavior by setting a value for multigame_support in your "_quakestarter_cfg.cmd" file. Possible values are described below.
+
+The default auto-detect behavior (in "_quakestarter_cfg_defaults.cmd") is set like so:
+    set multigame_support=auto
+
+To forcibly declare that your Quake engine DOES NOT support multiple mod folders, regardless of what its program name looks like, you can set this value instead, in your in your "_quakestarter_cfg.cmd" file:
     set multigame_support=false
 
-This will let Quakestarter know which addons it cannot work with.
+Or to declare that your Quake engine DOES support multiple mod folders, and that it uses the same syntax as Quakespasm-Spiked/vkQuake/FTE/DarkPlaces, you can set this value:
+    set multigame_support=true
+
+Finally, you can choose to use the multigame_support value to explicitly define the command-line switches that your Quake engine uses for this feature (omitting the leading dashes). The value should be composed of the switch for the base mod and the switch for the build-on mod, separated by a semicolon. For example if you needed to force the syntax that qbism Super8 uses, you could declare this:
+    set multigame_support=game2;game
+
+That last example would result in the following command line for running the "udob_v1_1" release based on Copper:
+    my_quake_program.exe -game2 copper_v1_15 -game udob_v1_1 +map start
 
 
 **** Download behavior
