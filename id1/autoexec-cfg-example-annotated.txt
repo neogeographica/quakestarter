@@ -27,6 +27,9 @@
 // the Quake console, some (but not all) of those changes will also get stored
 // in config.cfg.
 
+// (Note that some Quake engines will name this file something else; for
+// example qbism Super8 calls it super8.cfg.)
+
 // When you launch Quake with a specific mod activated, your current config.cfg
 // from the id1 folder is initially copied to that mod's folder. Any changes
 // you make while playing that mod will only affect that mod's config. It's
