@@ -4,7 +4,7 @@ REM Used by _handle_mod_choice.cmd.
 REM On the commandline, the archive and gamedir args are required.
 
 REM The caller is also required to set the basedir, quake_exe,
-REM download_subdir, and patch_download_subdir variables.
+REM download_subdir, patch_download_subdir, and game_switch variables.
 
 REM Optional args will be specified through these variables:
 REM   base_game_arg
@@ -52,9 +52,16 @@ if "%patch_download_subdir%"=="" (
   echo batch files. patch_download_subdir is set in your installer config.
   goto :eof
 )
+if "%game_switch%"=="" (
+  echo The required variable game_switch is unset.
+  echo FYI:
+  echo Usually you wouldn't run this file directly; it's used by other
+  echo batch files.
+  goto :eof
+)
 set archive=%~1
 set gamedir=%~2
-set game_arg= -game %gamedir%
+set game_arg= -%game_switch% %gamedir%
 set run_startdemos=false
 if "%start_map%"=="start" (
   if not "%startdemos%"=="" (
