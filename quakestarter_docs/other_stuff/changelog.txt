@@ -1,3 +1,18 @@
+**** v2.1 (Jan 2021)
+
+Most of the changes in this release are because of me revisiting the cool qbism Super8 engine (https://super8.qbism.com/) and taking care of some quirks that prevented it from working well as an alternative Quake engine launched from Quakestarter. Note that there is absolutely no guarantee that Super8 will be able to play all of our installables... but it should be able to handle most of them.
+
+- Various doc changes to accomodate Super8 differences.
+
+- Implement an "auto" setting for multigame_support (and make it the default). This will look at the Quake engine program name to try to figure out whether and how it handles activating multiple mod folders. The old "true" and "false" settings still exist as well. There's also the ability to exactly specify the multigame support syntax that your Quake engine uses. See the "quakestarter_docs\other_stuff\mod_requirements.txt" and "quakestarter_docs\other_stuff\advanced_quakestarter_cfg.txt" docs for details.
+
+- Don't put quote marks around any of the command-line arguments sent to the Quake engine. Engines that still use the original command-line parsing code (e.g. Super8) won't be able to handle that.
+
+- Work around some Super8 bugs in how it handles startdemos.
+
+- Put a couple of mod content patches (for "Epochs of Enmity" and "Warpspasm") into pak files, rather than leaving them as loose files. In these two cases the existing mod content is also in pak files, so if we want to modify/override that content we should pak up the new bits too. For Quakespasm-Spiked this actually is not necessary, as QSS will prioritize "loose files" over pak file contents, but for almost all other Quake engines it is necessary.
+
+
 **** v2.0.2 (Dec 2020)
 
 - Final pass through 2020 releases looking for installables. The only change is to add Xmas Jam 2020.
