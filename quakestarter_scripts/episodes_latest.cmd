@@ -1,7 +1,7 @@
 @echo off
 
 REM Installer for mapsets that fit the following criteria:
-REM * released in 2020
+REM * released in 2020/2021
 REM * a start map and at least four non-startmaps
 REM * Quaddicted editor rating "Excellent"
 REM * Quaddicted user rating 4.0 or better (normalized Bayesian average)
@@ -52,14 +52,16 @@ call :installed_check ad_v1_80p1final
 call :installed_check eoe
 call :installed_check hwjam3
 call :installed_check xmasjam2020
+call :installed_check bluemonday_v2
 echo.
-echo Selected custom episodes/hubs released in 2020:
+echo Selected custom episodes/hubs released in 2020/2021:
 echo %is_ctsj_installed%  1: ctsj - Coppertone Summer Jam
 echo %is_dwellv1p2_installed%  2: dwellv1p2 - Dwell - Episode 1
 echo %is_ad_v1_80p1final_installed%  3: ad_v1_80p1final - Arcane Dimensions 1.81
 echo %is_eoe_installed%  4: eoe - Epochs of Enmity
 echo %is_hwjam3_installed%  5: hwjam3 - Halloween Jam 3
 echo %is_xmasjam2020_installed%  6: xmasjam2020 - Xmas Jam 2020
+echo %is_bluemonday_v2_installed%  7: bluemonday_v2 - Blue Monday Jam
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -107,6 +109,14 @@ goto :menu
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/xmasjam2020.zip
+pause
+goto :menu
+
+:7
+set base_game=quoth
+set start_map=start
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/bluemonday_v2.zip
 pause
 goto :menu
 
