@@ -12,9 +12,11 @@ Most of the changes in this release are because of me revisiting the cool qbism 
 
 - Put a couple of mod content patches (for "Epochs of Enmity" and "Warpspasm") into pak files, rather than leaving them as loose files. In these two cases the existing mod content is also in pak files, so if we want to modify/override that content we should pak up the new bits too. For Quakespasm-Spiked this actually is not necessary, as QSS will prioritize "loose files" over pak file contents, but for almost all other Quake engines it is necessary.
 
-- Add the Blue Monday Jam to the installables (episodes/hubs, new hotness menu).
+- Supply quake.rc files for ad_v1_80p1final, hwjam3, and xmasjam2020 that are slightly smaller than the quake.rc files that they ship with (but which behave the same). This brings them under Quake's original 8192 character limit for config files, which is still in force in some engines like Super8. If quake.rc can't be executed then bad things happen!
 
-- Supply the AD-related config files that were inadvertently omitted from Halloween Jam back when it was packaged.
+- Supply the AD-related config files that were inadvertently omitted from the original Halloween Jam back when it was packaged.
+
+- Add the Blue Monday Jam to the installables (episodes/hubs, new hotness menu).
 
 
 **** v2.0.2 (Dec 2020)
