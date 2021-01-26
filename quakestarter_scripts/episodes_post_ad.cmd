@@ -120,6 +120,7 @@ goto :menu
 
 :6
 set start_map=start
+set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/hwjam.zip
 pause
 goto :menu

@@ -14,6 +14,8 @@ Most of the changes in this release are because of me revisiting the cool qbism 
 
 - Add the Blue Monday Jam to the installables (episodes/hubs, new hotness menu).
 
+- Supply the AD-related config files that were inadvertently omitted from Halloween Jam back when it was packaged.
+
 
 **** v2.0.2 (Dec 2020)
 
