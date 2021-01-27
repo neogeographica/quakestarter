@@ -22,13 +22,16 @@ def handle_error(msg, errors):
     sys.stderr.write(msg_line)
     errors.append(msg)
 
-def check_config_size(results_dir, cfg, analysis):
+def check_quakerc_size(results_dir, cfg, analysis):
     path = os.path.join(results_dir, cfg)
     file_stats = os.stat(path)
-    # Don't really feel like finding out if the 8192 char limit includes a
-    # terminating null... just be conservative.
-    if file_stats.st_size >= 8192:
-        analysis.write("\n{} breaks the original Quake config size limit.\n".format(cfg))
+    # We need to enforce a limit much lower than the 8192 buffer size, since
+    # quake.rc includes other configs into the same buffer.
+    if file_stats.st_size > 4000:
+        analysis.write(
+            "\n{} is likely too large ({} chars) for engines with original limits. "
+            "Try to make a version of it smaller than 4000 chars (as small as "
+            "possible) and ship it in mod_extras.\n".format(cfg, file_stats.st_size))
 
 def gen_zip_analysis(results_dir, demos, configs, docs, errors, config_flags):
     (has_loose_autoexec, has_pak_autoexec, has_loose_quakerc, has_pak_quakerc) = config_flags
@@ -58,7 +61,9 @@ def gen_zip_analysis(results_dir, demos, configs, docs, errors, config_flags):
         different_startdemos_in_config = False
         demos_in_config = False
         for cfg in configs:
-            check_config_size(results_dir, cfg, analysis)
+            cfgl = cfg.lower()
+            if cfgl == 'quake.rc' or cfgl.endswith('/quake.rc'):
+                check_quakerc_size(results_dir, cfg, analysis)
             with open(os.path.join(results_dir, cfg), 'r') as f:
                 for line in f:
                     sl = line.strip()
