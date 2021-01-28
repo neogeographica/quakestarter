@@ -1,25 +1,12 @@
-// Note: hwjam originally shipped without a quake.rc file and without
-// effectinfo.txt, dplights.cfg, and dpsetting.cfg. The result is that the
-// various settings and aliases below were not defined, and the particle
-// system was not enabled.
-
-// Quakestarter has supplied these missing files, but left the particle
-// system disabled. The omission of these files was accidental (as far as we
-// can tell), but "particle system off" is the way it was originally released
-// and experienced.
-
-// If you want to turn the particle system back on, uncomment the line below
-// that sets the temp1 variable to a value of 1024.
-
-// This particular config file has been compacted to fit into the config-size
-// limit for some Quake engines. This largely involves removing documentation
+// Note: this config file has been compacted to fit into the config-size limit
+// for some Quake engines. This largely involves removing documentation
 // sections made of commented-out lines, as noted below. For the original
-// file from AD 1.7 see quake.rc.ad-original.
+// file see quake.rc.original.
 
 
 //-----
-// MOD    : AD v1.70P1 - (Arcane Dimensions)
-// Date   : 31st January 2018
+// MOD    : AD DevKit V1.70 - (Arcane Dimensions)
+// Date   : 16th February 2018
 // Author : Simon "Sock" OCallaghan
 // Website: www.simonoc.com
 // Notes  : Special MOD config file (should not be deleted)
@@ -48,13 +35,13 @@ bind "i" "impulse 175"
 // They are not necessary for normal play throughs
 //-----
 //developer "1"
-//gl_clear 1
+gl_clear 1
 //gl_overbright 1
 //scr_conscale 2
 //scr_menuscale 3
 //scr_sbarscale 3
-//scr_conspeed 2000
-//crosshair 1
+scr_conspeed 2000
+crosshair 1
 //scr_showfps 1
 
 //-----
@@ -72,7 +59,7 @@ r_noshadow_list "progs/flame2.mdl,progs/flame.mdl,progs/bolt1.mdl,progs/bolt2.md
 
 
 //-----
-// For a list of impulse commands, see quake.rc.ad-original.
+// For a list of impulse commands, see quake.rc.original.
 //-----
 
 alias autoaim "impulse 100"
@@ -89,12 +76,10 @@ alias upglg "impulse 210"
 
 //-----
 // For a description of how the temp1 values configure the MOD
-// behavior, see quake.rc.ad-original.
+// behavior, see quake.rc.original.
 //-----
-
-// Uncomment this line to enable the particle system. As described at the top
-// of this file, hwjam was originally shipped with the particle system off.
-//temp1 1024
+temp1 1024
+//temp1 5120
 
 
 //-----
@@ -103,9 +88,12 @@ exec autoexec.cfg
 
 //-----
 // stuff command line statements
+// Maps won't load without max_edicts
+// developer mode should be off by default
+//-----
 stuffcmds
 
-// hwjam was originally shipped without this command as well, with the
-// result that you appear immediately in the opening scene without seeing
-// the main menu.
-//menu_main
+//-----
+// Start with the main menu, not the console!?!
+//-----
+menu_main
