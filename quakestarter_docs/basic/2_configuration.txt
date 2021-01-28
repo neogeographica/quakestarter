@@ -15,9 +15,11 @@ The menus in Quakespasm-Spiked and many other Quake engines are fairly bare-bone
 
 Quake engines support other configuration options that aren't often exposed in the in-game menus. It varies from engine to engine, but items omitted from the menus can include some pretty important things like autoaim, the framerate cap, and even whether you have a crosshair onscreen.
 
-Use a text editor to open the "autoexec-cfg-example-annotated.txt" file inside the "id1" folder and have a look at some of the example settings described there. You can copy interesting settings into your own "autoexec.cfg" file in the "id1" folder. Or if you don't already have your own "autoexec.cfg" file, you can rename the "autoexec.cfg.example" file to "autoexec.cfg" and use that as a starting point.
+Use a text editor to open the "autoexec-cfg-example-annotated.txt" file inside the "id1" folder and have a look at some of the example settings described there. You can copy interesting settings into your own "autoexec.cfg" file in the "id1" folder.
 
-(Don't just rename the "autoexec-cfg-example-annotated.txt" file for this purpose, as the extra comments in that file bring it close to the maximum config file size that the original Quake engines can handle.)
+If you don't already have your own "autoexec.cfg" file, you can rename the "autoexec.cfg.example" file to "autoexec.cfg" and use that as a starting point... for various reasons though it would be best just to make your own "autoexec.cfg" file and put only what you need into there.
+
+(DO NOT just rename the "autoexec-cfg-example-annotated.txt" file for this purpose, as the extra comments in that file will cause problems with the config file size limits in some Quake engines.)
 
 A summary of what you can do with the settings shown in those files: unlock a higher framerate, disable autoaim, get a crosshair, configure "pixely textures", adjust weapon position to be more "authentic", configure old-style square particles, change the amount of water transparency, and/or revert to old-style jerky animations.
 
