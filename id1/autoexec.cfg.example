@@ -29,6 +29,9 @@ sv_aim 1
 crosshair 1
 scr_crosshairscale 2
 
+// Default to Hard difficulty unless you select something else.
+skill 2
+
 // Use pixel-y textures, but avoid artifacts on surfaces viewed at steep
 // angles.
 gl_texturemode GL_NEAREST_MIPMAP_LINEAR

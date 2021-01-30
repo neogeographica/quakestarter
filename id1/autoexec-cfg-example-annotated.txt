@@ -141,6 +141,23 @@ crosshair 1
 scr_crosshairscale 2
 
 
+// difficulty
+//-------------------------------------------------------------------
+
+// Quake episodes and a few other custom map releases allow in-game selection
+// of your desired difficulty level. For the remaining custom map releases,
+// you can also set difficulty through the "skill" variable when launching
+// Quake, with the right command-line parameters. But if you always tend to
+// play at the same difficulty you can just set it in your autoexec.cfg instead.
+// You can still override this with any in-game difficulty selection or launch
+// parameters if you change your mind, so this is just a default. Integer values
+// from 0 (Easy) to 3 (Nightmare) are supported.
+
+//   Default is 1.
+
+skill 2
+
+
 // texture filtering
 //-------------------------------------------------------------------
 
