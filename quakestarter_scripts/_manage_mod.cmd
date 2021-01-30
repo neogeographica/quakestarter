@@ -4,10 +4,10 @@ REM Used by _handle_mod_choice.cmd.
 REM On the commandline, the archive and gamedir args are required.
 
 REM The caller is also required to set the basedir, quake_exe,
-REM download_subdir, and patch_download_subdir variables.
+REM download_subdir, patch_download_subdir, and game_switch variables.
 
 REM Optional args will be specified through these variables:
-REM   base_game
+REM   base_game_arg
 REM   patch_url
 REM   patch2_url
 REM   start_map
@@ -52,9 +52,16 @@ if "%patch_download_subdir%"=="" (
   echo batch files. patch_download_subdir is set in your installer config.
   goto :eof
 )
+if "%game_switch%"=="" (
+  echo The required variable game_switch is unset.
+  echo FYI:
+  echo Usually you wouldn't run this file directly; it's used by other
+  echo batch files.
+  goto :eof
+)
 set archive=%~1
 set gamedir=%~2
-set game_arg= -game "%gamedir%"
+set game_arg= -%game_switch% %gamedir%
 set run_startdemos=false
 if "%start_map%"=="start" (
   if not "%startdemos%"=="" (
@@ -110,32 +117,38 @@ if "%start_map%"=="" (
   echo unless your Quake engine provides a map selection menu^).
   echo Do NOT just start a New Game through the Single Player menu.
 )
+REM Trying to handle some quirks with startdemos here...
+REM qbism Super8 has problems with specifying startdemos on the command line,
+REM and also has problems with the "demos" command. On the other hand, unlike
+REM Quakespasm it doesn't try to suppress startdemos by default. So let's
+REM special-case the handling of Super8 just to leave the startdemos behavior
+REM to whatever is in quake.rc.
+REM Also, if quake_exe is NOT Quakespasm-Spiked, warn that some demos might
+REM not play correctly.
 if "%run_startdemos%"=="true" (
   set normal_start=false
-  set start_map_arg= +startdemos "%startdemos%" +demos
+  if "%quake_exe%"=="%quake_exe:qbismS8=%" (
+    set start_map_arg= +startdemos %startdemos% +demos
+  ) else (
+    set start_map_arg=
+  )
   echo This mod comes with a unique set of demo films that will initially play in
   echo an "attract mode" when the mod launches. You can press ESC to get to the
   echo main menu, then select Single Player. From there you can begin a new game
   echo in this mod, or load a savegame.
+  if "%quake_exe%"=="%quake_exe:quakespasm-spiked=%" (
+    echo If your Quake engine of choice is unable to play the demo^(s^) then you will be
+    echo dropped into the console ... press ESC and proceed from there.
+  )
 )
 if "%normal_start%"=="true" (
-  set start_map_arg= +map "%start_map%"
+  set start_map_arg= +map %start_map%
   echo You will begin in its map "%start_map%" ^(which may or may not provide
   echo for in-map skill selection^).
 )
 
-if "%base_game%"=="" (
-  set base_game_arg=
-) else (
-  if "%base_game%"=="ad_v1_80p1final" (
-    set base_game_arg= -game "ad_v1_80p1final"
-  ) else (
-    if "%base_game%"=="copper_v1_15" (
-      set base_game_arg= -game "copper_v1_15"
-    ) else (
-      set base_game_arg= -%base_game%
-    )
-  )
+if not "%base_game_arg%"=="" (
+  set base_game_arg= %base_game_arg%
 )
 
 if not "%extra_launch_args%"=="" (

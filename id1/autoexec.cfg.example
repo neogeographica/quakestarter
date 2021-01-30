@@ -3,127 +3,46 @@
 // file (if you already have one) or else just rename this whole file to
 // autoexec.cfg.
 
+// Before using these settings you should check to see if they are really
+// doing what you would prefer!
+
 // Any line that starts with doubleslash is a comment and has no effect.
 
-// For more discussion, see autoexec-cfg-example-annotated.txt. Detailed
-// comments have been moved to that file because of Quake limits on config
-// file size.
+// The comments here are VERY brief. Some of these settings have interesting
+// nuances and/or won't work in all Quake engines. (They will all work fine in
+// Quakespasm-Spiked though.) It's really recommended to have a look at
+// autoexec-cfg-example-annotated.txt for more discussion of these and a few
+// additional settings.
 
 
-// about the settings in this file
 //-------------------------------------------------------------------
 
-// The comment lines in the sections below describe a setting and then provide
-// an example of that setting. The example setting is currently commented out
-// with a doubleslash just so it won't immediately take effect if you rename
-// this file to autoexec.cfg.
 
-// If you want a setting to take effect in your autoexec.cfg, make sure to
-// remove the doubleslash from the beginning of the line. You can change the
-// setting's value if you like... you don't have to use the example value
-// shown below.
+// Set a higher framerate cap. Note that using this setting can be ineffective
+// or even bad in some Quake engines (but is fine in Quakespasm-Spiked).
+host_maxfps 144
 
-// Some of these values correspond to settings that are also exposed through
-// menus in some modern Quake engines. If you set them in the autoexec.cfg
-// file instead of through the menus, then the value in autoexec.cfg will be
-// applied whenever Quake starts, regardless of what you set in the menus.
+// Don't use vertical autoaim.
+sv_aim 1
 
+// Let's have a crosshair!
+crosshair 1
+scr_crosshairscale 2
 
+// Default to Hard difficulty unless you select something else.
+skill 2
 
-// Set host_maxfps to a higher value to raise the framerate cap, or set it to
-// 0 for uncapped framerate. Note that this is not advised in Mark V or the
-// original Quakespasm as physics issues will pop up at framerates over 72.
-// For Quakespasm-Spiked and several other Quake engines this is OK though.
+// Use pixel-y textures, but avoid artifacts on surfaces viewed at steep
+// angles.
+gl_texturemode GL_NEAREST_MIPMAP_LINEAR
+gl_texture_anisotropy 8
 
-//   Default depends on the Quake engine but is usually 72. Uncomment the
-//   following line to set some other value.
-//host_maxfps 144
+// Use a gun position more like original Quake's.
+r_viewmodel_quake 1
 
+// Use square particles.
+r_particles 2
 
-// Set sv_aim to a value of 1 or more for no autoaim, or a value less than 1
-// for some vertical autoaim.
-
-//   Default is 0.93. Uncomment the following line to set some other value.
-//sv_aim 1
-
-
-// Set crosshair to 1 to enable the crosshair and 0 to disable it.
-
-//   Default is 0. Uncomment the following line to set some other value.
-//crosshair 1
-
-
-// Set a scr_crosshairscale value from 1 to 10 to control the size of the
-// crosshair, including decimal values like 3.5.
-
-//   Default is 1. Uncomment the following line to set some other value.
-//scr_crosshairscale 2
-
-
-// Set gl_texturemode for amount of texture filtering and "pixely-ness".
-// Does not apply to vkQuake (use the Video Options in-game menu instead).
-// There are several values for this, but a few interesting ones are:
-//   GL_NEAREST for pixely textures and no mipmaps (so, loss of quality on
-//   far objects)
-//   GL_NEAREST_MIPMAP_NEAREST for pixely textures and abrupt mipmap level
-//   transitions as the textured object gets farther away.
-//   GL_NEAREST_MIPMAP_LINEAR for pixely textures but smooth transitions
-//   between mipmap levels.
-//   GL_LINEAR_MIPMAP_LINEAR for smoothed textures and smooth transitions
-//   between mipmap levels.
-
-//   Default is GL_LINEAR_MIPMAP_LINEAR. Uncomment the following line to set
-//   some other value.
-//gl_texturemode GL_NEAREST_MIPMAP_LINEAR
-
-
-// Increase gl_texture_anisotropy for more texture clarity in some situations.
-// Does not apply to vkQuake (use the Video Options in-game menu instead).
-
-//   Default is 1. Uncomment the following line to set some other value.
-//gl_texture_anisotropy 8
-
-
-// Set r_viewmodel_quake to a value of 1 to make the position of the held
-// weapon's model be more like it is in WinQuake.
-
-//   Default is 0. Uncomment the following line to set some other value.
-//r_viewmodel_quake 1
-
-
-// Set r_particles to 2 for square particles, 1 for round.
-
-//   Default is 1. Uncomment the following line to set some other value.
-//r_particles 2
-
-
-// Set r_wateralpha to 1 for no liquids transparency, 0 for full liquids
-// transparency, or some decimal value in between. Note that the map itself
-// may force some other value. Also: in engines other than Quakespasm-Spiked
-// and Mark V, lowering this value on old maps that do NOT support transparent
-// liquids can cause visual glitches.
-
-//   Default is 1. Uncomment the following line to set some other value.
-//r_wateralpha 0.5
-
-
-// Set these variables to determine other material transparencies. 0 means
-// to use whatever the r_wateralpha value is. Otherwise, values up to 1 will
-// set the amount of transparency with 1 being fully opaque.
-
-//   Default is 0. Uncomment the following line(s) to set some other value.
-//r_lavaalpha 0.5
-//r_slimealpha 0.5
-//r_telealpha 0.5
-
-
-// Set r_lerpmove to 0 for old jerky enemy animations, 1 for smoothed.
-
-//   Default is 1. Uncomment the following line to set some other value.
-//r_lerpmove 0
-
-
-// Set r_lerpmodels to 0 for old jerky weapon animations, 1 for smoothed.
-
-//   Default is 1. Uncomment the following line to set some other value.
-//r_lerpmodels 0
+// Enable liquid transparency if the map was compiled to support it. Note that
+// the map may also override this value.
+r_wateralpha 0.5

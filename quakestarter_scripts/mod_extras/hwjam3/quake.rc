@@ -1,25 +1,12 @@
-// Note: hwjam2 originally shipped without a quake.rc file and without
-// effectinfo.txt, dplights.cfg, and dpsetting.cfg. The result is that the
-// various settings and aliases below were not defined, and the particle
-// system was not enabled.
-
-// Quakestarter has supplied these missing files, but left the particle
-// system disabled. The omission of these files was accidental (as far as we
-// can tell), but "particle system off" is the way it was originally released
-// and experienced.
-
-// If you want to turn the particle system back on, uncomment the line below
-// that sets the temp1 variable to a value of 1024.
-
-// This particular config file has been compacted to fit into the config-size
-// limit for some Quake engines. This largely involves removing documentation
+// Note: this config file has been compacted to fit into the config-size limit
+// for some Quake engines. This largely involves removing documentation
 // sections made of commented-out lines, as noted below. For the original
-// file from AD 1.7 see quake.rc.ad-original.
+// file see quake.rc.original.
 
 
 //-----
-// MOD    : AD v1.70P1 - (Arcane Dimensions)
-// Date   : 31st January 2018
+// MOD    : AD v1.80 - (Arcane Dimensions)
+// Date   : October 2020
 // Author : Simon "Sock" OCallaghan
 // Website: www.simonoc.com
 // Notes  : Special MOD config file (should not be deleted)
@@ -31,10 +18,6 @@ exec default.cfg
 //-----
 // load the last saved configuration
 exec config.cfg
-
-//-----
-// Custom key bindings for this MOD
-bind "i" "impulse 175"
 
 //-----
 // All the artwork and levels are designed for pixel filtering
@@ -53,9 +36,11 @@ bind "i" "impulse 175"
 //scr_conscale 2
 //scr_menuscale 3
 //scr_sbarscale 3
-//scr_conspeed 2000
-//crosshair 1
-//scr_showfps 1
+scr_sbaralpha 0.99
+scr_conspeed 2000
+crosshair 1
+//scr_showfps 0
+con_notifytime 2
 
 //-----
 // This is a collection of engine specific stuff
@@ -64,6 +49,7 @@ bind "i" "impulse 175"
 // DP : Stop DP re-generating portals which already exist in BSP!
 // QS/MarkV : r_shadow exclusion stuff
 //-----
+bind "i" "impulse 175"
 max_edicts 8192
 r_useportalculling 0
 cl_beams_polygons 0
@@ -72,7 +58,7 @@ r_noshadow_list "progs/flame2.mdl,progs/flame.mdl,progs/bolt1.mdl,progs/bolt2.md
 
 
 //-----
-// For a list of impulse commands, see quake.rc.ad-original.
+// For a list of impulse commands, see quake.rc.original.
 //-----
 
 alias autoaim "impulse 100"
@@ -82,30 +68,63 @@ alias feet "impulse 120"
 alias liqdmg "impulse 125"
 alias upgproj "impulse 130"
 alias ver "impulse 140"
+alias rseed "impulse 190"
+
+alias invent "impulse 175"
+alias huds "impulse 178"
+
+alias seclist "impulse 180"
+alias findsec "impulse 182"
+alias monlist "impulse 184"
+alias monstat "impulse 185"
+alias mapstat "impulse 186"
+
+alias showchaos "impulse 190"
+alias resetchaos "impulse 196"
+
 alias upgaxe "impulse 200"
+alias upghook "impulse 202"
 alias upgssg "impulse 205"
 alias upglg "impulse 210"
 
 
 //-----
-// For a description of how the temp1 values configure the MOD
-// behavior, see quake.rc.ad-original.
+// For a description of how these values configure the MOD
+// behavior, see quake.rc.original.
 //-----
 
-// Uncomment this line to enable the particle system. As described at the top
-// of this file, hwjam2 was originally shipped with the particle system off.
-//temp1 1024
+temp1 1024
 
+scratch1 4
+scratch2 0
+scratch3 0
+scratch4 0
+
+saved1 0
+saved2 0
+saved3 0
+saved4 0
+
+
+//-----
+// To turn off the new Custom huds for old engine clients
+// Remove the // infront of the commands below
+//scratch1 -1
+//cl_nocsqc 1
 
 //-----
 // run a user script file if present (user settings)
 exec autoexec.cfg
 
 //-----
-// stuff command line statements
+// stuff command line parameters to engine
 stuffcmds
 
-// hwjam2 was originally shipped without this command as well, with the
-// result that you appear immediately in the opening scene without seeing
-// the main menu.
-//menu_main
+//-----
+// Required for large maps (map grid > 4096)
+// Required for smooth rotation of cinematic camera's
+sv_protocol 999
+
+//-----
+// Start with the main menu, not the console!?!
+menu_main

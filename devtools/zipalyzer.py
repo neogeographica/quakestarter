@@ -19,8 +19,19 @@ knowndirs = ['gfx','locs','maps','music','particles','progs','skins','sound','te
 
 def handle_error(msg, errors):
     msg_line = '  ' + msg + '\n'
-    sys.stderr.write(msg)
+    sys.stderr.write(msg_line)
     errors.append(msg)
+
+def check_quakerc_size(results_dir, cfg, analysis):
+    path = os.path.join(results_dir, cfg)
+    file_stats = os.stat(path)
+    # We need to enforce a limit much lower than the 8192 buffer size, since
+    # quake.rc includes other configs into the same buffer.
+    if file_stats.st_size > 4000:
+        analysis.write(
+            "\n{} is likely too large ({} chars) for engines with original limits. "
+            "Try to make a version of it smaller than 4000 chars (as small as "
+            "possible) and ship it in mod_extras.\n".format(cfg, file_stats.st_size))
 
 def gen_zip_analysis(results_dir, demos, configs, docs, errors, config_flags):
     (has_loose_autoexec, has_pak_autoexec, has_loose_quakerc, has_pak_quakerc) = config_flags
@@ -29,8 +40,8 @@ def gen_zip_analysis(results_dir, demos, configs, docs, errors, config_flags):
             analysis.write("errors: n/a\n\n")
         else:
             analysis.write("errors:\n")
-            analysis.write(errors)
-            analysis.write('\n')
+            analysis.write('\n'.join(errors))
+            analysis.write('\n\n')
         def write_list(list, listname):
             if len(list) == 0:
                 analysis.write(listname + ": n/a\n")
@@ -50,6 +61,9 @@ def gen_zip_analysis(results_dir, demos, configs, docs, errors, config_flags):
         different_startdemos_in_config = False
         demos_in_config = False
         for cfg in configs:
+            cfgl = cfg.lower()
+            if cfgl == 'quake.rc' or cfgl.endswith('/quake.rc'):
+                check_quakerc_size(results_dir, cfg, analysis)
             with open(os.path.join(results_dir, cfg), 'r') as f:
                 for line in f:
                     sl = line.strip()
@@ -124,7 +138,7 @@ def process_pak(zf, pak, results_dir, demos, configs, errors):
     with zf.open(pak) as pak_stream:
         target_info = expak.get_target_info(pak_stream, None)
         if target_info is None:
-            handle_error("{} is not a pak file".format(pak))
+            handle_error("{} is not a pak file".format(pak), errors)
             return False
         pak_contents = [t[0].decode() for t in target_info]
         for p in pak_contents:
@@ -143,7 +157,7 @@ def process_pak(zf, pak, results_dir, demos, configs, errors):
                 try:
                     extract_pakres(pak, pak_stream, p, results_dir)
                 except:
-                    handle_error("exception extracting {} from {}".format(p, pak))
+                    handle_error("exception extracting {} from {}".format(p, pak), errors)
                     all_success = False
     print("  ... done ({})".format(pak))
     return all_success, has_autoexec, has_quakerc
@@ -185,7 +199,7 @@ def process_zip(zip):
             try:
                 zf.extract(f, path=results_dir)
             except:
-                handle_error("exception extracting {}".format(f))
+                handle_error("exception extracting {}".format(f), errors)
                 all_success = False
             continue
         if fl.endswith('.dem'):

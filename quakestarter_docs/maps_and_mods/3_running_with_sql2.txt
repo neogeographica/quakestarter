@@ -42,6 +42,8 @@ The resulting Quake command line shown in the box should have your new argument 
 
 As mentioned in "mod_requirements.txt", this will only work with Quake engines that support multiple "-game" arguments on the command line.
 
+* Note: The qbism Super8 engine uses a different syntax on the command line, where the text that you manually enter here would use "-game2" rather than "-game".
+
 
 **** Launching
 

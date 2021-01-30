@@ -8,7 +8,7 @@ import time
 import urllib.request
 import zipfile
 
-VERSION = "2.0.2"
+VERSION = "2.1"
 ROOT_FOLDER = "Quake"
 QSS_VERSION = "2020-10-17"
 QSS_URL = "https://fte.triptohell.info/moodles/qss/quakespasm_spiked_win64_dev.zip"
@@ -72,6 +72,29 @@ def gen_readme(readme_contents, qss_timestamp, sql_timestamp, timestamp):
     with open(os.path.join(ROOT_FOLDER, "quakestarter_readme.txt"), 'w') as f:
         f.writelines(new_readme_contents)
 
+def patch_autoexec():
+    autoexec_path = os.path.join(ROOT_FOLDER, "id1", "autoexec.cfg.example")
+    shutil.copy2(autoexec_path, "autoexec.cfg.example.bak")
+    with open(autoexec_path, 'r', newline='\r\n') as f:
+        autoexec_contents = f.readlines()
+    new_autoexec_contents= []
+    for line in autoexec_contents:
+        if line.lower().startswith("host_maxfps "):
+            new_autoexec_contents.append(
+                "// Since this package does not include Quakespasm-Spiked, this setting is\r\n")
+            new_autoexec_contents.append(
+                "// commented out for safety. Remove the leading doubleslash to activate it.\r\n")
+            new_autoexec_contents.append("//" + line)
+        else:
+            new_autoexec_contents.append(line)
+    with open(autoexec_path, 'w') as f:
+        f.writelines(new_autoexec_contents)
+    shutil.copystat("autoexec.cfg.example.bak", autoexec_path)
+
+def unpatch_autoexec():
+    autoexec_path = os.path.join(ROOT_FOLDER, "id1", "autoexec.cfg.example")
+    shutil.move("autoexec.cfg.example.bak", autoexec_path)
+
 def gen_release():
     script_path = os.path.abspath(sys.argv[0])
     src = os.path.realpath(os.path.dirname(os.path.dirname(script_path)))
@@ -90,7 +113,9 @@ def gen_release():
         readme_contents = f.readlines()
     gen_readme(readme_contents, "", sql_timestamp, timestamp)
     release_name = "quakestarter-noengine-" + VERSION
+    patch_autoexec()
     shutil.make_archive(release_name, "zip", base_dir=ROOT_FOLDER)
+    unpatch_autoexec()
     qss_zip_contents, qss_timestamp = handle_zip(QSS_URL, QSS_LOCALFILE)
     print("QSS version: {}".format(QSS_VERSION))
     print("QSS timestamp: {}".format(qss_timestamp))

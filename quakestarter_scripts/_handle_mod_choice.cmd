@@ -69,6 +69,47 @@ if "%renamed_gamedir%"=="" (
 
 cls
 
+REM handle multigame_support, especially "auto" behavior
+set game_switch=game
+set base_game_switch=game
+set multigame_game_switch=game
+if "%multigame_support%"=="auto" (
+  if not "%quake_exe%"=="%quake_exe:quakespasm-spiked=%" (
+    set multigame_support=true
+  ) else (
+    if not "%quake_exe%"=="%quake_exe:vkQuake=%" (
+      set multigame_support=true
+    ) else (
+      if not "%quake_exe%"=="%quake_exe:fteqw=%" (
+        set multigame_support=true
+      ) else (
+        if not "%quake_exe%"=="%quake_exe:darkplaces=%" (
+          set multigame_support=true
+        ) else (
+          if not "%quake_exe%"=="%quake_exe:qbismS8=%" (
+            set multigame_support=true
+            set base_game_switch=game2
+            set multigame_game_switch=game
+          ) else (
+            set multigame_support=false
+          )
+        )
+      )
+    )
+  )
+) else (
+  if not "%multigame_support%"=="true" (
+    if not "%multigame_support%"=="false" (
+      set base_game_switch=%multigame_support%
+      for /f "delims=; tokens=1,2" %%a in ("%multigame_support%") do (
+        set base_game_switch=%%a
+        set multigame_game_switch=%%b
+      )
+      set multigame_support=true
+    )
+  )
+)
+
 REM base game check and (in some cases) install
 set saved_skip_quakerc_gen=%skip_quakerc_gen%
 if not "%base_game%"=="" (
@@ -100,6 +141,7 @@ if not "%base_game%"=="" (
         goto :eof
       )
     )
+    set game_switch=%multigame_game_switch%
   )
   if "%base_game%"=="copper_v1_15" (
     if not "%multigame_support%"=="true" (
@@ -118,6 +160,7 @@ if not "%base_game%"=="" (
         goto :eof
       )
     )
+    set game_switch=%multigame_game_switch%
   )
   if "%base_game%"=="hipnotic" (
     if not exist "%basedir%\hipnotic\pak0.pak" (
@@ -175,6 +218,19 @@ endlocal
 echo.
 
 :launch
+if "%base_game%"=="" (
+  set base_game_arg=
+) else (
+  if "%base_game%"=="ad_v1_80p1final" (
+    set base_game_arg=-%base_game_switch% ad_v1_80p1final
+  ) else (
+    if "%base_game%"=="copper_v1_15" (
+      set base_game_arg=-%base_game_switch% copper_v1_15
+    ) else (
+      set base_game_arg=-%base_game%
+    )
+  )
+)
 call "%scriptspath%_manage_mod.cmd" "%archive%" "%gamedir%"
 if not "%base_game%"=="" (
   if exist "%basedir%\%gamedir%" (
@@ -186,12 +242,12 @@ if not "%base_game%"=="" (
     )
     if "%base_game%"=="ad_v1_80p1final" (
       echo make sure to specify ad_v1_80p1final as a base mod. On the command line
-      echo that means putting -game "ad_v1_80p1final" BEFORE -game "%gamedir%".
+      echo that means putting %base_game_arg% before -%game_switch% %gamedir%.
       echo.
     )
     if "%base_game%"=="copper_v1_15" (
       echo make sure to specify copper_v1_15 as a base mod. On the command line
-      echo that means putting -game "copper_v1_15" BEFORE -game "%gamedir%".
+      echo that means putting %base_game_arg% before -%game_switch% %gamedir%.
       echo.
     )
     if "%base_game%"=="hipnotic" (

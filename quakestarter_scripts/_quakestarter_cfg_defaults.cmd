@@ -16,13 +16,13 @@ REM below is also set correctly for the Quake engine of your choice!
 set quake_exe=quakespasm-spiked-win64.exe
 
 
-REM Whether your Quake engine of choice supports multiple "-game" arguments
-REM on the command line. This is required for the way the install script
-REM handles some Arcane Dimensions and Copper releases. For details, see the
-REM mod_requirements.txt and advanced_quakestarter_cfg.txt docs in the
+REM Whether your Quake engine of choice supports activating multiple mod
+REM folders on the command line. This is required for the way the install
+REM script handles some Arcane Dimensions and Copper releases. For details,
+REM see the mod_requirements.txt and advanced_quakestarter_cfg.txt docs in the
 REM quakestarter_docs\other_stuff folder.
 
-set multigame_support=true
+set multigame_support=auto
 
 
 REM This is the subfolder path (within your Quake folder) where the primary

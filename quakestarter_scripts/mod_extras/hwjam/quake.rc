@@ -1,4 +1,4 @@
-// Note: hwjam2 originally shipped without a quake.rc file and without
+// Note: hwjam originally shipped without a quake.rc file and without
 // effectinfo.txt, dplights.cfg, and dpsetting.cfg. The result is that the
 // various settings and aliases below were not defined, and the particle
 // system was not enabled.
@@ -93,7 +93,7 @@ alias upglg "impulse 210"
 //-----
 
 // Uncomment this line to enable the particle system. As described at the top
-// of this file, hwjam2 was originally shipped with the particle system off.
+// of this file, hwjam was originally shipped with the particle system off.
 //temp1 1024
 
 
@@ -105,7 +105,7 @@ exec autoexec.cfg
 // stuff command line statements
 stuffcmds
 
-// hwjam2 was originally shipped without this command as well, with the
+// hwjam was originally shipped without this command as well, with the
 // result that you appear immediately in the opening scene without seeing
 // the main menu.
 //menu_main
