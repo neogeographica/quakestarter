@@ -34,17 +34,21 @@ You can use this package as a new Quake installation starting from scratch.
 
 Or if you already have a Quake installation, you can drop these files and folders into that existing Quake folder if you like. The "1_installation.txt" doc in the "quakestarter_docs\basic" folder goes into a bit more detail about that approach.
 
-Things to do:
+The following sequence will get you off and running:
 
 - You're going to need Microsoft .Net Framework version 4.5 or later. If you are on a normal Windows 8 or Windows 10 system, you're fine. For more details, especially if you are on Windows 7, see the "dot_net_version_dependency.txt" doc in the "quakestarter_docs\other_stuff" folder.
 
 - If you're starting a new Quake installation from scratch, you need to move or copy your "pak0.pak" and "pak1.pak" files (Quake game data) into the "id1" folder. If you already have another Quake installation on your computer somewhere, you can run Quakestarter and choose the first menu option; this can usually automatically find and copy those pak files for you.
 
-- You can also use the second option in the main Quakestarter menu to get the Quake soundtrack files set up.
+- You can also use the second option in the main Quakestarter menu to get the Quake soundtrack files set up. The Quake soundtrack adds a lot -- it's more like "ambient sounds" most of the time, rather than a song. It's good to have!
 
-- Now use the third option in the main menu to launch Quake. Hopefully it works! This would be a good time to get your desired Quake configuration set up. The Quake in-game menus are sufficient for normal setup, but you can later get more "hands-on" and manually modify config files if you like -- and with the way Quake works, you probably _will_ want to do that. When you're ready to get into config file stuff, see the "2_configuration.txt" doc in the "quakestarter_docs\basics" folder.
+- In the "id1" folder, there's a file named "autoexec.cfg.example". This contains some settings that are not always accessible through the in-game menu options of some Quake engines. You can rename this file to "autoexec.cfg" to enable those settings. You can of course change the settings and values in your "autoexec.cfg" to match your personal preferences -- you don't need to stick with the given example values.
 
-- Quit out of Quake and return to the Quakestarter menu. At this point you should be able to freely explore the remaining menu options and try any addon that looks interesting. (If you want more info about an addon, you can look up its page on https://www.quaddicted.com/reviews/ )
+- Now use the third option in the main Quakestarter menu to launch Quake. Hopefully it works! This would be a good time to get the remainder of your desired Quake configuration set up through the in-game menus.
+
+- The "2_configuration.txt" doc in the "quakestarter_docs\basics" folder goes into a bit more detail about the previous two steps. You don't need to go down the rabbit hole but you do want your basic setup to be comfortable, because that setup will be copied to each new release that you install and play.
+
+- At this point you should be able to freely explore the remaining Quakestarter menu options and try any addon that looks interesting. (If you want more info about an addon, you can look up its page on https://www.quaddicted.com/reviews/ )
 
 - Alternately you can use "SQLauncher2.exe", the Simple Quake Launcher 2, as another great way to manage launching Quake to play custom addons or official missionpacks or the original campaign.
 

@@ -14,7 +14,11 @@ Most of the changes in this release are because of me revisiting the cool qbism 
 
 - Supply smaller quake.rc files for Arcane Dimensions and any releases based on AD, so that they can work in Super8 (and any other Quake engine that retains the original limits on the amount of config text that can be executed). These quake.rc files still function the same; they're just way less chatty. The originals are still available there for reference.
 
+- Make autoexec.cfg.example a lot smaller and slightly more opinionated. This helps with engines like Super8 that have strict limits on the amount of initial config stuff that can be executed through quake.rc; it's now slightly nicer/easier to just instantly rename and start using this file; and I don't have to keep trying to maintain cut-down versions of the discussions in the annotated version.
+
 - Add the Blue Monday Jam to the installables (episodes/hubs, new hotness menu).
+
+- Always some doc improvements here and there!
 
 
 **** v2.0.2 (Dec 2020)
