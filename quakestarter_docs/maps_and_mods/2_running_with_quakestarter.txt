@@ -9,7 +9,7 @@ After you have installed an addon from the Quakestarter menus, or if you select 
   n: do not launch
   0-3: launch and set a default initial skill
 
-If you choose "y" or just press Enter, the addon will be launched using a default skill value. Usually the default skill is 1 ("Normal"), but you may want to set up a different default skill for yourself as described in the "quakestarter_docs\other_stuff\no_launcher.txt" doc. Then you can always just hammer the Enter key to quickly launch stuff without needing to specifically enter a skill value. (If the addon comes with its own "start" map, it may also provide a way to select the skill value in-game.)
+If you choose "y" or just press Enter, the addon will be launched using a default skill value. Usually the default skill is 1 ("Normal"), but you may want to set up a different default skill for yourself in your "id1\autoexec.cfg" file. Then you can always just hammer the Enter key to quickly launch stuff without needing to specifically enter a skill value. (If the addon comes with its own "start" map, it may also provide a way to select the skill value in-game.)
 
 
 **** Example command line
