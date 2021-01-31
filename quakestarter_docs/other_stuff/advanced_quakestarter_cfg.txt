@@ -38,7 +38,7 @@ For addons that build on mods other than Quoth... it's not always been quite as 
 
 Quakestarter relies on this feature to support installing and launching addons that depend on the Arcane Dimensions or Copper mods. (This doesn't include mods that carry their own copy of the AD or Copper mod; it means simple map releases that are meant to be played with AD or Copper.)
 
-By default Quakestarter will try to automatically figure out whether your Quake engine supports this feature (by looking at the value of quake-exe), and determine what the correct commandline syntax is for invoking it. Hopefully this will work for you! It should work for all of the Quake engines mentioned above or elsewhere in these docs.
+By default Quakestarter will try to automatically figure out whether your Quake engine supports this feature (by looking at the value of quake_exe), and determine what the correct commandline syntax is for invoking it. Hopefully this will work for you! It should work for all of the Quake engines mentioned above or elsewhere in these docs.
 
 But if for some reason this auto-detection is making the wrong choice, you can force the behavior by setting a value for multigame_support in your "_quakestarter_cfg.cmd" file. Possible values are described below.
 
