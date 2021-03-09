@@ -2,7 +2,7 @@
 
 - Include latest Quakespasm-Spiked (2021-03-06).
 
-- Add the SMEJ2 episode to the installables (episodes/hubs, new hotness menu).
+- Add the SMEJ2 episode, the Unused Jam, and Imhotep's Legacy to the installables.
 
 - If you use _quakestarter_cfg.cmd to set your own quake_exe value, that value can now include any command-line arguments that should always be used.
 

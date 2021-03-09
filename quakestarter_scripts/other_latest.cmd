@@ -48,10 +48,12 @@ set startdemos=
 cls
 call :installed_check ad_heresp1
 call :installed_check zigisp1
+call :installed_check ad_heresp2
 echo.
 echo Selected other custom maps released in 2020:
 echo %is_ad_heresp1_installed%  1: ad_heresp1 - Oxyblack Fortress
 echo %is_zigisp1_installed%  2: zigisp1 - A Verdant Dawn
+echo %is_ad_heresp2_installed%  3: ad_heresp2 - Imhotep's Legacy
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -69,6 +71,14 @@ goto :menu
 :2
 set start_map=zigisp1
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/zigisp1.zip
+pause
+goto :menu
+
+:3
+set base_game=ad_v1_80p1final
+set start_map=ad_heresp2
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ad_heresp2.zip
 pause
 goto :menu
 
