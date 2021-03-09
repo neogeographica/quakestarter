@@ -1,4 +1,17 @@
-**** v2.1 (Jan 2021)
+**** v2.2.0 (March 2021)
+
+- Include latest Quakespasm-Spiked (2021-03-06).
+
+- Add the SMEJ2 episode to the installables (episodes/hubs, new hotness menu).
+
+- If you use _quakestarter_cfg.cmd to set your own quake_exe value, that value can now include any command-line arguments that should always be used.
+
+- Default to skill 1 rather than skill 2 in autoexec.cfg.example.
+
+- Misc minor docs corrections and fixes.
+
+
+**** v2.1.0 (Jan 2021)
 
 Most of the changes in this release are because of me revisiting the cool qbism Super8 engine (https://super8.qbism.com/) and taking care of some quirks that prevented it from working well as an alternative Quake engine launched from Quakestarter. Note that there is absolutely no guarantee that Super8 will be able to play all of our installables... but it should be able to handle most of them.
 
