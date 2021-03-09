@@ -8,6 +8,8 @@
 
 - Default to skill 1 rather than skill 2 in autoexec.cfg.example.
 
+- Set r_wateralpha to 0.65 for retrojam6; it's necessary for one of the maps (retrojam6_mjb) and doesn't hurt the others.
+
 - Misc minor docs corrections and fixes.
 
 
