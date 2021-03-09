@@ -237,7 +237,7 @@ echo set last_extra_launch_args=%extra_launch_args% >> "%basedir%\%gamedir%\_las
 echo set last_base_game_arg=%base_game_arg% >> "%basedir%\%gamedir%\_last_launch.cmd"
 REM And away we go!
 echo running: %quake_exe%%display_quake_args%
-start "" /b /wait "%basedir%\%quake_exe%"%quake_args%
+start "" /b /wait "%basedir%"\%quake_exe%%quake_args%
 
 :n
 :N

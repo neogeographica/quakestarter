@@ -8,8 +8,9 @@ REM might get lost when upgrading to a later release of the package.
 
 
 REM The name of the Quake engine executable that will be used to play when
-REM launching stuff through the Quakestarter. The quake_engines.txt doc
-REM in the quakestarter_docs\other_stuff folder has some comments about this.
+REM launching stuff through the Quakestarter. Can be followed by any
+REM arguments that should always be used. The quake_engines.txt doc in the
+REM quakestarter_docs\other_stuff folder has some comments about this.
 REM Note: If you change this, make sure that the value for multigame_support
 REM below is also set correctly for the Quake engine of your choice!
 

@@ -31,20 +31,22 @@ if "%quake_exe%"=="" (
   pause
   goto :eof
 ) else (
-  if not exist "%basedir%\%quake_exe%" (
-    echo The configured Quake engine: %quake_exe%
-    echo does not exist in the Quake folder: %basedir%
-    echo.
-    echo If you need to configure a different executable to use for Quake, see the
-    echo "advanced_quakestarter_cfg.txt" doc in the "quakestarter_docs\other_stuff"
-    echo folder.
-    echo.
-    pause
-    goto :eof
+  for /f %%a in ("%quake_exe%") do (
+    if not exist "%basedir%"\%%a (
+      echo The configured Quake engine: %%a
+      echo does not exist in the Quake folder: %basedir%
+      echo.
+      echo If you need to configure a different executable to use for Quake, see the
+      echo "advanced_quakestarter_cfg.txt" doc in the "quakestarter_docs\other_stuff"
+      echo folder.
+      echo.
+      pause
+      goto :eof
+    )
   )
 )
 
 REM OK do the thing
-start "" /b /wait "%basedir%\%quake_exe%"
+start "" /b /wait "%basedir%"\%quake_exe%
 
 pause
