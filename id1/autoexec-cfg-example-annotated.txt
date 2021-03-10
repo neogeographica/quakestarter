@@ -150,12 +150,14 @@ scr_crosshairscale 2
 // Quake, with the right command-line parameters. But if you always tend to
 // play at the same difficulty you can just set it in your autoexec.cfg instead.
 // You can still override this with any in-game difficulty selection or launch
-// parameters if you change your mind, so this is just a default. Integer values
-// from 0 (Easy) to 3 (Nightmare) are supported.
+// parameters if you change your mind, so this is just a default. Note that
+// custom releases, especially recent ones, are typically more difficult than
+// the original Quake campaign! Integer values 0 (Easy), 1 (Normal), 2 (Hard),
+// and 3 (Nightmare) are supported.
 
 //   Default is 1.
 
-skill 2
+skill 1
 
 
 // texture filtering
@@ -246,10 +248,10 @@ r_telealpha 0.5
 // setting values for these transparency variables might cause visual glitches
 // in many Quake engines. It depends on what Quake engine you are using:
 
-// In (for example) Quakespasm-Spiked and Mark V, this problem doesn't arise...
-// if you lower these alpha settings in a map that doesn't have transparent
-// liquids, nothing will happen. You still won't be able to see through the
-// liquids, but you'll get no glitches.
+// In (for example) Quakespasm-Spiked, Mark V, and qbism Super8, this problem
+// doesn't arise... if you lower these alpha settings in a map that doesn't
+// have transparent liquids, nothing will happen. You still won't be able to
+// see through the liquids, but you'll get no glitches.
 
 // In many other engines (e.g. original GLQuake, original Quakespasm, FTE, and
 // vkQuake) you will see rendering bugs in and around liquids in this situation.

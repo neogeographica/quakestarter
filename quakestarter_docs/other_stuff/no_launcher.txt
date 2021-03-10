@@ -34,10 +34,12 @@ If the folder is named "foo" and requires missionpack 1, then you would activate
 If the folder is named "foo" and requires missionpack 2, then you would activate it with this command:
     game foo -rogue
 
-If the folder depends on another non-Quoth non-missionpack mod folder (as described in the "mod_requirements.txt") you can add that dependency as the first argument. For example to run "udob_v1_1" that depends on "copper_v1_15", you would use the command:
+If the folder depends on another non-Quoth non-missionpack mod folder (as described in the "mod_requirements.txt" doc) you can add that dependency as the first argument. For example to run "udob_v1_1" that depends on "copper_v1_15", you would use the command:
     game copper_v1_15 udob_v1_1
 
-If you get an error from that last form of the command, then your Quake engine does not support activating multiple mod folders.
+If trying any of these commands results in an error message, then your Quake engine does not support doing a "game" command from the console. You'll have to use command-line options as described in the "mod_requirements.txt" doc,
+
+If you get an error only from that last form of the command, then your Quake engine does not support activating multiple mod folders.
 
 Once you've executed the "game" command, if you see the message "execing quake.rc" appear in the console, you're ready to play. (This should be the case with any recent Quakespasm-variant engine.) Otherwise see the "quake_rc.txt" doc for some more necessary details.
 

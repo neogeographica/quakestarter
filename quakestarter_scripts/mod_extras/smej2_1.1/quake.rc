@@ -1,0 +1,71 @@
+// This is a copy of the quake.rc file from inside the pak0.pak. Only one thing
+// has been changed, which I'll describe in a minute.
+
+// Note that this "loose file" will take priority over the original in pak0.pak
+// only if your Quake engine prioritizes loose files. Not many do! I know that
+// Quakespasm-Spiked does, so this is the quake.rc file that will be used when
+// running Quakespasm-Spiked.
+
+// OK so: the only thing changed here is the commenting-out of the explicit
+// "demos" command. At best, it messes up the startdemos order. At worst, it
+// gets in the way of Quakestarter options. Its only purpose is to make sure
+// that the startdemos will always play in Quakespasm-style engines, but
+// Quakestarter already fixes that.
+
+// (An explicit "demos" command in quake.rc can also mess up startdemos in at
+// least one engine, qbism Super8. But since Super8 doesn't prioritize "loose
+// files" we can't fix that in this case.)
+
+
+// load the last saved configuration
+exec config.cfg
+
+// run a user script file if present
+exec autoexec.cfg
+
+alias fogcycle "fog1"
+alias fog1 "fog 0.03 0.3 0.15 0.2; alias fogcycle fog2;"
+alias fog2 "fog 0.02 0.33 0.33 0.5; alias fogcycle fog3;"
+alias fog3 "fog 0.04 0.3 0.3 0.3; alias fogcycle fog4;"
+alias fog4 "fog 0.03 0.3 0.2 0.1; alias fogcycle fog5;"
+alias fog5 "fog 0.03 0.15 0.22 0.12; alias fogcycle fog6;"
+alias fog6 "fog 0; alias fogcycle fog1;"
+
+scr_printspeed 16
+
+alias ver "impulse 140"
+alias version_copper "impulse 140"
+alias invoke "impulse 100"
+alias reveal "impulse 101"
+alias debug_trigger "impulse 102"
+alias debug_ammo "impulse 103"
+alias debug_flags "impulse 104"
+alias genocide "impulse 66"
+alias undying "impulse 215"
+alias suit "impulse 225"
+alias pent "impulse 235"
+alias invis "impulse 245"
+alias ring invis
+alias quad "impulse 255"
+alias idkfa "impulse 9"
+alias keys "impulse 99"
+
+// stuff command line statements
+stuffcmds
+
+// start demos if not already running a server
+startdemos demo3 demo2 demo1
+
+// commenting out the explicit demos command as this can muck things up
+//demos
+
++mlook
+
+//map start
+echo ""
+echo "---------------------"
+echo "Ep{puhtauksien Virta"
+echo "Torrent Of Impurities"
+echo "---------------------"
+echo ""
+echo "1.1"

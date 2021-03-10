@@ -98,6 +98,8 @@ pause
 goto :menu
 
 :4
+set modsettings[0]=r_wateralpha 0.65
+set modsettings[1]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/retrojam6.zip
 pause
 goto :menu

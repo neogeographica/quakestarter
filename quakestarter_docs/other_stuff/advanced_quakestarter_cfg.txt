@@ -15,7 +15,12 @@ The "_quakestarter_cfg_defaults.cmd" file describes these settings in detail, so
 
 **** Engine choice
 
-If you do modify the quake_exe value as described above, the following things are _not_ guaranteed:
+As described above, you can set a new quake_exe value to change the Quake program that will be launched by Quakestarter.
+
+You can also add arguments here that should always be used whenever launching your Quake program. For example, if you are launching qbism Super8, its default "heapsize" value is quite low and on modern systems there's no downside to always cranking it up, so that more maps will work correctly. So you could choose to specify this:
+    set quake_exe=qbismS8.exe -heapsize 256000
+
+In any case, if you do set your own quake_exe then the following things are _not_ guaranteed:
 * that your choice of Quake engine will be able to properly run every selection from the Quakestarter menus
 * that your choice of Quake engine will be able to play the downloaded soundtrack files
 * that all the settings in the example autoexec.cfg will work for your choice of Quake engine, or have the indicated defaults
@@ -38,7 +43,7 @@ For addons that build on mods other than Quoth... it's not always been quite as 
 
 Quakestarter relies on this feature to support installing and launching addons that depend on the Arcane Dimensions or Copper mods. (This doesn't include mods that carry their own copy of the AD or Copper mod; it means simple map releases that are meant to be played with AD or Copper.)
 
-By default Quakestarter will try to automatically figure out whether your Quake engine supports this feature (by looking at the value of quake-exe), and determine what the correct commandline syntax is for invoking it. Hopefully this will work for you! It should work for all of the Quake engines mentioned above or elsewhere in these docs.
+By default Quakestarter will try to automatically figure out whether your Quake engine supports this feature (by looking at the value of quake_exe), and determine what the correct commandline syntax is for invoking it. Hopefully this will work for you! It should work for all of the Quake engines mentioned above or elsewhere in these docs.
 
 But if for some reason this auto-detection is making the wrong choice, you can force the behavior by setting a value for multigame_support in your "_quakestarter_cfg.cmd" file. Possible values are described below.
 

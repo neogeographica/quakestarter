@@ -29,8 +29,9 @@ sv_aim 1
 crosshair 1
 scr_crosshairscale 2
 
-// Default to Hard difficulty unless you select something else.
-skill 2
+// Default to a particular difficulty unless you select something else.
+// 0 = Easy, 1 = Normal, 2 = Hard, 3 = Nightmare
+skill 1
 
 // Use pixel-y textures, but avoid artifacts on surfaces viewed at steep
 // angles.

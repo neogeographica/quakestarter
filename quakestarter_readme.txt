@@ -19,7 +19,7 @@ Note that the programs in this package are meant to be used on Windows 7, 8, or 
 
 **** Version info
 
-The included version of Quakespasm-Spiked is ###QSS_VERSION###, 64-bit executable, from ###QSS_TIMESTAMP###.
+The included version of Quakespasm-Spiked is ###QSS_VERSION###, 64-bit executable, from ###QSS_TIMESTAMP###. Note that this may be the "dev build" rather than the "Release", if that's actually considered to be more stable.
 
 The included version of Simple Quake Launcher 2 is ###SQL_VERSION### from ###SQL_TIMESTAMP###.
 
