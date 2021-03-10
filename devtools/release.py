@@ -8,9 +8,9 @@ import time
 import urllib.request
 import zipfile
 
-VERSION = "2.1"
+VERSION = "2.2.0"
 ROOT_FOLDER = "Quake"
-QSS_VERSION = "2020-10-17"
+QSS_VERSION = "2021-03-06"
 QSS_URL = "https://fte.triptohell.info/moodles/qss/quakespasm_spiked_win64_dev.zip"
 QSS_LOCALFILE = "qss-temp.zip"
 SQL_VERSION = "2.4"
