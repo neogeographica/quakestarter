@@ -1,3 +1,8 @@
+**** v2.2.1 (March 2021)
+
+Tiny update here. This just adds a very-most-top-level short readme file ("how_to_use_quakestarter.txt") into the zip archive for a release, to make sure users know where to go first. It's nice for the archive to be self-contained in this way and not require any external info to get started with it properly.
+
+
 **** v2.2.0 (March 2021)
 
 - Include latest Quakespasm-Spiked (2021-03-06).

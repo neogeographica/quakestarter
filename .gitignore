@@ -1,3 +1,4 @@
 *.pyc
+devtools/release.*
 quakestarter-*.zip
 *_results/
