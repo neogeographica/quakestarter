@@ -37,6 +37,7 @@ call :installed_check e1m5quotha rating
 call :installed_check mstalk1c rating
 call :installed_check func_mapjam1 rating
 call :installed_check ad_v1_70final version
+call :installed_check unusedjam
 
 REM if called with "check" arg just decide whether to show this menu at all
 if "%~1"=="check" (
@@ -90,12 +91,15 @@ if "%show_rating%"=="true" (
   if "%show_func_mapjam1%"=="true" (
     echo %is_func_mapjam1_installed%  4: func_mapjam1 - Func Map Jam 1 - Honey Theme ^(2014^)
   )
+  if "%show_unusedjam%"=="true" (
+    echo %is_unusedjam_installed%  5: unusedjam - Unused Jam ^(2021^)
+  )
   echo.
 )
 if "%show_version%"=="true" (
   echo Dropped because superseded by a newer version:
   if "%show_ad_v1_70final%"=="true" (
-    echo %is_ad_v1_70final_installed%  5: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
+    echo %is_ad_v1_70final_installed%  6: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
   )
   echo.
 )
@@ -147,6 +151,15 @@ pause
 goto :menu
 
 :5
+if not "%show_unusedjam%"=="true" (
+  goto :eof
+)
+set start_map=start
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/unusedjam.zip
+pause
+goto :menu
+
+:6
 if not "%show_ad_v1_70final%"=="true" (
   goto :eof
 )

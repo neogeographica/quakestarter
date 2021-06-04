@@ -53,8 +53,8 @@ call :installed_check eoe
 call :installed_check hwjam3
 call :installed_check xmasjam2020
 call :installed_check bluemonday_v2
-call :installed_check unusedjam
 call :installed_check smej2_1.1
+call :installed_check pun
 echo.
 echo Selected custom episodes/hubs released in 2020/2021:
 echo %is_ctsj_installed%  1: ctsj - Coppertone Summer Jam
@@ -64,8 +64,8 @@ echo %is_eoe_installed%  4: eoe - Epochs of Enmity
 echo %is_hwjam3_installed%  5: hwjam3 - Halloween Jam 3
 echo %is_xmasjam2020_installed%  6: xmasjam2020 - Xmas Jam 2020
 echo %is_bluemonday_v2_installed%  7: bluemonday_v2 - Blue Monday Jam
-echo %is_unusedjam_installed%  8: unusedjam - Unused Jam
-echo %is_smej2_1.1_installed%  9: smej2_1.1 - Torrent of Impurities ^(Epaepuhtauksien Virta^)
+echo %is_smej2_1.1_installed%  8: smej2_1.1 - Torrent of Impurities ^(Epaepuhtauksien Virta^)
+echo %is_pun_installed%  9: pun - The Punishment Due
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -126,15 +126,15 @@ goto :menu
 
 :8
 set start_map=start
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/unusedjam.zip
+set skip_quakerc_gen=true
+set startdemos=demo3 demo2 demo1
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/smej2_1.1.zip
 pause
 goto :menu
 
 :9
 set start_map=start
-set skip_quakerc_gen=true
-set startdemos=demo3 demo2 demo1
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/smej2_1.1.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/pun.zip
 pause
 goto :menu
 
