@@ -6,7 +6,7 @@
 
 - Move the Unused Jam to legacies (rating drop).
 
-- Add the Punishment Due episode to the installables.
+- Add the Punishment Due episode and Alkaline hub to the installables.
 
 
 **** v2.2.1 (March 2021)
