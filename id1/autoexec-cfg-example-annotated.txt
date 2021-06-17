@@ -248,19 +248,21 @@ r_telealpha 0.5
 // setting values for these transparency variables might cause visual glitches
 // in many Quake engines. It depends on what Quake engine you are using:
 
-// In (for example) Quakespasm-Spiked, Mark V, and qbism Super8, this problem
-// doesn't arise... if you lower these alpha settings in a map that doesn't
-// have transparent liquids, nothing will happen. You still won't be able to
-// see through the liquids, but you'll get no glitches.
+// In (for example) Quakespasm-Spiked, Mark V, vkQuake _after_ version 1.05.3,
+// and qbism Super8, this problem doesn't arise... if you lower these alpha
+// settings in a map that doesn't have transparent liquids, nothing will
+// happen. You still won't be able to see through the liquids, but you'll get
+// no glitches.
 
 // In many other engines (e.g. original GLQuake, original Quakespasm, FTE, and
-// vkQuake) you will see rendering bugs in and around liquids in this situation.
-// In these cases, you can get rid of the glitches if you also set "r_novis 1"
-// to disable the use of visibility tests in the renderer. However doing this
-// can hurt performance, may alter your experience of the map, and you still
-// won't be able to see entities like ammo/weapons/monsters through liquid
-// surfaces. If you're using one of these engines it's usually best just to
-// not set lower alpha values for maps that don't support it (usually old maps).
+// earlier versions of vkQuake) you will see rendering bugs in and around
+// liquids in this situation. In these cases, you can get rid of the glitches
+// if you also set "r_novis 1" to disable the use of visibility tests in the
+// renderer. However doing this can hurt performance, may alter your
+// experience of the map, and you still won't be able to see entities like
+// ammo/weapons/monsters through liquid surfaces. If you're using one of these
+// engines it's usually best just to not set lower alpha values for maps that
+// don't support it (usually old maps).
 
 
 // animations

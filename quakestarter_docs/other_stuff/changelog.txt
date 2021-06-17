@@ -8,6 +8,8 @@
 
 - Add the Punishment Due episode and Alkaline hub to the installables.
 
+- Updates to the docs about vkQuake and transparent water.
+
 
 **** v2.2.1 (March 2021)
 
