@@ -248,7 +248,7 @@ r_telealpha 0.5
 // setting values for these transparency variables might cause visual glitches
 // in many Quake engines. It depends on what Quake engine you are using:
 
-// In (for example) Quakespasm-Spiked, Mark V, vkQuake _after_ version 1.05.3,
+// In (for example) Quakespasm-Spiked, Mark V, vkQuake version 1.10.0 or later,
 // and qbism Super8, this problem doesn't arise... if you lower these alpha
 // settings in a map that doesn't have transparent liquids, nothing will
 // happen. You still won't be able to see through the liquids, but you'll get
