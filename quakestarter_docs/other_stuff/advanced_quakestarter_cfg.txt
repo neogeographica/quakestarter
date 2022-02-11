@@ -60,7 +60,7 @@ Finally, you can choose to use the multigame_support value to explicitly define 
     set multigame_support=game2;game
 
 That last example would result in the following command line for running the "udob_v1_1" release based on Copper:
-    my_quake_program.exe -game2 copper_v1_15 -game udob_v1_1 +map start
+    my_quake_program.exe -game2 copper_v1_17 -game udob_v1_1 +map start
 
 
 **** Download behavior

@@ -114,6 +114,45 @@ if "%multigame_support%"=="auto" (
 
 REM base game check and (in some cases) install
 set saved_skip_quakerc_gen=%skip_quakerc_gen%
+set last_base_game=%base_game%
+set check_basegame_changed=false
+set basegame_changed=false
+if "%base_game%"=="%latest_ad%" (
+  set check_basegame_changed=true
+)
+if "%base_game%"=="%latest_copper%" (
+  set check_basegame_changed=true
+)
+if "%check_basegame_changed%"=="true" (
+  if exist "%basedir%\%gamedir%\_last_launch.cmd" (
+    call "%basedir%\%gamedir%\_last_launch.cmd"
+    for /f "tokens=2" %%l in ("%last_base_game_arg%") do (
+      set last_base_game=%%l
+    )
+  )
+)
+set base_game_to_use=%base_game%
+if not "%base_game%"=="%last_base_game%" (
+  echo NOTE: A dependency of this mod has had an update.
+  echo The previous run of this mod used: %last_base_game%
+  echo But the current version of that dependency is now: %base_game%
+  echo FYI if you launch using the current version, any existing savegames for this
+  echo mod may not work.
+  echo.
+  echo Do you want to launch with the previously-used version of that dependency?
+  echo y: yes, use %last_base_game% like last time
+  echo n: no, use the current version %base_game%
+  echo.
+  set bg_choice=y
+  set /p bg_choice=choose an option, or just press Enter to use the older version:
+  echo.
+  goto use_last_bg_%bg_choice%
+)
+:use_last_bg_y
+:use_last_bg_Y
+set base_game_to_use=%last_base_game%
+:use_last_bg_n
+:use_last_bg_N
 if not "%base_game%"=="" (
   if "%base_game%"=="quoth" (
     if not exist "%basedir%\quoth" (
@@ -126,38 +165,26 @@ if not "%base_game%"=="" (
       )
     )
   )
-  if "%base_game%"=="ad_v1_80p1final" (
-    if not "%multigame_support%"=="true" (
-      echo Managing "%gamedir%" ^(which depends on "ad_v1_80p1final"^) is not
-      echo possible through Quakestarter since multigame_support is false in
-      echo your config.
-      echo.
-      goto :eof
-    )
-    if not exist "%basedir%\ad_v1_80p1final" (
-      set skip_quakerc_gen=true
-      call "%scriptspath%_install_mod.cmd" https://www.quaddicted.com/filebase/ad_v1_80p1final.zip ad_v1_80p1final
-      if not exist "%basedir%\ad_v1_80p1final" (
-        echo Failed to install "ad_v1_80p1final" which is required by "%gamedir%".
-        echo.
-        goto :eof
-      )
-    )
-    set game_switch=%multigame_game_switch%
+  set handle_multigame=false
+  if "%base_game%"=="%latest_ad%" (
+    set handle_multigame=true
   )
-  if "%base_game%"=="copper_v1_15" (
+  if "%base_game%"=="%latest_copper%" (
+    set handle_multigame=true
+  )
+  if "%handle_multigame%"==true (
     if not "%multigame_support%"=="true" (
-      echo Managing "%gamedir%" ^(which depends on "copper_v1_15"^) is not
+      echo Managing "%gamedir%" ^(which depends on "%base_game_to_use%"^) is not
       echo possible through Quakestarter since multigame_support is false in
       echo your config.
       echo.
       goto :eof
     )
-    if not exist "%basedir%\copper_v1_15" (
+    if not exist "%basedir%\%base_game_to_use%" (
       set skip_quakerc_gen=true
-      call "%scriptspath%_install_mod.cmd" http://lunaran.com/files/copper_v1_15.zip copper_v1_15
-      if not exist "%basedir%\copper_v1_15" (
-        echo Failed to install "copper_v1_15" which is required by "%gamedir%".
+      call "%scriptspath%_install_mod.cmd" https://www.quaddicted.com/filebase/%base_game_to_use%.zip %base_game_to_use%
+      if not exist "%basedir%\%base_game_to_use%" (
+        echo Failed to install "%base_game_to_use%" which is required by "%gamedir%".
         echo.
         goto :eof
       )
@@ -223,11 +250,11 @@ echo.
 if "%base_game%"=="" (
   set base_game_arg=
 ) else (
-  if "%base_game%"=="ad_v1_80p1final" (
-    set base_game_arg=-%base_game_switch% ad_v1_80p1final
+  if "%base_game%"=="%latest_ad%" (
+    set base_game_arg=-%base_game_switch% %base_game_to_use%
   ) else (
-    if "%base_game%"=="copper_v1_15" (
-      set base_game_arg=-%base_game_switch% copper_v1_15
+    if "%base_game%"=="%latest_copper%" (
+      set base_game_arg=-%base_game_switch% %base_game_to_use%
     ) else (
       set base_game_arg=-%base_game%
     )
@@ -242,13 +269,13 @@ if not "%base_game%"=="" (
       echo using the -quoth argument.
       echo.
     )
-    if "%base_game%"=="ad_v1_80p1final" (
-      echo make sure to specify ad_v1_80p1final as a base mod. On the command line
+    if "%base_game%"=="%latest_ad%" (
+      echo make sure to specify %base_game_to_use% as a base mod. On the command line
       echo that means putting %base_game_arg% before -%game_switch% %gamedir%.
       echo.
     )
-    if "%base_game%"=="copper_v1_15" (
-      echo make sure to specify copper_v1_15 as a base mod. On the command line
+    if "%base_game%"=="%latest_copper%" (
+      echo make sure to specify %base_game_to_use% as a base mod. On the command line
       echo that means putting %base_game_arg% before -%game_switch% %gamedir%.
       echo.
     )

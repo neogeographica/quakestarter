@@ -61,7 +61,7 @@ echo.
 goto %menu_choice%
 
 :1
-set base_game=ad_v1_80p1final
+set base_game=%latest_ad%
 set start_map=ad_heresp1
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ad_heresp1.zip
@@ -75,7 +75,7 @@ pause
 goto :menu
 
 :3
-set base_game=ad_v1_80p1final
+set base_game=%latest_ad%
 set start_map=ad_heresp2
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ad_heresp2.zip

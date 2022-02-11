@@ -75,7 +75,7 @@ echo.
 goto %menu_choice%
 
 :1
-set base_game=copper_v1_15
+set base_game=%latest_copper%
 set start_map=ctsj_start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ctsj.zip
