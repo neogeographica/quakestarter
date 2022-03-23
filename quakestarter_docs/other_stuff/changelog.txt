@@ -4,9 +4,9 @@
 
 - Include latest Simple Quake Launcher 2 (2.5).
 
-- Move the Unused Jam to legacies (rating drop).
+- Move the Unused Jam and the Blue Monday Jam to legacies (rating drop).
 
-- Add the Punishment Due episode and Alkaline hub to the installables.
+- Add the Punishment Due episode, the Snack Pack 2 episode, the Xmas Jam 2021 hub, the Alkaline 1.1 hub, the sm215 hub, and The Purifier to the installables.
 
 - Updates to the docs about vkQuake and transparent water.
 
