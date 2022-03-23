@@ -1,6 +1,6 @@
-**** v2.3.0 (July 2021)
+**** v2.3.0 (??? 2022)
 
-- Include latest Quakespasm-Spiked (2021-05-11).
+- Include an updated Quakespasm-Spiked (2021-10-14).
 
 - Include latest Simple Quake Launcher 2 (2.5).
 
@@ -9,6 +9,8 @@
 - Add the Punishment Due episode and Alkaline hub to the installables.
 
 - Updates to the docs about vkQuake and transparent water.
+
+- Add mention of the Ironwail engine into the docs where appropriate, and detection of ironwail.exe for multigame support.
 
 
 **** v2.2.1 (March 2021)

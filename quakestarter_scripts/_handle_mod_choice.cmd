@@ -82,18 +82,22 @@ if "%multigame_support%"=="auto" (
     if not "%quake_exe%"=="%quake_exe:vkQuake=%" (
       set multigame_support=true
     ) else (
-      if not "%quake_exe%"=="%quake_exe:fteqw=%" (
+      if not "%quake_exe%"=="%quake_exe:ironwail=%" (
         set multigame_support=true
       ) else (
-        if not "%quake_exe%"=="%quake_exe:darkplaces=%" (
+        if not "%quake_exe%"=="%quake_exe:fteqw=%" (
           set multigame_support=true
         ) else (
-          if not "%quake_exe%"=="%quake_exe:qbismS8=%" (
+          if not "%quake_exe%"=="%quake_exe:darkplaces=%" (
             set multigame_support=true
-            set base_game_switch=game2
-            set multigame_game_switch=game
           ) else (
-            set multigame_support=false
+            if not "%quake_exe%"=="%quake_exe:qbismS8=%" (
+              set multigame_support=true
+              set base_game_switch=game2
+              set multigame_game_switch=game
+            ) else (
+              set multigame_support=false
+            )
           )
         )
       )

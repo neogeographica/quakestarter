@@ -26,7 +26,7 @@ In any case, if you do set your own quake_exe then the following things are _not
 * that all the settings in the example autoexec.cfg will work for your choice of Quake engine, or have the indicated defaults
 * that existing savegames will work for your choice of Quake engine
 
-vkQuake should be a safe alternative choice that avoids all but the last of those issues. And the original Quakespasm engine is also widely compatible, although since the original Quakespasm lacks multigame support (see below) there will be a small number of Quakestarter items that it cannot launch.
+vkQuake and Ironwail should be safe alternative choices that avoids those issues, with the possible exception of the savegame issue. And the original Quakespasm engine is also widely compatible, although since the original Quakespasm lacks multigame support (see below) there will be a small number of Quakestarter items that it cannot launch.
 
 Beyond those choices, it's more on your shoulders to look into compatibility issues and be aware that something might go wrong. Even some Quake engine that is a perfectly fine piece of software engineering may have troubles running a particular map release if the map was never tested against that engine, and FWIW most releases are tested against a Quakespasm-family engine. A map may even malfunction in ways that are not immediately apparent if you haven't played it before (e.g. missing monsters, lighting errors).
 
@@ -39,7 +39,7 @@ As mentioned in the "1_mod_folders.txt" doc in the "quakestarter_docs\maps_and_m
 
 For addons that only build on the original Quake campaign content, that's simple enough to deal with. For addons that depend on the official missionpacks, Quake has always supported command-line options for expressing those dependencies (i.e. "-hipnotic" or "-rogue" for missionpack 1 or 2 respectively). And for addons that build on the Quoth mod, modern Quake engines have long supported the "-quoth" argument to express that dependency.
 
-For addons that build on mods other than Quoth... it's not always been quite as easy to represent that situation. Fortunately, modern Quake engines like Quakespasm-Spiked, vkQuake (version 1.05.0 and later), FTE, DarkPlaces, and qbism Super8 support activating a list of mod folders rather than just one, with each folder in the list building on the previous. The "mod_requirements.txt" doc goes into more detail about how this feature is used.
+For addons that build on mods other than Quoth... it's not always been quite as easy to represent that situation. Fortunately, modern Quake engines like Quakespasm-Spiked, vkQuake, Ironwail, FTE, DarkPlaces, and qbism Super8 support activating a list of mod folders rather than just one, with each folder in the list building on the previous. The "mod_requirements.txt" doc goes into more detail about how this feature is used.
 
 Quakestarter relies on this feature to support installing and launching addons that depend on the Arcane Dimensions or Copper mods. (This doesn't include mods that carry their own copy of the AD or Copper mod; it means simple map releases that are meant to be played with AD or Copper.)
 
@@ -53,7 +53,7 @@ The default auto-detect behavior (in "_quakestarter_cfg_defaults.cmd") is set li
 To forcibly declare that your Quake engine DOES NOT support multiple mod folders, regardless of what its program name looks like, you can set this value instead, in your in your "_quakestarter_cfg.cmd" file:
     set multigame_support=false
 
-Or to declare that your Quake engine DOES support multiple mod folders, and that it uses the same syntax as Quakespasm-Spiked/vkQuake/FTE/DarkPlaces, you can set this value:
+Or to declare that your Quake engine DOES support multiple mod folders, and that it uses the same syntax as Quakespasm-Spiked/vkQuake/Ironwail/FTE/DarkPlaces, you can set this value:
     set multigame_support=true
 
 Finally, you can choose to use the multigame_support value to explicitly define the command-line switches that your Quake engine uses for this feature (omitting the leading dashes). The value should be composed of the switch for the base mod and the switch for the build-on mod, separated by a semicolon. For example if you needed to force the syntax that qbism Super8 uses, you could declare this:
