@@ -12,6 +12,10 @@
 
 - Add mention of the Ironwail engine into the docs where appropriate, and detection of ironwail.exe for multigame support.
 
+- Add some brief discussion of the Quake rerelease.
+
+- Add some brief discussion of alternate Quake Injector projects that don't require Java.
+
 
 **** v2.2.1 (March 2021)
 

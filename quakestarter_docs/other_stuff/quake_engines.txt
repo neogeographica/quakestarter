@@ -20,3 +20,10 @@ Performance-hungry users with recent graphics cards may be interested in trying 
 Another Quakespasm variant, Ironwail from https://github.com/andrei-drexler/ironwail , is even more focussed on high performance. While it is still pretty "young" and may have some kinks to work out, it seems stable and has attracted a following. Ironwail supports high framerates and multi-mod-folders, but not the particle/HUD innovations. It adds support for some interesting optional emulations of software rendering, for players who want to re-experience the original Quake look.
 
 Previous versions of Quakestarter bundled Mark V instead, and Mark V does still have several advantages especially in its in-game menus. But while Quakespasm-Spiked has increased its compatibility/stability and its adoption among singleplayer users, Mark V has stagnated and now cannot play (or at least play well) some recent releases.
+
+
+*** Why not the "enhanced" Quake rerelease?
+
+The recent rerelease/remaster of Quake is a cool project, and it's a great way to (re)play the original campaign and official missionpacks. It's compatible with some custom map releases as well... but not all. So for the foreseeable future, the best way to play custom singleplayer maps will still be by using a community-developed Quake engine like Quakespasm and the other engines mentioned here.
+
+You can have both the Quake rerelease and also a community-developed Quake engine installed on your computer without any issues, although for minimal confusion it's recommended to keep them in separate folders.
