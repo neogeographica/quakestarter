@@ -161,7 +161,7 @@ if not "%base_game%"=="" (
   if "%base_game%"=="quoth" (
     if not exist "%basedir%\quoth" (
       set skip_quakerc_gen=true
-      call "%scriptspath%_install_mod.cmd" http://www.quaketastic.com/files/single_player/mods/quoth2pt2full.zip quoth
+      call "%scriptspath%_install_mod.cmd" https://www.quaddicted.com/filebase/quoth2pt2full_2.zip quoth
       if not exist "%basedir%\quoth" (
         echo Failed to install "quoth" which is required by "%gamedir%".
         echo.
