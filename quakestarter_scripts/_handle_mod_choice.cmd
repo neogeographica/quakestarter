@@ -130,12 +130,15 @@ if "%base_game%"=="%latest_copper%" (
 if "%check_basegame_changed%"=="true" (
   if exist "%basedir%\%gamedir%\_last_launch.cmd" (
     call "%basedir%\%gamedir%\_last_launch.cmd"
-    for /f "tokens=2" %%l in ("%last_base_game_arg%") do (
-      set last_base_game=%%l
-    )
+  )
+)
+if not "%last_base_game_arg%"=="" (
+  for /f "tokens=2" %%l in ("%last_base_game_arg%") do (
+    set last_base_game=%%l
   )
 )
 set base_game_to_use=%base_game%
+set bg_choice=y
 if not "%base_game%"=="%last_base_game%" (
   echo NOTE: A dependency of this mod has had an update.
   echo The previous run of this mod used: %last_base_game%
@@ -147,11 +150,10 @@ if not "%base_game%"=="%last_base_game%" (
   echo y: yes, use %last_base_game% like last time
   echo n: no, use the current version %base_game%
   echo.
-  set bg_choice=y
   set /p bg_choice=choose an option, or just press Enter to use the older version:
   echo.
-  goto use_last_bg_%bg_choice%
 )
+goto use_last_bg_%bg_choice%
 :use_last_bg_y
 :use_last_bg_Y
 set base_game_to_use=%last_base_game%
