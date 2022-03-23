@@ -157,6 +157,7 @@ if not "%base_game%"=="%last_base_game%" (
 set base_game_to_use=%last_base_game%
 :use_last_bg_n
 :use_last_bg_N
+set handle_multigame=false
 if not "%base_game%"=="" (
   if "%base_game%"=="quoth" (
     if not exist "%basedir%\quoth" (
@@ -169,47 +170,49 @@ if not "%base_game%"=="" (
       )
     )
   )
-  set handle_multigame=false
   if "%base_game%"=="%latest_ad%" (
     set handle_multigame=true
   )
   if "%base_game%"=="%latest_copper%" (
     set handle_multigame=true
   )
-  if "%handle_multigame%"==true (
-    if not "%multigame_support%"=="true" (
-      echo Managing "%gamedir%" ^(which depends on "%base_game_to_use%"^) is not
-      echo possible through Quakestarter since multigame_support is false in
-      echo your config.
-      echo.
-      goto :eof
-    )
+)
+if "%handle_multigame%"=="true" (
+  if not "%multigame_support%"=="true" (
+    echo Managing "%gamedir%" ^(which depends on "%base_game_to_use%"^) is not
+    echo possible through Quakestarter since multigame_support is false in
+    echo your config.
+    echo.
+    goto :eof
+  )
+  if not exist "%basedir%\%base_game_to_use%" (
+    set skip_quakerc_gen=true
+    call "%scriptspath%_install_mod.cmd" https://www.quaddicted.com/filebase/%base_game_to_use%.zip %base_game_to_use%
     if not exist "%basedir%\%base_game_to_use%" (
-      set skip_quakerc_gen=true
-      call "%scriptspath%_install_mod.cmd" https://www.quaddicted.com/filebase/%base_game_to_use%.zip %base_game_to_use%
-      if not exist "%basedir%\%base_game_to_use%" (
-        echo Failed to install "%base_game_to_use%" which is required by "%gamedir%".
-        echo.
-        goto :eof
-      )
-    )
-    set game_switch=%multigame_game_switch%
-  )
-  if "%base_game%"=="hipnotic" (
-    if not exist "%basedir%\hipnotic\pak0.pak" (
-      echo "%gamedir%" requires missionpack 1 to currently be installed.
+      echo Failed to install "%base_game_to_use%" which is required by "%gamedir%".
       echo.
       goto :eof
     )
   )
-  if "%base_game%"=="rogue" (
-    if not exist "%basedir%\rogue\pak0.pak" (
-      echo "%gamedir%" requires missionpack 2 to currently be installed.
-      echo.
-      goto :eof
-    )
+  set game_switch=%multigame_game_switch%
+)
+
+if "%base_game%"=="hipnotic" (
+  if not exist "%basedir%\hipnotic\pak0.pak" (
+    echo "%gamedir%" requires missionpack 1 to currently be installed.
+    echo.
+    goto :eof
   )
 )
+
+if "%base_game%"=="rogue" (
+  if not exist "%basedir%\rogue\pak0.pak" (
+    echo "%gamedir%" requires missionpack 2 to currently be installed.
+    echo.
+    goto :eof
+  )
+)
+
 set skip_quakerc_gen=%saved_skip_quakerc_gen%
 
 REM mod install and possibly patch(es)
