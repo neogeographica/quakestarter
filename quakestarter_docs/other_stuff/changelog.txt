@@ -1,4 +1,4 @@
-**** v2.3.0 (??? 2022)
+**** v2.3.0 (March 2022)
 
 - Include an updated Quakespasm-Spiked (2021-10-14).
 
