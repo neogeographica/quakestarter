@@ -16,6 +16,11 @@
 
 - Add some brief discussion of alternate Quake Injector projects that don't require Java.
 
+- Make the latest version (1.17) of Copper installable, and do a few things to more gracefully handle new releases and outdated versions of AD and Copper:
+  - If a newer version of AD/Copper is released before the next Quakestarter update, you can set this in your _quakestarter_cfg.cmd in order to make that newer version be the one that Quakestarter uses by default for relevant mod dependencies. See the comments in _quakestarter_cfg_defaults.cmd for the latest_ad and latest_copper settings.
+  - You can manage any older installed versions of AD/Copper through the legacies menu, IF these are old versions that existed at the time of the Quakestarter release that you're using. So e.g. with this release you can do legacy-mod-management for AD 1.7, Copper 1.15, and Copper 1.16.
+  - If you have previously run an AD/Copper-dependent mod using an older version of AD/Copper, the mod launch will give you the option to continue using that older AD/Copper version in order to not break your savegames. You'll keep getting that option for each launch of that mod until you choose to switch to using the latest AD/Copper for that mod.
+
 
 **** v2.2.1 (March 2021)
 
