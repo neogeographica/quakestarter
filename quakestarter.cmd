@@ -55,13 +55,13 @@ echo  2: Find soundtrack music files on this computer or download
 echo  3: Test-launch unmodified Quake
 echo.
 echo Additional episodes/hubs:
-echo  4: The New Hotness ^(2020/2021; ratings in flux^)
+echo  4: The New Hotness ^(2020-2022; ratings in flux^)
 echo  5: Post-AD ^(after the first Arcane Dimensions release; 2016-2019^)
 echo  6: Modern ^(after Nehahra; 2000-2015^)
 echo  7: Classic
 echo.
 echo Other highly-rated releases:
-echo  8: The New Hotness ^(2020; ratings in flux^)
+echo  8: The New Hotness ^(2020-2022; ratings in flux^)
 echo  9: The Age of Jams ^(2014-2019^)
 echo 10: Post-Quoth ^(after the first Quoth release; 2006-2013^)
 echo 11: Classic
