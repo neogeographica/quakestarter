@@ -8,13 +8,13 @@ import time
 import urllib.request
 import zipfile
 
-VERSION = "2.2.1"
+VERSION = "2.3.0"
 RELEASE_FOLDER = "release." + str(os.getpid())
 QUAKE_FOLDER = os.path.join(RELEASE_FOLDER, "Quake")
-QSS_VERSION = "2021-03-06"
-QSS_URL = "https://fte.triptohell.info/moodles/qss/quakespasm_spiked_win64_dev.zip"
+QSS_VERSION = "2021-10-14"
+QSS_URL = "https://triptohell.info/moodles/qss/quakespasm_spiked_win64_dev.zip"
 QSS_LOCALFILE = "qss-temp.zip"
-SQL_VERSION = "2.4"
+SQL_VERSION = "2.5"
 SQL_URL = "https://github.com/m-x-d/Simple-Quake-Launcher-2/releases/download/{0}/SQLauncher_{0}.zip".format(SQL_VERSION)
 SQL_LOCALFILE = "sql-temp.zip"
 EXCLUSIONS = [

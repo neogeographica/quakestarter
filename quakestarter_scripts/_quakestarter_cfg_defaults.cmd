@@ -80,6 +80,16 @@ REM true will show them all.
 set force_show_legacies=false
 
 
+REM These options are used by Quakestarter to determine what version of AD
+REM or Copper to use for a mod that depends on one of those basegames. If you
+REM need to mess with this yourself, you can -- like if Quakestarter is being
+REM slow to update and a new version of AD/Copper has been released. Note that
+REM this must match the basename of a zip file in the Quaddicted filebase.
+
+set latest_ad=ad_v1_80p1final
+set latest_copper=copper_v1_17
+
+
 REM This last option is rarely used, but it takes a bit of explaining. Most
 REM mods don't come with their own unique set of demo films for running an
 REM attract-mode loop at start time. However, a few mods do. So when

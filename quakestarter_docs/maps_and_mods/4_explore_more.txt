@@ -10,6 +10,10 @@ The downloads location for Quake Injector is configured in the "Engine Configura
 
 One thing to look out for though is that Quakestarter doesn't work exactly the same as Quake Injector when it comes to choosing the name for a mod folder. Quakestarter will always use the name of the zipfile to determine the name of the folder, while Quake Injector may have other ideas. So to avoid confusion and wasted disk space on duplicate stuff, it's best to eventually settle on using only one of these install methods.
 
+As a final note, a couple of projects exist that aim to provide Quake Injector (or a Quake-Injector-alike interface) as an executable that doesn't require Java. I haven't personally tried either of these yet but FYI...
+* This is a standalone Quake Injector build: https://github.com/hrehfeld/QuakeInjector/releases/tag/alpha04-gradle
+* This is a reimplementation of Quake Injector using Qt: https://sourceforge.net/projects/quake-injector-qt/
+
 
 **** DIY
 

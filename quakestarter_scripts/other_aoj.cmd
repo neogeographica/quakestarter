@@ -90,7 +90,7 @@ pause
 goto :menu
 
 :3
-set base_game=ad_v1_80p1final
+set base_game=%latest_ad%
 set start_map=ad_paradise
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ad_paradise.zip
@@ -117,7 +117,7 @@ pause
 goto :menu
 
 :7
-set base_game=ad_v1_80p1final
+set base_game=%latest_ad%
 set start_map=37_hcm1
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/37_hcm1.zip

@@ -1,3 +1,27 @@
+**** v2.3.0 (March 2022)
+
+- Include an updated Quakespasm-Spiked (2021-10-14).
+
+- Include latest Simple Quake Launcher 2 (2.5).
+
+- Move the Unused Jam and the Blue Monday Jam to legacies (rating drop).
+
+- Add the Punishment Due episode, the Snack Pack 2 episode, the Xmas Jam 2021 hub, the Alkaline 1.1 hub, the sm215 hub, and The Purifier to the installables.
+
+- Updates to the docs about vkQuake and transparent water.
+
+- Add mention of the Ironwail engine into the docs where appropriate, and detection of ironwail.exe for multigame support.
+
+- Add some brief discussion of the Quake rerelease.
+
+- Add some brief discussion of alternate Quake Injector projects that don't require Java.
+
+- Make the latest version (1.17) of Copper installable, and do a few things to more gracefully handle new releases and outdated versions of AD and Copper:
+  - If a newer version of AD/Copper is released before the next Quakestarter update, you can set this in your _quakestarter_cfg.cmd in order to make that newer version be the one that Quakestarter uses by default for relevant mod dependencies. See the comments in _quakestarter_cfg_defaults.cmd for the latest_ad and latest_copper settings.
+  - You can manage any older installed versions of AD/Copper through the legacies menu, IF these are old versions that existed at the time of the Quakestarter release that you're using. So e.g. with this release you can do legacy-mod-management for AD 1.7, Copper 1.15, and Copper 1.16.
+  - If you have previously run an AD/Copper-dependent mod using an older version of AD/Copper, the mod launch will give you the option to continue using that older AD/Copper version in order to not break your savegames. You'll keep getting that option for each launch of that mod until you choose to switch to using the latest AD/Copper for that mod.
+
+
 **** v2.2.1 (March 2021)
 
 Tiny update here. This just adds a very-most-top-level short readme file ("how_to_use_quakestarter.txt") into the zip archive for a release, to make sure users know where to go first. It's nice for the archive to be self-contained in this way and not require any external info to get started with it properly.

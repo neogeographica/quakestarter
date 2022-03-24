@@ -36,7 +36,11 @@ call :installed_check mappi rating
 call :installed_check e1m5quotha rating
 call :installed_check mstalk1c rating
 call :installed_check func_mapjam1 rating
+call :installed_check unusedjam rating
+call :installed_check bluemonday_v2 rating
 call :installed_check ad_v1_70final version
+call :installed_check copper_v1_15 version
+call :installed_check copper_v1_16 version
 
 REM if called with "check" arg just decide whether to show this menu at all
 if "%~1"=="check" (
@@ -90,12 +94,24 @@ if "%show_rating%"=="true" (
   if "%show_func_mapjam1%"=="true" (
     echo %is_func_mapjam1_installed%  4: func_mapjam1 - Func Map Jam 1 - Honey Theme ^(2014^)
   )
+  if "%show_unusedjam%"=="true" (
+    echo %is_unusedjam_installed%  5: unusedjam - Unused Jam ^(2021^)
+  )
+  if "%show_bluemonday_v2%"=="true" (
+    echo %is_bluemonday_v2_installed%  6: bluemonday_v2 - Blue Monday Jam ^(2021^)
+  )
   echo.
 )
 if "%show_version%"=="true" (
   echo Dropped because superseded by a newer version:
   if "%show_ad_v1_70final%"=="true" (
-    echo %is_ad_v1_70final_installed%  5: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
+    echo %is_ad_v1_70final_installed%  7: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
+  )
+  if "%show_copper_v1_15%"=="true" (
+    echo %is_copper_v1_15_installed%  8: copper_v1_15 - Copper 1.15 ^(2020^)
+  )
+  if "%show_copper_v1_16%"=="true" (
+    echo %is_copper_v1_16_installed%  9: copper_v1_16 - Copper 1.16 ^(2021^)
   )
   echo.
 )
@@ -147,6 +163,26 @@ pause
 goto :menu
 
 :5
+if not "%show_unusedjam%"=="true" (
+  goto :eof
+)
+set start_map=start
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/unusedjam.zip
+pause
+goto :menu
+
+:6
+if not "%show_bluemonday_v2%"=="true" (
+  goto :eof
+)
+set base_game=quoth
+set start_map=start
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/bluemonday_v2.zip
+pause
+goto :menu
+
+:7
 if not "%show_ad_v1_70final%"=="true" (
   goto :eof
 )
@@ -154,6 +190,26 @@ set patch_url=https://www.quaddicted.com/filebase/ad_v1_70patch1.zip
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ad_v1_70final.zip
+pause
+goto :menu
+
+:8
+if not "%show_copper_v1_15%"=="true" (
+  goto :eof
+)
+set start_map=start
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/copper_v1_15.zip
+pause
+goto :menu
+
+:9
+if not "%show_copper_v1_16%"=="true" (
+  goto :eof
+)
+set start_map=start
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/copper_v1_16.zip
 pause
 goto :menu
 
