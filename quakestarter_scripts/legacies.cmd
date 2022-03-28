@@ -36,10 +36,13 @@ call :installed_check descent rating
 call :installed_check koohoo rating
 call :installed_check e1m1rmx rating
 call :installed_check chapters rating
+call :installed_check fmb_bdg rating
+call :installed_check arwop rating
 call :installed_check mappi rating
 call :installed_check digs05 rating
 call :installed_check dmc3 rating
 call :installed_check e1m5quotha rating
+call :installed_check fmb_bdg2 rating
 call :installed_check mstalk1c rating
 call :installed_check func_mapjam1 rating
 call :installed_check unusedjam rating
@@ -100,42 +103,51 @@ if "%show_rating%"=="true" (
   if "%show_chapters%"=="true" (
     echo %is_chapters_installed%  4: chapters - Contract Revoked: The Lost Chapters ^(2005^)
   )
+  if "%show_fmb_bdg%"=="true" (
+    echo %is_fmb_bdg_installed%  5: fmb_bdg - This Onion ^(2007^)
+  )
+  if "%show_arwop%"=="true" (
+    echo %is_arwop_installed%  6: arwop - A Roman Wilderness Of Pain ^(2009^)
+  )
   if "%show_mappi%"=="true" (
-    echo %is_mappi_installed%  5: mappi - Red Slammer ^(2010^)
+    echo %is_mappi_installed%  7: mappi - Red Slammer ^(2010^)
   )
   if "%show_digs05%"=="true" (
-    echo %is_digs05_installed%  6: digs05 - The Anomaly ^(2011^)
+    echo %is_digs05_installed%  8: digs05 - The Anomaly ^(2011^)
   )
   if "%show_dmc3%"=="true" (
-    echo %is_dmc3_installed%  7: dmc3 - Deathmatch Classics Vol. 3 ^(2011^)
+    echo %is_dmc3_installed%  9: dmc3 - Deathmatch Classics Vol. 3 ^(2011^)
   )
   if "%show_e1m5quotha%"=="true" (
-    echo %is_e1m5quotha_installed%  8: e1m5quotha - Gloomier Keep ^(2012^)
+    echo %is_e1m5quotha_installed% 10: e1m5quotha - Gloomier Keep ^(2012^)
+  )
+  if "%show_fmb_bdg2%"=="true" (
+    echo %is_fmb_bdg2_installed% 11: fmb_bdg2 - For My Babies - Bin Dunne Gorne 2 ^(2013^)
   )
   if "%show_mstalk1c%"=="true" (
-    echo %is_mstalk1c_installed%  9: mstalk1c - Midnight Stalker ^(2013^)
+    echo %is_mstalk1c_installed% 12: mstalk1c - Midnight Stalker ^(2013^)
   )
   if "%show_func_mapjam1%"=="true" (
-    echo %is_func_mapjam1_installed% 10: func_mapjam1 - Func Map Jam 1 - Honey Theme ^(2014^)
+    echo %is_func_mapjam1_installed% 13: func_mapjam1 - Func Map Jam 1 - Honey Theme ^(2014^)
   )
   if "%show_unusedjam%"=="true" (
-    echo %is_unusedjam_installed%  11: unusedjam - Unused Jam ^(2021^)
+    echo %is_unusedjam_installed% 14: unusedjam - Unused Jam ^(2021^)
   )
   if "%show_bluemonday_v2%"=="true" (
-    echo %is_bluemonday_v2_installed% 12: bluemonday_v2 - Blue Monday Jam ^(2021^)
+    echo %is_bluemonday_v2_installed% 15: bluemonday_v2 - Blue Monday Jam ^(2021^)
   )
   echo.
 )
 if "%show_version%"=="true" (
   echo Dropped because superseded by a newer version:
   if "%show_ad_v1_70final%"=="true" (
-    echo %is_ad_v1_70final_installed% 13: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
+    echo %is_ad_v1_70final_installed% 16: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
   )
   if "%show_copper_v1_15%"=="true" (
-    echo %is_copper_v1_15_installed% 14: copper_v1_15 - Copper 1.15 ^(2020^)
+    echo %is_copper_v1_15_installed% 17: copper_v1_15 - Copper 1.15 ^(2020^)
   )
   if "%show_copper_v1_16%"=="true" (
-    echo %is_copper_v1_16_installed% 15: copper_v1_16 - Copper 1.16 ^(2021^)
+    echo %is_copper_v1_16_installed% 18: copper_v1_16 - Copper 1.16 ^(2021^)
   )
   echo.
 )
@@ -194,6 +206,25 @@ pause
 goto :menu
 
 :5
+if not "%show_fmb_bdg%"=="true" (
+  goto :eof
+)
+set start_map=fmb_bdg1
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/fmb_bdg.zip
+pause
+goto :menu
+
+:6
+if not "%show_arwop%"=="true" (
+  goto :eof
+)
+set start_map=start
+set startdemos=demo1
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/arwop.zip
+pause
+goto :menu
+
+:7
 if not "%show_mappi%"=="true" (
   goto :eof
 )
@@ -202,7 +233,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/m
 pause
 goto :menu
 
-:6
+:8
 if not "%show_digs05%"=="true" (
   goto :eof
 )
@@ -211,7 +242,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/d
 pause
 goto :menu
 
-:7
+:9
 if not "%show_dmc3%"=="true" (
   goto :eof
 )
@@ -220,7 +251,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/d
 pause
 goto :menu
 
-:8
+:10
 if not "%show_e1m5quotha%"=="true" (
   goto :eof
 )
@@ -231,7 +262,16 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/e
 pause
 goto :menu
 
-:9
+:11
+if not "%show_fmb_bdg2%"=="true" (
+  goto :eof
+)
+set start_map=start_____
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/fmb_bdg2.zip
+pause
+goto :menu
+
+:12
 if not "%show_mstalk1c%"=="true" (
   goto :eof
 )
@@ -241,7 +281,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/m
 pause
 goto :menu
 
-:10
+:13
 if not "%show_func_mapjam1%"=="true" (
   goto :eof
 )
@@ -253,7 +293,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/f
 pause
 goto :menu
 
-:11
+:14
 if not "%show_unusedjam%"=="true" (
   goto :eof
 )
@@ -262,7 +302,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/u
 pause
 goto :menu
 
-:12
+:15
 if not "%show_bluemonday_v2%"=="true" (
   goto :eof
 )
@@ -273,7 +313,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/b
 pause
 goto :menu
 
-:13
+:16
 if not "%show_ad_v1_70final%"=="true" (
   goto :eof
 )
@@ -284,7 +324,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/a
 pause
 goto :menu
 
-:14
+:17
 if not "%show_copper_v1_15%"=="true" (
   goto :eof
 )
@@ -294,7 +334,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/c
 pause
 goto :menu
 
-:15
+:18
 if not "%show_copper_v1_16%"=="true" (
   goto :eof
 )

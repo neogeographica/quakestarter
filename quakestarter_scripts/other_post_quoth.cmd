@@ -45,33 +45,27 @@ set modsettings[0]=
 set startdemos=
 cls
 call :installed_check red777
-call :installed_check fmb_bdg
 call :installed_check thehand
 call :installed_check apsp2
-call :installed_check arwop
 call :installed_check rubicon2
 call :installed_check ne_ruins
 call :installed_check honey
 call :installed_check apsp3
 call :installed_check something_wicked
-call :installed_check fmb_bdg2
 call :installed_check ivory1b
 call :installed_check zendar1d
 echo.
 echo Selected other custom maps released from late 2005 through 2019:
 echo %is_red777_installed%  1: red777 - Red 777 ^(2005^)
-echo %is_fmb_bdg_installed%  2: fmb_bdg - This Onion ^(2007^)
-echo %is_thehand_installed%  3: thehand - The Hand That Feeds You ^(2007^)
-echo %is_apsp2_installed%  4: apsp2 - Plumbers Don't Wear Ties ^(2009^)
-echo %is_arwop_installed%  5: arwop - A Roman Wilderness Of Pain ^(2009^)
-echo %is_rubicon2_installed%  6: rubicon2 - Rubicon 2 ^(2011^)
-echo %is_ne_ruins_installed%  7: ne_ruins - The Altar of Storms ^(2011^)
-echo %is_honey_installed%  8: honey - Honey ^(2012^)
-echo %is_apsp3_installed%  9: apsp3 - Subterranean Library ^(2012^)
-echo %is_something_wicked_installed% 10: something_wicked - Something Wicked This Way Comes ^(2012^)
-echo %is_fmb_bdg2_installed% 11: fmb_bdg2 - For My Babies - Bin Dunne Gorne 2 ^(2013^)
-echo %is_ivory1b_installed% 12: ivory1b - The Ivory Tower ^(2013^)
-echo %is_zendar1d_installed% 13: zendar1d - The Horde of Zendar ^(2013^)
+echo %is_thehand_installed%  2: thehand - The Hand That Feeds You ^(2007^)
+echo %is_apsp2_installed%  3: apsp2 - Plumbers Don't Wear Ties ^(2009^)
+echo %is_rubicon2_installed%  4: rubicon2 - Rubicon 2 ^(2011^)
+echo %is_ne_ruins_installed%  5: ne_ruins - The Altar of Storms ^(2011^)
+echo %is_honey_installed%  6: honey - Honey ^(2012^)
+echo %is_apsp3_installed%  7: apsp3 - Subterranean Library ^(2012^)
+echo %is_something_wicked_installed%  8: something_wicked - Something Wicked This Way Comes ^(2012^)
+echo %is_ivory1b_installed%  9: ivory1b - The Ivory Tower ^(2013^)
+echo %is_zendar1d_installed% 10: zendar1d - The Horde of Zendar ^(2013^)
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -87,12 +81,6 @@ pause
 goto :menu
 
 :2
-set start_map=fmb_bdg1
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/fmb_bdg.zip
-pause
-goto :menu
-
-:3
 set base_game=quoth
 set start_map=thehand
 set skip_quakerc_gen=true
@@ -100,7 +88,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/t
 pause
 goto :menu
 
-:4
+:3
 set base_game=quoth
 set start_map=apsp2
 set skip_quakerc_gen=true
@@ -108,34 +96,27 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/a
 pause
 goto :menu
 
-:5
-set start_map=start
-set startdemos=demo1
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/arwop.zip
-pause
-goto :menu
-
-:6
+:4
 set start_map=start
 set startdemos=demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rubicon2.zip
 pause
 goto :menu
 
-:7
+:5
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ne_ruins.zip
 pause
 goto :menu
 
-:8
+:6
 set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/honey.zip
 pause
 goto :menu
 
-:9
+:7
 set base_game=quoth
 set start_map=apsp3
 set skip_quakerc_gen=true
@@ -143,26 +124,20 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/a
 pause
 goto :menu
 
-:10
+:8
 set start_map=wickedstart
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/something_wicked.zip
 pause
 goto :menu
 
-:11
-set start_map=start_____
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/fmb_bdg2.zip
-pause
-goto :menu
-
-:12
+:9
 set start_map=ivory
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ivory1b.zip
 pause
 goto :menu
 
-:13
+:10
 set start_map=zendar
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/zendar1d.zip
