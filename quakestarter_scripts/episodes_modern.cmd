@@ -3,8 +3,7 @@
 REM Installer for mapsets that fit the following criteria:
 REM * released after Nehahra (in 2000) and before Arcane Dimensions
 REM * a start map and at least four non-startmaps
-REM * Quaddicted editor rating "Excellent"
-REM * Quaddicted user rating 4.0 or better (normalized Bayesian average)
+REM * Quaddicted user rating 3.9 or better (normalized Bayesian average)
 
 setlocal
 

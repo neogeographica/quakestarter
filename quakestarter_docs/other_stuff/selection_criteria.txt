@@ -10,8 +10,8 @@ I also give a little more ratings slack to releases that are "episodes" or "hubs
 
 OK all that being said, these are the current criteria for being included in the Quakestarter installables:
 
-* An "episode" or a "hub" is a release that has a start map and at least four non-startmaps. To be included it must have a Quaddicted editor rating of "Excellent" and a Quaddicted user rating of 4.0 or better (Bayesian average).
+* An "episode" or a "hub" is a release that has a start map and at least four non-startmaps. To be included it must have a Quaddicted user rating of 3.8-4.0 or better (Bayesian average), with older episodes having a lower bar to clear.
 
-* Releases that don't qualify as an episode/hub must have a Quaddicted editor rating of "Excellent" and a Quaddicted user rating of 4.5 or better (Bayesian average). Also, the map(s) from this release must not already be included in some qualifying episode/hub release.
+* Releases that don't qualify as an episode/hub must have a Quaddicted user rating of 4.3-4.4 or better (Bayesian average), with older releases having a lower bar to clear. Also, the map(s) from this release must not already be included in some qualifying episode/hub release.
 
 For that last consideration, I'm really only concerned with avoiding essentially identical duplicate maps. If maps are meaningfully-different "variants" of each other -- for example the original and Arcane Dimensions versions of The Horde of Zendar -- then it's fine to include both if both qualify.

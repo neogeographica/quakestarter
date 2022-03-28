@@ -3,8 +3,7 @@
 REM Installer for mapsets that fit the following criteria:
 REM * released before Nehahra (in 2000)
 REM * a start map and at least four non-startmaps
-REM * Quaddicted editor rating "Excellent"
-REM * Quaddicted user rating 4.0 or better (normalized Bayesian average)
+REM * Quaddicted user rating 3.8 or better (normalized Bayesian average)
 
 REM Note that Nehahra is not included here because many Quake engines cannot
 REM run it. See https://www.quaddicted.com/reviews/nehahra.html

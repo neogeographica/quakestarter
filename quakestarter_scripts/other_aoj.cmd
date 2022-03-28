@@ -2,8 +2,7 @@
 
 REM Installer for maps that fit the following criteria:
 REM * released from 2014 through 2019
-REM * Quaddicted editor rating "Excellent"
-REM * Quaddicted user rating 4.5 or better (normalized Bayesian average)
+REM * Quaddicted user rating 4.4 or better (normalized Bayesian average)
 
 setlocal
 
