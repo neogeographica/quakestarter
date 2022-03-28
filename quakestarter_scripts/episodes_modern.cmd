@@ -50,13 +50,11 @@ call :installed_check rapture
 call :installed_check soe_full
 call :installed_check contract
 call :installed_check terra
-call :installed_check chapters
 call :installed_check warpspasm
 call :installed_check travail
 call :installed_check rmx-pack
 call :installed_check nsoe2
 call :installed_check arcanum
-call :installed_check dmc3
 call :installed_check unforgiven
 call :installed_check rrp
 call :installed_check func_mapjam5
@@ -68,17 +66,15 @@ echo %is_rapture_installed%  2: rapture - Rapture ^(2001^)
 echo %is_soe_full_installed%  3: soe_full - Soul of Evil ^(2002^)
 echo %is_contract_installed%  4: contract - Contract Revoked ^(2002^)
 echo %is_terra_installed%  5: terra - Terra ^(2005^)
-echo %is_chapters_installed%  6: chapters - Contract Revoked: The Lost Chapters ^(2005^)
-echo %is_warpspasm_installed%  7: warpspasm - Warp Spasm ^(2007^)
-echo %is_travail_installed%  8: travail - Travail ^(2007^)
-echo %is_rmx-pack_installed%  9: rmx-pack - Remix Map Pack ^(2008^)
-echo %is_nsoe2_installed% 10: nsoe2 - Soul of Evil: Indian Summer ^(2008^)
-echo %is_arcanum_installed% 11: arcanum - Arcanum ^(2011^)
-echo %is_dmc3_installed% 12: dmc3 - Deathmatch Classics Vol. 3 ^(2011^)
-echo %is_unforgiven_installed% 13: unforgiven - Unforgiven ^(2011^)
-echo %is_rrp_installed% 14: rrp - Rubicon Rumble Pack ^(2014^)
-echo %is_func_mapjam5_installed% 15: func_mapjam5 - Func Map Jam 5 - The Qonquer Map Jam ^(2015^)
-echo %is_mapjam6_installed% 16: mapjam6 - Func Map Jam 6 - Fire and Brimstone ^(2015^)
+echo %is_warpspasm_installed%  6: warpspasm - Warp Spasm ^(2007^)
+echo %is_travail_installed%  7: travail - Travail ^(2007^)
+echo %is_rmx-pack_installed%  8: rmx-pack - Remix Map Pack ^(2008^)
+echo %is_nsoe2_installed%  9: nsoe2 - Soul of Evil: Indian Summer ^(2008^)
+echo %is_arcanum_installed% 10: arcanum - Arcanum ^(2011^)
+echo %is_unforgiven_installed% 11: unforgiven - Unforgiven ^(2011^)
+echo %is_rrp_installed% 12: rrp - Rubicon Rumble Pack ^(2014^)
+echo %is_func_mapjam5_installed% 13: func_mapjam5 - Func Map Jam 5 - The Qonquer Map Jam ^(2015^)
+echo %is_mapjam6_installed% 14: mapjam6 - Func Map Jam 6 - Fire and Brimstone ^(2015^)
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -123,17 +119,6 @@ pause
 goto :menu
 
 :6
-set start_map=start
-set extra_launch_args=-hipnotic
-set postlaunch_msg[0]=If you launch "chapters" outside of this installer, make sure to specify
-set postlaunch_msg[1]=missionpack 1 as the base game ^("-hipnotic" arg^). In this case, that base
-set postlaunch_msg[2]=game is necessary even if you don't have missionpack 1 currently installed.
-set postlaunch_msg[3]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/chapters.zip
-pause
-goto :menu
-
-:7
 set base_game=quoth
 set start_map=start
 set skip_quakerc_gen=true
@@ -142,7 +127,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/w
 pause
 goto :menu
 
-:8
+:7
 set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_travail_soundtrack.zip
 set start_map=start
 set startdemos=demo1 demo2 demo3
@@ -153,20 +138,20 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/t
 pause
 goto :menu
 
-:9
+:8
 set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rmx-pack.zip
 pause
 goto :menu
 
-:10
+:9
 set start_map=start
 set startdemos=demo1 demo2
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/nsoe2.zip
 pause
 goto :menu
 
-:11
+:10
 set patch_url=https://www.quaddicted.com/filebase/drake290111.zip
 REM unlike other patches the Drake mod is really truly always required here
 set patch_required=true
@@ -175,26 +160,20 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/a
 pause
 goto :menu
 
-:12
-set start_map=dmc3
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/dmc3.zip
-pause
-goto :menu
-
-:13
+:11
 set start_map=unfstart
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/unforgiven.zip
 pause
 goto :menu
 
-:14
+:12
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rrp.zip
 pause
 goto :menu
 
-:15
+:13
 set patch_url=https://www.quaddicted.com/files/mods/QuickerQonquer.zip
 set patch_skipfiles=maps\QArena.bsp maps\QStart.bsp
 set start_map=start
@@ -206,7 +185,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/f
 pause
 goto :menu
 
-:16
+:14
 set start_map=start
 set startdemos=demo1
 set modsettings[0]=r_wateralpha 1
