@@ -45,8 +45,8 @@ set modsettings[0]=
 set startdemos=
 cls
 call :installed_check red777
-call :installed_check thehand
 call :installed_check fmb_bdg
+call :installed_check thehand
 call :installed_check apsp2
 call :installed_check arwop
 call :installed_check rubicon2
@@ -60,8 +60,8 @@ call :installed_check zendar1d
 echo.
 echo Selected other custom maps released from late 2005 through 2019:
 echo %is_red777_installed%  1: red777 - Red 777 ^(2005^)
-echo %is_thehand_installed%  2: thehand - The Hand That Feeds You ^(2007^)
-echo %is_fmb_bdg_installed%  3: fmb_bdg - This Onion ^(2007^)
+echo %is_fmb_bdg_installed%  2: fmb_bdg - This Onion ^(2007^)
+echo %is_thehand_installed%  3: thehand - The Hand That Feeds You ^(2007^)
 echo %is_apsp2_installed%  4: apsp2 - Plumbers Don't Wear Ties ^(2009^)
 echo %is_arwop_installed%  5: arwop - A Roman Wilderness Of Pain ^(2009^)
 echo %is_rubicon2_installed%  6: rubicon2 - Rubicon 2 ^(2011^)
@@ -87,16 +87,16 @@ pause
 goto :menu
 
 :2
-set base_game=quoth
-set start_map=thehand
-set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/thehand.zip
+set start_map=fmb_bdg1
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/fmb_bdg.zip
 pause
 goto :menu
 
 :3
-set start_map=fmb_bdg1
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/fmb_bdg.zip
+set base_game=quoth
+set start_map=thehand
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/thehand.zip
 pause
 goto :menu
 
