@@ -2,7 +2,7 @@
 
 REM Installer for maps that fit the following criteria:
 REM * released after Quoth (late 2005) through 2013
-REM * Quaddicted user rating 4.3 or better (normalized Bayesian average)
+REM * Quaddicted user rating 4.35 or better (normalized Bayesian average)
 
 setlocal
 

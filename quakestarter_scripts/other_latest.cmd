@@ -2,7 +2,7 @@
 
 REM Installer for mapsets that fit the following criteria:
 REM * released from 2020 through 2022
-REM * Quaddicted user rating 4.4 or better (normalized Bayesian average)
+REM * Quaddicted user rating 4.45 or better (normalized Bayesian average)
 
 setlocal
 
