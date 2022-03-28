@@ -51,8 +51,8 @@ call :installed_check soe_full
 call :installed_check contract
 call :installed_check terra
 call :installed_check chapters
-call :installed_check travail
 call :installed_check warpspasm
+call :installed_check travail
 call :installed_check rmx-pack
 call :installed_check nsoe2
 call :installed_check arcanum
@@ -69,8 +69,8 @@ echo %is_soe_full_installed%  3: soe_full - Soul of Evil ^(2002^)
 echo %is_contract_installed%  4: contract - Contract Revoked ^(2002^)
 echo %is_terra_installed%  5: terra - Terra ^(2005^)
 echo %is_chapters_installed%  6: chapters - Contract Revoked: The Lost Chapters ^(2005^)
-echo %is_travail_installed%  7: travail - Travail ^(2007^)
-echo %is_warpspasm_installed%  8: warpspasm - Warp Spasm ^(2007^)
+echo %is_warpspasm_installed%  7: warpspasm - Warp Spasm ^(2007^)
+echo %is_travail_installed%  8: travail - Travail ^(2007^)
 echo %is_rmx-pack_installed%  9: rmx-pack - Remix Map Pack ^(2008^)
 echo %is_nsoe2_installed% 10: nsoe2 - Soul of Evil: Indian Summer ^(2008^)
 echo %is_arcanum_installed% 11: arcanum - Arcanum ^(2011^)
@@ -134,6 +134,15 @@ pause
 goto :menu
 
 :7
+set base_game=quoth
+set start_map=start
+set skip_quakerc_gen=true
+set startdemos=demo1 demo2 demo3
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/warpspasm.zip
+pause
+goto :menu
+
+:8
 set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_travail_soundtrack.zip
 set start_map=start
 set startdemos=demo1 demo2 demo3
@@ -141,15 +150,6 @@ set modsettings[0]=r_oldwater 0
 set modsettings[1]=r_waterquality 32
 set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/travail.zip
-pause
-goto :menu
-
-:8
-set base_game=quoth
-set start_map=start
-set skip_quakerc_gen=true
-set startdemos=demo1 demo2 demo3
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/warpspasm.zip
 pause
 goto :menu
 
