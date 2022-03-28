@@ -32,6 +32,7 @@ if "%basedir%"=="" (
 :menu
 set show_rating=false
 set show_version=false
+call :installed_check descent rating
 call :installed_check mappi rating
 call :installed_check e1m5quotha rating
 call :installed_check mstalk1c rating
@@ -82,36 +83,39 @@ if not "%force_show_legacies%"=="true" (
 )
 if "%show_rating%"=="true" (
   echo Dropped because of a change in rating or criteria:
+  if "%show_descent%"=="true" (
+    echo %is_descent_installed%  1: descent - ^(The Final^) Descent ^(2000^)
+  )
   if "%show_mappi%"=="true" (
-    echo %is_mappi_installed%  1: mappi - mappi - Red Slammer ^(2010^)
+    echo %is_mappi_installed%  2: mappi - mappi - Red Slammer ^(2010^)
   )
   if "%show_e1m5quotha%"=="true" (
-    echo %is_e1m5quotha_installed%  2: e1m5quotha - Gloomier Keep ^(2012^)
+    echo %is_e1m5quotha_installed%  3: e1m5quotha - Gloomier Keep ^(2012^)
   )
   if "%show_mstalk1c%"=="true" (
-    echo %is_mstalk1c_installed%  3: mstalk1c - Midnight Stalker ^(2013^)
+    echo %is_mstalk1c_installed%  4: mstalk1c - Midnight Stalker ^(2013^)
   )
   if "%show_func_mapjam1%"=="true" (
-    echo %is_func_mapjam1_installed%  4: func_mapjam1 - Func Map Jam 1 - Honey Theme ^(2014^)
+    echo %is_func_mapjam1_installed%  5: func_mapjam1 - Func Map Jam 1 - Honey Theme ^(2014^)
   )
   if "%show_unusedjam%"=="true" (
-    echo %is_unusedjam_installed%  5: unusedjam - Unused Jam ^(2021^)
+    echo %is_unusedjam_installed%  6: unusedjam - Unused Jam ^(2021^)
   )
   if "%show_bluemonday_v2%"=="true" (
-    echo %is_bluemonday_v2_installed%  6: bluemonday_v2 - Blue Monday Jam ^(2021^)
+    echo %is_bluemonday_v2_installed%  7: bluemonday_v2 - Blue Monday Jam ^(2021^)
   )
   echo.
 )
 if "%show_version%"=="true" (
   echo Dropped because superseded by a newer version:
   if "%show_ad_v1_70final%"=="true" (
-    echo %is_ad_v1_70final_installed%  7: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
+    echo %is_ad_v1_70final_installed%  8: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
   )
   if "%show_copper_v1_15%"=="true" (
-    echo %is_copper_v1_15_installed%  8: copper_v1_15 - Copper 1.15 ^(2020^)
+    echo %is_copper_v1_15_installed%  9: copper_v1_15 - Copper 1.15 ^(2020^)
   )
   if "%show_copper_v1_16%"=="true" (
-    echo %is_copper_v1_16_installed%  9: copper_v1_16 - Copper 1.16 ^(2021^)
+    echo %is_copper_v1_16_installed% 10: copper_v1_16 - Copper 1.16 ^(2021^)
   )
   echo.
 )
@@ -121,6 +125,17 @@ echo.
 goto %menu_choice%
 
 :1
+if not "%show_descent%"=="true" (
+  goto :eof
+)
+set start_map=start
+set skip_quakerc_gen=true
+set startdemos=intro demo1 demo2 demo3
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/descent.zip
+pause
+goto :menu
+
+:2
 if not "%show_mappi%"=="true" (
   goto :eof
 )
@@ -129,7 +144,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/m
 pause
 goto :menu
 
-:2
+:3
 if not "%show_e1m5quotha%"=="true" (
   goto :eof
 )
@@ -140,7 +155,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/e
 pause
 goto :menu
 
-:3
+:4
 if not "%show_mstalk1c%"=="true" (
   goto :eof
 )
@@ -150,7 +165,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/m
 pause
 goto :menu
 
-:4
+:5
 if not "%show_func_mapjam1%"=="true" (
   goto :eof
 )
@@ -162,7 +177,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/f
 pause
 goto :menu
 
-:5
+:6
 if not "%show_unusedjam%"=="true" (
   goto :eof
 )
@@ -171,7 +186,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/u
 pause
 goto :menu
 
-:6
+:7
 if not "%show_bluemonday_v2%"=="true" (
   goto :eof
 )
@@ -182,7 +197,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/b
 pause
 goto :menu
 
-:7
+:8
 if not "%show_ad_v1_70final%"=="true" (
   goto :eof
 )
@@ -193,7 +208,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/a
 pause
 goto :menu
 
-:8
+:9
 if not "%show_copper_v1_15%"=="true" (
   goto :eof
 )
@@ -203,7 +218,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/c
 pause
 goto :menu
 
-:9
+:10
 if not "%show_copper_v1_16%"=="true" (
   goto :eof
 )
