@@ -45,6 +45,7 @@ call :installed_check e1m5quotha rating
 call :installed_check fmb_bdg2 rating
 call :installed_check mstalk1c rating
 call :installed_check func_mapjam1 rating
+call :installed_check ad_paradise rating
 call :installed_check unusedjam rating
 call :installed_check bluemonday_v2 rating
 call :installed_check ad_v1_70final version
@@ -130,24 +131,27 @@ if "%show_rating%"=="true" (
   if "%show_func_mapjam1%"=="true" (
     echo %is_func_mapjam1_installed% 13: func_mapjam1 - Func Map Jam 1 - Honey Theme ^(2014^)
   )
+  if "%show_ad_paradise%"=="true" (
+    echo %is_ad_paradise_installed% 14: ad_paradise - Paradise Sickness ^(2017^)
+  )
   if "%show_unusedjam%"=="true" (
-    echo %is_unusedjam_installed% 14: unusedjam - Unused Jam ^(2021^)
+    echo %is_unusedjam_installed% 15: unusedjam - Unused Jam ^(2021^)
   )
   if "%show_bluemonday_v2%"=="true" (
-    echo %is_bluemonday_v2_installed% 15: bluemonday_v2 - Blue Monday Jam ^(2021^)
+    echo %is_bluemonday_v2_installed% 16: bluemonday_v2 - Blue Monday Jam ^(2021^)
   )
   echo.
 )
 if "%show_version%"=="true" (
   echo Dropped because superseded by a newer version:
   if "%show_ad_v1_70final%"=="true" (
-    echo %is_ad_v1_70final_installed% 16: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
+    echo %is_ad_v1_70final_installed% 17: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
   )
   if "%show_copper_v1_15%"=="true" (
-    echo %is_copper_v1_15_installed% 17: copper_v1_15 - Copper 1.15 ^(2020^)
+    echo %is_copper_v1_15_installed% 18: copper_v1_15 - Copper 1.15 ^(2020^)
   )
   if "%show_copper_v1_16%"=="true" (
-    echo %is_copper_v1_16_installed% 18: copper_v1_16 - Copper 1.16 ^(2021^)
+    echo %is_copper_v1_16_installed% 19: copper_v1_16 - Copper 1.16 ^(2021^)
   )
   echo.
 )
@@ -294,6 +298,17 @@ pause
 goto :menu
 
 :14
+if not "%show_ad_paradise%"=="true" (
+  goto :eof
+)
+set base_game=%latest_ad%
+set start_map=ad_paradise
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ad_paradise.zip
+pause
+goto :menu
+
+:15
 if not "%show_unusedjam%"=="true" (
   goto :eof
 )
@@ -302,7 +317,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/u
 pause
 goto :menu
 
-:15
+:16
 if not "%show_bluemonday_v2%"=="true" (
   goto :eof
 )
@@ -313,7 +328,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/b
 pause
 goto :menu
 
-:16
+:17
 if not "%show_ad_v1_70final%"=="true" (
   goto :eof
 )
@@ -324,7 +339,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/a
 pause
 goto :menu
 
-:17
+:18
 if not "%show_copper_v1_15%"=="true" (
   goto :eof
 )
@@ -334,7 +349,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/c
 pause
 goto :menu
 
-:18
+:19
 if not "%show_copper_v1_16%"=="true" (
   goto :eof
 )
