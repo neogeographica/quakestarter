@@ -18,7 +18,7 @@ EPISODE_RATING_GROUPS = [
 ]
 
 OTHER_RATING_GROUPS = [
-  ('classic', datetime(2005, 11, 5, 0, 0), 4.2),
+  ('classic', datetime(2005, 11, 5, 0, 0), 4.3),
   ('post Quoth', datetime(2014, 1, 1, 0, 0), 4.3),
   ('age of jams', datetime(2020, 1, 1, 0, 0), 4.4),
   ('latest', datetime(9999, 1, 1, 0, 0), 4.4)
