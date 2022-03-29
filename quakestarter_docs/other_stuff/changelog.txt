@@ -1,4 +1,4 @@
-**** v2.4.0 (??? 2022)
+**** v2.4.0 (March 2022)
 
 It's been a while since I've checked over the whole Quaddicted database again for qualifying releases, as opposed to just looking at new stuff as it comes in. Of course it's quite possible for the ratings of old stuff to change... and when you're dealing in Bayesian averages, the score for release X can change even if X didn't get any new ratings but Y and Z did.
 
