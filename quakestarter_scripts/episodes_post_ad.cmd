@@ -57,6 +57,7 @@ call :installed_check udob_v1_1
 call :installed_check quoffee
 call :installed_check sewerjam
 call :installed_check hwjam2
+call :installed_check jumpmod2+td_complete
 call :installed_check xmasjam2019
 call :installed_check smej_1.13
 echo.
@@ -73,8 +74,9 @@ echo %is_udob_v1_1_installed%  9: udob_v1_1 - Underdark Overbright ^(2019^)
 echo %is_quoffee_installed% 10: quoffee - Coffee Quake ^(2019^)
 echo %is_sewerjam_installed% 11: sewerjam - Quake Sewer Jam ^(2019^)
 echo %is_hwjam2_installed% 12: hwjam2 - Halloween Jam 2 ^(2019^)
-echo %is_xmasjam2019_installed% 13: xmasjam2019 - Xmas Jam 2019 ^(2019^)
-echo %is_smej_1.13_installed% 14: smej_1.13 - Menetettyjen Valtakunta ^(Realm of the Lost^) ^(2019^)
+echo %is_jumpmod2+td_complete_installed% 13: jumpmod2+td_complete - Jumpmod 2 + Triune Discovery ^(2019^)
+echo %is_xmasjam2019_installed% 14: xmasjam2019 - Xmas Jam 2019 ^(2019^)
+echo %is_smej_1.13_installed% 15: smej_1.13 - Menetettyjen Valtakunta ^(Realm of the Lost^) ^(2019^)
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -169,12 +171,24 @@ goto :menu
 
 :13
 set start_map=start
+set prelaunch_msg[0]=Note that this mod includes two small additional maps outside of the
+set prelaunch_msg[1]=episode sequence: jcr_jbdemo1 and jcr_jbdemo2. You can start those maps
+set prelaunch_msg[2]=manually with the console "map" command.
+set prelaunch_msg[3]=
+set modsettings[0]=sv_protocol 999
+set modsettings[1]=
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/jumpmod2+td_complete.zip
+pause
+goto :menu
+
+:14
+set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/xmasjam2019.zip
 pause
 goto :menu
 
-:14
+:15
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/smej_1.13.zip
