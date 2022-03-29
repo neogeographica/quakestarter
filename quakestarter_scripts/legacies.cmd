@@ -118,7 +118,7 @@ if "%show_rating%"=="true" (
     echo %is_fmb_bdg2_installed%  9: fmb_bdg2 - For My Babies - Bin Dunne Gorne 2 ^(2013^)
   )
   if "%show_func_mapjam5%"=="true" (
-    echo %is_func_mapjam5_installed%  10: func_mapjam5 - Func Map Jam 5 - The Qonquer Map Jam ^(2015^)
+    echo %is_func_mapjam5_installed% 10: func_mapjam5 - Func Map Jam 5 - The Qonquer Map Jam ^(2015^)
   )
   if "%show_ad_paradise%"=="true" (
     echo %is_ad_paradise_installed% 11: ad_paradise - Paradise Sickness ^(2017^)
