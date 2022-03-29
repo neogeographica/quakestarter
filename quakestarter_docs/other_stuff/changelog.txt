@@ -10,9 +10,9 @@ The upshot of applying this new criteria to the whole Quaddicted database is as 
 
 New items added: Dead Memories, Jumpmod 2 + Triune Discovery, Alkaline Jam, and In The Shadows [Demo v1.1]
 
-Existing items removed, i.e. moved to "legacies": (The Final) Descent, The Castle of Koohoo, The Slipgate Duplex, Contract Revoked: The Lost Chapters, This Onion, A Roman Wilderness Of Pain, The Anomaly, Deathmatch Classics Vol. 3, For My Babies - Bin Dunne Gorne 2, and Paradise Sickness
+Existing items removed, i.e. moved to "legacies": (The Final) Descent, The Castle of Koohoo, The Slipgate Duplex, Contract Revoked: The Lost Chapters, This Onion, A Roman Wilderness Of Pain, The Anomaly, Deathmatch Classics Vol. 3, For My Babies - Bin Dunne Gorne 2, Func Map Jam 5 - The Qonquer Map Jam, Paradise Sickness, and Quake Sewer Jam
 
-To keep the legacies menu manageable (one-page), I've also aged-out and removed the four oldest entries there: Red Slammer, Gloomier Keep, Midnight Stalker, and Func Map Jam 1 - Honey Theme.
+To keep the legacies menu manageable (one-page), I've also aged-out and removed the four oldest entries there: Red Slammer, Gloomier Keep, Midnight Stalker, and Func Map Jam 1 - Honey Theme. If you still have any of those mods installed you'll need to manage them outside of the Quakestarter menus.
 
 
 **** v2.3.0 (March 2022)

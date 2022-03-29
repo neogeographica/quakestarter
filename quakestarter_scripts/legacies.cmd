@@ -41,7 +41,9 @@ call :installed_check arwop rating
 call :installed_check digs05 rating
 call :installed_check dmc3 rating
 call :installed_check fmb_bdg2 rating
+call :installed_check func_mapjam5
 call :installed_check ad_paradise rating
+call :installed_check sewerjam
 call :installed_check unusedjam rating
 call :installed_check bluemonday_v2 rating
 call :installed_check ad_v1_70final version
@@ -115,27 +117,33 @@ if "%show_rating%"=="true" (
   if "%show_fmb_bdg2%"=="true" (
     echo %is_fmb_bdg2_installed%  9: fmb_bdg2 - For My Babies - Bin Dunne Gorne 2 ^(2013^)
   )
+  if "%show_func_mapjam5%"=="true" (
+    echo %is_func_mapjam5_installed%  10: func_mapjam5 - Func Map Jam 5 - The Qonquer Map Jam ^(2015^)
+  )
   if "%show_ad_paradise%"=="true" (
-    echo %is_ad_paradise_installed% 10: ad_paradise - Paradise Sickness ^(2017^)
+    echo %is_ad_paradise_installed% 11: ad_paradise - Paradise Sickness ^(2017^)
+  )
+  if "%show_sewerjam%"=="true" (
+    echo %is_sewerjam_installed% 12: sewerjam - Quake Sewer Jam ^(2019^)
   )
   if "%show_unusedjam%"=="true" (
-    echo %is_unusedjam_installed% 11: unusedjam - Unused Jam ^(2021^)
+    echo %is_unusedjam_installed% 13: unusedjam - Unused Jam ^(2021^)
   )
   if "%show_bluemonday_v2%"=="true" (
-    echo %is_bluemonday_v2_installed% 12: bluemonday_v2 - Blue Monday Jam ^(2021^)
+    echo %is_bluemonday_v2_installed% 14: bluemonday_v2 - Blue Monday Jam ^(2021^)
   )
   echo.
 )
 if "%show_version%"=="true" (
   echo Dropped because superseded by a newer version:
   if "%show_ad_v1_70final%"=="true" (
-    echo %is_ad_v1_70final_installed% 13: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
+    echo %is_ad_v1_70final_installed% 15: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
   )
   if "%show_copper_v1_15%"=="true" (
-    echo %is_copper_v1_15_installed% 14: copper_v1_15 - Copper 1.15 ^(2020^)
+    echo %is_copper_v1_15_installed% 16: copper_v1_15 - Copper 1.15 ^(2020^)
   )
   if "%show_copper_v1_16%"=="true" (
-    echo %is_copper_v1_16_installed% 15: copper_v1_16 - Copper 1.16 ^(2021^)
+    echo %is_copper_v1_16_installed% 17: copper_v1_16 - Copper 1.16 ^(2021^)
   )
   echo.
 )
@@ -240,6 +248,21 @@ pause
 goto :menu
 
 :10
+if not "%show_func_mapjam5%"=="true" (
+  goto :eof
+)
+set patch_url=https://www.quaddicted.com/files/mods/QuickerQonquer.zip
+set patch_skipfiles=maps\QArena.bsp maps\QStart.bsp
+set start_map=start
+set startdemos=demo1
+set modsettings[0]=scr_conspeed 1000
+set modsettings[1]=r_wateralpha 0.65
+set modsettings[2]=
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam5.zip
+pause
+goto :menu
+
+:11
 if not "%show_ad_paradise%"=="true" (
   goto :eof
 )
@@ -250,7 +273,16 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/a
 pause
 goto :menu
 
-:11
+:12
+if not "%show_sewerjam%"=="true" (
+  goto :eof
+)
+set start_map=start
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/sewerjam.zip
+pause
+goto :menu
+
+:13
 if not "%show_unusedjam%"=="true" (
   goto :eof
 )
@@ -259,7 +291,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/u
 pause
 goto :menu
 
-:12
+:14
 if not "%show_bluemonday_v2%"=="true" (
   goto :eof
 )
@@ -270,7 +302,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/b
 pause
 goto :menu
 
-:13
+:15
 if not "%show_ad_v1_70final%"=="true" (
   goto :eof
 )
@@ -281,7 +313,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/a
 pause
 goto :menu
 
-:14
+:16
 if not "%show_copper_v1_15%"=="true" (
   goto :eof
 )
@@ -291,7 +323,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/c
 pause
 goto :menu
 
-:15
+:17
 if not "%show_copper_v1_16%"=="true" (
   goto :eof
 )
