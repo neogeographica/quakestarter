@@ -8,7 +8,7 @@ import time
 import urllib.request
 import zipfile
 
-VERSION = "2.3.0"
+VERSION = "2.4.0"
 RELEASE_FOLDER = "release." + str(os.getpid())
 QUAKE_FOLDER = os.path.join(RELEASE_FOLDER, "Quake")
 QSS_VERSION = "2021-10-14"

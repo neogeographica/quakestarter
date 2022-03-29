@@ -38,14 +38,12 @@ call :installed_check e1m1rmx rating
 call :installed_check chapters rating
 call :installed_check fmb_bdg rating
 call :installed_check arwop rating
-call :installed_check mappi rating
 call :installed_check digs05 rating
 call :installed_check dmc3 rating
-call :installed_check e1m5quotha rating
 call :installed_check fmb_bdg2 rating
-call :installed_check mstalk1c rating
-call :installed_check func_mapjam1 rating
+call :installed_check func_mapjam5
 call :installed_check ad_paradise rating
+call :installed_check sewerjam
 call :installed_check unusedjam rating
 call :installed_check bluemonday_v2 rating
 call :installed_check ad_v1_70final version
@@ -110,48 +108,42 @@ if "%show_rating%"=="true" (
   if "%show_arwop%"=="true" (
     echo %is_arwop_installed%  6: arwop - A Roman Wilderness Of Pain ^(2009^)
   )
-  if "%show_mappi%"=="true" (
-    echo %is_mappi_installed%  7: mappi - Red Slammer ^(2010^)
-  )
   if "%show_digs05%"=="true" (
-    echo %is_digs05_installed%  8: digs05 - The Anomaly ^(2011^)
+    echo %is_digs05_installed%  7: digs05 - The Anomaly ^(2011^)
   )
   if "%show_dmc3%"=="true" (
-    echo %is_dmc3_installed%  9: dmc3 - Deathmatch Classics Vol. 3 ^(2011^)
-  )
-  if "%show_e1m5quotha%"=="true" (
-    echo %is_e1m5quotha_installed% 10: e1m5quotha - Gloomier Keep ^(2012^)
+    echo %is_dmc3_installed%  8: dmc3 - Deathmatch Classics Vol. 3 ^(2011^)
   )
   if "%show_fmb_bdg2%"=="true" (
-    echo %is_fmb_bdg2_installed% 11: fmb_bdg2 - For My Babies - Bin Dunne Gorne 2 ^(2013^)
+    echo %is_fmb_bdg2_installed%  9: fmb_bdg2 - For My Babies - Bin Dunne Gorne 2 ^(2013^)
   )
-  if "%show_mstalk1c%"=="true" (
-    echo %is_mstalk1c_installed% 12: mstalk1c - Midnight Stalker ^(2013^)
-  )
-  if "%show_func_mapjam1%"=="true" (
-    echo %is_func_mapjam1_installed% 13: func_mapjam1 - Func Map Jam 1 - Honey Theme ^(2014^)
+  if "%show_func_mapjam5%"=="true" (
+    echo %is_func_mapjam5_installed% 10: func_mapjam5 - Func Map Jam 5 - The Qonquer Map Jam ^(2015^)
   )
   if "%show_ad_paradise%"=="true" (
-    echo %is_ad_paradise_installed% 14: ad_paradise - Paradise Sickness ^(2017^)
+    echo %is_ad_paradise_installed% 11: ad_paradise - Paradise Sickness ^(2017^)
+  )
+  if "%show_sewerjam%"=="true" (
+    echo %is_sewerjam_installed% 12: sewerjam - Quake Sewer Jam ^(2019^)
   )
   if "%show_unusedjam%"=="true" (
-    echo %is_unusedjam_installed% 15: unusedjam - Unused Jam ^(2021^)
+    echo %is_unusedjam_installed% 13: unusedjam - Unused Jam ^(2021^)
   )
   if "%show_bluemonday_v2%"=="true" (
-    echo %is_bluemonday_v2_installed% 16: bluemonday_v2 - Blue Monday Jam ^(2021^)
+    echo %is_bluemonday_v2_installed% 14: bluemonday_v2 - Blue Monday Jam ^(2021^)
   )
   echo.
 )
 if "%show_version%"=="true" (
   echo Dropped because superseded by a newer version:
   if "%show_ad_v1_70final%"=="true" (
-    echo %is_ad_v1_70final_installed% 17: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
+    echo %is_ad_v1_70final_installed% 15: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
   )
   if "%show_copper_v1_15%"=="true" (
-    echo %is_copper_v1_15_installed% 18: copper_v1_15 - Copper 1.15 ^(2020^)
+    echo %is_copper_v1_15_installed% 16: copper_v1_15 - Copper 1.15 ^(2020^)
   )
   if "%show_copper_v1_16%"=="true" (
-    echo %is_copper_v1_16_installed% 19: copper_v1_16 - Copper 1.16 ^(2021^)
+    echo %is_copper_v1_16_installed% 17: copper_v1_16 - Copper 1.16 ^(2021^)
   )
   echo.
 )
@@ -229,15 +221,6 @@ pause
 goto :menu
 
 :7
-if not "%show_mappi%"=="true" (
-  goto :eof
-)
-set start_map=mappi
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mappi.zip
-pause
-goto :menu
-
-:8
 if not "%show_digs05%"=="true" (
   goto :eof
 )
@@ -246,7 +229,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/d
 pause
 goto :menu
 
-:9
+:8
 if not "%show_dmc3%"=="true" (
   goto :eof
 )
@@ -255,18 +238,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/d
 pause
 goto :menu
 
-:10
-if not "%show_e1m5quotha%"=="true" (
-  goto :eof
-)
-set base_game=quoth
-set start_map=e1m5quotha
-set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/e1m5quotha.zip
-pause
-goto :menu
-
-:11
+:9
 if not "%show_fmb_bdg2%"=="true" (
   goto :eof
 )
@@ -275,29 +247,22 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/f
 pause
 goto :menu
 
-:12
-if not "%show_mstalk1c%"=="true" (
+:10
+if not "%show_func_mapjam5%"=="true" (
   goto :eof
 )
-set start_map=mstalk
-set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mstalk1c.zip
+set patch_url=https://www.quaddicted.com/files/mods/QuickerQonquer.zip
+set patch_skipfiles=maps\QArena.bsp maps\QStart.bsp
+set start_map=start
+set startdemos=demo1
+set modsettings[0]=scr_conspeed 1000
+set modsettings[1]=r_wateralpha 0.65
+set modsettings[2]=
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam5.zip
 pause
 goto :menu
 
-:13
-if not "%show_func_mapjam1%"=="true" (
-  goto :eof
-)
-set modsettings[0]=scr_conspeed 1000    
-set modsettings[1]=r_wateralpha 0.65    
-set modsettings[2]=r_oldwater 1 
-set modsettings[3]= 
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam1.zip
-pause
-goto :menu
-
-:14
+:11
 if not "%show_ad_paradise%"=="true" (
   goto :eof
 )
@@ -308,7 +273,16 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/a
 pause
 goto :menu
 
-:15
+:12
+if not "%show_sewerjam%"=="true" (
+  goto :eof
+)
+set start_map=start
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/sewerjam.zip
+pause
+goto :menu
+
+:13
 if not "%show_unusedjam%"=="true" (
   goto :eof
 )
@@ -317,7 +291,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/u
 pause
 goto :menu
 
-:16
+:14
 if not "%show_bluemonday_v2%"=="true" (
   goto :eof
 )
@@ -328,7 +302,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/b
 pause
 goto :menu
 
-:17
+:15
 if not "%show_ad_v1_70final%"=="true" (
   goto :eof
 )
@@ -339,7 +313,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/a
 pause
 goto :menu
 
-:18
+:16
 if not "%show_copper_v1_15%"=="true" (
   goto :eof
 )
@@ -349,7 +323,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/c
 pause
 goto :menu
 
-:19
+:17
 if not "%show_copper_v1_16%"=="true" (
   goto :eof
 )

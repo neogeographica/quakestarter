@@ -57,7 +57,6 @@ call :installed_check nsoe2
 call :installed_check arcanum
 call :installed_check unforgiven
 call :installed_check rrp
-call :installed_check func_mapjam5
 call :installed_check mapjam6
 echo.
 echo Selected custom episodes/hubs released from mid-2000 through 2015:
@@ -73,8 +72,7 @@ echo %is_nsoe2_installed%  9: nsoe2 - Soul of Evil: Indian Summer ^(2008^)
 echo %is_arcanum_installed% 10: arcanum - Arcanum ^(2011^)
 echo %is_unforgiven_installed% 11: unforgiven - Unforgiven ^(2011^)
 echo %is_rrp_installed% 12: rrp - Rubicon Rumble Pack ^(2014^)
-echo %is_func_mapjam5_installed% 13: func_mapjam5 - Func Map Jam 5 - The Qonquer Map Jam ^(2015^)
-echo %is_mapjam6_installed% 14: mapjam6 - Func Map Jam 6 - Fire and Brimstone ^(2015^)
+echo %is_mapjam6_installed% 13: mapjam6 - Func Map Jam 6 - Fire and Brimstone ^(2015^)
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -174,18 +172,6 @@ pause
 goto :menu
 
 :13
-set patch_url=https://www.quaddicted.com/files/mods/QuickerQonquer.zip
-set patch_skipfiles=maps\QArena.bsp maps\QStart.bsp
-set start_map=start
-set startdemos=demo1
-set modsettings[0]=scr_conspeed 1000
-set modsettings[1]=r_wateralpha 0.65
-set modsettings[2]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam5.zip
-pause
-goto :menu
-
-:14
 set start_map=start
 set startdemos=demo1
 set modsettings[0]=r_wateralpha 1
