@@ -2,8 +2,7 @@
 
 REM Installer for maps that fit the following criteria:
 REM * released through late 2005 (until the first Quoth release)
-REM * Quaddicted editor rating "Excellent"
-REM * Quaddicted user rating 4.5 or better (normalized Bayesian average)
+REM * Quaddicted user rating 4.3 or better (normalized Bayesian average)
 
 setlocal
 
@@ -47,12 +46,10 @@ set startdemos=
 cls
 call :installed_check mexx10
 call :installed_check czg07
-call :installed_check koohoo
 call :installed_check czg03
 call :installed_check could
 call :installed_check gmsp3
 call :installed_check ac
-call :installed_check e1m1rmx
 call :installed_check menk
 call :installed_check kinn_marcher
 call :installed_check lunsp1
@@ -61,16 +58,14 @@ echo.
 echo Selected other custom maps released through late 2005:
 echo %is_mexx10_installed%  1: mexx10 - The Cassandra Calamity ^(1997^)
 echo %is_czg07_installed%  2: czg07 - Insomnia ^(2000^)
-echo %is_koohoo_installed%  3: koohoo - The Castle of Koohoo ^(2001^)
-echo %is_czg03_installed%  4: czg03 - Ceremonial Circles ^(2001^)
-echo %is_could_installed%  5: could - And All That Could Have Been ^(2003^)
-echo %is_gmsp3_installed%  6: gmsp3 - Day of the Lords ^(2003^)
-echo %is_ac_installed%  7: ac - Adamantine Cruelty ^(2004^)
-echo %is_e1m1rmx_installed%  8: e1m1rmx - The Slipgate Duplex ^(2004^)
-echo %is_menk_installed%  9: menk - Menkalinan ^(2004^)
-echo %is_kinn_marcher_installed% 10: kinn_marcher - The Marcher Fortress ^(2005^)
-echo %is_lunsp1_installed% 11: lunsp1 - Concentric Devastation ^(2005^)
-echo %is_sm82_installed% 12: sm82 - Rubicondom ^(2005^)
+echo %is_czg03_installed%  3: czg03 - Ceremonial Circles ^(2001^)
+echo %is_could_installed%  4: could - And All That Could Have Been ^(2003^)
+echo %is_gmsp3_installed%  5: gmsp3 - Day of the Lords ^(2003^)
+echo %is_ac_installed%  6: ac - Adamantine Cruelty ^(2004^)
+echo %is_menk_installed%  7: menk - Menkalinan ^(2004^)
+echo %is_kinn_marcher_installed%  8: kinn_marcher - The Marcher Fortress ^(2005^)
+echo %is_lunsp1_installed%  9: lunsp1 - Concentric Devastation ^(2005^)
+echo %is_sm82_installed% 10: sm82 - Rubicondom ^(2005^)
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -99,18 +94,6 @@ pause
 goto :menu
 
 :3
-set start_map=start
-set modsettings[0]=r_wateralpha 0.6
-set modsettings[1]=r_shadows 0
-set modsettings[2]=gl_flashblend 0
-set modsettings[3]=gl_ztrick 0
-set modsettings[4]=gl_keeptjunctions 1
-set modsettings[5]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/koohoo.zip
-pause
-goto :menu
-
-:4
 set start_map=czg03
 set modsettings[0]=r_wateralpha 1
 set modsettings[1]=r_shadows 0
@@ -120,13 +103,13 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/c
 pause
 goto :menu
 
-:5
+:4
 set start_map=could
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/could.zip
 pause
 goto :menu
 
-:6
+:5
 set start_map=gmsp3v2
 set modsettings[0]=r_maxsurfs 1200
 set modsettings[1]=r_maxedges 4000
@@ -135,7 +118,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/g
 pause
 goto :menu
 
-:7
+:6
 set start_map=acstart
 set modsettings[0]=r_wateralpha 0.3
 set modsettings[1]=r_maxedges 4000
@@ -145,13 +128,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/a
 pause
 goto :menu
 
-:8
-set start_map=e1m1rmx
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/e1m1rmx.zip
-pause
-goto :menu
-
-:9
+:7
 set start_map=menkstart
 set modsettings[0]=r_maxedges 10000
 set modsettings[1]=r_maxsurfs 10000
@@ -160,7 +137,7 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/m
 pause
 goto :menu
 
-:10
+:8
 set start_map=marcher
 set modsettings[0]=r_maxedges 100000
 set modsettings[1]=r_maxsurfs 100000
@@ -174,13 +151,13 @@ call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/k
 pause
 goto :menu
 
-:11
+:9
 set start_map=lunsp1
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/lunsp1.zip
 pause
 goto :menu
 
-:12
+:10
 set start_map=sm82
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/sm82.zip
 pause

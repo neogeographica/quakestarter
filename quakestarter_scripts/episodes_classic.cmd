@@ -3,8 +3,7 @@
 REM Installer for mapsets that fit the following criteria:
 REM * released before Nehahra (in 2000)
 REM * a start map and at least four non-startmaps
-REM * Quaddicted editor rating "Excellent"
-REM * Quaddicted user rating 4.0 or better (normalized Bayesian average)
+REM * Quaddicted user rating 3.85 or better (normalized Bayesian average)
 
 REM Note that Nehahra is not included here because many Quake engines cannot
 REM run it. See https://www.quaddicted.com/reviews/nehahra.html
@@ -53,14 +52,12 @@ call :installed_check prodigy_se
 call :installed_check bbelief
 call :installed_check mexx9
 call :installed_check zer
-call :installed_check descent
 echo.
 echo Selected custom episodes/hubs released before mid-2000:
 echo %is_prodigy_se_installed%  1: prodigy_se - Prodigy Special Edition ^(1997^)
 echo %is_bbelief_installed%  2: bbelief - Beyond Belief ^(1997^)
 echo %is_mexx9_installed%  3: mexx9 - Penumbra of Domination ^(1997^)
 echo %is_zer_installed%  4: zer - Zerstoerer ^(1997^)
-echo %is_descent_installed%  5: descent - ^(The Final^) Descent ^(2000^)
 echo.
 echo Note that Nehahra is not included here because many Quake engines cannot
 echo run it. See https://www.quaddicted.com/reviews/nehahra.html
@@ -100,14 +97,6 @@ set patch_url=https://www.quaddicted.com/filebase/zer11.zip
 set patch2_url=https://www.quaddicted.com/filebase/zerend_fix.zip
 set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/zer.zip
-pause
-goto :menu
-
-:5
-set start_map=start
-set skip_quakerc_gen=true
-set startdemos=intro demo1 demo2 demo3
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/descent.zip
 pause
 goto :menu
 

@@ -3,7 +3,6 @@
 REM Installer for mapsets that fit the following criteria:
 REM * released from 2020 through 2022
 REM * a start map and at least four non-startmaps
-REM * Quaddicted editor rating "Excellent"
 REM * Quaddicted user rating 4.0 or better (normalized Bayesian average)
 
 setlocal
@@ -54,6 +53,7 @@ call :installed_check hwjam3
 call :installed_check xmasjam2020
 call :installed_check smej2_1.1
 call :installed_check pun
+call :installed_check alkjam
 call :installed_check alkaline1.1
 call :installed_check xmasjam2021
 call :installed_check sm215
@@ -68,10 +68,11 @@ echo %is_hwjam3_installed%  5: hwjam3 - Halloween Jam 3
 echo %is_xmasjam2020_installed%  6: xmasjam2020 - Xmas Jam 2020
 echo %is_smej2_1.1_installed%  7: smej2_1.1 - Torrent of Impurities ^(Epaepuhtauksien Virta^)
 echo %is_pun_installed%  8: pun - The Punishment Due
-echo %is_alkaline1.1_installed%  9: alkaline1.1 - Alkaline 1.1
-echo %is_xmasjam2021_installed% 10: xmasjam2021 - Xmas Jam 2021
-echo %is_sm215_installed% 11: sm215 - Quad Run
-echo %is_snack2_installed% 12: snack2 - Speedmap Snack Pack 2 - Cosmic Hunger
+echo %is_alkjam_installed%  9: alkjam - Alkaline Jam
+echo %is_alkaline1.1_installed% 10: alkaline1.1 - Alkaline 1.1
+echo %is_xmasjam2021_installed% 11: xmasjam2021 - Xmas Jam 2021
+echo %is_sm215_installed% 12: sm215 - Quad Run
+echo %is_snack2_installed% 13: snack2 - Speedmap Snack Pack 2 - Cosmic Hunger
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -139,24 +140,31 @@ goto :menu
 :9
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/alkaline1.1.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/alkjam.zip
 pause
 goto :menu
 
 :10
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/xmasjam2021.zip
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/alkaline1.1.zip
 pause
 goto :menu
 
 :11
 set start_map=start
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/sm215.zip
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/xmasjam2021.zip
 pause
 goto :menu
 
 :12
+set start_map=start
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/sm215.zip
+pause
+goto :menu
+
+:13
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/snack2.zip

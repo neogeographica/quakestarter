@@ -2,8 +2,7 @@
 
 REM Installer for maps that fit the following criteria:
 REM * released from 2014 through 2019
-REM * Quaddicted editor rating "Excellent"
-REM * Quaddicted user rating 4.5 or better (normalized Bayesian average)
+REM * Quaddicted user rating 4.4 or better (normalized Bayesian average)
 
 setlocal
 
@@ -47,7 +46,6 @@ set startdemos=
 cls
 call :installed_check func_mapjam2
 call :installed_check func_mapjam3
-call :installed_check ad_paradise
 call :installed_check retrojam6
 call :installed_check grim_rezipped
 call :installed_check dm6rmx
@@ -56,11 +54,10 @@ echo.
 echo Selected other custom maps released from 2014 through 2019:
 echo %is_func_mapjam2_installed%  1: func_mapjam2 - Func Map Jam 2 - IKblue/IKwhite Theme ^(2014^)
 echo %is_func_mapjam3_installed%  2: func_mapjam3 - Func Map Jam 3 - Zerstoerer theme ^(2014^)
-echo %is_ad_paradise_installed%  3: ad_paradise - Paradise Sickness ^(2017^)
-echo %is_retrojam6_installed%  4: retrojam6 - Retro Jam 6 - Egyptian theme ^(2017^)
-echo %is_grim_rezipped_installed%  5: grim_rezipped - The Grim Outpost ^(2018^)
-echo %is_dm6rmx_installed%  6: dm6rmx - The Dark Portal ^(2018^)
-echo %is_37_hcm1_installed%  7: 37_hcm1 - 37th Relic Retrieval ^(2019^)
+echo %is_retrojam6_installed%  3: retrojam6 - Retro Jam 6 - Egyptian theme ^(2017^)
+echo %is_grim_rezipped_installed%  4: grim_rezipped - The Grim Outpost ^(2018^)
+echo %is_dm6rmx_installed%  5: dm6rmx - The Dark Portal ^(2018^)
+echo %is_37_hcm1_installed%  6: 37_hcm1 - 37th Relic Retrieval ^(2019^)
 echo.
 set menu_choice=:eof
 set /p menu_choice=choose a number or just press Enter to exit:
@@ -90,33 +87,25 @@ pause
 goto :menu
 
 :3
-set base_game=%latest_ad%
-set start_map=ad_paradise
-set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ad_paradise.zip
-pause
-goto :menu
-
-:4
 set modsettings[0]=r_wateralpha 0.65
 set modsettings[1]=
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/retrojam6.zip
 pause
 goto :menu
 
-:5
+:4
 set start_map=grim
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/grim_rezipped.zip
 pause
 goto :menu
 
-:6
+:5
 set start_map=dm6rmx
 call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/dm6rmx.zip
 pause
 goto :menu
 
-:7
+:6
 set base_game=%latest_ad%
 set start_map=37_hcm1
 set skip_quakerc_gen=true

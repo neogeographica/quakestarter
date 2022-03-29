@@ -3,8 +3,7 @@
 REM Installer for mapsets that fit the following criteria:
 REM * released from 2016 through 2019
 REM * a start map and at least four non-startmaps
-REM * Quaddicted editor rating "Excellent"
-REM * Quaddicted user rating 4.0 or better (normalized Bayesian average)
+REM * Quaddicted user rating 3.95 or better (normalized Bayesian average)
 
 setlocal
 
@@ -56,8 +55,8 @@ call :installed_check xmasjam2018
 call :installed_check func_mapjamx
 call :installed_check udob_v1_1
 call :installed_check quoffee
-call :installed_check sewerjam
 call :installed_check hwjam2
+call :installed_check jumpmod2+td_complete
 call :installed_check xmasjam2019
 call :installed_check smej_1.13
 echo.
@@ -72,8 +71,8 @@ echo %is_xmasjam2018_installed%  7: xmasjam2018 - Xmas Jam 2018 - 1024^^3 theme 
 echo %is_func_mapjamx_installed%  8: func_mapjamx - Func Map Jam X - Insomnia Theme ^(2019^)
 echo %is_udob_v1_1_installed%  9: udob_v1_1 - Underdark Overbright ^(2019^)
 echo %is_quoffee_installed% 10: quoffee - Coffee Quake ^(2019^)
-echo %is_sewerjam_installed% 11: sewerjam - Quake Sewer Jam ^(2019^)
-echo %is_hwjam2_installed% 12: hwjam2 - Halloween Jam 2 ^(2019^)
+echo %is_hwjam2_installed% 11: hwjam2 - Halloween Jam 2 ^(2019^)
+echo %is_jumpmod2+td_complete_installed% 12: jumpmod2+td_complete - Jumpmod 2 + Triune Discovery ^(2019^)
 echo %is_xmasjam2019_installed% 13: xmasjam2019 - Xmas Jam 2019 ^(2019^)
 echo %is_smej_1.13_installed% 14: smej_1.13 - Menetettyjen Valtakunta ^(Realm of the Lost^) ^(2019^)
 echo.
@@ -157,14 +156,20 @@ goto :menu
 
 :11
 set start_map=start
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/sewerjam.zip
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/hwjam2.zip
 pause
 goto :menu
 
 :12
 set start_map=start
-set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/hwjam2.zip
+set prelaunch_msg[0]=Note that this mod includes two small additional maps outside of the
+set prelaunch_msg[1]=episode sequence: jcr_jbdemo1 and jcr_jbdemo2. You can start those maps
+set prelaunch_msg[2]=manually with the console "map" command.
+set prelaunch_msg[3]=
+set modsettings[0]=sv_protocol 999
+set modsettings[1]=
+call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/jumpmod2+td_complete.zip
 pause
 goto :menu
 

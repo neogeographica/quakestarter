@@ -1,3 +1,20 @@
+**** v2.4.0 (March 2022)
+
+It's been a while since I've checked over the whole Quaddicted database again for qualifying releases, as opposed to just looking at new stuff as it comes in. Of course it's quite possible for the ratings of old stuff to change... and when you're dealing in Bayesian averages, the score for release X can change even if X didn't get any new ratings but Y and Z did.
+
+Anyway, the "whole database scan" showed quite a few changes, mostly of things that had dropped below the ratings threshold. I don't know if that's because of the normal workings of the ratings system or because of some other changes in the Quaddicted backend; in any case, it didn't feel right to continue to apply the current criteria.
+
+So I've lowered the bar on the score needed to qualify... more so for older releases. A few more details are in the "quakestarter_docs\other_stuff\selection_criteria.txt" doc, and as usual each of the main section installer scripts in "quakestarter_scripts" has the criteria for that section in comments at the top of script.
+
+The upshot of applying this new criteria to the whole Quaddicted database is as follows. Several installables are still going to get dropped to the "legacies" section, but overall things are pretty stable and we even pick up four new installables.
+
+New items added: Dead Memories, Jumpmod 2 + Triune Discovery, Alkaline Jam, and In The Shadows [Demo v1.1]
+
+Existing items removed, i.e. moved to "legacies": (The Final) Descent, The Castle of Koohoo, The Slipgate Duplex, Contract Revoked: The Lost Chapters, This Onion, A Roman Wilderness Of Pain, The Anomaly, Deathmatch Classics Vol. 3, For My Babies - Bin Dunne Gorne 2, Func Map Jam 5 - The Qonquer Map Jam, Paradise Sickness, and Quake Sewer Jam
+
+To keep the legacies menu manageable (one-page), I've also aged-out and removed the four oldest entries there: Red Slammer, Gloomier Keep, Midnight Stalker, and Func Map Jam 1 - Honey Theme. If you still have any of those mods installed you'll need to manage them outside of the Quakestarter menus.
+
+
 **** v2.3.0 (March 2022)
 
 - Include an updated Quakespasm-Spiked (2021-10-14).
