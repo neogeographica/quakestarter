@@ -22,7 +22,7 @@ You can also add arguments here that should always be used whenever launching yo
 
 In any case, if you do set your own quake_exe then the following things are _not_ guaranteed:
 * that your choice of Quake engine will be able to properly run every selection from the Quakestarter menus
-* that your choice of Quake engine will be able to play the downloaded soundtrack files
+* that your choice of Quake engine will be able to play soundtrack files
 * that all the settings in the example autoexec.cfg will work for your choice of Quake engine, or have the indicated defaults
 * that existing savegames will work for your choice of Quake engine
 
