@@ -32,13 +32,17 @@ echo on this computer's disks, and copy them into this Quake installation.
 echo.
 
 echo For the original Quake campaign:
+set md5sum=5906e5998fc3d896ddaf5e6a62e03abb
 call "%scriptspath%_install_quakefiles.cmd" id1 pak0.pak
+set md5sum=d76b3e5678f0b64ac74ce5e340e6a685
 call "%scriptspath%_install_quakefiles.cmd" id1 pak1.pak
 echo.
 echo For missionpack 1:
+set md5sum=0ab83681aaf841c4320269e02941a14a
 call "%scriptspath%_install_quakefiles.cmd" hipnotic pak0.pak
 echo.
 echo For missionpack 2:
+set md5sum=c38a4e04219c317cd1b02f386bdfe11f
 call "%scriptspath%_install_quakefiles.cmd" rogue pak0.pak
 echo.
 
