@@ -13,17 +13,15 @@ If you already have your pak files and are ready to go, you don't need to read t
 
 **** Getting the pak files from a Quake installation
 
-If you already have Quake installed somewhere on this computer, or if you are able to install Quake now (e.g. from Steam or GOG), then that will be the easiest way to get these files. The first menu option in Quakestarter will find that Quake installation and copy the necessary files from it.
+If you already have Quake installed somewhere on this computer, or if you are able to install Quake now (e.g. from Steam or GOG), then that will be the easiest way to get these files. The first menu option in Quakestarter will find that Quake installation and copy the necessary files from it. If you're curious about how Quakestarter looks for those files, check out the "auto_setup_logic.txt" document.
 
 If that process can't find your Quake pak files, you can go look for them yourself. They will be inside a folder named "id1", which itself is inside your Quake install directory. So find and open up the "id1" folder, then make the copies you need of "pak0.pak" and "pak1.pak". Similarly if you have one or both of the missionpacks installed, you can get the "pak0.pak" file out of the "hipnotic" and/or "rogue" folder inside an existing Quake installation.
-
-Note that when Quakestarter looks for pak files, it checks the files (using an MD5 checksum) to make sure they are the right files. This means for example that it will not grab pak files from the "enhanced" Quake rerelease, since those pak files are different from the originals. In the case of "id1\pak0.pak" Quakestarter also specifically looks for the last version of "pak0.pak" (1.06) that was shipped for Quake, not any earlier version. If Quakestarter seems to be ignoring an available pak file it might be because that file doesn't have the right checksum.
 
 If you're manually copying pak files into a Quakestarter-managed Quake installation, you should also be careful to get the pak files from the original Quake and not the rerelease. You can easily tell the difference since the "id1" folder in the rerelease only contains "pak0.pak" and does not have a "pak1.pak". As of the last update to this part of the docs (April 2022), various stores provide original and/or rereleased Quake as follows:
 * Steam provides the original Quake and also the rerelease (in a "rerelease" subfolder)
 * GOG provides only the original
 * Xbox Game Pass provides only the rerelease
-* Bethesda (which should be going away soon) provides only the rerelease
+* Bethesda provides only the rerelease
 
 
 **** Getting the pak files from a Quake CD
