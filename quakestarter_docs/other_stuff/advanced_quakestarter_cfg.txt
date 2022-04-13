@@ -67,7 +67,7 @@ That last example would result in the following command line for running the "ud
 
 And finally, a consideration that is outside of that configuration file:
 
-Quakestarter will use "curl.exe" to download zipfiles, if that utility is in a directory included in your Windows PATH environment variable. This will be the case in current versions of Windows 10.
+Quakestarter will use "curl.exe" to download zipfiles, if that utility is in a directory included in your Windows PATH environment variable. This will be the case in current versions of Windows 10 (or later).
 
 If Quakestarter can't find that curl utility, it will use a .Net assembly to do the download instead. This should work fine. One downside though is that this approach will not show a progress bar during the download.
 

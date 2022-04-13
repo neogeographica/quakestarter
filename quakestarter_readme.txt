@@ -14,7 +14,7 @@ The tools included in this package are:
 
 You might want to keep an eye out in the future for newer releases of Simple Quake Launcher 2 or Quakespasm-Spiked. Unless something changes drastically, you can just drop their new files in here and replace the older versions.
 
-Note that the programs in this package are meant to be used on Windows 7, 8, or 10. If you are using a different OS then the programs here won't be as useful, but the docs might be. See the "not_windows.txt" doc in the "quakestarter_docs\other_stuff" folder for some specific pointers.
+Note that the programs in this package are meant to be used on Windows 7, 8, or 10. (And probably Windows 11, but I'm not yet able to test that.) If you are using a different OS then the programs here won't be as useful, but the docs might be. See the "not_windows.txt" doc in the "quakestarter_docs\other_stuff" folder for some specific pointers.
 
 
 **** Version info
@@ -36,7 +36,7 @@ Or if you already have a installation of the original Quake (not the "enhanced" 
 
 The following sequence will get you off and running:
 
-- You're going to need Microsoft .Net Framework version 4.5 or later. If you are on a normal Windows 8 or Windows 10 system, you're fine. For more details, especially if you are on Windows 7, see the "dot_net_version_dependency.txt" doc in the "quakestarter_docs\other_stuff" folder.
+- You're going to need Microsoft .Net Framework version 4.5 or later. If you are on a normal Windows 8 or Windows 10 system (or later), you're fine. For more details, especially if you are on Windows 7, see the "dot_net_version_dependency.txt" doc in the "quakestarter_docs\other_stuff" folder.
 
 - If you're starting a new Quake installation from scratch, you need to move or copy your "pak0.pak" and "pak1.pak" files (Quake game data) into the "id1" folder. If you already have an installation of the original Quake on your computer somewhere, you can run Quakestarter and choose the first menu option; this can usually automatically find and copy those pak files for you. Quakestarter will look for installations from stores that provide the original Quake game data (Steam and GOG) as well as checking other places where Quake may be installed.
 

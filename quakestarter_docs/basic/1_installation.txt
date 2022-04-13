@@ -24,7 +24,7 @@ If you want Quakestarter to launch some other program for playing Quake, you'll 
 
 The Quakestarter script and the Simple Quake Launcher 2 program ("SQLauncher2.exe") bundled in this package have a requirement for Microsoft .Net Framework 4.5 or later. When you launch Quakestarter it will explicitly check for this dependency and show you an error message if there is a problem.
 
-If you are on Windows 8 or 10, this shouldn't be a problem for you, especially if your OS is up-to-date. If you are on Windows 7 though, you'll probably get the error message from Quakestarter. The "dot_net_version_dependency.txt" doc in the "quakestarter_docs\other_stuff" folder describes how to get the necessary Windows components updated in that case.
+If you are on Windows 8 or Windows 10 or later, this shouldn't be a problem for you, especially if your OS is up-to-date. If you are on Windows 7 though, you'll probably get the error message from Quakestarter. The "dot_net_version_dependency.txt" doc in the "quakestarter_docs\other_stuff" folder describes how to get the necessary Windows components updated in that case.
 
 If you're on Windows Vista (???) then likely you're in the same boat as Windows 7 users. However, I no longer test on Vista.
 

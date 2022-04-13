@@ -4,7 +4,7 @@ You may have come to this page because you read about the .Net dependency in ano
 
 The Quakestarter script uses .Net assemblies to decompress the zipfiles for mods and patches, and in some cases (particularly on Windows 7/8) to do the downloads too. Simple Quake Launcher 2 also relies on .Net. In both cases, .Net Framework 4.5 is the minimum requirement. And at least in the case of Quakestarter this places a requirement on your version of Powershell as well.
 
-If you're using Windows 8 or Windows 10 then you shouldn't have to worry about this, and you can ignore this document unless you're getting that aforementioned Quakestarter error message.
+If you're using Windows 8 or Windows 10 or later, then you shouldn't have to worry about this; you can ignore this document unless you're getting that aforementioned Quakestarter error message.
 
 On Windows 7 though it's likely you'll need to upgrade something. For various Microsoft-y reasons it can be a little awkward so I apologize in advance for that. Let's walk through it...
 
