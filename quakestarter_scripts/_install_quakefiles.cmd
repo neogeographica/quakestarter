@@ -70,6 +70,8 @@ call :search_common_paths "Quake"
 if exist "%dest%" goto :eof
 call :search_common_paths "Quake\rerelease"
 if exist "%dest%" goto :eof
+call :search_common_paths "QUAKE\Content"
+if exist "%dest%" goto :eof
 call :search_common_paths "Steam\steamapps\common\Quake"
 if exist "%dest%" goto :eof
 call :search_common_paths "Steam\steamapps\common\Quake\rerelease"
