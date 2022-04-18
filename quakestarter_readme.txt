@@ -2,7 +2,7 @@
 
 This package is one way to get going with the "state of the art" in Quake singleplayer. It's meant to be a convenient bundle of useful tools and explanations.
 
-To be clear, you MUST own Quake already to take advantage of this package. In fact the easiest way to use this is if you already have the original Quake installed somewhere on your computer. Once you have Quake and are wondering "how do I play singleplayer Quake stuff in the 21st century?", you can answer that question here.
+To be clear, you MUST own Quake already to take advantage of this package. In fact the easiest way to use this is if you already have the *original* Quake installed somewhere on your computer. Once you have Quake and are wondering "how do I play singleplayer Quake stuff in the 21st century?", you can answer that question here.
 
 The tools included in this package are:
 
@@ -14,7 +14,7 @@ The tools included in this package are:
 
 You might want to keep an eye out in the future for newer releases of Simple Quake Launcher 2 or Quakespasm-Spiked. Unless something changes drastically, you can just drop their new files in here and replace the older versions.
 
-Note that the programs in this package are meant to be used on Windows 7, 8, or 10. If you are using a different OS then the programs here won't be as useful, but the docs might be. See the "not_windows.txt" doc in the "quakestarter_docs\other_stuff" folder for some specific pointers.
+Note that the programs in this package are meant to be used on Windows 7, 8, 10, or 11. If you are using a different OS then the programs here won't be as useful, but the docs might be. See the "not_windows.txt" doc in the "quakestarter_docs\other_stuff" folder for some specific pointers.
 
 
 **** Version info
@@ -32,15 +32,15 @@ If you've been using a previous version of this package, see the "upgrading_quak
 
 You can use this package as a new Quake installation starting from scratch.
 
-Or if you already have a Quake installation, you can drop these files and folders into that existing Quake folder if you like. The "1_installation.txt" doc in the "quakestarter_docs\basic" folder goes into a bit more detail about that approach.
+Or if you already have a installation of the original Quake (not the "enhanced" rerelease), you can drop these files and folders into that existing Quake folder if you like. The "1_installation.txt" doc in the "quakestarter_docs\basic" folder goes into a bit more detail about that approach.
 
 The following sequence will get you off and running:
 
-- You're going to need Microsoft .Net Framework version 4.5 or later. If you are on a normal Windows 8 or Windows 10 system, you're fine. For more details, especially if you are on Windows 7, see the "dot_net_version_dependency.txt" doc in the "quakestarter_docs\other_stuff" folder.
+- You're going to need Microsoft .Net Framework version 4.5 or later. If you are on a normal Windows 8 or Windows 10 system (or later), you're fine. For more details, especially if you are on Windows 7, see the "dot_net_version_dependency.txt" doc in the "quakestarter_docs\other_stuff" folder.
 
-- If you're starting a new Quake installation from scratch, you need to move or copy your "pak0.pak" and "pak1.pak" files (Quake game data) into the "id1" folder. If you already have another Quake installation on your computer somewhere, you can run Quakestarter and choose the first menu option; this can usually automatically find and copy those pak files for you.
+- If you're starting a new Quake installation from scratch, you need to move or copy your "pak0.pak" and "pak1.pak" files (Quake game data) into the "id1" folder. If you already have an installation of the original Quake on your computer somewhere, you can run Quakestarter and choose the first menu option; this can usually automatically find and copy those pak files for you. Quakestarter will look for installations from stores that provide the original Quake game data (Steam and GOG) as well as checking other places where Quake may be installed.
 
-- You can also use the second option in the main Quakestarter menu to get the Quake soundtrack files set up. The Quake soundtrack adds a lot -- it's more like "ambient sounds" most of the time, rather than a song. It's good to have!
+- You can also use the second option in the main Quakestarter menu to automatically get the Quake soundtrack files. The Quake soundtrack adds a lot -- it's more like "ambient sounds" most of the time, rather than a song. It's good to have! Quakestarter will look for installations from stores that provide the soundtrack as part of the "enhanced" Quake rerelease (Steam, Xbox Game Pass, and Bethesda) as well as checking other places where Quake may be installed.
 
 - In the "id1" folder, there's a file named "autoexec.cfg.example". This contains some settings that are not always accessible through the in-game menu options of some Quake engines. You can rename this file to "autoexec.cfg" to enable those settings. You can of course change the settings and values in your "autoexec.cfg" to match your personal preferences -- you don't need to stick with the given example values.
 

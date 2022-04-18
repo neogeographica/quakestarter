@@ -2,7 +2,7 @@
 
 The top-level "Quake" folder for this package is meant to be usable as the basis for a new, fresh Quake installation. Once the "Game data" section below has been taken care of, it will be completely playable. If you're going with this approach, you can skip the remainder of this section.
 
-Another option however is to take the folders and files from inside this "Quake" folder and move them into some existing Quake installation that you have. If that's an installation of original Quake files such as you would get from Steam/GOG/Bethesda, this will work fine.
+Another option however is to take the folders and files from inside this "Quake" folder and move them into some existing Quake installation that you have. If that's an installation of original Quake files such as you would get from Steam or GOG, this will work fine. (Note that this should be an installation of the original Quake, not the "enhanced" Quake rerelease.)
 
 If the existing Quake installation already contains an older version of Quakestarter, please see the "upgrading_quakestarter.txt" doc in the "quakestarter_docs\other_stuff" folder!
 
@@ -24,7 +24,7 @@ If you want Quakestarter to launch some other program for playing Quake, you'll 
 
 The Quakestarter script and the Simple Quake Launcher 2 program ("SQLauncher2.exe") bundled in this package have a requirement for Microsoft .Net Framework 4.5 or later. When you launch Quakestarter it will explicitly check for this dependency and show you an error message if there is a problem.
 
-If you are on Windows 8 or 10, this shouldn't be a problem for you, especially if your OS is up-to-date. If you are on Windows 7 though, you'll probably get the error message from Quakestarter. The "dot_net_version_dependency.txt" doc in the "quakestarter_docs\other_stuff" folder describes how to get the necessary Windows components updated in that case.
+If you are on Windows 8 or Windows 10 or later, this shouldn't be a problem for you, especially if your OS is up-to-date. If you are on Windows 7 though, you'll probably get the error message from Quakestarter. The "dot_net_version_dependency.txt" doc in the "quakestarter_docs\other_stuff" folder describes how to get the necessary Windows components updated in that case.
 
 If you're on Windows Vista (???) then likely you're in the same boat as Windows 7 users. However, I no longer test on Vista.
 
@@ -42,12 +42,14 @@ You need two game data files from Quake: "pak0.pak" and "pak1.pak". Put these fi
 
 Similarly, if you own and want to play the official Quake missionpacks, each of those also has its own "pak0.pak" file that goes into its own unique game folder (next to the "id1" folder): the "hipnotic" folder for missionpack 1, or "rogue" for missionpack 2.
 
-The first option in the main Quakestarter menu can usually locate and copy the necessary pak files if you already have Quake installed somewhere else on this same computer. If you're having difficulties finding your pak files, see "quakestarter_docs\other_stuff\pak_files.txt".
+The first option in the main Quakestarter menu can usually locate and copy the necessary pak files if you already have Quake installed somewhere else on this same computer. This search logic is described in more detail in "quakestarter_docs\other_stuff\auto_setup_logic.txt". If you're having difficulties finding your pak files, see "quakestarter_docs\other_stuff\pak_files.txt".
+
+NOTE: The pak files in the "enhanced" Quake rerelease are different from the original pak files! Quakestarter will only look for and help install the pak files from the original game. Currently Quakestarter also assumes that both "pak0.pak" and "pak1.pak" are required to play, in contrast with the rerelease that only has "pak0.pak". Only the original game's pak files should be used in a Quakestarter-managed installation of Quake.
 
 
 **** Soundtrack
 
-Quakespasm-Spiked (and several other Quake engines) can play the soundtrack from mp3 or ogg files if the physical Quake CD is not in your CD drive. To get the soundtrack files installed, run Quakestarter and choose the second menu option. This will give you the option to install soundtrack files for the original Quake campaign, and also for the official missionpacks if you have those.
+Quakespasm-Spiked (and several other Quake engines) can play the soundtrack from mp3 or ogg files if the physical Quake CD is not in your CD drive. To get soundtrack files installed for the original Quake campaign -- and also for the official missionpacks if you have those -- run Quakestarter and choose the second menu option. Quakestarter will attempt to find soundtrack files in existing Quake installations (original or rerelease) elsewhere on this computer; if that fails you will be given the option to download the files. The "quakestarter_docs\other_stuff\auto_setup_logic.txt" doc has more details if you like.
 
 
 **** Additional singleplayer content

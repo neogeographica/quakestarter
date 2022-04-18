@@ -6,6 +6,9 @@ REM On the commandline, the gamedir and target args are required.
 
 REM The caller is also required to set the basedir variable.
 
+REM An optional arg can be specified through this variables:
+REM   md5sum
+
 setlocal
 
 REM capture/calculate our parameters
@@ -41,7 +44,11 @@ REM first check registry for Steam, GOG, or Bethesda.net Quake installs
 set dirs_checked=
 call :reg_query_and_copy "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 2310" InstallLocation
 if exist "%dest%" goto :eof
+call :reg_query_path_root_and_copy "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 2310" InstallLocation "rerelease"
+if exist "%dest%" goto :eof
 call :reg_query_path_root_and_copy "HKCU\SOFTWARE\Valve\Steam" SteamPath "steamapps\common\Quake"
+if exist "%dest%" goto :eof
+call :reg_query_path_root_and_copy "HKCU\SOFTWARE\Valve\Steam" SteamPath "steamapps\common\Quake\rerelease"
 if exist "%dest%" goto :eof
 call :reg_query_and_copy "HKLM\SOFTWARE\WOW6432Node\GOG.com\Games\1435828198" PATH
 if exist "%dest%" goto :eof
@@ -61,13 +68,21 @@ for /f "delims=: tokens=1,*" %%a in ('fsutil fsinfo drives') do (
 )
 call :search_common_paths "Quake"
 if exist "%dest%" goto :eof
+call :search_common_paths "Quake\rerelease"
+if exist "%dest%" goto :eof
+call :search_common_paths "QUAKE\Content"
+if exist "%dest%" goto :eof
 call :search_common_paths "Steam\steamapps\common\Quake"
+if exist "%dest%" goto :eof
+call :search_common_paths "Steam\steamapps\common\Quake\rerelease"
 if exist "%dest%" goto :eof
 call :search_common_paths "GOG Games\Quake"
 if exist "%dest%" goto :eof
 call :search_common_paths "GOG Galaxy\Games\Quake"
 if exist "%dest%" goto :eof
 call :search_common_paths "Bethesda.net Launcher\games\Quake"
+if exist "%dest%" goto :eof
+call :search_common_paths "XboxGames\QUAKE\Content"
 if exist "%dest%" goto :eof
 endlocal
 
@@ -134,6 +149,19 @@ for %%d in (%dirs_checked%) do (
   if /i %%d=="%~1" goto :eof
 )
 if exist "%~1\%gamedir%\%target%" (
+  if not "%md5sum%"=="" (
+    setlocal enabledelayedexpansion
+    set /a count=1
+    for /f "skip=1 delims=:" %%a in ('certutil -hashfile "%~1\%gamedir%\%target%" MD5') do (
+      if !count! equ 1 set "md5check=%%a"
+      set/a count+=1
+    )
+    set "md5check=!md5check: =!
+    if not "%md5sum%"=="!md5check!" (
+      goto :eof
+    )
+    endlocal
+  )
   call :copy_to_dest "%~1\%gamedir%\%target%"
 )
 goto :eof

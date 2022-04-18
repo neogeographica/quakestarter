@@ -4,7 +4,7 @@ Quakespasm-Spiked does have macOS and Linux builds available at https://fte.trip
 
 You may also want to investigate other Quake engines as described in "quake_engines.txt".
 
-You can get soundtrack music files from this guide: http://steamcommunity.com/sharedfiles/filedetails/?id=119489135
+You can get soundtrack music files from any installation of the "enhanced" Quake release, or from this guide: http://steamcommunity.com/sharedfiles/filedetails/?id=119489135
 
 The "4_explore_more.txt" doc in the "quakestarter_docs\maps_and_mods" folder describes ways to get custom content; it also describes a crossplatform addons downloader/installer/launcher (Quake Injector).
 

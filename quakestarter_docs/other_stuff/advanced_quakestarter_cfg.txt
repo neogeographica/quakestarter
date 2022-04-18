@@ -22,7 +22,7 @@ You can also add arguments here that should always be used whenever launching yo
 
 In any case, if you do set your own quake_exe then the following things are _not_ guaranteed:
 * that your choice of Quake engine will be able to properly run every selection from the Quakestarter menus
-* that your choice of Quake engine will be able to play the downloaded soundtrack files
+* that your choice of Quake engine will be able to play soundtrack files
 * that all the settings in the example autoexec.cfg will work for your choice of Quake engine, or have the indicated defaults
 * that existing savegames will work for your choice of Quake engine
 
@@ -67,7 +67,7 @@ That last example would result in the following command line for running the "ud
 
 And finally, a consideration that is outside of that configuration file:
 
-Quakestarter will use "curl.exe" to download zipfiles, if that utility is in a directory included in your Windows PATH environment variable. This will be the case in current versions of Windows 10.
+Quakestarter will use "curl.exe" to download zipfiles, if that utility is in a directory included in your Windows PATH environment variable. This will be the case in current versions of Windows 10 (or later).
 
 If Quakestarter can't find that curl utility, it will use a .Net assembly to do the download instead. This should work fine. One downside though is that this approach will not show a progress bar during the download.
 
