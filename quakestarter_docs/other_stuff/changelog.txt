@@ -1,8 +1,18 @@
 **** v2.5.0 (April 2022)
 
+You may have noticed that there was a new Quakespasm-Spiked release that I haven't yet picked up for use here with Quakestarter. There's a concern with using new QSS builds that I'm chewing on here: https://github.com/neogeographica/quakestarter/issues/58
+
+Please feel free to add comments on that GitHub issue if you have opinions about the solution.
+
+Another relevant release that has happened sort of recently is Windows 11. I haven't done extensive testing on Windows 11, but initial feedback looks good and I have no reason to believe that Quakestarter will have any issues there.
+
+But anyway, this Quakestarter version is about dealing with yet another release: the "enhanced" Quake rerelease, a neat thing that has shown up on some storefronts. In some ways Quakestarter can benefit from the rerelease (because it provides music soundtrack files) and in other ways we need to be careful that the rerelease doesn't cause problems (because it provides pak files that are "wrong" in that they are different from the original pak files).
+
+So this release of Quakestarter has the following features:
+
 - Add support for finding/copying music tracks from the Quake rerelease.
 
-- Add pak file checksumming, to avoid accidentally getting the rerelease pak files or the old 1.01 pak0.pak.
+- Add pak file checksumming, to avoid accidentally picking up the rerelease pak files or the old 1.01 pak0.pak.
 
 - General doc updates to take into account some implications of the rerelease.
 

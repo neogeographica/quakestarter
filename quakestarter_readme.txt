@@ -14,7 +14,7 @@ The tools included in this package are:
 
 You might want to keep an eye out in the future for newer releases of Simple Quake Launcher 2 or Quakespasm-Spiked. Unless something changes drastically, you can just drop their new files in here and replace the older versions.
 
-Note that the programs in this package are meant to be used on Windows 7, 8, or 10. (And probably Windows 11, but I'm not yet able to test that.) If you are using a different OS then the programs here won't be as useful, but the docs might be. See the "not_windows.txt" doc in the "quakestarter_docs\other_stuff" folder for some specific pointers.
+Note that the programs in this package are meant to be used on Windows 7, 8, 10, or 11. If you are using a different OS then the programs here won't be as useful, but the docs might be. See the "not_windows.txt" doc in the "quakestarter_docs\other_stuff" folder for some specific pointers.
 
 
 **** Version info
