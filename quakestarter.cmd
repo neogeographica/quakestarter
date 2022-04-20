@@ -12,8 +12,8 @@ REM see if .Net/PowerShell are ok, and check for curl
 powershell.exe -nologo -noprofile -command "&{trap{exit 1;} Add-Type -A 'System.IO.Compression.FileSystem';}" >nul 2>&1
 if not %errorlevel% equ 0 (
   echo The installed version of the .Net Framework ^(and/or of PowerShell^) must
-  echo be updated. See the other_stuff\dot_net_version_dependency.txt doc for
-  echo more details.
+  echo be updated. See the .Net Dependency chapter in the Other Topics part of the
+  echo docs for more details.
   echo.
   pause
   goto :eof
