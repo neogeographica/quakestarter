@@ -44,6 +44,26 @@ if exist "%mainpath%_quakestarter_cfg.cmd" (
   call "%mainpath%_quakestarter_cfg.cmd"
 )
 
+REM check for legacy docs
+set legacy_docs=false
+if exist "%mainpath%quakestarter_readme.txt" (
+  set legacy_docs=true
+)
+if exist "%mainpath%quakestarter_docs" (
+  set legacy_docs=true
+)
+if "%legacy_docs%"=="true" (
+  echo Old documentation ^(quakestarter_readme.txt and/or the quakestarter_docs
+  echo folder^) from a previous Quakestarter release still exists in this folder.
+  echo Once you press a key to continue, that old documentation will be deleted.
+  echo From now on, you can access the Quakestarter documentation by opening
+  echo quakestarter_readme.html in a web browser.
+  echo.
+  pause
+  del /q "%mainpath%quakestarter_readme.txt" >nul
+  rd /s /q "%mainpath%quakestarter_docs" >nul
+)
+
 REM see if we want to show the "legacies" menu
 call "%scriptspath%legacies.cmd" check
 
