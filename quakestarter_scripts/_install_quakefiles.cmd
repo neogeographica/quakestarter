@@ -39,9 +39,9 @@ if exist "%dest%" (
 echo Looking for "%gamedir%\%target%" ...
 
 set found_target=false
+set dirs_checked=
 
 REM first check registry for Steam, GOG, or Bethesda.net Quake installs
-set dirs_checked=
 call :reg_query_and_copy "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 2310" InstallLocation
 if exist "%dest%" goto :eof
 call :reg_query_path_root_and_copy "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 2310" InstallLocation "rerelease"
@@ -57,6 +57,31 @@ if exist "%dest%" goto :eof
 call :reg_query_path_root_and_copy "HKLM\SOFTWARE\WOW6432Node\Bethesda Softworks\Bethesda.net" installLocation "games\Quake"
 if exist "%dest%" goto :eof
 
+REM also check through all Steam library folders
+reg query "HKCU\SOFTWARE\Valve\Steam" /v "SteamPath" > nul 2>&1
+if %errorlevel% neq 0 (
+  goto :search
+)
+for /f "tokens=2,* skip=2" %%a in ('reg query "HKCU\SOFTWARE\Valve\Steam" /v "SteamPath"') do (
+  set steampath="%%b"
+)
+set vdfpath=%steampath%\config\libraryfolders.vdf
+setlocal EnableDelayedExpansion
+for /f "tokens=*" %%l in ('findstr \"path\" %vdfpath%') do (
+  for /f "tokens=* delims= " %%s in ("%%l") do (
+    for /f tokens^=3^ delims^=^" %%v in ("%%s") do (
+      set libpathvalue=%%v
+      set libpath=!libpathvalue:\\=\!
+      call :handle_reg_query_copy "!libpath!\steamapps\common\Quake"
+      if exist "%dest%" goto :eof
+      call :handle_reg_query_copy "!libpath!\steamapps\common\Quake\rerelease"
+      if exist "%dest%" goto :eof
+    )
+  )
+)
+endlocal & set dirs_checked=%dirs_checked%& set found_target=%found_target%
+
+:search
 REM no luck there, so let's look in the usual locations
 setlocal EnableDelayedExpansion
 set drives=
@@ -84,7 +109,7 @@ call :search_common_paths "Bethesda.net Launcher\games\Quake"
 if exist "%dest%" goto :eof
 call :search_common_paths "XboxGames\QUAKE\Content"
 if exist "%dest%" goto :eof
-endlocal
+endlocal & set dirs_checked=%dirs_checked%& set found_target=%found_target%
 
 if "%found_target%"=="false" (
   echo Couldn't find "%gamedir%\%target%" in the usual locations.
