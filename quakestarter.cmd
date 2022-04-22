@@ -11,6 +11,7 @@ set scriptspath=%mainpath%quakestarter_scripts\
 REM see if .Net/PowerShell are ok, and check for curl
 powershell.exe -nologo -noprofile -command "&{trap{exit 1;} Add-Type -A 'System.IO.Compression.FileSystem';}" >nul 2>&1
 if not %errorlevel% equ 0 (
+  echo.
   echo The installed version of the .Net Framework ^(and/or of PowerShell^) must
   echo be updated. See the .Net Dependency chapter in the Other Topics part of the
   echo docs for more details.
@@ -30,6 +31,7 @@ if %errorlevel% equ 0 (
 REM re-read config each time we come back to menu in case it was edited
 call "%scriptspath%_quakestarter_cfg_defaults.cmd"
 if exist "%scriptspath%_quakestarter_cfg.cmd" (
+  echo.
   echo A _quakestarter_cfg.cmd file was found in the quakestarter_scripts folder.
   echo That's not the right place for it! The _quakestarter_cfg_defaults.cmd file
   echo does live in the quakestarter_scripts folder, but if you want to define
@@ -53,6 +55,7 @@ if exist "%mainpath%quakestarter_docs" (
   set legacy_docs=true
 )
 if "%legacy_docs%"=="true" (
+  echo.
   echo Old documentation ^(quakestarter_readme.txt and/or the quakestarter_docs
   echo folder^) from a previous Quakestarter release still exists in this folder.
   echo Once you press a key to continue, that old documentation will be deleted.
@@ -91,8 +94,10 @@ if "%show_legacies_menu%"=="true" (
   echo previous versions of Quakestarter but are no longer in this release.
   echo.
 )
+echo Select q to open the Quakestarter documentation.
+echo.
 set menu_choice=:eof
-set /p menu_choice=choose a number or just press Enter to exit:
+set /p menu_choice=enter your choice or just press Enter to exit:
 echo.
 goto %menu_choice%
 
@@ -145,4 +150,11 @@ if not "%show_legacies_menu%"=="true" (
   goto :eof
 )
 call "%scriptspath%legacies.cmd"
+goto :menu
+
+:q
+:Q
+pushd "%mainpath%"
+start /b quakestarter_readme.html
+popd
 goto :menu
