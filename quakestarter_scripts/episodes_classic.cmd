@@ -33,6 +33,7 @@ if "%basedir%"=="" (
 
 :menu
 set renamed_gamedir=
+set review_page=
 set base_game=
 set patch_url=
 set patch_required=false

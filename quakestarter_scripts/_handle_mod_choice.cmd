@@ -6,6 +6,7 @@ REM The caller is also required to set the basedir and quake_exe variables.
 
 REM Optional args will be specified through these variables:
 REM   renamed_gamedir
+REM   review_page
 REM   base_game
 REM   patch_url
 REM   patch_required
@@ -65,7 +66,11 @@ set addon_name=%~1
 REM if holding down Shift, view the Quaddicted page instead
 powershell.exe -nologo -noprofile -command "&{trap{exit 1;} Add-Type -A PresentationCore;if ([System.Windows.Input.Keyboard]::IsKeyDown([System.Windows.Input.Key]::LeftShift)){exit 0;} if ([System.Windows.Input.Keyboard]::IsKeyDown([System.Windows.Input.Key]::RightShift)){exit 0;} exit 1;}"
 if %errorlevel% equ 0 (
-  start /b https://www.quaddicted.com/reviews/%addon_name%.html
+  if "%review_page%"=="" (
+    start /b https://www.quaddicted.com/reviews/%addon_name%.html
+  ) else (
+    start /b https://www.quaddicted.com/reviews/%review_page%.html
+  )
   goto :eof
 )
 

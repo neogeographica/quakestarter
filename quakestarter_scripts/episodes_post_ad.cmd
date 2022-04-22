@@ -30,6 +30,7 @@ if "%basedir%"=="" (
 
 :menu
 set renamed_gamedir=
+set review_page=
 set base_game=
 set patch_url=
 set patch_required=false
@@ -155,6 +156,7 @@ call "%scriptspath%_handle_mod_choice.cmd" hwjam2
 goto :menu
 
 :12
+set review_page=jumpmod2%%2Btd_complete
 set start_map=start
 set prelaunch_msg[0]=Note that this mod includes two small additional maps outside of the
 set prelaunch_msg[1]=episode sequence: jcr_jbdemo1 and jcr_jbdemo2. You can start those maps
@@ -172,6 +174,7 @@ call "%scriptspath%_handle_mod_choice.cmd" xmasjam2019
 goto :menu
 
 :14
+set review_page=smej_1.0
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" smej_1.13
