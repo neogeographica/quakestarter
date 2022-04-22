@@ -84,14 +84,14 @@ goto %menu_choice%
 :1
 set start_map=start
 set startdemos=demo1 demo2 demo3
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/dopa.zip
+call "%scriptspath%_handle_mod_choice.cmd" dopa
 pause
 goto :menu
 
 :2
 set base_game=hipnotic
 set start_map=q1map1
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/gotshun-never-released_levels.zip
+call "%scriptspath%_handle_mod_choice.cmd" gotshun-never-released_levels
 pause
 goto :menu
 
@@ -99,13 +99,13 @@ goto :menu
 set base_game=quoth
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam9_2.zip
+call "%scriptspath%_handle_mod_choice.cmd" func_mapjam9_2
 pause
 goto :menu
 
 :4
 set start_map=start
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/qump.zip
+call "%scriptspath%_handle_mod_choice.cmd" qump
 pause
 goto :menu
 
@@ -113,14 +113,14 @@ goto :menu
 set patch_url=https://www.quaddicted.com/filebase/dm4jam_dlc_patch.zip
 set start_map=start
 set startdemos=demo1 demo2 demo3
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/dm4jam.zip
+call "%scriptspath%_handle_mod_choice.cmd" dm4jam
 pause
 goto :menu
 
 :6
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/hwjam.zip
+call "%scriptspath%_handle_mod_choice.cmd" hwjam
 pause
 goto :menu
 
@@ -128,14 +128,14 @@ goto :menu
 set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/xmasjam2_shotro.zip
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/xmasjam2018.zip
+call "%scriptspath%_handle_mod_choice.cmd" xmasjam2018
 pause
 goto :menu
 
 :8
 set patch_url=http://www.quaketastic.com/files/single_player/mods/JamX_progs_fix_for_items.zip
 set start_map=start
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjamx.zip
+call "%scriptspath%_handle_mod_choice.cmd" func_mapjamx
 pause
 goto :menu
 
@@ -143,21 +143,21 @@ goto :menu
 set base_game=%latest_copper%
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/udob_v1_1.zip
+call "%scriptspath%_handle_mod_choice.cmd" udob_v1_1
 pause
 goto :menu
 
 :10
 set start_map=start
 set startdemos=demo1 demo2 demo3 demo4 demo5
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/quoffee.zip
+call "%scriptspath%_handle_mod_choice.cmd" quoffee
 pause
 goto :menu
 
 :11
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/hwjam2.zip
+call "%scriptspath%_handle_mod_choice.cmd" hwjam2
 pause
 goto :menu
 
@@ -169,21 +169,21 @@ set prelaunch_msg[2]=manually with the console "map" command.
 set prelaunch_msg[3]=
 set modsettings[0]=sv_protocol 999
 set modsettings[1]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/jumpmod2+td_complete.zip
+call "%scriptspath%_handle_mod_choice.cmd" jumpmod2+td_complete
 pause
 goto :menu
 
 :13
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/xmasjam2019.zip
+call "%scriptspath%_handle_mod_choice.cmd" xmasjam2019
 pause
 goto :menu
 
 :14
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/smej_1.13.zip
+call "%scriptspath%_handle_mod_choice.cmd" smej_1.13
 pause
 goto :menu
 

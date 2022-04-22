@@ -76,7 +76,7 @@ goto %menu_choice%
 set start_map=mexx10
 set modsettings[0]=r_wateralpha 0.3
 set modsettings[1]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mexx10.zip
+call "%scriptspath%_handle_mod_choice.cmd" mexx10
 pause
 goto :menu
 
@@ -89,7 +89,7 @@ set modsettings[3]=gl_subdivide_size 1024
 set modsettings[4]=r_maxsurfs 900
 set modsettings[5]=r_maxedges 2800
 set modsettings[6]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/czg07.zip
+call "%scriptspath%_handle_mod_choice.cmd" czg07
 pause
 goto :menu
 
@@ -99,13 +99,13 @@ set modsettings[0]=r_wateralpha 1
 set modsettings[1]=r_shadows 0
 set modsettings[2]=gl_flashblend 0
 set modsettings[3]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/czg03.zip
+call "%scriptspath%_handle_mod_choice.cmd" czg03
 pause
 goto :menu
 
 :4
 set start_map=could
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/could.zip
+call "%scriptspath%_handle_mod_choice.cmd" could
 pause
 goto :menu
 
@@ -114,7 +114,7 @@ set start_map=gmsp3v2
 set modsettings[0]=r_maxsurfs 1200
 set modsettings[1]=r_maxedges 4000
 set modsettings[2]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/gmsp3.zip
+call "%scriptspath%_handle_mod_choice.cmd" gmsp3
 pause
 goto :menu
 
@@ -124,7 +124,7 @@ set modsettings[0]=r_wateralpha 0.3
 set modsettings[1]=r_maxedges 4000
 set modsettings[2]=r_maxsurfs 4000
 set modsettings[3]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ac.zip
+call "%scriptspath%_handle_mod_choice.cmd" ac
 pause
 goto :menu
 
@@ -133,7 +133,7 @@ set start_map=menkstart
 set modsettings[0]=r_maxedges 10000
 set modsettings[1]=r_maxsurfs 10000
 set modsettings[2]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/menk.zip
+call "%scriptspath%_handle_mod_choice.cmd" menk
 pause
 goto :menu
 
@@ -147,19 +147,19 @@ set modsettings[4]=r_clearcolor 2
 set modsettings[5]=gl_farclip 16384
 set modsettings[6]=r_farclip 16384
 set modsettings[7]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/kinn_marcher.zip
+call "%scriptspath%_handle_mod_choice.cmd" kinn_marcher
 pause
 goto :menu
 
 :9
 set start_map=lunsp1
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/lunsp1.zip
+call "%scriptspath%_handle_mod_choice.cmd" lunsp1
 pause
 goto :menu
 
 :10
 set start_map=sm82
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/sm82.zip
+call "%scriptspath%_handle_mod_choice.cmd" sm82
 pause
 goto :menu
 

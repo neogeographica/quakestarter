@@ -1,6 +1,6 @@
 REM Helper "subroutine" script to process a mod-installer menu choice.
 
-REM On the commandline, the url arg is required.
+REM On the commandline, the addon_name arg is required.
 
 REM The caller is also required to set the basedir and quake_exe variables.
 
@@ -60,10 +60,10 @@ if "%quake_exe%"=="" (
     )
   )
 )
-set url=%~1
-set archive=%~nx1
+set archive=%~1.zip
+set url=https://www.quaddicted.com/filebase/%archive%
 if "%renamed_gamedir%"=="" (
-  set gamedir=%~n1
+  set gamedir=%1
 ) else (
   set gamedir=%renamed_gamedir%
 )

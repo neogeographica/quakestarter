@@ -1,6 +1,20 @@
 Changelog
 =========
 
+v3.0.0 (Apr 2022)
+-----------------
+
+Some interesting high-visibility changes here, and some changes to the file structure, so let's do a major version bump. Welcome to Quakestarter 3.0.0!
+
+The most obvious change is that the documentation is now in HTML. You can open "quakestarter_readme.html" in your web browser and poke around; there's also an option to open the docs from the main Quakestarter menu. Rather than the docs just mentioning each other, they now use proper hyperlinks... imagine that.
+
+(If you're upgrading by overwriting a 2.x release of Quakestarter, the first time you run 3.x it will remove the old textfile documentation.)
+
+Also coming along in this release:
+
+* As part of the process of finding Quake files to copy, Quakestarter is now better at locating Quake installations that are in Steam library folders separate from the main Steam folder.
+
+
 v2.5.0 (Apr 2022)
 -----------------
 

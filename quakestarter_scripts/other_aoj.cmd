@@ -68,7 +68,7 @@ goto %menu_choice%
 set modsettings[0]=scr_conspeed 1000
 set modsettings[1]=r_wateralpha 0.65
 set modsettings[2]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam2.zip
+call "%scriptspath%_handle_mod_choice.cmd" func_mapjam2
 pause
 goto :menu
 
@@ -82,26 +82,26 @@ set modsettings[0]=scr_conspeed 1000
 set modsettings[1]=r_wateralpha 0.65
 set modsettings[2]=max_edicts 4096
 set modsettings[3]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/func_mapjam3.zip
+call "%scriptspath%_handle_mod_choice.cmd" func_mapjam3
 pause
 goto :menu
 
 :3
 set modsettings[0]=r_wateralpha 0.65
 set modsettings[1]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/retrojam6.zip
+call "%scriptspath%_handle_mod_choice.cmd" retrojam6
 pause
 goto :menu
 
 :4
 set start_map=grim
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/grim_rezipped.zip
+call "%scriptspath%_handle_mod_choice.cmd" grim_rezipped
 pause
 goto :menu
 
 :5
 set start_map=dm6rmx
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/dm6rmx.zip
+call "%scriptspath%_handle_mod_choice.cmd" dm6rmx
 pause
 goto :menu
 
@@ -109,7 +109,7 @@ goto :menu
 set base_game=%latest_ad%
 set start_map=37_hcm1
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/37_hcm1.zip
+call "%scriptspath%_handle_mod_choice.cmd" 37_hcm1
 pause
 goto :menu
 

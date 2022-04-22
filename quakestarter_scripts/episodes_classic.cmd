@@ -69,7 +69,7 @@ goto %menu_choice%
 
 :1
 set start_map=start
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/prodigy_se.zip
+call "%scriptspath%_handle_mod_choice.cmd" prodigy_se
 pause
 goto :menu
 
@@ -80,7 +80,7 @@ REM startdemos and then just break out by using the Single Player menu to
 REM start a game.
 set start_map=start
 set startdemos=demo1 demo2 demo3
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/bbelief.zip
+call "%scriptspath%_handle_mod_choice.cmd" bbelief
 pause
 goto :menu
 
@@ -88,7 +88,7 @@ goto :menu
 set start_map=mexx9
 set modsettings[0]=r_wateralpha 0.3
 set modsettings[1]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mexx9.zip
+call "%scriptspath%_handle_mod_choice.cmd" mexx9
 pause
 goto :menu
 
@@ -96,7 +96,7 @@ goto :menu
 set patch_url=https://www.quaddicted.com/filebase/zer11.zip
 set patch2_url=https://www.quaddicted.com/filebase/zerend_fix.zip
 set start_map=start
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/zer.zip
+call "%scriptspath%_handle_mod_choice.cmd" zer
 pause
 goto :menu
 

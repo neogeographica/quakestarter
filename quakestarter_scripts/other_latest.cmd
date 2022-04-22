@@ -64,13 +64,13 @@ goto %menu_choice%
 set base_game=%latest_ad%
 set start_map=ad_heresp1
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ad_heresp1.zip
+call "%scriptspath%_handle_mod_choice.cmd" ad_heresp1
 pause
 goto :menu
 
 :2
 set start_map=zigisp1
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/zigisp1.zip
+call "%scriptspath%_handle_mod_choice.cmd" zigisp1
 pause
 goto :menu
 
@@ -78,14 +78,14 @@ goto :menu
 set base_game=%latest_ad%
 set start_map=ad_heresp2
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ad_heresp2.zip
+call "%scriptspath%_handle_mod_choice.cmd" ad_heresp2
 pause
 goto :menu
 
 :4
 set start_map=purifier
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/purifier.zip
+call "%scriptspath%_handle_mod_choice.cmd" purifier
 pause
 goto :menu
 

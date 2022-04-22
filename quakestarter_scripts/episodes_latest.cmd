@@ -83,28 +83,28 @@ goto %menu_choice%
 set base_game=%latest_copper%
 set start_map=ctsj_start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ctsj.zip
+call "%scriptspath%_handle_mod_choice.cmd" ctsj
 pause
 goto :menu
 
 :2
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/dwellv1p2.zip
+call "%scriptspath%_handle_mod_choice.cmd" dwellv1p2
 pause
 goto :menu
 
 :3
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ad_v1_80p1final.zip
+call "%scriptspath%_handle_mod_choice.cmd" ad_v1_80p1final
 pause
 goto :menu
 
 :4
 set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/eoem7_fix_pak.zip
 set start_map=start
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/eoe.zip
+call "%scriptspath%_handle_mod_choice.cmd" eoe
 pause
 goto :menu
 
@@ -112,14 +112,14 @@ goto :menu
 set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/hwjam3_fixes.zip
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/hwjam3.zip
+call "%scriptspath%_handle_mod_choice.cmd" hwjam3
 pause
 goto :menu
 
 :6
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/xmasjam2020.zip
+call "%scriptspath%_handle_mod_choice.cmd" xmasjam2020
 pause
 goto :menu
 
@@ -127,47 +127,47 @@ goto :menu
 set start_map=start
 set skip_quakerc_gen=true
 set startdemos=demo3 demo2 demo1
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/smej2_1.1.zip
+call "%scriptspath%_handle_mod_choice.cmd" smej2_1.1
 pause
 goto :menu
 
 :8
 set start_map=start
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/pun.zip
+call "%scriptspath%_handle_mod_choice.cmd" pun
 pause
 goto :menu
 
 :9
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/alkjam.zip
+call "%scriptspath%_handle_mod_choice.cmd" alkjam
 pause
 goto :menu
 
 :10
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/alkaline1.1.zip
+call "%scriptspath%_handle_mod_choice.cmd" alkaline1.1
 pause
 goto :menu
 
 :11
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/xmasjam2021.zip
+call "%scriptspath%_handle_mod_choice.cmd" xmasjam2021
 pause
 goto :menu
 
 :12
 set start_map=start
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/sm215.zip
+call "%scriptspath%_handle_mod_choice.cmd" sm215
 pause
 goto :menu
 
 :13
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/snack2.zip
+call "%scriptspath%_handle_mod_choice.cmd" snack2
 pause
 goto :menu
 

@@ -80,7 +80,7 @@ goto %menu_choice%
 set base_game=quoth
 set start_map=red777
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/red777.zip
+call "%scriptspath%_handle_mod_choice.cmd" red777
 pause
 goto :menu
 
@@ -88,7 +88,7 @@ goto :menu
 set base_game=quoth
 set start_map=thehand
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/thehand.zip
+call "%scriptspath%_handle_mod_choice.cmd" thehand
 pause
 goto :menu
 
@@ -96,33 +96,33 @@ goto :menu
 set base_game=quoth
 set start_map=apsp2
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/apsp2.zip
+call "%scriptspath%_handle_mod_choice.cmd" apsp2
 pause
 goto :menu
 
 :4
 set start_map=start
 set startdemos=demo1 demo2 demo3
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rubicon2.zip
+call "%scriptspath%_handle_mod_choice.cmd" rubicon2
 pause
 goto :menu
 
 :5
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ne_ruins.zip
+call "%scriptspath%_handle_mod_choice.cmd" ne_ruins
 pause
 goto :menu
 
 :6
 set start_map=start
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/honey.zip
+call "%scriptspath%_handle_mod_choice.cmd" honey
 pause
 goto :menu
 
 :7
 set start_map=scampsp1
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/scampsp1.zip
+call "%scriptspath%_handle_mod_choice.cmd" scampsp1
 pause
 goto :menu
 
@@ -130,13 +130,13 @@ goto :menu
 set base_game=quoth
 set start_map=apsp3
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/apsp3.zip
+call "%scriptspath%_handle_mod_choice.cmd" apsp3
 pause
 goto :menu
 
 :9
 set start_map=wickedstart
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/something_wicked.zip
+call "%scriptspath%_handle_mod_choice.cmd" something_wicked
 pause
 goto :menu
 
@@ -146,21 +146,21 @@ set skip_quakerc_gen=true
 set prelaunch_msg[0]=This mod supports some unique stealth gameplay; be sure to check the
 set prelaunch_msg[1]=readme for tips!
 set prelaunch_msg[2]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/its_demo_v1_1.zip
+call "%scriptspath%_handle_mod_choice.cmd" its_demo_v1_1
 pause
 goto :menu
 
 :11
 set start_map=ivory
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ivory1b.zip
+call "%scriptspath%_handle_mod_choice.cmd" ivory1b
 pause
 goto :menu
 
 :12
 set start_map=zendar
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/zendar1d.zip
+call "%scriptspath%_handle_mod_choice.cmd" zendar1d
 pause
 goto :menu
 

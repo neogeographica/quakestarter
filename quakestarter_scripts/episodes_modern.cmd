@@ -81,21 +81,21 @@ goto %menu_choice%
 
 :1
 set start_map=start
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/oum.zip
+call "%scriptspath%_handle_mod_choice.cmd" oum
 pause
 goto :menu
 
 :2
 set start_map=start
 set startdemos=demo1 demo2 demo3
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rapture.zip
+call "%scriptspath%_handle_mod_choice.cmd" rapture
 pause
 goto :menu
 
 :3
 set start_map=start
 set startdemos=demo1 demo2 demo3
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/soe_full.zip
+call "%scriptspath%_handle_mod_choice.cmd" soe_full
 pause
 goto :menu
 
@@ -106,13 +106,13 @@ REM to be used for startdemos.
 REM set startdemos=demo1
 set modsettings[0]=r_wateralpha 0.5
 set modsettings[1]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/contract.zip
+call "%scriptspath%_handle_mod_choice.cmd" contract
 pause
 goto :menu
 
 :5
 set start_map=terra1
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/terra.zip
+call "%scriptspath%_handle_mod_choice.cmd" terra
 pause
 goto :menu
 
@@ -121,7 +121,7 @@ set base_game=quoth
 set start_map=start
 set skip_quakerc_gen=true
 set startdemos=demo1 demo2 demo3
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/warpspasm.zip
+call "%scriptspath%_handle_mod_choice.cmd" warpspasm
 pause
 goto :menu
 
@@ -132,20 +132,20 @@ set startdemos=demo1 demo2 demo3
 set modsettings[0]=r_oldwater 0
 set modsettings[1]=r_waterquality 32
 set modsettings[2]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/travail.zip
+call "%scriptspath%_handle_mod_choice.cmd" travail
 pause
 goto :menu
 
 :8
 set start_map=start
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rmx-pack.zip
+call "%scriptspath%_handle_mod_choice.cmd" rmx-pack
 pause
 goto :menu
 
 :9
 set start_map=start
 set startdemos=demo1 demo2
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/nsoe2.zip
+call "%scriptspath%_handle_mod_choice.cmd" nsoe2
 pause
 goto :menu
 
@@ -154,20 +154,20 @@ set patch_url=https://www.quaddicted.com/filebase/drake290111.zip
 REM unlike other patches the Drake mod is really truly always required here
 set patch_required=true
 set start_map=arcstart
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/arcanum.zip
+call "%scriptspath%_handle_mod_choice.cmd" arcanum
 pause
 goto :menu
 
 :11
 set start_map=unfstart
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/unforgiven.zip
+call "%scriptspath%_handle_mod_choice.cmd" unforgiven
 pause
 goto :menu
 
 :12
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/rrp.zip
+call "%scriptspath%_handle_mod_choice.cmd" rrp
 pause
 goto :menu
 
@@ -176,7 +176,7 @@ set start_map=start
 set startdemos=demo1
 set modsettings[0]=r_wateralpha 1
 set modsettings[1]=
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/mapjam6.zip
+call "%scriptspath%_handle_mod_choice.cmd" mapjam6
 pause
 goto :menu
 
