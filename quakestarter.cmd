@@ -26,26 +26,6 @@ if %errorlevel% equ 0 (
   set hascurl=false
 )
 
-:menu
-
-REM re-read config each time we come back to menu in case it was edited
-call "%scriptspath%_quakestarter_cfg_defaults.cmd"
-if exist "%scriptspath%_quakestarter_cfg.cmd" (
-  echo.
-  echo A _quakestarter_cfg.cmd file was found in the quakestarter_scripts folder.
-  echo That's not the right place for it! The _quakestarter_cfg_defaults.cmd file
-  echo does live in the quakestarter_scripts folder, but if you want to define
-  echo custom settings then your own personalized _quakestarter_cfg.cmd file must
-  echo be in the same folder as quakestarter.cmd. I.e. you should put it at:
-  echo   %mainpath%_quakestarter_cfg.cmd
-  echo.
-  pause
-  goto :eof
-)
-if exist "%mainpath%_quakestarter_cfg.cmd" (
-  call "%mainpath%_quakestarter_cfg.cmd"
-)
-
 REM check for legacy docs
 set legacy_docs=false
 if exist "%mainpath%quakestarter_readme.txt" (
@@ -65,6 +45,26 @@ if "%legacy_docs%"=="true" (
   pause
   del /q "%mainpath%quakestarter_readme.txt" >nul
   rd /s /q "%mainpath%quakestarter_docs" >nul
+)
+
+:menu
+
+REM re-read config each time we come back to menu in case it was edited
+call "%scriptspath%_quakestarter_cfg_defaults.cmd"
+if exist "%scriptspath%_quakestarter_cfg.cmd" (
+  echo.
+  echo A _quakestarter_cfg.cmd file was found in the quakestarter_scripts folder.
+  echo That's not the right place for it! The _quakestarter_cfg_defaults.cmd file
+  echo does live in the quakestarter_scripts folder, but if you want to define
+  echo custom settings then your own personalized _quakestarter_cfg.cmd file must
+  echo be in the same folder as quakestarter.cmd. I.e. you should put it at:
+  echo   %mainpath%_quakestarter_cfg.cmd
+  echo.
+  pause
+  goto :eof
+)
+if exist "%mainpath%_quakestarter_cfg.cmd" (
+  call "%mainpath%_quakestarter_cfg.cmd"
 )
 
 REM see if we want to show the "legacies" menu
