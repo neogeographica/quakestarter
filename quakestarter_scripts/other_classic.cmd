@@ -47,6 +47,7 @@ set startdemos=
 cls
 call :installed_check mexx10
 call :installed_check czg07
+call :installed_check koohoo
 call :installed_check czg03
 call :installed_check could
 call :installed_check gmsp3
@@ -59,14 +60,15 @@ echo.
 echo Selected other custom maps released through late 2005:
 echo %is_mexx10_installed%  1: mexx10 - The Cassandra Calamity ^(1997^)
 echo %is_czg07_installed%  2: czg07 - Insomnia ^(2000^)
-echo %is_czg03_installed%  3: czg03 - Ceremonial Circles ^(2001^)
-echo %is_could_installed%  4: could - And All That Could Have Been ^(2003^)
-echo %is_gmsp3_installed%  5: gmsp3 - Day of the Lords ^(2003^)
-echo %is_ac_installed%  6: ac - Adamantine Cruelty ^(2004^)
-echo %is_menk_installed%  7: menk - Menkalinan ^(2004^)
-echo %is_kinn_marcher_installed%  8: kinn_marcher - The Marcher Fortress ^(2005^)
-echo %is_lunsp1_installed%  9: lunsp1 - Concentric Devastation ^(2005^)
-echo %is_sm82_installed% 10: sm82 - Rubicondom ^(2005^)
+echo %is_koohoo_installed%  3: koohoo - The Castle of Koohoo ^(2001^)
+echo %is_czg03_installed%  4: czg03 - Ceremonial Circles ^(2001^)
+echo %is_could_installed%  5: could - And All That Could Have Been ^(2003^)
+echo %is_gmsp3_installed%  6: gmsp3 - Day of the Lords ^(2003^)
+echo %is_ac_installed%  7: ac - Adamantine Cruelty ^(2004^)
+echo %is_menk_installed%  8: menk - Menkalinan ^(2004^)
+echo %is_kinn_marcher_installed%  9: kinn_marcher - The Marcher Fortress ^(2005^)
+echo %is_lunsp1_installed% 10: lunsp1 - Concentric Devastation ^(2005^)
+echo %is_sm82_installed% 11: sm82 - Rubicondom ^(2005^)
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
@@ -98,6 +100,17 @@ call "%scriptspath%_handle_mod_choice.cmd" czg07
 goto :menu
 
 :3
+set start_map=start
+set modsettings[0]=r_wateralpha 0.6
+set modsettings[1]=r_shadows 0
+set modsettings[2]=gl_flashblend 0
+set modsettings[3]=gl_ztrick 0
+set modsettings[4]=gl_keeptjunctions 1
+set modsettings[5]=
+call "%scriptspath%_handle_mod_choice.cmd" koohoo
+goto :menu
+
+:4
 set start_map=czg03
 set modsettings[0]=r_wateralpha 1
 set modsettings[1]=r_shadows 0
@@ -106,12 +119,12 @@ set modsettings[3]=
 call "%scriptspath%_handle_mod_choice.cmd" czg03
 goto :menu
 
-:4
+:5
 set start_map=could
 call "%scriptspath%_handle_mod_choice.cmd" could
 goto :menu
 
-:5
+:6
 set start_map=gmsp3v2
 set modsettings[0]=r_maxsurfs 1200
 set modsettings[1]=r_maxedges 4000
@@ -119,7 +132,7 @@ set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" gmsp3
 goto :menu
 
-:6
+:7
 set start_map=acstart
 set modsettings[0]=r_wateralpha 0.3
 set modsettings[1]=r_maxedges 4000
@@ -128,7 +141,7 @@ set modsettings[3]=
 call "%scriptspath%_handle_mod_choice.cmd" ac
 goto :menu
 
-:7
+:8
 set start_map=menkstart
 set modsettings[0]=r_maxedges 10000
 set modsettings[1]=r_maxsurfs 10000
@@ -136,7 +149,7 @@ set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" menk
 goto :menu
 
-:8
+:9
 set start_map=marcher
 set modsettings[0]=r_maxedges 100000
 set modsettings[1]=r_maxsurfs 100000
@@ -149,12 +162,12 @@ set modsettings[7]=
 call "%scriptspath%_handle_mod_choice.cmd" kinn_marcher
 goto :menu
 
-:9
+:10
 set start_map=lunsp1
 call "%scriptspath%_handle_mod_choice.cmd" lunsp1
 goto :menu
 
-:10
+:11
 set start_map=sm82
 call "%scriptspath%_handle_mod_choice.cmd" sm82
 goto :menu

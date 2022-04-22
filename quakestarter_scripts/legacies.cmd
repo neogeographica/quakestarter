@@ -33,7 +33,6 @@ if "%basedir%"=="" (
 set show_rating=false
 set show_version=false
 call :installed_check descent rating
-call :installed_check koohoo rating
 call :installed_check e1m1rmx rating
 call :installed_check chapters rating
 call :installed_check fmb_bdg rating
@@ -94,57 +93,54 @@ if "%show_rating%"=="true" (
   if "%show_descent%"=="true" (
     echo %is_descent_installed%  1: descent - ^(The Final^) Descent ^(2000^)
   )
-  if "%show_koohoo%"=="true" (
-    echo %is_koohoo_installed%  2: koohoo - The Castle of Koohoo ^(2001^)
-  )
   if "%show_e1m1rmx%"=="true" (
-    echo %is_e1m1rmx_installed%  3: e1m1rmx - The Slipgate Duplex ^(2004^)
+    echo %is_e1m1rmx_installed%  2: e1m1rmx - The Slipgate Duplex ^(2004^)
   )
   if "%show_chapters%"=="true" (
-    echo %is_chapters_installed%  4: chapters - Contract Revoked: The Lost Chapters ^(2005^)
+    echo %is_chapters_installed%  3: chapters - Contract Revoked: The Lost Chapters ^(2005^)
   )
   if "%show_fmb_bdg%"=="true" (
-    echo %is_fmb_bdg_installed%  5: fmb_bdg - This Onion ^(2007^)
+    echo %is_fmb_bdg_installed%  4: fmb_bdg - This Onion ^(2007^)
   )
   if "%show_arwop%"=="true" (
-    echo %is_arwop_installed%  6: arwop - A Roman Wilderness Of Pain ^(2009^)
+    echo %is_arwop_installed%  5: arwop - A Roman Wilderness Of Pain ^(2009^)
   )
   if "%show_digs05%"=="true" (
-    echo %is_digs05_installed%  7: digs05 - The Anomaly ^(2011^)
+    echo %is_digs05_installed%  6: digs05 - The Anomaly ^(2011^)
   )
   if "%show_dmc3%"=="true" (
-    echo %is_dmc3_installed%  8: dmc3 - Deathmatch Classics Vol. 3 ^(2011^)
+    echo %is_dmc3_installed%  7: dmc3 - Deathmatch Classics Vol. 3 ^(2011^)
   )
   if "%show_fmb_bdg2%"=="true" (
-    echo %is_fmb_bdg2_installed%  9: fmb_bdg2 - For My Babies - Bin Dunne Gorne 2 ^(2013^)
+    echo %is_fmb_bdg2_installed%  8: fmb_bdg2 - For My Babies - Bin Dunne Gorne 2 ^(2013^)
   )
   if "%show_func_mapjam5%"=="true" (
-    echo %is_func_mapjam5_installed% 10: func_mapjam5 - Func Map Jam 5 - The Qonquer Map Jam ^(2015^)
+    echo %is_func_mapjam5_installed%  9: func_mapjam5 - Func Map Jam 5 - The Qonquer Map Jam ^(2015^)
   )
   if "%show_ad_paradise%"=="true" (
-    echo %is_ad_paradise_installed% 11: ad_paradise - Paradise Sickness ^(2017^)
+    echo %is_ad_paradise_installed% 10: ad_paradise - Paradise Sickness ^(2017^)
   )
   if "%show_sewerjam%"=="true" (
-    echo %is_sewerjam_installed% 12: sewerjam - Quake Sewer Jam ^(2019^)
+    echo %is_sewerjam_installed% 11: sewerjam - Quake Sewer Jam ^(2019^)
   )
   if "%show_unusedjam%"=="true" (
-    echo %is_unusedjam_installed% 13: unusedjam - Unused Jam ^(2021^)
+    echo %is_unusedjam_installed% 12: unusedjam - Unused Jam ^(2021^)
   )
   if "%show_bluemonday_v2%"=="true" (
-    echo %is_bluemonday_v2_installed% 14: bluemonday_v2 - Blue Monday Jam ^(2021^)
+    echo %is_bluemonday_v2_installed% 13: bluemonday_v2 - Blue Monday Jam ^(2021^)
   )
   echo.
 )
 if "%show_version%"=="true" (
   echo Dropped because superseded by a newer version:
   if "%show_ad_v1_70final%"=="true" (
-    echo %is_ad_v1_70final_installed% 15: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
+    echo %is_ad_v1_70final_installed% 14: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
   )
   if "%show_copper_v1_15%"=="true" (
-    echo %is_copper_v1_15_installed% 16: copper_v1_15 - Copper 1.15 ^(2020^)
+    echo %is_copper_v1_15_installed% 15: copper_v1_15 - Copper 1.15 ^(2020^)
   )
   if "%show_copper_v1_16%"=="true" (
-    echo %is_copper_v1_16_installed% 17: copper_v1_16 - Copper 1.16 ^(2021^)
+    echo %is_copper_v1_16_installed% 16: copper_v1_16 - Copper 1.16 ^(2021^)
   )
   echo.
 )
@@ -169,20 +165,6 @@ call "%scriptspath%_handle_mod_choice.cmd" descent
 goto :menu
 
 :2
-if not "%show_koohoo%"=="true" (
-  goto :eof
-)
-set start_map=start
-set modsettings[0]=r_wateralpha 0.6
-set modsettings[1]=r_shadows 0
-set modsettings[2]=gl_flashblend 0
-set modsettings[3]=gl_ztrick 0
-set modsettings[4]=gl_keeptjunctions 1
-set modsettings[5]=
-call "%scriptspath%_handle_mod_choice.cmd" koohoo
-goto :menu
-
-:3
 if not "%show_e1m1rmx%"=="true" (
   goto :eof
 )
@@ -190,7 +172,7 @@ set start_map=e1m1rmx
 call "%scriptspath%_handle_mod_choice.cmd" e1m1rmx
 goto :menu
 
-:4
+:3
 if not "%show_chapters%"=="true" (
   goto :eof
 )
@@ -203,7 +185,7 @@ set postlaunch_msg[3]=
 call "%scriptspath%_handle_mod_choice.cmd" chapters
 goto :menu
 
-:5
+:4
 if not "%show_fmb_bdg%"=="true" (
   goto :eof
 )
@@ -211,7 +193,7 @@ set start_map=fmb_bdg1
 call "%scriptspath%_handle_mod_choice.cmd" fmb_bdg
 goto :menu
 
-:6
+:5
 if not "%show_arwop%"=="true" (
   goto :eof
 )
@@ -220,7 +202,7 @@ set startdemos=demo1
 call "%scriptspath%_handle_mod_choice.cmd" arwop
 goto :menu
 
-:7
+:6
 if not "%show_digs05%"=="true" (
   goto :eof
 )
@@ -228,7 +210,7 @@ set start_map=digs05
 call "%scriptspath%_handle_mod_choice.cmd" digs05
 goto :menu
 
-:8
+:7
 if not "%show_dmc3%"=="true" (
   goto :eof
 )
@@ -236,7 +218,7 @@ set start_map=dmc3
 call "%scriptspath%_handle_mod_choice.cmd" dmc3
 goto :menu
 
-:9
+:8
 if not "%show_fmb_bdg2%"=="true" (
   goto :eof
 )
@@ -244,7 +226,7 @@ set start_map=start_____
 call "%scriptspath%_handle_mod_choice.cmd" fmb_bdg2
 goto :menu
 
-:10
+:9
 if not "%show_func_mapjam5%"=="true" (
   goto :eof
 )
@@ -258,7 +240,7 @@ set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" func_mapjam5
 goto :menu
 
-:11
+:10
 if not "%show_ad_paradise%"=="true" (
   goto :eof
 )
@@ -268,7 +250,7 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" ad_paradise
 goto :menu
 
-:12
+:11
 if not "%show_sewerjam%"=="true" (
   goto :eof
 )
@@ -276,7 +258,7 @@ set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" sewerjam
 goto :menu
 
-:13
+:12
 if not "%show_unusedjam%"=="true" (
   goto :eof
 )
@@ -284,7 +266,7 @@ set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" unusedjam
 goto :menu
 
-:14
+:13
 if not "%show_bluemonday_v2%"=="true" (
   goto :eof
 )
@@ -294,7 +276,7 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" bluemonday_v2
 goto :menu
 
-:15
+:14
 if not "%show_ad_v1_70final%"=="true" (
   goto :eof
 )
@@ -304,7 +286,7 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" ad_v1_70final
 goto :menu
 
-:16
+:15
 if not "%show_copper_v1_15%"=="true" (
   goto :eof
 )
@@ -313,7 +295,7 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" copper_v1_15
 goto :menu
 
-:17
+:16
 if not "%show_copper_v1_16%"=="true" (
   goto :eof
 )
