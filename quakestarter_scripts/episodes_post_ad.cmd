@@ -78,6 +78,7 @@ echo %is_xmasjam2019_installed% 13: xmasjam2019 - Xmas Jam 2019 ^(2019^)
 echo %is_smej_1.13_installed% 14: smej_1.13 - Menetettyjen Valtakunta ^(Realm of the Lost^) ^(2019^)
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
+echo.
 echo Or, to just view its Quaddicted page, use Shift+Enter to submit your
 echo choice; keep holding shift until the webpage opens.
 echo.

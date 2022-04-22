@@ -61,6 +61,7 @@ echo %is_dm6rmx_installed%  5: dm6rmx - The Dark Portal ^(2018^)
 echo %is_37_hcm1_installed%  6: 37_hcm1 - 37th Relic Retrieval ^(2019^)
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
+echo.
 echo Or, to just view its Quaddicted page, use Shift+Enter to submit your
 echo choice; keep holding shift until the webpage opens.
 echo.

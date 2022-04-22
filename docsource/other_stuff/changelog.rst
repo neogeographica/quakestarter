@@ -10,9 +10,9 @@ The most obvious change is that the documentation is now in HTML. You can open "
 
 (If you're upgrading by overwriting a 2.x release of Quakestarter, the first time you run 3.x it will remove the old textfile documentation.)
 
-Also coming along in this release:
+Also new in this release: On the menus showing individual addons, you now have the option to open the Quaddicted review page for a particular addon. That page will open in your default web browser.
 
-* As part of the process of finding Quake files to copy, Quakestarter is now better at locating Quake installations that are in Steam library folders separate from the main Steam folder.
+Finally, as part of the process of finding Quake files to copy, Quakestarter is now better at locating Quake installations that are in Steam library folders separate from the main Steam folder.
 
 
 v2.5.0 (Apr 2022)

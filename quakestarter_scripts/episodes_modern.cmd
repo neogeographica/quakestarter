@@ -76,6 +76,7 @@ echo %is_rrp_installed% 12: rrp - Rubicon Rumble Pack ^(2014^)
 echo %is_mapjam6_installed% 13: mapjam6 - Func Map Jam 6 - Fire and Brimstone ^(2015^)
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
+echo.
 echo Or, to just view its Quaddicted page, use Shift+Enter to submit your
 echo choice; keep holding shift until the webpage opens.
 echo.

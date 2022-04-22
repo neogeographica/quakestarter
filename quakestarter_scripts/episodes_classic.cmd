@@ -64,6 +64,7 @@ echo Note that Nehahra is not included here because many Quake engines cannot
 echo run it. See https://www.quaddicted.com/reviews/nehahra.html
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
+echo.
 echo Or, to just view its Quaddicted page, use Shift+Enter to submit your
 echo choice; keep holding shift until the webpage opens.
 echo.

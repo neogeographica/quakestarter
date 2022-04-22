@@ -57,6 +57,7 @@ echo %is_ad_heresp2_installed%  3: ad_heresp2 - Imhotep's Legacy
 echo %is_purifier_installed%  4: purifier - The Purifier
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
+echo.
 echo Or, to just view its Quaddicted page, use Shift+Enter to submit your
 echo choice; keep holding shift until the webpage opens.
 echo.

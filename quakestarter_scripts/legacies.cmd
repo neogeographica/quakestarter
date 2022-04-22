@@ -149,6 +149,7 @@ if "%show_version%"=="true" (
   echo.
 )
 echo Enter a number to install/launch/manage one of the releases above.
+echo.
 echo Or, to just view its Quaddicted page, use Shift+Enter to submit your
 echo choice; keep holding shift until the webpage opens.
 echo.

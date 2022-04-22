@@ -20,6 +20,8 @@ Once you get to a page that shows a list of addons, each item in the list will h
 
 After that sequence has finished (or if you select an already-installed addon from the menu), Quakestarter will give you options that allow you to launch or uninstall the addon, or return to the previous menu. These options should be pretty self-explanatory, but they're covered in more detail in the :doc:`Running With Quakestarter<../maps_and_mods/running_with_quakestarter>` chapter.
 
+**Note:** If you use Shift+Enter to submit your choice, rather than just Enter, then Quakestarter will open the Quaddicted review page for that choice rather than going into the usual install/manage/launch process. If you do this, keep Shift pressed down until the web page opens. (This will happen quickly, so don't sit around forever jamming on that Shift key if something goes wrong.) The web page will be opened with whatever web browser is registered with Windows as the default.
+
 Using Quakestarter is the easiest way to correctly launch these addons, but it can only run the same addons that it knows how to install. Once you branch out into playing other stuff, you'll need to use Simple Quake Launcher 2 or other methods.
 
 

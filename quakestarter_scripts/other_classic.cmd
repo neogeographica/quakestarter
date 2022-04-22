@@ -69,6 +69,7 @@ echo %is_lunsp1_installed%  9: lunsp1 - Concentric Devastation ^(2005^)
 echo %is_sm82_installed% 10: sm82 - Rubicondom ^(2005^)
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
+echo.
 echo Or, to just view its Quaddicted page, use Shift+Enter to submit your
 echo choice; keep holding shift until the webpage opens.
 echo.

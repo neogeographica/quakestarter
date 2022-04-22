@@ -73,6 +73,7 @@ echo %is_ivory1b_installed% 11: ivory1b - The Ivory Tower ^(2013^)
 echo %is_zendar1d_installed% 12: zendar1d - The Horde of Zendar ^(2013^)
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
+echo.
 echo Or, to just view its Quaddicted page, use Shift+Enter to submit your
 echo choice; keep holding shift until the webpage opens.
 echo.
