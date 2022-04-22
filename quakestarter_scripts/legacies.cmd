@@ -147,8 +147,12 @@ if "%show_version%"=="true" (
   )
   echo.
 )
+echo Enter a number to install/launch/manage one of the releases above.
+echo Or, to just view its Quaddicted page, use Shift+Enter to submit your
+echo choice; keep holding shift until the webpage opens.
+echo.
 set menu_choice=:eof
-set /p menu_choice=choose a number or just press Enter to exit:
+set /p menu_choice=enter your choice or just press Enter to exit:
 echo.
 goto %menu_choice%
 
@@ -160,7 +164,6 @@ set start_map=start
 set skip_quakerc_gen=true
 set startdemos=intro demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" descent
-pause
 goto :menu
 
 :2
@@ -175,7 +178,6 @@ set modsettings[3]=gl_ztrick 0
 set modsettings[4]=gl_keeptjunctions 1
 set modsettings[5]=
 call "%scriptspath%_handle_mod_choice.cmd" koohoo
-pause
 goto :menu
 
 :3
@@ -184,7 +186,6 @@ if not "%show_e1m1rmx%"=="true" (
 )
 set start_map=e1m1rmx
 call "%scriptspath%_handle_mod_choice.cmd" e1m1rmx
-pause
 goto :menu
 
 :4
@@ -198,7 +199,6 @@ set postlaunch_msg[1]=missionpack 1 as the base game ^("-hipnotic" arg^). In thi
 set postlaunch_msg[2]=game is necessary even if you don't have missionpack 1 currently installed.
 set postlaunch_msg[3]=
 call "%scriptspath%_handle_mod_choice.cmd" chapters
-pause
 goto :menu
 
 :5
@@ -207,7 +207,6 @@ if not "%show_fmb_bdg%"=="true" (
 )
 set start_map=fmb_bdg1
 call "%scriptspath%_handle_mod_choice.cmd" fmb_bdg
-pause
 goto :menu
 
 :6
@@ -217,7 +216,6 @@ if not "%show_arwop%"=="true" (
 set start_map=start
 set startdemos=demo1
 call "%scriptspath%_handle_mod_choice.cmd" arwop
-pause
 goto :menu
 
 :7
@@ -226,7 +224,6 @@ if not "%show_digs05%"=="true" (
 )
 set start_map=digs05
 call "%scriptspath%_handle_mod_choice.cmd" digs05
-pause
 goto :menu
 
 :8
@@ -235,7 +232,6 @@ if not "%show_dmc3%"=="true" (
 )
 set start_map=dmc3
 call "%scriptspath%_handle_mod_choice.cmd" dmc3
-pause
 goto :menu
 
 :9
@@ -244,7 +240,6 @@ if not "%show_fmb_bdg2%"=="true" (
 )
 set start_map=start_____
 call "%scriptspath%_handle_mod_choice.cmd" fmb_bdg2
-pause
 goto :menu
 
 :10
@@ -259,7 +254,6 @@ set modsettings[0]=scr_conspeed 1000
 set modsettings[1]=r_wateralpha 0.65
 set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" func_mapjam5
-pause
 goto :menu
 
 :11
@@ -270,7 +264,6 @@ set base_game=%latest_ad%
 set start_map=ad_paradise
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" ad_paradise
-pause
 goto :menu
 
 :12
@@ -279,7 +272,6 @@ if not "%show_sewerjam%"=="true" (
 )
 set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" sewerjam
-pause
 goto :menu
 
 :13
@@ -288,7 +280,6 @@ if not "%show_unusedjam%"=="true" (
 )
 set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" unusedjam
-pause
 goto :menu
 
 :14
@@ -299,7 +290,6 @@ set base_game=quoth
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" bluemonday_v2
-pause
 goto :menu
 
 :15
@@ -310,7 +300,6 @@ set patch_url=https://www.quaddicted.com/filebase/ad_v1_70patch1.zip
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" ad_v1_70final
-pause
 goto :menu
 
 :16
@@ -320,7 +309,6 @@ if not "%show_copper_v1_15%"=="true" (
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" copper_v1_15
-pause
 goto :menu
 
 :17
@@ -330,7 +318,6 @@ if not "%show_copper_v1_16%"=="true" (
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" copper_v1_16
-pause
 goto :menu
 
 

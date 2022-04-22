@@ -59,8 +59,12 @@ echo %is_grim_rezipped_installed%  4: grim_rezipped - The Grim Outpost ^(2018^)
 echo %is_dm6rmx_installed%  5: dm6rmx - The Dark Portal ^(2018^)
 echo %is_37_hcm1_installed%  6: 37_hcm1 - 37th Relic Retrieval ^(2019^)
 echo.
+echo Enter a number to install/launch/manage one of the releases above.
+echo Or, to just view its Quaddicted page, use Shift+Enter to submit your
+echo choice; keep holding shift until the webpage opens.
+echo.
 set menu_choice=:eof
-set /p menu_choice=choose a number or just press Enter to exit:
+set /p menu_choice=enter your choice or just press Enter to exit:
 echo.
 goto %menu_choice%
 
@@ -69,7 +73,6 @@ set modsettings[0]=scr_conspeed 1000
 set modsettings[1]=r_wateralpha 0.65
 set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" func_mapjam2
-pause
 goto :menu
 
 :2
@@ -83,26 +86,22 @@ set modsettings[1]=r_wateralpha 0.65
 set modsettings[2]=max_edicts 4096
 set modsettings[3]=
 call "%scriptspath%_handle_mod_choice.cmd" func_mapjam3
-pause
 goto :menu
 
 :3
 set modsettings[0]=r_wateralpha 0.65
 set modsettings[1]=
 call "%scriptspath%_handle_mod_choice.cmd" retrojam6
-pause
 goto :menu
 
 :4
 set start_map=grim
 call "%scriptspath%_handle_mod_choice.cmd" grim_rezipped
-pause
 goto :menu
 
 :5
 set start_map=dm6rmx
 call "%scriptspath%_handle_mod_choice.cmd" dm6rmx
-pause
 goto :menu
 
 :6
@@ -110,7 +109,6 @@ set base_game=%latest_ad%
 set start_map=37_hcm1
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" 37_hcm1
-pause
 goto :menu
 
 

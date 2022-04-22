@@ -74,8 +74,12 @@ echo %is_xmasjam2021_installed% 11: xmasjam2021 - Xmas Jam 2021
 echo %is_sm215_installed% 12: sm215 - Quad Run
 echo %is_snack2_installed% 13: snack2 - Speedmap Snack Pack 2 - Cosmic Hunger
 echo.
+echo Enter a number to install/launch/manage one of the releases above.
+echo Or, to just view its Quaddicted page, use Shift+Enter to submit your
+echo choice; keep holding shift until the webpage opens.
+echo.
 set menu_choice=:eof
-set /p menu_choice=choose a number or just press Enter to exit:
+set /p menu_choice=enter your choice or just press Enter to exit:
 echo.
 goto %menu_choice%
 
@@ -84,28 +88,24 @@ set base_game=%latest_copper%
 set start_map=ctsj_start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" ctsj
-pause
 goto :menu
 
 :2
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" dwellv1p2
-pause
 goto :menu
 
 :3
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" ad_v1_80p1final
-pause
 goto :menu
 
 :4
 set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/eoem7_fix_pak.zip
 set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" eoe
-pause
 goto :menu
 
 :5
@@ -113,14 +113,12 @@ set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestart
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" hwjam3
-pause
 goto :menu
 
 :6
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" xmasjam2020
-pause
 goto :menu
 
 :7
@@ -128,47 +126,40 @@ set start_map=start
 set skip_quakerc_gen=true
 set startdemos=demo3 demo2 demo1
 call "%scriptspath%_handle_mod_choice.cmd" smej2_1.1
-pause
 goto :menu
 
 :8
 set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" pun
-pause
 goto :menu
 
 :9
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" alkjam
-pause
 goto :menu
 
 :10
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" alkaline1.1
-pause
 goto :menu
 
 :11
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" xmasjam2021
-pause
 goto :menu
 
 :12
 set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" sm215
-pause
 goto :menu
 
 :13
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" snack2
-pause
 goto :menu
 
 

@@ -76,8 +76,12 @@ echo %is_jumpmod2+td_complete_installed% 12: jumpmod2+td_complete - Jumpmod 2 + 
 echo %is_xmasjam2019_installed% 13: xmasjam2019 - Xmas Jam 2019 ^(2019^)
 echo %is_smej_1.13_installed% 14: smej_1.13 - Menetettyjen Valtakunta ^(Realm of the Lost^) ^(2019^)
 echo.
+echo Enter a number to install/launch/manage one of the releases above.
+echo Or, to just view its Quaddicted page, use Shift+Enter to submit your
+echo choice; keep holding shift until the webpage opens.
+echo.
 set menu_choice=:eof
-set /p menu_choice=choose a number or just press Enter to exit:
+set /p menu_choice=enter your choice or just press Enter to exit:
 echo.
 goto %menu_choice%
 
@@ -85,14 +89,12 @@ goto %menu_choice%
 set start_map=start
 set startdemos=demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" dopa
-pause
 goto :menu
 
 :2
 set base_game=hipnotic
 set start_map=q1map1
 call "%scriptspath%_handle_mod_choice.cmd" gotshun-never-released_levels
-pause
 goto :menu
 
 :3
@@ -100,13 +102,11 @@ set base_game=quoth
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" func_mapjam9_2
-pause
 goto :menu
 
 :4
 set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" qump
-pause
 goto :menu
 
 :5
@@ -114,14 +114,12 @@ set patch_url=https://www.quaddicted.com/filebase/dm4jam_dlc_patch.zip
 set start_map=start
 set startdemos=demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" dm4jam
-pause
 goto :menu
 
 :6
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" hwjam
-pause
 goto :menu
 
 :7
@@ -129,14 +127,12 @@ set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestart
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" xmasjam2018
-pause
 goto :menu
 
 :8
 set patch_url=http://www.quaketastic.com/files/single_player/mods/JamX_progs_fix_for_items.zip
 set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" func_mapjamx
-pause
 goto :menu
 
 :9
@@ -144,21 +140,18 @@ set base_game=%latest_copper%
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" udob_v1_1
-pause
 goto :menu
 
 :10
 set start_map=start
 set startdemos=demo1 demo2 demo3 demo4 demo5
 call "%scriptspath%_handle_mod_choice.cmd" quoffee
-pause
 goto :menu
 
 :11
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" hwjam2
-pause
 goto :menu
 
 :12
@@ -170,21 +163,18 @@ set prelaunch_msg[3]=
 set modsettings[0]=sv_protocol 999
 set modsettings[1]=
 call "%scriptspath%_handle_mod_choice.cmd" jumpmod2+td_complete
-pause
 goto :menu
 
 :13
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" xmasjam2019
-pause
 goto :menu
 
 :14
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" smej_1.13
-pause
 goto :menu
 
 

@@ -67,8 +67,12 @@ echo %is_kinn_marcher_installed%  8: kinn_marcher - The Marcher Fortress ^(2005^
 echo %is_lunsp1_installed%  9: lunsp1 - Concentric Devastation ^(2005^)
 echo %is_sm82_installed% 10: sm82 - Rubicondom ^(2005^)
 echo.
+echo Enter a number to install/launch/manage one of the releases above.
+echo Or, to just view its Quaddicted page, use Shift+Enter to submit your
+echo choice; keep holding shift until the webpage opens.
+echo.
 set menu_choice=:eof
-set /p menu_choice=choose a number or just press Enter to exit:
+set /p menu_choice=enter your choice or just press Enter to exit:
 echo.
 goto %menu_choice%
 
@@ -77,7 +81,6 @@ set start_map=mexx10
 set modsettings[0]=r_wateralpha 0.3
 set modsettings[1]=
 call "%scriptspath%_handle_mod_choice.cmd" mexx10
-pause
 goto :menu
 
 :2
@@ -90,7 +93,6 @@ set modsettings[4]=r_maxsurfs 900
 set modsettings[5]=r_maxedges 2800
 set modsettings[6]=
 call "%scriptspath%_handle_mod_choice.cmd" czg07
-pause
 goto :menu
 
 :3
@@ -100,13 +102,11 @@ set modsettings[1]=r_shadows 0
 set modsettings[2]=gl_flashblend 0
 set modsettings[3]=
 call "%scriptspath%_handle_mod_choice.cmd" czg03
-pause
 goto :menu
 
 :4
 set start_map=could
 call "%scriptspath%_handle_mod_choice.cmd" could
-pause
 goto :menu
 
 :5
@@ -115,7 +115,6 @@ set modsettings[0]=r_maxsurfs 1200
 set modsettings[1]=r_maxedges 4000
 set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" gmsp3
-pause
 goto :menu
 
 :6
@@ -125,7 +124,6 @@ set modsettings[1]=r_maxedges 4000
 set modsettings[2]=r_maxsurfs 4000
 set modsettings[3]=
 call "%scriptspath%_handle_mod_choice.cmd" ac
-pause
 goto :menu
 
 :7
@@ -134,7 +132,6 @@ set modsettings[0]=r_maxedges 10000
 set modsettings[1]=r_maxsurfs 10000
 set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" menk
-pause
 goto :menu
 
 :8
@@ -148,19 +145,16 @@ set modsettings[5]=gl_farclip 16384
 set modsettings[6]=r_farclip 16384
 set modsettings[7]=
 call "%scriptspath%_handle_mod_choice.cmd" kinn_marcher
-pause
 goto :menu
 
 :9
 set start_map=lunsp1
 call "%scriptspath%_handle_mod_choice.cmd" lunsp1
-pause
 goto :menu
 
 :10
 set start_map=sm82
 call "%scriptspath%_handle_mod_choice.cmd" sm82
-pause
 goto :menu
 
 

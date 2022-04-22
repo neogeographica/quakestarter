@@ -74,29 +74,30 @@ echo %is_unforgiven_installed% 11: unforgiven - Unforgiven ^(2011^)
 echo %is_rrp_installed% 12: rrp - Rubicon Rumble Pack ^(2014^)
 echo %is_mapjam6_installed% 13: mapjam6 - Func Map Jam 6 - Fire and Brimstone ^(2015^)
 echo.
+echo Enter a number to install/launch/manage one of the releases above.
+echo Or, to just view its Quaddicted page, use Shift+Enter to submit your
+echo choice; keep holding shift until the webpage opens.
+echo.
 set menu_choice=:eof
-set /p menu_choice=choose a number or just press Enter to exit:
+set /p menu_choice=enter your choice or just press Enter to exit:
 echo.
 goto %menu_choice%
 
 :1
 set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" oum
-pause
 goto :menu
 
 :2
 set start_map=start
 set startdemos=demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" rapture
-pause
 goto :menu
 
 :3
 set start_map=start
 set startdemos=demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" soe_full
-pause
 goto :menu
 
 :4
@@ -107,13 +108,11 @@ REM set startdemos=demo1
 set modsettings[0]=r_wateralpha 0.5
 set modsettings[1]=
 call "%scriptspath%_handle_mod_choice.cmd" contract
-pause
 goto :menu
 
 :5
 set start_map=terra1
 call "%scriptspath%_handle_mod_choice.cmd" terra
-pause
 goto :menu
 
 :6
@@ -122,7 +121,6 @@ set start_map=start
 set skip_quakerc_gen=true
 set startdemos=demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" warpspasm
-pause
 goto :menu
 
 :7
@@ -133,20 +131,17 @@ set modsettings[0]=r_oldwater 0
 set modsettings[1]=r_waterquality 32
 set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" travail
-pause
 goto :menu
 
 :8
 set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" rmx-pack
-pause
 goto :menu
 
 :9
 set start_map=start
 set startdemos=demo1 demo2
 call "%scriptspath%_handle_mod_choice.cmd" nsoe2
-pause
 goto :menu
 
 :10
@@ -155,20 +150,17 @@ REM unlike other patches the Drake mod is really truly always required here
 set patch_required=true
 set start_map=arcstart
 call "%scriptspath%_handle_mod_choice.cmd" arcanum
-pause
 goto :menu
 
 :11
 set start_map=unfstart
 call "%scriptspath%_handle_mod_choice.cmd" unforgiven
-pause
 goto :menu
 
 :12
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" rrp
-pause
 goto :menu
 
 :13
@@ -177,7 +169,6 @@ set startdemos=demo1
 set modsettings[0]=r_wateralpha 1
 set modsettings[1]=
 call "%scriptspath%_handle_mod_choice.cmd" mapjam6
-pause
 goto :menu
 
 

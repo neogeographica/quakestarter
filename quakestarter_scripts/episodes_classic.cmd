@@ -62,15 +62,18 @@ echo.
 echo Note that Nehahra is not included here because many Quake engines cannot
 echo run it. See https://www.quaddicted.com/reviews/nehahra.html
 echo.
+echo Enter a number to install/launch/manage one of the releases above.
+echo Or, to just view its Quaddicted page, use Shift+Enter to submit your
+echo choice; keep holding shift until the webpage opens.
+echo.
 set menu_choice=:eof
-set /p menu_choice=choose a number or just press Enter to exit:
+set /p menu_choice=enter your choice or just press Enter to exit:
 echo.
 goto %menu_choice%
 
 :1
 set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" prodigy_se
-pause
 goto :menu
 
 :2
@@ -81,7 +84,6 @@ REM start a game.
 set start_map=start
 set startdemos=demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" bbelief
-pause
 goto :menu
 
 :3
@@ -89,7 +91,6 @@ set start_map=mexx9
 set modsettings[0]=r_wateralpha 0.3
 set modsettings[1]=
 call "%scriptspath%_handle_mod_choice.cmd" mexx9
-pause
 goto :menu
 
 :4
@@ -97,7 +98,6 @@ set patch_url=https://www.quaddicted.com/filebase/zer11.zip
 set patch2_url=https://www.quaddicted.com/filebase/zerend_fix.zip
 set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" zer
-pause
 goto :menu
 
 
