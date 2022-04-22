@@ -2,6 +2,8 @@
 
 REM Top-level installer-picker.
 
+mode 80,35
+
 setlocal
 
 REM remember dir where this script lives
