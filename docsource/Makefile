@@ -38,10 +38,10 @@ copydocs: $(BUILDDIR)/html
 		-e 's/href="#"/href="..\/quakestarter_readme.html#"/${SEDIGNORECASE}' \
 		"$(COPYDIR)/../quakestarter_readme.html"
 	@sed -i ${SEDSEPARATOR} \
-		-e 's/quakestarter_readme/..\/quakestarter_readme/g' \
+		-e 's/quakestarter_readme.html">/..\/quakestarter_readme.html">/g' \
 		"$(COPYDIR)/"*/*.html
 	@sed -i ${SEDSEPARATOR} \
-		-e 's/quakestarter_readme/..\/quakestarter_readme/g' \
+		-e 's/quakestarter_readme.html">/..\/quakestarter_readme.html">/g' \
 		"$(COPYDIR)/"search*
 
 clean:
