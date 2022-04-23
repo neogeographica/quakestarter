@@ -106,7 +106,6 @@ html_theme = 'alabaster'
 # documentation.
 #
 html_theme_options = {
-    'caption_font_size': 'larger',
     'description': 'Quake Singleplayer Starter Pack',
     'extra_nav_links': {
         'Quakestarter website': 'http://quakestarter.com'
@@ -120,6 +119,10 @@ html_theme_options = {
     'github_button': False,
     'show_relbars': True,
 }
+
+# These paths are either relative to html_static_path or fully qualified paths.
+#
+html_css_files = ['css/text.css']
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

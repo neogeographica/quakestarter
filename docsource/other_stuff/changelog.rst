@@ -1,8 +1,7 @@
 Changelog
 =========
 
-v3.0.0 (Apr 2022)
------------------
+.. rubric:: v3.0.0 (Apr 2022)
 
 Some interesting high-visibility changes here, and some changes to the file structure, so let's do a major version bump. Welcome to Quakestarter 3.0.0!
 
@@ -17,8 +16,7 @@ Speaking of addons, `The Castle of Koohoo`_ has made a triumphant return to the 
 Finally, as part of the process of finding Quake game data and soundtrack files, Quakestarter is now better at locating Quake installations that are in Steam library folders separate from the main Steam folder.
 
 
-v2.5.0 (Apr 2022)
------------------
+.. rubric:: v2.5.0 (Apr 2022)
 
 You may have noticed that there was a new Quakespasm-Spiked release that I haven't yet picked up for use here with Quakestarter. There's a concern with using new QSS builds that I'm chewing on in `a GitHub issue`_.
 
@@ -41,8 +39,7 @@ So this release of Quakestarter has the following features:
 * General doc updates to take into account some implications of the rerelease.
 
 
-v2.4.0 (Mar 2022)
------------------
+.. rubric:: v2.4.0 (Mar 2022)
 
 It's been a while since I've checked over the whole Quaddicted database again for qualifying releases, as opposed to just looking at new stuff as it comes in. Of course it's quite possible for the ratings of old stuff to change... and when you're dealing in Bayesian averages, the score for release X can change even if X didn't get any new ratings but Y and Z did.
 
@@ -59,8 +56,7 @@ Existing items removed, i.e. moved to "legacies": (The Final) Descent, The Castl
 To keep the legacies menu manageable (one-page), I've also aged-out and removed the four oldest entries there: Red Slammer, Gloomier Keep, Midnight Stalker, and Func Map Jam 1 - Honey Theme. If you still have any of those mods installed you'll need to manage them outside of the Quakestarter menus.
 
 
-v2.3.0 (Mar 2022)
------------------
+.. rubric:: v2.3.0 (Mar 2022)
 
 * Include an updated Quakespasm-Spiked (2021-10-14).
 
@@ -101,14 +97,12 @@ v2.3.0 (Mar 2022)
   - If you have previously run an AD/Copper-dependent mod using an older version of AD/Copper, the mod launch will give you the option to continue using that older AD/Copper version in order to not break your savegames. You'll keep getting that option for each launch of that mod until you choose to switch to using the latest AD/Copper for that mod.
 
 
-v2.2.1 (Mar 2021)
------------------
+.. rubric:: v2.2.1 (Mar 2021)
 
 Tiny update here. This just adds a very-most-top-level short readme file ("how_to_use_quakestarter.txt") into the zip archive for a release, to make sure users know where to go first. It's nice for the archive to be self-contained in this way and not require any external info to get started with it properly.
 
 
-v2.2.0 (Mar 2021)
------------------
+.. rubric:: v2.2.0 (Mar 2021)
 
 * Include latest Quakespasm-Spiked (2021-03-06).
 
@@ -133,8 +127,7 @@ v2.2.0 (Mar 2021)
 * Misc minor docs corrections and fixes.
 
 
-v2.1.0 (Jan 2021)
------------------
+.. rubric:: v2.1.0 (Jan 2021)
 
 Most of the changes in this release are because of me revisiting the cool `qbism Super8 engine`_ and taking care of some quirks that prevented it from working well as an alternative Quake engine launched from Quakestarter. Note that there is absolutely no guarantee that Super8 will be able to play all of our installables... but it should be able to handle most of them.
 
@@ -173,8 +166,7 @@ Most of the changes in this release are because of me revisiting the cool `qbism
 * Always some doc improvements here and there!
 
 
-v2.0.2 (Dec 2020)
------------------
+.. rubric:: v2.0.2 (Dec 2020)
 
 * Final pass through 2020 releases looking for installables. The only change is to add Xmas Jam 2020.
 
@@ -191,8 +183,7 @@ v2.0.2 (Dec 2020)
 * Other minor docs/messages updates.
 
 
-v2.0.1 (Dec 2020)
------------------
+.. rubric:: v2.0.1 (Dec 2020)
 
 * Improve the documentation of transparency-related settings in the example autoexec.cfg files.
 
@@ -201,8 +192,7 @@ v2.0.1 (Dec 2020)
 * Provide a bundle WITHOUT Quakespasm-Spiked as an alternative download for power users.
 
 
-v2.0.0 (Nov 2020)
------------------
+.. rubric:: v2.0.0 (Nov 2020)
 
 Before we get into the bullet-point changelist, a general note:
 
@@ -297,8 +287,7 @@ OK, let's get to the changelist.
 * Support for Windows Vista has been officially dropped. It probably still works though?
 
 
-v1.x
------------------
+.. rubric:: v1.x
 
 For older changelog entries, see the `1.x changelog`_ archived on GitHub.
 
