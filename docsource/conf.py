@@ -155,6 +155,12 @@ html_show_sourcelink = False
 #
 html_use_index = False
 
+# If true, the text around the keyword is shown as summary of each search
+# result. Note: this only works for online docs apparently, not local
+# files.
+#
+html_show_search_summary = True
+
 # The name of an image file (relative to this directory) to use as a favicon of
 # the docs.
 #
