@@ -83,13 +83,9 @@ all sorts of topics about Quake singleplayer.
 
 def gen_readme(readme_contents, qss_timestamp, sql_timestamp, timestamp):
     new_readme_contents= []
-    skip_next = False
     for line in readme_contents:
-        if skip_next:
-            skip_next = False
-            continue
         if (qss_timestamp == "") and ("###QSS_VERSION###" in line):
-            skip_next = True
+            pass
         else:
             new_line = line.replace(
                 "###QSS_VERSION###", QSS_VERSION).replace(
@@ -146,7 +142,7 @@ def gen_release():
     timestamp = time.strftime("%B %Y")
     print("Quakestarter release: {}".format(RELEASE))
     print("Quakestarter timestamp: {}".format(timestamp))
-    with open(os.path.join(QUAKE_FOLDER, "quakestarter_readme.html"), 'r', newline='\r\n') as f:
+    with open(os.path.join(QUAKE_FOLDER, "quakestarter_readme.html"), 'r') as f:
         readme_contents = f.readlines()
     gen_readme(readme_contents, "", sql_timestamp, timestamp)
     release_name = "quakestarter-noengine-" + RELEASE
