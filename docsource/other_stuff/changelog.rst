@@ -12,7 +12,9 @@ The most obvious change is that the documentation is now in HTML. You can open "
 
 Also new in this release: On the menus showing individual addons, you now have the option to open the Quaddicted review page for a particular addon. That page will open in your default web browser.
 
-Finally, as part of the process of finding Quake files to copy, Quakestarter is now better at locating Quake installations that are in Steam library folders separate from the main Steam folder.
+Speaking of addons, `The Castle of Koohoo`_ has made a triumphant return to the Classic (non-episodes) menu, on the back of a small recent ratings bump. (Maybe because of the `Koohoo-themed retrojam`_?) We've also added the sm198_ hub to the Post-AD episodes menu, a nicely weird experimental speedmap pack with a particularly small playable space per map.
+
+Finally, as part of the process of finding Quake game data and soundtrack files, Quakestarter is now better at locating Quake installations that are in Steam library folders separate from the main Steam folder.
 
 
 v2.5.0 (Apr 2022)
@@ -301,6 +303,9 @@ v1.x
 For older changelog entries, see the `1.x changelog`_ archived on GitHub.
 
 
+.. _The Castle of Koohoo: https://www.quaddicted.com/reviews/koohoo.html
+.. _Koohoo-themed retrojam: https://www.quaddicted.com/reviews/retrojam7.html
+.. _sm198: https://www.quaddicted.com/reviews/sm198.html
 .. _a GitHub issue: https://github.com/neogeographica/quakestarter/issues/58
 .. _qbism Super8 engine: https://super8.qbism.com/
 .. _Quakespasm-Spiked: https://fte.triptohell.info/moodles/qss/
