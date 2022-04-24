@@ -29,6 +29,7 @@ if "%basedir%"=="" (
 
 :menu
 set renamed_gamedir=
+set review_page=
 set base_game=
 set patch_url=
 set patch_required=false
@@ -55,8 +56,13 @@ echo %is_zigisp1_installed%  2: zigisp1 - A Verdant Dawn
 echo %is_ad_heresp2_installed%  3: ad_heresp2 - Imhotep's Legacy
 echo %is_purifier_installed%  4: purifier - The Purifier
 echo.
+echo Enter a number to install/launch/manage one of the releases above.
+echo.
+echo Or, to just view its Quaddicted page, use Shift+Enter to submit your
+echo choice; keep holding shift until the webpage opens.
+echo.
 set menu_choice=:eof
-set /p menu_choice=choose a number or just press Enter to exit:
+set /p menu_choice=enter your choice or just press Enter to exit:
 echo.
 goto %menu_choice%
 
@@ -64,29 +70,25 @@ goto %menu_choice%
 set base_game=%latest_ad%
 set start_map=ad_heresp1
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ad_heresp1.zip
-pause
+call "%scriptspath%_handle_mod_choice.cmd" ad_heresp1
 goto :menu
 
 :2
 set start_map=zigisp1
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/zigisp1.zip
-pause
+call "%scriptspath%_handle_mod_choice.cmd" zigisp1
 goto :menu
 
 :3
 set base_game=%latest_ad%
 set start_map=ad_heresp2
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/ad_heresp2.zip
-pause
+call "%scriptspath%_handle_mod_choice.cmd" ad_heresp2
 goto :menu
 
 :4
 set start_map=purifier
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" https://www.quaddicted.com/filebase/purifier.zip
-pause
+call "%scriptspath%_handle_mod_choice.cmd" purifier
 goto :menu
 
 

@@ -36,9 +36,8 @@ if "%quake_exe%"=="" (
       echo The configured Quake engine: %%a
       echo does not exist in the Quake folder: %basedir%
       echo.
-      echo If you need to configure a different executable to use for Quake, see the
-      echo "advanced_quakestarter_cfg.txt" doc in the "quakestarter_docs\other_stuff"
-      echo folder.
+      echo If you need to configure a different executable to use for Quake, see
+      echo the Advanced Configuration chapter in the Other Topics part of the docs.
       echo.
       pause
       goto :eof

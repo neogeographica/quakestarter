@@ -1,3 +1,6 @@
+Selection Criteria
+==================
+
 Obviously I need to have some method to choose which addons will be presented in the Quakestarter menus.
 
 Any set of criteria is going to be flawed. There would be many different possible approaches to this -- maybe just "stuff I like", or best-of picks from certain reviewers, or award-winning releases. In this case though I've tried to include as many as possible of the best classic and must-play releases by using the ratings at Quaddicted.
@@ -11,6 +14,8 @@ I also give a little more ratings slack to releases that are "episodes" or "hubs
 OK all that being said, these are the current criteria for being included in the Quakestarter installables:
 
 * An "episode" or a "hub" is a release that has a start map and at least four non-startmaps. To be included it must have a Quaddicted user rating of 3.85-4.0 or better (Bayesian average), with older episodes having a lower bar to clear.
+
+|br|
 
 * Releases that don't qualify as an episode/hub must have a Quaddicted user rating of 4.3-4.45 or better (Bayesian average), with older releases having a lower bar to clear. Also, the map(s) from this release must not already be included in some qualifying episode/hub release.
 

@@ -1,11 +1,12 @@
 REM Helper "subroutine" script to process a mod-installer menu choice.
 
-REM On the commandline, the url arg is required.
+REM On the commandline, the addon_name arg is required.
 
 REM The caller is also required to set the basedir and quake_exe variables.
 
 REM Optional args will be specified through these variables:
 REM   renamed_gamedir
+REM   review_page
 REM   base_game
 REM   patch_url
 REM   patch_required
@@ -54,17 +55,29 @@ if "%quake_exe%"=="" (
       echo does not exist in the Quake folder: %basedir%
       echo.
       echo If you need to configure a different executable to use for Quake, see the
-      echo "advanced_quakestarter_cfg.txt" doc in the "quakestarter_docs\other_stuff"
-      echo folder.
+      echo Advanced Configuration chapter in the Other Topics part of the docs.
       echo.
-      goto :eof
+      goto :pauseexit
     )
   )
 )
-set url=%~1
-set archive=%~nx1
+set addon_name=%~1
+
+REM if holding down Shift, view the Quaddicted page instead
+powershell.exe -nologo -noprofile -command "&{trap{exit 1;} Add-Type -A PresentationCore;if ([System.Windows.Input.Keyboard]::IsKeyDown([System.Windows.Input.Key]::LeftShift)){exit 0;} if ([System.Windows.Input.Keyboard]::IsKeyDown([System.Windows.Input.Key]::RightShift)){exit 0;} exit 1;}"
+if %errorlevel% equ 0 (
+  if "%review_page%"=="" (
+    start /b https://www.quaddicted.com/reviews/%addon_name%.html
+  ) else (
+    start /b https://www.quaddicted.com/reviews/%review_page%.html
+  )
+  goto :eof
+)
+
+set archive=%addon_name%.zip
+set url=https://www.quaddicted.com/filebase/%archive%
 if "%renamed_gamedir%"=="" (
-  set gamedir=%~n1
+  set gamedir=%1
 ) else (
   set gamedir=%renamed_gamedir%
 )
@@ -168,7 +181,7 @@ if not "%base_game%"=="" (
       if not exist "%basedir%\quoth" (
         echo Failed to install "quoth" which is required by "%gamedir%".
         echo.
-        goto :eof
+        goto :pauseexit
       )
     )
   )
@@ -185,7 +198,7 @@ if "%handle_multigame%"=="true" (
     echo possible through Quakestarter since multigame_support is false in
     echo your config.
     echo.
-    goto :eof
+    goto :pauseexit
   )
   if not exist "%basedir%\%base_game_to_use%" (
     set skip_quakerc_gen=true
@@ -193,7 +206,7 @@ if "%handle_multigame%"=="true" (
     if not exist "%basedir%\%base_game_to_use%" (
       echo Failed to install "%base_game_to_use%" which is required by "%gamedir%".
       echo.
-      goto :eof
+      goto :pauseexit
     )
   )
   set game_switch=%multigame_game_switch%
@@ -203,7 +216,7 @@ if "%base_game%"=="hipnotic" (
   if not exist "%basedir%\hipnotic\pak0.pak" (
     echo "%gamedir%" requires missionpack 1 to currently be installed.
     echo.
-    goto :eof
+    goto :pauseexit
   )
 )
 
@@ -211,7 +224,7 @@ if "%base_game%"=="rogue" (
   if not exist "%basedir%\rogue\pak0.pak" (
     echo "%gamedir%" requires missionpack 2 to currently be installed.
     echo.
-    goto :eof
+    goto :pauseexit
   )
 )
 
@@ -238,7 +251,7 @@ if not exist "%basedir%\%gamedir%" (
 
 REM launch and other options
 
-if not exist "%basedir%\%gamedir%" goto :eof
+if not exist "%basedir%\%gamedir%" goto :pauseexit
 
 if "%prelaunch_msg[0]%"=="" goto :launch
 
@@ -301,9 +314,9 @@ if not "%base_game%"=="" (
   )
 )
 
-if not exist "%basedir%\%gamedir%" goto :eof
+if not exist "%basedir%\%gamedir%" goto :pauseexit
 
-if "%postlaunch_msg[0]%"=="" goto :eof
+if "%postlaunch_msg[0]%"=="" goto :pauseexit
 
 setlocal enabledelayedexpansion
 set idx=0
@@ -317,3 +330,6 @@ if not "!postlaunch_msg[%idx%]!"=="" (
 if "%loop%"=="true" goto :postmsgloop
 endlocal
 echo.
+
+:pauseexit
+pause

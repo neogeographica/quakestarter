@@ -2,3 +2,6 @@
 devtools/release.*
 quakestarter-*.zip
 *_results/
+_build/
+quakestarter_html/
+quakestarter_readme.html
