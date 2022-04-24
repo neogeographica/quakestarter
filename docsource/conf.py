@@ -59,7 +59,7 @@ author = 'Joel Baxter'
 # built documents.
 #
 # The full version, including any pre-release tag.
-release = '3.0.0-dev'
+release = '3.0.0'
 # And without that tag.
 version = release.split('-')[0]
 
@@ -106,7 +106,6 @@ html_theme = 'alabaster'
 # documentation.
 #
 html_theme_options = {
-    'caption_font_size': 'larger',
     'description': 'Quake Singleplayer Starter Pack',
     'extra_nav_links': {
         'Quakestarter website': 'http://quakestarter.com'
@@ -120,6 +119,10 @@ html_theme_options = {
     'github_button': False,
     'show_relbars': True,
 }
+
+# These paths are either relative to html_static_path or fully qualified paths.
+#
+html_css_files = ['css/text.css']
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -151,6 +154,12 @@ html_show_sourcelink = False
 # If false, no index is generated.
 #
 html_use_index = False
+
+# If true, the text around the keyword is shown as summary of each search
+# result. Note: this only works for online docs apparently, not local
+# files.
+#
+html_show_search_summary = True
 
 # The name of an image file (relative to this directory) to use as a favicon of
 # the docs.

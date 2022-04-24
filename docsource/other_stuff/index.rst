@@ -16,7 +16,6 @@ Other Topics
    no_launcher
    not_windows
    selection_criteria
-   changelog
 
 The chapters in this part of the documentation are not in any particular order. They are referenced from elsewhere when needed, to dig into more details that you usually won't need to worry about.
 

@@ -24,8 +24,10 @@ Quakestarter Quickstart
 .. toctree::
    :hidden:
    :maxdepth: 2
+   :caption: Etc
 
    other_stuff/index
+   other_stuff/changelog
 
 
 **If you're new here, please ignore that Navigation sidebar for now! This first page here covers most or all of what you will need to know to get started.**
@@ -61,7 +63,7 @@ The included version of Quakespasm-Spiked is ###QSS_VERSION###, 64-bit executabl
 
 The included version of Simple Quake Launcher 2 is ###SQL_VERSION### from ###SQL_TIMESTAMP###.
 
-As for this whole package of stuff, it's version |version| from ###TIMESTAMP###. If you want to see what has changed since the previous releases, see the :doc:`Changelog<other_stuff/changelog>` (under Other Topics).
+As for this whole package of stuff, it's version |version| from ###TIMESTAMP###. If you want to see what has changed since the previous releases, see the :doc:`Changelog<other_stuff/changelog>`.
 
 If you've been using a previous version of this package, see the :doc:`Upgrading Quakestarter<other_stuff/upgrading_quakestarter>` chapter (under Other Topics).
 
@@ -118,7 +120,7 @@ If those steps aren't clear, or something goes wrong, or if you just want more d
 
 When you want even more things to play, and in general more details about how to launch maps/mods outside of Quakestarter, check out the chapters under Maps and Mods, beginning with :doc:`Mod Folders<maps_and_mods/mod_folders>`.
 
-The Other Topics chapters are a little more specialized and you might not need to bother with them. You'll see that they're referenced from other chapters in a few spots, or you can just have a look at them if you're curious.
+The :doc:`Other Topics<other_stuff/index>` chapters are a little more specialized and you might not need to bother with them. You'll see that they're referenced from other chapters in a few spots, or you can just have a look at them if you're curious.
 
 Have fun!
 
