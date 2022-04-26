@@ -6,7 +6,7 @@ New players can use Quakestarter as a quick way to get going with Quake and the 
 
 Veteran players can use it as a nice way to bootstrap "yet another Quake installation", or to discover overlooked gems -- since no one can keep up with every single piece of custom content released.
 
-Each release includes a quick-start guide and detail documentation. The docs for the latest release are also online at http://quakestarter.com .
+Each release includes a quick-start guide and detailed documentation. The docs for the latest release are also online at http://quakestarter.com .
 
 --------------------
 
