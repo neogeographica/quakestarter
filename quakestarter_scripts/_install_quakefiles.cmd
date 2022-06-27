@@ -57,7 +57,7 @@ if exist "%dest%" goto :eof
 call :reg_query_path_root_and_copy "HKLM\SOFTWARE\WOW6432Node\Bethesda Softworks\Bethesda.net" installLocation "games\Quake"
 if exist "%dest%" goto :eof
 
-REM also check through all Steam library folders
+REM also check through any Steam library folders
 reg query "HKCU\SOFTWARE\Valve\Steam" /v "SteamPath" > nul 2>&1
 if %errorlevel% neq 0 (
   goto :search
@@ -66,6 +66,9 @@ for /f "tokens=2,* skip=2" %%a in ('reg query "HKCU\SOFTWARE\Valve\Steam" /v "St
   set steampath="%%b"
 )
 set vdfpath=%steampath%\config\libraryfolders.vdf
+if not exist "%vdfpath%" (
+  goto :search
+)
 setlocal EnableDelayedExpansion
 for /f "tokens=*" %%l in ('findstr \"path\" %vdfpath%') do (
   for /f "tokens=* delims= " %%s in ("%%l") do (
