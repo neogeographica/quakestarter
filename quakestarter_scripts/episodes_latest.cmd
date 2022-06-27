@@ -158,6 +158,7 @@ call "%scriptspath%_handle_mod_choice.cmd" xmasjam2021
 goto :menu
 
 :12
+set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/jjj2_ish.zip
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" jjj2
