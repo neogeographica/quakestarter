@@ -57,8 +57,10 @@ call :installed_check pun
 call :installed_check alkjam
 call :installed_check alkaline1.1
 call :installed_check xmasjam2021
+call :installed_check jjj2
 call :installed_check sm215
 call :installed_check snack2
+call :installed_check sm_217
 echo.
 echo Selected custom episodes/hubs released from 2020 through 2022:
 echo %is_ctsj_installed%  1: ctsj - Coppertone Summer Jam
@@ -72,8 +74,10 @@ echo %is_pun_installed%  8: pun - The Punishment Due
 echo %is_alkjam_installed%  9: alkjam - Alkaline Jam
 echo %is_alkaline1.1_installed% 10: alkaline1.1 - Alkaline 1.1
 echo %is_xmasjam2021_installed% 11: xmasjam2021 - Xmas Jam 2021
-echo %is_sm215_installed% 12: sm215 - Quad Run
-echo %is_snack2_installed% 13: snack2 - Speedmap Snack Pack 2 - Cosmic Hunger
+echo %is_jjj2_installed% 12: jjj2 - January Jump Jam 2
+echo %is_sm215_installed% 13: sm215 - Quad Run
+echo %is_snack2_installed% 14: snack2 - Speedmap Snack Pack 2 - Cosmic Hunger
+echo %is_sm_217_installed% 15: sm_217 - Remaster Textures
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
@@ -155,13 +159,25 @@ goto :menu
 
 :12
 set start_map=start
-call "%scriptspath%_handle_mod_choice.cmd" sm215
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" jjj2
 goto :menu
 
 :13
 set start_map=start
+call "%scriptspath%_handle_mod_choice.cmd" sm215
+goto :menu
+
+:14
+set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" snack2
+goto :menu
+
+:15
+set start_map=start
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" sm_217
 goto :menu
 
 
