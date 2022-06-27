@@ -21,6 +21,7 @@ REM   postlaunch_msg (array of msg lines, must end with blank line)
 REM   skip_quakerc_gen
 REM   modsettings (array of cfg lines, must end with blank line)
 REM   startdemos
+REM   junkdirs
 
 setlocal
 
@@ -131,6 +132,7 @@ if "%multigame_support%"=="auto" (
 
 REM base game check and (in some cases) install
 set saved_skip_quakerc_gen=%skip_quakerc_gen%
+set saved_junkdirs=%junkdirs%
 set last_base_game=%base_game%
 set check_basegame_changed=false
 set basegame_changed=false
@@ -229,6 +231,7 @@ if "%base_game%"=="rogue" (
 )
 
 set skip_quakerc_gen=%saved_skip_quakerc_gen%
+set junkdirs=%saved_junkdirs%
 
 REM mod install and possibly patch(es)
 if not exist "%basedir%\%gamedir%" (
