@@ -75,6 +75,7 @@ set postlaunch_msg[0]=
 set skip_quakerc_gen=false
 set modsettings[0]=
 set startdemos=
+set junkdirs=
 cls
 echo.
 echo Releases shown here were in the installer menus in previous versions but

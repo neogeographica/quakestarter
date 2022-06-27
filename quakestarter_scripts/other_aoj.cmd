@@ -44,6 +44,7 @@ set postlaunch_msg[0]=
 set skip_quakerc_gen=false
 set modsettings[0]=
 set startdemos=
+set junkdirs=
 cls
 call :installed_check func_mapjam2
 call :installed_check func_mapjam3

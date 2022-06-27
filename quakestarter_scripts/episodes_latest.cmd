@@ -45,6 +45,7 @@ set postlaunch_msg[0]=
 set skip_quakerc_gen=false
 set modsettings[0]=
 set startdemos=
+set junkdirs=
 cls
 call :installed_check ctsj
 call :installed_check dwellv1p2

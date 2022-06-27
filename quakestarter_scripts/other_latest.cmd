@@ -44,6 +44,7 @@ set postlaunch_msg[0]=
 set skip_quakerc_gen=false
 set modsettings[0]=
 set startdemos=
+set junkdirs=
 cls
 call :installed_check ad_heresp1
 call :installed_check zigisp1
@@ -99,6 +100,10 @@ goto :menu
 set base_game=%latest_copper%
 set start_map=plaw02
 set skip_quakerc_gen=true
+REM Because this archive is packaged oddly, we need to remove the top level
+REM "src" dir for it to install correctly. We'll add the src dir contents
+REM back in through the mod_extras.
+set junkdirs=src
 call "%scriptspath%_handle_mod_choice.cmd" plaw02
 goto :menu
 
