@@ -1,6 +1,13 @@
 Changelog
 =========
 
+.. rubric:: v3.1.0 (Jun 2022)
+
+This release is purely about updating the lists of installables. A couple of recent releases have popped up just over the ratings threshold, but interestingly so have several older releases all the way back to 1997. Here's a rundown of the changes:
+
+blah blah lorem ipsum fill this in once the list is finalized
+
+
 .. rubric:: v3.0.0 (Apr 2022)
 
 Some interesting high-visibility changes here, and some changes to the file structure, so let's do a major version bump. Welcome to Quakestarter 3.0.0!
