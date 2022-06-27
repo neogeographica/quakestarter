@@ -133,6 +133,7 @@ if "%multigame_support%"=="auto" (
 REM base game check and (in some cases) install
 set saved_skip_quakerc_gen=%skip_quakerc_gen%
 set saved_junkdirs=%junkdirs%
+set junkdirs=
 set last_base_game=%base_game%
 set check_basegame_changed=false
 set basegame_changed=false
