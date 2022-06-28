@@ -165,6 +165,7 @@ call "%scriptspath%_handle_mod_choice.cmd" arcanum
 goto :menu
 
 :12
+set patch_url=https://quaketastic.com/files/single_player/maps/dmc3m8_hotfix.zip
 set start_map=dmc3
 call "%scriptspath%_handle_mod_choice.cmd" dmc3
 goto :menu
