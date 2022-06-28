@@ -3,9 +3,25 @@ Changelog
 
 .. rubric:: v3.1.0 (Jun 2022)
 
-This release is purely about updating the lists of installables. A couple of recent releases have popped up just over the ratings threshold, but interestingly so have several older releases all the way back to 1997. Here's a rundown of the changes:
+This release is purely about updating the lists of installables. Four 2022 releases have popped up just over the ratings threshold, but interestingly so have several older releases all the way back to 1997. For this release I'm experimenting with doing a little blurb for each addition, so here's a rundown from newest to oldest.
 
-blah blah lorem ipsum fill this in once the list is finalized
+In the New Hotness menus (episodes/hubs and other):
+
+* Speedmap event #217 was themed on `Remaster Textures`_ (2022) from the Quake re-release; this new coat of paint got the creative juices flowing for some old hands and new blood.
+* `Slip Tripping`_ (2022) is a polished bite-sized gem from Markie_, the multi-talented mapper behind the `Quake Builder`_ and `Markie Music`_ channels.
+* Waldsterben_ (2022) from `Paul Lawitzki`_ is a unique Copper_-based offering that shows off one of the best "forest" environments you'll see in Quake.
+* `January Jump Jam 2`_ (2022) takes the "jump boots" powerup out for a shakedown cruise, using the Alkaline_ mod.
+
+And in the other menus:
+
+* `The Elder Reality`_ (2016) is an artful tribute to the maps of Episode 4, from PuLSaR_ who is no stranger to these lists.
+* `Deathmatch Classics Vol. 3`_ (2011) -- returning from its exile in the "legacies" menu -- brings together heavy hitters to spin SP interpretations of DM maps from id and the community.
+* `A Roman Wilderness Of Pain`_ (2009), also returning from "legacies", delivers epic scale like only Tronyn_ can. Check out the `retrospective about this mapset`_ while you're here!
+* `This Onion`_ (2007) from `Mike Woodham`_, a moody and quirky adventure, is the final entry here to escape from "legacies" with a ratings boost. (Curiously `its sequel/remake`_ is still a hair short of doing likewise.)
+* Antediluvian_ (2005) is a classic wind-tunnels-inspired level from Rubicon_ mapper, `Quake engine`_ coder, and func_msgboard_ host (whew) John Fitzgibbons. 
+* `Quake Condensed`_ (2004) by `R.P.G.`_ is a neat recapitulation of the original Quake campaign map themes in five small pieces.
+* Biotoxin_ (2001) is yet another czg_ creation for our lists, notable for being constructed out of only 100 brushes.
+* Arcane_ (1997) is our earliest entry. It's also the last and probably best release from `Matt Sefton`_, who was not only a standout 1996/97 mapper but was also among the first reputable Quake map reviewers.
 
 
 .. rubric:: v3.0.0 (Apr 2022)
@@ -299,6 +315,35 @@ OK, let's get to the changelist.
 For older changelog entries, see the `1.x changelog`_ archived on GitHub.
 
 
+.. _Remaster Textures: https://www.quaddicted.com/reviews/sm_217.html
+.. _Slip Tripping: https://www.quaddicted.com/reviews/markiesm1v2.html
+.. _Markie: https://www.quaddicted.com/reviews/?filtered=markie
+.. _Quake Builder: https://www.youtube.com/user/mikedm92
+.. _Markie Music: https://www.youtube.com/c/MarkieMusic
+.. _Waldsterben: https://www.quaddicted.com/reviews/plaw02.html
+.. _Paul Lawitzki: https://www.quaddicted.com/reviews/?filtered=paul+lawitzki
+.. _Copper: http://lunaran.com/copper/
+.. _January Jump Jam 2: https://www.quaddicted.com/reviews/jjj2.html
+.. _Alkaline: https://alkalinequake.wordpress.com/
+.. _The Elder Reality: https://www.quaddicted.com/reviews/retrojam4dlc_pulsar.html
+.. _PuLSaR: https://www.quaddicted.com/reviews/?filtered=pulsar
+.. _Deathmatch Classics Vol. 3: https://www.quaddicted.com/reviews/dmc3.html
+.. _A Roman Wilderness Of Pain: https://www.quaddicted.com/reviews/arwop.html
+.. _Tronyn: https://www.quaddicted.com/reviews/?filtered=tronyn
+.. _retrospective about this mapset: https://www.quaddicted.com/articles/a_history_of_a_roman_wilderness_of_pain_1999-2009_by_tronyn_2009
+.. _This Onion: https://www.quaddicted.com/reviews/fmb_bdg.html
+.. _Mike Woodham: https://www.quaddicted.com/reviews/?filtered=mike+woodham
+.. _its sequel/remake: https://www.quaddicted.com/reviews/fmb_bdg2.html
+.. _Antediluvian: https://www.quaddicted.com/reviews/ant.html
+.. _Rubicon: https://www.quaddicted.com/reviews/?filtered=metlslime+rubicon
+.. _Quake engine: https://celephais.net/fitzquake/
+.. _func_msgboard: https://www.celephais.net/board/forum.php
+.. _Quake Condensed: https://www.quaddicted.com/reviews/rpgsmse.html
+.. _R.P.G.: https://www.quaddicted.com/reviews/?filtered=R.P.G.
+.. _Biotoxin: https://www.quaddicted.com/reviews/czgtoxic.html
+.. _czg: https://www.quaddicted.com/reviews/?filtered=czg
+.. _Arcane: https://www.quaddicted.com/reviews/arcane.html
+.. _Matt Sefton: https://www.quaddicted.com/reviews/?filtered=matt+sefton
 .. _The Castle of Koohoo: https://www.quaddicted.com/reviews/koohoo.html
 .. _Koohoo-themed retrojam: https://www.quaddicted.com/reviews/retrojam7.html
 .. _sm198: https://www.quaddicted.com/reviews/sm198.html
