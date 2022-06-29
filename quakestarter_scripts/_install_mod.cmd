@@ -10,6 +10,7 @@ REM Optional args will be specified through these variables:
 REM   skip_quakerc_gen
 REM   modsettings (array of cfg lines, must end with blank line)
 REM   startdemos
+REM   junkdirs
 
 setlocal
 
@@ -128,6 +129,9 @@ if "%cleanup_archive%"=="true" (
 REM now get in that dir and clean it up
 echo ... organizing ...
 pushd "%basedir%\%gamedir%"
+if not "%junkdirs%"=="" (
+  rd /q /s %junkdirs% >nul
+)
 :organizedirs
 REM Delete any configs and old custom-engine stuff.
 del /q *.bat *.cmd *.exe *.dll config.cfg >nul 2>&1
