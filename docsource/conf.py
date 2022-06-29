@@ -59,7 +59,7 @@ author = 'Joel Baxter'
 # built documents.
 #
 # The full version, including any pre-release tag.
-release = '3.0.0'
+release = '3.1.0'
 # And without that tag.
 version = release.split('-')[0]
 
