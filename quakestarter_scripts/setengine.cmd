@@ -55,13 +55,9 @@ if not exist "%basedir%\%quake_exe%" (
   echo choose something else!
 )
 echo.
-echo Available programs in the Quake folder:
-echo.
 
 REM Present a menu of executables.
 REM XXX todo:
-REM * filter out current exe
-REM * filter out SQL
 REM * by default only show known "supported" Quake engine exes
 REM * allow switching to show all (non-filtered) exes
 REM
@@ -72,17 +68,29 @@ setlocal enabledelayedexpansion
 set count=0
 pushd "%basedir%"
 for /f "delims=" %%a in ('dir /a:-d /b *.exe') do (
-    set /a count+=1
-    set "executables[!count!]=%%a"
+  if not "%%a" == "%quake_exe%" (
+    if not "%%a" == "SQLauncher2.exe" (
+      set /a count+=1
+      set "executables[!count!]=%%a"
+    )
+  )
 )
 popd
+if %count% == 0 (
+  echo No other available programs in the Quake folder.
+  echo.
+  pause
+  goto :eof
+)
+echo Other available programs in the Quake folder:
+echo.
 for /l %%a in (1,1,!count!) do (
   set padded=   %%a
   echo !padded:~-3!: !executables[%%a]!
 )
 echo.
 set menu_choice=
-set /p menu_choice=pick a choice from 1 to %count%, or Enter to keep current engine: 
+set /p menu_choice=enter your choice or just press Enter to keep current engine: 
 if "%menu_choice%" == "" (
   set new_quake_exe=%quake_exe%
   goto :onward
