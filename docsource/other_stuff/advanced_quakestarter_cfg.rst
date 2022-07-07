@@ -6,7 +6,7 @@ Quakestarter configuration files
 
 The file "_quakestarter_cfg_defaults.cmd" in the "quakestarter_scripts" folder describes some configurable behaviors for Quakestarter, and their default settings.
 
-If you want to change any of these behaviors, create a new file called "_quakestarter_cfg.cmd" in the same folder as the Quakestarter script. (I.e. *not* in the "quakestarter_scripts" folder, but above in your main Quake folder.) In this new file you can set any of the options that you wish to change.
+If you want to change any of these behaviors, you can make changes to the file "_quakestarter_cfg.cmd" that is in the same folder as the main Quakestarter script. (When you run Quakestarter, this file will be created if it does not yet exist.) In this file you can set any of the options that you wish to change.
 
 For example, in "_quakestarter_cfg_defaults.cmd" the following line specifies the default Quake engine to use::
 

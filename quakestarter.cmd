@@ -49,6 +49,14 @@ if "%legacy_docs%"=="true" (
   rd /s /q "%mainpath%quakestarter_docs" >nul
 )
 
+REM check for _quakestarter_cfg.cmd
+if not exist "%mainpath%_quakestarter_cfg.cmd" (
+  echo REM If you want to change the default configuration you can add "set" commands > "%mainpath%_quakestarter_cfg.cmd"
+  echo REM to this file. See the Advanced Configuration chapter of the Quakestarter >> "%mainpath%_quakestarter_cfg.cmd"
+  echo REM docs ^(under Other Topics^) for more details. >> "%mainpath%_quakestarter_cfg.cmd"
+)
+
+
 :menu
 
 REM re-read config each time we come back to menu in case it was edited
