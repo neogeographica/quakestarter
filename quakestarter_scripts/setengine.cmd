@@ -24,24 +24,87 @@ if "%quake_exe%"=="" (
   goto :eof
 )
 
+REM remember dir where this script lives
+set scriptspath=%~dp0
+
+REM find the basedir by looking for id1 folder here or above one level
+set basedir=
+pushd "%~dp0"
+dir id1 /ad >nul 2>&1
+if not %errorlevel% equ 0 (
+  cd ..
+  dir id1 /ad >nul 2>&1
+)
+if %errorlevel% equ 0 (
+  set basedir=%cd%
+)
+popd
+if "%basedir%"=="" (
+  echo Couldn't find the id1 folder.
+  pause
+  goto :eof
+)
+
+:menu
+
 cls
 echo.
 echo Current setting for Quake engine to launch: %quake_exe%
+if not exist "%basedir%\%quake_exe%" (
+  echo WARNING: This file does not exist in your Quake folder. You should probably
+  echo choose something else!
+)
 echo.
-set new_quake_exe=%quake_exe%
-set /p new_quake_exe=enter a new exe or just press Enter to leave unchanged:
+echo Available programs in the Quake folder:
 echo.
 
-REM XXX Various fancy things I can do here such as:
-REM  * shorcuts for picking vkQuake.exe or ironwail.exe
-REM  * checking that the specified exe actually exists
-REM  * if an unknown exe is entered, warn multigame_support may need change
+REM Present a menu of executables.
+REM XXX todo:
+REM * filter out current exe
+REM * filter out SQL
+REM * by default only show known "supported" Quake engine exes
+REM * allow switching to show all (non-filtered) exes
 REM
 REM Also need documentation changes of course, both for this stuff and for
 REM the changes to the main menu options.
-REM
-REM For now let's just make sure the basic functionality of changing the
-REM setting works.
+
+setlocal enabledelayedexpansion
+set count=0
+pushd "%basedir%"
+for /f "delims=" %%a in ('dir /a:-d /b *.exe') do (
+    set /a count+=1
+    set "executables[!count!]=%%a"
+)
+popd
+for /l %%a in (1,1,!count!) do (
+  set padded=   %%a
+  echo !padded:~-3!: !executables[%%a]!
+)
+echo.
+set menu_choice=
+set /p menu_choice=pick a choice from 1 to %count%, or Enter to keep current engine: 
+if "%menu_choice%" == "" (
+  set new_quake_exe=%quake_exe%
+  goto :onward
+)
+set new_quake_exe=
+echo %menu_choice%| findstr /r "^[1-9][0-9]*$" > nul
+if not %errorlevel% equ 0 (
+  goto :onward
+)
+if %menu_choice% lss 1 (
+  goto :onward
+)
+if %menu_choice% gtr %count% (
+  goto :onward
+)
+set new_quake_exe=!executables[%menu_choice%]!
+:onward
+endlocal & set new_quake_exe=%new_quake_exe%
+
+if "%new_quake_exe%" == "" (
+  goto :menu
+)
 
 if "%new_quake_exe%"=="%quake_exe%" (
   goto :eof
