@@ -23,7 +23,7 @@ As a final note, a couple of projects exist that aim to provide Quake Injector (
 DIY
 ---
 
-Once you're familiar with how Quake maps and mods work, it's not rocket science to install them yourself. The main two things to be aware of are 1) the best place to find singleplayer Quake content is at Quaddicted_, and 2) you can also watch for new releases at `the func_msgboard forum`_.
+Once you're familiar with how Quake maps and mods work, it's not rocket science to install them yourself. The main three things to be aware of are 1) historically the best place to find singleplayer Quake content is at Quaddicted_, 2) `Slipgate Sightseer`_ is a new community site with a lot of initial buzz, and 3) you can also watch for new releases at `the func_msgboard forum`_.
 
 When you download an addon, it sometimes consists of a bunch of files that are meant to be placed inside a new mod folder in your Quake installation. If this is the case then there should be a readme file included that tells you this. (Usually it's obvious anyway.)
 
@@ -41,5 +41,6 @@ If you want more discussion about running Quake addons, see this relevant `Steam
 .. _a standalone Quake Injector build: https://github.com/hrehfeld/QuakeInjector/releases/tag/alpha04-gradle
 .. _a reimplementation of Quake Injector using Qt: https://sourceforge.net/projects/quake-injector-qt/
 .. _Quaddicted: https://www.quaddicted.com/reviews/
+.. _Slipgate Sightseer: https://www.slipseer.com/
 .. _the func_msgboard forum: http://www.celephais.net/board/forum.php
 .. _Steam guide: http://steamcommunity.com/sharedfiles/filedetails/?id=166554615

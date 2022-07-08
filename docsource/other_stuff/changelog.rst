@@ -19,6 +19,8 @@ If you have an existing older Quakestarter installation that bundled Quakespasm-
 
 * **If you want to get rid of the Quakespasm-Spiked files (and only use vkQuake/Ironwail going forward)**, then you could do so before the upgrade by deleting qss_manifest.txt and all the files it lists. If you've already done the upgrade and overwritten various files though, the only files you should delete are: qss_manifest.txt, libvorbisidec-1.dll, quakespasm.pak, Quakespasm-Spiked.txt, Quakespasm-Spiked-Revision.txt, and quakespasm-spiked-win64.exe.
 
+This release also has a few doc updates to take into account the opening of `Slipgate Sightseer`_.
+
 
 .. rubric:: v3.1.0 (Jun 2022)
 
@@ -338,6 +340,7 @@ For older changelog entries, see the `1.x changelog`_ archived on GitHub.
 
 .. _vkQuake: https://github.com/Novum/vkQuake
 .. _Ironwail: https://github.com/andrei-drexler/ironwail
+.. _Slipgate Sightseer: https://www.slipseer.com/
 .. _Remaster Textures: https://www.quaddicted.com/reviews/sm_217.html
 .. _Slip Tripping: https://www.quaddicted.com/reviews/markiesm1v2.html
 .. _Markie: https://www.quaddicted.com/reviews/?filtered=markie
