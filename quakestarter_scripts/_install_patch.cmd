@@ -49,6 +49,7 @@ REM change some mod install vars for the scope of this setlocal
 set less_chatty_install=true
 set download_subdir=%patch_download_subdir%
 set skip_quakerc_gen=true
+set junkdirs=
 
 REM sanity checks
 if not exist "%basedir%\%target_gamedir%" (
