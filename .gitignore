@@ -1,5 +1,6 @@
 *.pyc
 devtools/release.*
+devtools/engine-staging/
 quakestarter-*.zip
 *_results/
 _build/
