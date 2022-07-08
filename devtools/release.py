@@ -26,7 +26,7 @@ RELEASE = release
 RELEASE_FOLDER = "release." + str(os.getpid())
 QUAKE_FOLDER = os.path.join(RELEASE_FOLDER, "Quake")
 ENGINE_STAGING_FOLDER = "engine-staging"
-VKQ_VERSION = "1.20.2"
+VKQ_VERSION = "1.20.3"
 IW_VERSION = "0.6.0"
 SQL_VERSION = "2.5"
 VKQ_URL = "https://github.com/Novum/vkQuake/releases/download/{0}/vkquake-{0}_win64.zip".format(VKQ_VERSION)
@@ -121,9 +121,13 @@ def patch_autoexec():
     for line in autoexec_contents:
         if line.lower().startswith("host_maxfps "):
             new_autoexec_contents.append(
-                "// Since this package does not include Quakespasm-Spiked, this setting is\r\n")
+"// Since this package does not include any particular Quake engine, this\r\n")
             new_autoexec_contents.append(
-                "// commented out for safety. Remove the leading doubleslash to activate it.\r\n")
+"// setting is commented out for safety. If you know that your chosen Quake\r\n")
+            new_autoexec_contents.append(
+"// engine can support high framerates without errors, you can remove the\r\n")
+            new_autoexec_contents.append(
+"// leading doubleslash before this setting to activate it.\r\n")
             new_autoexec_contents.append("//" + line)
         else:
             new_autoexec_contents.append(line)

@@ -9,12 +9,13 @@ REM might get lost when upgrading to a later release of the package.
 
 REM The name of the Quake engine executable that will be used to play when
 REM launching stuff through the Quakestarter. Can be followed by any
-REM arguments that should always be used. The Quake Engines chapter in the
-REM Other Topics part of the docs has some comments about this.
+REM arguments that should always be used. The Quake Engines and
+REM Advanced Configuration chapters in the Other Topics part of the docs have
+REM some comments about this.
 REM Note: If you change this, make sure that the value for multigame_support
 REM below is also set correctly for the Quake engine of your choice!
 
-set quake_exe=quakespasm-spiked-win64.exe
+set quake_exe=vkQuake.exe
 
 
 REM Whether your Quake engine of choice supports activating multiple mod

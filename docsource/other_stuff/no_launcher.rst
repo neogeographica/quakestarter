@@ -7,19 +7,15 @@ When you know those things, you can handle all launcher-type activities yourself
 
 One approach is to use command-line options when launching Quake, but this chapter won't cover that. You can get some info about command-line options from the section "The Command Line" in `the Quake Owner's Manual guide on Steam`_ and also some of `the Custom Singleplayer Levels guide`_. If you do want to go that route, note that when using Quakestarter or Simple Quake Launcher 2 you'll see helpful examples of Quake command lines.
 
-Here, we'll focus on using the Quake console, which is often easier.
+Here, we'll focus on using the Quake console (which is often easier than using the command line) and the Quake in-game menu (which is super easy but has some caveats).
 
 
-Opening the console
--------------------
+Using the console to activate a mod
+-----------------------------------
 
 Once Quake has launched, if you are at the main menu with no game or demo running, then you can open the console with the ESC key. When a game or demo is running you can get to the console with the "~" key, or on international keyboards typically whatever key is under ESC. You can close the Quake console by hitting that key again or by hitting ESC. While the console is open you can type commands to cause stuff to happen, or type in new values for various settings.
 
-This chapter will just mention a few console commands. If you're curious to learn more, much of `the Quake Owner's Manual guide on Steam`_ is relevant.
-
-
-Setting the mod folder(s) and/or missionpack
---------------------------------------------
+(This chapter will just mention a few console commands. If you're curious to learn more, much of `the Quake Owner's Manual guide on Steam`_ is relevant.)
 
 If the map you want to run is just a .bsp file in the "id1\\maps" folder, :ref:`skip this section<other_stuff/no_launcher:setting difficulty>`. That's the normal/default map location and doesn't involve any mod code.
 
@@ -52,6 +48,16 @@ If trying any of these commands results in an error message, then your Quake eng
 If you get an error *only* from that last form of the command, then your Quake engine does not support activating multiple mod folders.
 
 Once you've executed the "game" command, if you see the message "execing quake.rc" appear in the console, you're ready to play. (This should be the case with any recent Quakespasm-variant engine.) Otherwise see the :doc:`quake.rc<quake_rc>` chapter for some more necessary details.
+
+
+Using the in-game menu to activate a mod
+----------------------------------------
+
+Some Quake engines provide an in-game menu that you can use to activate a mod. Both vkQuake and Ironwail do, as it happens; they each have a "Mods" menu that you can use for this purpose.
+
+If your Quake engine doesn't have a menu like that, then you'll have to use the console as described above. But if it *does* have such a menu then that can often be very handy.
+
+The only downside to a menu like this is that they all (as far as I know) only allow you to activate a single mod folder. If the mod folder depends on another folder (like Quoth, Copper, etc.) then you can't use the menu to properly activate both of the required folders.
 
 
 Setting difficulty

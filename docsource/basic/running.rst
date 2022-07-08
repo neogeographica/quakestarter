@@ -32,7 +32,7 @@ Simple Quake Launcher 2 is another great way to start up Quake. It's not as easy
 
 When you run "SQLauncher2.exe", you'll get a dialog window with a few settings to choose.
 
-The first thing to choose is the "Engine", i.e. your Quake-playing program. You can pick "quakespasm-spiked-win64.exe" to use the bundled Quakespasm-Spiked, or select some other Quake engine that you have installed yourself.
+The first thing to choose is the "Engine", i.e. your Quake-playing program. You can pick "vkQuake.exe" or "ironwail.exe" to use one of the bundled engines, or select some other Quake engine that you have installed yourself.
 
 Don't worry about the "Resolution" setting; you can pick your video settings in the in-game menus.
 

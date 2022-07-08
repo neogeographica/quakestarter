@@ -159,13 +159,13 @@ REM multigame_support might need to be changed.
 REM NOTE: Much of this same logic is in setengine.cmd; eventually think about
 REM factoring it out. Also the if-tree is getting kinda big!
 set engine_class=unrecognized
-if not "%quake_exe%"=="%quake_exe:quakespasm-spiked=%" (
-  set engine_class=supported
+if not "%quake_exe%"=="%quake_exe:vkQuake=%" (
+set engine_class=supported
 ) else (
-  if not "%quake_exe%"=="%quake_exe:vkQuake=%" (
+  if not "%quake_exe%"=="%quake_exe:ironwail=%" (
     set engine_class=supported
   ) else (
-    if not "%quake_exe%"=="%quake_exe:ironwail=%" (
+    if not "%quake_exe%"=="%quake_exe:quakespasm-spiked=%" (
       set engine_class=supported
     ) else (
       if not "%quake_exe%"=="%quake_exe:fteqw=%" (

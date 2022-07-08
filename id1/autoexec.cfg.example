@@ -10,7 +10,8 @@
 
 // The comments here are VERY brief. Some of these settings have interesting
 // nuances and/or won't work in all Quake engines. (They will all work fine in
-// Quakespasm-Spiked though.) It's really recommended to have a look at
+// vkQuake and Ironwail though, with the exception of the gl_* variables that
+// don't apply to vkQuake.) It's really recommended to have a look at
 // autoexec-cfg-example-annotated.txt for more discussion of these and a few
 // additional settings.
 
@@ -19,7 +20,7 @@
 
 
 // Set a higher framerate cap. Note that using this setting can be ineffective
-// or even bad in some Quake engines (but is fine in Quakespasm-Spiked).
+// or even bad in some Quake engines (but is fine in vkQuake/Ironwail).
 host_maxfps 144
 
 // Don't use vertical autoaim.
@@ -35,6 +36,9 @@ skill 1
 
 // Use pixel-y textures, but avoid artifacts on surfaces viewed at steep
 // angles.
+// NOTE: Some engines that do not use OpenGL do not support these settings.
+// For example in vkQuake you should just use the Video Options in-game menu
+// instead.
 gl_texturemode GL_NEAREST_MIPMAP_LINEAR
 gl_texture_anisotropy 8
 

@@ -27,7 +27,7 @@ When you launch your choice, Quakestarter will print the command line arguments 
 Collections with no startmap
 ----------------------------
 
-If an addon is a multi-map collection that doesn't have its own startmap, you will need to select the map you want to play after Quake has launched. Some Quake engines provide an in-game menu for map selection in these custom addons, but others do not (like Quakespasm-Spiked at the time of writing this doc). If not, then you'll need to use the Quake console.
+If an addon is a multi-map collection that doesn't have its own startmap, you will need to select the map you want to play after Quake has launched. Some Quake engines provide an in-game menu for map selection in these custom addons, but most do not (like vkQuake and Ironwail at the time of writing this doc). If not, then you'll need to use the Quake console.
 
 Once Quake has launched, if you are at the main menu with no game or demo running, then you can open the console with the ESC key. When a game or demo is running you can get to the console with the "~" key, or on international keyboards typically whatever key is under ESC.
 

@@ -8,21 +8,55 @@ A program that plays Quake is often called a "Quake engine" or a "source port". 
 
 Quite a while back I created a `Steam guide`_ with an overview of several Quake engines. Although I've let it become outdated, it still gives you an idea of the available variety. Different Quake engines have different goals. Some are focused on singleplayer, some on multiplayer; some are mostly about fixing bugs or adding "quality of life" features, while others are about supporting new visual effects; etc.
 
-Currently Quakespasm_ is a sort of "reference standard" for playing new singleplayer map releases. Variants like `Quakespasm-Spiked`_, vkQuake_, or Ironwail_ (or "cousins" like `Mark V`_) add features on top of the Quakespasm baseline without drastically changing its play experience or its compatibility/stability. Other engines like FTE_ or DarkPlaces_ go farther in adding new stuff.
+Currently Quakespasm_ is a sort of "reference standard" for new singleplayer map releases. Unless a new map is doing something quite unusual, it should work correctly on Quakespasm. Variants like vkQuake_, Ironwail_, and `Quakespasm-Spiked`_ (or "cousins" like `Mark V`_) have added features on top of the Quakespasm baseline without drastically changing its play experience or its compatibility/stability. Other engines like FTE_ or DarkPlaces_ go farther in adding new stuff.
 
 
 Which one to use for singleplayer
 ---------------------------------
 
-By default Quakestarter uses the `Quakespasm-Spiked`_ engine, a.k.a. QSS.
+Quakestarter is bundled with the vkQuake_ and Ironwail_ engines, with vkQuake set as the initial default.
 
-Quakespasm-Spiked essentially matches Quakespasm for compatibility, and it adds important usability improvements that can smooth out the experience of playing or managing many existing addons... like supporting higher framerates and the ability to load multiple mod folders. It also implements features like advanced particle systems and customizable HUD/menus that newer addons can take advantage of. Arcane Dimensions is one example of a recent mod that can make use of these QSS features.
+vkQuake uses the Vulkan API for rendering, while Ironwail uses some advanced features of OpenGL. So one consideration for choosing between the two might be whether your graphics driver is better at Vulkan or OpenGL. Some old drivers for old GPUs may not support Vulkan at all.
 
-Performance-hungry users with not-too-ancient graphics cards may be interested in trying out vkQuake_. This is a version of Quakespasm with a Vulkan renderer, so you do need to have a video card that is modern enough to support Vulkan in its drivers. Along with support for important stuff like high framerates and multi-mod-folders, vkQuake also can handle the new particle and HUD systems from QSS.
+However the two engines also have some feature differences. Here's a quick rundown of some of the most user-visible features that these engines have added on top of the Quakespasm baseline. 
 
-Another Quakespasm variant, Ironwail_, is even more focused on high performance. While it is still pretty "young" and may have some kinks to work out, it seems stable and has attracted a following. Ironwail supports high framerates and multi-mod-folders, but not the particle/HUD innovations. It adds support for some interesting optional emulations of software rendering, for players who want to re-experience the original Quake look.
+=================== =======   ========
+feature             vkQuake   Ironwail
+=================== =======   ========
+mod loading UI        yes        yes
+weapon binding UI      no        yes
+use mouse in UI        no        yes
+improved perf         yes        yes
+unlocked fps          yes        yes
+custom HUDs           yes         no*
+custom particles      yes         no
+8-bit emulation       yes        yes
+detect Steam paks      no        yes
+lit water support     yes        yes
+classic waterwarp     yes        yes
+multi game dirs       yes        yes
+drag-resize window    yes         no
+protocol extensions   yes         no
+=================== =======   ========
 
-Previous versions of Quakestarter bundled `Mark V`_ instead, and Mark V does still have several advantages especially in its in-game menus. But while Quakespasm-Spiked has increased its compatibility/stability and its adoption among singleplayer users, Mark V has stagnated and now cannot play (or at least play well) some recent releases.
+And a blurb about each of these features:
+
+* mod loading UI: An in-game menu to activate a mod folder.
+* weapon binding UI: Support in the in-game controls menu for binding individual weapons to keys. (Otherwise these binds can be done with config file edits.)
+* use mouse in UI: Whether the mouse can be used to work the in-game menus.
+* improved perf: The ability to run with much higher framerates than previous engines.
+* unlocked fps: The ability to use framerate caps higher than 72 FPS without causing issues with the game physics.
+* custom HUDs: Support for mod-defined HUD graphics, such as found in Arcane Dimensions and Alkaline. The asterisk for Ironwail is for a couple of reasons: while Ironwail does not yet support mod-defined HUDs, it does provide a selection of predefined HUD variants, and it plans to support mod-defined HUDs in some future release (at the time of writing this).
+* custom particles: Support for mod-defined particle systems, such as found in Arcane Dimensions and Alkaline.
+* 8-bit emulation: Optional setting to emulate the palettized rendering of original DOS/WinQuake.
+* detect Steam paks: The ability to run using the gamedata from an existing Steam installation of Quake, without needing to find and copy the pak files. This doesn't matter when using Quakestarter, which does its own method of pak-finding, but can be handy otherwise.
+* lit water support: Support for rendering shadows on the surfaces of liquids, for recent maps that have been compiled in a way that generates that shadow information.
+* classic waterwarp: Emulation for the underwater warping effect of original DOS/WinQuake (as opposed to the different GLQuake effect).
+* multi game dirs: The ability to activate more than one mod folder, beyond the hardcoded support for only Quoth and missionpacks found in some engines. Quakestarter depends on this feature for launching a few of the addons that depend on Copper or Arcane Dimensions.
+* drag-resize window: When running in windowed mode, whether the game window can be resized just by using the moust to grab-and-drag the window's edge/corner.
+* protocol extensions: This is a complicated topic, but one of the more obvious benefits to protocol extension support is the ability to play back a wider range of demo recordings (such as demos recorded with Quakespasm-Spiked).
+
+If you want to use some engine other than vkQuake or Ironwail, the :doc:`Advanced Configuration<advanced_quakestarter_cfg>` chapter has details about how to set that up.
 
 
 Why not the "enhanced" Quake rerelease?
@@ -35,9 +69,9 @@ You can have both the Quake rerelease and also a community-developed Quake engin
 
 .. _Steam guide: http://steamcommunity.com/sharedfiles/filedetails/?id=118401000
 .. _Quakespasm: http://quakespasm.sourceforge.net/
-.. _Quakespasm-Spiked: https://fte.triptohell.info/moodles/qss/
 .. _vkQuake: https://github.com/Novum/vkQuake
 .. _Ironwail: https://github.com/andrei-drexler/ironwail
+.. _Quakespasm-Spiked: https://fte.triptohell.info/moodles/qss/
 .. _Mark V: http://quakeone.com/markv/
 .. _FTE: https://fte.triptohell.info/
 .. _DarkPlaces: https://icculus.org/twilight/darkplaces/
