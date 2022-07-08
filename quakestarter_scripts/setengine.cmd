@@ -183,6 +183,9 @@ if not "%quake_exe%"=="%quake_exe:quakespasm-spiked=%" (
               if not "%quake_exe%"=="%quake_exe:mark_v=%" (
                 set engine_class=recognized
               ) else (
+                if not "%quake_exe%"=="%quake_exe:joequake=%" (
+                  set engine_class=recognized
+                )
                 if not "%quake_exe%"=="%quake_exe:glQrack=%" (
                   set engine_class=recognized
                 )
