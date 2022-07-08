@@ -23,6 +23,22 @@ if "%basedir%"=="" (
   pause
   goto :eof
 )
+if not exist "%basedir%\id1\pak0.pak" (
+  echo Couldn't find "id1\pak0.pak".
+  echo You could use the first option of the main installer to look for pak
+  echo files on this computer.
+  echo.
+  pause
+  goto :eof
+)
+if not exist "%basedir%\id1\pak1.pak" (
+  echo Couldn't find "id1\pak1.pak".
+  echo You could use the first option of the main installer to look for pak
+  echo files on this computer.
+  echo.
+  pause
+  goto :eof
+)
 if "%quake_exe%"=="" (
   echo The required variable quake_exe is unset.
   echo FYI:
