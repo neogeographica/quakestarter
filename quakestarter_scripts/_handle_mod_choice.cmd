@@ -86,6 +86,8 @@ if "%renamed_gamedir%"=="" (
 cls
 
 REM handle multigame_support, especially "auto" behavior
+REM NOTE: Much of this same logic is in setengine.cmd; eventually think about
+REM factoring it out. Also the if-tree is getting kinda big!
 set game_switch=game
 set base_game_switch=game
 set multigame_game_switch=game

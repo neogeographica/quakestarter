@@ -85,7 +85,7 @@ echo.
 echo Basic setup:
 echo  1: Find ^& copy pak files ^(game data^) on this computer
 echo  2: Find soundtrack music files on this computer or download
-echo  3: Change Quake engine setting ^(currently %quake_exe%^)
+echo  3: Change Quake engine setting ^(currently: %quake_exe%^)
 echo  4: Test-launch unmodified Quake
 echo.
 echo Additional episodes/hubs:
