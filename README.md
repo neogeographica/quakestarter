@@ -10,4 +10,4 @@ Each release includes a quick-start guide and detailed documentation. The docs f
 
 --------------------
 
-A "release" of the Quakestarter package is created by running the "devtools/release.py" script, which zips up most of the files in this repo along with the latest stable releases of Quakespasm-Spiked and Simple Quake Launcher 2.
+A "release" of the Quakestarter package is created by running the "devtools/release.py" script, which zips up most of the files in this repo along with the latest stable releases of vkQuake, Ironwail, and Simple Quake Launcher 2.
