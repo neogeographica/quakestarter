@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import contextlib
+import filecmp
 import os
 import shutil
 import subprocess
@@ -24,10 +25,14 @@ RELEASE = release
 
 RELEASE_FOLDER = "release." + str(os.getpid())
 QUAKE_FOLDER = os.path.join(RELEASE_FOLDER, "Quake")
-QSS_VERSION = "2021-10-14"
-QSS_URL = "https://triptohell.info/moodles/qss/quakespasm_spiked_win64_dev.zip"
-QSS_LOCALFILE = "qss-temp.zip"
+ENGINE_STAGING_FOLDER = "engine-staging"
+VKQ_VERSION = "1.20.3"
+IW_VERSION = "0.6.0"
 SQL_VERSION = "2.5"
+VKQ_URL = "https://github.com/Novum/vkQuake/releases/download/{0}/vkquake-{0}_win64.zip".format(VKQ_VERSION)
+VKQ_LOCALFILE = "vkq-temp.zip"
+IW_URL = "https://github.com/andrei-drexler/ironwail/releases/download/v{0}/ironwail-{0}-win64.zip".format(IW_VERSION)
+IW_LOCALFILE = "iw-temp.zip"
 SQL_URL = "https://github.com/m-x-d/Simple-Quake-Launcher-2/releases/download/{0}/SQLauncher_{0}.zip".format(SQL_VERSION)
 SQL_LOCALFILE = "sql-temp.zip"
 EXCLUSIONS = [
@@ -39,7 +44,7 @@ EXCLUSIONS = [
     "README.md"
 ]
 
-def handle_zip(url, localfile):
+def handle_zip(url, localfile, destdir):
     with contextlib.closing(urllib.request.urlopen(url)) as instream:
         with open(localfile, 'wb') as outstream:
             outstream.write(instream.read())
@@ -47,12 +52,11 @@ def handle_zip(url, localfile):
     latest_month = 1
     timestamp = "???"
     with zipfile.ZipFile(localfile, 'r') as zf:
-        zip_contents = zf.namelist()
         for i in zf.infolist():
-            zf.extract(i, QUAKE_FOLDER)
+            zf.extract(i, destdir)
             time_tuple = i.date_time + (0, 0, -1)
             date_time = time.mktime(time_tuple)
-            os.utime(os.path.join(QUAKE_FOLDER, i.filename), (date_time, date_time))
+            os.utime(os.path.join(destdir, i.filename), (date_time, date_time))
             year = i.date_time[0]
             month = i.date_time[1]
             if year > latest_year:
@@ -64,7 +68,7 @@ def handle_zip(url, localfile):
                     latest_month = month
                     timestamp = time.strftime("%B %Y", time_tuple)
     os.remove(localfile)
-    return zip_contents, timestamp
+    return timestamp
 
 def gen_toplevel_readme():
     with open(os.path.join(RELEASE_FOLDER, "how_to_use_quakestarter.txt"), 'w', newline='\r\n') as f:
@@ -81,15 +85,19 @@ any necessary setup, step-by-step. It's also a gateway to more information on
 all sorts of topics about Quake singleplayer.
 """)
 
-def gen_readme(readme_contents, qss_timestamp, sql_timestamp, timestamp):
+def gen_readme(readme_contents, vkq_timestamp, iw_timestamp, sql_timestamp, timestamp):
     new_readme_contents= []
     for line in readme_contents:
-        if (qss_timestamp == "") and ("###QSS_VERSION###" in line):
+        if (vkq_timestamp == "") and ("###VKQ_VERSION###" in line):
+            pass
+        elif (iw_timestamp == "") and ("###IW_VERSION###" in line):
             pass
         else:
             new_line = line.replace(
-                "###QSS_VERSION###", QSS_VERSION).replace(
-                "###QSS_TIMESTAMP###", qss_timestamp).replace(
+                "###VKQ_VERSION###", VKQ_VERSION).replace(
+                "###VKQ_TIMESTAMP###", vkq_timestamp).replace(
+                "###IW_VERSION###", IW_VERSION).replace(
+                "###IW_TIMESTAMP###", iw_timestamp).replace(
                 "###SQL_VERSION###", SQL_VERSION).replace(
                 "###SQL_TIMESTAMP###", sql_timestamp).replace(
                 "###TIMESTAMP###", timestamp)
@@ -113,9 +121,13 @@ def patch_autoexec():
     for line in autoexec_contents:
         if line.lower().startswith("host_maxfps "):
             new_autoexec_contents.append(
-                "// Since this package does not include Quakespasm-Spiked, this setting is\r\n")
+"// Since this package does not include any particular Quake engine, this\r\n")
             new_autoexec_contents.append(
-                "// commented out for safety. Remove the leading doubleslash to activate it.\r\n")
+"// setting is commented out for safety. If you know that your chosen Quake\r\n")
+            new_autoexec_contents.append(
+"// engine can support high framerates without errors, you can remove the\r\n")
+            new_autoexec_contents.append(
+"// leading doubleslash before this setting to activate it.\r\n")
             new_autoexec_contents.append("//" + line)
         else:
             new_autoexec_contents.append(line)
@@ -127,8 +139,70 @@ def unpatch_autoexec():
     autoexec_path = os.path.join(QUAKE_FOLDER, "id1", "autoexec.cfg.example")
     shutil.move("autoexec.cfg.example.bak", autoexec_path)
 
+def merge_files(source_a_name, source_a_dir, source_b_name, source_b_dir):
+    def extracted_files(source_dir):
+        source_files = os.listdir(source_dir)
+        if len(source_files) == 0:
+            print("WARNING: {} is empty!".format(source_dir))
+        elif len(source_files) == 1:
+            new_root = os.path.join(source_dir, source_files[0])
+            if os.path.isdir(new_root):
+                return extracted_files(new_root)
+        return [os.path.join(source_dir, f) for f in source_files]
+    source_a_files = extracted_files(source_a_dir)
+    source_b_files = extracted_files(source_b_dir)
+    for f in source_a_files:
+        shutil.copy2(f, QUAKE_FOLDER)
+    for f in source_b_files:
+        f_base = os.path.basename(f)
+        f_dest = os.path.join(QUAKE_FOLDER, f_base)
+        if os.path.exists(f_dest):
+            if filecmp.cmp(f, f_dest, shallow=False):
+                continue
+            if os.stat(f).st_mtime < os.stat(f_dest).st_mtime:
+                print("NOTE: file {} taken from {} since it is newer".format(f_base, source_a_name))
+                continue
+            print("NOTE: file {} taken from {} since it is newer".format(f_base, source_b_name))
+        shutil.copy2(f, QUAKE_FOLDER)
+    source_a_set = set([os.path.basename(f) for f in source_a_files])
+    source_b_set = set([os.path.basename(f) for f in source_b_files])
+    common_set = source_a_set & source_b_set
+    source_a_unique_set = source_a_set - common_set
+    source_b_unique_set = source_b_set - common_set
+    manifest_lines = [
+        "files unique to {}:\r\n".format(source_a_name),
+        "\r\n"
+    ]
+    manifest_lines += [f + "\r\n" for f in source_a_unique_set]
+    manifest_lines += [
+        "\r\n"
+        "files unique to {}:\r\n".format(source_b_name),
+        "\r\n"
+    ]
+    manifest_lines += [f + "\r\n" for f in source_b_unique_set]
+    manifest_lines += [
+        "\r\n"
+        "files used in both {} and {}:\r\n".format(source_a_name, source_b_name),
+        "\r\n"
+    ]
+    manifest_lines += [f + "\r\n" for f in common_set]
+    return manifest_lines
+
 def gen_release():
+    try:
+        shutil.rmtree(RELEASE_FOLDER)
+    except FileNotFoundError:
+        pass
+    try:
+        shutil.rmtree(ENGINE_STAGING_FOLDER)
+    except FileNotFoundError:
+        pass
     os.mkdir(RELEASE_FOLDER)
+    os.mkdir(ENGINE_STAGING_FOLDER)
+    vkq_staging = os.path.join(ENGINE_STAGING_FOLDER, "vkq")
+    iw_staging = os.path.join(ENGINE_STAGING_FOLDER, "iw")
+    os.mkdir(vkq_staging)
+    os.mkdir(iw_staging)
     def exclusions_for_copy(dir, contents):
         if os.path.realpath(dir) != SRC_PATH:
             return []
@@ -136,7 +210,7 @@ def gen_release():
     shutil.copytree(SRC_PATH, QUAKE_FOLDER, ignore=exclusions_for_copy)
     gen_toplevel_readme()
     gen_docs()
-    _, sql_timestamp = handle_zip(SQL_URL, SQL_LOCALFILE)
+    sql_timestamp = handle_zip(SQL_URL, SQL_LOCALFILE, QUAKE_FOLDER)
     print("SQL2 version: {}".format(SQL_VERSION))
     print("SQL2 timestamp: {}".format(sql_timestamp))
     timestamp = time.strftime("%B %Y")
@@ -144,20 +218,21 @@ def gen_release():
     print("Quakestarter timestamp: {}".format(timestamp))
     with open(os.path.join(QUAKE_FOLDER, "quakestarter_readme.html"), 'r') as f:
         readme_contents = f.readlines()
-    gen_readme(readme_contents, "", sql_timestamp, timestamp)
+    gen_readme(readme_contents, "", "", sql_timestamp, timestamp)
     release_name = "quakestarter-noengine-" + RELEASE
     patch_autoexec()
     shutil.make_archive(release_name, "zip", root_dir=RELEASE_FOLDER, base_dir=".")
     unpatch_autoexec()
-    qss_zip_contents, qss_timestamp = handle_zip(QSS_URL, QSS_LOCALFILE)
-    print("QSS version: {}".format(QSS_VERSION))
-    print("QSS timestamp: {}".format(qss_timestamp))
-    gen_readme(readme_contents, qss_timestamp, sql_timestamp, timestamp)
-    qss_manifest = [ l + '\r\n' for l in qss_zip_contents ]
-    qss_manifest.insert(0, "\r\n")
-    qss_manifest.insert(0, "manifest of Quakespasm-Spiked files:\r\n")
-    with open(os.path.join(QUAKE_FOLDER, "qss_manifest.txt"), 'w') as f:
-        f.writelines(qss_manifest)
+    vkq_timestamp = handle_zip(VKQ_URL, VKQ_LOCALFILE, vkq_staging)
+    print("VKQ version: {}".format(VKQ_VERSION))
+    print("VKQ timestamp: {}".format(vkq_timestamp))
+    iw_timestamp = handle_zip(IW_URL, IW_LOCALFILE, iw_staging)
+    print("IW version: {}".format(IW_VERSION))
+    print("IW timestamp: {}".format(iw_timestamp))
+    gen_readme(readme_contents, vkq_timestamp, iw_timestamp, sql_timestamp, timestamp)
+    manifest_lines = merge_files("vkQuake", vkq_staging, "ironwail", iw_staging)
+    with open(os.path.join(QUAKE_FOLDER, "engines_manifest.txt"), 'w') as f:
+        f.writelines(manifest_lines)
     release_name = "quakestarter-" + RELEASE
     shutil.make_archive(release_name, "zip", root_dir=RELEASE_FOLDER, base_dir=".")
     shutil.rmtree(RELEASE_FOLDER)

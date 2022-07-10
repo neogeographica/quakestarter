@@ -102,8 +102,9 @@ set start_map=plaw02
 set skip_quakerc_gen=true
 REM Because this archive is packaged oddly, we need to remove the top level
 REM "src" dir for it to install correctly. We'll add the src dir contents
-REM back in through the mod_extras.
+REM back in through the patch.
 set junkdirs=src
+set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/plaw02_source.zip
 call "%scriptspath%_handle_mod_choice.cmd" plaw02
 goto :menu
 

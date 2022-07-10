@@ -49,9 +49,9 @@ The tools included in this package are:
 
 |br|
 
-* If you got the normal Quakestarter bundle (not the "noengine" bundle), then it also includes the `Quakespasm-Spiked`_ "Quake engine". Quakespasm-Spiked or "QSS" is an elaboration by "Spike" and other contributors on the original Quakespasm_. Note that there are several other Quake engines out there; see the :doc:`Quake Engines<other_stuff/quake_engines>` chapter (under Other Topics) if you're curious.
+* If you got the normal Quakestarter bundle (not the "noengine" bundle), then it also includes the vkQuake_ and Ironwail_ "Quake engines", i.e. programs for playing Quake that replace the original programs like WinQuake and GLQuake. Note that there are several other Quake engines out there; see the :doc:`Quake Engines<other_stuff/quake_engines>` chapter (under Other Topics) if you're curious.
 
-You might want to keep an eye out in the future for newer releases of Simple Quake Launcher 2 or Quakespasm-Spiked. Unless something changes drastically, you can just drop their new files in here and replace the older versions.
+You might want to keep an eye out in the future for newer releases of Simple Quake Launcher 2, vkQuake, or Ironwail. Unless something changes drastically, you can just drop their new files in here and replace the older versions.
 
 Note that the programs in this package are meant to be used on Windows 7, 8, 10, or 11. If you are using a different OS then the programs here won't be as useful, but these docs might be. See the :doc:`Beyond Windows<other_stuff/not_windows>` chapter (under Other Topics) for some specific pointers.
 
@@ -59,9 +59,11 @@ Note that the programs in this package are meant to be used on Windows 7, 8, 10,
 Version info
 ============
 
-The included version of Quakespasm-Spiked is ###QSS_VERSION###, 64-bit executable, from ###QSS_TIMESTAMP###. Note that this may be the "dev build" rather than the "Release", if that's actually considered to be more stable.
-
 The included version of Simple Quake Launcher 2 is ###SQL_VERSION### from ###SQL_TIMESTAMP###.
+
+The included version of vkQuake is ###VKQ_VERSION###, 64-bit executable, from ###VKQ_TIMESTAMP###.
+
+The included version of Ironwail is ###IW_VERSION###, 64-bit executable, from ###IW_TIMESTAMP###.
 
 As for this whole package of stuff, it's version |version| from ###TIMESTAMP###. If you want to see what has changed since the previous releases, see the :doc:`Changelog<other_stuff/changelog>`.
 
@@ -96,7 +98,11 @@ The following sequence will get you off and running:
 |br|
 
 
-* Now use the third option in the main Quakestarter menu to launch Quake. Hopefully it works! This would be a good time to get the remainder of your desired Quake configuration set up through the in-game menus.
+* The third option in the main Quakestarter menu is used for switching between vkQuake and Ironwail (or other Quake engines that you might have in the folder). You can ignore that for now and leave it set to the default of vkQuake, unless you know for sure that you'd rather use Ironwail. The :doc:`Quake Engines<other_stuff/quake_engines>` chapter (under Other Topics) has more details about why you might want to use one or the other.
+
+|br|
+
+* Now use the fourth option in the main Quakestarter menu to launch Quake. Hopefully it works! This would be a good time to get the remainder of your desired Quake configuration set up through the in-game menus. Note that if you later change Quake engines you may need to re-do this setup.
 
 |br|
 
@@ -126,6 +132,6 @@ Have fun!
 
 
 .. _Simple Quake Launcher 2: https://github.com/m-x-d/Simple-Quake-Launcher-2/releases/latest
-.. _Quakespasm-Spiked: https://fte.triptohell.info/moodles/qss/
-.. _Quakespasm: http://quakespasm.sourceforge.net/
+.. _vkQuake: https://github.com/Novum/vkQuake
+.. _Ironwail: https://github.com/andrei-drexler/ironwail
 .. _Quaddicted: https://www.quaddicted.com/reviews/

@@ -1,6 +1,27 @@
 Changelog
 =========
 
+.. rubric:: v3.2.0 (Jul 2022)
+
+The main point of this release is to change the bundled Quake engine(s). Instead of `Quakespasm-Spiked`_, Quakestarter will now bundle both vkQuake_ and Ironwail_. A new item has been added to the main Quakestarter menu to help you switch between any Quake engines that are present in the Quake folder, and the :doc:`Quake Engines<quake_engines>` chapter of the docs has a more extended description of these two engines.
+
+This change is motivated by occasional reported compatibility issues in recent Quakespasm-Spiked releases, an active and transparent development process for vkQuake and Ironwail, and just a general sense of where the conventional wisdom currently rests about the best general-purpose singleplayer engine. Quakespasm-Spiked is still a great program and still has several features not found in vkQuake or Ironwail, but for now vkQuake and Ironwail will be the bundled engines here.
+
+If you have an existing older Quakestarter installation that bundled Quakespasm-Spiked, you have a few choices when upgrading to a newer Quakestarter version that bundles vkQuake/Ironwail:
+
+* **If you want to continue using Quakespasm-Spiked and you don't care about having vkQuake/Ironwail**, use the "noengine" version of the new Quakestarter release and overwrite your existing files. Then use the engine-choice menu item to choose your Quakespasm-Spiked executable.
+
+|br|
+
+* **If you want to have the ability to switch between all three Quake engines**, use the normal version of the new Quakestarter release and overwrite your existing files.
+
+|br|
+
+* **If you want to get rid of the Quakespasm-Spiked files (and only use vkQuake/Ironwail going forward)**, then you could do so before the upgrade by deleting qss_manifest.txt and all the files it lists. If you've already done the upgrade and overwritten various files though, the only files you should delete are: qss_manifest.txt, libvorbisidec-1.dll, quakespasm.pak, Quakespasm-Spiked.txt, Quakespasm-Spiked-Revision.txt, and quakespasm-spiked-win64.exe.
+
+This release also has a few doc updates to take into account the opening of `Slipgate Sightseer`_, and it now handles Copper_ dependencies using the recent release of Copper version 1.19.
+
+
 .. rubric:: v3.1.0 (Jun 2022)
 
 This release is purely about updating the lists of installables. Four 2022 releases have popped up just over the ratings threshold, but interestingly so have several older releases all the way back to 1997. For this release I'm experimenting with doing a little blurb for each addition, so here's a rundown from newest to oldest.
@@ -317,6 +338,9 @@ OK, let's get to the changelist.
 For older changelog entries, see the `1.x changelog`_ archived on GitHub.
 
 
+.. _vkQuake: https://github.com/Novum/vkQuake
+.. _Ironwail: https://github.com/andrei-drexler/ironwail
+.. _Slipgate Sightseer: https://www.slipseer.com/
 .. _Remaster Textures: https://www.quaddicted.com/reviews/sm_217.html
 .. _Slip Tripping: https://www.quaddicted.com/reviews/markiesm1v2.html
 .. _Markie: https://www.quaddicted.com/reviews/?filtered=markie

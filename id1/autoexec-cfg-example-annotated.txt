@@ -27,8 +27,10 @@
 // the Quake console, some (but not all) of those changes will also get stored
 // in config.cfg.
 
-// (Note that some Quake engines will name this file something else; for
-// example qbism Super8 calls it super8.cfg.)
+// NOTE: Some Quake engines will name this file something else; for example
+// while vkQuake still uses config.cfg, Ironwail uses ironwail.cfg instead,
+// and qbism Super8 uses super8.cfg. For simplicity the rest of this
+// discussion will just call this file "config.cfg".
 
 // When you launch Quake with a specific mod activated, your current config.cfg
 // from the id1 folder is initially copied to that mod's folder. Any changes
@@ -125,9 +127,8 @@ sv_aim 1
 // as a chance to describe it and because it might not be in the menus.
 
 // While some engines (especially those that expose the choice in the menu)
-// may support several different values for this setting, in most other
-// engines like Quakespasm-Spiked the values are simply 1 to enable the
-// crosshair and 0 to disable it.
+// may support several different values for this setting, in most engines
+// the values are simply 1 to enable the crosshair and 0 to disable it.
 
 //   Default is 0.
 
@@ -166,7 +167,8 @@ skill 1
 
 // In Quake engines with GPU-accelerated renderers, you have some choices
 // about what kind of filtering to apply to the environment textures.
-// Note: Some engines that do not use OpenGL do not support these settings.
+
+// NOTE: Some engines that do not use OpenGL do not support these settings.
 // For example in vkQuake you should just use the Video Options in-game menu
 // instead.
 

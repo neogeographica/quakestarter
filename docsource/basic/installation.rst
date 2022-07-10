@@ -10,19 +10,21 @@ Another option however is to take the folders and files from inside this "Quake"
 
 If the existing Quake installation already contains an older version of Quakestarter, please see the the :doc:`Upgrading Quakestarter<../other_stuff/upgrading_quakestarter>` chapter (under Other Topics).
 
-If you are moving these items into some other already-customized Quake installation that contains a modern Quake engine, especially an existing Quakespasm or Quakespasm-Spiked, then you might want to consider using the "noengine" version of this bundle if you aren't already doing that. Otherwise the Quakespasm-Spiked files bundled in this package can conflict with existing files in your Quake directory. One thing to note is that the "qss_manifest.txt" file lists all of the Quakespasm-Spiked files in this package, which is helpful if you need to discard them. (If you don't have "qss_manifest.txt", then you are using the "noengine" bundle already.)
+If you are moving these items into some other already-customized Quake installation that contains a modern Quake engine, then you might want to consider using the "noengine" version of this bundle if you aren't already doing that. Otherwise the engine files bundled in this package can overwrite and perhaps conflict with existing files in your Quake directory. One thing to note is that the "engines_manifest.txt" file lists all of the vkQuake and Ironwail files in this package, which is helpful if you need to discard them. (If you don't have "engines_manifest.txt", then you are using the "noengine" bundle already.)
 
 
 Quake engine
 ------------
 
-If you're using the normal Quakestarter bundle, it already includes Quakespasm-Spiked. So you don't have anything else to do here & can :ref:`skip to the next section<basic/installation:.net framework>`!
+A "Quake engine" is a program for playing Quake, replacing the original programs like WinQuake and GLQuake. The :doc:`Quake Engines<../other_stuff/quake_engines>` chapter (under Other Topics) digs into this idea a bit more if you're curious.
 
-However if you decided to use the "noengine" bundle, you need to provide the Quake engine that Quakestarter will launch. This is a "power user" situation so the process of finding and installing a Quake engine won't be described here; we'll just cover the bits specific to Quakestarter.
+If you're using the normal Quakestarter bundle, it already includes vkQuake and Ironwail as engine options, which you can switch between by using the third menu item of the main Quakestarter menu. So you don't have anything else to do here & can :ref:`skip to the next section<basic/installation:.net framework>`!
 
-By default Quakestarter is configured to use Quakespasm-Spiked, specifically "quakespasm-spiked-win64.exe". So if that's what you have or plan to install, you're good to go.
+However if you decided to use the "noengine" bundle, you need to provide the Quake engine that Quakestarter will launch.
 
-If you instead want Quakestarter to launch some *other* program for playing Quake, you'll need to configure it to do so. The process of configuring Quakestarter is described in the :doc:`Advanced Configuration<../other_stuff/advanced_quakestarter_cfg>` chapter (under Other Topics).
+By default Quakestarter is configured to use vkQuake, specifically "vkQuake.exe". So if that's what you have or plan to install, you're good to go.
+
+If you instead want Quakestarter to launch some *other* program for playing Quake, you'll need to configure it to do so. You can use that third Quakestarter menu item to choose your preferred engine executable. If you intend to use something other than vkQuake or Ironwail there may be some other considerations/configurations you need to be aware of; the :doc:`Advanced Configuration<../other_stuff/advanced_quakestarter_cfg>` chapter (under Other Topics) goes into more detail about that.
 
 
 .Net Framework
@@ -52,13 +54,15 @@ Similarly, if you own and want to play the official Quake missionpacks, each of 
 
 The first option in the main Quakestarter menu can usually locate and copy the necessary pak files if you already have Quake installed somewhere else on this same computer. This search logic is described in more detail in the :doc:`Auto Setup Logic<../other_stuff/auto_setup_logic>` chapter (under Other Topics). And if you're having difficulties finding your pak files, see the :doc:`Pak Files<../other_stuff/pak_files>` chapter there.
 
+(The Ironwail engine actually includes its own logic for finding pak files in a Steam installation, but for simplicity Quakestarter doesn't depend on that and will treat Ironwail just like any other Quake engine. I.e. Quakestarter will still assume the pak files need to be found and placed into the "id1" folder.)
+
 NOTE: The pak files in the "enhanced" Quake rerelease are different from the original pak files! Quakestarter will only look for and help install the pak files from the original game. Currently Quakestarter also assumes that both "pak0.pak" and "pak1.pak" are required to play, in contrast with the rerelease that only has "pak0.pak". Only the original game's pak files should be used in a Quakestarter-managed installation of Quake.
 
 
 Soundtrack
 ----------
 
-Quakespasm-Spiked (and several other Quake engines) can play the soundtrack from mp3 or ogg files if the physical Quake CD is not in your CD drive. To get soundtrack files installed for the original Quake campaign -- and also for the official missionpacks if you have those -- run Quakestarter and choose the second menu option. Quakestarter will attempt to find soundtrack files in existing Quake installations (original or rerelease) elsewhere on this computer; if that fails you will be given the option to download the files. The :doc:`Auto Setup Logic<../other_stuff/auto_setup_logic>` chapter has more details if you like.
+vkQuake and Ironwail (and several other Quake engines) can play the soundtrack from mp3 or ogg files if the physical Quake CD is not in your CD drive. To get soundtrack files installed for the original Quake campaign -- and also for the official missionpacks if you have those -- run Quakestarter and choose the second menu option. Quakestarter will attempt to find soundtrack files in existing Quake installations (original or rerelease) elsewhere on this computer; if that fails you will be given the option to download the files. The :doc:`Auto Setup Logic<../other_stuff/auto_setup_logic>` chapter has more details if you like.
 
 
 Additional content

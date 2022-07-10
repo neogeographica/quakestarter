@@ -86,17 +86,19 @@ if "%renamed_gamedir%"=="" (
 cls
 
 REM handle multigame_support, especially "auto" behavior
+REM NOTE: Much of this same logic is in setengine.cmd; eventually think about
+REM factoring it out. Also the if-tree is getting kinda big!
 set game_switch=game
 set base_game_switch=game
 set multigame_game_switch=game
 if "%multigame_support%"=="auto" (
-  if not "%quake_exe%"=="%quake_exe:quakespasm-spiked=%" (
+  if not "%quake_exe%"=="%quake_exe:vkQuake=%" (
     set multigame_support=true
   ) else (
-    if not "%quake_exe%"=="%quake_exe:vkQuake=%" (
+    if not "%quake_exe%"=="%quake_exe:ironwail=%" (
       set multigame_support=true
     ) else (
-      if not "%quake_exe%"=="%quake_exe:ironwail=%" (
+      if not "%quake_exe%"=="%quake_exe:quakespasm-spiked=%" (
         set multigame_support=true
       ) else (
         if not "%quake_exe%"=="%quake_exe:fteqw=%" (

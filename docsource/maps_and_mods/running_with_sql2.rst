@@ -47,7 +47,7 @@ To do this, look at the box at the bottom of the launcher that shows the Quake c
 
 The resulting Quake command line shown in the box should have your new argument inserted *before* the "-game" argument that specifies the folder containing the map release. For example if the folder containing the map release is "udob_v1_1", and that depends on Copper, then the command line should end up looking like this::
 
- quakespasm-spiked-win64.exe -game copper_v1_17 -game udob_v1_1 +map start
+ vkQuake.exe -game copper_v1_17 -game udob_v1_1 +map start
 
 As mentioned in :doc:`Mod Requirements<../other_stuff/mod_requirements>`, this will only work with Quake engines that support multiple "-game" arguments on the command line.
 

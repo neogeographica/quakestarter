@@ -23,7 +23,7 @@ If the mod is in its own folder but it builds on another mod, for example a map 
 
 This does *not* include maps/mods that depend on Quoth or an official missionpack. This also doesn't include mods that carry their own copy of the AD or Copper mod. This is about pure map releases that are meant to be played with AD or Copper, but which have been installed into their own separate mod folder (e.g. as Quakestarter will install things).
 
-To launch a mod that has been installed this way, you will need to use a Quake engine that supports activating multiple mod folders. This includes Quakespasm-Spiked, vkQuake, Ironwail, FTE, DarkPlaces, and qbism Super8. This will *not* for example work with the original Quakespasm or with Mark V.
+To launch a mod that has been installed this way, you will need to use a Quake engine that supports activating multiple mod folders. This includes vkQuake, Ironwail, Quakespasm-Spiked, FTE, DarkPlaces, and qbism Super8. This will *not* for example work with the original Quakespasm or with Mark V.
 
 To activate multiple mod folders, on an engine that supports it, you just need to list them in order of increasing precedence. Let's look at an example using the "udob_v1_1" folder, which depends on the Copper mod in the "copper_v1_17" folder.
 
