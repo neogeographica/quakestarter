@@ -45,6 +45,7 @@ call :installed_check bluemonday_v2 rating
 call :installed_check ad_v1_70final version
 call :installed_check copper_v1_15 version
 call :installed_check copper_v1_16 version
+call :installed_check copper_v1_17 version
 
 REM if called with "check" arg just decide whether to show this menu at all
 if "%~1"=="check" (
@@ -130,6 +131,9 @@ if "%show_version%"=="true" (
   )
   if "%show_copper_v1_16%"=="true" (
     echo %is_copper_v1_16_installed% 13: copper_v1_16 - Copper 1.16 ^(2021^)
+  )
+  if "%show_copper_v1_17%"=="true" (
+    echo %is_copper_v1_17_installed% 14: copper_v1_17 - Copper 1.17 ^(2021^)
   )
   echo.
 )
@@ -267,6 +271,15 @@ if not "%show_copper_v1_16%"=="true" (
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" copper_v1_16
+goto :menu
+
+:14
+if not "%show_copper_v1_17%"=="true" (
+  goto :eof
+)
+set start_map=start
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" copper_v1_17
 goto :menu
 
 

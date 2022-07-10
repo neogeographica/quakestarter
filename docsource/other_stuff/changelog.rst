@@ -3,7 +3,7 @@ Changelog
 
 .. rubric:: v3.2.0 (Jul 2022)
 
-The main point of this release is to change the bundled Quake engine(s). Instead of `Quakespasm-Spiked`_, Quakestarter will now bundle both vkQuake_ and Ironwail_. A new item has been added to the main Quakestarter menu to help you switch between any Quake engines that are present in the Quake folder.
+The main point of this release is to change the bundled Quake engine(s). Instead of `Quakespasm-Spiked`_, Quakestarter will now bundle both vkQuake_ and Ironwail_. A new item has been added to the main Quakestarter menu to help you switch between any Quake engines that are present in the Quake folder, and the :doc:`Quake Engines<quake_engines>` chapter of the docs has a more extended description of these two engines.
 
 This change is motivated by occasional reported compatibility issues in recent Quakespasm-Spiked releases, an active and transparent development process for vkQuake and Ironwail, and just a general sense of where the conventional wisdom currently rests about the best general-purpose singleplayer engine. Quakespasm-Spiked is still a great program and still has several features not found in vkQuake or Ironwail, but for now vkQuake and Ironwail will be the bundled engines here.
 
@@ -19,7 +19,7 @@ If you have an existing older Quakestarter installation that bundled Quakespasm-
 
 * **If you want to get rid of the Quakespasm-Spiked files (and only use vkQuake/Ironwail going forward)**, then you could do so before the upgrade by deleting qss_manifest.txt and all the files it lists. If you've already done the upgrade and overwritten various files though, the only files you should delete are: qss_manifest.txt, libvorbisidec-1.dll, quakespasm.pak, Quakespasm-Spiked.txt, Quakespasm-Spiked-Revision.txt, and quakespasm-spiked-win64.exe.
 
-This release also has a few doc updates to take into account the opening of `Slipgate Sightseer`_.
+This release also has a few doc updates to take into account the opening of `Slipgate Sightseer`_, and it now handles Copper_ dependencies using the recent release of Copper version 1.19.
 
 
 .. rubric:: v3.1.0 (Jun 2022)
