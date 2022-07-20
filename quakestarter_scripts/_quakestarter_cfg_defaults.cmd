@@ -91,6 +91,16 @@ set latest_ad=ad_v1_80p1final
 set latest_copper=copper_v1_19
 
 
+REM Whether to check for updates when starting Quakestarter, and if so what
+REM location to check. Note that update_location must return a header-based
+REM redirect to a page that contains Quakestarter archive download links for
+REM only the most recent version.
+
+set check_for_updates=true
+set update_location=https://github.com/neogeographica/quakestarter/releases/latest
+set changelog_location=https://neogeographica.com/quakestarter_html/other_stuff/changelog.html
+
+
 REM This last option is rarely used, but it takes a bit of explaining. Most
 REM mods don't come with their own unique set of demo films for running an
 REM attract-mode loop at start time. However, a few mods do. So when

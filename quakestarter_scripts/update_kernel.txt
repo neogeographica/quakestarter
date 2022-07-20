@@ -1,0 +1,57 @@
+REM This is the script body used to build the actual upgrade script that
+REM will be run. The final script is composed by prepending sets for these
+REM variables (above this comment):
+REM   rootpath
+REM   destdir
+REM   extractdir
+REM   backupdir
+REM   manifest
+
+set logfile=%destdir%\update.log
+
+cd "%rootpath%"
+
+REM best-effort deletion of current files
+echo removing the following files from %rootpath%>"%logfile%"
+type "%manifest%">>"%logfile%"
+echo.>>"%logfile%"
+for /f "tokens=*" %%f in (%manifest%) do (
+  if exist "%%f\" (
+    rd /q /s "%%f" >>"%logfile%" 2>&1
+  ) else (
+    del /f /q "%%f" >>"%logfile%" 2>&1
+  )
+)
+
+REM ok bring in the new files
+echo.>>"%logfile%"
+echo installing new files>>"%logfile%"
+xcopy "%extractdir%\Quake\*" "%rootpath%" /s /e /c /i /r /k /y >>"%logfile%" 2>&1
+
+if %errorlevel% equ 0 (
+  echo ... done!
+  echo.
+  rd /q /s "%destdir%" >nul 2>&1
+  pause
+  cls
+  start /b /i cmd /c quakestarter.cmd & exit
+) else (
+  echo.>>"%logfile%"
+  echo error in copy>>"%logfile%"
+  echo.
+  echo Failed to complete the upgrade.
+  echo Some or all of the files in this folder ^(and its quakestarter subfolders^)
+  echo may be missing:
+  echo   %rootpath%
+  echo You can find a backup of the original files in this folder:
+  echo   %backupdir%
+  echo And the intended new files are in this folder:
+  echo   %extractdir%\Quake
+  echo.
+  echo You can manually move the old files back into place or use the new
+  echo files instead. Once you've finished, delete the quakestarter_upgrade
+  echo folder.
+  echo.
+  pause
+  start /b cmd /c del "%~f0" & exit
+)

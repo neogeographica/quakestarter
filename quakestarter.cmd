@@ -10,6 +10,9 @@ REM remember dir where this script lives
 set mainpath=%~dp0
 set scriptspath=%mainpath%quakestarter_scripts\
 
+REM nuke previous upgrade script if needed
+del /f /q "%mainpath%quakestarter_update.cmd" >nul 2>&1
+
 REM see if .Net/PowerShell are ok, and check for curl
 powershell.exe -nologo -noprofile -command "&{trap{exit 1;} Add-Type -A 'System.IO.Compression.FileSystem';}" >nul 2>&1
 if not %errorlevel% equ 0 (
@@ -56,6 +59,7 @@ if not exist "%mainpath%_quakestarter_cfg.cmd" (
   echo REM docs ^(under Other Topics^) for more details. >> "%mainpath%_quakestarter_cfg.cmd"
 )
 
+set checkedupdate=false
 
 :menu
 
@@ -81,6 +85,22 @@ REM see if we want to show the "legacies" menu
 call "%scriptspath%legacies.cmd" check
 
 cls
+
+REM check for updates if appropriate
+if "%check_for_updates%"=="false" (
+  goto :checked
+)
+if "%checkedupdate%"=="true" (
+  goto :checked
+)
+call "%scriptspath%checkupdate.cmd" "%mainpath%"
+if not %errorlevel% equ 0 (
+  goto :eof
+)
+set checkedupdate=true
+
+:checked
+
 echo.
 echo Basic setup:
 echo  1: Find ^& copy pak files ^(game data^) on this computer
