@@ -10,6 +10,9 @@ REM remember dir where this script lives
 set mainpath=%~dp0
 set scriptspath=%mainpath%quakestarter_scripts\
 
+REM get our version number
+call "%scriptspath%_version_installed_number.cmd"
+
 REM nuke previous upgrade script if needed
 del /f /q "%mainpath%quakestarter_update.cmd" >nul 2>&1
 
@@ -50,6 +53,14 @@ if "%legacy_docs%"=="true" (
   pause
   del /q "%mainpath%quakestarter_readme.txt" >nul
   rd /s /q "%mainpath%quakestarter_docs" >nul
+)
+
+REM if a file was drag-n-dropped here, treat it as an upgrade archive
+REM Note: we haven't loaded config yet... this upgrade action doesn't need it
+set zipfile=%~f1
+if not "%zipfile%" == "" (
+  call "%scriptspath%checkupdate.cmd" "%mainpath%"
+  goto :eof
 )
 
 REM check for _quakestarter_cfg.cmd
@@ -101,6 +112,7 @@ set checkedupdate=true
 
 :checked
 
+echo Quakestarter v%version_installed_number%
 echo.
 echo Basic setup:
 echo  1: Find ^& copy pak files ^(game data^) on this computer

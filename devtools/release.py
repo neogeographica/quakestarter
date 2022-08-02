@@ -114,15 +114,13 @@ def gen_docs():
         stdout=subprocess.DEVNULL
     )
 
-def gen_version_config():
+def gen_version_url():
     with open(os.path.join(QUAKE_FOLDER, "quakestarter_scripts", "_version_installed.cmd"), 'w', newline='\r\n') as f:
         f.write("set version_installed=" + RELEASE_URL)
 
-def gen_release_manifest(filename):
-    files = [f + "\r\n" for f in os.listdir(QUAKE_FOLDER) if f != "id1"]
-    files += ["id1\\" + f + "\r\n" for f in os.listdir(os.path.join(QUAKE_FOLDER, "id1"))]
-    with open(os.path.join(QUAKE_FOLDER, "quakestarter_scripts", filename), 'w') as f:
-        f.writelines(files)
+def gen_version_number():
+    with open(os.path.join(QUAKE_FOLDER, "quakestarter_scripts", "_version_installed_number.cmd"), 'w', newline='\r\n') as f:
+        f.write("set version_installed_number=" + RELEASE)
 
 def patch_autoexec():
     autoexec_path = os.path.join(QUAKE_FOLDER, "id1", "autoexec.cfg.example")
@@ -151,6 +149,12 @@ def unpatch_autoexec():
     autoexec_path = os.path.join(QUAKE_FOLDER, "id1", "autoexec.cfg.example")
     shutil.move("autoexec.cfg.example.bak", autoexec_path)
 
+def gen_qs_manifest():
+    files = [f + "\r\n" for f in os.listdir(QUAKE_FOLDER) if f != "id1"]
+    files += ["id1\\" + f + "\r\n" for f in os.listdir(os.path.join(QUAKE_FOLDER, "id1"))]
+    with open(os.path.join(QUAKE_FOLDER, "quakestarter_scripts", "internal_qs_manifest.txt"), 'w') as f:
+        f.writelines(files)
+
 def merge_files(source_a_name, source_a_dir, source_b_name, source_b_dir):
     def extracted_files(source_dir):
         source_files = os.listdir(source_dir)
@@ -178,27 +182,43 @@ def merge_files(source_a_name, source_a_dir, source_b_name, source_b_dir):
         shutil.copy2(f, QUAKE_FOLDER)
     source_a_set = set([os.path.basename(f) for f in source_a_files])
     source_b_set = set([os.path.basename(f) for f in source_b_files])
+    return source_a_set, source_b_set
+
+def gen_user_engine_manifest(source_a_name, source_a_set, source_b_name, source_b_set):
     common_set = source_a_set & source_b_set
     source_a_unique_set = source_a_set - common_set
     source_b_unique_set = source_b_set - common_set
     manifest_lines = [
-        "files unique to {}:\r\n".format(source_a_name),
+        "* Files unique to {}:\r\n".format(source_a_name),
         "\r\n"
     ]
     manifest_lines += [f + "\r\n" for f in source_a_unique_set]
     manifest_lines += [
         "\r\n"
-        "files unique to {}:\r\n".format(source_b_name),
+        "* Files unique to {}:\r\n".format(source_b_name),
         "\r\n"
     ]
     manifest_lines += [f + "\r\n" for f in source_b_unique_set]
     manifest_lines += [
         "\r\n"
-        "files used in both {} and {}:\r\n".format(source_a_name, source_b_name),
+        "* Files used in both {} and {}:\r\n".format(source_a_name, source_b_name),
         "\r\n"
     ]
     manifest_lines += [f + "\r\n" for f in common_set]
-    return manifest_lines
+    with open(os.path.join(QUAKE_FOLDER, "engines_manifest.txt"), 'w') as f:
+        f.writelines(manifest_lines)
+
+def gen_internal_engines_manifest(source_a_set, source_b_set):
+    total_set = source_a_set.union(source_b_set)
+    files = ["engines_manifest.txt\r\n"]
+    files += [f + "\r\n" for f in total_set]
+    with open(os.path.join(QUAKE_FOLDER, "quakestarter_scripts", "internal_engines_manifest.txt"), 'w') as f:
+        f.writelines(files)
+
+def gen_engines_descriptor():
+    engines_descriptor = "vkQuake {} and Ironwail {}".format(VKQ_VERSION, IW_VERSION)
+    with open(os.path.join(QUAKE_FOLDER, "quakestarter_scripts", "engines_descriptor.txt"), 'w', newline='\r\n') as f:
+        f.write(engines_descriptor)
 
 def gen_release():
     try:
@@ -222,7 +242,8 @@ def gen_release():
     shutil.copytree(SRC_PATH, QUAKE_FOLDER, ignore=exclusions_for_copy)
     gen_toplevel_readme()
     gen_docs()
-    gen_version_config()
+    gen_version_url()
+    gen_version_number()
     sql_timestamp = handle_zip(SQL_URL, SQL_LOCALFILE, QUAKE_FOLDER)
     print("SQL2 version: {}".format(SQL_VERSION))
     print("SQL2 timestamp: {}".format(sql_timestamp))
@@ -234,8 +255,11 @@ def gen_release():
     gen_readme(readme_contents, "", "", sql_timestamp, timestamp)
     release_name = "quakestarter-noengine-" + RELEASE
     patch_autoexec()
-    gen_release_manifest("noengine-manifest.txt")
-    gen_release_manifest("manifest.txt")
+    gen_qs_manifest()
+    with open(os.path.join(QUAKE_FOLDER, "quakestarter_scripts", "internal_engines_manifest.txt"), 'w') as f:
+        f.writelines([])
+    with open(os.path.join(QUAKE_FOLDER, "quakestarter_scripts", "engines_descriptor.txt"), 'w') as f:
+        f.writelines([])
     shutil.make_archive(release_name, "zip", root_dir=RELEASE_FOLDER, base_dir=".")
     unpatch_autoexec()
     vkq_timestamp = handle_zip(VKQ_URL, VKQ_LOCALFILE, vkq_staging)
@@ -245,11 +269,11 @@ def gen_release():
     print("IW version: {}".format(IW_VERSION))
     print("IW timestamp: {}".format(iw_timestamp))
     gen_readme(readme_contents, vkq_timestamp, iw_timestamp, sql_timestamp, timestamp)
-    manifest_lines = merge_files("vkQuake", vkq_staging, "ironwail", iw_staging)
-    with open(os.path.join(QUAKE_FOLDER, "engines_manifest.txt"), 'w') as f:
-        f.writelines(manifest_lines)
+    source_a_set, source_b_set = merge_files("vkQuake", vkq_staging, "ironwail", iw_staging)
+    gen_user_engine_manifest("vkQuake", source_a_set, "ironwail", source_b_set)
+    gen_internal_engines_manifest(source_a_set, source_b_set)
+    gen_engines_descriptor()
     release_name = "quakestarter-" + RELEASE
-    gen_release_manifest("manifest.txt")
     shutil.make_archive(release_name, "zip", root_dir=RELEASE_FOLDER, base_dir=".")
     shutil.rmtree(RELEASE_FOLDER)
     return 0
