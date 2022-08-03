@@ -1,6 +1,12 @@
 Updating Quakestarter
 =====================
 
+Read this part first!
+---------------------
+
+The update logic in Quakestarter was introduced in version 3.3.0. If you are updating from an earlier version of Quakestarter, skip to the :ref:`"Completely manual update"<other_stuff/upgrading_quakestarter:completely manual update>` section at the bottom of this page.
+
+
 Autoupdate
 ----------
 
@@ -46,11 +52,11 @@ If update fails
 
 Hopefully you won't ever need to read this section, but realistically there are several points where things can go wrong.
 
-If an error happens at some point in the process up through the download of the update package, and you can't figure out how to resolve the problem, then you can try the update process in the "Update from downloaded archive" section below.
+If an error happens at some point in the process up through the download of the update package, and you can't figure out how to resolve the problem, then you can try the update process in the :ref:`"Update from downloaded archive"<other_stuff/upgrading_quakestarter:update from downloaded archive>` section below.
 
-It's possible that an error happens after the download, but before the actual update process is attempted. E.g. perhaps the extraction of files from the downloaded zipfile failed for some reason. As long as Quakestarter is still able to launch and run normally, you could try the update process in the "Completely manual update" section below.
+It's possible that an error happens after the download, but before the actual update process is attempted. E.g. perhaps the extraction of files from the downloaded zipfile failed for some reason. As long as Quakestarter is still able to launch and run normally, you could try the update process in the :ref:`"Completely manual update"<other_stuff/upgrading_quakestarter:completely manual update>` section below.
 
-If an error happens partway through the update, Quakestarter will tell you about it and refuse to run. In this situation you will see a "quakestarter_update" folder in your Quake folder. Your original files will be in the "quakestarter_update\\backup" folder, and the intended new files are in the "quakestarter_update\\unpacked\\Quake" folder. At this point you can choose to either manually move your original files back into place, or try putting the new files into place with the "Completely manual update" process. In either case, once you're done you must delete the "quakestarter_update" folder.
+If an error happens partway through the update, Quakestarter will tell you about it and refuse to run. In this situation you will see a "quakestarter_update" folder in your Quake folder. Your original files will be in the "quakestarter_update\\backup" folder, and the intended new files are in the "quakestarter_update\\unpacked\\Quake" folder. At this point you can choose to either manually move your original files back into place, or try putting the new files into place with the "Completely manual update" process. In either case, once you're done you must delete the "quakestarter_update" folder so Quakestarter will know that it is good to go.
 
 If you do encounter update problems, it would be appreciated if you report them `at the Quakestarter GitHub repo`_, with as much detail as possible about the error you experienced. If you're in a situation where the "quakestarter_update" folder exists, you can also provide the "update.log" file from that folder or even zip up that whole folder and provide it for examination.
 
@@ -59,16 +65,16 @@ Update from downloaded archive
 
 Instead of using autoupdate, you may want or need to download the latest Quakestarter zipfile yourself from the `Quakestarter website`_. In that case, you can drag-and-drop that downloaded zipfile onto the "quakestarter.cmd" script of your current installation, and Quakestarter will execute the update process.
 
-**Note:** If you drop an *older* Quakestarter zipfile onto "quakestarter.cmd", it will refuse to do the update. The update process can only be used to go to a newer version. If you need to "downgrade" Quakestarter, you can likely do that successfully with the "Completely manual update" process described below.
-
 Most of the autoupdate description above will still apply to this method; you're just skipping the update detection and download. The rest of the process is the same.
+
+**Note:** If you drop an *older* Quakestarter zipfile onto "quakestarter.cmd", it will refuse to do the update. The update process can only be used to go to a newer version. If you need to "downgrade" Quakestarter, you can likely do that successfully with the "Completely manual update" process described below.
 
 Completely manual update
 ------------------------
 
 Before Quakestarter got an update feature, the update process was just "download the new zipfile from the `Quakestarter website`_, then unzip the new files over top of the old files". That still works! So if you want to completely avoid the update logic in Quakestarter, you can do that.
 
-A word of warning though. If Quakestarter is currently managing some engine files, and you overwrite it with the files from a "noengine" zipfile, you are implicitly making the DETACH choice described above (in the "Quake engine management" section).
+A word of warning though. If Quakestarter is currently managing some engine files, and you overwrite it with the files from a "noengine" zipfile, you are implicitly making the DETACH choice described above (under "Quake engine management").
 
 
 .. _at the Quakestarter GitHub repo: https://github.com/neogeographica/quakestarter/issues

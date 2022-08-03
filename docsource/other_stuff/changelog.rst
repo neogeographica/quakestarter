@@ -1,6 +1,16 @@
 Changelog
 =========
 
+.. rubric:: v3.3.0 (Aug 2022)
+
+This release introduces an autoupdate feature for Quakestarter, as well as the ability to trigger the update process using a manually downloaded zipfile if you'd rather do that. These features are discussed in detail in the :doc:`Updating Quakestarter<upgrading_quakestarter>` chapter (under Other Topics).
+
+If you're updating *to* v3.3.0 from an earlier release, you don't have this feature yet! You'll still have to do the manual "overwrite your current files with the contents of the zip" kind of update process one last time. (And actually you can still continue to do Quakestarter updates that way in the future, if you want.)
+
+Of course a feature like autoupdate could be affected by variations in people's hardware, OS, and Internet connection, and it's impossible for me to test all those combinations myself. If you do hit a situation where autoupdate doesn't work for you, please let me know the details of what happened. You can use the email address in the footer of `quakestarter.com`_, or file an issue as described in :doc:`Updating Quakestarter<upgrading_quakestarter>`.
+
+Assuming the autoupdate feature is a keeper, it will be more reasonable to promptly push out new Quakestarter releases in the future. For example we can react quickly to any new version of vkQuake or Ironwail. I'm also considering adding a special menu section for recent prominent releases that haven't yet had time to accumulate ratings on Quaddicted... we'll see!
+
 .. rubric:: v3.2.0 (Jul 2022)
 
 The main point of this release is to change the bundled Quake engine(s). Instead of `Quakespasm-Spiked`_, Quakestarter will now bundle both vkQuake_ and Ironwail_. A new item has been added to the main Quakestarter menu to help you switch between any Quake engines that are present in the Quake folder, and the :doc:`Quake Engines<quake_engines>` chapter of the docs has a more extended description of these two engines.
@@ -338,6 +348,7 @@ OK, let's get to the changelist.
 For older changelog entries, see the `1.x changelog`_ archived on GitHub.
 
 
+.. _quakestarter.com: http://quakestarter.com
 .. _vkQuake: https://github.com/Novum/vkQuake
 .. _Ironwail: https://github.com/andrei-drexler/ironwail
 .. _Slipgate Sightseer: https://www.slipseer.com/
