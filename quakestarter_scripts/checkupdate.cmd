@@ -103,7 +103,7 @@ if not exist "%q_manifest%" (
   goto :nomanifest
 )
 if not "%zipfile%"=="" (
-  set destfile=zipfile
+  set destfile=%zipfile%
   goto :extract
 )
 
@@ -127,6 +127,7 @@ call :set_fileisempty "%e_desc%"
 if "%fileisempty%"=="false" (
   echo Quakestarter is currently managing some Quake engine files in this folder:
   type "%e_desc%"
+  echo.
   echo.
   echo If you download the Quake engines included in this update, those current
   echo engine files will be replaced with the new downloaded ones.
@@ -211,21 +212,21 @@ set installed_version=%version_installed_number%
 call "%update_versionfile%"
 set current_version=%version_installed_number%
 set version_installed_number=%installed_version%
-echo|set /p="set version_check_ok="> "%destdir%_version_check_ok.cmd"
-powershell.exe -nologo -noprofile -command "&{trap{exit 1;} [System.Version]\"%current_version%\" -gt [System.Version]\"%installed_version%\";}" 2>nul >> "%destdir%_version_check_ok.cmd"
+echo|set /p="set version_check_ok="> "%destdir%\_version_check_ok.cmd"
+powershell.exe -nologo -noprofile -command "&{trap{exit 1;} [System.Version]\"%current_version%\" -gt [System.Version]\"%installed_version%\";}" 2>nul >> "%destdir%\_version_check_ok.cmd"
 if not %errorlevel% equ 0 (
   goto :versioncheckerr
 )
-if not exist "%destdir%_version_check_ok.cmd" (
+if not exist "%destdir%\_version_check_ok.cmd" (
   goto :versioncheckerr
 )
-call "%destdir%_version_check_ok.cmd"
+call "%destdir%\_version_check_ok.cmd"
 if not "%version_check_ok%"=="True" (
   echo.
-  echo The update version %current_version% doesn't seem to be greater than the
-  echo installed version %installed_version%. We don't want to do something
-  echo unfortunate here, so the auto-update will not proceed. Perhaps try again
-  echo with a manual download of the latest version from quakestarter.com?
+  echo The update version %current_version% doesn't seem to be greater than the installed
+  echo version %installed_version%. We don't want to do something unfortunate here, so the
+  echo auto-update will not proceed. Perhaps try again with a manual download of the
+  echo latest version from quakestarter.com?
   echo.
   pause
   cls
@@ -251,6 +252,7 @@ echo Since your chosen update doesn't include the engine files, you have a few
 echo options about how to treat the existing files for these currently managed
 echo Quake engines:
 type "%e_desc%"
+echo.
 echo.
 echo KEEP those engines and Quakestarter will still manage them in future updates
 echo DETACH those engine's files from Quakestarter management
@@ -313,6 +315,7 @@ if "%good_backup%"=="false" (
 endlocal
 
 :update
+echo.
 echo ... applying update ...
 REM create the update script and hand off to it
 set updater=%LocalAppData%\Temp\quakestarter_update.cmd

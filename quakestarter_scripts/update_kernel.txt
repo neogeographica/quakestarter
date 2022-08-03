@@ -25,9 +25,9 @@ echo.>"%logfile%"
 REM make a copy of engine manifest if handling is KEEP
 if "%engine_handling%"=="KEEP" (
   echo saving copies of engine manifest>>"%logfile%"
-  copy /y /a "%e_desc%" "%temp_e_desc%" >>"%logfile%" 2>&1
-  copy /y /a "%user_e_manifest%" "%temp_user_e_manifest%" >>"%logfile%" 2>&1
-  copy /y /a "%e_manifest%" "%temp_e_manifest%" >>"%logfile%" 2>&1
+  copy /y "%e_desc%" "%temp_e_desc%" >>"%logfile%" 2>&1
+  copy /y "%user_e_manifest%" "%temp_user_e_manifest%" >>"%logfile%" 2>&1
+  copy /y "%e_manifest%" "%temp_e_manifest%" >>"%logfile%" 2>&1
   echo.>>"%logfile%"
 )
 
@@ -58,15 +58,16 @@ xcopy "%extractdir%\Quake\*" "%rootpath%" /s /e /c /i /r /k /y >>"%logfile%" 2>&
 set copyerror=%errorlevel%
 if "%engine_handling%"=="KEEP" (
   echo restoring engine manifest>>"%logfile%"
-  copy /y /a "%temp_e_desc%" "%e_desc%" >>"%logfile%" 2>&1
-  copy /y /a "%temp_user_e_manifest%" "%user_e_manifest%" >>"%logfile%" 2>&1
-  copy /y /a "%temp_e_manifest%" "%e_manifest%" >>"%logfile%" 2>&1
+  copy /y "%temp_e_desc%" "%e_desc%" >>"%logfile%" 2>&1
+  copy /y "%temp_user_e_manifest%" "%user_e_manifest%" >>"%logfile%" 2>&1
+  copy /y "%temp_e_manifest%" "%e_manifest%" >>"%logfile%" 2>&1
   del /f /q "%temp_e_desc%" >nul 2>&1
   del /f /q "%temp_user_e_manifest%" >nul 2>&1
   del /f /q "%temp_e_manifest%" >nul 2>&1
 )
 
 if %copyerror% equ 0 (
+  echo.
   echo ... done!
   echo.
   rd /q /s "%destdir%" >nul 2>&1
