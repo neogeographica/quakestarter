@@ -14,6 +14,7 @@ Assuming the autoupdate feature is a keeper, it will be more reasonable to promp
 Other stuff in this release:
 
 * Update docs to reflect that the Windows version of Quake Injector no longer relies on a system Java installation.
+* `Quake Sewer Jam`_ has had a bit of a ratings bump that brings it out of the "legacies" menu and back into the Post-AD episodes menu.
 * Rename the "The Age of Jams" category to "The Coming of the Jams", since obviously we still have a lot of jams going on! Also rename "The New Hotness" to "The Next Generation" since it's become more of a standard "era" category now rather than just sort-of-recent-stuff.
 * Speaking of which: add a new "The Latest Greatest" category which is specifically for recent high-profile releases (as determined by me, I guess). Check out that menu page for more explanation on how it works.
 
@@ -356,6 +357,7 @@ For older changelog entries, see the `1.x changelog`_ archived on GitHub.
 
 
 .. _quakestarter.com: http://quakestarter.com
+.. _Quake Sewer Jam: https://www.quaddicted.com/reviews/sewerjam.html
 .. _vkQuake: https://github.com/Novum/vkQuake
 .. _Ironwail: https://github.com/andrei-drexler/ironwail
 .. _Slipgate Sightseer: https://www.slipseer.com/
