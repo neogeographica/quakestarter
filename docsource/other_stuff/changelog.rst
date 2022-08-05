@@ -11,6 +11,11 @@ Of course a feature like autoupdate could be affected by variations in people's 
 
 Assuming the autoupdate feature is a keeper, it will be more reasonable to promptly push out new Quakestarter releases in the future. For example we can react quickly to any new version of vkQuake or Ironwail. I'm also considering adding a special menu section for recent prominent releases that haven't yet had time to accumulate ratings on Quaddicted... we'll see!
 
+Other stuff in this release:
+
+* Some doc updates to reflect that the Windows version of Quake Injector no longer relies on a system Java installation.
+
+
 .. rubric:: v3.2.0 (Jul 2022)
 
 The main point of this release is to change the bundled Quake engine(s). Instead of `Quakespasm-Spiked`_, Quakestarter will now bundle both vkQuake_ and Ironwail_. A new item has been added to the main Quakestarter menu to help you switch between any Quake engines that are present in the Quake folder, and the :doc:`Quake Engines<quake_engines>` chapter of the docs has a more extended description of these two engines.

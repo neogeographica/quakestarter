@@ -4,7 +4,7 @@ Explore More
 Quake Injector
 --------------
 
-`Quake Injector`_ is worth a look when you're ready to really dig into Quake addons. It has a bit of a learning curve, but it runs on any OS (as a Java app) and it understands how to install and launch every bit of content from Quaddicted.
+`Quake Injector`_ is worth a look when you're ready to really dig into Quake addons. It runs on any OS and it understands how to install and launch almost every bit of content from Quaddicted.
 
 Quake Injector will *not* automatically apply the patches/fixes that Quakestarter does. The best way to find out what patches might be available for a release is to check out its individual page linked from `the Quaddicted reviews`_... see if the description in the upper right has an "additional files" section, and also maybe check the user comments as well. If there are available patches that you need (usually there won't be any), then you will have to manually download/extract/install those files into the mod folder.
 
@@ -13,11 +13,6 @@ Note that Quake Injector likes to keep around the zipfiles that it downloads, ev
 The downloads location for Quake Injector is configured in the "Engine Configuration" dialog. The downloads location for Quakestarter is described in the :doc:`Advanced Configuration<../other_stuff/advanced_quakestarter_cfg>` chapter (under Other Topics). You can change one or the other of these locations so that they both point to the same folder. If you do this, you'll probably also want to configure Quakestarter to leave zipfiles in that folder and *not* delete them after they are installed, to match the behavior of Quake Injector.
 
 One thing to look out for though is that Quakestarter doesn't work exactly the same as Quake Injector when it comes to choosing the name for a mod folder. Quakestarter will always use the name of the zipfile to determine the name of the folder, while Quake Injector may have other ideas. So to avoid confusion and wasted disk space on duplicate stuff, it's best to eventually settle on using only one of these install methods.
-
-As a final note, a couple of projects exist that aim to provide Quake Injector (or a Quake-Injector-alike interface) as an executable that doesn't require Java. I haven't personally tried either of these yet but FYI...
-
-* `a standalone Quake Injector build`_
-* `a reimplementation of Quake Injector using Qt`_
 
 
 DIY
@@ -38,8 +33,6 @@ If you want more discussion about running Quake addons, see this relevant `Steam
 
 .. _Quake Injector: https://www.quaddicted.com/tools/quake_injector
 .. _the Quaddicted reviews: https://www.quaddicted.com/reviews/
-.. _a standalone Quake Injector build: https://github.com/hrehfeld/QuakeInjector/releases/tag/alpha04-gradle
-.. _a reimplementation of Quake Injector using Qt: https://sourceforge.net/projects/quake-injector-qt/
 .. _Quaddicted: https://www.quaddicted.com/reviews/
 .. _Slipgate Sightseer: https://www.slipseer.com/
 .. _the func_msgboard forum: http://www.celephais.net/board/forum.php
