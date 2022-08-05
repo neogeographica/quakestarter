@@ -1,8 +1,10 @@
 @echo off
 
 REM Installer for mapsets that fit the following criteria:
-REM * released from 2020 on
-REM * Quaddicted user rating 4.45 or better (normalized Bayesian average)
+REM * released within the past six months
+REM * a high-profile high-quality release... completely subjective!
+REM
+REM See the commentary in the "echo" messages below.
 
 setlocal
 
@@ -46,20 +48,21 @@ set modsettings[0]=
 set startdemos=
 set junkdirs=
 cls
-call :installed_check ad_heresp1
-call :installed_check zigisp1
-call :installed_check ad_heresp2
-call :installed_check purifier
 call :installed_check plaw02
 call :installed_check markiesm1v2
+call :installed_check sm_217
 echo.
-echo Selected other custom maps released from 2020 through 2022:
-echo %is_ad_heresp1_installed%  1: ad_heresp1 - Oxyblack Fortress
-echo %is_zigisp1_installed%  2: zigisp1 - A Verdant Dawn
-echo %is_ad_heresp2_installed%  3: ad_heresp2 - Imhotep's Legacy
-echo %is_purifier_installed%  4: purifier - The Purifier
-echo %is_plaw02_installed%  5: plaw02 - Waldsterben
-echo %is_markiesm1v2_installed%  6: markiesm1v2 - Slip Tripping
+echo This menu is a selection of high-profile releases from the past six months. A
+echo release in this category can also eventually appear in one of the "The Next
+echo Generation" categories (episodes or other) if it gains a high enough rating
+echo on Quaddicted.
+echo.
+echo After six months, a release will be removed from this category. If it hasn't
+echo made it into "The Next Generation" it will be added to the legacies menu.
+echo.
+echo %is_plaw02_installed%  1: plaw02 - Waldsterben
+echo %is_markiesm1v2_installed%  2: markiesm1v2 - Slip Tripping
+echo %is_sm_217_installed%  3: sm_217 - Remaster Textures
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
@@ -71,32 +74,8 @@ set /p menu_choice=enter your choice or just press Enter to exit:
 echo.
 goto %menu_choice%
 
+REM Waldsterben should age out after 8/22/2022
 :1
-set base_game=%latest_ad%
-set start_map=ad_heresp1
-set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" ad_heresp1
-goto :menu
-
-:2
-set start_map=zigisp1
-call "%scriptspath%_handle_mod_choice.cmd" zigisp1
-goto :menu
-
-:3
-set base_game=%latest_ad%
-set start_map=ad_heresp2
-set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" ad_heresp2
-goto :menu
-
-:4
-set start_map=purifier
-set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" purifier
-goto :menu
-
-:5
 set base_game=%latest_copper%
 set start_map=plaw02
 set skip_quakerc_gen=true
@@ -108,9 +87,17 @@ set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestart
 call "%scriptspath%_handle_mod_choice.cmd" plaw02
 goto :menu
 
-:6
+REM Slip Tripping should age out after 10/2/2022
+:2
 set start_map=markiesm1
 call "%scriptspath%_handle_mod_choice.cmd" markiesm1v2
+goto :menu
+
+REM Remaster Textures should age out after 11/11/2022
+:3
+set start_map=start
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" sm_217
 goto :menu
 
 
@@ -123,3 +110,4 @@ if exist "%basedir%\%1" (
   set is_%1_installed= 
 )
 goto :eof
+

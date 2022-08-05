@@ -70,7 +70,7 @@ Additional content
 
 The remaining choices in the Quakestarter menus can be used to download and play some of the many community-created singleplayer adventures. These choices, and ways to find all the rest of the available Quake singleplayer content, are discussed in the following chapters.
 
-If you're seeking something that was recently released, it might be under "The New Hotness" menu selections. On the other hand if you want to start with the classics then (unsurprisingly) the "Classic" selections would be the place to look. And there's a lot of stuff in between!
+If you're seeking something that was recently released, it might be under "The Latest Greatest" menu selections. On the other hand if you want to start with the classics then (unsurprisingly) the "Classic" selections would be the place to look. And there's a lot of stuff in between!
 
 
 .. _last 1.x release of Quakestarter: https://github.com/neogeographica/quakestarter/releases/tag/v1.10

@@ -120,17 +120,20 @@ echo  2: Find soundtrack music files on this computer or download
 echo  3: Change Quake engine setting ^(currently: %quake_exe%^)
 echo  4: Test-launch unmodified Quake
 echo.
+echo Recent high-profile releases:
+echo  5: The Latest Greatest
+echo.
 echo Additional episodes/hubs:
-echo  5: The New Hotness ^(2020-2022; ratings in flux^)
-echo  6: Post-AD ^(after the first Arcane Dimensions release; 2016-2019^)
-echo  7: Modern ^(after Nehahra; 2000-2015^)
-echo  8: Classic
+echo  6: The Next Generation ^(2020 onward^)
+echo  7: Post-AD ^(after the first Arcane Dimensions release; 2016-2019^)
+echo  8: Modern ^(after Nehahra; 2000-2015^)
+echo  9: Classic
 echo.
 echo Other highly-rated releases:
-echo  9: The New Hotness ^(2020-2022; ratings in flux^)
-echo 10: The Age of Jams ^(2014-2019^)
-echo 11: Post-Quoth ^(after the first Quoth release; 2006-2013^)
-echo 12: Classic
+echo 10: The Next Generation ^(2020 onward^)
+echo 11: The Coming of the Jams ^(2014-2019^)
+echo 12: Post-Quoth ^(after the first Quoth release; 2006-2013^)
+echo 13: Classic
 echo.
 if "%show_legacies_menu%"=="true" (
   echo Select 99 to manage "legacy" releases that were in the installer menus of
@@ -161,34 +164,38 @@ call "%scriptspath%testlaunch.cmd"
 goto :menu
 
 :5
-call "%scriptspath%episodes_latest.cmd"
+call "%scriptspath%recent.cmd"
 goto :menu
 
 :6
-call "%scriptspath%episodes_post_ad.cmd"
+call "%scriptspath%episodes_latest.cmd"
 goto :menu
 
 :7
-call "%scriptspath%episodes_modern.cmd"
+call "%scriptspath%episodes_post_ad.cmd"
 goto :menu
 
 :8
-call "%scriptspath%episodes_classic.cmd"
+call "%scriptspath%episodes_modern.cmd"
 goto :menu
 
 :9
-call "%scriptspath%other_latest.cmd"
+call "%scriptspath%episodes_classic.cmd"
 goto :menu
 
 :10
-call "%scriptspath%other_aoj.cmd"
+call "%scriptspath%other_latest.cmd"
 goto :menu
 
 :11
-call "%scriptspath%other_post_quoth.cmd"
+call "%scriptspath%other_aoj.cmd"
 goto :menu
 
 :12
+call "%scriptspath%other_post_quoth.cmd"
+goto :menu
+
+:13
 call "%scriptspath%other_classic.cmd"
 goto :menu
 
