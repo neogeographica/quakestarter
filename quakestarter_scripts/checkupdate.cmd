@@ -117,7 +117,7 @@ echo Sent update notes to web browser...
 
 :dlchoice
 echo.
-set /p dl_choice=Download and install this update? ([y]/n):
+set /p dl_choice=Download and install this update now? ([y]/n):
 if "%dl_choice%"=="n" goto :bailout
 if "%dl_choice%"=="N" goto :bailout
 
@@ -189,8 +189,8 @@ if not exist "%extractdir%" (
 )
 if "%good_extraction%"=="false" (
   echo.
-  echo Failed to unpack the update archive. Perhaps try again with a manual
-  echo download of the latest version from quakestarter.com?
+  echo Failed to unpack the update archive. Perhaps try again with a manual download
+  echo of the latest version from quakestarter.com?
   echo.
   pause
   cls
@@ -225,7 +225,7 @@ if not "%version_check_ok%"=="True" (
   echo.
   echo The update version %current_version% doesn't seem to be greater than the installed
   echo version %installed_version%. We don't want to do something unfortunate here, so the
-  echo auto-update will not proceed. Perhaps try again with a manual download of the
+  echo autoupdate will not proceed. Perhaps try again with a manual download of the
   echo latest version from quakestarter.com?
   echo.
   pause
@@ -305,7 +305,7 @@ for /f "tokens=*" %%f in (%q_manifest% %e_manifest%) do (
 )
 if "%good_backup%"=="false" (
   echo.
-  echo Failed to make a complete backup; without a backup, auto-update will not
+  echo Failed to make a complete backup; without a backup, autoupdate will not
   echo proceed. Perhaps try again?
   echo.
   pause
@@ -355,6 +355,13 @@ popd
 exit /b 1
 
 :bailout
+echo.
+echo Checking for updates will be disabled until tomorrow. If you want to
+echo permanently disable autoupdate, see the Updating Quakestarter chapter ^(under
+echo Other Topics^) in the Quakestarter docs.
+echo.
+echo set version_current=%version_installed%> "%scriptspath%_version_current.cmd"
+pause
 cls
 :silentbailout
 popd
@@ -366,7 +373,7 @@ echo This manifest file is missing from the current Quakestarter files:
 echo   %rootpath%%bad_manifest%
 echo.
 echo Without the manifests, we can't make a backup of current files, and
-echo auto-update will not proceed. Perhaps try a manual update ^(see the
+echo autoupdate will not proceed. Perhaps try a manual update ^(see the
 echo Quakestarter docs for that^) using the latest version from quakestarter.com?
 echo.
 pause
