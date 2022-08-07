@@ -51,6 +51,8 @@ The tools included in this package are:
 
 * If you got the normal Quakestarter bundle (not the "noengine" bundle), then it also includes the vkQuake_ and Ironwail_ "Quake engines", i.e. programs for playing Quake that replace the original programs like WinQuake and GLQuake. Note that there are several other Quake engines out there; see the :doc:`Quake Engines<other_stuff/quake_engines>` chapter (under Other Topics) if you're curious.
 
+Finally, Quakestarter also includes an optional autoupdate feature to keep all of the above up-to-date.
+
 Note that the programs in this package are meant to be used on Windows 7, 8, 10, or 11. If you are using a different OS then the programs here won't be as useful, but these docs might be. See the :doc:`Beyond Windows<other_stuff/not_windows>` chapter (under Other Topics) for some specific pointers.
 
 

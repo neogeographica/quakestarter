@@ -6,7 +6,11 @@ Launching with Quakestarter
 
 Quakestarter is meant to help you get your Quake installation set up and then to manage and play various addons.
 
-Other than the "Basic setup" section of the main menu (whose options were already described in :doc:`Installation<installation>` and :doc:`Configuration<configuration>`), the rest of the choices in the main Quakestarter menu will take you to pages where you can choose to install and play these addons. There are two other main sections:
+Other than the "Basic setup" section of the main menu (whose options were already described in :doc:`Installation<installation>` and :doc:`Configuration<configuration>`), the rest of the choices in the main Quakestarter menu will take you to pages where you can choose to install and play these addons. There are three other main sections:
+
+  * In "The Latest Greatest" list, you'll see a subjective selection of the buzz-iest releases of the past six months. (Depending on the rating that a release has accumulated so far, it may also appear in one of the other sections below.)
+
+|br|
 
   * Each choice in "Additional episodes/hubs" leads to a list of good-sized map collections that include a starting map, which either leads you into a linear sequence of other maps or else acts as a hub from which you can explore the other maps of the addon in any order.
 

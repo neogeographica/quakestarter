@@ -9,7 +9,7 @@ If you already have an installation of the original Quake game somewhere on the 
 Stores cheat-sheet
 ------------------
 
-If you just want to know how Quake installations from various stores can help the Quakestarter auto-setup, here's the bottom line about the files that those store installations provide (as of the last time this doc was updated, April 2022).
+If you just want to know how Quake installations from various stores can help the Quakestarter auto-setup, here's the bottom line about the files that those store installations provide (as of the last time this doc was updated, August 2022).
 
 * The original Quake pak files (game data) are provided by Steam and GOG.
 
