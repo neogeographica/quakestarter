@@ -44,11 +44,11 @@ set destfile=%basedir%\%download_subdir%\%~nx1
 set gamedir=%~2
 if "%gamedir%"=="%~n1" (
   if not "%less_chatty_install%"=="true" (
-    echo Installing mod "%gamedir%"...
+    echo Installing "%gamedir%"...
   )
 ) else (
   if not "%less_chatty_install%"=="true" (
-    echo Installing mod "%~n1" as "%gamedir%"...
+    echo Installing "%~n1" as "%gamedir%"...
   )
 )
 

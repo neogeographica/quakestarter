@@ -1,6 +1,8 @@
 REM Helper "subroutine" script to process a mod-installer menu choice.
 
-REM On the commandline, the addon_name arg is required.
+REM On the commandline, the addon_name arg is required. A second argument
+REM specifying the download URL is optional; if omitted (as usual) then the
+REM URL is implicitly for the named addon at Quaddicted.
 
 REM The caller is also required to set the basedir and quake_exe variables.
 
@@ -70,13 +72,21 @@ if %errorlevel% equ 0 (
   if "%review_page%"=="" (
     start /b https://www.quaddicted.com/reviews/%addon_name%.html
   ) else (
-    start /b https://www.quaddicted.com/reviews/%review_page%.html
+    if not "%review_page%"=="%review_page:https://=%" (
+      start /b %review_page%
+    ) else (
+      start /b https://www.quaddicted.com/reviews/%review_page%.html
+    )
   )
   goto :eof
 )
 
 set archive=%addon_name%.zip
-set url=https://www.quaddicted.com/filebase/%archive%
+if "%2"=="" (
+  set url=https://www.quaddicted.com/filebase/%archive%
+) else (
+  set url=%~2
+)
 if "%renamed_gamedir%"=="" (
   set gamedir=%1
 ) else (
