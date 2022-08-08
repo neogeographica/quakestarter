@@ -17,7 +17,7 @@ Other stuff in this release:
 * `Quake Sewer Jam`_ has had a bit of a ratings bump that brings it out of the "legacies" menu and back into the Post-AD episodes menu.
 * Rename the "The Age of Jams" category to "The Coming of the Jams", since obviously we still have a lot of jams going on! Also rename "The New Hotness" to "The Next Generation" since it's become more of a standard "era" category now rather than just sort-of-recent-stuff.
 * Speaking of which: add a new "The Latest Greatest" category which is specifically for recent high-profile releases (as determined by me, I guess). Check out that menu page for more explanation on how it works.
-* Inaugrate "The Latest Greatest" with a few recent releases that are still less than six months old, and also add the super-new release of `Coppertone Summer Jam 2`_ there.
+* Inaugurate "The Latest Greatest" with a few recent releases that are still less than six months old, and also add the super-new release of `Coppertone Summer Jam 2`_ there.
 
 
 .. rubric:: v3.2.0 (Jul 2022)
