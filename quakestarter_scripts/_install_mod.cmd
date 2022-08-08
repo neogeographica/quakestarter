@@ -44,11 +44,11 @@ set destfile=%basedir%\%download_subdir%\%~nx1
 set gamedir=%~2
 if "%gamedir%"=="%~n1" (
   if not "%less_chatty_install%"=="true" (
-    echo Installing mod "%gamedir%"...
+    echo Installing "%gamedir%"...
   )
 ) else (
   if not "%less_chatty_install%"=="true" (
-    echo Installing mod "%~n1" as "%gamedir%"...
+    echo Installing "%~n1" as "%gamedir%"...
   )
 )
 
@@ -81,7 +81,7 @@ if not exist "%destfile%" (
     md "%basedir%\%download_subdir%"
   )
   if "%hascurl%"=="true" (
-    curl -f -# -o "%destfile%" "%url%"
+    curl -L -f -# -o "%destfile%" "%url%"
   ) else (
     powershell.exe -nologo -noprofile -command "&{trap{exit 1;} [System.Net.ServicePointManager]::SecurityProtocol=[System.Net.SecurityProtocolType]::Tls -bor [System.Net.SecurityProtocolType]::Tls11 -bor [System.Net.SecurityProtocolType]::Tls12;(new-object System.Net.WebClient).DownloadFile(\"%url%\",\"%destfile%\");}"
   )

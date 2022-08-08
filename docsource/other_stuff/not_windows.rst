@@ -3,7 +3,7 @@ Beyond Windows
 
 If you would rather play Quake on macOS or some Linux distro, you can do that! The same Quake pak files and custom content will work on any OS.
 
-vkQuake_ does have Linux builds available. It will also work on macOS but in that case you'd need to `build it yourself from source`_.
+vkQuake_ does have Linux builds available. It will also work on macOS but doesn't have official Mac builds; for macOS you can either `build it yourself from source`_ or, if you have a GitHub account, click on a recent `automated macOS build`_ from the "master" branch and download the "vkQuake archive" from the bottom of its page.
 
 Ironwail_ does not work on macOS at all because of OpenGL driver limitations there. On Linux you can build it yourself if you like; just run "make" inside the Quake directory of its source code.
 
@@ -20,6 +20,7 @@ Finally, if you're playing on Ubuntu Linux (or an Ubuntu-like) and consider your
 
 .. _vkQuake: https://github.com/Novum/vkQuake
 .. _build it yourself from source: https://github.com/Novum/vkQuake#macos
+.. _automated macOS build: https://github.com/Novum/vkQuake/actions/workflows/build-mac.yml
 .. _Ironwail: https://github.com/andrei-drexler/ironwail
 .. _sourcecode repo: https://github.com/Shpoike/Quakespasm
 .. _Steam guide: http://steamcommunity.com/sharedfiles/filedetails/?id=119489135

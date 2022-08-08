@@ -8,9 +8,9 @@ The top-level "Quake" folder for this package is meant to be usable as the basis
 
 Another option however is to take the folders and files from inside this "Quake" folder and move them into some existing Quake installation that you have. If that's an installation of original Quake files such as you would get from Steam or GOG, this will work fine. (Note that this should be an installation of the original Quake, not the "enhanced" Quake rerelease.)
 
-If the existing Quake installation already contains an older version of Quakestarter, please see the the :doc:`Upgrading Quakestarter<../other_stuff/upgrading_quakestarter>` chapter (under Other Topics).
+If the existing Quake installation already contains an older version of Quakestarter, please see the the :doc:`Updating Quakestarter<../other_stuff/upgrading_quakestarter>` chapter (under Other Topics).
 
-If you are moving these items into some other already-customized Quake installation that contains a modern Quake engine, then you might want to consider using the "noengine" version of this bundle if you aren't already doing that. Otherwise the engine files bundled in this package can overwrite and perhaps conflict with existing files in your Quake directory. One thing to note is that the "engines_manifest.txt" file lists all of the vkQuake and Ironwail files in this package, which is helpful if you need to discard them. (If you don't have "engines_manifest.txt", then you are using the "noengine" bundle already.)
+If you are moving these items into some other already-customized Quake installation that contains a modern Quake engine, then you might want to consider using the "noengine" version of this bundle if you aren't already doing that. Otherwise the engine files bundled in this package can overwrite and perhaps conflict with existing files in your Quake directory. In this particular situation you definitely want to read the next section below about Quake engines!
 
 
 Quake engine
@@ -70,7 +70,7 @@ Additional content
 
 The remaining choices in the Quakestarter menus can be used to download and play some of the many community-created singleplayer adventures. These choices, and ways to find all the rest of the available Quake singleplayer content, are discussed in the following chapters.
 
-If you're seeking something that was recently released, it might be under "The New Hotness" menu selections. On the other hand if you want to start with the classics then (unsurprisingly) the "Classic" selections would be the place to look. And there's a lot of stuff in between!
+If you're seeking something that was recently released, it might be under "The Latest Greatest" menu selections. On the other hand if you want to start with the classics then (unsurprisingly) the "Classic" selections would be the place to look. And there's a lot of stuff in between!
 
 
 .. _last 1.x release of Quakestarter: https://github.com/neogeographica/quakestarter/releases/tag/v1.10

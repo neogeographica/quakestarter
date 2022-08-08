@@ -1,6 +1,25 @@
 Changelog
 =========
 
+.. rubric:: v3.3.0 (Aug 2022)
+
+This release introduces an autoupdate feature for Quakestarter, as well as the ability to trigger the update process using a manually downloaded zipfile if you'd rather do that. Autoupdate covers not only the Quakestarter scripts but also vkQuake and Ironwail (unless you are using a "noengine" bundle). These features are discussed in detail in the :doc:`Updating Quakestarter<upgrading_quakestarter>` chapter (under Other Topics).
+
+If you're updating *to* v3.3.0 from an earlier release, you don't have this feature yet! You'll still have to do the manual "overwrite your current files with the contents of the zip" kind of update process one last time. (And actually you can still continue to do Quakestarter updates that way in the future, if you want.)
+
+Of course a feature like autoupdate could be affected by variations in people's hardware, OS, and Internet connection, and it's impossible for me to test all those combinations myself. If you do hit a situation where autoupdate doesn't work for you, please let me know the details of what happened. You can use the email address in the footer of `quakestarter.com`_, or file an issue as described in :doc:`Updating Quakestarter<upgrading_quakestarter>`.
+
+Assuming the autoupdate feature is a keeper, it will be more reasonable to promptly push out new Quakestarter releases in the future. For example we can react quickly to any new version of vkQuake or Ironwail. Also see the note about the new "The Latest Greatest" category below.
+
+Other stuff in this release:
+
+* Update the docs here and there with various improvements. Probably the most significant change is to note that the Windows version of Quake Injector no longer relies on a system Java installation.
+* `Quake Sewer Jam`_ has had a bit of a ratings bump that brings it out of the "legacies" menu and back into the Post-AD episodes menu.
+* Rename the "The Age of Jams" category to "The Coming of the Jams", since obviously we still have a lot of jams going on! Also rename "The New Hotness" to "The Next Generation" since it's become more of a standard "era" category now rather than just sort-of-recent-stuff.
+* Speaking of which: add a new "The Latest Greatest" category which is specifically for recent high-profile releases (as determined by me, I guess). Check out that menu page for more explanation on how it works.
+* Inaugrate "The Latest Greatest" with a few recent releases that are still less than six months old, and also add the super-new release of `Coppertone Summer Jam 2`_ there.
+
+
 .. rubric:: v3.2.0 (Jul 2022)
 
 The main point of this release is to change the bundled Quake engine(s). Instead of `Quakespasm-Spiked`_, Quakestarter will now bundle both vkQuake_ and Ironwail_. A new item has been added to the main Quakestarter menu to help you switch between any Quake engines that are present in the Quake folder, and the :doc:`Quake Engines<quake_engines>` chapter of the docs has a more extended description of these two engines.
@@ -26,7 +45,7 @@ This release also has a few doc updates to take into account the opening of `Sli
 
 This release is purely about updating the lists of installables. Four 2022 releases have popped up just over the ratings threshold, but interestingly so have several older releases all the way back to 1997. For this release I'm experimenting with doing a little blurb for each addition, so here's a rundown from newest to oldest.
 
-In the New Hotness menus (Episodes and Other):
+In the Next Generation menus (Episodes and Other):
 
 * Speedmap event #217 was themed on `Remaster Textures`_ (2022, in Episodes) from the Quake re-release; this new coat of paint got the creative juices flowing for some old hands and new blood.
 * `Slip Tripping`_ (2022, in Other) is a polished bite-sized gem from Markie_, the multi-talented mapper behind the `Quake Builder`_ and `Markie Music`_ channels.
@@ -35,7 +54,7 @@ In the New Hotness menus (Episodes and Other):
 
 And in the other menus:
 
-* `The Elder Reality`_ (2016, in Other - The Age of Jams) is an artful tribute to the maps of Episode 4, from PuLSaR_ who is no stranger to these lists.
+* `The Elder Reality`_ (2016, in Other - The Coming of the Jams) is an artful tribute to the maps of Episode 4, from PuLSaR_ who is no stranger to these lists.
 * `Deathmatch Classics Vol. 3`_ (2011, in Episodes - Modern) -- returning from its exile in the "legacies" menu -- brings together heavy hitters to spin SP interpretations of DM maps from id and the community.
 * `A Roman Wilderness Of Pain`_ (2009, in Other - Post-Quoth), also returning from "legacies", delivers epic scale like only Tronyn_ can. Check out the `retrospective about this mapset`_ while you're here!
 * `This Onion`_ (2007, in Other - Post-Quoth) from `Mike Woodham`_, a moody and quirky adventure, is the final entry here to escape from "legacies" with a ratings boost. (Curiously `its sequel/remake`_ is still a hair short of doing likewise.)
@@ -338,6 +357,9 @@ OK, let's get to the changelist.
 For older changelog entries, see the `1.x changelog`_ archived on GitHub.
 
 
+.. _quakestarter.com: http://quakestarter.com
+.. _Quake Sewer Jam: https://www.quaddicted.com/reviews/sewerjam.html
+.. _Coppertone Summer Jam 2: https://www.slipseer.com/index.php?resources/coppertone-summer-jam-2.103
 .. _vkQuake: https://github.com/Novum/vkQuake
 .. _Ironwail: https://github.com/andrei-drexler/ironwail
 .. _Slipgate Sightseer: https://www.slipseer.com/

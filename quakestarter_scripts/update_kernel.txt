@@ -1,0 +1,95 @@
+REM This is the script body used to build the actual upgrade script that
+REM will be run. The final script is composed by prepending sets for these
+REM variables (above this comment):
+REM   rootpath
+REM   destdir
+REM   extractdir
+REM   backupdir
+REM   engine_handling
+
+set logfile=%destdir%\update.log
+
+cd "%rootpath%"
+
+set e_desc=quakestarter_scripts\engines_descriptor.txt
+set user_e_manifest=engines_manifest.txt
+set e_manifest=quakestarter_scripts\internal_engines_manifest.txt
+set q_manifest=quakestarter_scripts\internal_qs_manifest.txt
+
+set temp_e_desc=%LocalAppData%\Temp\quakestarter_tmp_e_desc.txt
+set temp_user_e_manifest=%LocalAppData%\Temp\quakestarter_tmp_efiles_user.txt
+set temp_e_manifest=%LocalAppData%\Temp\quakestarter_tmp_efiles.txt
+
+echo.>"%logfile%"
+
+REM make a copy of engine manifest if handling is KEEP
+if "%engine_handling%"=="KEEP" (
+  echo saving copies of engine manifest>>"%logfile%"
+  copy /y "%e_desc%" "%temp_e_desc%" >>"%logfile%" 2>&1
+  copy /y "%user_e_manifest%" "%temp_user_e_manifest%" >>"%logfile%" 2>&1
+  copy /y "%e_manifest%" "%temp_e_manifest%" >>"%logfile%" 2>&1
+  echo.>>"%logfile%"
+)
+
+REM best-effort deletion of current files
+echo removing the following files from %rootpath%>>"%logfile%"
+if "%engine_handling%"=="ERASE" (
+  type "%e_manifest%">>"%logfile%"
+)
+type "%q_manifest%">>"%logfile%"
+echo.>>"%logfile%"
+if "%engine_handling%"=="ERASE" (
+  for /f "tokens=*" %%f in (%e_manifest%) do (
+    del /f /q "%%f" >>"%logfile%" 2>&1
+  )
+)
+for /f "tokens=*" %%f in (%q_manifest%) do (
+  if exist "%%f\" (
+    rd /q /s "%%f" >>"%logfile%" 2>&1
+  ) else (
+    del /f /q "%%f" >>"%logfile%" 2>&1
+  )
+)
+
+REM ok bring in the new files
+echo.>>"%logfile%"
+echo installing new files>>"%logfile%"
+xcopy "%extractdir%\Quake\*" "%rootpath%" /s /e /c /i /r /k /y >>"%logfile%" 2>&1
+set copyerror=%errorlevel%
+if "%engine_handling%"=="KEEP" (
+  echo restoring engine manifest>>"%logfile%"
+  copy /y "%temp_e_desc%" "%e_desc%" >>"%logfile%" 2>&1
+  copy /y "%temp_user_e_manifest%" "%user_e_manifest%" >>"%logfile%" 2>&1
+  copy /y "%temp_e_manifest%" "%e_manifest%" >>"%logfile%" 2>&1
+  del /f /q "%temp_e_desc%" >nul 2>&1
+  del /f /q "%temp_user_e_manifest%" >nul 2>&1
+  del /f /q "%temp_e_manifest%" >nul 2>&1
+)
+
+if %copyerror% equ 0 (
+  echo.
+  echo ... done!
+  echo.
+  rd /q /s "%destdir%" >nul 2>&1
+  pause
+  cls
+  start /b /i cmd /c quakestarter.cmd & exit
+) else (
+  echo.>>"%logfile%"
+  echo error in copy>>"%logfile%"
+  echo.
+  echo Failed to complete the update. Some or all of the files in this folder
+  echo ^(and its quakestarter subfolders^) may be missing or wrong:
+  echo   %rootpath%
+  echo You can find a backup of the original files in this folder:
+  echo   %backupdir%
+  echo And the intended new files are in this folder:
+  echo   %extractdir%\Quake
+  echo.
+  echo You can manually move the old files back into place or use the new files
+  echo instead ^(see the Quakestarter docs about manual update^). Once you've
+  echo finished, delete the quakestarter_update folder.
+  echo.
+  pause
+  start /b cmd /c del "%~f0" & exit
+)
