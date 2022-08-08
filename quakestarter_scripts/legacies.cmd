@@ -39,7 +39,6 @@ call :installed_check digs05 rating
 call :installed_check fmb_bdg2 rating
 call :installed_check func_mapjam5
 call :installed_check ad_paradise rating
-call :installed_check sewerjam
 call :installed_check unusedjam rating
 call :installed_check bluemonday_v2 rating
 call :installed_check ad_v1_70final version
@@ -110,30 +109,27 @@ if "%show_rating%"=="true" (
   if "%show_ad_paradise%"=="true" (
     echo %is_ad_paradise_installed%  7: ad_paradise - Paradise Sickness ^(2017^)
   )
-  if "%show_sewerjam%"=="true" (
-    echo %is_sewerjam_installed%  8: sewerjam - Quake Sewer Jam ^(2019^)
-  )
   if "%show_unusedjam%"=="true" (
-    echo %is_unusedjam_installed%  9: unusedjam - Unused Jam ^(2021^)
+    echo %is_unusedjam_installed%  8: unusedjam - Unused Jam ^(2021^)
   )
   if "%show_bluemonday_v2%"=="true" (
-    echo %is_bluemonday_v2_installed% 10: bluemonday_v2 - Blue Monday Jam ^(2021^)
+    echo %is_bluemonday_v2_installed%  9: bluemonday_v2 - Blue Monday Jam ^(2021^)
   )
   echo.
 )
 if "%show_version%"=="true" (
   echo Dropped because superseded by a newer version:
   if "%show_ad_v1_70final%"=="true" (
-    echo %is_ad_v1_70final_installed% 11: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
+    echo %is_ad_v1_70final_installed% 10: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
   )
   if "%show_copper_v1_15%"=="true" (
-    echo %is_copper_v1_15_installed% 12: copper_v1_15 - Copper 1.15 ^(2020^)
+    echo %is_copper_v1_15_installed% 11: copper_v1_15 - Copper 1.15 ^(2020^)
   )
   if "%show_copper_v1_16%"=="true" (
-    echo %is_copper_v1_16_installed% 13: copper_v1_16 - Copper 1.16 ^(2021^)
+    echo %is_copper_v1_16_installed% 12: copper_v1_16 - Copper 1.16 ^(2021^)
   )
   if "%show_copper_v1_17%"=="true" (
-    echo %is_copper_v1_17_installed% 14: copper_v1_17 - Copper 1.17 ^(2021^)
+    echo %is_copper_v1_17_installed% 13: copper_v1_17 - Copper 1.17 ^(2021^)
   )
   echo.
 )
@@ -220,14 +216,6 @@ call "%scriptspath%_handle_mod_choice.cmd" ad_paradise
 goto :menu
 
 :8
-if not "%show_sewerjam%"=="true" (
-  goto :eof
-)
-set start_map=start
-call "%scriptspath%_handle_mod_choice.cmd" sewerjam
-goto :menu
-
-:9
 if not "%show_unusedjam%"=="true" (
   goto :eof
 )
@@ -235,7 +223,7 @@ set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" unusedjam
 goto :menu
 
-:10
+:9
 if not "%show_bluemonday_v2%"=="true" (
   goto :eof
 )
@@ -245,7 +233,7 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" bluemonday_v2
 goto :menu
 
-:11
+:10
 if not "%show_ad_v1_70final%"=="true" (
   goto :eof
 )
@@ -255,7 +243,7 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" ad_v1_70final
 goto :menu
 
-:12
+:11
 if not "%show_copper_v1_15%"=="true" (
   goto :eof
 )
@@ -264,7 +252,7 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" copper_v1_15
 goto :menu
 
-:13
+:12
 if not "%show_copper_v1_16%"=="true" (
   goto :eof
 )
@@ -273,7 +261,7 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" copper_v1_16
 goto :menu
 
-:14
+:13
 if not "%show_copper_v1_17%"=="true" (
   goto :eof
 )

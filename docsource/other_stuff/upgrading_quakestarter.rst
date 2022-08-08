@@ -6,6 +6,7 @@ Read this part first!
 
 The update logic in Quakestarter was introduced in version 3.3.0. If you are updating from an earlier version of Quakestarter, skip to the :ref:`"Completely manual update"<other_stuff/upgrading_quakestarter:completely manual update>` section at the bottom of this page.
 
+If you're updating from version 3.1.0 or earlier, where Quakespasm Spiked is the bundled Quake engine, you'll also want to read the notes for version 3.2.0 in the :doc:`Changelog<changelog>` so that you can decide how you want to handle the transition to vkQuake/Ironwail.
 
 Autoupdate
 ----------
@@ -22,7 +23,7 @@ If you do turn off autoupdates, you should skip ahead to one of the sections bel
 
 But if you leave autoupdates enabled, then sooner or later when you run Quakestarter you will see the message "A newer version of Quakestarter is available!" at the top of the window. Before proceeding to the normal Quakestarter menus, you'll be given the option to open the new changelog in your web browser to see info about the new release, and then you can choose whether or not to update to that new version of Quakestarter.
 
-**Note:** If you say "no" to updating, Quakestarter will ask you again the next time you run it on some later date. There's currently no way to record a preference of "permanently skip that version and stop asking me". If you want Quakestarter to stop telling you that there is a new version available, you'll need to turn off autoupdates as described above.
+**Note:** If you say "no" to updating, Quakestarter will ask you again when you run it on a later day. There's currently no way to record a preference of "permanently skip that version and stop asking me". If you want Quakestarter to stop telling you that there is a new version available, you'll need to turn off autoupdates as described above.
 
 Once you've decided to get the new version, Quakestarter will ask you if you want to include the Quake engine files (for vkQuake and Ironwail) in the downloaded update package. Normally you will want to enter **y** for "yes", especially if you are currently using the Quakestarter-installed vkQuake and Ironwail engines. Even if the engine versions haven't changed in this new update, they're small files and it's simplest just to get them again.
 
@@ -33,7 +34,7 @@ Quake engine management
 
 Quakestarter keeps track of which Quake engine files it is responsible for dealing with when autoupdating. We'll call these the "Quakestarter-managed" Quake engines. A normal Quakestarter installation is managing the files for vkQuake and Ironwail; a "noengine" installation is not managing anything.
 
-The autoupdater allows you to choose whether to download the engine files that are part of the incoming update. If you enter **y** for "yes", then Quakestarter will first delete any engine files it is currently managing, then put the new engine files into place and start managing those. If you enter **n** for "no", things are still straightforward if Quakestarter is *not* currently managing any engine files (it just... continues to not manage anything).
+The autoupdater allows you to choose whether to download the engine files that are part of the incoming update. If you enter **y** for "yes", Quakestarter will first delete any engine files it is currently managing, then put the new engine files into place and start managing those. If you enter **n** for "no", things are still straightforward if Quakestarter is *not* currently managing any engine files (it just... continues to not manage anything).
 
 But what if Quakestarter *is* currently managing some engine files and you say "no" you don't want to download the new ones? What does that mean for the currently managed files? In that case the autoupdater will give you three choices; the choices are summarized in the menu there, but here's more detail about them.
 

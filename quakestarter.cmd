@@ -14,7 +14,7 @@ REM get our version number
 call "%scriptspath%_version_installed_number.cmd"
 
 REM nuke previous upgrade script if needed
-del /f /q "%mainpath%quakestarter_update.cmd" >nul 2>&1
+del /f /q "%LocalAppData%\Temp\quakestarter_update.cmd" >nul 2>&1
 
 REM see if .Net/PowerShell are ok, and check for curl
 powershell.exe -nologo -noprofile -command "&{trap{exit 1;} Add-Type -A 'System.IO.Compression.FileSystem';}" >nul 2>&1

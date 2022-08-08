@@ -58,6 +58,7 @@ And a blurb about each of these features:
 
 If you want to use some engine other than vkQuake or Ironwail, the :doc:`Advanced Configuration<advanced_quakestarter_cfg>` chapter has details about how to set that up.
 
+(And for a comparison of singleplayer engines, `Quake Engines & Source Ports`_ on Slipgate Sightseer is a good quick reference.)
 
 Why not the "enhanced" Quake rerelease?
 ---------------------------------------
@@ -75,3 +76,4 @@ You can have both the Quake rerelease and also a community-developed Quake engin
 .. _Mark V: http://quakeone.com/markv/
 .. _FTE: https://fte.triptohell.info/
 .. _DarkPlaces: https://icculus.org/twilight/darkplaces/
+.. _Quake Engines & Source Ports: https://www.slipseer.com/index.php?threads/quake-engines-source-ports-a-beginners-guide.11/
