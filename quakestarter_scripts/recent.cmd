@@ -51,7 +51,7 @@ cls
 call :installed_check plaw02
 call :installed_check markiesm1v2
 call :installed_check sm_217
-call :installed_check ctsj2
+call :installed_check ctsj2_1.2
 echo.
 echo This menu is a selection of high-profile releases from the past six months. A
 echo release in this category can also eventually appear in one of the "The Next
@@ -64,7 +64,7 @@ echo.
 echo %is_plaw02_installed%  1: plaw02 - Waldsterben
 echo %is_markiesm1v2_installed%  2: markiesm1v2 - Slip Tripping
 echo %is_sm_217_installed%  3: sm_217 - Remaster Textures
-echo %is_ctsj2_installed%  4: ctsj2 - Coppertone Summer Jam 2
+echo %is_ctsj2_1.2_installed%  4: ctsj2 - Coppertone Summer Jam 2 v1.2
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
@@ -107,7 +107,7 @@ REM Coppertone Summer Jam 2 should age out after 2/8/2023
 set review_page=https://www.slipseer.com/index.php?resources/coppertone-summer-jam-2.103
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" ctsj2 https://www.slipseer.com/index.php?resources/coppertone-summer-jam-2.103/download
+call "%scriptspath%_handle_mod_choice.cmd" ctsj2_1.2 https://www.slipseer.com/index.php?resources/coppertone-summer-jam-2.103/version/130/download
 goto :menu
 
 
