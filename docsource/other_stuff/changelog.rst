@@ -1,6 +1,17 @@
 Changelog
 =========
 
+.. rubric:: v3.4.0 (Aug 2022)
+
+Hey let's test out that autoupdate feature! `Coppertone Summer Jam 2`_ has had an update, so that version is now in the Latest Greatest menu and the previous (original) version is moved to legacies.
+
+One confession to make here: I'm still learning about the best way to deal with downloads from Slipgate Sightseer. In this case, if you used Quakestarter v3.3.0 to install ctsj2 super recently, you may in fact already have gotten the updated version rather than the original. However Quakestarter will still think it's the original version that you have installed. If that happens, sorry! ... but you can still keep playing what you have via the legacies menu, so no harm done I think. I've corrected this problem going forward.
+
+Also, note that Quakestarter is designed so that it doesn't constantly spam autoupdate checks, so if you already have version 3.3.0 installed it may not autoupdate right away. But in at most 24 hours from now, when you run Quakestarter it will tell you there's a new version available. If you're in a hurry and don't want to wait, you can manually force an update by downloading a zip of this release and then dragging it onto your current "quakestarter.cmd" script.
+
+If you are using a version of Quakestarter earlier than 3.3.0, no autoupdate for you! You'll still have to use the manual "overwrite your current files with the contents of the zip" process.
+
+
 .. rubric:: v3.3.0 (Aug 2022)
 
 This release introduces an autoupdate feature for Quakestarter, as well as the ability to trigger the update process using a manually downloaded zipfile if you'd rather do that. Autoupdate covers not only the Quakestarter scripts but also vkQuake and Ironwail (unless you are using a "noengine" bundle). These features are discussed in detail in the :doc:`Updating Quakestarter<upgrading_quakestarter>` chapter (under Other Topics).
@@ -17,7 +28,7 @@ Other stuff in this release:
 * `Quake Sewer Jam`_ has had a bit of a ratings bump that brings it out of the "legacies" menu and back into the Post-AD episodes menu.
 * Rename the "The Age of Jams" category to "The Coming of the Jams", since obviously we still have a lot of jams going on! Also rename "The New Hotness" to "The Next Generation" since it's become more of a standard "era" category now rather than just sort-of-recent-stuff.
 * Speaking of which: add a new "The Latest Greatest" category which is specifically for recent high-profile releases (as determined by me, I guess). Check out that menu page for more explanation on how it works.
-* Inaugrate "The Latest Greatest" with a few recent releases that are still less than six months old, and also add the super-new release of `Coppertone Summer Jam 2`_ there.
+* Inaugurate "The Latest Greatest" with a few recent releases that are still less than six months old, and also add the super-new release of `Coppertone Summer Jam 2`_ there.
 
 
 .. rubric:: v3.2.0 (Jul 2022)

@@ -53,7 +53,7 @@ And a blurb about each of these features:
 * lit water support: Support for rendering shadows on the surfaces of liquids, for recent maps that have been compiled in a way that generates that shadow information.
 * classic waterwarp: Emulation for the underwater warping effect of original DOS/WinQuake (as opposed to the different GLQuake effect).
 * multi game dirs: The ability to activate more than one mod folder, beyond the hardcoded support for only Quoth and missionpacks found in some engines. Quakestarter depends on this feature for launching a few of the addons that depend on Copper or Arcane Dimensions.
-* drag-resize window: When running in windowed mode, whether the game window can be resized just by using the moust to grab-and-drag the window's edge/corner.
+* drag-resize window: When running in windowed mode, whether the game window can be resized just by using the mouse to grab-and-drag the window's edge/corner.
 * protocol extensions: This is a complicated topic, but one of the more obvious benefits to protocol extension support is the ability to play back a wider range of demo recordings (such as demos recorded with Quakespasm-Spiked).
 
 If you want to use some engine other than vkQuake or Ironwail, the :doc:`Advanced Configuration<advanced_quakestarter_cfg>` chapter has details about how to set that up.
