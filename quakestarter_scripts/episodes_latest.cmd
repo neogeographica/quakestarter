@@ -62,6 +62,7 @@ call :installed_check jjj2
 call :installed_check sm215
 call :installed_check snack2
 call :installed_check sm_217
+call :installed_check ctsj2_1.2
 echo.
 echo Selected custom episodes/hubs released from 2020 through 2022:
 echo %is_ctsj_installed%  1: ctsj - Coppertone Summer Jam
@@ -79,6 +80,7 @@ echo %is_jjj2_installed% 12: jjj2 - January Jump Jam 2
 echo %is_sm215_installed% 13: sm215 - Quad Run
 echo %is_snack2_installed% 14: snack2 - Speedmap Snack Pack 2 - Cosmic Hunger
 echo %is_sm_217_installed% 15: sm_217 - Remaster Textures
+echo %is_ctsj2_1.2_installed% 16: ctsj2_1.2 - Coppertone Summer Jam 2 v1.2
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
@@ -182,6 +184,11 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" sm_217
 goto :menu
 
+:16
+set start_map=start
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" ctsj2_1.2
+goto :menu
 
 REM functions used above
 

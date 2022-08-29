@@ -1,6 +1,11 @@
 Changelog
 =========
 
+.. rubric:: v3.5.0 (??? 2022)
+
+blah blah blah
+
+
 .. rubric:: v3.4.0 (Aug 2022)
 
 Hey let's test out that autoupdate feature! `Coppertone Summer Jam 2`_ has had an update, so that version is now in the Latest Greatest menu and the previous (original) version is moved to legacies.
