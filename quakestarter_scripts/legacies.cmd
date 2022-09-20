@@ -81,8 +81,9 @@ set startdemos=
 set junkdirs=
 cls
 echo.
-echo Releases shown here were in the installer menus in previous versions but
-echo have since been removed.
+echo Releases shown here were in the installer menus in previous versions but have
+echo since been removed. If a release stays on this legacies menu for six 
+echo uninterrupted months, it will be removed from the legacies menu too.
 echo.
 if not "%force_show_legacies%"=="true" (
   echo Only currently installed releases will be shown here, since the
