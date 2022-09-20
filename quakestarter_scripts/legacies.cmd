@@ -35,6 +35,7 @@ set show_version=false
 call :installed_check descent rating
 call :installed_check e1m1rmx rating
 call :installed_check chapters rating
+call :installed_check fmb_bdg rating
 call :installed_check digs05 rating
 call :installed_check fmb_bdg2 rating
 call :installed_check func_mapjam5
@@ -98,42 +99,45 @@ if "%show_rating%"=="true" (
   if "%show_chapters%"=="true" (
     echo %is_chapters_installed%  3: chapters - Contract Revoked: The Lost Chapters ^(2005^)
   )
+  if "%show_fmb_bdg%"=="true" (
+    echo %is_fmb_bdg_installed%  4: fmb_bdg - This Onion ^(2007^)
+  )
   if "%show_digs05%"=="true" (
-    echo %is_digs05_installed%  4: digs05 - The Anomaly ^(2011^)
+    echo %is_digs05_installed%  5: digs05 - The Anomaly ^(2011^)
   )
   if "%show_fmb_bdg2%"=="true" (
-    echo %is_fmb_bdg2_installed%  5: fmb_bdg2 - For My Babies - Bin Dunne Gorne 2 ^(2013^)
+    echo %is_fmb_bdg2_installed%  6: fmb_bdg2 - For My Babies - Bin Dunne Gorne 2 ^(2013^)
   )
   if "%show_func_mapjam5%"=="true" (
-    echo %is_func_mapjam5_installed%  6: func_mapjam5 - Func Map Jam 5 - The Qonquer Map Jam ^(2015^)
+    echo %is_func_mapjam5_installed%  7: func_mapjam5 - Func Map Jam 5 - The Qonquer Map Jam ^(2015^)
   )
   if "%show_ad_paradise%"=="true" (
-    echo %is_ad_paradise_installed%  7: ad_paradise - Paradise Sickness ^(2017^)
+    echo %is_ad_paradise_installed%  8: ad_paradise - Paradise Sickness ^(2017^)
   )
   if "%show_unusedjam%"=="true" (
-    echo %is_unusedjam_installed%  8: unusedjam - Unused Jam ^(2021^)
+    echo %is_unusedjam_installed%  9: unusedjam - Unused Jam ^(2021^)
   )
   if "%show_bluemonday_v2%"=="true" (
-    echo %is_bluemonday_v2_installed%  9: bluemonday_v2 - Blue Monday Jam ^(2021^)
+    echo %is_bluemonday_v2_installed% 10: bluemonday_v2 - Blue Monday Jam ^(2021^)
   )
   echo.
 )
 if "%show_version%"=="true" (
   echo Dropped because superseded by a newer version:
   if "%show_ad_v1_70final%"=="true" (
-    echo %is_ad_v1_70final_installed% 10: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
+    echo %is_ad_v1_70final_installed% 11: ad_v1_70final - Arcane Dimensions 1.7 ^(2017^)
   )
   if "%show_copper_v1_15%"=="true" (
-    echo %is_copper_v1_15_installed% 11: copper_v1_15 - Copper 1.15 ^(2020^)
+    echo %is_copper_v1_15_installed% 12: copper_v1_15 - Copper 1.15 ^(2020^)
   )
   if "%show_copper_v1_16%"=="true" (
-    echo %is_copper_v1_16_installed% 12: copper_v1_16 - Copper 1.16 ^(2021^)
+    echo %is_copper_v1_16_installed% 13: copper_v1_16 - Copper 1.16 ^(2021^)
   )
   if "%show_copper_v1_17%"=="true" (
-    echo %is_copper_v1_17_installed% 13: copper_v1_17 - Copper 1.17 ^(2021^)
+    echo %is_copper_v1_17_installed% 14: copper_v1_17 - Copper 1.17 ^(2021^)
   )
   if "%show_ctsj2%"=="true" (
-    echo %is_ctsj2_installed% 14: ctsj2 - Coppertone Summer Jam 2 v1.0 ^(2022^)
+    echo %is_ctsj2_installed% 15: ctsj2 - Coppertone Summer Jam 2 v1.0 ^(2022^)
   )
   echo.
 )
@@ -147,6 +151,7 @@ set /p menu_choice=enter your choice or just press Enter to exit:
 echo.
 goto %menu_choice%
 
+REM Descent should age out with the next release after 3.5.0
 :1
 if not "%show_descent%"=="true" (
   goto :eof
@@ -157,6 +162,7 @@ set startdemos=intro demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" descent
 goto :menu
 
+REM The Slipgate Duplex should age out with the next release after 3.5.0
 :2
 if not "%show_e1m1rmx%"=="true" (
   goto :eof
@@ -165,6 +171,7 @@ set start_map=e1m1rmx
 call "%scriptspath%_handle_mod_choice.cmd" e1m1rmx
 goto :menu
 
+REM Contract Revoked: The Lost Chapters should age out with the next release after 3.5.0
 :3
 if not "%show_chapters%"=="true" (
   goto :eof
@@ -178,7 +185,17 @@ set postlaunch_msg[3]=
 call "%scriptspath%_handle_mod_choice.cmd" chapters
 goto :menu
 
+REM This Onion should age out 6 mos after the 3.5.0 release
 :4
+if not "%show_fmb_bdg%"=="true" (
+  goto :eof
+)
+set start_map=fmb_bdg1
+call "%scriptspath%_handle_mod_choice.cmd" fmb_bdg
+goto :menu
+
+REM The Anomaly should age out with the next release after 3.5.0
+:5
 if not "%show_digs05%"=="true" (
   goto :eof
 )
@@ -186,7 +203,8 @@ set start_map=digs05
 call "%scriptspath%_handle_mod_choice.cmd" digs05
 goto :menu
 
-:5
+REM For My Babies - Bin Dunne Gorne 2 should age out with the next release after 3.5.0
+:6
 if not "%show_fmb_bdg2%"=="true" (
   goto :eof
 )
@@ -194,7 +212,8 @@ set start_map=start_____
 call "%scriptspath%_handle_mod_choice.cmd" fmb_bdg2
 goto :menu
 
-:6
+REM Func Map Jam 5 - The Qonquer Map Jam should age out with the next release after 3.5.0
+:7
 if not "%show_func_mapjam5%"=="true" (
   goto :eof
 )
@@ -208,7 +227,8 @@ set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" func_mapjam5
 goto :menu
 
-:7
+REM Paradise Sickness should age out with the next release after 3.5.0
+:8
 if not "%show_ad_paradise%"=="true" (
   goto :eof
 )
@@ -219,7 +239,8 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" ad_paradise
 goto :menu
 
-:8
+REM Unused Jam should age out with the next release after 3.5.0
+:9
 if not "%show_unusedjam%"=="true" (
   goto :eof
 )
@@ -227,7 +248,8 @@ set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" unusedjam
 goto :menu
 
-:9
+REM Blue Monday Jam should age out with the next release after 3.5.0
+:10
 if not "%show_bluemonday_v2%"=="true" (
   goto :eof
 )
@@ -237,7 +259,8 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" bluemonday_v2
 goto :menu
 
-:10
+REM Arcane Dimensions 1.7 should age out with the next release after 3.5.0
+:11
 if not "%show_ad_v1_70final%"=="true" (
   goto :eof
 )
@@ -247,7 +270,8 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" ad_v1_70final
 goto :menu
 
-:11
+REM Copper 1.15 should age out with the next release after 3.5.0
+:12
 if not "%show_copper_v1_15%"=="true" (
   goto :eof
 )
@@ -256,7 +280,8 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" copper_v1_15
 goto :menu
 
-:12
+REM Copper 1.16 should age out with the next release after 3.5.0
+:13
 if not "%show_copper_v1_16%"=="true" (
   goto :eof
 )
@@ -265,7 +290,8 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" copper_v1_16
 goto :menu
 
-:13
+REM Copper 1.17 should age out 6 mos after the 3.2.0 release
+:14
 if not "%show_copper_v1_17%"=="true" (
   goto :eof
 )
@@ -274,7 +300,8 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" copper_v1_17
 goto :menu
 
-:14
+REM Coppertone Summer Jam 2 v1.0 should age out 6 mos after the 3.4.0 release
+:15
 if not "%show_ctsj2%"=="true" (
   goto :eof
 )
