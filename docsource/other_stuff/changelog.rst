@@ -11,6 +11,7 @@ Of course, when a mod's entry is removed from the Quakestarter menus, it doesn't
 
 OK anyway here's the menu changes for this release:
 
+* Remove `Waldsterben`_ from Latest Greatest since its time is up there. It can still be found in the Next Generation menu for non-episodes, although if its ratings don't get a bit of a boost it may slide into the legacies menu next time.
 * Add `Prototype Jam 3`_ in Latest Greatest. This large set of maps using prototype/blockout textures also includes a very cute modification for weapons, enemies, and items so that they match the theme.
 * Add `Doom Tintin Jam`_ in the Next Generation episodes/hubs. This was a map jam from 2020 that used a set of custom textures based on Doom 3.
 * Move `This Onion`_ and `Arcane`_ to the legacies menu.
