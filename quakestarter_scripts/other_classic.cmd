@@ -46,7 +46,6 @@ set modsettings[0]=
 set startdemos=
 set junkdirs=
 cls
-call :installed_check arcane
 call :installed_check mexx10
 call :installed_check czg07
 call :installed_check koohoo
@@ -62,20 +61,19 @@ call :installed_check sm82
 call :installed_check ant
 echo.
 echo Selected other custom maps released through late 2005:
-echo %is_arcane_installed%  1: arcane - Arcane ^(1997^)
-echo %is_mexx10_installed%  2: mexx10 - The Cassandra Calamity ^(1997^)
-echo %is_czg07_installed%  3: czg07 - Insomnia ^(2000^)
-echo %is_koohoo_installed%  4: koohoo - The Castle of Koohoo ^(2001^)
-echo %is_czgtoxic_installed%  5: czgtoxic - Biotoxin ^(2001^)
-echo %is_czg03_installed%  6: czg03 - Ceremonial Circles ^(2001^)
-echo %is_could_installed%  7: could - And All That Could Have Been ^(2003^)
-echo %is_gmsp3_installed%  8: gmsp3 - Day of the Lords ^(2003^)
-echo %is_ac_installed%  9: ac - Adamantine Cruelty ^(2004^)
-echo %is_menk_installed% 10: menk - Menkalinan ^(2004^)
-echo %is_kinn_marcher_installed% 11: kinn_marcher - The Marcher Fortress ^(2005^)
-echo %is_lunsp1_installed% 12: lunsp1 - Concentric Devastation ^(2005^)
-echo %is_sm82_installed% 13: sm82 - Rubicondom ^(2005^)
-echo %is_ant_installed% 14: ant - Antediluvian ^(2005^)
+echo %is_mexx10_installed%  1: mexx10 - The Cassandra Calamity ^(1997^)
+echo %is_czg07_installed%  2: czg07 - Insomnia ^(2000^)
+echo %is_koohoo_installed%  3: koohoo - The Castle of Koohoo ^(2001^)
+echo %is_czgtoxic_installed%  4: czgtoxic - Biotoxin ^(2001^)
+echo %is_czg03_installed%  5: czg03 - Ceremonial Circles ^(2001^)
+echo %is_could_installed%  6: could - And All That Could Have Been ^(2003^)
+echo %is_gmsp3_installed%  7: gmsp3 - Day of the Lords ^(2003^)
+echo %is_ac_installed%  8: ac - Adamantine Cruelty ^(2004^)
+echo %is_menk_installed%  9: menk - Menkalinan ^(2004^)
+echo %is_kinn_marcher_installed% 10: kinn_marcher - The Marcher Fortress ^(2005^)
+echo %is_lunsp1_installed% 11: lunsp1 - Concentric Devastation ^(2005^)
+echo %is_sm82_installed% 12: sm82 - Rubicondom ^(2005^)
+echo %is_ant_installed% 13: ant - Antediluvian ^(2005^)
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
@@ -88,18 +86,13 @@ echo.
 goto %menu_choice%
 
 :1
-set start_map=arcane
-call "%scriptspath%_handle_mod_choice.cmd" arcane
-goto :menu
-
-:2
 set start_map=mexx10
 set modsettings[0]=r_wateralpha 0.3
 set modsettings[1]=
 call "%scriptspath%_handle_mod_choice.cmd" mexx10
 goto :menu
 
-:3
+:2
 set start_map=czg07
 set modsettings[0]=r_wateralpha 1
 set modsettings[1]=gl_flashblend 0
@@ -111,7 +104,7 @@ set modsettings[6]=
 call "%scriptspath%_handle_mod_choice.cmd" czg07
 goto :menu
 
-:4
+:3
 set start_map=start
 set modsettings[0]=r_wateralpha 0.6
 set modsettings[1]=r_shadows 0
@@ -122,12 +115,12 @@ set modsettings[5]=
 call "%scriptspath%_handle_mod_choice.cmd" koohoo
 goto :menu
 
-:5
+:4
 set start_map=czgtoxic
 call "%scriptspath%_handle_mod_choice.cmd" czgtoxic
 goto :menu
 
-:6
+:5
 set start_map=czg03
 set modsettings[0]=r_wateralpha 1
 set modsettings[1]=r_shadows 0
@@ -136,12 +129,12 @@ set modsettings[3]=
 call "%scriptspath%_handle_mod_choice.cmd" czg03
 goto :menu
 
-:7
+:6
 set start_map=could
 call "%scriptspath%_handle_mod_choice.cmd" could
 goto :menu
 
-:8
+:7
 set start_map=gmsp3v2
 set modsettings[0]=r_maxsurfs 1200
 set modsettings[1]=r_maxedges 4000
@@ -149,7 +142,7 @@ set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" gmsp3
 goto :menu
 
-:9
+:8
 set start_map=acstart
 set modsettings[0]=r_wateralpha 0.3
 set modsettings[1]=r_maxedges 4000
@@ -158,7 +151,7 @@ set modsettings[3]=
 call "%scriptspath%_handle_mod_choice.cmd" ac
 goto :menu
 
-:10
+:9
 set start_map=menkstart
 set modsettings[0]=r_maxedges 10000
 set modsettings[1]=r_maxsurfs 10000
@@ -166,7 +159,7 @@ set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" menk
 goto :menu
 
-:11
+:10
 set start_map=marcher
 set modsettings[0]=r_maxedges 100000
 set modsettings[1]=r_maxsurfs 100000
@@ -179,17 +172,17 @@ set modsettings[7]=
 call "%scriptspath%_handle_mod_choice.cmd" kinn_marcher
 goto :menu
 
-:12
+:11
 set start_map=lunsp1
 call "%scriptspath%_handle_mod_choice.cmd" lunsp1
 goto :menu
 
-:13
+:12
 set start_map=sm82
 call "%scriptspath%_handle_mod_choice.cmd" sm82
 goto :menu
 
-:14
+:13
 set start_map=ant
 call "%scriptspath%_handle_mod_choice.cmd" ant
 goto :menu
