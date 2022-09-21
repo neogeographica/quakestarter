@@ -1,0 +1,99 @@
+// Note: this config file has been compacted to fit into the config-size limit
+// for some Quake engines. This largely involves removing documentation
+// sections made of commented-out lines, as noted below. For the original
+// file see quake.rc.original.
+
+
+//-----
+// MOD    : AD v1.70P1 - (Arcane Dimensions)
+// Date   : 31st January 2018
+// Author : Simon "Sock" OCallaghan
+// Website: www.simonoc.com
+// Notes  : Special MOD config file (should not be deleted)
+//          All player config options go in autoexec.cfg
+//-----
+// load the base configuration
+exec default.cfg
+
+//-----
+// load the last saved configuration
+exec config.cfg
+
+//-----
+// Custom key bindings for this MOD
+bind "i" "impulse 175"
+
+//-----
+// All the artwork and levels are designed for pixel filtering
+// I recommend you try this setting, the artwork will be crisp
+// and the textures will feel vibrant and alive
+//-----
+//gl_texturemode GL_NEAREST_MIPMAP_LINEAR
+
+//-----
+// Only enable this setting if you are developing for the MOD
+// They are not necessary for normal play throughs
+//-----
+//developer "1"
+//gl_clear 1
+//gl_overbright 1
+//scr_conscale 2
+//scr_menuscale 3
+//scr_sbarscale 3
+//scr_conspeed 2000
+//crosshair 1
+//scr_showfps 1
+
+//-----
+// This is a collection of engine specific stuff
+// Fitz/QS/MarkV : has really low limits (max_edicts)
+// DP : Use original lightning bolt models (cl_beams_polygons)
+// DP : Stop DP re-generating portals which already exist in BSP!
+// QS/MarkV : r_shadow exclusion stuff
+//-----
+max_edicts 8192
+r_useportalculling 0
+cl_beams_polygons 0
+//mod_bsp_portalize 0
+r_noshadow_list "progs/flame2.mdl,progs/flame.mdl,progs/bolt1.mdl,progs/bolt2.mdl,progs/bolt3.mdl,progs/laser.mdl,progs/wizard.mdl,progs/mon_gargoyle.mdl,progs/mon_gaunt.mdl,progs/mon_wraith.mdl,progs/mon_lostsoul.mdl,progs/mon_jim.mdl,progs/mon_jimrock.mdl,progs/misc_radar64.mdl,progs/misc_radar96.mdl,progs/misc_radar128.mdl,progs/misc_tutstatue.mdl"
+
+
+//-----
+// For a list of impulse commands, see quake.rc.original.
+//-----
+
+alias autoaim "impulse 100"
+alias zaware "impulse 110"
+alias pixels "impulse 115"
+alias feet "impulse 120"
+alias liqdmg "impulse 125"
+alias upgproj "impulse 130"
+alias ver "impulse 140"
+alias upgaxe "impulse 200"
+alias upgssg "impulse 205"
+alias upglg "impulse 210"
+
+
+//-----
+// For a description of how the temp1 values configure the MOD
+// behavior, see quake.rc.original.
+//-----
+temp1 1024
+//temp1 5120
+
+
+//-----
+// run a user script file if present (user settings)
+exec autoexec.cfg
+
+//-----
+// stuff command line statements
+// Maps won't load without max_edicts
+// developer mode should be off by default
+//-----
+stuffcmds
+
+//-----
+// Start with the main menu, not the console!?!
+//-----
+menu_main
