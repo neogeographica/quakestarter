@@ -75,7 +75,7 @@ if not "%version_current_download%"=="" (
   goto :notify
 )
 echo|set /p="set version_current_download=">> "%scriptspath%_version_current.cmd"
-powershell.exe -nologo -noprofile -command "&{trap{exit 1;} $progressPreference='silentlyContinue';[System.Net.ServicePointManager]::SecurityProtocol=[System.Net.SecurityProtocolType]::Tls -bor [System.Net.SecurityProtocolType]::Tls11 -bor [System.Net.SecurityProtocolType]::Tls12;(Invoke-WebRequest -Uri \"%version_current%\").Links|foreach{[Uri]::new([Uri]\"%version_current%\",$_.href).AbsoluteUri}|Select-String -Pattern \"/quakestarter-[0-9][^^/]*zip$\"|foreach{$_.Line};}" 2>nul >> "%scriptspath%_version_current.cmd"
+powershell.exe -nologo -noprofile -command "&{trap{exit 1;} $progressPreference='silentlyContinue';[System.Net.ServicePointManager]::SecurityProtocol=[System.Net.SecurityProtocolType]::Tls -bor [System.Net.SecurityProtocolType]::Tls11 -bor [System.Net.SecurityProtocolType]::Tls12;(Invoke-WebRequest -Uri \"%version_current%\").Links|foreach{[Uri]::new([Uri]\"%version_current%\",$_.href).AbsoluteUri}|Select-String -Pattern \"/quakestarter-[0-9][^^/]*zip$\"|Select-Object -First 1|foreach{$_.Line};}" 2>nul >> "%scriptspath%_version_current.cmd"
 if not %errorlevel% equ 0 (
   goto :checkerr
 )
