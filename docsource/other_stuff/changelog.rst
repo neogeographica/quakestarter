@@ -1,6 +1,22 @@
 Changelog
 =========
 
+.. rubric:: v3.5.0 (Sep 2022)
+
+This release just updates some of the installables as described below.
+
+One other thing to note: I've set an official policy that entries will "age out" of the legacies menu if they sit there for six months without ever bouncing back into one of the main menus. This will help us keep the legacies menu from growing too large. I won't be enforcing this policy until the *next* release of Quakestarter, but FYI almost all of the current legacies entries are about to get the boot.
+
+Of course, when a mod's entry is removed from the Quakestarter menus, it doesn't affect any of your own installed mod files. But it will mean that you can no longer launch/manage that mod through the Quakestarter menu. (Fortunately there are lots of other methods to deal with your mods, as described in these docs.)
+
+OK anyway here's the menu changes for this release:
+
+* Remove `Waldsterben`_ from Latest Greatest since its time is up there. It can still be found in the Next Generation menu for non-episodes, although if its ratings don't get a bit of a boost it may slide into the legacies menu next time.
+* Add `Prototype Jam 3`_ in Latest Greatest. This large set of maps using prototype/blockout textures also includes a very cute modification for weapons, enemies, and items so that they match the theme.
+* Add `Doom Tintin Jam`_ in the Next Generation episodes/hubs. This was a map jam from 2020 that used a set of custom textures based on Doom 3.
+* Move `This Onion`_ and `Arcane`_ to the legacies menu.
+
+
 .. rubric:: v3.4.0 (Aug 2022)
 
 Hey let's test out that autoupdate feature! `Coppertone Summer Jam 2`_ has had an update, so that version is now in the Latest Greatest menu and the previous (original) version is moved to legacies.
@@ -369,6 +385,8 @@ For older changelog entries, see the `1.x changelog`_ archived on GitHub.
 
 
 .. _quakestarter.com: http://quakestarter.com
+.. _Prototype Jam 3: https://www.quaddicted.com/reviews/sm220-108.html
+.. _Doom Tintin Jam: https://www.quaddicted.com/reviews/dtintin_fixed.html
 .. _Quake Sewer Jam: https://www.quaddicted.com/reviews/sewerjam.html
 .. _Coppertone Summer Jam 2: https://www.slipseer.com/index.php?resources/coppertone-summer-jam-2.103
 .. _vkQuake: https://github.com/Novum/vkQuake

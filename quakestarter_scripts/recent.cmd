@@ -48,10 +48,10 @@ set modsettings[0]=
 set startdemos=
 set junkdirs=
 cls
-call :installed_check plaw02
 call :installed_check markiesm1v2
 call :installed_check sm_217
 call :installed_check ctsj2_1.2
+call :installed_check sm220-108
 echo.
 echo This menu is a selection of high-profile releases from the past six months. A
 echo release in this category can also eventually appear in one of the "The Next
@@ -61,10 +61,10 @@ echo.
 echo After six months, a release will be removed from this category. If it hasn't
 echo made it into "The Next Generation" it will be added to the legacies menu.
 echo.
-echo %is_plaw02_installed%  1: plaw02 - Waldsterben
-echo %is_markiesm1v2_installed%  2: markiesm1v2 - Slip Tripping
-echo %is_sm_217_installed%  3: sm_217 - Remaster Textures
-echo %is_ctsj2_1.2_installed%  4: ctsj2 - Coppertone Summer Jam 2 v1.2
+echo %is_markiesm1v2_installed%  1: markiesm1v2 - Slip Tripping
+echo %is_sm_217_installed%  2: sm_217 - Remaster Textures
+echo %is_ctsj2_1.2_installed%  3: ctsj2_1.2 - Coppertone Summer Jam 2 v1.2
+echo %is_sm220-108_installed%  4: sm220-108 - Prototype Jam 3 v1.08
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
@@ -76,38 +76,31 @@ set /p menu_choice=enter your choice or just press Enter to exit:
 echo.
 goto %menu_choice%
 
-REM Waldsterben should age out after 8/22/2022
-:1
-set base_game=%latest_copper%
-set start_map=plaw02
-set skip_quakerc_gen=true
-REM Because this archive is packaged oddly, we need to remove the top level
-REM "src" dir for it to install correctly. We'll add the src dir contents
-REM back in through the patch.
-set junkdirs=src
-set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/plaw02_source.zip
-call "%scriptspath%_handle_mod_choice.cmd" plaw02
-goto :menu
-
 REM Slip Tripping should age out after 10/2/2022
-:2
+:1
 set start_map=markiesm1
 call "%scriptspath%_handle_mod_choice.cmd" markiesm1v2
 goto :menu
 
 REM Remaster Textures should age out after 11/11/2022
-:3
+:2
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" sm_217
 goto :menu
 
-REM Coppertone Summer Jam 2 should age out after 2/8/2023
-:4
-set review_page=https://www.slipseer.com/index.php?resources/coppertone-summer-jam-2.103
+REM Coppertone Summer Jam 2 v1.2 should age out after 2/8/2023
+:3
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" ctsj2_1.2 https://www.slipseer.com/index.php?resources/coppertone-summer-jam-2.103/version/130/download
+call "%scriptspath%_handle_mod_choice.cmd" ctsj2_1.2
+goto :menu
+
+REM Prototype Jam 3 v1.08 should age out after 2/29/2023
+:4
+set start_map=start
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" sm220-108
 goto :menu
 
 
