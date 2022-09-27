@@ -1,6 +1,11 @@
 Changelog
 =========
 
+.. rubric:: v3.6.0 (??? 2022)
+
+* Remove aged-out entries from the legacies menu, as mentioned in the v3.5.0 release notes below.
+
+
 .. rubric:: v3.5.0 (Sep 2022)
 
 This release just updates some of the installables as described below.
