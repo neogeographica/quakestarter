@@ -33,6 +33,9 @@ if "%basedir%"=="" (
 set show_rating=false
 set show_version=false
 call :installed_check arcane rating
+call :installed_check koohoo rating
+call :installed_check czgtoxic rating
+call :installed_check ant rating
 call :installed_check fmb_bdg rating
 call :installed_check copper_v1_17 version
 call :installed_check ctsj2 version
@@ -83,18 +86,27 @@ if "%show_rating%"=="true" (
   if "%show_arcane%"=="true" (
     echo %is_arcane_installed%  1: arcane - Arcane ^(1997^)
   )
+  if "%show_koohoo%"=="true" (
+    echo %is_koohoo_installed%  2: koohoo - The Castle of Koohoo ^(2001^)
+  )
+  if "%show_czgtoxic%"=="true" (
+    echo %is_czgtoxic_installed%  3: czgtoxic - Biotoxin ^(2001^)
+  )
+  if "%show_ant%"=="true" (
+    echo %is_ant_installed%  4: ant - Antediluvian ^(2005^)
+  )
   if "%show_fmb_bdg%"=="true" (
-    echo %is_fmb_bdg_installed%  2: fmb_bdg - This Onion ^(2007^)
+    echo %is_fmb_bdg_installed%  5: fmb_bdg - This Onion ^(2007^)
   )
   echo.
 )
 if "%show_version%"=="true" (
   echo Dropped because superseded by a newer version:
   if "%show_copper_v1_17%"=="true" (
-    echo %is_copper_v1_17_installed%  3: copper_v1_17 - Copper 1.17 ^(2021^)
+    echo %is_copper_v1_17_installed%  6: copper_v1_17 - Copper 1.17 ^(2021^)
   )
   if "%show_ctsj2%"=="true" (
-    echo %is_ctsj2_installed%  4: ctsj2 - Coppertone Summer Jam 2 v1.0 ^(2022^)
+    echo %is_ctsj2_installed%  7: ctsj2 - Coppertone Summer Jam 2 v1.0 ^(2022^)
   )
   echo.
 )
@@ -118,8 +130,41 @@ set start_map=arcane
 call "%scriptspath%_handle_mod_choice.cmd" arcane
 goto :menu
 
-REM This Onion should age out after 3/20/2023
+REM The Castle of Koohoo should age out six months after v3.6.0
 :2
+if not "%show_koohoo%"=="true" (
+  goto :eof
+)
+set start_map=start
+set modsettings[0]=r_wateralpha 0.6
+set modsettings[1]=r_shadows 0
+set modsettings[2]=gl_flashblend 0
+set modsettings[3]=gl_ztrick 0
+set modsettings[4]=gl_keeptjunctions 1
+set modsettings[5]=
+call "%scriptspath%_handle_mod_choice.cmd" koohoo
+goto :menu
+
+REM Biotoxin should age out six months after v3.6.0
+:3
+if not "%show_czgtoxic%"=="true" (
+  goto :eof
+)
+set start_map=czgtoxic
+call "%scriptspath%_handle_mod_choice.cmd" czgtoxic
+goto :menu
+
+REM Antediluvian should age out six months after v3.6.0
+:4
+if not "%show_ant%"=="true" (
+  goto :eof
+)
+set start_map=ant
+call "%scriptspath%_handle_mod_choice.cmd" ant
+goto :menu
+
+REM This Onion should age out after 3/20/2023
+:5
 if not "%show_fmb_bdg%"=="true" (
   goto :eof
 )
@@ -128,7 +173,7 @@ call "%scriptspath%_handle_mod_choice.cmd" fmb_bdg
 goto :menu
 
 REM Copper 1.17 should age out after 1/10/2023
-:3
+:6
 if not "%show_copper_v1_17%"=="true" (
   goto :eof
 )
@@ -138,7 +183,7 @@ call "%scriptspath%_handle_mod_choice.cmd" copper_v1_17
 goto :menu
 
 REM Coppertone Summer Jam 2 v1.0 should age out after 2/11/2023
-:4
+:7
 if not "%show_ctsj2%"=="true" (
   goto :eof
 )
