@@ -50,16 +50,12 @@ call :installed_check ad_heresp1
 call :installed_check zigisp1
 call :installed_check ad_heresp2
 call :installed_check purifier
-call :installed_check plaw02
-call :installed_check markiesm1v2
 echo.
 echo Selected other custom maps released from 2020 through 2022:
 echo %is_ad_heresp1_installed%  1: ad_heresp1 - Oxyblack Fortress
 echo %is_zigisp1_installed%  2: zigisp1 - A Verdant Dawn
 echo %is_ad_heresp2_installed%  3: ad_heresp2 - Imhotep's Legacy
 echo %is_purifier_installed%  4: purifier - The Purifier
-echo %is_plaw02_installed%  5: plaw02 - Waldsterben
-echo %is_markiesm1v2_installed%  6: markiesm1v2 - Slip Tripping
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
@@ -94,23 +90,6 @@ goto :menu
 set start_map=purifier
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" purifier
-goto :menu
-
-:5
-set base_game=%latest_copper%
-set start_map=plaw02
-set skip_quakerc_gen=true
-REM Because this archive is packaged oddly, we need to remove the top level
-REM "src" dir for it to install correctly. We'll add the src dir contents
-REM back in through the patch.
-set junkdirs=src
-set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/plaw02_source.zip
-call "%scriptspath%_handle_mod_choice.cmd" plaw02
-goto :menu
-
-:6
-set start_map=markiesm1
-call "%scriptspath%_handle_mod_choice.cmd" markiesm1v2
 goto :menu
 
 

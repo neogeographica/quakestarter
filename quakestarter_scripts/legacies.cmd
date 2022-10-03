@@ -38,6 +38,8 @@ call :installed_check czgtoxic rating
 call :installed_check ant rating
 call :installed_check fmb_bdg rating
 call :installed_check retrojam4dlc_pulsar rating
+call :installed_check plaw02 rating
+call :installed_check markiesm1v2 rating
 call :installed_check copper_v1_17 version
 call :installed_check ctsj2 version
 
@@ -102,15 +104,21 @@ if "%show_rating%"=="true" (
   if "%show_retrojam4dlc_pulsar%"=="true" (
     echo %is_retrojam4dlc_pulsar_installed%  6: retrojam4dlc_pulsar - The Elder Reality ^(2016^)
   )
+  if "%show_plaw02%"=="true" (
+    echo %is_plaw02_installed%  7: plaw02 - Waldsterben ^(2022^)
+  )
+  if "%show_markiesm1v2%"=="true" (
+    echo %is_markiesm1v2_installed%  8: markiesm1v2 - Slip Tripping ^(2022^)
+  )
   echo.
 )
 if "%show_version%"=="true" (
   echo Dropped because superseded by a newer version:
   if "%show_copper_v1_17%"=="true" (
-    echo %is_copper_v1_17_installed%  7: copper_v1_17 - Copper 1.17 ^(2021^)
+    echo %is_copper_v1_17_installed%  9: copper_v1_17 - Copper 1.17 ^(2021^)
   )
   if "%show_ctsj2%"=="true" (
-    echo %is_ctsj2_installed%  8: ctsj2 - Coppertone Summer Jam 2 v1.0 ^(2022^)
+    echo %is_ctsj2_installed% 10: ctsj2 - Coppertone Summer Jam 2 v1.0 ^(2022^)
   )
   echo.
 )
@@ -185,8 +193,33 @@ set start_map=retrojam4dlc_pulsar
 call "%scriptspath%_handle_mod_choice.cmd" retrojam4dlc_pulsar
 goto :menu
 
-REM Copper 1.17 should age out after 1/10/2023
+REM Waldsterben should age out six months after v3.6.0
 :7
+if not "%show_plaw02%"=="true" (
+  goto :eof
+)
+set base_game=%latest_copper%
+set start_map=plaw02
+set skip_quakerc_gen=true
+REM Because this archive is packaged oddly, we need to remove the top level
+REM "src" dir for it to install correctly. We'll add the src dir contents
+REM back in through the patch.
+set junkdirs=src
+set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/plaw02_source.zip
+call "%scriptspath%_handle_mod_choice.cmd" plaw02
+goto :menu
+
+REM Slip Tripping should age out six months after v3.6.0
+:8
+if not "%show_markiesm1v2%"=="true" (
+  goto :eof
+)
+set start_map=markiesm1
+call "%scriptspath%_handle_mod_choice.cmd" markiesm1v2
+goto :menu
+
+REM Copper 1.17 should age out after 1/10/2023
+:9
 if not "%show_copper_v1_17%"=="true" (
   goto :eof
 )
@@ -196,7 +229,7 @@ call "%scriptspath%_handle_mod_choice.cmd" copper_v1_17
 goto :menu
 
 REM Coppertone Summer Jam 2 v1.0 should age out after 2/11/2023
-:8
+:10
 if not "%show_ctsj2%"=="true" (
   goto :eof
 )
