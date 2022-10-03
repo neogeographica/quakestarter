@@ -52,7 +52,7 @@ call :installed_check markiesm1v2
 call :installed_check sm_217
 call :installed_check ctsj2_1.2
 call :installed_check sm220-108
-call :installed_check qbj-105
+call :installed_check qbj_1.05
 echo.
 echo This menu is a selection of high-profile releases from the past six months. A
 echo release in this category can also eventually appear in one of the "The Next
@@ -66,7 +66,7 @@ echo %is_markiesm1v2_installed%  1: markiesm1v2 - Slip Tripping
 echo %is_sm_217_installed%  2: sm_217 - Remaster Textures
 echo %is_ctsj2_1.2_installed%  3: ctsj2_1.2 - Coppertone Summer Jam 2 v1.2
 echo %is_sm220-108_installed%  4: sm220-108 - Prototype Jam 3 v1.08
-echo %is_qbj-105_installed%  5: qbj-105 - Quake Brutalist Jam v1.05
+echo %is_qbj-105_installed%  5: qbj_1.05 - Quake Brutalist Jam v1.05
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
@@ -110,7 +110,7 @@ REM Quake Brutalist Jam v1.05 should age out after 3/28/2023
 set review_page=https://www.slipseer.com/index.php?resources/quake-brutalist-jam.126/
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" qbj-105 https://www.slipseer.com/index.php?resources/quake-brutalist-jam.126/version/192/download
+call "%scriptspath%_handle_mod_choice.cmd" qbj_1.05 https://www.slipseer.com/index.php?resources/quake-brutalist-jam.126/version/194/download
 goto :menu
 
 
