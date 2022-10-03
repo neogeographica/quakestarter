@@ -3,7 +3,10 @@ Changelog
 
 .. rubric:: v3.6.0 (??? 2022)
 
+Another installables update:
+
 * Remove aged-out entries from the legacies menu, as mentioned in the v3.5.0 release notes below.
+* Move quite a few entries to the legacies menu since their ratings have dipped below the threshold and stayed down there for a while now: `The Castle of Koohoo`_, Biotoxin_, Antediluvian_, `The Elder Reality`_, `Waldsterben`_, and `Slip Tripping`_.
 
 
 .. rubric:: v3.5.0 (Sep 2022)
