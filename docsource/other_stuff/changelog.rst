@@ -1,7 +1,7 @@
 Changelog
 =========
 
-.. rubric:: v3.6.0 (??? 2022)
+.. rubric:: v3.6.0 (Oct 2022)
 
 Another installables update:
 
