@@ -9,6 +9,8 @@ Another installables update:
 * Remove aged-out entries from the legacies menu, as mentioned in the v3.5.0 release notes below.
 * Move quite a few entries to the legacies menu since their ratings have dipped below the threshold and stayed down there for a while now: `The Castle of Koohoo`_, Biotoxin_, Antediluvian_, `The Elder Reality`_, `Waldsterben`_, and `Slip Tripping`_.
 
+This release also adds some basic capability for finding Quake installations from the Epic Games Store (by checking common folder names), when looking for soundtrack music files. The :doc:`Auto Setup Logic<auto_setup_logic>` chapter (under Other Topics) has been updated with those details.
+
 
 .. rubric:: v3.5.0 (Sep 2022)
 

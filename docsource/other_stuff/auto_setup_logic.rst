@@ -15,7 +15,7 @@ If you just want to know how Quake installations from various stores can help th
 
 |br|
 
-* Quake soundtrack files (from the Quake rerelease) are provided by Steam, Bethesda, and Xbox Game Pass.
+* Quake soundtrack files (from the Quake rerelease) are provided by Steam, Xbox Game Pass, and the Epic Games Store. And although the Bethesda store has been shut down, existing Quake installations from the Bethesda store can also provide the soundtrack files.
 
 So for example if you don't have any other Quake installations on your computer and don't have any Quake paks or soundtrack files on hand, doing an installation of Quake from Steam is the simplest one-shot way to fetch everything you need. After doing the Steam install you could then run Quakestarter and auto-setup the pak files and soundtrack into your new modern Quake singleplayer installation.
 
@@ -25,7 +25,7 @@ How Quakestarter knows where to look
 
 When Quakestarter wants to copy a file or directory from some existing Quake installation, it will run through a series of candidate locations. Each time it finds something that looks good, it asks you if you want to copy the necessary file/directory from that location. If you say no, it keeps looking.
 
-The first steps in this process involve checking the Windows registry for installations from Steam, GOG, or Bethesda. (The info for Xbox Game Pass installations is not in the registry.)
+The first steps in this process involve checking the Windows registry for installations from Steam, GOG, or Bethesda. (The info for Xbox Game Pass installations is not in the registry. Not sure yet about the Epic store.)
 
 If Quakestarter doesn't get the file from any of those places, it then checks 1) on every disk, 2) across a set of top-level folders, for each of 3) a list of likely paths under those top-level folders.
 
@@ -45,8 +45,9 @@ The paths checked under each of those folders are:
 * Steam\\steamapps\\common\\Quake\\rerelease
 * GOG Games\\Quake
 * GOG Galaxy\\Games\\Quake
-* Bethesda.net Launcher\\games\\Quake
 * XboxGames\\QUAKE\\Content
+* Epic Games\\Quake
+* Bethesda.net Launcher\\games\\Quake
 
 (Some of these locations are specifically for the Quake rerelease rather than the original game; those locations are helpful for locating soundtrack files but not for the original pak files.)
 
