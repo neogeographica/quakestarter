@@ -66,7 +66,7 @@ echo %is_markiesm1v2_installed%  1: markiesm1v2 - Slip Tripping
 echo %is_sm_217_installed%  2: sm_217 - Remaster Textures
 echo %is_ctsj2_1.2_installed%  3: ctsj2_1.2 - Coppertone Summer Jam 2 v1.2
 echo %is_sm220-108_installed%  4: sm220-108 - Prototype Jam 3 v1.08
-echo %is_qbj-105_installed%  5: qbj_1.05 - Quake Brutalist Jam v1.05
+echo %is_qbj_1.05_installed%  5: qbj_1.05 - Quake Brutalist Jam v1.05
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
