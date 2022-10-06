@@ -108,9 +108,11 @@ call :search_common_paths "GOG Games\Quake"
 if exist "%dest%" goto :eof
 call :search_common_paths "GOG Galaxy\Games\Quake"
 if exist "%dest%" goto :eof
-call :search_common_paths "Bethesda.net Launcher\games\Quake"
-if exist "%dest%" goto :eof
 call :search_common_paths "XboxGames\QUAKE\Content"
+if exist "%dest%" goto :eof
+call :search_common_paths "Epic Games\Quake"
+if exist "%dest%" goto :eof
+call :search_common_paths "Bethesda.net Launcher\games\Quake"
 if exist "%dest%" goto :eof
 endlocal & set dirs_checked=%dirs_checked%& set found_target=%found_target%
 

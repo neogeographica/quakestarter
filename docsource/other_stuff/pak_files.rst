@@ -31,7 +31,8 @@ If you're manually copying pak files into a Quakestarter-managed Quake installat
 * Steam provides the original Quake and also the rerelease (in a "rerelease" subfolder)
 * GOG provides only the original
 * Xbox Game Pass provides only the rerelease
-* Bethesda provides only the rerelease
+* Epic Games Store provides only the rerelease
+* Bethesda (store now shut down) provided only the rerelease
 
 
 Getting the pak files from a Quake CD

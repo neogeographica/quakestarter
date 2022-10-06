@@ -48,7 +48,6 @@ set junkdirs=
 cls
 call :installed_check func_mapjam2
 call :installed_check func_mapjam3
-call :installed_check retrojam4dlc_pulsar
 call :installed_check retrojam6
 call :installed_check grim_rezipped
 call :installed_check dm6rmx
@@ -57,11 +56,10 @@ echo.
 echo Selected other custom maps released from 2014 through 2019:
 echo %is_func_mapjam2_installed%  1: func_mapjam2 - Func Map Jam 2 - IKblue/IKwhite Theme ^(2014^)
 echo %is_func_mapjam3_installed%  2: func_mapjam3 - Func Map Jam 3 - Zerstoerer theme ^(2014^)
-echo %is_retrojam4dlc_pulsar_installed%  3: retrojam4dlc_pulsar - The Elder Reality ^(2016^)
-echo %is_retrojam6_installed%  4: retrojam6 - Retro Jam 6 - Egyptian theme ^(2017^)
-echo %is_grim_rezipped_installed%  5: grim_rezipped - The Grim Outpost ^(2018^)
-echo %is_dm6rmx_installed%  6: dm6rmx - The Dark Portal ^(2018^)
-echo %is_37_hcm1_installed%  7: 37_hcm1 - 37th Relic Retrieval ^(2019^)
+echo %is_retrojam6_installed%  3: retrojam6 - Retro Jam 6 - Egyptian theme ^(2017^)
+echo %is_grim_rezipped_installed%  4: grim_rezipped - The Grim Outpost ^(2018^)
+echo %is_dm6rmx_installed%  5: dm6rmx - The Dark Portal ^(2018^)
+echo %is_37_hcm1_installed%  6: 37_hcm1 - 37th Relic Retrieval ^(2019^)
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
@@ -94,27 +92,22 @@ call "%scriptspath%_handle_mod_choice.cmd" func_mapjam3
 goto :menu
 
 :3
-set start_map=retrojam4dlc_pulsar
-call "%scriptspath%_handle_mod_choice.cmd" retrojam4dlc_pulsar
-goto :menu
-
-:4
 set modsettings[0]=r_wateralpha 0.65
 set modsettings[1]=
 call "%scriptspath%_handle_mod_choice.cmd" retrojam6
 goto :menu
 
-:5
+:4
 set start_map=grim
 call "%scriptspath%_handle_mod_choice.cmd" grim_rezipped
 goto :menu
 
-:6
+:5
 set start_map=dm6rmx
 call "%scriptspath%_handle_mod_choice.cmd" dm6rmx
 goto :menu
 
-:7
+:6
 set base_game=%latest_ad%
 set start_map=37_hcm1
 set skip_quakerc_gen=true

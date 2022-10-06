@@ -1,6 +1,17 @@
 Changelog
 =========
 
+.. rubric:: v3.6.0 (Oct 2022)
+
+Another installables update:
+
+* Add `Quake Brutalist Jam`_ in Latest Greatest. Prepare for concrete overload!
+* Remove aged-out entries from the legacies menu, as mentioned in the v3.5.0 release notes below.
+* Move quite a few entries to the legacies menu since their ratings have dipped below the threshold and stayed down there for a while now: `The Castle of Koohoo`_, Biotoxin_, Antediluvian_, `The Elder Reality`_, `Waldsterben`_, and `Slip Tripping`_.
+
+This release also adds some basic capability for finding Quake installations from the Epic Games Store (by checking common folder names), when looking for soundtrack music files. The :doc:`Auto Setup Logic<auto_setup_logic>` chapter (under Other Topics) has been updated with those details.
+
+
 .. rubric:: v3.5.0 (Sep 2022)
 
 This release just updates some of the installables as described below.
@@ -385,10 +396,11 @@ For older changelog entries, see the `1.x changelog`_ archived on GitHub.
 
 
 .. _quakestarter.com: http://quakestarter.com
+.. _Quake Brutalist Jam: https://www.slipseer.com/index.php?resources/quake-brutalist-jam.126/
 .. _Prototype Jam 3: https://www.quaddicted.com/reviews/sm220-108.html
 .. _Doom Tintin Jam: https://www.quaddicted.com/reviews/dtintin_fixed.html
 .. _Quake Sewer Jam: https://www.quaddicted.com/reviews/sewerjam.html
-.. _Coppertone Summer Jam 2: https://www.slipseer.com/index.php?resources/coppertone-summer-jam-2.103
+.. _Coppertone Summer Jam 2: https://www.quaddicted.com/reviews/ctsj2_1.2.html
 .. _vkQuake: https://github.com/Novum/vkQuake
 .. _Ironwail: https://github.com/andrei-drexler/ironwail
 .. _Slipgate Sightseer: https://www.slipseer.com/
