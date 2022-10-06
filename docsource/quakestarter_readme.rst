@@ -88,7 +88,7 @@ The following sequence will get you off and running:
 |br|
 
 
-* You can also use the second option in the main Quakestarter menu to automatically get the Quake soundtrack files. The Quake soundtrack adds a lot -- it's more like "ambient sounds" most of the time, rather than a song. It's good to have! Quakestarter will look for installations from stores that provide the soundtrack as part of the "enhanced" Quake rerelease (Steam, Xbox Game Pass, and Bethesda) as well as checking other places where Quake may be installed.
+* You can also use the second option in the main Quakestarter menu to automatically get the Quake soundtrack files. The Quake soundtrack adds a lot -- it's more like "ambient sounds" most of the time, rather than a song. It's good to have! Quakestarter will look for installations from stores that provide the soundtrack as part of the "enhanced" Quake rerelease (Steam, Xbox Game Pass, and Epic Games Store) as well as checking other places where Quake may be installed.
 
 |br|
 
