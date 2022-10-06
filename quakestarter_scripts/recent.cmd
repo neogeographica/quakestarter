@@ -110,7 +110,7 @@ REM Quake Brutalist Jam v1.05 should age out after 3/28/2023
 set review_page=https://www.slipseer.com/index.php?resources/quake-brutalist-jam.126/
 set start_map=start
 set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" qbj_1.05 https://www.slipseer.com/index.php?resources/quake-brutalist-jam.126/version/194/download
+call "%scriptspath%_handle_mod_choice.cmd" qbj_1.05 https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/qbj_1.05.zip
 goto :menu
 
 
