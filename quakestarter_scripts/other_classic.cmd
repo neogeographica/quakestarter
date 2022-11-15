@@ -55,7 +55,6 @@ call :installed_check ac
 call :installed_check menk
 call :installed_check kinn_marcher
 call :installed_check lunsp1
-call :installed_check sm82
 echo.
 echo Selected other custom maps released through late 2005:
 echo %is_mexx10_installed%  1: mexx10 - The Cassandra Calamity ^(1997^)
@@ -67,7 +66,6 @@ echo %is_ac_installed%  6: ac - Adamantine Cruelty ^(2004^)
 echo %is_menk_installed%  7: menk - Menkalinan ^(2004^)
 echo %is_kinn_marcher_installed%  8: kinn_marcher - The Marcher Fortress ^(2005^)
 echo %is_lunsp1_installed%  9: lunsp1 - Concentric Devastation ^(2005^)
-echo %is_sm82_installed% 10: sm82 - Rubicondom ^(2005^)
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
@@ -153,11 +151,6 @@ goto :menu
 :9
 set start_map=lunsp1
 call "%scriptspath%_handle_mod_choice.cmd" lunsp1
-goto :menu
-
-:10
-set start_map=sm82
-call "%scriptspath%_handle_mod_choice.cmd" sm82
 goto :menu
 
 

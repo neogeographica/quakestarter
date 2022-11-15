@@ -1,6 +1,15 @@
 Changelog
 =========
 
+.. rubric:: v3.7.0 (Nov 2022)
+
+Your Quakestarter updates for November (drumroll)...
+
+* Add `Empire of Disorder`_ and `Sewer Jam 2`_ in Latest Greatest; Empire of Disorder also already qualifies for being in the Next Generation episodes/hubs menu.
+* Age out `Remaster Textures`_ from Latest Greatest; it can still be found in the Next Generation episodes/hubs menu.
+* Move the `Rubicondom`_ speedmap to the legacies menu.
+
+
 .. rubric:: v3.6.0 (Oct 2022)
 
 Another installables update:
@@ -396,7 +405,10 @@ For older changelog entries, see the `1.x changelog`_ archived on GitHub.
 
 
 .. _quakestarter.com: http://quakestarter.com
-.. _Quake Brutalist Jam: https://www.slipseer.com/index.php?resources/quake-brutalist-jam.126/
+.. _Empire of Disorder: https://www.quaddicted.com/reviews/toneodspmp3_2_2.html
+.. _Sewer Jam 2: https://www.slipseer.com/index.php?resources/sewer-jam-2.149/
+.. _Rubicondom: https://www.quaddicted.com/reviews/sm82.html
+.. _Quake Brutalist Jam: https://www.quaddicted.com/reviews/qbj_1.05.html
 .. _Prototype Jam 3: https://www.quaddicted.com/reviews/sm220-108.html
 .. _Doom Tintin Jam: https://www.quaddicted.com/reviews/dtintin_fixed.html
 .. _Quake Sewer Jam: https://www.quaddicted.com/reviews/sewerjam.html

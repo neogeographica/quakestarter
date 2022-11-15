@@ -48,11 +48,11 @@ set modsettings[0]=
 set startdemos=
 set junkdirs=
 cls
-call :installed_check markiesm1v2
-call :installed_check sm_217
 call :installed_check ctsj2_1.2
 call :installed_check sm220-108
 call :installed_check qbj_1.05
+call :installed_check toneodspmp3_2_3
+call :installed_check sewerjam2
 echo.
 echo This menu is a selection of high-profile releases from the past six months. A
 echo release in this category can also eventually appear in one of the "The Next
@@ -62,11 +62,11 @@ echo.
 echo After six months, a release will be removed from this category. If it hasn't
 echo made it into "The Next Generation" it will be added to the legacies menu.
 echo.
-echo %is_markiesm1v2_installed%  1: markiesm1v2 - Slip Tripping
-echo %is_sm_217_installed%  2: sm_217 - Remaster Textures
-echo %is_ctsj2_1.2_installed%  3: ctsj2_1.2 - Coppertone Summer Jam 2 v1.2
-echo %is_sm220-108_installed%  4: sm220-108 - Prototype Jam 3 v1.08
-echo %is_qbj_1.05_installed%  5: qbj_1.05 - Quake Brutalist Jam v1.05
+echo %is_ctsj2_1.2_installed%  1: ctsj2_1.2 - Coppertone Summer Jam 2 v1.2
+echo %is_sm220-108_installed%  2: sm220-108 - Prototype Jam 3 v1.08
+echo %is_qbj_1.05_installed%  3: qbj_1.05 - Quake Brutalist Jam v1.05
+echo %is_toneodspmp3_2_3_installed%  4: toneodspmp3_2_3 - Empire of Disorder v2.3
+echo %is_sewerjam2_installed%  5: sewerjam2 - Sewer Jam 2 v1.2.1
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
@@ -78,39 +78,41 @@ set /p menu_choice=enter your choice or just press Enter to exit:
 echo.
 goto %menu_choice%
 
-REM Slip Tripping should age out after 10/2/2022
-:1
-set start_map=markiesm1
-call "%scriptspath%_handle_mod_choice.cmd" markiesm1v2
-goto :menu
-
-REM Remaster Textures should age out after 11/11/2022
-:2
-set start_map=start
-set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" sm_217
-goto :menu
 
 REM Coppertone Summer Jam 2 v1.2 should age out after 2/8/2023
-:3
+:1
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" ctsj2_1.2
 goto :menu
 
 REM Prototype Jam 3 v1.08 should age out after 2/29/2023
-:4
+:2
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" sm220-108
 goto :menu
 
 REM Quake Brutalist Jam v1.05 should age out after 3/28/2023
-:5
-set review_page=https://www.slipseer.com/index.php?resources/quake-brutalist-jam.126/
+:3
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" qbj_1.05 https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/qbj_1.05.zip
+goto :menu
+
+REM Empire of Disorder v2.3 should age out after 3/1/2023
+:4
+set review_page=https://www.quaddicted.com/reviews/toneodspmp3_2_2.html
+set start_map=eod_intro
+call "%scriptspath%_handle_mod_choice.cmd" toneodspmp3_2_3
+goto :menu
+
+REM Sewer Jam 2 v1.2.1 should age out after 5/10/2023
+:5
+set review_page=https://www.slipseer.com/index.php?resources/sewer-jam-2.149/
+set start_map=start
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" sewerjam2 https://www.slipseer.com/index.php?resources/sewer-jam-2.149/version/229/download
 goto :menu
 
 
