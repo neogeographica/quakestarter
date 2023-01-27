@@ -59,7 +59,6 @@ call :installed_check pun
 call :installed_check alkjam
 call :installed_check alkaline1.1
 call :installed_check xmasjam2021
-call :installed_check jjj2
 call :installed_check sm215
 call :installed_check snack2
 call :installed_check sm_217
@@ -79,12 +78,11 @@ echo %is_pun_installed%  9: pun - The Punishment Due
 echo %is_alkjam_installed% 10: alkjam - Alkaline Jam
 echo %is_alkaline1.1_installed% 11: alkaline1.1 - Alkaline 1.1
 echo %is_xmasjam2021_installed% 12: xmasjam2021 - Xmas Jam 2021
-echo %is_jjj2_installed% 13: jjj2 - January Jump Jam 2
-echo %is_sm215_installed% 14: sm215 - Quad Run
-echo %is_snack2_installed% 15: snack2 - Speedmap Snack Pack 2 - Cosmic Hunger
-echo %is_sm_217_installed% 16: sm_217 - Remaster Textures
-echo %is_ctsj2_1.2_installed% 17: ctsj2_1.2 - Coppertone Summer Jam 2 v1.2
-echo %is_toneodspmp3_2_4_installed% 18: toneodspmp3_2_4 - Empire of Disorder v2.4
+echo %is_sm215_installed% 13: sm215 - Quad Run
+echo %is_snack2_installed% 14: snack2 - Speedmap Snack Pack 2 - Cosmic Hunger
+echo %is_sm_217_installed% 15: sm_217 - Remaster Textures
+echo %is_ctsj2_1.2_installed% 16: ctsj2_1.2 - Coppertone Summer Jam 2 v1.2
+echo %is_toneodspmp3_2_4_installed% 17: toneodspmp3_2_4 - Empire of Disorder v2.4
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
@@ -171,36 +169,29 @@ call "%scriptspath%_handle_mod_choice.cmd" xmasjam2021
 goto :menu
 
 :13
-set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/jjj2_ish.zip
-set start_map=start
-set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" jjj2
-goto :menu
-
-:14
 set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" sm215
 goto :menu
 
-:15
+:14
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" snack2
 goto :menu
 
-:16
+:15
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" sm_217
 goto :menu
 
-:17
+:16
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" ctsj2_1.2
 goto :menu
 
-:18
+:17
 set review_page=https://www.quaddicted.com/reviews/toneodspmp3_2_2.html
 set start_map=eod0
 call "%scriptspath%_handle_mod_choice.cmd" toneodspmp3_2_4
