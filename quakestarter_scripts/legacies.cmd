@@ -41,7 +41,9 @@ call :installed_check fmb_bdg rating
 call :installed_check retrojam4dlc_pulsar rating
 call :installed_check plaw02 rating
 call :installed_check markiesm1v2 rating
+call :installed_check copper_v1_19 version
 call :installed_check ctsj2 version
+call :installed_check toneodspmp3_2_3 version
 
 REM if called with "check" arg just decide whether to show this menu at all
 if "%~1"=="check" (
@@ -117,8 +119,14 @@ if "%show_rating%"=="true" (
 )
 if "%show_version%"=="true" (
   echo Dropped because superseded by a newer version:
+  if "%show_copper_v1_19%"=="true" (
+    echo %is_copper_v1_19_installed% 10: copper_v1_19 - Copper 1.19 ^(2022^)
+  )
   if "%show_ctsj2%"=="true" (
-    echo %is_ctsj2_installed% 10: ctsj2 - Coppertone Summer Jam 2 v1.0 ^(2022^)
+    echo %is_ctsj2_installed% 11: ctsj2 - Coppertone Summer Jam 2 v1.0 ^(2022^)
+  )
+  if "%show_toneodspmp3_2_3%"=="true" (
+    echo %is_toneodspmp3_2_3_installed% 12: toneodspmp3_2_3 - Empire of Disorder v2.3 ^(2022^)
   )
   echo.
 )
@@ -227,14 +235,34 @@ set start_map=markiesm1
 call "%scriptspath%_handle_mod_choice.cmd" markiesm1v2
 goto :menu
 
-REM Coppertone Summer Jam 2 v1.0 should age out after 2/11/2023
+REM Copper 1.19 should age out six months after v3.8.0
 :10
+if not "%show_copper_v1_19%"=="true" (
+  goto :eof
+)
+set start_map=start
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" copper_v1_19
+goto :menu
+
+REM Coppertone Summer Jam 2 v1.0 should age out after 2/11/2023
+:11
 if not "%show_ctsj2%"=="true" (
   goto :eof
 )
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" ctsj2
+goto :menu
+
+REM Empire of Disorder v2.3 should age out six months after v3.8.0
+:12
+if not "%show_toneodspmp3_2_3%"=="true" (
+  goto :eof
+)
+set review_page=https://www.quaddicted.com/reviews/toneodspmp3_2_2.html
+set start_map=eod_intro
+call "%scriptspath%_handle_mod_choice.cmd" toneodspmp3_2_3
 goto :menu
 
 

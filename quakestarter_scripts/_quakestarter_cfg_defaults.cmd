@@ -88,7 +88,7 @@ REM slow to update and a new version of AD/Copper has been released. Note that
 REM this must match the basename of a zip file in the Quaddicted filebase.
 
 set latest_ad=ad_v1_80p1final
-set latest_copper=copper_v1_19
+set latest_copper=copper_v1_20
 
 
 REM Whether to check for updates when starting Quakestarter, and if so what
