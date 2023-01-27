@@ -51,14 +51,12 @@ call :installed_check oum
 call :installed_check rapture
 call :installed_check soe_full
 call :installed_check contract
-call :installed_check rpgsmse
 call :installed_check terra
 call :installed_check warpspasm
 call :installed_check travail
 call :installed_check rmx-pack
 call :installed_check nsoe2
 call :installed_check arcanum
-call :installed_check dmc3
 call :installed_check unforgiven
 call :installed_check rrp
 call :installed_check mapjam6
@@ -68,17 +66,15 @@ echo %is_oum_installed%  1: oum - Operation: Urth Majik ^(2001^)
 echo %is_rapture_installed%  2: rapture - Rapture ^(2001^)
 echo %is_soe_full_installed%  3: soe_full - Soul of Evil ^(2002^)
 echo %is_contract_installed%  4: contract - Contract Revoked ^(2002^)
-echo %is_rpgsmse_installed%  5: rpgsmse - Quake Condensed ^(2004^)
-echo %is_terra_installed%  6: terra - Terra ^(2005^)
-echo %is_warpspasm_installed%  7: warpspasm - Warp Spasm ^(2007^)
-echo %is_travail_installed%  8: travail - Travail ^(2007^)
-echo %is_rmx-pack_installed%  9: rmx-pack - Remix Map Pack ^(2008^)
-echo %is_nsoe2_installed% 10: nsoe2 - Soul of Evil: Indian Summer ^(2008^)
-echo %is_arcanum_installed% 11: arcanum - Arcanum ^(2011^)
-echo %is_dmc3_installed% 12: dmc3 - Deathmatch Classics Vol. 3 ^(2011^)
-echo %is_unforgiven_installed% 13: unforgiven - Unforgiven ^(2011^)
-echo %is_rrp_installed% 14: rrp - Rubicon Rumble Pack ^(2014^)
-echo %is_mapjam6_installed% 15: mapjam6 - Func Map Jam 6 - Fire and Brimstone ^(2015^)
+echo %is_terra_installed%  5: terra - Terra ^(2005^)
+echo %is_warpspasm_installed%  6: warpspasm - Warp Spasm ^(2007^)
+echo %is_travail_installed%  7: travail - Travail ^(2007^)
+echo %is_rmx-pack_installed%  8: rmx-pack - Remix Map Pack ^(2008^)
+echo %is_nsoe2_installed%  9: nsoe2 - Soul of Evil: Indian Summer ^(2008^)
+echo %is_arcanum_installed% 10: arcanum - Arcanum ^(2011^)
+echo %is_unforgiven_installed% 11: unforgiven - Unforgiven ^(2011^)
+echo %is_rrp_installed% 12: rrp - Rubicon Rumble Pack ^(2014^)
+echo %is_mapjam6_installed% 13: mapjam6 - Func Map Jam 6 - Fire and Brimstone ^(2015^)
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
@@ -118,16 +114,11 @@ call "%scriptspath%_handle_mod_choice.cmd" contract
 goto :menu
 
 :5
-set start_map=rpgsmse1
-call "%scriptspath%_handle_mod_choice.cmd" rpgsmse
-goto :menu
-
-:6
 set start_map=terra1
 call "%scriptspath%_handle_mod_choice.cmd" terra
 goto :menu
 
-:7
+:6
 set base_game=quoth
 set start_map=start
 set skip_quakerc_gen=true
@@ -135,7 +126,7 @@ set startdemos=demo1 demo2 demo3
 call "%scriptspath%_handle_mod_choice.cmd" warpspasm
 goto :menu
 
-:8
+:7
 set patch_url=https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/quake_travail_soundtrack.zip
 set start_map=start
 set startdemos=demo1 demo2 demo3
@@ -145,18 +136,18 @@ set modsettings[2]=
 call "%scriptspath%_handle_mod_choice.cmd" travail
 goto :menu
 
-:9
+:8
 set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" rmx-pack
 goto :menu
 
-:10
+:9
 set start_map=start
 set startdemos=demo1 demo2
 call "%scriptspath%_handle_mod_choice.cmd" nsoe2
 goto :menu
 
-:11
+:10
 set patch_url=https://www.quaddicted.com/filebase/drake290111.zip
 REM unlike other patches the Drake mod is really truly always required here
 set patch_required=true
@@ -164,24 +155,18 @@ set start_map=arcstart
 call "%scriptspath%_handle_mod_choice.cmd" arcanum
 goto :menu
 
-:12
-set patch_url=https://quaketastic.com/files/single_player/maps/dmc3m8_hotfix.zip
-set start_map=dmc3
-call "%scriptspath%_handle_mod_choice.cmd" dmc3
-goto :menu
-
-:13
+:11
 set start_map=unfstart
 call "%scriptspath%_handle_mod_choice.cmd" unforgiven
 goto :menu
 
-:14
+:12
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" rrp
 goto :menu
 
-:15
+:13
 set start_map=start
 set startdemos=demo1
 set modsettings[0]=r_wateralpha 1

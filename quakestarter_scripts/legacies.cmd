@@ -35,9 +35,11 @@ set show_version=false
 call :installed_check arcane rating
 call :installed_check koohoo rating
 call :installed_check czgtoxic rating
+call :installed_check rpgsmse rating
 call :installed_check sm82 rating
 call :installed_check ant rating
 call :installed_check fmb_bdg rating
+call :installed_check dmc3 rating
 call :installed_check retrojam4dlc_pulsar rating
 call :installed_check plaw02 rating
 call :installed_check markiesm1v2 rating
@@ -97,36 +99,42 @@ if "%show_rating%"=="true" (
   if "%show_czgtoxic%"=="true" (
     echo %is_czgtoxic_installed%  3: czgtoxic - Biotoxin ^(2001^)
   )
+  if "%show_rpgsmse%"=="true" (
+    echo %is_rpgsmse_installed%  4: rpgsmse - Quake Condensed ^(2004^)
+  )
   if "%show_sm82%"=="true" (
-    echo %is_sm82_installed%  4: sm82 - Rubicondom ^(2005^)
+    echo %is_sm82_installed%  5: sm82 - Rubicondom ^(2005^)
   )
   if "%show_ant%"=="true" (
-    echo %is_ant_installed%  5: ant - Antediluvian ^(2005^)
+    echo %is_ant_installed%  6: ant - Antediluvian ^(2005^)
   )
   if "%show_fmb_bdg%"=="true" (
-    echo %is_fmb_bdg_installed%  6: fmb_bdg - This Onion ^(2007^)
+    echo %is_fmb_bdg_installed%  7: fmb_bdg - This Onion ^(2007^)
+  )
+  if "%show_dmc3%"=="true" (
+    echo %is_dmc3_installed%  8: dmc3 - Deathmatch Classics Vol. 3 ^(2011^)
   )
   if "%show_retrojam4dlc_pulsar%"=="true" (
-    echo %is_retrojam4dlc_pulsar_installed%  7: retrojam4dlc_pulsar - The Elder Reality ^(2016^)
+    echo %is_retrojam4dlc_pulsar_installed%  9: retrojam4dlc_pulsar - The Elder Reality ^(2016^)
   )
   if "%show_plaw02%"=="true" (
-    echo %is_plaw02_installed%  8: plaw02 - Waldsterben ^(2022^)
+    echo %is_plaw02_installed% 10: plaw02 - Waldsterben ^(2022^)
   )
   if "%show_markiesm1v2%"=="true" (
-    echo %is_markiesm1v2_installed%  9: markiesm1v2 - Slip Tripping ^(2022^)
+    echo %is_markiesm1v2_installed% 11: markiesm1v2 - Slip Tripping ^(2022^)
   )
   echo.
 )
 if "%show_version%"=="true" (
   echo Dropped because superseded by a newer version:
   if "%show_copper_v1_19%"=="true" (
-    echo %is_copper_v1_19_installed% 10: copper_v1_19 - Copper 1.19 ^(2022^)
+    echo %is_copper_v1_19_installed% 12: copper_v1_19 - Copper 1.19 ^(2022^)
   )
   if "%show_ctsj2%"=="true" (
-    echo %is_ctsj2_installed% 11: ctsj2 - Coppertone Summer Jam 2 v1.0 ^(2022^)
+    echo %is_ctsj2_installed% 13: ctsj2 - Coppertone Summer Jam 2 v1.0 ^(2022^)
   )
   if "%show_toneodspmp3_2_3%"=="true" (
-    echo %is_toneodspmp3_2_3_installed% 12: toneodspmp3_2_3 - Empire of Disorder v2.3 ^(2022^)
+    echo %is_toneodspmp3_2_3_installed% 14: toneodspmp3_2_3 - Empire of Disorder v2.3 ^(2022^)
   )
   echo.
 )
@@ -174,8 +182,17 @@ set start_map=czgtoxic
 call "%scriptspath%_handle_mod_choice.cmd" czgtoxic
 goto :menu
 
-REM Rubicondom should age out six months after v3.7.0
+REM Quake Condensed should age out six months after v3.8.0
 :4
+if not "%show_rpgsmse%"=="true" (
+  goto :eof
+)
+set start_map=rpgsmse1
+call "%scriptspath%_handle_mod_choice.cmd" rpgsmse
+goto :menu
+
+REM Rubicondom should age out after 5/14/2023
+:5
 if not "%show_sm82%"=="true" (
   goto :eof
 )
@@ -184,7 +201,7 @@ call "%scriptspath%_handle_mod_choice.cmd" sm82
 goto :menu
 
 REM Antediluvian should age out after 4/6/2023
-:5
+:6
 if not "%show_ant%"=="true" (
   goto :eof
 )
@@ -193,7 +210,7 @@ call "%scriptspath%_handle_mod_choice.cmd" ant
 goto :menu
 
 REM This Onion should age out after 3/20/2023
-:6
+:7
 if not "%show_fmb_bdg%"=="true" (
   goto :eof
 )
@@ -201,8 +218,18 @@ set start_map=fmb_bdg1
 call "%scriptspath%_handle_mod_choice.cmd" fmb_bdg
 goto :menu
 
+REM Deathmatch Classics Vol. 3 should age out six months after v3.8.0
+:8
+if not "%show_dmc3%"=="true" (
+  goto :eof
+)
+set patch_url=https://quaketastic.com/files/single_player/maps/dmc3m8_hotfix.zip
+set start_map=dmc3
+call "%scriptspath%_handle_mod_choice.cmd" dmc3
+goto :menu
+
 REM The Elder Reality should age out after 4/6/2023
-:7
+:9
 if not "%show_retrojam4dlc_pulsar%"=="true" (
   goto :eof
 )
@@ -211,7 +238,7 @@ call "%scriptspath%_handle_mod_choice.cmd" retrojam4dlc_pulsar
 goto :menu
 
 REM Waldsterben should age out after 4/6/2023
-:8
+:10
 if not "%show_plaw02%"=="true" (
   goto :eof
 )
@@ -227,7 +254,7 @@ call "%scriptspath%_handle_mod_choice.cmd" plaw02
 goto :menu
 
 REM Slip Tripping should age out after 4/6/2023
-:9
+:11
 if not "%show_markiesm1v2%"=="true" (
   goto :eof
 )
@@ -236,7 +263,7 @@ call "%scriptspath%_handle_mod_choice.cmd" markiesm1v2
 goto :menu
 
 REM Copper 1.19 should age out six months after v3.8.0
-:10
+:12
 if not "%show_copper_v1_19%"=="true" (
   goto :eof
 )
@@ -246,7 +273,7 @@ call "%scriptspath%_handle_mod_choice.cmd" copper_v1_19
 goto :menu
 
 REM Coppertone Summer Jam 2 v1.0 should age out after 2/11/2023
-:11
+:13
 if not "%show_ctsj2%"=="true" (
   goto :eof
 )
@@ -256,7 +283,7 @@ call "%scriptspath%_handle_mod_choice.cmd" ctsj2
 goto :menu
 
 REM Empire of Disorder v2.3 should age out six months after v3.8.0
-:12
+:14
 if not "%show_toneodspmp3_2_3%"=="true" (
   goto :eof
 )
