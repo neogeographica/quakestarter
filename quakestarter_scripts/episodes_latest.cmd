@@ -64,6 +64,7 @@ call :installed_check snack2
 call :installed_check sm_217
 call :installed_check ctsj2_1.2
 call :installed_check toneodspmp3_2_4
+call :installed_check tcj_r3
 echo.
 echo Selected custom episodes/hubs released from 2020 through 2022:
 echo %is_ctsj_installed%  1: ctsj - Coppertone Summer Jam
@@ -83,6 +84,7 @@ echo %is_snack2_installed% 14: snack2 - Speedmap Snack Pack 2 - Cosmic Hunger
 echo %is_sm_217_installed% 15: sm_217 - Remaster Textures
 echo %is_ctsj2_1.2_installed% 16: ctsj2_1.2 - Coppertone Summer Jam 2 v1.2
 echo %is_toneodspmp3_2_4_installed% 17: toneodspmp3_2_4 - Empire of Disorder v2.4
+echo %is_tcj_r3_installed% 18: Twisted Christmas Jam 2022 ^(Release 3^)
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
@@ -195,6 +197,12 @@ goto :menu
 set review_page=https://www.quaddicted.com/reviews/toneodspmp3_2_2.html
 set start_map=eod0
 call "%scriptspath%_handle_mod_choice.cmd" toneodspmp3_2_4
+goto :menu
+
+:18
+set start_map=start
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" tcj_r3
 goto :menu
 
 
