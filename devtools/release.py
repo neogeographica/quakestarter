@@ -175,10 +175,18 @@ def merge_files(source_a_name, source_a_dir, source_b_name, source_b_dir):
         if os.path.exists(f_dest):
             if filecmp.cmp(f, f_dest, shallow=False):
                 continue
-            if os.stat(f).st_mtime < os.stat(f_dest).st_mtime:
-                print("NOTE: file {} taken from {} since it is newer".format(f_base, source_a_name))
-                continue
-            print("NOTE: file {} taken from {} since it is newer".format(f_base, source_b_name))
+            # For now, privilege the OLDER version of SDL2.dll.
+            # Cf. https://github.com/neogeographica/quakestarter/issues/91
+            if f_base == "SDL2.dll":
+                if os.stat(f).st_mtime > os.stat(f_dest).st_mtime:
+                    print("NOTE: file {} taken from {} since it is older".format(f_base, source_a_name))
+                    continue
+                print("NOTE: file {} taken from {} since it is same or older".format(f_base, source_b_name))
+            else:
+                if os.stat(f).st_mtime < os.stat(f_dest).st_mtime:
+                    print("NOTE: file {} taken from {} since it is newer".format(f_base, source_a_name))
+                    continue
+                print("NOTE: file {} taken from {} since it is same or newer".format(f_base, source_b_name))
         shutil.copy2(f, QUAKE_FOLDER)
     source_a_set = set([os.path.basename(f) for f in source_a_files])
     source_b_set = set([os.path.basename(f) for f in source_b_files])
