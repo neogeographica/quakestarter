@@ -15,9 +15,9 @@ If you just want to know how Quake installations from various stores can help th
 
 |br|
 
-* Quake soundtrack files (from the Quake rerelease) are provided by Steam, Xbox Game Pass, and the Epic Games Store. And although the Bethesda store has been shut down, existing Quake installations from the Bethesda store can also provide the soundtrack files.
+* Quake soundtrack files (from the Quake rerelease) are provided by Steam, GOG, Xbox Game Pass, and the Epic Games Store. And although the Bethesda store has been shut down, existing Quake installations from the Bethesda store can also provide the soundtrack files.
 
-So for example if you don't have any other Quake installations on your computer and don't have any Quake paks or soundtrack files on hand, doing an installation of Quake from Steam is the simplest one-shot way to fetch everything you need. After doing the Steam install you could then run Quakestarter and auto-setup the pak files and soundtrack into your new modern Quake singleplayer installation.
+So for example if you don't have any other Quake installations on your computer and don't have any Quake paks or soundtrack files on hand, doing an installation of Quake from Steam is a simple one-shot way to fetch everything you need. Another option would be to install both Quake and "Quake Enhanced" from GOG... the former gets you the paks, the latter the soundtrack. After doing the Steam or GOG install you could then run Quakestarter and auto-setup the pak files and soundtrack into your new modern Quake singleplayer installation.
 
 
 How Quakestarter knows where to look
@@ -45,6 +45,8 @@ The paths checked under each of those folders are:
 * Steam\\steamapps\\common\\Quake\\rerelease
 * GOG Games\\Quake
 * GOG Galaxy\\Games\\Quake
+* GOG Games\\Quake Enhanced
+* GOG Galaxy\\Games\\Quake Enhanced
 * XboxGames\\QUAKE\\Content
 * Epic Games\\Quake
 * Bethesda.net Launcher\\games\\Quake

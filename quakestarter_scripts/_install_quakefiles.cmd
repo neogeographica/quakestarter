@@ -52,7 +52,11 @@ call :reg_query_path_root_and_copy "HKCU\SOFTWARE\Valve\Steam" SteamPath "steama
 if exist "%dest%" goto :eof
 call :reg_query_and_copy "HKLM\SOFTWARE\WOW6432Node\GOG.com\Games\1435828198" PATH
 if exist "%dest%" goto :eof
+call :reg_query_and_copy "HKLM\SOFTWARE\WOW6432Node\GOG.com\Games\1739637082" PATH
+if exist "%dest%" goto :eof
 call :reg_query_and_copy "HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\1435828198_is1" InstallLocation
+if exist "%dest%" goto :eof
+call :reg_query_and_copy "HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\1739637082_is1" InstallLocation
 if exist "%dest%" goto :eof
 call :reg_query_path_root_and_copy "HKLM\SOFTWARE\WOW6432Node\Bethesda Softworks\Bethesda.net" installLocation "games\Quake"
 if exist "%dest%" goto :eof
@@ -107,6 +111,10 @@ if exist "%dest%" goto :eof
 call :search_common_paths "GOG Games\Quake"
 if exist "%dest%" goto :eof
 call :search_common_paths "GOG Galaxy\Games\Quake"
+if exist "%dest%" goto :eof
+call :search_common_paths "GOG Games\Quake Enhanced"
+if exist "%dest%" goto :eof
+call :search_common_paths "GOG Galaxy\Games\Quake Enhanced"
 if exist "%dest%" goto :eof
 call :search_common_paths "XboxGames\QUAKE\Content"
 if exist "%dest%" goto :eof

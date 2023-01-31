@@ -1,6 +1,23 @@
 Changelog
 =========
 
+.. rubric:: v3.8.0 (Jan 2023)
+
+New year, new stuff!
+
+One major part of this release is bumping the bundled vkQuake engine from version 1.20.3 to 1.22.3. This may not sound like a large difference, but check out the `vkQuake changelog`_ for the 1.22.x releases. Some cool stuff in there.
+
+This release also adds the recent GOG release of "Quake Enhanced" to the list of sources that the auto-setup assistant will use when trying to find soundtrack files for you.
+
+The main new addition to the installables is `Twisted Christmas Jam 2022`_, a sort of melding of the Halloween and Xmas map jams this time. Along with appearing in the Latest Greatest menu, it has also already qualified for the Next Generation episodes/hubs menu.
+
+`Empire of Disorder`_ has had a new version (2.4) released, with the previous version getting bumped into the legacies.
+
+The Copper_ gameplay mod has also had a version update to 1.20, so new installations of Copper-dependent releases will now use that version. And Copper 1.17 has aged out of the legacies menu.
+
+Finally, since several installables have been hovering under the ratings threshold for a while now, they get dropped into legacies: `Quake Condensed`_, `A Roman Wilderness Of Pain`_, `Deathmatch Classics Vol. 3`_, `768^2`_, `January Jump Jam 2`_, and `In The Shadows [Demo v1.1]`_.
+
+
 .. rubric:: v3.7.0 (Nov 2022)
 
 Your Quakestarter updates for November (drumroll)...
@@ -405,6 +422,10 @@ For older changelog entries, see the `1.x changelog`_ archived on GitHub.
 
 
 .. _quakestarter.com: http://quakestarter.com
+.. _vkQuake changelog: https://github.com/Novum/vkQuake/releases
+.. _Twisted Christmas Jam 2022: https://www.quaddicted.com/reviews/tcj_r3.html
+.. _768^2: https://www.quaddicted.com/reviews/sm198.html
+.. _In The Shadows [Demo v1.1]: https://www.quaddicted.com/reviews/its_demo_v1_1.html
 .. _Empire of Disorder: https://www.quaddicted.com/reviews/toneodspmp3_2_2.html
 .. _Sewer Jam 2: https://www.slipseer.com/index.php?resources/sewer-jam-2.149/
 .. _Rubicondom: https://www.quaddicted.com/reviews/sm82.html

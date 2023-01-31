@@ -51,8 +51,9 @@ cls
 call :installed_check ctsj2_1.2
 call :installed_check sm220-108
 call :installed_check qbj_1.05
-call :installed_check toneodspmp3_2_3
+call :installed_check toneodspmp3_2_4
 call :installed_check sewerjam2
+call :installed_check tcj_r3
 echo.
 echo This menu is a selection of high-profile releases from the past six months. A
 echo release in this category can also eventually appear in one of the "The Next
@@ -65,8 +66,9 @@ echo.
 echo %is_ctsj2_1.2_installed%  1: ctsj2_1.2 - Coppertone Summer Jam 2 v1.2
 echo %is_sm220-108_installed%  2: sm220-108 - Prototype Jam 3 v1.08
 echo %is_qbj_1.05_installed%  3: qbj_1.05 - Quake Brutalist Jam v1.05
-echo %is_toneodspmp3_2_3_installed%  4: toneodspmp3_2_3 - Empire of Disorder v2.3
+echo %is_toneodspmp3_2_4_installed%  4: toneodspmp3_2_4 - Empire of Disorder v2.4
 echo %is_sewerjam2_installed%  5: sewerjam2 - Sewer Jam 2 v1.2.1
+echo %is_tcj_r3_installed%  6: Twisted Christmas Jam 2022 ^(Release 3^)
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
@@ -100,11 +102,11 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" qbj_1.05 https://neogeographica-downloads.s3.amazonaws.com/tools/quakestarter/qbj_1.05.zip
 goto :menu
 
-REM Empire of Disorder v2.3 should age out after 3/1/2023
+REM Empire of Disorder v2.4 should age out after 3/1/2023
 :4
 set review_page=https://www.quaddicted.com/reviews/toneodspmp3_2_2.html
-set start_map=eod_intro
-call "%scriptspath%_handle_mod_choice.cmd" toneodspmp3_2_3
+set start_map=eod0
+call "%scriptspath%_handle_mod_choice.cmd" toneodspmp3_2_4
 goto :menu
 
 REM Sewer Jam 2 v1.2.1 should age out after 5/10/2023
@@ -113,6 +115,13 @@ set review_page=https://www.slipseer.com/index.php?resources/sewer-jam-2.149/
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" sewerjam2 https://www.slipseer.com/index.php?resources/sewer-jam-2.149/version/229/download
+goto :menu
+
+REM Twisted Christmas Jam 2022 ^(Release 3^) should age out six months after v3.8.0
+:6
+set start_map=start
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" tcj_r3
 goto :menu
 
 

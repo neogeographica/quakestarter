@@ -51,7 +51,7 @@ master_doc = 'quakestarter_readme'
 
 # General information about the project.
 project = 'Quakestarter'
-copyright = '2022, Joel Baxter'
+copyright = 'Joel Baxter'
 author = 'Joel Baxter'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -59,7 +59,7 @@ author = 'Joel Baxter'
 # built documents.
 #
 # The full version, including any pre-release tag.
-release = '3.7.0'
+release = '3.8.0'
 # And without that tag.
 version = release.split('-')[0]
 
