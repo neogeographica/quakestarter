@@ -110,7 +110,7 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" sewerjam2 https://www.slipseer.com/index.php?resources/sewer-jam-2.149/version/229/download
 goto :menu
 
-REM Twisted Christmas Jam 2022 ^(Release 3^) should age out six months after v3.8.0
+REM Twisted Christmas Jam 2022 ^(Release 3^) should age out after 7/30/2023
 :5
 set start_map=start
 set skip_quakerc_gen=true

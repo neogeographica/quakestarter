@@ -198,7 +198,7 @@ set start_map=czgtoxic
 call "%scriptspath%_handle_mod_choice.cmd" czgtoxic
 goto :menu
 
-REM Quake Condensed should age out six months after v3.8.0
+REM Quake Condensed should age out after 7/30/2023
 :4
 if not "%show_rpgsmse%"=="true" (
   goto :eof
@@ -234,7 +234,7 @@ set start_map=fmb_bdg1
 call "%scriptspath%_handle_mod_choice.cmd" fmb_bdg
 goto :menu
 
-REM A Roman Wilderness Of Pain should age out six months after v3.8.0
+REM A Roman Wilderness Of Pain should age out after 7/30/2023
 :8
 if not "%show_arwop%"=="true" (
   goto :eof
@@ -244,7 +244,7 @@ set startdemos=demo1
 call "%scriptspath%_handle_mod_choice.cmd" arwop
 goto :menu
 
-REM Deathmatch Classics Vol. 3 should age out six months after v3.8.0
+REM Deathmatch Classics Vol. 3 should age out after 7/30/2023
 :9
 if not "%show_dmc3%"=="true" (
   goto :eof
@@ -254,7 +254,7 @@ set start_map=dmc3
 call "%scriptspath%_handle_mod_choice.cmd" dmc3
 goto :menu
 
-REM In The Shadows [Demo v1.1] should age out six months after v3.8.0
+REM In The Shadows [Demo v1.1] should age out after 7/30/2023
 :10
 if not "%show_its_demo_v1_1%"=="true" (
   goto :eof
@@ -276,7 +276,7 @@ set start_map=retrojam4dlc_pulsar
 call "%scriptspath%_handle_mod_choice.cmd" retrojam4dlc_pulsar
 goto :menu
 
-REM 768^^2 should age out six months after v3.8.0
+REM 768^^2 should age out after 7/30/2023
 :12
 if not "%show_sm198%"=="true" (
   goto :eof
@@ -285,7 +285,7 @@ set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" sm198
 goto :menu
 
-REM January Jump Jam 2 should age out six months after v3.8.0
+REM January Jump Jam 2 should age out after 7/30/2023
 :13
 if not "%show_jjj2%"=="true" (
   goto :eof
@@ -331,7 +331,7 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" dwellv1p2
 goto :menu
 
-REM Copper 1.19 should age out six months after v3.8.0
+REM Copper 1.19 should age out after 7/30/2023
 :17
 if not "%show_copper_v1_19%"=="true" (
   goto :eof
@@ -341,7 +341,7 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" copper_v1_19
 goto :menu
 
-REM Empire of Disorder v2.3 should age out six months after v3.8.0
+REM Empire of Disorder v2.3 should age out after 7/30/2023
 :18
 if not "%show_toneodspmp3_2_3%"=="true" (
   goto :eof
