@@ -47,6 +47,7 @@ call :installed_check sm198 rating
 call :installed_check jjj2 rating
 call :installed_check plaw02 rating
 call :installed_check markiesm1v2 rating
+call :installed_check dwellv1p2 version
 call :installed_check copper_v1_19 version
 call :installed_check ctsj2 version
 call :installed_check toneodspmp3_2_3 version
@@ -143,14 +144,17 @@ if "%show_rating%"=="true" (
 )
 if "%show_version%"=="true" (
   echo Dropped because superseded by a newer version:
+  if "%show_dwellv1p2%"=="true" (
+    echo %is_dwellv1p2_installed% 16: dwellv1p2 - Dwell - Episode 1 ^(2020^)
+  )
   if "%show_copper_v1_19%"=="true" (
-    echo %is_copper_v1_19_installed% 16: copper_v1_19 - Copper 1.19 ^(2022^)
+    echo %is_copper_v1_19_installed% 17: copper_v1_19 - Copper 1.19 ^(2022^)
   )
   if "%show_ctsj2%"=="true" (
-    echo %is_ctsj2_installed% 17: ctsj2 - Coppertone Summer Jam 2 v1.0 ^(2022^)
+    echo %is_ctsj2_installed% 18: ctsj2 - Coppertone Summer Jam 2 v1.0 ^(2022^)
   )
   if "%show_toneodspmp3_2_3%"=="true" (
-    echo %is_toneodspmp3_2_3_installed% 18: toneodspmp3_2_3 - Empire of Disorder v2.3 ^(2022^)
+    echo %is_toneodspmp3_2_3_installed% 19: toneodspmp3_2_3 - Empire of Disorder v2.3 ^(2022^)
   )
   echo.
 )
@@ -321,8 +325,18 @@ set start_map=markiesm1
 call "%scriptspath%_handle_mod_choice.cmd" markiesm1v2
 goto :menu
 
-REM Copper 1.19 should age out six months after v3.8.0
+REM Dwell - Episode 1 should age out six months after v3.9.0
 :16
+if not "%show_dwellv1p2%"=="true" (
+  goto :eof
+)
+set start_map=start
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" dwellv1p2
+goto :menu
+
+REM Copper 1.19 should age out six months after v3.8.0
+:17
 if not "%show_copper_v1_19%"=="true" (
   goto :eof
 )
@@ -332,7 +346,7 @@ call "%scriptspath%_handle_mod_choice.cmd" copper_v1_19
 goto :menu
 
 REM Coppertone Summer Jam 2 v1.0 should age out after 2/11/2023
-:17
+:18
 if not "%show_ctsj2%"=="true" (
   goto :eof
 )
@@ -342,7 +356,7 @@ call "%scriptspath%_handle_mod_choice.cmd" ctsj2
 goto :menu
 
 REM Empire of Disorder v2.3 should age out six months after v3.8.0
-:18
+:19
 if not "%show_toneodspmp3_2_3%"=="true" (
   goto :eof
 )

@@ -54,6 +54,7 @@ call :installed_check qbj_1.05
 call :installed_check toneodspmp3_2_4
 call :installed_check sewerjam2
 call :installed_check tcj_r3
+call :installed_check dwellv2p1
 echo.
 echo This menu is a selection of high-profile releases from the past six months. A
 echo release in this category can also eventually appear in one of the "The Next
@@ -68,7 +69,8 @@ echo %is_sm220-108_installed%  2: sm220-108 - Prototype Jam 3 v1.08
 echo %is_qbj_1.05_installed%  3: qbj_1.05 - Quake Brutalist Jam v1.05
 echo %is_toneodspmp3_2_4_installed%  4: toneodspmp3_2_4 - Empire of Disorder v2.4
 echo %is_sewerjam2_installed%  5: sewerjam2 - Sewer Jam 2 v1.2.1
-echo %is_tcj_r3_installed%  6: Twisted Christmas Jam 2022 ^(Release 3^)
+echo %is_tcj_r3_installed%  6: tcj_r3 - Twisted Christmas Jam 2022 ^(Release 3^)
+echo %is_dwellv2p1_installed%  7: dwellv2p1 - Dwell v2.1
 echo.
 echo Enter a number to install/launch/manage one of the releases above.
 echo.
@@ -122,6 +124,14 @@ REM Twisted Christmas Jam 2022 ^(Release 3^) should age out six months after v3.
 set start_map=start
 set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" tcj_r3
+goto :menu
+
+REM Dwell v2.1 should age out six months after v3.9.0
+:7
+set review_page=https://www.slipseer.com/index.php?resources/dwell.21/
+set start_map=start
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" dwellv2p1 https://www.slipseer.com/index.php?resources/dwell.21/version/292/download
 goto :menu
 
 
