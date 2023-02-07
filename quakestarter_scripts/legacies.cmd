@@ -47,8 +47,8 @@ call :installed_check sm198 rating
 call :installed_check jjj2 rating
 call :installed_check plaw02 rating
 call :installed_check markiesm1v2 rating
+call :installed_check dwellv1p2 version
 call :installed_check copper_v1_19 version
-call :installed_check ctsj2 version
 call :installed_check toneodspmp3_2_3 version
 
 REM if called with "check" arg just decide whether to show this menu at all
@@ -143,11 +143,11 @@ if "%show_rating%"=="true" (
 )
 if "%show_version%"=="true" (
   echo Dropped because superseded by a newer version:
-  if "%show_copper_v1_19%"=="true" (
-    echo %is_copper_v1_19_installed% 16: copper_v1_19 - Copper 1.19 ^(2022^)
+  if "%show_dwellv1p2%"=="true" (
+    echo %is_dwellv1p2_installed% 16: dwellv1p2 - Dwell - Episode 1 ^(2020^)
   )
-  if "%show_ctsj2%"=="true" (
-    echo %is_ctsj2_installed% 17: ctsj2 - Coppertone Summer Jam 2 v1.0 ^(2022^)
+  if "%show_copper_v1_19%"=="true" (
+    echo %is_copper_v1_19_installed% 17: copper_v1_19 - Copper 1.19 ^(2022^)
   )
   if "%show_toneodspmp3_2_3%"=="true" (
     echo %is_toneodspmp3_2_3_installed% 18: toneodspmp3_2_3 - Empire of Disorder v2.3 ^(2022^)
@@ -198,7 +198,7 @@ set start_map=czgtoxic
 call "%scriptspath%_handle_mod_choice.cmd" czgtoxic
 goto :menu
 
-REM Quake Condensed should age out six months after v3.8.0
+REM Quake Condensed should age out after 7/30/2023
 :4
 if not "%show_rpgsmse%"=="true" (
   goto :eof
@@ -234,7 +234,7 @@ set start_map=fmb_bdg1
 call "%scriptspath%_handle_mod_choice.cmd" fmb_bdg
 goto :menu
 
-REM A Roman Wilderness Of Pain should age out six months after v3.8.0
+REM A Roman Wilderness Of Pain should age out after 7/30/2023
 :8
 if not "%show_arwop%"=="true" (
   goto :eof
@@ -244,7 +244,7 @@ set startdemos=demo1
 call "%scriptspath%_handle_mod_choice.cmd" arwop
 goto :menu
 
-REM Deathmatch Classics Vol. 3 should age out six months after v3.8.0
+REM Deathmatch Classics Vol. 3 should age out after 7/30/2023
 :9
 if not "%show_dmc3%"=="true" (
   goto :eof
@@ -254,7 +254,7 @@ set start_map=dmc3
 call "%scriptspath%_handle_mod_choice.cmd" dmc3
 goto :menu
 
-REM In The Shadows [Demo v1.1] should age out six months after v3.8.0
+REM In The Shadows [Demo v1.1] should age out after 7/30/2023
 :10
 if not "%show_its_demo_v1_1%"=="true" (
   goto :eof
@@ -276,7 +276,7 @@ set start_map=retrojam4dlc_pulsar
 call "%scriptspath%_handle_mod_choice.cmd" retrojam4dlc_pulsar
 goto :menu
 
-REM 768^^2 should age out six months after v3.8.0
+REM 768^^2 should age out after 7/30/2023
 :12
 if not "%show_sm198%"=="true" (
   goto :eof
@@ -285,7 +285,7 @@ set start_map=start
 call "%scriptspath%_handle_mod_choice.cmd" sm198
 goto :menu
 
-REM January Jump Jam 2 should age out six months after v3.8.0
+REM January Jump Jam 2 should age out after 7/30/2023
 :13
 if not "%show_jjj2%"=="true" (
   goto :eof
@@ -321,8 +321,18 @@ set start_map=markiesm1
 call "%scriptspath%_handle_mod_choice.cmd" markiesm1v2
 goto :menu
 
-REM Copper 1.19 should age out six months after v3.8.0
+REM Dwell - Episode 1 should age out six months after v3.9.0
 :16
+if not "%show_dwellv1p2%"=="true" (
+  goto :eof
+)
+set start_map=start
+set skip_quakerc_gen=true
+call "%scriptspath%_handle_mod_choice.cmd" dwellv1p2
+goto :menu
+
+REM Copper 1.19 should age out after 7/30/2023
+:17
 if not "%show_copper_v1_19%"=="true" (
   goto :eof
 )
@@ -331,17 +341,7 @@ set skip_quakerc_gen=true
 call "%scriptspath%_handle_mod_choice.cmd" copper_v1_19
 goto :menu
 
-REM Coppertone Summer Jam 2 v1.0 should age out after 2/11/2023
-:17
-if not "%show_ctsj2%"=="true" (
-  goto :eof
-)
-set start_map=start
-set skip_quakerc_gen=true
-call "%scriptspath%_handle_mod_choice.cmd" ctsj2
-goto :menu
-
-REM Empire of Disorder v2.3 should age out six months after v3.8.0
+REM Empire of Disorder v2.3 should age out after 7/30/2023
 :18
 if not "%show_toneodspmp3_2_3%"=="true" (
   goto :eof

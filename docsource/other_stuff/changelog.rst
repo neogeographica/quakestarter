@@ -1,6 +1,17 @@
 Changelog
 =========
 
+.. rubric:: v3.9.0 (Feb 2023)
+
+A new version of Dwell_ has been released, not only updating its first episode extensively but also adding a whole new episode. One of the best ever Quake singleplayer releases is now better! So, of course we should update Quakestarter to get the new Dwell version into the Latest Greatest menu. This is that.
+
+Other minor changes:
+
+* The vkQuake feature list in the :doc:`Quake Engines<quake_engines>` chapter has been updated to reflect the newer vkQuake version. Should have done that last release!
+* Version 1.0 of `Coppertone Summer Jam 2`_ has aged out of the legacies menu. Version 1.2 has also aged out of the Latest Greatest menu, but is still ensconced in the Next Generation episodes/hubs menu.
+* And of course, the original Dwell release has dropped into the legacies menu.
+
+
 .. rubric:: v3.8.0 (Jan 2023)
 
 New year, new stuff!
@@ -422,6 +433,7 @@ For older changelog entries, see the `1.x changelog`_ archived on GitHub.
 
 
 .. _quakestarter.com: http://quakestarter.com
+.. _Dwell: https://www.slipseer.com/index.php?resources/dwell.21/
 .. _vkQuake changelog: https://github.com/Novum/vkQuake/releases
 .. _Twisted Christmas Jam 2022: https://www.quaddicted.com/reviews/tcj_r3.html
 .. _768^2: https://www.quaddicted.com/reviews/sm198.html
