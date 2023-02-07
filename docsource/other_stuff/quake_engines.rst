@@ -18,20 +18,19 @@ Quakestarter is bundled with the vkQuake_ and Ironwail_ engines, with vkQuake se
 
 vkQuake uses the Vulkan API for rendering, while Ironwail uses some advanced features of OpenGL. It's possible that one will perform better than the other on your system, depending on your graphics drivers and the relative beefiness of your CPU vs your GPU. In all likelihood though, on a modern system both of these engines will crank out more frames-per-second than you will ever need, so the choice might come down to some other features.
 
-Here's a quick rundown of some of the most user-visible features that these engines have added on top of the Quakespasm baseline. 
+Below is a quick rundown of some of the most user-visible features that these engines have added on top of the Quakespasm baseline. Over time there has been a lot of feature-sharing between these two engines, so in broad strokes they now offer a lot of the same benefits.
 
 =================== =======   ========
 feature             vkQuake   Ironwail
 =================== =======   ========
 mod loading UI        yes        yes
-weapon binding UI      no        yes
-use mouse in UI        no        yes
+weapon binding UI     yes        yes
+use mouse in UI       yes        yes
 unlocked fps          yes        yes
 custom particles      yes         no
 HUD variants           no        yes
 custom HUDs           yes         no*
 8-bit emulation       yes        yes
-detect Steam paks      no        yes
 lit water support     yes        yes
 classic waterwarp     yes        yes
 multi game dirs       yes        yes
@@ -39,7 +38,7 @@ drag-resize window    yes         no
 protocol extensions   yes         no
 =================== =======   ========
 
-And a blurb about each of these features:
+A blurb about each of those features:
 
 * mod loading UI: An in-game menu to activate a mod folder.
 * weapon binding UI: Support in the in-game controls menu for binding individual weapons to keys. (Otherwise these binds can be done with config file edits.)
@@ -47,9 +46,8 @@ And a blurb about each of these features:
 * unlocked fps: The ability to use framerate caps higher than 72 FPS without causing issues with the game physics.
 * custom particles: Support for mod-defined particle systems, such as found in Arcane Dimensions and Alkaline.
 * HUD variants: Support for a predefined selection of HUD layouts.
-* custom HUDs: Support for mod-defined HUD graphics, such as found in Arcane Dimensions and Alkaline. (Ironwail has this feature on its roadmap, but the version bundled with this release of Quakestarter does not yet support it.)
+* custom HUDs: Support for mod-defined HUD graphics, such as found in Arcane Dimensions and Alkaline. (Ironwail has this feature in its development branch, but the released version does not yet support it.)
 * 8-bit emulation: Optional setting to emulate the palettized rendering of original DOS/WinQuake.
-* detect Steam paks: The ability to run using the gamedata from an existing Steam installation of Quake, without needing to find and copy the pak files. This doesn't matter when using Quakestarter, which does its own method of pak-finding, but can be handy otherwise.
 * lit water support: Support for rendering shadows on the surfaces of liquids, for recent maps that have been compiled in a way that generates that shadow information.
 * classic waterwarp: Emulation for the underwater warping effect of original DOS/WinQuake (as opposed to the different GLQuake effect).
 * multi game dirs: The ability to activate more than one mod folder, beyond the hardcoded support for only Quoth and missionpacks found in some engines. Quakestarter depends on this feature for launching a few of the addons that depend on Copper or Arcane Dimensions.
