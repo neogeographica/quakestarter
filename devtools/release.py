@@ -28,9 +28,9 @@ RELEASE_URL = "https://github.com/neogeographica/quakestarter/releases/tag/v" + 
 RELEASE_FOLDER = "release." + str(os.getpid())
 QUAKE_FOLDER = os.path.join(RELEASE_FOLDER, "Quake")
 ENGINE_STAGING_FOLDER = "engine-staging"
-VKQ_VERSION = "1.22.3"
-IW_VERSION = "0.6.0"
-SQL_VERSION = "2.5"
+VKQ_VERSION = "1.30.1"
+IW_VERSION = "0.7.0"
+SQL_VERSION = "2.7"
 VKQ_URL = "https://github.com/Novum/vkQuake/releases/download/{0}/vkquake-{0}_win64.zip".format(VKQ_VERSION)
 VKQ_LOCALFILE = "vkq-temp.zip"
 IW_URL = "https://github.com/andrei-drexler/ironwail/releases/download/v{0}/ironwail-{0}-win64.zip".format(IW_VERSION)
@@ -175,18 +175,10 @@ def merge_files(source_a_name, source_a_dir, source_b_name, source_b_dir):
         if os.path.exists(f_dest):
             if filecmp.cmp(f, f_dest, shallow=False):
                 continue
-            # For now, privilege the OLDER version of SDL2.dll.
-            # Cf. https://github.com/neogeographica/quakestarter/issues/91
-            if f_base == "SDL2.dll":
-                if os.stat(f).st_mtime > os.stat(f_dest).st_mtime:
-                    print("NOTE: file {} taken from {} since it is older".format(f_base, source_a_name))
-                    continue
-                print("NOTE: file {} taken from {} since it is same or older".format(f_base, source_b_name))
-            else:
-                if os.stat(f).st_mtime < os.stat(f_dest).st_mtime:
-                    print("NOTE: file {} taken from {} since it is newer".format(f_base, source_a_name))
-                    continue
-                print("NOTE: file {} taken from {} since it is same or newer".format(f_base, source_b_name))
+            if os.stat(f).st_mtime < os.stat(f_dest).st_mtime:
+                print("NOTE: file {} taken from {} since it is newer".format(f_base, source_a_name))
+                continue
+            print("NOTE: file {} taken from {} since it is same or newer".format(f_base, source_b_name))
         shutil.copy2(f, QUAKE_FOLDER)
     source_a_set = set([os.path.basename(f) for f in source_a_files])
     source_b_set = set([os.path.basename(f) for f in source_b_files])
