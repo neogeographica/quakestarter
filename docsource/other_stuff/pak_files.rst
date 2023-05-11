@@ -26,7 +26,7 @@ If you already have Quake installed somewhere on this computer, or if you are ab
 
 If that process can't find your Quake pak files, you can go look for them yourself. They will be inside a folder named "id1", which itself is inside your Quake install directory. So find and open up the "id1" folder, then make the copies you need of "pak0.pak" and "pak1.pak". Similarly if you have one or both of the missionpacks installed, you can get the "pak0.pak" file out of the "hipnotic" and/or "rogue" folder inside an existing Quake installation.
 
-If you're manually copying pak files into a Quakestarter-managed Quake installation, you should also be careful to get the pak files from the original Quake and not the rerelease. You can easily tell the difference since the "id1" folder in the rerelease only contains "pak0.pak" and does not have a "pak1.pak". As of the last update to this part of the docs (April 2022), various stores provide original and/or rereleased Quake as follows:
+If you're manually copying pak files into a Quakestarter-managed Quake installation, you should also be careful to get the pak files from the original Quake and not the rerelease. You can easily tell the difference since the "id1" folder in the rerelease only contains "pak0.pak" and does not have a "pak1.pak". As of the last update to this part of the docs (May 2022), various stores provide original and/or rereleased Quake as follows:
 
 * Steam provides the original Quake and also the rerelease (in a "rerelease" subfolder)
 * GOG provides the original Quake and also the rerelease (as a separate "Quake Enhanced" game)

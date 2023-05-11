@@ -29,7 +29,7 @@ use mouse in UI       yes        yes
 unlocked fps          yes        yes
 custom particles      yes         no
 HUD variants           no        yes
-custom HUDs           yes         no*
+custom HUDs           yes        yes
 8-bit emulation       yes        yes
 lit water support     yes        yes
 classic waterwarp     yes        yes
@@ -46,7 +46,7 @@ A blurb about each of those features:
 * unlocked fps: The ability to use framerate caps higher than 72 FPS without causing issues with the game physics.
 * custom particles: Support for mod-defined particle systems, such as found in Arcane Dimensions and Alkaline.
 * HUD variants: Support for a predefined selection of HUD layouts.
-* custom HUDs: Support for mod-defined HUD graphics, such as found in Arcane Dimensions and Alkaline. (Ironwail has this feature in its development branch, but the released version does not yet support it.)
+* custom HUDs: Support for mod-defined HUD graphics, such as found in Arcane Dimensions and Alkaline.
 * 8-bit emulation: Optional setting to emulate the palettized rendering of original DOS/WinQuake.
 * lit water support: Support for rendering shadows on the surfaces of liquids, for recent maps that have been compiled in a way that generates that shadow information.
 * classic waterwarp: Emulation for the underwater warping effect of original DOS/WinQuake (as opposed to the different GLQuake effect).
